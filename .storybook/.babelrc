@@ -5,5 +5,10 @@
     }],
     "stage-2",
     "react"
+  ],
+  "plugins": [
+    ["babel-plugin-styled-components", {
+      "displayName": true
+    }]
   ]
 }
