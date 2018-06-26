@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import alias from 'rollup-plugin-alias';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
@@ -36,11 +37,13 @@ export default {
         moduleDirectory: 'src',
       },
     }),
+    alias({
+      polished: 'node_modules/polished/dist/polished.es.js',
+    }),
     commonjs({
       include: 'node_modules/**',
       namedExports: {
         'node_modules/react-is/index.js': ['isValidElementType'],
-        'node_modules/polished/lib/index.js': ['normalize'],
       },
     }),
   ],
