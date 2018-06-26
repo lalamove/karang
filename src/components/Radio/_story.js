@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import { storiesOf, action } from '@storybook/react';

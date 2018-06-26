@@ -2,6 +2,8 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import styled from 'styled-components';
 
+import App from 'components/App';
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -12,9 +14,11 @@ const Container = styled.div`
 `;
 
 const Decorator = (storyFn) => (
-  <Container>
-    { storyFn() }
-  </Container>
+  <App>
+    <Container>
+      { storyFn() }
+    </Container>
+  </App>
 );
 
 function requireAll(requireContext) {

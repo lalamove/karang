@@ -8,6 +8,7 @@ injectGlobal`
 
 export const primaryFonts =
   'Noto Sans, "Noto Sans TC", "Noto Sans JP", sans-serif';
+
 export const fontWeight = {
   normal: 400,
   bold: 700,

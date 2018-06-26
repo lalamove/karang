@@ -40,6 +40,7 @@ export default {
       include: 'node_modules/**',
       namedExports: {
         'node_modules/react-is/index.js': ['isValidElementType'],
+        'node_modules/polished/lib/index.js': ['normalize'],
       },
     }),
   ],

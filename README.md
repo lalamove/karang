@@ -6,37 +6,47 @@ Version 0.1.0
 React components that implement [Lalamove Design](https://lalamove.com), for all web projects.
 
 ## Install
-Install **Lalamove UI Library** in your React repo:
+Install **Lalamove React UI Library** in your React repo:
 
 ```bash
 yarn add ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git#0.1.0
 ```
 
 ## Usage
-Quick example to **get you started**:
+#### Initialize the library at the top level
+You must first initialize the library in order to set configuration globals. 
+
+At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
+
+// TODO: Should allow configuration parameters passed as props here
 ```jsx
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Radio from 'lalamove-ui';
+import { BaseApp } from 'lalamove-ui';
 
-function App() {
-  return (
+const App = () => (
+  <BaseApp>
+    ...children
+  </BaseApp>
+);
+
+export default App;
+```
+
+#### Using exported UI components
+Quick example to **get you started** in your own components / containers:
+```jsx
+import React, { Fragment } from 'react';
+import { Radio } from 'lalamove-ui';
+
+const MyComponent = () => (
+  <Fragment>
     <Radio name="payment" value="cash">
       Radio 1
     </Radio>
-  );
-}
+  </Fragment>
+);
 
-ReactDOM.render(<App />, document.querySelector('#app'));
-```
-
-As this repo is still in early development stage, sometimes you may need to modify this repo for development. 
-
-Commit your changes on **your own branch**, and change `package.json` in your repo to install your commit version (replace `<commit-id>` with your commit id):
-```json
-"dependencies": {
-    "lalamove-ui": "ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git#<commit-id>"
-}
+export default MyComponent;
 ```
 
 ## Documentation / Storybook
@@ -45,14 +55,68 @@ Clone this repo, and run:
 ## install dependencies
 yarn
 
-## visit localhost:9092 to browse components library
+## visit localhost:9092 to browse components library and usage
 yarn storybook
 ```
 
-## Coding Standard
-- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+## Components Development
+As this repo is still in early development stage, sometimes you may need to modify this repo for development. It is suggested to develop the components in storybook.
 
-## Stylelint for development
+#### Develop with storybook
+Clone this repo, and run:
+```bash
+## install dependencies
+yarn
+
+## visit localhost:9092 for storybook
+yarn storybook
+
+## run test
+yarn test
+
+## run linter for JS
+yarn lint:js
+
+## run linter for CSS, including styled-components
+yarn lint:css
+```
+
+Please make sure your changes is able to build **when you commit your changes**.
+```bash
+## run build
+yarn build
+```
+
+#### Develop in local environment with your own repo
+If you would like to test it in your own repo, you may choose one of the method below:
+
+##### (1) yarn link
+```bash
+## create package symlink in your environment
+## https://yarnpkg.com/lang/en/docs/cli/link/
+cd lalamove-ui
+yarn link
+
+## link this package to your own repo
+cd ../your-own-repo
+yarn link lalamove-ui
+
+## start live reloading for this repo, any changes in this repo will reflect to your own repo
+cd ../lalamove-ui
+yarn start
+```
+
+##### (2) commit to this repo / forked repo
+Commit your changes on **your own branch** in this repo / forked repo. 
+
+Change `package.json` in your own repo to install your commit version (replace `<commit-id>` with your commit id):
+```json
+"dependencies": {
+    "lalamove-ui": "ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git#<commit-id>"
+}
+```
+
+## Stylelint for Development
 To enable stylelint for `styled-components`, configure your editor to have stylelint watch `.js` files.
 
 #### Sublime Text
@@ -76,13 +140,16 @@ To enable stylelint for `styled-components`, configure your editor to have style
 Install `Styled Components` plugin in IDE `Preferences | Plugins`. [(Installation Guide)](https://github.com/styled-components/webstorm-styled-components
 )
 
+## Coding Standard
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
 ## Todo
-* **FIX ALL `eslint` ERRORS!**
-* Avoid `injectGlobal`?
+* **Fix all `eslint` errors!**
+* Avoid `injectGlobal` in `utils/fonts`, and allow users to config fonts in components level
 * Code cleanup for existing components
 * Increase unit test coverage
 * Theme support?
-* (Please help to add more here)
+* Please help to add more here...
 
 ## Support
 * For any questions, please feel free to [open an issue here](https://git.easygroup.co/andrew.mok/lalamove-ui/issues).

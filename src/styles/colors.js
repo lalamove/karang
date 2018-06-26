@@ -1,5 +1,3 @@
-import { injectGlobal, css } from 'styled-components';
-
 export const orange = 'rgba(242,103,34,1)';
 export const gold = 'rgba(250,162,27,1)';
 export const red = 'rgba(216,83,79,1)';
@@ -23,11 +21,5 @@ const colors = {
   black,
   facebook,
 };
-
-injectGlobal`
-  :root {
-    ${Object.keys(colors).map(key => css`--${key}-color: ${colors[key]};`)}
-  }
-`;
 
 export default colors;
