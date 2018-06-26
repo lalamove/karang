@@ -1,3 +1,3 @@
 // for components, export them here
 
-export Radio, { RadioGroup } from './lib/Radio';
+export { default as Radio, RadioGroup } from './lib/Radio';
