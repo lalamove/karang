@@ -16,7 +16,7 @@
     "lint:js": "eslint \"src/**/*.js\"",
     "lint:css": "stylelint \"src/**/*.{css|js}\"",
     "storybook": "start-storybook -p 9002 -c .storybook",
-    "precommit": "lint-staged"
+    "precommit": "npm run prepare && lint-staged"
   },
   "dependencies": {},
   "peerDependencies": {

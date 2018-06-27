@@ -87,10 +87,10 @@ Please make sure your changes is able to build **when you commit your changes**.
 yarn build
 ```
 
-#### Develop in local environment with your own repo
-If you would like to test it in your own repo, you may choose one of the method below:
+#### Develop with your own repo
+If you would like to test it in your own repo, you may choose one of the methods below:
 
-##### (1) yarn link
+##### (1) yarn link in local environment
 ```bash
 ## create package symlink in your environment
 ## https://yarnpkg.com/lang/en/docs/cli/link/
@@ -104,6 +104,12 @@ yarn link lalamove-ui
 ## start live reloading for this repo, any changes in this repo will reflect to your own repo
 cd ../lalamove-ui
 yarn start
+
+## remember to unlink when finished development
+cd ../your-own-repo
+yarn unlink lalamove-ui
+cd ../lalamove-ui
+yarn unlink
 ```
 
 ##### (2) commit to this repo / forked repo
