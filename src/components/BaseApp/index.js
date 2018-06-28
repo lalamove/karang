@@ -28,7 +28,7 @@ injectGlobal`
 `;
 
 // TODO: Should allow configuration parameters passed as props
-export default class App extends Component {
+export default class BaseApp extends Component {
   static propTypes = {
     children: node.isRequired,
   };

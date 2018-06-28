@@ -6,10 +6,19 @@ Version 0.1.0
 React components that implement [Lalamove Design](https://lalamove.com), for all web projects.
 
 ## Install
-Install **Lalamove React UI Library** in your React repo:
+Before installing this library, please make sure you have the following installed in your own repo:
+```json
+"peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "styled-components": "^3.3.3"
+}
+```
 
+Install **Lalamove React UI Library** in your own repo:
 ```bash
-yarn add ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git#0.1.0
+yarn add git+ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git
 ```
 
 ## Usage
@@ -118,7 +127,7 @@ Commit your changes on **your own branch** in this repo / forked repo.
 Change `package.json` in your own repo to install your commit version (replace `<commit-id>` with your commit id):
 ```json
 "dependencies": {
-    "lalamove-ui": "ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git#<commit-id>"
+    "lalamove-ui": "git+ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git#<commit-id>"
 }
 ```
 
