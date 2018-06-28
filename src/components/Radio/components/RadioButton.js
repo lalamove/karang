@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool, func, node, shape, string } from 'prop-types';
 import styled, { css } from 'styled-components';
-import { noop } from 'utils/helpers';
+import noop from 'utils/noop';
 import { orange, silver, offWhite } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
 

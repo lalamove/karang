@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bool, func, string, number, oneOfType } from 'prop-types';
-import { noop } from 'utils/helpers';
+import noop from 'utils/noop';
 import Radio from './RadioButton';
 
 function radio({ name, selected, onChange }) {
