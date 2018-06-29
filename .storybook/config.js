@@ -2,7 +2,7 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import styled from 'styled-components';
 
-import App from 'components/App';
+import App from 'components/BaseApp';
 
 const Container = styled.div`
   display: flex;
