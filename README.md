@@ -18,12 +18,27 @@ Before installing this library, please make sure you have the following installe
 
 Install **Lalamove React UI Library** in your own repo:
 ```bash
-yarn add git+ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git
+yarn add git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git
 ```
+#### Troubleshooting
+- Cannot be installed in Gitlab CI
+
+    ```bash
+    - mkdir ~/.ssh
+    - printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - chmod 600 -R ~/.ssh
+    ```
+
+- `npm prepare` is not executed inside **docker-node** image for git repository dependency
+
+    ```
+    - printf "unsafe-perm=true" > ~/.npmrc
+    ```
 
 ## Usage
 #### Initialize the library at the top level
-You must first initialize the library in order to set configuration globals. 
+You must first initialize the library in order to set configuration globals.
 
 At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
 
@@ -122,7 +137,7 @@ yarn unlink
 ```
 
 ##### (2) commit to this repo / forked repo
-Commit your changes on **your own branch** in this repo / forked repo. 
+Commit your changes on **your own branch** in this repo / forked repo.
 
 Change `package.json` in your own repo to install your commit version (replace `<commit-id>` with your commit id):
 ```json
