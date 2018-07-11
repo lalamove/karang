@@ -9,10 +9,17 @@ const InputWithAutoFocus = withAutoFocus(AnimatedInput, 'innerRef');
 const InputWithOnClickSelect = withOnClickSelect(AnimatedInput, 'innerRef');
 const InputWithOnClickToEnd = withOnClickToEnd(AnimatedInput, 'innerRef');
 
+import styled from 'styled-components';
+
+const SCInput = styled(AnimatedInput)`
+  background: red;
+`;
+
 // TODO: Clear it up & add withInfo
 storiesOf('Input', module).add('Basic', () => (
   <div style={{ padding: '20px' }}>
-    <AnimatedInput
+    <SCInput
+      innerRef={node => console.log('1', node)}
       type="text"
       placeholder="Input"
       name="username"

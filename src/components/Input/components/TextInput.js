@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { func, string } from 'prop-types';
 import styled from 'styled-components';
 
@@ -18,30 +18,35 @@ const InputField = styled.input`
   resize: none;
 `;
 
-const TextInput = ({
-  innerRef,
-  type,
-  name,
-  value,
-  autoComplete,
-  onClick,
-  onFocus,
-  onBlur,
-  onChange,
-  ...remainProps
-}) => (
-  <InputField
-    innerRef={innerRef}
-    type={type}
-    name={name}
-    value={value}
-    autoComplete={autoComplete}
-    onClick={onClick}
-    onFocus={onFocus}
-    onBlur={onBlur}
-    onChange={onChange}
-    {...remainProps}
-  />
+const TextInput = forwardRef(
+  (
+    {
+      innerRef,
+      type,
+      name,
+      value,
+      autoComplete,
+      onClick,
+      onFocus,
+      onBlur,
+      onChange,
+      ...remainProps
+    },
+    ref
+  ) => (
+    <InputField
+      innerRef={ref}
+      type={type}
+      name={name}
+      value={value}
+      autoComplete={autoComplete}
+      onClick={onClick}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onChange={onChange}
+      {...remainProps}
+    />
+  )
 );
 
 TextInput.propTypes = {

@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent, Fragment, forwardRef } from 'react';
 import { func, string } from 'prop-types';
 import styled from 'styled-components';
 
@@ -122,7 +122,7 @@ class Input extends PureComponent {
             title={placeholder}
           />
           <TextInput
-            innerRef={innerRef}
+            ref={innerRef}
             type={peekPassword ? 'text' : type}
             name={name}
             value={value}
@@ -143,4 +143,4 @@ class Input extends PureComponent {
   }
 }
 
-export default Input;
+export default forwardRef((props, ref) => <Input innerRef={ref} {...props} />);

@@ -21,7 +21,7 @@ export default {
       format: 'es',
     },
   ],
-  external: ['styled-components'],
+  external: ['styled-components', 'react', 'react-dom'],
   plugins: [
     external(),
     postcss({
