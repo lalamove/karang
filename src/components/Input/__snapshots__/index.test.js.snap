@@ -1,0 +1,335 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots Password 1`] = `
+.c1 {
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  color: rgba(128,130,133,1);
+  font-size: 14px;
+  left: 8px;
+  top: 16px;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+.c2 {
+  border: none;
+  caret-color: rgba(242,103,34,1);
+  color: rgba(51,49,50,1);
+  font-size: 14px;
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  line-height: 20px;
+  outline: none;
+  margin: 14px 8px;
+  resize: none;
+}
+
+.c3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0 14px;
+  outline: 0;
+  padding: 0;
+}
+
+.c0 {
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 1px solid rgba(229,229,229,1);
+  position: relative;
+  text-align: left;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    
+  </div>
+  <input
+    autocomplete="new-password"
+    class="c2"
+    name="input"
+    type="password"
+    value=""
+  >
+    
+  </input>
+  <button
+    class="c3"
+  >
+    <svg
+      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
+      version="1.1"
+      viewBox="0 0 1024 1024"
+      xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g>
+        <path
+          d="M818.728 176.959c7.569 0 14.676 2.949 20.018 8.296 5.351 5.347 8.296 12.448 8.296 20.018s-2.945 14.671-8.296 20.018l-613.452 613.452c-5.347 5.351-12.453 8.301-20.022 8.301s-14.676-2.949-20.018-8.296c-5.351-5.347-8.296-12.448-8.296-20.018s2.945-14.671 8.296-20.018l613.452-613.452c5.347-5.351 12.453-8.301 20.022-8.301zM512 623.959c-5.828 0-11.585-0.448-17.233-1.293l127.896-127.906c0.854 5.649 1.302 11.406 1.302 17.238 0 30.149-11.585 58.33-32.612 79.358-21.023 21.023-49.204 32.603-79.353 32.603zM512 400.041c5.833 0 11.59 0.448 17.233 1.293l-127.891 127.901c-0.854-5.649-1.298-11.401-1.298-17.233 0-30.149 11.58-58.33 32.608-79.358 21.023-21.023 49.204-32.603 79.348-32.603zM933.862 507.272l2.841 4.728-2.841 4.728c-39.832 66.442-101.234 126.466-172.886 169.012-77.489 46.014-163.58 70.34-248.974 70.34-44.141 0-88.408-6.522-131.553-19.102l47.571-47.571c25.477 12.109 53.946 18.909 83.982 18.909 108.251 0 196.32-88.069 196.32-196.315 0-30.036-6.8-58.505-18.913-83.982l35.217-35.217c20.381 35.991 31.451 76.923 31.451 119.199 0 54.956-18.64 107.676-52.233 150.174 97.705-49.662 157.224-124.555 175.543-150.018-46.67-61.898-97.035-103.584-142.473-131.638l35.354-35.359c66.777 42.031 123.88 99.201 161.594 162.113zM144.502 512c16.030 22.306 64.248 83.317 142.52 131.549l-35.269 35.278c-66.72-42.022-123.833-99.191-161.608-162.089l-2.845-4.738 2.841-4.738c39.823-66.305 101.074-126.235 172.48-168.757 77.546-46.174 163.774-70.585 249.379-70.585 44.126 0 88.394 6.522 131.553 19.102l-47.571 47.566c-25.477-12.104-53.946-18.909-83.982-18.909-108.251 0-196.315 88.073-196.315 196.32 0 30.036 6.805 58.5 18.909 83.982l-35.217 35.217c-20.381-35.991-31.451-76.923-31.451-119.199 0-54.956 18.644-107.676 52.238-150.174-97.903 49.765-157.474 124.876-175.661 150.174z"
+        >
+          
+        </path>
+      </g>
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Snapshots Password with a value 1`] = `
+.c1 {
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  color: rgba(128,130,133,1);
+  font-size: 14px;
+  left: 8px;
+  top: 16px;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+  background-color: rgba(255,255,255,1);
+  font-size: 10px;
+  left: 8px;
+  top: -6px;
+  padding: 0 4px 0 4px;
+}
+
+.c2 {
+  border: none;
+  caret-color: rgba(242,103,34,1);
+  color: rgba(51,49,50,1);
+  font-size: 14px;
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  line-height: 20px;
+  outline: none;
+  margin: 14px 8px;
+  resize: none;
+}
+
+.c3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0 14px;
+  outline: 0;
+  padding: 0;
+}
+
+.c0 {
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 1px solid rgba(229,229,229,1);
+  position: relative;
+  text-align: left;
+}
+
+<Input
+  autoComplete="new-password"
+  error={null}
+  innerRef={null}
+  name="input"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  type="password"
+  value="dummy"
+>
+  <styled.div
+    error={null}
+    focused={false}
+  >
+    <div
+      className="c0"
+    >
+      <Placeholder
+        dirty={true}
+        error={null}
+        focused={false}
+        title=""
+      >
+        <styled.div
+          dirty={true}
+          error={null}
+          focused={false}
+        >
+          <div
+            className="c1"
+          />
+        </styled.div>
+      </Placeholder>
+      <TextInput
+        autoComplete="new-password"
+        innerRef={null}
+        name="input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="password"
+        value="dummy"
+      >
+        <styled.input
+          autoComplete="new-password"
+          innerRef={null}
+          name="input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          type="password"
+          value="dummy"
+        >
+          <input
+            autoComplete="new-password"
+            className="c2"
+            name="input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="password"
+            value="dummy"
+          />
+        </styled.input>
+      </TextInput>
+      <PeekButton
+        active={false}
+        onClick={[Function]}
+      >
+        <styled.button
+          onClick={[Function]}
+        >
+          <button
+            className="c3"
+            onClick={[Function]}
+          >
+            <EyeOffIcon
+              color="rgba(51,49,50,1)"
+              size={20}
+            >
+              <Icon
+                color="rgba(51,49,50,1)"
+                size={20}
+              >
+                <svg
+                  style={
+                    Object {
+                      "fill": "rgba(51,49,50,1)",
+                      "height": "20px",
+                      "verticalAlign": "middle",
+                      "width": "20px",
+                    }
+                  }
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <g>
+                    <path
+                      d="M818.728 176.959c7.569 0 14.676 2.949 20.018 8.296 5.351 5.347 8.296 12.448 8.296 20.018s-2.945 14.671-8.296 20.018l-613.452 613.452c-5.347 5.351-12.453 8.301-20.022 8.301s-14.676-2.949-20.018-8.296c-5.351-5.347-8.296-12.448-8.296-20.018s2.945-14.671 8.296-20.018l613.452-613.452c5.347-5.351 12.453-8.301 20.022-8.301zM512 623.959c-5.828 0-11.585-0.448-17.233-1.293l127.896-127.906c0.854 5.649 1.302 11.406 1.302 17.238 0 30.149-11.585 58.33-32.612 79.358-21.023 21.023-49.204 32.603-79.353 32.603zM512 400.041c5.833 0 11.59 0.448 17.233 1.293l-127.891 127.901c-0.854-5.649-1.298-11.401-1.298-17.233 0-30.149 11.58-58.33 32.608-79.358 21.023-21.023 49.204-32.603 79.348-32.603zM933.862 507.272l2.841 4.728-2.841 4.728c-39.832 66.442-101.234 126.466-172.886 169.012-77.489 46.014-163.58 70.34-248.974 70.34-44.141 0-88.408-6.522-131.553-19.102l47.571-47.571c25.477 12.109 53.946 18.909 83.982 18.909 108.251 0 196.32-88.069 196.32-196.315 0-30.036-6.8-58.505-18.913-83.982l35.217-35.217c20.381 35.991 31.451 76.923 31.451 119.199 0 54.956-18.64 107.676-52.233 150.174 97.705-49.662 157.224-124.555 175.543-150.018-46.67-61.898-97.035-103.584-142.473-131.638l35.354-35.359c66.777 42.031 123.88 99.201 161.594 162.113zM144.502 512c16.030 22.306 64.248 83.317 142.52 131.549l-35.269 35.278c-66.72-42.022-123.833-99.191-161.608-162.089l-2.845-4.738 2.841-4.738c39.823-66.305 101.074-126.235 172.48-168.757 77.546-46.174 163.774-70.585 249.379-70.585 44.126 0 88.394 6.522 131.553 19.102l-47.571 47.566c-25.477-12.104-53.946-18.909-83.982-18.909-108.251 0-196.315 88.073-196.315 196.32 0 30.036 6.805 58.5 18.909 83.982l-35.217 35.217c-20.381-35.991-31.451-76.923-31.451-119.199 0-54.956 18.644-107.676 52.238-150.174-97.903 49.765-157.474 124.876-175.661 150.174z"
+                    />
+                  </g>
+                </svg>
+              </Icon>
+            </EyeOffIcon>
+          </button>
+        </styled.button>
+      </PeekButton>
+    </div>
+  </styled.div>
+</Input>
+`;
+
+exports[`Snapshots Regular AnimatedInput 1`] = `
+.c1 {
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  color: rgba(128,130,133,1);
+  font-size: 14px;
+  left: 8px;
+  top: 16px;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+.c2 {
+  border: none;
+  caret-color: rgba(242,103,34,1);
+  color: rgba(51,49,50,1);
+  font-size: 14px;
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  line-height: 20px;
+  outline: none;
+  margin: 14px 8px;
+  resize: none;
+}
+
+.c0 {
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 1px solid rgba(229,229,229,1);
+  position: relative;
+  text-align: left;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    
+  </div>
+  <input
+    autocomplete="new-password"
+    class="c2"
+    name="input"
+    type="text"
+    value=""
+  >
+    
+  </input>
+</div>
+`;
