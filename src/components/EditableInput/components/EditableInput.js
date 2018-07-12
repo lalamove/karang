@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func, string, bool, object, PropTypes } from 'prop-types';
+import { func, string, bool, PropTypes } from 'prop-types';
 import styled from 'styled-components';
 import noop from 'utils/noop';
 import Button from './Button';
