@@ -1,0 +1,16 @@
+# Cache modules in between jobs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+stages:
+- test
+
+test:
+  image: node:8.11-alpine
+  stage: test
+  tags:
+    - k8s
+  script:
+    - yarn install
+    - yarn test-coverage
