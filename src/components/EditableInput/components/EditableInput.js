@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import noop from 'utils/noop';
 import Button from './Button';
 import AnimatedInput from 'components/Input/components/AnimatedInput';
-// import TextInput from '../../Input/components/TextInput';
 import { offWhite, orange } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
 
@@ -12,12 +11,22 @@ const EditableInputContainer = styled.div`
   position: relative;
 `;
 
-// const StyledAnimatedInput = styled(AnimatedInput)`
-//   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-//   -moz-box-sizing: border-box;
-//   box-sizing: border-box;
-//   padding-right: calc(6% + 160px);
-// `;
+const StyledAnimatedInput = styled(AnimatedInput)`
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: ${({ isEditable }) =>
+    isEditable ? 'calc(6% + 160px)' : 'calc(3% + 80px)'};
+`;
+// ${({ isEditable }) =>
+// isEditable
+// ? `
+// padding-right: calc(6% + 160px)
+// `
+// : `
+// padding-right: calc(3% + 80px)
+// `};
+// padding-right: calc(6% + 160px)
 
 const StyledButton = styled(Button)`
   position: absolute;
@@ -85,7 +94,6 @@ class EditableInput extends Component {
 
   constructor(props) {
     super(props);
-    this.textInput = React.createRef();
     // this.focusTextInput = this.focusTextInput.bind(this)
     this.state = {
       value: props.value,
@@ -165,23 +173,23 @@ class EditableInput extends Component {
     } = this.props;
     // TODO double check innerRef
     return (
-      <EditableInputContainer>
-        <AnimatedInput
-          style={style}
-          disabled={!isEditable}
-          placeholder={this.state.placeholder}
+      <EditableInputContainer {...remainProps}>
+        <StyledAnimatedInput
+          isEditable={isEditable}
           innerRef={node => {
             this.input = node;
             () => innerRef;
           }}
+          style={style}
+          disabled={!isEditable}
+          placeholder={this.state.placeholder}
           name={name}
           value={value}
           autoComplete={autoComplete}
-          onClick={this.onClick}
+          onClick={onClick}
           onFocus={onFocus}
           onBlur={onBlur}
           onChange={this.onInputChange}
-          {...remainProps}
         />
         <StyledButton
           onClick={this.onStyledButtonClick}
