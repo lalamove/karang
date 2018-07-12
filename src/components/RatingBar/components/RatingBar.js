@@ -1,14 +1,11 @@
 import React, { PureComponent } from 'react';
 import { func, PropTypes } from 'prop-types';
 import styled from 'styled-components';
-import { lighten } from 'polished';
 
 import noop from 'utils/noop';
 import { small, large } from '../ratingBarSizes';
 import Star from './Star';
 import { gold, offWhite } from 'styles/colors';
-
-const hoverGold = lighten(0, gold);
 
 const RatingStyle = styled.div``;
 
@@ -64,7 +61,7 @@ class RatingBar extends PureComponent {
   };
   colorFill = i => {
     if (this.state.hoverValue) {
-      return i < this.state.hoverValue ? hoverGold : offWhite;
+      return i < this.state.hoverValue ? gold : offWhite;
     }
     return i < this.state.value ? gold : offWhite;
   };
