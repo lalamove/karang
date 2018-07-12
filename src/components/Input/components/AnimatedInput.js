@@ -62,6 +62,11 @@ class Input extends PureComponent {
     onChange: noop,
   };
 
+  static getDerivedStateFromProps(props, state) {
+    const { value } = props;
+    return { ...state, value };
+  }
+
   state = {
     focused: false,
     value: this.props.value,
