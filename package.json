@@ -18,7 +18,9 @@
     "storybook": "start-storybook -p 9002 -c .storybook",
     "precommit": "npm run prepare && lint-staged"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
   "peerDependencies": {
     "downshift": "^2.0.14",
     "prop-types": "^15.6.1",
