@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment, forwardRef } from 'react';
-import { func, string } from 'prop-types';
+import { func, string, object } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
@@ -34,7 +34,7 @@ const Container = styled.div`
 
 class Input extends PureComponent {
   static propTypes = {
-    innerRef: func,
+    innerRef: object, // eslint-disable-line
     type: string,
     name: string.isRequired,
     placeholder: string,

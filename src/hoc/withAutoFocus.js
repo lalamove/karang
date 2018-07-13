@@ -1,32 +1,37 @@
-import React, { Component } from 'react';
-import { func } from 'prop-types';
+import React, { Component, forwardRef } from 'react';
+import { object } from 'prop-types';
 
-const withAutoFocus = (WrappedComponent, refKey = 'ref') =>
-  class extends Component {
+function withAutoFocus(WrappedComponent) {
+  class WithAutoFocus extends Component {
     static propTypes = {
-      getReference: func,
+      forwardedRef: object, // eslint-disable-line
     };
 
     static defaultProps = {
-      getReference: () => false,
+      forwardedRef: null,
     };
+
+    constructor(props) {
+      super(props);
+      this.input = null;
+    }
 
     componentDidMount() {
-      this.input.focus();
+      const { forwardedRef } = this.props;
+      if (forwardedRef) {
+        forwardedRef.current.focus();
+      }
     }
-
-    getReference = ref => {
-      this.input = ref;
-      this.props.getReference(ref);
-    };
 
     render() {
-      const dynamicProps = {
-        // ref / innerRef
-        [refKey]: this.getReference,
-      };
-      return <WrappedComponent {...this.props} {...dynamicProps} />;
+      const { forwardedRef, ...rest } = this.props;
+      return <WrappedComponent {...rest} ref={forwardedRef} />;
     }
-  };
+  }
+
+  return forwardRef((props, ref) => (
+    <WithAutoFocus {...props} forwardedRef={ref} />
+  ));
+}
 
 export default withAutoFocus;
