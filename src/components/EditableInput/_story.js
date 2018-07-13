@@ -10,6 +10,7 @@ storiesOf('EditableInput', module).add('Basic', () => (
       onValueSave={() => false}
       isEditable={false}
       value="hello"
+      ref={node => console.log(node)}
     />
     <br />
     <br />

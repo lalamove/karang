@@ -1,53 +1,42 @@
-import React, { Component } from 'react';
-import { func, string, bool, PropTypes } from 'prop-types';
+import React, { Component, forwardRef } from 'react';
+import { func, string, bool } from 'prop-types';
 import styled from 'styled-components';
 import noop from 'utils/noop';
-import Button from './Button';
+import Button from 'components/Button/index';
 import AnimatedInput from 'components/Input/components/AnimatedInput';
-import { offWhite, orange } from 'styles/colors';
-import { primaryFonts } from 'styles/fonts';
+import { orange } from 'styles/colors';
 
 const EditableInputContainer = styled.div`
+  display: inline-block;
   position: relative;
+  min-width: 350px;
 `;
 
 const StyledAnimatedInput = styled(AnimatedInput)`
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  width: 96%;
   padding-right: ${({ isEditable }) =>
     isEditable ? 'calc(6% + 160px)' : 'calc(3% + 80px)'};
 `;
-// ${({ isEditable }) =>
-// isEditable
-// ? `
-// padding-right: calc(6% + 160px)
-// `
-// : `
-// padding-right: calc(3% + 80px)
-// `};
-// padding-right: calc(6% + 160px)
 
 const StyledButton = styled(Button)`
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: 'pointer';
-  right: 3%;
   width: 80px;
   height: 32px;
-  border-radius: 2px;
-  font-family: ${primaryFonts};
-  ${({ isEditable }) =>
-    isEditable
-      ? `
-    border: 1px solid ${orange};
-    color: ${orange}
-    `
-      : `
-    border: 1px solid ${offWhite};
-    `};
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3%;
 `;
+
+// TODO check if it works with style attribute
+// const style = {
+//   position: 'absolute',
+//   top: '50%',
+//   transform: 'translateY(-50%)',
+//   right: '3%',
+// }
 
 const CancelButton = styled(StyledButton)`
   right: calc(6% + 80px);
@@ -61,8 +50,6 @@ class EditableInput extends Component {
     value: string,
     onValueSave: func,
     isEditable: bool,
-    style: PropTypes.shape({}),
-    // from Andrew's code
     innerRef: func,
     type: string,
     placeholder: string,
@@ -77,9 +64,7 @@ class EditableInput extends Component {
     value: '',
     onValueSave: noop,
     isEditable: true,
-    style: { width: '404px' },
-    // from Andrew's code
-    innerRef: null,
+    innerRef: noop,
     type: 'text',
     placeholder: '',
     error: null,
@@ -94,7 +79,6 @@ class EditableInput extends Component {
 
   constructor(props) {
     super(props);
-    // this.focusTextInput = this.focusTextInput.bind(this)
     this.state = {
       value: props.value,
       lastSavedValue: props.value,
@@ -104,12 +88,14 @@ class EditableInput extends Component {
   }
 
   componentDidUpdate = (_, prevState) => {
-    if (!prevState.isEditable) this.focusTextInput();
-    if (prevState.isEditable && !this.state.isEditable) this.blurEditButton();
+    if (!prevState.isEditable) {
+      this.focusTextInput();
+    } else if (prevState.isEditable && !this.state.isEditable) {
+      this.blurEditButton();
+    }
   };
 
   onStyledButtonClick = e => {
-    e.preventDefault();
     if (this.state.isEditable) {
       // execute callback before the input is switched to non-editable
       this.props.onValueSave(this.state.value);
@@ -160,9 +146,10 @@ class EditableInput extends Component {
       innerRef,
       type,
       name,
-      style,
       value: defaultValue,
-      placeholder, // a bit hacky
+      placeholder,
+      // later we use the state value, but still declare as a prop,
+      // s.t. it doesn't fall under ...remainProps
       autoComplete,
       error,
       onClick,
@@ -171,16 +158,14 @@ class EditableInput extends Component {
       onChange,
       ...remainProps
     } = this.props;
-    // TODO double check innerRef
     return (
       <EditableInputContainer {...remainProps}>
         <StyledAnimatedInput
           isEditable={isEditable}
           innerRef={node => {
             this.input = node;
-            () => innerRef;
+            if (innerRef !== null && node !== null) innerRef(node); // WTF?! without if returns two nodes
           }}
-          style={style}
           disabled={!isEditable}
           placeholder={this.state.placeholder}
           name={name}
@@ -193,18 +178,22 @@ class EditableInput extends Component {
         />
         <StyledButton
           onClick={this.onStyledButtonClick}
-          value={isEditable ? 'Save' : 'Edit'}
-          isEditable={isEditable}
+          variant={isEditable ? 'outline' : null}
           innerRef={node => {
             this.editButton = node;
           }}
-        />
+        >
+          {isEditable ? 'Save' : 'Edit'}
+        </StyledButton>
         {isEditable ? (
-          <CancelButton value="Cancel" onClick={this.onCancelButtonClick} />
+          <CancelButton onClick={this.onCancelButtonClick}>Cancel</CancelButton>
         ) : null}
       </EditableInputContainer>
     );
   }
 }
 
-export default EditableInput;
+// export default EditableInput;
+export default forwardRef((props, ref) => (
+  <EditableInput innerRef={ref} {...props} />
+));
