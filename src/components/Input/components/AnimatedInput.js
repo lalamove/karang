@@ -131,13 +131,14 @@ class Input extends Component {
       withOnClickToEnd: onClickToEnd,
       ...remainProps
     } = this.props;
+
     return (
       <Fragment>
         <Container focused={focused} error={error && error.length > 0}>
           <Placeholder
             focused={focused}
-            dirty={value && value.length > 0}
-            error={error && error.length > 0}
+            dirty={value !== null && value.length > 0}
+            error={error !== null && error.length > 0}
             title={placeholder}
           />
           <TextInput

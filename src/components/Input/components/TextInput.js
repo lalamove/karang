@@ -16,6 +16,7 @@ const InputField = styled.input`
   outline: none;
   margin: 14px 8px;
   resize: none;
+  width: 100%;
 `;
 
 const TextInput = forwardRef(

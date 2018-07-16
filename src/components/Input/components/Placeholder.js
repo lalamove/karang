@@ -47,12 +47,13 @@ const Placeholder = ({ title, focused, dirty, error }) => (
 Placeholder.propTypes = {
   title: string,
   focused: bool.isRequired, // eslint-disable-line react/no-typos
-  dirty: bool.isRequired, // eslint-disable-line react/no-typos
+  dirty: bool, // eslint-disable-line react/no-typos
   error: bool,
 };
 
 Placeholder.defaultProps = {
   title: '',
+  dirty: false,
   error: false,
 };
 
