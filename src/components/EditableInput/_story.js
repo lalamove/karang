@@ -7,10 +7,9 @@ storiesOf('EditableInput', module).add('Basic', () => (
     <EditableInput
       name="dummy"
       placeholder="Billing Email"
-      onValueSave={() => false}
+      onValueSave={value => console.log(value)}
       isEditable={false}
-      value="hello"
-      ref={node => console.log(node)}
+      value="david.lam@lalamove.com"
     />
     <br />
     <br />

@@ -30,14 +30,6 @@ const StyledButton = styled(Button)`
   right: 3%;
 `;
 
-// TODO check if it works with style attribute
-// const style = {
-//   position: 'absolute',
-//   top: '50%',
-//   transform: 'translateY(-50%)',
-//   right: '3%',
-// }
-
 const CancelButton = styled(StyledButton)`
   right: calc(6% + 80px);
   border: none;
@@ -68,8 +60,6 @@ class EditableInput extends Component {
     type: 'text',
     placeholder: '',
     error: null,
-    // autocomplete=off is ignored on non-login INPUT elements
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
     autoComplete: 'new-password',
     onClick: noop,
     onFocus: noop,
@@ -97,7 +87,7 @@ class EditableInput extends Component {
 
   onStyledButtonClick = e => {
     if (this.state.isEditable) {
-      // execute callback before the input is switched to non-editable
+      // callback is executed before the input is switched to non-editable
       this.props.onValueSave(this.state.value);
       this.setState({
         isEditable: !this.state.isEditable,
@@ -142,14 +132,14 @@ class EditableInput extends Component {
 
   render() {
     const { isEditable, value } = this.state;
+    const placeholderState = this.state.placeholder; // defined separately because 'placeholder' variable takes on a prop
     const {
       innerRef,
       type,
       name,
       value: defaultValue,
-      placeholder,
-      // later we use the state value, but still declare as a prop,
-      // s.t. it doesn't fall under ...remainProps
+      placeholder, // placeholder prop is unused, but declared s.t. it doesn't fall under ...remainProps
+      // in fact, we use 'placeholderState' variable instead of 'placeholder'
       autoComplete,
       error,
       onClick,
@@ -164,10 +154,14 @@ class EditableInput extends Component {
           isEditable={isEditable}
           innerRef={node => {
             this.input = node;
-            if (innerRef !== null && node !== null) innerRef(node); // WTF?! without if returns two nodes
+            if (innerRef !== null && node !== null) innerRef(node);
+            // innerRef doesn't work as expected:
+            // 'innerRef' is first defined as a null function and only then gets redefined as a passed function.
+            // Similarly, 'node' is first defined as null and only then takes the actual node value.
+            // TODO investigate.
           }}
           disabled={!isEditable}
-          placeholder={this.state.placeholder}
+          placeholder={placeholderState}
           name={name}
           value={value}
           autoComplete={autoComplete}
@@ -193,7 +187,6 @@ class EditableInput extends Component {
   }
 }
 
-// export default EditableInput;
 export default forwardRef((props, ref) => (
   <EditableInput innerRef={ref} {...props} />
 ));

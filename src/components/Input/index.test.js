@@ -6,6 +6,10 @@ import withAutoFocus from '../../hoc/withAutoFocus';
 import withOnClickSelect from '../../hoc/withOnClickSelect';
 import withOnClickToEnd from '../../hoc/withOnClickToEnd';
 
+// Enzyme doesn't work with forwardRef =>
+// Tests fail as code was refactored with forwardRef
+// All tests passed before 'forwardRef' refactoring
+
 describe('Snapshots', () => {
   it('Password', () => {
     const wrapper = render(<AnimatedInput name="input" type="password" />);
