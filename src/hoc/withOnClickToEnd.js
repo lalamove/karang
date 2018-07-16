@@ -1,46 +1,57 @@
-import React, { Component } from 'react';
-import { func } from 'prop-types';
-
+import React, { Component, forwardRef } from 'react';
+import { oneOfType, func, object } from 'prop-types';
 import noop from 'utils/noop';
 
-const withOnClickToEnd = (WrappedComponent, refKey = 'ref') =>
-  class extends Component {
+function withOnClickToEnd(WrappedComponent) {
+  class WithOnClickToEnd extends Component {
     static propTypes = {
-      getReference: func,
+      forwardedRef: oneOfType([func, object]),
       onClick: func,
     };
 
     static defaultProps = {
-      getReference: () => false,
+      forwardedRef: null,
       onClick: noop,
     };
 
     onClick = e => {
-      this.input.setSelectionRange(
-        this.input.value.length,
-        this.input.value.length
-      );
+      if (this.input) {
+        this.input.setSelectionRange(
+          this.input.value.length,
+          this.input.value.length
+        );
+      }
       this.props.onClick(e);
     };
 
-    getReference = ref => {
-      this.input = ref;
-      this.props.getReference(ref);
+    getReference = node => {
+      const { forwardedRef } = this.props;
+      this.input = node;
+
+      if (forwardedRef) {
+        if (typeof forwardedRef === 'function') {
+          forwardedRef(node);
+        } else {
+          forwardedRef.current = node;
+        }
+      }
     };
 
     render() {
-      const dynamicProps = {
-        // ref / innerRef
-        [refKey]: this.getReference,
-      };
+      const { forwardedRef, ...remainProps } = this.props;
       return (
         <WrappedComponent
-          {...this.props}
+          {...remainProps}
           onClick={this.onClick}
-          {...dynamicProps}
+          ref={this.getReference}
         />
       );
     }
-  };
+  }
+
+  return forwardRef((props, ref) => (
+    <WithOnClickToEnd {...props} forwardedRef={ref} />
+  ));
+}
 
 export default withOnClickToEnd;

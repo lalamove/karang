@@ -1,10 +1,15 @@
-import React, { PureComponent, Fragment, forwardRef } from 'react';
+import React, { Component, Fragment, forwardRef } from 'react';
 import { func, string, object, oneOfType } from 'prop-types';
 import styled from 'styled-components';
+import { compose } from 'recompose';
 
 import noop from 'utils/noop';
 import { red, orange, offWhite } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
+import withAutoFocus from 'hoc/withAutoFocus';
+// import withOnClickSelect from 'hoc/withOnClickSelect';
+// import withOnClickToEnd from 'hoc/withOnClickToEnd';
+
 import Placeholder from './Placeholder';
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
@@ -32,7 +37,7 @@ const Container = styled.div`
     `};
 `;
 
-class Input extends PureComponent {
+class Input extends Component {
   static propTypes = {
     innerRef: oneOfType([func, object]),
     type: string,
@@ -148,4 +153,21 @@ class Input extends PureComponent {
   }
 }
 
-export default forwardRef((props, ref) => <Input innerRef={ref} {...props} />);
+const InputWithRef = forwardRef((props, ref) => (
+  <Input innerRef={ref} {...props} />
+));
+
+// const WithOnClickToEndCondition = props => {
+//   if (props.withOnClickToEnd) {
+//     console.log('test');
+//     return withOnClickToEnd;
+//   }
+//   return Comp => Comp;
+// };
+
+export default compose(
+  // TODO: conditional compose
+  withAutoFocus
+  // toClass,
+  // branch(props => props.withOnClickToEnd, withOnClickToEnd)
+)(InputWithRef);
