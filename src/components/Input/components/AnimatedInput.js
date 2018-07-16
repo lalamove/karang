@@ -1,14 +1,14 @@
 import React, { Component, Fragment, forwardRef } from 'react';
-import { func, string, object, oneOfType } from 'prop-types';
+import { bool, func, string, object, oneOfType } from 'prop-types';
 import styled from 'styled-components';
-import { compose } from 'recompose';
 
 import noop from 'utils/noop';
+import compose from 'utils/compose';
 import { red, orange, offWhite } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
 import withAutoFocus from 'hoc/withAutoFocus';
-// import withOnClickSelect from 'hoc/withOnClickSelect';
-// import withOnClickToEnd from 'hoc/withOnClickToEnd';
+import withOnClickSelect from 'hoc/withOnClickSelect';
+import withOnClickToEnd from 'hoc/withOnClickToEnd';
 
 import Placeholder from './Placeholder';
 import TextInput from './TextInput';
@@ -50,6 +50,9 @@ class Input extends Component {
     onFocus: func,
     onBlur: func,
     onChange: func,
+    withAutoFocus: bool,
+    withOnClickSelect: bool,
+    withOnClickToEnd: bool,
   };
 
   static defaultProps = {
@@ -65,6 +68,9 @@ class Input extends Component {
     onFocus: noop,
     onBlur: noop,
     onChange: noop,
+    withAutoFocus: false,
+    withOnClickSelect: false,
+    withOnClickToEnd: false,
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -120,6 +126,9 @@ class Input extends Component {
       onFocus,
       onBlur,
       onChange,
+      withAutoFocus: autofocus,
+      withOnClickSelect: onClickSelect,
+      withOnClickToEnd: onClickToEnd,
       ...remainProps
     } = this.props;
     return (
@@ -157,17 +166,13 @@ const InputWithRef = forwardRef((props, ref) => (
   <Input innerRef={ref} {...props} />
 ));
 
-// const WithOnClickToEndCondition = props => {
-//   if (props.withOnClickToEnd) {
-//     console.log('test');
-//     return withOnClickToEnd;
-//   }
-//   return Comp => Comp;
-// };
+const InputWithCondition = forwardRef((props, ref) => {
+  const hocs = [];
+  if (props.withAutoFocus) hocs.push(withAutoFocus);
+  if (props.withOnClickSelect) hocs.push(withOnClickSelect);
+  if (props.withOnClickToEnd) hocs.push(withOnClickToEnd);
+  const Comp = compose(...hocs)(InputWithRef);
+  return <Comp ref={ref} {...props} />;
+});
 
-export default compose(
-  // TODO: conditional compose
-  withAutoFocus
-  // toClass,
-  // branch(props => props.withOnClickToEnd, withOnClickToEnd)
-)(InputWithRef);
+export default InputWithCondition;
