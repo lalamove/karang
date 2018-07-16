@@ -1,82 +1,87 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 // import renderer from 'react-test-renderer';
-// import { shallow, mount, render } from 'enzyme';
-// import RatingBar from './RatingBar';
-//
-// // full test
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<RatingBar />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
-//
-// // isolated rating bar test
-// it('renders without crashing', () => {
-//   shallow(<RatingBar />);
-// });
-//
-// /*
-// it('renders welcome message', () => {
-//   const wrapper = shallow(<RatingBar />);
-//   const welcome = <h2>Welcome to React</h2>;
-//   // expect(wrapper.contains(welcome)).to.equal(true);
-//   expect(wrapper.contains(welcome)).toEqual(true);
-// }); */
-//
-// /*
-// describe('Rating Bar', () => {
-//   let ratingBar;
-//   let onClick;
-//
-//   beforeEach(() => {
-//     onClick = jest.fn();
-//     ratingBar = mount(<RatingBar onClick={onClick} />);
-//   });
-//
-//   it('RatingBar requires onClick prop', () => {
-//     expect(ratingBar.props().onClick).toBeDefined();
-//   });
-//
-//   it('RatingBar renders star', () => {
-//     const star = ratingBar.find('star').first();
-//     expect(star).toBeDefined();
-//   });
-//
-// });
-//
-// */
-//
-// describe('Default size, no value, no action ', () => {
-//   let ratingBar;
-//
-//   beforeEach(() => {
-//     ratingBar = shallow(<RatingBar />);
-//   });
-//
-//   it('RatingBar renders 5 stars', () => {
-//     expect(ratingBar.find('Star').length).toEqual(5);
-//   });
-//
-//   it('The value is 0', () => {
-//     expect(ratingBar.state('value')).toEqual(0);
-//   });
-//
-//   it('every star is empty', () => {
-//     const stars = ratingBar.state('stars');
-//     const emptyStar = { filling: 0, color: '#FFF7DF' };
-//     for (let i = 0; i < stars.length; i++) {
-//       expect(stars[i]).toEqual(emptyStar);
-//     }
-//   });
-//
-//   it('size is default', () => {
-//     const style = ratingBar.state('style');
-//     const targetStyle = { width: 20, height: 20 };
-//     expect(style).toEqual(targetStyle);
-//   });
-// });
-//
+import { shallow, mount, render } from 'enzyme';
+import RatingBar from './index';
+import { gold, offWhite } from 'styles/colors';
+
+// full test
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<RatingBar />, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+
+// isolated rating bar test
+it('renders without crashing', () => {
+  shallow(<RatingBar />);
+});
+
+describe('Rating Bar', () => {
+  let ratingBar;
+  let onClick;
+
+  beforeEach(() => {
+    onClick = jest.fn();
+    ratingBar = mount(<RatingBar onClick={onClick} />);
+  });
+
+  it('RatingBar requires onClick prop', () => {
+    expect(ratingBar.props().onClick).toBeDefined();
+  });
+
+  it('RatingBar renders star', () => {
+    const star = ratingBar.find('star').first();
+    expect(star).toBeDefined();
+  });
+
+  it('RatingBar renders 5 stars', () => {
+    expect(ratingBar.find('Star').length).toEqual(5);
+  });
+});
+
+describe('Default size, no value, no action ', () => {
+  let ratingBar;
+
+  beforeEach(() => {
+    ratingBar = shallow(<RatingBar />);
+    ratingBar.instance();
+  });
+
+  it('RatingBar renders 5 stars', () => {
+    expect(ratingBar.find('Star').length).toEqual(5);
+  });
+
+  it('The value is 0', () => {
+    expect(ratingBar.state('value')).toEqual(0);
+  });
+
+  it('The hoverValue is 0', () => {
+    expect(ratingBar.state('hoverValue')).toEqual(0);
+  });
+
+  it('every star is empty (to fail)', () => {
+    const starIcons = ratingBar.find('StarIcon');
+    expect(starIcons.length).toEqual(5);
+    // stars.reduce((retVal, star) => retVal = (star.find('StarIcon').color === offWhite) ? );
+    // const emptyStar = { filling: 0, color: '#FFF7DF' };
+    // for (let i = 0; i < stars.length; i++) {
+    //   expect(stars[i]).toEqual(emptyStar);
+    // }
+
+    // const filteredStars = starIcons.filter(icon => {
+    //   console.log(icon.props());
+    //   return icon.prop('color') === offWhite;
+    // });
+    // expect(filteredStars.length).toEqual(5);
+  });
+
+  // it('size is default', () => {
+  //   const style = ratingBar.state('style');
+  //   const targetStyle = { width: 20, height: 20 };
+  //   expect(style).toEqual(targetStyle);
+  // });
+});
 // describe('Default size, value = 3, no action ', () => {
 //   let ratingBar;
 //

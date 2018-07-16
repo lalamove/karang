@@ -20,7 +20,6 @@ class RatingBar extends PureComponent {
     size: small,
     value: 0,
     onClick: noop,
-    // hoverValue: 0,
   };
 
   constructor(props) {

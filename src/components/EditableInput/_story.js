@@ -7,9 +7,14 @@ storiesOf('EditableInput', module).add('Basic', () => (
     <EditableInput
       name="dummy"
       placeholder="Billing Email"
-      onValueSave={value => console.log(value)}
+      onSave={value => console.log(value)}
+      onCancel={value => console.log(value)}
       isEditable={false}
+      saveValue="saveValue"
+      editValue="editValue"
+      cancelValue="cancelValue"
       value="david.lam@lalamove.com"
+      style={{ width: '600px' }}
     />
     <br />
     <br />
@@ -17,7 +22,7 @@ storiesOf('EditableInput', module).add('Basic', () => (
     <EditableInput
       name="dummy2"
       placeholder="Billing Email"
-      onValueSave={() => false}
+      onSave={() => false}
     />
     <br />
   </div>

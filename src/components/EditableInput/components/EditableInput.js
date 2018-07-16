@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import noop from 'utils/noop';
 import Button from 'components/Button/index';
 import AnimatedInput from 'components/Input/components/AnimatedInput';
-import { orange } from 'styles/colors';
+import { offWhite } from 'styles/colors';
 
 const EditableInputContainer = styled.div`
-  display: inline-block;
-  position: relative;
-  min-width: 350px;
+  display: flex;
+  min-width: 400px;
+  border: 1px solid ${offWhite};
 `;
 
 const StyledAnimatedInput = styled(AnimatedInput)`
@@ -17,30 +17,34 @@ const StyledAnimatedInput = styled(AnimatedInput)`
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 96%;
-  padding-right: ${({ isEditable }) =>
-    isEditable ? 'calc(6% + 160px)' : 'calc(3% + 80px)'};
+  border: 0;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledButton = styled(Button)`
-  position: absolute;
-  width: 80px;
+  min-width: 80px;
+  width: auto;
   height: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 3%;
+  margin: 0 5px;
 `;
 
-const CancelButton = styled(StyledButton)`
-  right: calc(6% + 80px);
-  border: none;
-  color: ${orange};
-`;
+// const CancelButton = styled(StyledButton)`
+//   right: calc(6% + 80px);
+//   color: ${orange};
+// `;
 
 class EditableInput extends Component {
   static propTypes = {
     name: string.isRequired,
     value: string,
-    onValueSave: func,
+    saveValue: string,
+    editValue: string,
+    cancelValue: string,
     isEditable: bool,
     innerRef: func,
     type: string,
@@ -51,10 +55,14 @@ class EditableInput extends Component {
     onFocus: func,
     onBlur: func,
     onChange: func,
+    onSave: func,
+    onCancel: func,
   };
   static defaultProps = {
     value: '',
-    onValueSave: noop,
+    saveValue: 'Save',
+    editValue: 'Edit',
+    cancelValue: 'Cancel',
     isEditable: true,
     innerRef: noop,
     type: 'text',
@@ -65,6 +73,8 @@ class EditableInput extends Component {
     onFocus: noop,
     onBlur: noop,
     onChange: noop,
+    onSave: noop,
+    onCancel: noop,
   };
 
   constructor(props) {
@@ -88,7 +98,7 @@ class EditableInput extends Component {
   onStyledButtonClick = e => {
     if (this.state.isEditable) {
       // callback is executed before the input is switched to non-editable
-      this.props.onValueSave(this.state.value);
+      this.props.onSave(this.state.value);
       this.setState({
         isEditable: !this.state.isEditable,
         placeholder: '',
@@ -103,6 +113,7 @@ class EditableInput extends Component {
   };
 
   onCancelButtonClick = e => {
+    this.props.onCancel(this.state.lastSavedValue);
     this.setState({
       value: this.state.lastSavedValue,
       isEditable: !this.state.isEditable,
@@ -138,6 +149,9 @@ class EditableInput extends Component {
       type,
       name,
       value: defaultValue,
+      saveValue,
+      editValue,
+      cancelValue,
       placeholder, // placeholder prop is unused, but declared s.t. it doesn't fall under ...remainProps
       // in fact, we use 'placeholderState' variable instead of 'placeholder'
       autoComplete,
@@ -146,6 +160,8 @@ class EditableInput extends Component {
       onFocus,
       onBlur,
       onChange,
+      onCancel,
+      onSave,
       ...remainProps
     } = this.props;
     return (
@@ -158,7 +174,7 @@ class EditableInput extends Component {
             // innerRef doesn't work as expected:
             // 'innerRef' is first defined as a null function and only then gets redefined as a passed function.
             // Similarly, 'node' is first defined as null and only then takes the actual node value.
-            // TODO investigate.
+            // TODO investigate (check createRef).
           }}
           disabled={!isEditable}
           placeholder={placeholderState}
@@ -170,18 +186,22 @@ class EditableInput extends Component {
           onBlur={onBlur}
           onChange={this.onInputChange}
         />
-        <StyledButton
-          onClick={this.onStyledButtonClick}
-          variant={isEditable ? 'outline' : null}
-          innerRef={node => {
-            this.editButton = node;
-          }}
-        >
-          {isEditable ? 'Save' : 'Edit'}
-        </StyledButton>
-        {isEditable ? (
-          <CancelButton onClick={this.onCancelButtonClick}>Cancel</CancelButton>
-        ) : null}
+        <ButtonsContainer>
+          {isEditable ? (
+            <StyledButton onClick={this.onCancelButtonClick} variant="link">
+              {cancelValue}
+            </StyledButton>
+          ) : null}
+          <StyledButton
+            onClick={this.onStyledButtonClick}
+            variant={isEditable ? 'outline' : null}
+            innerRef={node => {
+              this.editButton = node;
+            }}
+          >
+            {isEditable ? saveValue : editValue}
+          </StyledButton>
+        </ButtonsContainer>
       </EditableInputContainer>
     );
   }
