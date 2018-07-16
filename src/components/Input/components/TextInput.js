@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { func, string, object } from 'prop-types';
+import { func, string, object, oneOfType } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
@@ -54,7 +54,7 @@ TextInput.propTypes = {
   name: string.isRequired, // eslint-disable-line react/no-typos
   value: string,
   autoComplete: string,
-  innerRef: object, // eslint-disable-line
+  innerRef: oneOfType([func, object]),
   onClick: func,
   onFocus: func,
   onBlur: func,

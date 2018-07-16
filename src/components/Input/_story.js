@@ -21,6 +21,7 @@ const ref = React.createRef();
 storiesOf('Input', module).add('Basic', () => (
   <div style={{ padding: '20px' }}>
     <InputWithAutoFocus
+      // ref={node => console.log('1', node)}
       ref={ref}
       type="text"
       placeholder="InputWithAutoFocus"
