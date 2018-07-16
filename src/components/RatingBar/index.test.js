@@ -60,21 +60,21 @@ describe('Default size, no value, no action ', () => {
     expect(ratingBar.state('hoverValue')).toEqual(0);
   });
 
-  it('every star is empty (to fail)', () => {
-    const starIcons = ratingBar.find('StarIcon');
-    expect(starIcons.length).toEqual(5);
-    // stars.reduce((retVal, star) => retVal = (star.find('StarIcon').color === offWhite) ? );
-    // const emptyStar = { filling: 0, color: '#FFF7DF' };
-    // for (let i = 0; i < stars.length; i++) {
-    //   expect(stars[i]).toEqual(emptyStar);
-    // }
+  // it('every star is empty (to fail)', () => {
+  //   const starIcons = ratingBar.find('StarIcon');
+  //   expect(starIcons.length).toEqual(5);
+  // stars.reduce((retVal, star) => retVal = (star.find('StarIcon').color === offWhite) ? );
+  // const emptyStar = { filling: 0, color: '#FFF7DF' };
+  // for (let i = 0; i < stars.length; i++) {
+  //   expect(stars[i]).toEqual(emptyStar);
+  // }
 
-    // const filteredStars = starIcons.filter(icon => {
-    //   console.log(icon.props());
-    //   return icon.prop('color') === offWhite;
-    // });
-    // expect(filteredStars.length).toEqual(5);
-  });
+  // const filteredStars = starIcons.filter(icon => {
+  //   console.log(icon.props());
+  //   return icon.prop('color') === offWhite;
+  // });
+  // expect(filteredStars.length).toEqual(5);
+  // });
 
   // it('size is default', () => {
   //   const style = ratingBar.state('style');
