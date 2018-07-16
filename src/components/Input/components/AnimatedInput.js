@@ -136,7 +136,7 @@ class Input extends Component {
         <Container focused={focused} error={error && error.length > 0}>
           <Placeholder
             focused={focused}
-            dirty={value.length > 0}
+            dirty={value && value.length > 0}
             error={error && error.length > 0}
             title={placeholder}
           />
