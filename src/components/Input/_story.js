@@ -6,7 +6,7 @@ import AnimatedInput from './index';
 
 // TODO: Clear it up & add withInfo
 storiesOf('Input', module).add('Basic', () => (
-  <div style={{ padding: '20px' }}>
+  <div>
     <AnimatedInput
       ref={node => console.log('node', node)}
       type="text"
@@ -38,6 +38,7 @@ storiesOf('Input', module).add('Basic', () => (
       name="inputWithOnClickSelect"
       value=""
       autoComplete="off"
+      error="Error Message"
       withOnClickSelect
     />
     <br />

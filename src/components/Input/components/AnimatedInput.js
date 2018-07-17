@@ -1,41 +1,16 @@
 import React, { Component, Fragment, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
-import styled from 'styled-components';
 
 import noop from 'utils/noop';
 import compose from 'utils/compose';
-import { red, orange, offWhite } from 'styles/colors';
-import { primaryFonts } from 'styles/fonts';
+import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withAutoFocus from 'hoc/withAutoFocus';
+import withErrorMessage from 'hoc/withErrorMessage';
 import withOnClickSelect from 'hoc/withOnClickSelect';
 import withOnClickToEnd from 'hoc/withOnClickToEnd';
 
-import Placeholder from './Placeholder';
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
-import ErrorMessage from './ErrorMessage';
-
-const Container = styled.div`
-  font-family: ${primaryFonts};
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 1;
-  border: 1px solid ${offWhite};
-  position: relative;
-  text-align: left;
-
-  ${({ focused }) =>
-    focused &&
-    `
-    border: 1px solid ${orange};
-    `};
-
-  ${({ error }) =>
-    error &&
-    `
-    border: 1px solid ${red};
-    `};
-`;
 
 class Input extends Component {
   static propTypes = {
@@ -79,7 +54,6 @@ class Input extends Component {
   }
 
   state = {
-    focused: false,
     value: this.props.value,
     peekPassword: false,
   };
@@ -89,12 +63,10 @@ class Input extends Component {
   };
 
   onFocus = e => {
-    this.setState({ focused: true });
     this.props.onFocus(e);
   };
 
   onBlur = e => {
-    this.setState({ focused: false });
     this.props.onBlur(e);
   };
 
@@ -113,7 +85,7 @@ class Input extends Component {
   };
 
   render() {
-    const { focused, value, peekPassword } = this.state;
+    const { value, peekPassword } = this.state;
     const {
       innerRef,
       type,
@@ -134,30 +106,21 @@ class Input extends Component {
 
     return (
       <Fragment>
-        <Container focused={focused} error={error && error.length > 0}>
-          <Placeholder
-            focused={focused}
-            dirty={value !== null && value.length > 0}
-            error={error !== null && error.length > 0}
-            title={placeholder}
-          />
-          <TextInput
-            ref={innerRef}
-            type={peekPassword ? 'text' : type}
-            name={name}
-            value={value}
-            autoComplete={autoComplete}
-            onClick={this.onClick}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onChange}
-            {...remainProps}
-          />
-          {type === 'password' && (
-            <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
-          )}
-        </Container>
-        {error && error.length > 0 && <ErrorMessage message={error} />}
+        <TextInput
+          ref={innerRef}
+          type={peekPassword ? 'text' : type}
+          name={name}
+          value={value}
+          autoComplete={autoComplete}
+          onClick={this.onClick}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onChange={this.onChange}
+          {...remainProps}
+        />
+        {type === 'password' && (
+          <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
+        )}
       </Fragment>
     );
   }
@@ -168,7 +131,7 @@ const InputWithRef = forwardRef((props, ref) => (
 ));
 
 const InputWithCondition = forwardRef((props, ref) => {
-  const hocs = [];
+  const hocs = [withErrorMessage, withAnimatedContainer];
   if (props.withAutoFocus) hocs.push(withAutoFocus);
   if (props.withOnClickSelect) hocs.push(withOnClickSelect);
   if (props.withOnClickToEnd) hocs.push(withOnClickToEnd);
