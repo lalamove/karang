@@ -1,54 +1,71 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import AnimatedInput from './index';
 
-// const ref = React.createRef();
+class Wrapper extends Component {
+  state = {
+    username: '',
+    password: '',
+    address: 'Sample Address',
+    companyName: '',
+    industry: '',
+  };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  render() {
+    return (
+      <Fragment>
+        <AnimatedInput
+          // ref={node => console.log('node', node)}
+          type="text"
+          placeholder="Username"
+          name="username"
+          value={this.state.username}
+          onChange={this.handleChange}
+          withAutoFocus
+        />
+        <br />
+        <AnimatedInput
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+        <br />
+        <AnimatedInput
+          type="text"
+          placeholder="Address"
+          name="address"
+          value={this.state.address}
+          onChange={this.handleChange}
+          error="Error Message"
+        />
+        <br />
+        <AnimatedInput
+          type="text"
+          placeholder="Company Name"
+          name="companyName"
+          value={this.state.companyName}
+          onChange={this.handleChange}
+          withOnClickSelect
+        />
+        <br />
+        <AnimatedInput
+          type="text"
+          placeholder="Industry"
+          name="industry"
+          value={this.state.industry}
+          onChange={this.handleChange}
+          withOnClickToEnd
+        />
+      </Fragment>
+    );
+  }
+}
 
 // TODO: Clear it up & add withInfo
-storiesOf('Input', module).add('Basic', () => (
-  <div>
-    <AnimatedInput
-      ref={node => console.log('node', node)}
-      type="text"
-      placeholder="Input"
-      name="username"
-      value=""
-      autoComplete="off"
-    />
-    <br />
-    <AnimatedInput
-      type="password"
-      placeholder="Password"
-      name="password"
-      value=""
-    />
-    <br />
-    <AnimatedInput
-      type="text"
-      placeholder="InputWithAutoFocus"
-      name="inputWithAutoFocus"
-      value=""
-      autoComplete="off"
-      withAutoFocus
-    />
-    <br />
-    <AnimatedInput
-      type="text"
-      placeholder="InputWithOnClickSelect"
-      name="inputWithOnClickSelect"
-      value=""
-      autoComplete="off"
-      error="Error Message"
-      withOnClickSelect
-    />
-    <br />
-    <AnimatedInput
-      type="text"
-      placeholder="InputWithOnClickToEnd"
-      name="inputWithOnClickToEnd"
-      value=""
-      autoComplete="off"
-      withOnClickToEnd
-    />
-  </div>
-));
+storiesOf('Input', module).add('Basic', () => <Wrapper />);

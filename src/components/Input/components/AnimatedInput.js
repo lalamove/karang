@@ -1,8 +1,8 @@
 import React, { Component, Fragment, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
+import { branch, compose, toClass } from 'recompose';
 
 import noop from 'utils/noop';
-import compose from 'utils/compose';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withAutoFocus from 'hoc/withAutoFocus';
 import withErrorMessage from 'hoc/withErrorMessage';
@@ -130,13 +130,13 @@ const InputWithRef = forwardRef((props, ref) => (
   <Input innerRef={ref} {...props} />
 ));
 
-const InputWithCondition = forwardRef((props, ref) => {
-  const hocs = [withErrorMessage, withAnimatedContainer];
-  if (props.withAutoFocus) hocs.push(withAutoFocus);
-  if (props.withOnClickSelect) hocs.push(withOnClickSelect);
-  if (props.withOnClickToEnd) hocs.push(withOnClickToEnd);
-  const Comp = compose(...hocs)(InputWithRef);
-  return <Comp ref={ref} {...props} />;
-});
-
-export default InputWithCondition;
+export default compose(
+  toClass,
+  branch(props => props.withOnClickToEnd, withOnClickToEnd),
+  toClass,
+  branch(props => props.withOnClickSelect, withOnClickSelect),
+  toClass,
+  branch(props => props.withAutoFocus, withAutoFocus),
+  withErrorMessage,
+  withAnimatedContainer
+)(InputWithRef);

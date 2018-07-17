@@ -15,16 +15,12 @@ function withOnClickSelect(WrappedComponent) {
     };
 
     onClick = e => {
-      if (this.input) {
-        this.input.setSelectionRange(0, this.input.value.length);
-      }
+      e.target.select();
       this.props.onClick(e);
     };
 
     getReference = node => {
       const { forwardedRef } = this.props;
-      this.input = node;
-
       if (forwardedRef) {
         if (typeof forwardedRef === 'function') {
           forwardedRef(node);
