@@ -4,20 +4,46 @@ import styled from 'styled-components';
 import noop from 'utils/noop';
 import Button from 'components/Button/index';
 import AnimatedInput from 'components/Input/components/AnimatedInput';
-import { offWhite } from 'styles/colors';
+import { offWhite, orange } from 'styles/colors';
 
 const EditableInputContainer = styled.div`
   display: flex;
-  min-width: 400px;
+  width: 400px;
   border: 1px solid ${offWhite};
+  &:focus-within {
+    border-color: ${orange};
+  }
 `;
 
 const StyledAnimatedInput = styled(AnimatedInput)`
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 96%;
-  border: 0;
+  width: 100%;
+  border-color: transparent;
+  &:disabled {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+`;
+
+const NoneditableDisplay = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 22px;
+  margin: 14px 9px;
+  padding: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
+// text-overflow: ellipsis doesn't work with flexbox
+const Overflow = styled.div`
+  display: block;
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
 `;
 
 const ButtonsContainer = styled.div`
@@ -166,26 +192,31 @@ class EditableInput extends Component {
     } = this.props;
     return (
       <EditableInputContainer {...remainProps}>
-        <StyledAnimatedInput
-          isEditable={isEditable}
-          innerRef={node => {
-            this.input = node;
-            if (innerRef !== null && node !== null) innerRef(node);
-            // innerRef doesn't work as expected:
-            // 'innerRef' is first defined as a null function and only then gets redefined as a passed function.
-            // Similarly, 'node' is first defined as null and only then takes the actual node value.
-            // TODO investigate (check createRef).
-          }}
-          disabled={!isEditable}
-          placeholder={placeholderState}
-          name={name}
-          value={value}
-          autoComplete={autoComplete}
-          onClick={onClick}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onChange={this.onInputChange}
-        />
+        {isEditable ? (
+          <StyledAnimatedInput
+            isEditable={isEditable}
+            innerRef={node => {
+              this.input = node;
+              if (innerRef !== null && node !== null) innerRef(node);
+              // innerRef doesn't work as expected:
+              // 'innerRef' is first defined as a null function and only then gets redefined as a passed function.
+              // Similarly, 'node' is first defined as null and only then takes the actual node value.
+              // TODO investigate (check createRef).
+            }}
+            placeholder={placeholderState}
+            name={name}
+            value={value}
+            autoComplete={autoComplete}
+            onClick={onClick}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onChange={this.onInputChange}
+          />
+        ) : (
+          <NoneditableDisplay>
+            <Overflow>{this.state.lastSavedValue}</Overflow>
+          </NoneditableDisplay>
+        )}
         <ButtonsContainer>
           {isEditable ? (
             <StyledButton onClick={this.onCancelButtonClick} variant="link">

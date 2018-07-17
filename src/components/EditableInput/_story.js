@@ -13,7 +13,7 @@ storiesOf('EditableInput', module).add('Basic', () => (
       saveValue="saveValue"
       editValue="editValue"
       cancelValue="cancelValue"
-      value="david.lam@lalamove.com"
+      value="david.lam@lalamove.comstyle={{ width: '600px' }}style={{ width: '600px' }}style={{ width: '600px' }}"
       style={{ width: '600px' }}
     />
     <br />
