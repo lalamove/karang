@@ -42,6 +42,9 @@ function withOnClickToEnd(WrappedComponent) {
     }
   }
 
+  const name = Component.displayName || Component.name;
+  forwardRef.displayName = `withOnClickToEnd(${name})`;
+
   return forwardRef((props, ref) => (
     <WithOnClickToEnd {...props} forwardedRef={ref} />
   ));

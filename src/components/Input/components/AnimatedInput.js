@@ -2,9 +2,7 @@ import React, { Component, Fragment, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
 import { branch, compose, toClass } from 'recompose';
 
-import noop from 'utils/noop';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
-import withAutoFocus from 'hoc/withAutoFocus';
 import withErrorMessage from 'hoc/withErrorMessage';
 import withOnClickSelect from 'hoc/withOnClickSelect';
 import withOnClickToEnd from 'hoc/withOnClickToEnd';
@@ -21,13 +19,8 @@ class Input extends Component {
     value: string,
     error: string,
     autoComplete: string,
-    onClick: func,
-    onFocus: func,
-    onBlur: func,
-    onChange: func,
-    withAutoFocus: bool,
-    withOnClickSelect: bool,
-    withOnClickToEnd: bool,
+    onClickSelect: bool,
+    onClickToEnd: bool,
   };
 
   static defaultProps = {
@@ -39,43 +32,12 @@ class Input extends Component {
     // autocomplete=off is ignored on non-login INPUT elements
     // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
     autoComplete: 'new-password',
-    onClick: noop,
-    onFocus: noop,
-    onBlur: noop,
-    onChange: noop,
-    withAutoFocus: false,
-    withOnClickSelect: false,
-    withOnClickToEnd: false,
+    onClickSelect: false,
+    onClickToEnd: false,
   };
-
-  static getDerivedStateFromProps(props, state) {
-    const { value } = props;
-    return { ...state, value };
-  }
 
   state = {
-    value: this.props.value,
     peekPassword: false,
-  };
-
-  onClick = e => {
-    this.props.onClick(e);
-  };
-
-  onFocus = e => {
-    this.props.onFocus(e);
-  };
-
-  onBlur = e => {
-    this.props.onBlur(e);
-  };
-
-  onChange = e => {
-    const {
-      target: { value },
-    } = e;
-    this.setState({ value });
-    this.props.onChange(e);
   };
 
   changePeekStatus = () => {
@@ -85,7 +47,7 @@ class Input extends Component {
   };
 
   render() {
-    const { value, peekPassword } = this.state;
+    const { peekPassword } = this.state;
     const {
       innerRef,
       type,
@@ -93,30 +55,21 @@ class Input extends Component {
       placeholder,
       autoComplete,
       error,
-      value: defaultValue,
-      onClick,
-      onFocus,
-      onBlur,
-      onChange,
-      withAutoFocus: autofocus,
-      withOnClickSelect: onClickSelect,
-      withOnClickToEnd: onClickToEnd,
+      value,
+      onClickSelect,
+      onClickToEnd,
       ...remainProps
     } = this.props;
 
     return (
       <Fragment>
         <TextInput
-          ref={innerRef}
           type={peekPassword ? 'text' : type}
           name={name}
           value={value}
           autoComplete={autoComplete}
-          onClick={this.onClick}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onChange={this.onChange}
           {...remainProps}
+          ref={innerRef}
         />
         {type === 'password' && (
           <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
@@ -126,17 +79,16 @@ class Input extends Component {
   }
 }
 
-const InputWithRef = forwardRef((props, ref) => (
-  <Input innerRef={ref} {...props} />
-));
-
-export default compose(
+const EnhancedComp = compose(
+  branch(props => props.onClickToEnd, withOnClickToEnd),
   toClass,
-  branch(props => props.withOnClickToEnd, withOnClickToEnd),
-  toClass,
-  branch(props => props.withOnClickSelect, withOnClickSelect),
-  toClass,
-  branch(props => props.withAutoFocus, withAutoFocus),
+  branch(props => props.onClickSelect, withOnClickSelect),
   withErrorMessage,
   withAnimatedContainer
-)(InputWithRef);
+)(Input);
+
+const EnhancedCompWithRef = forwardRef((props, ref) => (
+  <EnhancedComp {...props} innerRef={ref} />
+));
+
+export default EnhancedCompWithRef;

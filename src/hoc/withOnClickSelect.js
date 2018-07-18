@@ -42,6 +42,9 @@ function withOnClickSelect(WrappedComponent) {
     }
   }
 
+  const name = Component.displayName || Component.name;
+  forwardRef.displayName = `withOnClickSelect(${name})`;
+
   return forwardRef((props, ref) => (
     <WithOnClickSelect {...props} forwardedRef={ref} />
   ));

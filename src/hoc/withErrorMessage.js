@@ -3,7 +3,7 @@ import { oneOfType, func, object, string } from 'prop-types';
 import styled from 'styled-components';
 
 import { red } from 'styles/colors';
-import { primaryFonts } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 import ErrorIcon from 'icons/ErrorIcon';
 
 const Container = styled.div`
@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const Text = styled.span`
   color: ${red};
-  font-size: 12px;
+  font-size: ${fontSize.small};
 `;
 
 function withErrorMessage(WrappedComponent) {

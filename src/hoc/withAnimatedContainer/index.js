@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import { oneOfType, func, object, string } from 'prop-types';
+import { bool, oneOfType, func, object, string } from 'prop-types';
 import styled from 'styled-components';
 import { red, orange, offWhite } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
@@ -35,6 +35,7 @@ function withAnimatedContainer(WrappedComponent) {
       forwardedRef: oneOfType([func, object]),
       value: string,
       placeholder: string,
+      dirty: bool,
       error: string,
       onFocus: func,
       onBlur: func,
@@ -44,6 +45,7 @@ function withAnimatedContainer(WrappedComponent) {
       forwardedRef: null,
       value: '',
       placeholder: '',
+      dirty: null,
       error: null,
       onFocus: noop,
       onBlur: noop,
@@ -76,6 +78,7 @@ function withAnimatedContainer(WrappedComponent) {
 
     render() {
       const {
+        dirty,
         error,
         forwardedRef,
         placeholder,
@@ -89,7 +92,7 @@ function withAnimatedContainer(WrappedComponent) {
         <Container focused={focused} error={error !== null && error.length > 0}>
           <Placeholder
             focused={focused}
-            dirty={value !== null && value.length > 0}
+            dirty={dirty || (value !== null && value.length > 0)}
             error={error !== null && error.length > 0}
             title={placeholder}
           />

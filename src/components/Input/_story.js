@@ -19,13 +19,12 @@ class Wrapper extends Component {
     return (
       <Fragment>
         <AnimatedInput
-          // ref={node => console.log('node', node)}
           type="text"
           placeholder="Username"
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
-          withAutoFocus
+          autoFocus
         />
         <br />
         <AnimatedInput
@@ -51,7 +50,7 @@ class Wrapper extends Component {
           name="companyName"
           value={this.state.companyName}
           onChange={this.handleChange}
-          withOnClickSelect
+          onClickSelect
         />
         <br />
         <AnimatedInput
@@ -60,12 +59,11 @@ class Wrapper extends Component {
           name="industry"
           value={this.state.industry}
           onChange={this.handleChange}
-          withOnClickToEnd
+          onClickToEnd
         />
       </Fragment>
     );
   }
 }
 
-// TODO: Clear it up & add withInfo
 storiesOf('Input', module).add('Basic', () => <Wrapper />);

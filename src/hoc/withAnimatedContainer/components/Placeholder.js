@@ -3,12 +3,12 @@ import { bool, string } from 'prop-types';
 import styled from 'styled-components';
 
 import { red, orange, silver, white } from 'styles/colors';
-import { primaryFonts } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 
 const Container = styled.div`
-  font-family: ${primaryFonts};
   color: ${silver};
-  font-size: 14px;
+  font-size: ${fontSize.regular};
+  font-family: ${primaryFonts};
   left: 8px;
   top: 16px;
   pointer-events: none;
@@ -31,7 +31,7 @@ const Container = styled.div`
     (focused || dirty || error) &&
     `
     background-color: ${white};
-    font-size: 10px;
+    font-size: ${fontSize.micro};
     left: 8px;
     top: -6px;
     padding: 0 4px 0 4px;
@@ -47,7 +47,7 @@ const Placeholder = ({ title, focused, dirty, error }) => (
 Placeholder.propTypes = {
   title: string,
   focused: bool.isRequired, // eslint-disable-line react/no-typos
-  dirty: bool, // eslint-disable-line react/no-typos
+  dirty: bool,
   error: bool,
 };
 
