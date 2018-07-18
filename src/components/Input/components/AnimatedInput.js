@@ -1,50 +1,26 @@
-import React, { PureComponent, Fragment, forwardRef } from 'react';
-import { func, string } from 'prop-types';
-import styled from 'styled-components';
+import React, { Component, Fragment, forwardRef } from 'react';
+import { bool, func, string, object, oneOfType } from 'prop-types';
+import { branch, compose, toClass } from 'recompose';
 
-import noop from 'utils/noop';
-import { red, orange, offWhite } from 'styles/colors';
-import { primaryFonts } from 'styles/fonts';
-import Placeholder from './Placeholder';
+import withAnimatedContainer from 'hoc/withAnimatedContainer';
+import withErrorMessage from 'hoc/withErrorMessage';
+import withSelectAll from 'hoc/withSelectAll';
+import withCursorEnd from 'hoc/withCursorEnd';
+
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
-import ErrorMessage from './ErrorMessage';
 
-const Container = styled.div`
-  font-family: ${primaryFonts};
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 1;
-  border: 1px solid ${offWhite};
-  position: relative;
-  text-align: left;
-
-  ${({ focused }) =>
-    focused &&
-    `
-    border: 1px solid ${orange};
-    `};
-
-  ${({ error }) =>
-    error &&
-    `
-    border: 1px solid ${red};
-    `};
-`;
-
-class Input extends PureComponent {
+class Input extends Component {
   static propTypes = {
-    innerRef: func,
+    innerRef: oneOfType([func, object]),
     type: string,
     name: string.isRequired,
     placeholder: string,
     value: string,
     error: string,
     autoComplete: string,
-    onClick: func,
-    onFocus: func,
-    onBlur: func,
-    onChange: func,
+    selectAll: bool,
+    cursorEnd: bool,
   };
 
   static defaultProps = {
@@ -56,43 +32,12 @@ class Input extends PureComponent {
     // autocomplete=off is ignored on non-login INPUT elements
     // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
     autoComplete: 'new-password',
-    onClick: noop,
-    onFocus: noop,
-    onBlur: noop,
-    onChange: noop,
+    selectAll: false,
+    cursorEnd: false,
   };
-
-  static getDerivedStateFromProps(props, state) {
-    const { value } = props;
-    return { ...state, value };
-  }
 
   state = {
-    focused: false,
-    value: this.props.value,
     peekPassword: false,
-  };
-
-  onClick = e => {
-    this.props.onClick(e);
-  };
-
-  onFocus = e => {
-    this.setState({ focused: true });
-    this.props.onFocus(e);
-  };
-
-  onBlur = e => {
-    this.setState({ focused: false });
-    this.props.onBlur(e);
-  };
-
-  onChange = e => {
-    const {
-      target: { value },
-    } = e;
-    this.setState({ value });
-    this.props.onChange(e);
   };
 
   changePeekStatus = () => {
@@ -102,7 +47,7 @@ class Input extends PureComponent {
   };
 
   render() {
-    const { focused, value, peekPassword } = this.state;
+    const { peekPassword } = this.state;
     const {
       innerRef,
       type,
@@ -110,42 +55,40 @@ class Input extends PureComponent {
       placeholder,
       autoComplete,
       error,
-      value: defaultValue,
-      onClick,
-      onFocus,
-      onBlur,
-      onChange,
+      value,
+      selectAll,
+      cursorEnd,
       ...remainProps
     } = this.props;
+
     return (
       <Fragment>
-        <Container focused={focused} error={error && error.length > 0}>
-          <Placeholder
-            focused={focused}
-            dirty={value.length > 0}
-            error={error && error.length > 0}
-            title={placeholder}
-          />
-          <TextInput
-            ref={innerRef}
-            type={peekPassword ? 'text' : type}
-            name={name}
-            value={value}
-            autoComplete={autoComplete}
-            onClick={this.onClick}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            onChange={this.onChange}
-            {...remainProps}
-          />
-          {type === 'password' && (
-            <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
-          )}
-        </Container>
-        {error && error.length > 0 && <ErrorMessage message={error} />}
+        <TextInput
+          type={peekPassword ? 'text' : type}
+          name={name}
+          value={value}
+          autoComplete={autoComplete}
+          {...remainProps}
+          ref={innerRef}
+        />
+        {type === 'password' && (
+          <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
+        )}
       </Fragment>
     );
   }
 }
 
-export default forwardRef((props, ref) => <Input innerRef={ref} {...props} />);
+const EnhancedComp = compose(
+  branch(props => props.selectAll, withSelectAll),
+  toClass,
+  branch(props => props.cursorEnd, withCursorEnd),
+  withErrorMessage,
+  withAnimatedContainer
+)(Input);
+
+const EnhancedCompWithRef = forwardRef((props, ref) => (
+  <EnhancedComp {...props} innerRef={ref} />
+));
+
+export default EnhancedCompWithRef;

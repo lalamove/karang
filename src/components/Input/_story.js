@@ -1,61 +1,69 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import AnimatedInput from './index';
-import withAutoFocus from '../../hoc/withAutoFocus';
-import withOnClickSelect from '../../hoc/withOnClickSelect';
-import withOnClickToEnd from '../../hoc/withOnClickToEnd';
 
-const InputWithAutoFocus = withAutoFocus(AnimatedInput, 'innerRef');
-const InputWithOnClickSelect = withOnClickSelect(AnimatedInput, 'innerRef');
-const InputWithOnClickToEnd = withOnClickToEnd(AnimatedInput, 'innerRef');
+class Wrapper extends Component {
+  state = {
+    username: '',
+    password: '',
+    address: 'Sample Address',
+    companyName: '',
+    industry: '',
+  };
 
-import styled from 'styled-components';
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-const SCInput = styled(AnimatedInput)`
-  background: red;
-`;
+  render() {
+    return (
+      <Fragment>
+        <AnimatedInput
+          type="text"
+          placeholder="Username"
+          name="username"
+          value={this.state.username}
+          onChange={this.handleChange}
+          autoFocus
+        />
+        <br />
+        <AnimatedInput
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+        <br />
+        <AnimatedInput
+          type="text"
+          placeholder="Address"
+          name="address"
+          value={this.state.address}
+          onChange={this.handleChange}
+          error="Error Message"
+        />
+        <br />
+        <AnimatedInput
+          type="text"
+          placeholder="Company Name"
+          name="companyName"
+          value={this.state.companyName}
+          onChange={this.handleChange}
+          selectAll
+        />
+        <br />
+        <AnimatedInput
+          type="text"
+          placeholder="Industry"
+          name="industry"
+          value={this.state.industry}
+          onChange={this.handleChange}
+          cursorEnd
+        />
+      </Fragment>
+    );
+  }
+}
 
-// TODO: Clear it up & add withInfo
-storiesOf('Input', module).add('Basic', () => (
-  <div style={{ padding: '20px' }}>
-    <SCInput
-      innerRef={node => console.log('1', node)}
-      type="text"
-      placeholder="Input"
-      name="username"
-      value=""
-      autoComplete="off"
-    />
-    <br />
-    <AnimatedInput
-      type="password"
-      placeholder="Password"
-      name="password"
-      value=""
-    />
-    <br />
-    <InputWithAutoFocus
-      type="text"
-      placeholder="InputWithAutoFocus"
-      name="inputWithAutoFocus"
-      value=""
-      autoComplete="off"
-    />
-    <br />
-    <InputWithOnClickSelect
-      type="text"
-      placeholder="InputWithOnClickSelect"
-      name="inputWithOnClickSelect"
-      value=""
-      autoComplete="off"
-    />
-    <br />
-    <InputWithOnClickToEnd
-      type="text"
-      placeholder="InputWithOnClickToEnd"
-      name="inputWithOnClickToEnd"
-      value=""
-      autoComplete="off"
-    />
-  </div>
-));
+storiesOf('Input', module).add('Basic', () => <Wrapper />);
