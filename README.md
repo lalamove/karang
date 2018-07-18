@@ -8,10 +8,11 @@ React components that implement [Lalamove Design](https://lalamove.com), for all
 ## Install
 Before installing this library, please make sure you have the following installed in your own repo:
 ```json
-"peerDependencies": {
+{
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "recompose": "^0.27.1",
     "styled-components": "^3.3.3"
 }
 ```
@@ -73,7 +74,7 @@ const MyComponent = () => (
 export default MyComponent;
 ```
 
-## Documentation / Storybook
+## Storybook
 Clone this repo, and run:
 ```bash
 ## install dependencies
@@ -174,15 +175,14 @@ Install `Styled Components` plugin in IDE `Preferences | Plugins`. [(Installatio
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
 ## Todo
-* **Fix all `eslint` errors!**
 * Avoid `injectGlobal` in `utils/fonts`, and allow users to config fonts in components level
 * Code cleanup for existing components
 * Increase unit test coverage
-* Theme support?
+* Theme support
 * Please help to add more here...
 
 ## Support
-* For any questions, please feel free to [open an issue here](https://git.easygroup.co/andrew.mok/lalamove-ui/issues).
+* For any questions / bugs report, please feel free to [open an issue here](https://git.easygroup.co/andrew.mok/lalamove-ui/issues).
 
 ## License
 * [Copyright (c) 2018 Lalamove. All rights reserved.](./LICENSE.md)
