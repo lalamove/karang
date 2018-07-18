@@ -34,8 +34,8 @@ class Wrapper extends Component {
             },
           ]}
           selectedItem={this.state.selectedItem}
-          onClick={e => {
-            console.log('clicked');
+          onFocus={e => {
+            console.log('focused');
           }}
           onChange={this.handleOnChange}
           dirty={this.state.dirty}
@@ -56,8 +56,8 @@ class Wrapper extends Component {
             },
           ]}
           selectedItem={this.state.selectedItem}
-          onClick={e => {
-            console.log('clicked');
+          onFocus={e => {
+            console.log('focused');
           }}
           onChange={this.handleOnChange}
           error="Error Message"

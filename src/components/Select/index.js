@@ -67,13 +67,13 @@ class Select extends Component {
       value: PropTypes.string,
     }),
     onChange: PropTypes.func.isRequired,
-    onClick: PropTypes.func,
+    onFocus: PropTypes.func,
     onBlur: PropTypes.func,
   };
 
   static defaultProps = {
     id: null,
-    onClick: noop,
+    onFocus: noop,
     onBlur: noop,
     selectedItem: null,
   };
@@ -83,7 +83,7 @@ class Select extends Component {
       itemList,
       selectedItem,
       onChange,
-      onClick,
+      onFocus,
       onBlur,
       id,
     } = this.props;
@@ -110,7 +110,7 @@ class Select extends Component {
             >
               <Button
                 {...getToggleButtonProps({
-                  onClick,
+                  onFocus,
                   onBlur,
                 })}
               >
