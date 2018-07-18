@@ -84,7 +84,10 @@ class Select extends Component {
 
     return (
       <Fragment>
-        <Downshift onChange={onChange} itemToString={item => item.value}>
+        <Downshift
+          onChange={onChange}
+          itemToString={item => (item !== null ? item.value : null)}
+        >
           {({
             isOpen,
             getToggleButtonProps,
