@@ -60,6 +60,7 @@ const RightSpan = styled.span`
 
 class Select extends Component {
   static propTypes = {
+    id: PropTypes.string,
     itemList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     selectedItem: PropTypes.shape({
       id: PropTypes.string,
@@ -71,19 +72,28 @@ class Select extends Component {
   };
 
   static defaultProps = {
+    id: null,
     onClick: noop,
     onBlur: noop,
     selectedItem: null,
   };
 
   render() {
-    const { itemList, selectedItem, onChange, onClick, onBlur } = this.props;
+    const {
+      itemList,
+      selectedItem,
+      onChange,
+      onClick,
+      onBlur,
+      id,
+    } = this.props;
 
     return (
       <Fragment>
         <Downshift
           onChange={onChange}
           itemToString={item => (item !== null ? item.value : null)}
+          id={id}
         >
           {({
             isOpen,

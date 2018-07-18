@@ -9,7 +9,7 @@ class Wrapper extends Component {
     dirty: false,
   };
 
-  handleOnChange = selectedItem => {
+  handleOnChange = (selectedItem) => {
     this.setState({
       selectedItem,
       dirty: true,
@@ -20,6 +20,7 @@ class Wrapper extends Component {
     return (
       <div>
         <Select
+          id="customizedID"
           placeholder="What is your vehicle type?"
           name="vehicleType"
           itemList={[
