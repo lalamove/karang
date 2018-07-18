@@ -1,4 +1,4 @@
-import React, { Component, Fragment, forwardRef } from 'react';
+import React, { Component, forwardRef } from 'react';
 import { oneOfType, func, object, string } from 'prop-types';
 import styled from 'styled-components';
 
@@ -7,6 +7,12 @@ import { primaryFonts, fontSize } from 'styles/fonts';
 import ErrorIcon from 'icons/ErrorIcon';
 
 const Container = styled.div`
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+`;
+
+const ErrorMessageContainer = styled.div`
   font-family: ${primaryFonts};
   display: flex;
   justify-content: space-between;
@@ -45,7 +51,7 @@ function withErrorMessage(WrappedComponent) {
     render() {
       const { forwardedRef, error, ...remainProps } = this.props;
       return (
-        <Fragment>
+        <Container>
           <WrappedComponent
             error={error}
             {...remainProps}
@@ -53,12 +59,12 @@ function withErrorMessage(WrappedComponent) {
           />
           {error &&
             error.length > 0 && (
-              <Container>
+              <ErrorMessageContainer>
                 <Text>{error}</Text>
                 <ErrorIcon color={red} size={13} />
-              </Container>
+              </ErrorMessageContainer>
             )}
-        </Fragment>
+        </Container>
       );
     }
   }
