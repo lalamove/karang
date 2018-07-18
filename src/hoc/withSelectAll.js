@@ -2,8 +2,8 @@ import React, { Component, forwardRef } from 'react';
 import { oneOfType, func, object } from 'prop-types';
 import noop from 'utils/noop';
 
-function withOnClickToEnd(WrappedComponent) {
-  class WithOnClickToEnd extends Component {
+function withSelectAll(WrappedComponent) {
+  class WithSelectAll extends Component {
     static propTypes = {
       forwardedRef: oneOfType([func, object]),
       onClick: func,
@@ -15,7 +15,7 @@ function withOnClickToEnd(WrappedComponent) {
     };
 
     onClick = e => {
-      e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+      e.target.select();
       this.props.onClick(e);
     };
 
@@ -43,11 +43,11 @@ function withOnClickToEnd(WrappedComponent) {
   }
 
   const name = Component.displayName || Component.name;
-  forwardRef.displayName = `withOnClickToEnd(${name})`;
+  forwardRef.displayName = `withSelectAll(${name})`;
 
   return forwardRef((props, ref) => (
-    <WithOnClickToEnd {...props} forwardedRef={ref} />
+    <WithSelectAll {...props} forwardedRef={ref} />
   ));
 }
 
-export default withOnClickToEnd;
+export default withSelectAll;

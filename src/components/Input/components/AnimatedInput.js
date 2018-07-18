@@ -4,8 +4,8 @@ import { branch, compose, toClass } from 'recompose';
 
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
-import withOnClickSelect from 'hoc/withOnClickSelect';
-import withOnClickToEnd from 'hoc/withOnClickToEnd';
+import withSelectAll from 'hoc/withSelectAll';
+import withCursorEnd from 'hoc/withCursorEnd';
 
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
@@ -19,8 +19,8 @@ class Input extends Component {
     value: string,
     error: string,
     autoComplete: string,
-    onClickSelect: bool,
-    onClickToEnd: bool,
+    selectAll: bool,
+    cursorEnd: bool,
   };
 
   static defaultProps = {
@@ -32,8 +32,8 @@ class Input extends Component {
     // autocomplete=off is ignored on non-login INPUT elements
     // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
     autoComplete: 'new-password',
-    onClickSelect: false,
-    onClickToEnd: false,
+    selectAll: false,
+    cursorEnd: false,
   };
 
   state = {
@@ -56,8 +56,8 @@ class Input extends Component {
       autoComplete,
       error,
       value,
-      onClickSelect,
-      onClickToEnd,
+      selectAll,
+      cursorEnd,
       ...remainProps
     } = this.props;
 
@@ -80,9 +80,9 @@ class Input extends Component {
 }
 
 const EnhancedComp = compose(
-  branch(props => props.onClickToEnd, withOnClickToEnd),
+  branch(props => props.selectAll, withSelectAll),
   toClass,
-  branch(props => props.onClickSelect, withOnClickSelect),
+  branch(props => props.cursorEnd, withCursorEnd),
   withErrorMessage,
   withAnimatedContainer
 )(Input);

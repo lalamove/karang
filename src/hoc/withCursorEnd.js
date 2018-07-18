@@ -2,8 +2,8 @@ import React, { Component, forwardRef } from 'react';
 import { oneOfType, func, object } from 'prop-types';
 import noop from 'utils/noop';
 
-function withOnClickSelect(WrappedComponent) {
-  class WithOnClickSelect extends Component {
+function withCursorEnd(WrappedComponent) {
+  class WithCursorEnd extends Component {
     static propTypes = {
       forwardedRef: oneOfType([func, object]),
       onClick: func,
@@ -15,7 +15,7 @@ function withOnClickSelect(WrappedComponent) {
     };
 
     onClick = e => {
-      e.target.select();
+      e.target.setSelectionRange(e.target.value.length, e.target.value.length);
       this.props.onClick(e);
     };
 
@@ -43,11 +43,11 @@ function withOnClickSelect(WrappedComponent) {
   }
 
   const name = Component.displayName || Component.name;
-  forwardRef.displayName = `withOnClickSelect(${name})`;
+  forwardRef.displayName = `withCursorEnd(${name})`;
 
   return forwardRef((props, ref) => (
-    <WithOnClickSelect {...props} forwardedRef={ref} />
+    <WithCursorEnd {...props} forwardedRef={ref} />
   ));
 }
 
-export default withOnClickSelect;
+export default withCursorEnd;

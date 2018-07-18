@@ -50,7 +50,7 @@ class Wrapper extends Component {
           name="companyName"
           value={this.state.companyName}
           onChange={this.handleChange}
-          onClickSelect
+          selectAll
         />
         <br />
         <AnimatedInput
@@ -59,7 +59,7 @@ class Wrapper extends Component {
           name="industry"
           value={this.state.industry}
           onChange={this.handleChange}
-          onClickToEnd
+          cursorEnd
         />
       </Fragment>
     );
