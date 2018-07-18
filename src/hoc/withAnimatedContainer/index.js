@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import { bool, oneOfType, func, object, string } from 'prop-types';
+import { bool, oneOfType, func, number, object, string } from 'prop-types';
 import styled from 'styled-components';
 import { red, orange, offWhite } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
@@ -15,6 +15,12 @@ const Container = styled.div`
   border: 1px solid ${offWhite};
   position: relative;
   text-align: left;
+
+  ${({ width }) =>
+    width &&
+    `
+    width: ${width}px;
+    `};
 
   ${({ focused }) =>
     focused &&
@@ -34,6 +40,7 @@ function withAnimatedContainer(WrappedComponent) {
     static propTypes = {
       forwardedRef: oneOfType([func, object]),
       value: string,
+      width: number,
       placeholder: string,
       dirty: bool,
       error: string,
@@ -44,6 +51,7 @@ function withAnimatedContainer(WrappedComponent) {
     static defaultProps = {
       forwardedRef: null,
       value: '',
+      width: null,
       placeholder: '',
       dirty: null,
       error: null,
@@ -83,13 +91,18 @@ function withAnimatedContainer(WrappedComponent) {
         forwardedRef,
         placeholder,
         value,
+        width,
         onFocus,
         onBlur,
         ...remainProps
       } = this.props;
       const { focused } = this.state;
       return (
-        <Container focused={focused} error={error !== null && error.length > 0}>
+        <Container
+          focused={focused}
+          error={error !== null && error.length > 0}
+          width={width}
+        >
           <Placeholder
             focused={focused}
             dirty={dirty || (value !== null && value.length > 0)}

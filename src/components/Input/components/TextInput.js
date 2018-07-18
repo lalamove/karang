@@ -12,7 +12,7 @@ const InputField = styled.input`
   font-size: ${fontSize.regular};
   font-family: ${primaryFonts};
   line-height: 20px;
-  margin: 14px 8px;
+  padding: 14px 8px;
   width: 100%;
   resize: none;
   outline: none;

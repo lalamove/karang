@@ -24,6 +24,7 @@ class Wrapper extends Component {
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
+          width={150}
           autoFocus
         />
         <br />
