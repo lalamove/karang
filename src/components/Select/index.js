@@ -61,13 +61,10 @@ const RightSpan = styled.span`
 class Select extends Component {
   static propTypes = {
     itemList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    selectedItem: PropTypes.oneOf([
-      null,
-      PropTypes.shape({
-        id: PropTypes.string,
-        value: PropTypes.string,
-      }),
-    ]),
+    selectedItem: PropTypes.shape({
+      id: PropTypes.string,
+      value: PropTypes.string,
+    }),
     onChange: PropTypes.func.isRequired,
     onClick: PropTypes.func,
     onBlur: PropTypes.func,
