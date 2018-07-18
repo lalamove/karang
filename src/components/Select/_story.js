@@ -6,10 +6,14 @@ import Select from './index';
 class Wrapper extends Component {
   state = {
     selectedItem: null,
+    dirty: false,
   };
 
   handleOnChange = selectedItem => {
-    this.setState({ selectedItem });
+    this.setState({
+      selectedItem,
+      dirty: true,
+    });
   };
 
   render() {
@@ -33,6 +37,7 @@ class Wrapper extends Component {
             console.log('clicked');
           }}
           onChange={this.handleOnChange}
+          dirty={this.state.dirty}
         />
 
         <br />
@@ -55,6 +60,7 @@ class Wrapper extends Component {
           }}
           onChange={this.handleOnChange}
           error="Error Message"
+          dirty={this.state.dirty}
         />
       </div>
     );
