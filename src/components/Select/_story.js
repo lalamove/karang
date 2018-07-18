@@ -16,11 +16,8 @@ class Wrapper extends Component {
     return (
       <div>
         <Select
-          type="text"
           placeholder="What is your vehicle type?"
-          name="username"
-          value=""
-          autoComplete="off"
+          name="vehicleType"
           itemList={[
             {
               id: 'MOTORCYCLE',
@@ -40,11 +37,8 @@ class Wrapper extends Component {
 
         <br />
         <Select
-          type="text"
           placeholder="What is your vehicle type?"
-          name="username"
-          value=""
-          autoComplete="off"
+          name="vehicleType"
           itemList={[
             {
               id: 'MOTORCYCLE',
