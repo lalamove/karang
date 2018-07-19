@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import { bool, oneOfType, func, number, object, string } from 'prop-types';
+import { bool, oneOfType, func, object, string } from 'prop-types';
 import styled from 'styled-components';
 import { red, orange, offWhite } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
@@ -9,18 +9,12 @@ import Placeholder from './components/Placeholder';
 
 const Container = styled.div`
   font-family: ${primaryFonts};
-  display: flex;
+  display: inline-flex;
   flex-flow: row nowrap;
   flex: 1;
   border: 1px solid ${offWhite};
   position: relative;
   text-align: left;
-
-  ${({ width }) =>
-    width &&
-    `
-    width: ${width}px;
-    `};
 
   ${({ focused }) =>
     focused &&
@@ -40,7 +34,6 @@ function withAnimatedContainer(WrappedComponent) {
     static propTypes = {
       forwardedRef: oneOfType([func, object]),
       value: string,
-      width: number,
       label: string,
       placeholder: string,
       dirty: bool,
@@ -52,7 +45,6 @@ function withAnimatedContainer(WrappedComponent) {
     static defaultProps = {
       forwardedRef: null,
       value: '',
-      width: null,
       label: '',
       placeholder: '',
       dirty: null,
@@ -94,18 +86,13 @@ function withAnimatedContainer(WrappedComponent) {
         label,
         placeholder,
         value,
-        width,
         onFocus,
         onBlur,
         ...remainProps
       } = this.props;
       const { focused } = this.state;
       return (
-        <Container
-          focused={focused}
-          error={error !== null && error.length > 0}
-          width={width}
-        >
+        <Container focused={focused} error={error !== null && error.length > 0}>
           {Boolean(label) && (
             <Placeholder
               focused={focused}
