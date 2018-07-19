@@ -41,6 +41,7 @@ function withAnimatedContainer(WrappedComponent) {
       forwardedRef: oneOfType([func, object]),
       value: string,
       width: number,
+      label: string,
       placeholder: string,
       dirty: bool,
       error: string,
@@ -52,6 +53,7 @@ function withAnimatedContainer(WrappedComponent) {
       forwardedRef: null,
       value: '',
       width: null,
+      label: '',
       placeholder: '',
       dirty: null,
       error: null,
@@ -89,6 +91,7 @@ function withAnimatedContainer(WrappedComponent) {
         dirty,
         error,
         forwardedRef,
+        label,
         placeholder,
         value,
         width,
@@ -103,15 +106,18 @@ function withAnimatedContainer(WrappedComponent) {
           error={error !== null && error.length > 0}
           width={width}
         >
-          <Placeholder
-            focused={focused}
-            dirty={dirty || (value !== null && value.length > 0)}
-            error={error !== null && error.length > 0}
-            title={placeholder}
-          />
+          {Boolean(label) && (
+            <Placeholder
+              focused={focused}
+              dirty={dirty || (value !== null && value.length > 0)}
+              error={error !== null && error.length > 0}
+              title={label}
+            />
+          )}
           <WrappedComponent
             error={error}
-            placeholder={placeholder}
+            label={label}
+            placeholder={label || placeholder}
             value={value}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
