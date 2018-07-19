@@ -1,6 +1,7 @@
 import React, { Component, Fragment, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
 import { branch, compose, toClass } from 'recompose';
+import styled from 'styled-components';
 
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
@@ -10,11 +11,18 @@ import withCursorEnd from 'hoc/withCursorEnd';
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
 
+const StyledTextInput = styled(TextInput)`
+  &::-ms-reveal {
+    display: none;
+  }
+`;
+
 class Input extends Component {
   static propTypes = {
     innerRef: oneOfType([func, object]),
     type: string,
     name: string.isRequired,
+    label: string,
     placeholder: string,
     value: string,
     error: string,
@@ -26,6 +34,7 @@ class Input extends Component {
   static defaultProps = {
     innerRef: null,
     type: 'text',
+    label: '',
     placeholder: '',
     value: '',
     error: null,
@@ -52,6 +61,7 @@ class Input extends Component {
       innerRef,
       type,
       name,
+      label,
       placeholder,
       autoComplete,
       error,
@@ -63,10 +73,12 @@ class Input extends Component {
 
     return (
       <Fragment>
-        <TextInput
+        <StyledTextInput
           type={peekPassword ? 'text' : type}
           name={name}
           value={value}
+          label={label}
+          placeholder={placeholder}
           autoComplete={autoComplete}
           {...remainProps}
           ref={innerRef}

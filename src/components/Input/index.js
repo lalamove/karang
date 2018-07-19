@@ -1,3 +1,3 @@
-import AnimatedInput from './components/AnimatedInput';
+import Input from './components/Input';
 
-export { AnimatedInput as default };
+export { Input as default };

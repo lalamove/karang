@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import AnimatedInput from './index';
+import Input from './index';
 
 class Wrapper extends Component {
   state = {
@@ -18,42 +18,43 @@ class Wrapper extends Component {
   render() {
     return (
       <Fragment>
-        <AnimatedInput
+        <Input
           type="text"
-          placeholder="Username"
+          label="Username"
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
+          width={150}
           autoFocus
         />
         <br />
-        <AnimatedInput
+        <Input
           type="password"
-          placeholder="Password"
+          label="Password"
           name="password"
           value={this.state.password}
           onChange={this.handleChange}
         />
         <br />
-        <AnimatedInput
+        <Input
           type="text"
-          placeholder="Address"
+          label="Address"
           name="address"
           value={this.state.address}
           onChange={this.handleChange}
           error="Error Message"
         />
         <br />
-        <AnimatedInput
+        <Input
           type="text"
-          placeholder="Company Name"
+          label="Company Name"
           name="companyName"
           value={this.state.companyName}
           onChange={this.handleChange}
           selectAll
         />
         <br />
-        <AnimatedInput
+        <Input
           type="text"
           placeholder="Industry"
           name="industry"

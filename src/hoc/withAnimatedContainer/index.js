@@ -9,7 +9,7 @@ import Placeholder from './components/Placeholder';
 
 const Container = styled.div`
   font-family: ${primaryFonts};
-  display: flex;
+  display: inline-flex;
   flex-flow: row nowrap;
   flex: 1;
   border: 1px solid ${offWhite};
@@ -34,6 +34,7 @@ function withAnimatedContainer(WrappedComponent) {
     static propTypes = {
       forwardedRef: oneOfType([func, object]),
       value: string,
+      label: string,
       placeholder: string,
       dirty: bool,
       error: string,
@@ -44,6 +45,7 @@ function withAnimatedContainer(WrappedComponent) {
     static defaultProps = {
       forwardedRef: null,
       value: '',
+      label: '',
       placeholder: '',
       dirty: null,
       error: null,
@@ -81,6 +83,7 @@ function withAnimatedContainer(WrappedComponent) {
         dirty,
         error,
         forwardedRef,
+        label,
         placeholder,
         value,
         onFocus,
@@ -90,15 +93,18 @@ function withAnimatedContainer(WrappedComponent) {
       const { focused } = this.state;
       return (
         <Container focused={focused} error={error !== null && error.length > 0}>
-          <Placeholder
-            focused={focused}
-            dirty={dirty || (value !== null && value.length > 0)}
-            error={error !== null && error.length > 0}
-            title={placeholder}
-          />
+          {Boolean(label) && (
+            <Placeholder
+              focused={focused}
+              dirty={dirty || (value !== null && value.length > 0)}
+              error={error !== null && error.length > 0}
+              title={label}
+            />
+          )}
           <WrappedComponent
             error={error}
-            placeholder={placeholder}
+            label={label}
+            placeholder={label || placeholder}
             value={value}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
