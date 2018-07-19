@@ -41,6 +41,7 @@ const Button = styled.button`
   background: transparent;
   border: none;
   outline: none;
+  padding: 0;
 `;
 
 const ButtonContent = styled.div`
