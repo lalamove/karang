@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 import colors from 'styles/colors';
-import { baseFontSize } from 'styles/scales';
-import { primaryFonts } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 
 const fontFamily = primaryFonts;
 const lightGray = colors.offWhite; // eslint-disable-line
@@ -18,7 +17,7 @@ const Base = styled.button`
   background-color: transparent;
   border-radius: 2px;
   font-family: ${fontFamily};
-  font-size: ${baseFontSize}px;
+  font-size: ${fontSize.regular}px;
   font-weight: 400;
   line-height: 1;
   cursor: pointer;

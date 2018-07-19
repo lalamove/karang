@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import noop from 'utils/noop';
 import Button from 'components/Button/index';
 import AnimatedInput from 'components/Input/components/AnimatedInput';
+import withAnimatedContainer from 'hoc/withAnimatedContainer/index';
 import { offWhite, orange } from 'styles/colors';
 
 const EditableInputContainer = styled.div`
@@ -15,7 +16,7 @@ const EditableInputContainer = styled.div`
   }
 `;
 
-const StyledAnimatedInput = styled(AnimatedInput)`
+const StyledAnimatedInput = styled(withAnimatedContainer(AnimatedInput))`
   width: 100%;
   border-color: transparent;
   &:disabled {
