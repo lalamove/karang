@@ -4,7 +4,7 @@ import Downshift from 'downshift';
 import styled from 'styled-components';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 import noop from 'utils/noop';
-import compose from 'utils/compose';
+import { compose } from 'recompose';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
 

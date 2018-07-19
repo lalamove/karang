@@ -2622,8 +2622,8 @@ compression@^1.5.2:
     vary "~1.1.2"
 
 compute-scroll-into-view@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/compute-scroll-into-view/-/compute-scroll-into-view-1.0.2.tgz#2cc5357981449aa6b2dd82aff2176e03c5ab8441"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/compute-scroll-into-view/-/compute-scroll-into-view-1.0.5.tgz#dea9ce0edb17d981ea0d56e52b85c840430b91bf"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -3373,8 +3373,8 @@ dotenv@^5.0.1:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
 
 downshift@^2.0.14:
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/downshift/-/downshift-2.0.14.tgz#5065dbfffbc01797f06f4cc038788084ad3c426f"
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/downshift/-/downshift-2.0.16.tgz#741493715318c12968f1d1cd23cf47f95e19357e"
   dependencies:
     compute-scroll-into-view "^1.0.2"
     prop-types "^15.6.0"

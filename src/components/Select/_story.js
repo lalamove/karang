@@ -5,14 +5,26 @@ import Select from './index';
 
 class Wrapper extends Component {
   state = {
-    selectedItem: null,
-    dirty: false,
+    selectedItem: {
+      ds1: null,
+      ds2: null,
+    },
+    dirty: {
+      ds1: false,
+      ds2: false,
+    },
   };
 
-  handleOnChange = (selectedItem) => {
+  handleOnChange = (selectedItem, dsState) => {
     this.setState({
-      selectedItem,
-      dirty: true,
+      selectedItem: {
+        ...this.state.selectedItem,
+        [dsState.id]: selectedItem,
+      },
+      dirty: {
+        ...this.state.dirty,
+        [dsState.id]: true,
+      },
     });
   };
 
@@ -20,7 +32,7 @@ class Wrapper extends Component {
     return (
       <div>
         <Select
-          id="customizedID"
+          id="ds1"
           placeholder="What is your vehicle type?"
           name="vehicleType"
           itemList={[
@@ -33,16 +45,17 @@ class Wrapper extends Component {
               value: 'Van',
             },
           ]}
-          selectedItem={this.state.selectedItem}
+          selectedItem={this.state.selectedItem['ds1']}
           onFocus={e => {
             console.log('focused');
           }}
           onChange={this.handleOnChange}
-          dirty={this.state.dirty}
+          dirty={this.state.dirty['ds1']}
         />
 
         <br />
         <Select
+          id='ds2'
           placeholder="What is your vehicle type?"
           name="vehicleType"
           itemList={[
@@ -55,13 +68,13 @@ class Wrapper extends Component {
               value: 'Van',
             },
           ]}
-          selectedItem={this.state.selectedItem}
+          selectedItem={this.state.selectedItem['ds2']}
           onFocus={e => {
             console.log('focused');
           }}
           onChange={this.handleOnChange}
           error="Error Message"
-          dirty={this.state.dirty}
+          dirty={this.state.dirty['ds2']}
         />
       </div>
     );
