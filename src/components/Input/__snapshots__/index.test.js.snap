@@ -13,6 +13,28 @@ exports[`Snapshots Password 1`] = `
   transition: 150ms;
 }
 
+.c0 {
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-width: 400px;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 1px solid rgba(229,229,229,1);
+  position: relative;
+  text-align: left;
+}
+
 .c2 {
   border: none;
   caret-color: rgba(242,103,34,1);
@@ -37,23 +59,6 @@ exports[`Snapshots Password 1`] = `
   padding: 0;
 }
 
-.c0 {
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  border: 1px solid rgba(229,229,229,1);
-  position: relative;
-  text-align: left;
-}
-
 <div
   class="c0"
 >
@@ -66,6 +71,7 @@ exports[`Snapshots Password 1`] = `
     autocomplete="new-password"
     class="c2"
     name="input"
+    style="width:100%"
     type="password"
     value=""
   >
