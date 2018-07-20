@@ -15,6 +15,7 @@ export const fontSize = {
   regular: '14px', // Body Text font size
   large: '18px', // Title font size
   xlarge: '24px', // Popup Title font size
+  xxlarge: '48px', // Pin Input font size
 };
 
 export const fontWeight = {

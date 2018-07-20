@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import Input from './index';
+import Input, { PinInput } from './index';
 
-class Wrapper extends Component {
+class InputWrapper extends Component {
   state = {
     username: '',
     password: '',
@@ -67,4 +67,25 @@ class Wrapper extends Component {
   }
 }
 
-storiesOf('Input', module).add('Basic', () => <Wrapper />);
+// eslint-disable-next-line
+class PinInputWrapper extends Component {
+  state = {
+    register: ['', '', '', ''],
+    resetPassword: ['1', '3', '3', '4'],
+  };
+
+  render() {
+    return (
+      <Fragment>
+        <PinInput pins={this.state.register} />
+        <br />
+        <br />
+        <PinInput pins={this.state.resetPassword} error="Error Message" />
+      </Fragment>
+    );
+  }
+}
+
+storiesOf('Input', module)
+  .add('Input', () => <InputWrapper />)
+  .add('PinInput', () => <PinInputWrapper />);
