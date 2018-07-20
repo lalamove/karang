@@ -1,18 +1,20 @@
 import React, { PureComponent } from 'react';
-import { func, PropTypes } from 'prop-types';
+import { func, oneOf } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
-import { small, large } from '../ratingBarSizes';
+import { small, large } from '../ratingSizes';
 import Star from './Star';
 import { gold, offWhite } from 'styles/colors';
 
-const RatingStyle = styled.div``;
+const RatingContainer = styled.div`
+  display: inline-block;
+`;
 
-class RatingBar extends PureComponent {
+class Rating extends PureComponent {
   static propTypes = {
-    size: PropTypes.oneOf([small, large]),
-    value: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
+    size: oneOf([small, large]),
+    value: oneOf([0, 1, 2, 3, 4, 5]),
     onClick: func,
   };
 
@@ -22,30 +24,15 @@ class RatingBar extends PureComponent {
     onClick: noop,
   };
 
-  constructor(props) {
-    super(props);
-    let value;
-    if (this.props.value > 5) {
-      value = 5;
-    } else if (this.props.value < 0) {
-      value = 0;
-    } else {
-      ({ value } = this.props);
-    }
-    this.state = {
-      value,
-      hoverValue: 0,
-    };
-  }
+  state = {
+    value: Math.min(Math.max(this.props.value, 0), 5),
+    hoverValue: 0,
+  };
 
   onClick = i => {
     const value = i + 1; // map from index to value
-    if (this.props.onClick) {
-      this.props.onClick(value);
-    }
-    this.setState({
-      value,
-    });
+    this.setState({ value });
+    this.props.onClick(value);
   };
 
   onMouseEnter = i => {
@@ -53,20 +40,23 @@ class RatingBar extends PureComponent {
       hoverValue: i + 1,
     });
   };
+
   onMouseLeave = () => {
     this.setState({
       hoverValue: 0,
     });
   };
+
   colorFill = i => {
     if (this.state.hoverValue) {
       return i < this.state.hoverValue ? gold : offWhite;
     }
     return i < this.state.value ? gold : offWhite;
   };
+
   render() {
     return (
-      <RatingStyle>
+      <RatingContainer>
         {[0, 1, 2, 3, 4].map(i => (
           <Star
             id={i}
@@ -82,9 +72,9 @@ class RatingBar extends PureComponent {
             }
           />
         ))}
-      </RatingStyle>
+      </RatingContainer>
     );
   }
 }
 
-export default RatingBar;
+export default Rating;

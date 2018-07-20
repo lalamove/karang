@@ -1,9 +1,9 @@
 export const small = 7;
 export const large = 21;
 
-const ratingBarSizes = {
+const ratingSizes = {
   small,
   large,
 };
 
-export default ratingBarSizes;
+export default ratingSizes;

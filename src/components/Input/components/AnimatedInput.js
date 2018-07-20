@@ -110,11 +110,18 @@ class Input extends Component {
   // For EditableInput
   onCancelButtonClick = e => {
     this.props.onCancel(this.state.lastSavedValue);
+<<<<<<< HEAD
     this.setState(state => ({
       ...state,
       isEditable: !state.isEditable,
       value: state.lastSavedValue,
     }));
+=======
+    this.setState({
+      value: this.state.lastSavedValue,
+      isEditable: !this.state.isEditable,
+    });
+>>>>>>> refactored rating + blur on buttons in Input
     e.target.blur();
   };
 
