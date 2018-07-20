@@ -115,7 +115,7 @@ class Select extends Component {
                 {...getToggleButtonProps({
                   onFocus,
                   onBlur,
-                  required,
+                  'data-required': required,
                 })}
               >
                 <ButtonContent>
