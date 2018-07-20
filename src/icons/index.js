@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const Icon = ({ children, color, size, viewBox }) => {
+const Icon = ({ children, color, size }) => {
   const style = {
     verticalAlign: 'middle',
     fill: color,
@@ -12,7 +12,7 @@ const Icon = ({ children, color, size, viewBox }) => {
   return (
     <svg
       style={style}
-      viewBox={viewBox}
+      viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -26,7 +26,6 @@ Icon.defaultProps = {
   children: null,
   color: 'currentColor',
   size: 20,
-  viewBox: '0 0 1024 1024',
 };
 
 Icon.propTypes = {
@@ -37,7 +36,6 @@ Icon.propTypes = {
     PropTypes.oneOf(['small', 'large']),
     PropTypes.number,
   ]),
-  viewBox: PropTypes.string,
 };
 
 export default Icon;
