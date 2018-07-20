@@ -1,3 +1,2 @@
-import Rating from './components/Rating';
-
-export { Rating as default };
+export { default as Rating } from './components/Rating';
+export { default as StarIcon } from 'icons/StarIcon';
