@@ -33,7 +33,7 @@ class Wrapper extends Component {
       <div>
         <Select
           id="ds1"
-          placeholder="What is your vehicle type?"
+          label="What is your vehicle type?"
           name="vehicleType"
           itemList={[
             {
@@ -56,7 +56,7 @@ class Wrapper extends Component {
         <br />
         <Select
           id='ds2'
-          placeholder="What is your vehicle type?"
+          label="What is your vehicle type?"
           name="vehicleType"
           itemList={[
             {
