@@ -22,6 +22,13 @@ class Input extends Component {
     error: string,
     placeholder: string,
     autoComplete: string,
+<<<<<<< HEAD
+=======
+    saveBtnText: string, // for EditableInput
+    editBtnText: string, // for EditableInput
+    cancelBtnText: string, // for EditableInput
+    editableType: bool, // for EditableInput
+>>>>>>> Refactored EditableInput (except blur() and Button component
     onChange: func,
     selectAll: bool,
     cursorEnd: bool,
@@ -43,6 +50,12 @@ class Input extends Component {
     // autocomplete=off is ignored on non-login INPUT elements
     // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
     autoComplete: 'new-password',
+<<<<<<< HEAD
+=======
+    saveBtnText: 'Save', // for EditableInput
+    editBtnText: 'Edit', // for EditableInput
+    cancelBtnText: 'Cancel', // for EditableInput
+>>>>>>> Refactored EditableInput (except blur() and Button component
     editableType: false,
     onChange: noop,
     selectAll: false,
