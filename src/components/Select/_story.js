@@ -46,11 +46,12 @@ class Wrapper extends Component {
             },
           ]}
           selectedItem={this.state.selectedItem['ds1']}
-          onFocus={e => {
-            console.log('focused');
-          }}
           onChange={this.handleOnChange}
+          onFocus={e => {
+            console.log(e.target);
+          }}
           dirty={this.state.dirty['ds1']}
+          required
         />
 
         <br />
@@ -70,7 +71,7 @@ class Wrapper extends Component {
           ]}
           selectedItem={this.state.selectedItem['ds2']}
           onFocus={e => {
-            console.log('focused');
+            console.log(e.target);
           }}
           onChange={this.handleOnChange}
           error="Error Message"

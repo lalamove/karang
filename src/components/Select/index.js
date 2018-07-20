@@ -70,6 +70,7 @@ class Select extends Component {
     onChange: PropTypes.func.isRequired,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
+    required: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -77,6 +78,7 @@ class Select extends Component {
     onFocus: noop,
     onBlur: noop,
     selectedItem: null,
+    required: false,
   };
 
   render() {
@@ -87,6 +89,7 @@ class Select extends Component {
       onFocus,
       onBlur,
       id,
+      required,
     } = this.props;
 
     return (
@@ -101,7 +104,6 @@ class Select extends Component {
             getToggleButtonProps,
             getItemProps,
             highlightedIndex,
-            selectedItem: dsSelectedItem,
           }) => (
             <div
               style={{
@@ -113,6 +115,7 @@ class Select extends Component {
                 {...getToggleButtonProps({
                   onFocus,
                   onBlur,
+                  required,
                 })}
               >
                 <ButtonContent>
