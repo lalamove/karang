@@ -116,6 +116,7 @@ class Select extends Component {
                   onFocus,
                   onBlur,
                   'data-required': required,
+                  'data-name': id,
                 })}
               >
                 <ButtonContent>
