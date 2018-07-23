@@ -33,28 +33,34 @@ function withAnimatedContainer(WrappedComponent) {
   class WithAnimatedContainer extends Component {
     static propTypes = {
       forwardedRef: oneOfType([func, object]),
-      value: string,
       label: string,
       placeholder: string,
       dirty: bool,
       error: string,
       onFocus: func,
       onBlur: func,
+      onChange: func,
     };
 
     static defaultProps = {
       forwardedRef: null,
-      value: '',
       label: '',
       placeholder: '',
-      dirty: null,
+      dirty: false,
       error: null,
       onFocus: noop,
       onBlur: noop,
+      onChange: noop,
     };
+
+    constructor() {
+      super();
+      this.input = null;
+    }
 
     state = {
       focused: false,
+      dirty: false,
     };
 
     onFocus = e => {
@@ -64,11 +70,15 @@ function withAnimatedContainer(WrappedComponent) {
 
     onBlur = e => {
       this.setState({ focused: false });
+      this.updateDirtyState();
       this.props.onBlur(e);
     };
 
     getReference = node => {
       const { forwardedRef } = this.props;
+      this.input = node;
+      this.updateDirtyState();
+
       if (forwardedRef) {
         if (typeof forwardedRef === 'function') {
           forwardedRef(node);
@@ -78,25 +88,31 @@ function withAnimatedContainer(WrappedComponent) {
       }
     };
 
+    updateDirtyState = () => {
+      if (this.input) {
+        this.setState({
+          dirty: this.input.value ? this.input.value.length > 0 : false,
+        });
+      }
+    };
+
     render() {
       const {
-        dirty,
         error,
-        forwardedRef,
         label,
         placeholder,
-        value,
         onFocus,
         onBlur,
+        forwardedRef,
         ...remainProps
       } = this.props;
-      const { focused } = this.state;
+      const { focused, dirty } = this.state;
       return (
         <Container focused={focused} error={error !== null && error.length > 0}>
           {Boolean(label) && (
             <Placeholder
               focused={focused}
-              dirty={dirty || (value !== null && value.length > 0)}
+              dirty={dirty}
               error={error !== null && error.length > 0}
               title={label}
             />
@@ -105,7 +121,6 @@ function withAnimatedContainer(WrappedComponent) {
             error={error}
             label={label}
             placeholder={label || placeholder}
-            value={value}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             {...remainProps}
