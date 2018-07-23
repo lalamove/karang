@@ -7,7 +7,7 @@ import withAnimatedContainer from 'hoc/withAnimatedContainer'; // eslint-disable
 import withErrorMessage from 'hoc/withErrorMessage'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
 import withSelectAll from 'hoc/withSelectAll';
 import withCursorEnd from 'hoc/withCursorEnd';
-
+// last commit
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
 import ButtonContainer from './ButtonContainer';
@@ -23,11 +23,18 @@ class Input extends Component {
     placeholder: string,
     autoComplete: string,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    onChange: func,
+    selectAll: bool,
+    cursorEnd: bool,
+>>>>>>> TODO: fix a bug on lastSavedValue
     saveBtnText: string, // for EditableInput
     editBtnText: string, // for EditableInput
     cancelBtnText: string, // for EditableInput
     editableType: bool, // for EditableInput
+<<<<<<< HEAD
 >>>>>>> Refactored EditableInput (except blur() and Button component
     onChange: func,
     selectAll: bool,
@@ -36,6 +43,8 @@ class Input extends Component {
     editBtnText: string, // for EditableInput
     cancelBtnText: string, // for EditableInput
     editableType: bool, // for EditableInput
+=======
+>>>>>>> TODO: fix a bug on lastSavedValue
     onSave: func, // for EditableInput
     onCancel: func, // for EditableInput
     isEditable: bool, // for EditableInput
@@ -50,6 +59,7 @@ class Input extends Component {
     // autocomplete=off is ignored on non-login INPUT elements
     // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
     autoComplete: 'new-password',
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     saveBtnText: 'Save', // for EditableInput
@@ -66,6 +76,18 @@ class Input extends Component {
     onSave: noop, // for EditableInput
     onCancel: noop, // for EditableInput
     isEditable: false, // for EditableInput
+=======
+    editableType: false,
+    onChange: noop,
+    selectAll: false,
+    cursorEnd: false,
+    saveBtnText: 'Save', // for EditableInput
+    editBtnText: 'Edit', // for EditableInput
+    cancelBtnText: 'Cancel', // for EditableInput
+    onSave: noop, // for EditableInput
+    onCancel: noop, // for EditableInput
+    isEditable: true, // for EditableInput
+>>>>>>> TODO: fix a bug on lastSavedValue
   };
 
   // static getDerivedStateFromProps(props, state) {
@@ -118,8 +140,8 @@ class Input extends Component {
     }));
 =======
     this.setState({
-      value: this.state.lastSavedValue,
       isEditable: !this.state.isEditable,
+      value: this.state.lastSavedValue,
     });
 >>>>>>> refactored rating + blur on buttons in Input
     e.target.blur();
