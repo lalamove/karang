@@ -62,6 +62,13 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           cursorEnd
         />
+        <br />
+        <Input
+          type="text"
+          label="Uncontrolled Component"
+          name="testing"
+          defaultValue="Testing"
+        />
       </Fragment>
     );
   }

@@ -24,7 +24,6 @@ class Input extends Component {
     name: string.isRequired,
     label: string,
     placeholder: string,
-    value: string,
     error: string,
     autoComplete: string,
     selectAll: bool,
@@ -36,7 +35,6 @@ class Input extends Component {
     type: 'text',
     label: '',
     placeholder: '',
-    value: '',
     error: null,
     // autocomplete=off is ignored on non-login INPUT elements
     // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
@@ -65,7 +63,6 @@ class Input extends Component {
       placeholder,
       autoComplete,
       error,
-      value,
       selectAll,
       cursorEnd,
       ...remainProps
@@ -76,12 +73,11 @@ class Input extends Component {
         <StyledTextInput
           type={peekPassword ? 'text' : type}
           name={name}
-          value={value}
           label={label}
           placeholder={placeholder}
           autoComplete={autoComplete}
           {...remainProps}
-          ref={innerRef}
+          innerRef={innerRef}
         />
         {type === 'password' && (
           <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
@@ -91,16 +87,16 @@ class Input extends Component {
   }
 }
 
+const InputWithRef = forwardRef((props, ref) => (
+  <Input {...props} innerRef={ref} />
+));
+
 const EnhancedComp = compose(
   branch(props => props.selectAll, withSelectAll),
   toClass,
   branch(props => props.cursorEnd, withCursorEnd),
   withErrorMessage,
   withAnimatedContainer
-)(Input);
+)(InputWithRef);
 
-const EnhancedCompWithRef = forwardRef((props, ref) => (
-  <EnhancedComp {...props} innerRef={ref} />
-));
-
-export default EnhancedCompWithRef;
+export default EnhancedComp;

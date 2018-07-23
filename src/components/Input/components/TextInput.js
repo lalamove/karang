@@ -28,23 +28,13 @@ const InputField = styled.input`
 
 const TextInput = forwardRef(
   (
-    {
-      innerRef,
-      type,
-      name,
-      value,
-      autoComplete,
-      label,
-      placeholder,
-      ...remainProps
-    },
+    { innerRef, type, name, autoComplete, label, placeholder, ...remainProps },
     ref
   ) => (
     <InputField
       innerRef={ref}
       type={type}
       name={name}
-      value={value}
       autoComplete={autoComplete}
       label={label}
       placeholder={placeholder}
@@ -56,7 +46,6 @@ const TextInput = forwardRef(
 TextInput.propTypes = {
   type: string,
   name: string.isRequired, // eslint-disable-line react/no-typos
-  value: string,
   autoComplete: string,
   label: string,
   placeholder: string,
@@ -64,7 +53,6 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   type: 'text',
-  value: '',
   // autocomplete=off is ignored on non-login INPUT elements
   // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
   autoComplete: 'new-password',
