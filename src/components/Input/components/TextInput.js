@@ -6,14 +6,14 @@ import { orange, black } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const InputField = styled.input`
+  width: 100%;
+  padding: 14px 8px;
   border: none;
   color: ${black};
+  font-family: ${primaryFonts};
   caret-color: ${orange};
   font-size: ${fontSize.regular};
-  font-family: ${primaryFonts};
   line-height: 20px;
-  padding: 14px 8px;
-  width: 100%;
   resize: none;
   outline: none;
 
