@@ -77,6 +77,8 @@ function withAnimatedContainer(WrappedComponent) {
     getReference = node => {
       const { forwardedRef } = this.props;
       this.input = node;
+      this.updateDirtyState();
+
       if (forwardedRef) {
         if (typeof forwardedRef === 'function') {
           forwardedRef(node);
@@ -84,15 +86,13 @@ function withAnimatedContainer(WrappedComponent) {
           forwardedRef.current = node;
         }
       }
-
-      if (node && node.value) {
-        this.updateDirtyState();
-      }
     };
 
     updateDirtyState = () => {
       if (this.input) {
-        this.setState({ dirty: this.input.value.length > 0 });
+        this.setState({
+          dirty: this.input.value ? this.input.value.length > 0 : false,
+        });
       }
     };
 
