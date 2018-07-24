@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
-import FaAngleDown from 'react-icons/lib/fa/angle-down';
+import DropDownIcon from 'icons/DropDownIcon';
 import noop from 'utils/noop';
 import { compose } from 'recompose';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
@@ -124,7 +124,7 @@ class Select extends Component {
                     selectedItem !== null ? selectedItem.value : ''
                   }`}</LeftSpan>
                   <RightSpan>
-                    <FaAngleDown fill="#b4b4b4" height="24px" width="24px" />
+                    <DropDownIcon color="#b4b4b4" size="24" />
                   </RightSpan>
                 </ButtonContent>
               </Button>

@@ -15,7 +15,6 @@ Before installing this library, please make sure you have the following installe
     "recompose": "^0.27.1",
     "styled-components": "^3.3.3",
     "downshift": "^2.0.14",
-    "react-icons": "^2.2.7"
 }
 ```
 
