@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import Input, { PinInput } from './index';
+import Input, { PinInput, SearchInput } from './index';
 
 class InputWrapper extends Component {
   state = {
@@ -69,6 +69,11 @@ class InputWrapper extends Component {
           name="testing"
           defaultValue="Testing"
           onChange={this.handleChange}
+        />
+        <br />
+        <SearchInput
+          name="searchValue"
+          placeholder="Search for Order ID, Driver's Mobile"
         />
       </Fragment>
     );
