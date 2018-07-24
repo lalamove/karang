@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, forwardRef } from 'react';
 import { string, arrayOf, shape, func, bool } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
@@ -80,6 +80,7 @@ class Select extends Component {
 
   render() {
     const {
+      innerRef,
       itemList,
       selectedItem,
       onChange,
@@ -115,6 +116,8 @@ class Select extends Component {
                   'data-required': required,
                   'data-name': id,
                 })}
+                innerRef={innerRef}
+                value={selectedItem !== null ? selectedItem.value : ''}
               >
                 <LeftSpan>{`${
                   selectedItem !== null ? selectedItem.value : ''
@@ -148,7 +151,13 @@ class Select extends Component {
   }
 }
 
-export default compose(
+const SelectWithRef = forwardRef((props, ref) => (
+  <Select {...props} innerRef={ref} />
+));
+
+const EnhancedComp = compose(
   withErrorMessage,
   withAnimatedContainer
-)(Select);
+)(SelectWithRef);
+
+export default EnhancedComp;
