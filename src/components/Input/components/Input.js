@@ -56,7 +56,6 @@ class Input extends Component {
   render() {
     const { peekPassword } = this.state;
     const {
-      innerRef,
       type,
       name,
       label,

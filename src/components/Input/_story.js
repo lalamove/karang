@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import Input, { PinInput, SearchInput } from './index';
+import Input, { PinInput, SearchInput, EditableInput } from './index';
 
 class InputWrapper extends Component {
   state = {
@@ -70,6 +70,32 @@ class InputWrapper extends Component {
           defaultValue="Testing"
           onChange={this.handleChange}
         />
+<<<<<<< HEAD
+=======
+        <br />
+        <SearchInput
+          name="searchValue"
+          placeholder="Search for Order ID, Driver's Mobile"
+        />
+        <br />
+        <EditableInput
+          name="Billing Email"
+          value="david.lam@lalamove.com"
+          onSave={address => {
+            console.log('saved', address);
+          }}
+          onCancel={address => {
+            console.log('cancel', address);
+          }}
+          ref={node => {
+            console.log('ref', node);
+          }}
+          saveBtnText="Save Value"
+          editBtnText="Edit Value"
+          cancelBtnText="Cancel Value"
+          placeholder="Billing Email"
+        />
+>>>>>>> Separated EditableInput
       </Fragment>
     );
   }
