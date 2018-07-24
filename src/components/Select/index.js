@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import { string, arrayOf, shape, func, bool } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
 import DropDownIcon from 'icons/DropDownIcon';
@@ -7,6 +7,7 @@ import noop from 'utils/noop';
 import { compose } from 'recompose';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
+import { orange, white, offWhite, gray } from 'styles/colors';
 
 const ItemList = styled.div`
   position: absolute;
@@ -19,21 +20,21 @@ const ItemList = styled.div`
 const Item = styled.div`
   border-left: 2px solid #fff;
   cursor: pointer;
-  background-color: ${({ isActive }) => (isActive ? '#f2f2f2' : '#FFF')};
-  border-left-color: ${({ isActive }) => (isActive ? '#f16622' : '#FFF')};
+  background-color: ${({ isActive }) => (isActive ? offWhite : white)};
+  border-left-color: ${({ isActive }) => (isActive ? orange : white)};
   font-weight: ${({ isSelected }) => (isSelected ? 'bold' : 'normal')};
   width: 100%;
   &:hover,
   &:focus {
-    background-color: #f2f2f2;
-    border-left-color: #f16622;
+    background-color: ${offWhite};
+    border-left-color: ${orange};
   }
   line-height: 32px;
   height: 32px;
 `;
 
-const ItemTextWrap = styled.span`
-  padding-left: 4px;
+const ItemContent = styled.span`
+  padding-left: 10px;
 `;
 
 const Button = styled.button`
@@ -41,12 +42,8 @@ const Button = styled.button`
   background: transparent;
   border: none;
   outline: none;
-  padding: 0;
-`;
-
-const ButtonContent = styled.div`
-  width: 100%;
-  color: #58595b;
+  padding: 12px;
+  color: ${gray};
 `;
 
 const LeftSpan = styled.span`
@@ -61,16 +58,16 @@ const RightSpan = styled.span`
 
 class Select extends Component {
   static propTypes = {
-    id: PropTypes.string,
-    itemList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    selectedItem: PropTypes.shape({
-      id: PropTypes.string,
-      value: PropTypes.string,
+    id: string,
+    itemList: arrayOf(shape({})).isRequired,
+    selectedItem: shape({
+      id: string,
+      value: string,
     }),
-    onChange: PropTypes.func.isRequired,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    required: PropTypes.bool,
+    onChange: func.isRequired,
+    onFocus: func,
+    onBlur: func,
+    required: bool,
   };
 
   static defaultProps = {
@@ -108,7 +105,7 @@ class Select extends Component {
             <div
               style={{
                 width: '100%',
-                padding: '12px',
+                height: '48px',
               }}
             >
               <Button
@@ -119,14 +116,12 @@ class Select extends Component {
                   'data-name': id,
                 })}
               >
-                <ButtonContent>
-                  <LeftSpan>{`${
-                    selectedItem !== null ? selectedItem.value : ''
-                  }`}</LeftSpan>
-                  <RightSpan>
-                    <DropDownIcon color="#b4b4b4" size="24" />
-                  </RightSpan>
-                </ButtonContent>
+                <LeftSpan>{`${
+                  selectedItem !== null ? selectedItem.value : ''
+                }`}</LeftSpan>
+                <RightSpan>
+                  <DropDownIcon color="#b4b4b4" size="24" />
+                </RightSpan>
               </Button>
               <div>
                 {isOpen && (
@@ -139,7 +134,7 @@ class Select extends Component {
                         })}
                         key={item.id}
                       >
-                        <ItemTextWrap>{item.value}</ItemTextWrap>
+                        <ItemContent>{item.value}</ItemContent>
                       </Item>
                     ))}
                   </ItemList>
