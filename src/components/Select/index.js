@@ -1,5 +1,5 @@
 import React, { Component, Fragment, forwardRef } from 'react';
-import { string, arrayOf, shape, func, bool } from 'prop-types';
+import { string, arrayOf, shape, func, bool, oneOfType, object } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
 import DropDownIcon from 'icons/DropDownIcon';
@@ -60,7 +60,7 @@ const RightSpan = styled.span`
 
 class Select extends Component {
   static propTypes = {
-    innerRef: func.isRequired,
+    innerRef: oneOfType([func, object]),
     id: string,
     itemList: arrayOf(shape({})).isRequired,
     selectedItem: shape({
@@ -79,6 +79,7 @@ class Select extends Component {
     onBlur: noop,
     selectedItem: null,
     required: false,
+    innerRef: null,
   };
 
   render() {
