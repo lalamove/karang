@@ -64,6 +64,7 @@ class Input extends Component {
       error,
       selectAll,
       cursorEnd,
+      innerRef,
       ...remainProps
     } = this.props;
 

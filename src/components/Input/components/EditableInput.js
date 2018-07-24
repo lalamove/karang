@@ -1,10 +1,13 @@
 import React, { Component, forwardRef } from 'react';
 import { func, string, bool, shape } from 'prop-types';
 import styled from 'styled-components';
+import { compose } from 'recompose';
+
 import noop from 'utils/noop';
 import { offWhite, orange } from 'styles/colors';
-
-import Input from 'components/Input/components/Input'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
+import withAnimatedContainer from 'hoc/withAnimatedContainer';
+import withErrorMessage from 'hoc/withErrorMessage';
+import TextInput from 'components/Input/components/TextInput'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
 import ButtonContainer from './ButtonContainer';
 import NoneditableDisplay from './NoneditableDisplay';
 
@@ -20,14 +23,10 @@ const EditableInputContainer = styled.div`
   }
 `;
 
-const StyledAnimatedInput = styled(Input)`
-  &:disabled {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-`;
+const EnhancedTextInput = compose(
+  withErrorMessage,
+  withAnimatedContainer
+)(TextInput);
 
 class EditableInput extends Component {
   static propTypes = {
@@ -155,11 +154,11 @@ class EditableInput extends Component {
         innerRef={this.getReference}
       >
         {isEditable ? (
-          <StyledAnimatedInput
+          <EnhancedTextInput
             isEditable={isEditable}
             label={isEditable ? label : ''}
             value={value}
-            innerRef={this.getInputReference}
+            ref={this.getInputReference}
             onChange={this.onInputChange}
             {...remainProps}
           />
