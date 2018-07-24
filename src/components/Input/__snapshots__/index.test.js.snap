@@ -1,29 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshots Password 1`] = `
-.c2 {
-  color: rgba(128,130,133,1);
-  font-size: 14px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
-  left: 8px;
-  top: 16px;
-  pointer-events: none;
-  position: absolute;
-  -webkit-transition: 150ms;
-  transition: 150ms;
-}
-
 .c1 {
   font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  min-width: 400px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
@@ -55,7 +38,7 @@ exports[`Snapshots Password 1`] = `
   font-size: 14px;
   font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
   line-height: 20px;
-  margin: 14px 8px;
+  padding: 14px 8px;
   width: 100%;
   resize: none;
   outline: none;
@@ -73,24 +56,23 @@ exports[`Snapshots Password 1`] = `
   padding: 0;
 }
 
+.c2::-ms-reveal {
+  display: none;
+}
+
 <div
   class="c0"
 >
   <div
     class="c1"
   >
-    <div
-      class="c2"
-    >
-      
-    </div>
     <input
       autocomplete="new-password"
-      class="c3"
+      class="c2 c3"
+      label=""
       name="input"
-      style="width:100%"
+      placeholder=""
       type="password"
-      value=""
     >
       
     </input>

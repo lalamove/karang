@@ -17,7 +17,7 @@ const Base = styled.button`
   background-color: transparent;
   border-radius: 2px;
   font-family: ${fontFamily};
-  font-size: ${fontSize.regular}px;
+  font-size: ${fontSize.regular};
   font-weight: 400;
   line-height: 1;
   cursor: pointer;
