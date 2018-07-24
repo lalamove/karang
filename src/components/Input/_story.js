@@ -70,11 +70,6 @@ class InputWrapper extends Component {
           defaultValue="Testing"
           onChange={this.handleChange}
         />
-        <br />
-        <SearchInput
-          name="searchValue"
-          placeholder="Search for Order ID, Driver's Mobile"
-        />
       </Fragment>
     );
   }
@@ -99,6 +94,19 @@ class PinInputWrapper extends Component {
   }
 }
 
+// eslint-disable-next-line
+class SearchInputWrapper extends Component {
+  render() {
+    return (
+      <SearchInput
+        name="searchValue"
+        placeholder="Search for Order ID, Driver's Mobile"
+      />
+    );
+  }
+}
+
 storiesOf('Input', module)
   .add('Input', () => <InputWrapper />)
-  .add('PinInput', () => <PinInputWrapper />);
+  .add('PinInput', () => <PinInputWrapper />)
+  .add('SearchInput', () => <SearchInputWrapper />);
