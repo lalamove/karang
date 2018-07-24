@@ -126,9 +126,11 @@ function withAnimatedContainer(WrappedComponent) {
               dirty={dirty}
               error={error !== null && error.length > 0}
               title={label}
+              htmlFor={`llmInput_${remainProps.name}`}
             />
           )}
           <WrappedComponent
+            id={`llmInput_${remainProps.name}`}
             error={error}
             label={label}
             placeholder={label || placeholder}

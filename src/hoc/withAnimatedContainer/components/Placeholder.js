@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 import { red, orange, silver, white } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
-const Container = styled.div`
+const Container = styled.label`
   position: absolute;
   top: 50%;
   left: 0.5em;
@@ -41,8 +41,8 @@ const Container = styled.div`
     `};
 `;
 
-const Placeholder = ({ title, focused, dirty, error }) => (
-  <Container focused={focused} dirty={dirty} error={error}>
+const Placeholder = ({ title, focused, dirty, error, htmlFor }) => (
+  <Container htmlFor={htmlFor} focused={focused} dirty={dirty} error={error}>
     {title}
   </Container>
 );
@@ -52,9 +52,11 @@ Placeholder.propTypes = {
   focused: bool.isRequired, // eslint-disable-line react/no-typos
   dirty: bool,
   error: bool,
+  htmlFor: string,
 };
 
 Placeholder.defaultProps = {
+  htmlFor: '',
   title: '',
   dirty: false,
   error: false,
