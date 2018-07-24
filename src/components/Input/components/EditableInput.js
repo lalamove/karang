@@ -2,10 +2,8 @@ import React, { Component, forwardRef } from 'react';
 import { func, string, bool, shape } from 'prop-types';
 import styled from 'styled-components';
 import noop from 'utils/noop';
-// import withAnimatedContainer from 'hoc/withAnimatedContainer/index';
 import { offWhite, orange } from 'styles/colors';
 
-// import Button from 'components/Button/index';
 import Input from 'components/Input/components/Input'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
 import ButtonContainer from './ButtonContainer';
 import NoneditableDisplay from './NoneditableDisplay';
@@ -111,8 +109,6 @@ class EditableInput extends Component {
 
   getReference = node => {
     const { innerRef } = this.props;
-    this.input = node;
-    console.log('inside getReference ', node);
     if (innerRef) {
       if (typeof innerRef === 'function') {
         innerRef(node);
@@ -120,6 +116,10 @@ class EditableInput extends Component {
         innerRef.current = node;
       }
     }
+  };
+
+  getInputReference = node => {
+    this.input = node;
   };
 
   focusTextInput = () => {
@@ -149,13 +149,17 @@ class EditableInput extends Component {
       ...remainProps
     } = this.props;
     return (
-      <EditableInputContainer style={style} className={className}>
+      <EditableInputContainer
+        style={style}
+        className={className}
+        innerRef={this.getReference}
+      >
         {isEditable ? (
           <StyledAnimatedInput
             isEditable={isEditable}
-            innerRef={this.getReference}
             label={isEditable ? label : ''}
             value={value}
+            innerRef={this.getInputReference}
             onChange={this.onInputChange}
             {...remainProps}
           />

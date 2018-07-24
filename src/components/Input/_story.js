@@ -93,7 +93,7 @@ class InputWrapper extends Component {
           saveBtnText="Save Value"
           editBtnText="Edit Value"
           cancelBtnText="Cancel Value"
-          placeholder="Billing Email"
+          label="Billing Email"
         />
 >>>>>>> Separated EditableInput
       </Fragment>
