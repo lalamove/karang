@@ -1,45 +1,48 @@
 import React from 'react';
 import { bool, string } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { red, orange, silver, white } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
-const Container = styled.div`
-  color: ${silver};
-  font-size: ${fontSize.regular};
-  font-family: ${primaryFonts};
-  left: 8px;
-  top: 16px;
-  pointer-events: none;
+const Container = styled.label`
   position: absolute;
-  transition: 150ms;
+  top: 50%;
+  left: 0.5em;
+  color: ${silver};
+  font-family: ${primaryFonts};
+  font-size: ${fontSize.regular};
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0.15s;
+  transform-origin: center left;
+  transform: translateY(-50%);
 
   ${({ focused }) =>
     focused &&
-    `
-    color: ${orange};
+    css`
+      color: ${orange};
     `};
 
   ${({ error }) =>
     error &&
-    `
-    color: ${red};
+    css`
+      color: ${red};
     `};
 
   ${({ focused, dirty, error }) =>
     (focused || dirty || error) &&
-    `
-    background-color: ${white};
-    font-size: ${fontSize.micro};
-    left: 8px;
-    top: -6px;
-    padding: 0 4px 0 4px;
+    css`
+      top: 0;
+      padding: 0 4px 0 4px;
+      background-color: ${white};
+      transform: translateY(-50%) scale(0.7);
     `};
 `;
 
-const Placeholder = ({ title, focused, dirty, error }) => (
-  <Container focused={focused} dirty={dirty} error={error}>
+const Placeholder = ({ title, focused, dirty, error, htmlFor }) => (
+  <Container htmlFor={htmlFor} focused={focused} dirty={dirty} error={error}>
     {title}
   </Container>
 );
@@ -49,9 +52,11 @@ Placeholder.propTypes = {
   focused: bool.isRequired, // eslint-disable-line react/no-typos
   dirty: bool,
   error: bool,
+  htmlFor: string,
 };
 
 Placeholder.defaultProps = {
+  htmlFor: '',
   title: '',
   dirty: false,
   error: false,

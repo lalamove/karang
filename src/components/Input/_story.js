@@ -42,7 +42,7 @@ class InputWrapper extends Component {
           name="address"
           value={this.state.address}
           onChange={this.handleChange}
-          error="Error Message"
+          error="Error Message Error Message Error Message Error Message Error Message Error Message Error Message"
         />
         <br />
         <Input
@@ -68,6 +68,7 @@ class InputWrapper extends Component {
           label="Uncontrolled Component"
           name="testing"
           defaultValue="Testing"
+          onChange={this.handleChange}
         />
       </Fragment>
     );
