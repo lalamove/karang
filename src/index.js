@@ -9,3 +9,4 @@ export { default as Select } from './components/Select';
 export { default as ErrorIcon } from './icons/ErrorIcon';
 export { default as EyeOffIcon } from './icons/EyeOffIcon';
 export { default as EyeOnIcon } from './icons/EyeOnIcon';
+export { default as DropDownIcon } from './icons/DropDownIcon';

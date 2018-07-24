@@ -8,6 +8,7 @@ export const silver = 'rgba(128,130,133,1)';
 export const gray = 'rgba(88,89,91,1)';
 export const black = 'rgba(51,49,50,1)';
 export const facebook = 'rgba(59, 89, 152, 1)';
+export const lightGray = 'rgba(180, 180, 180, 1)';
 
 const colors = {
   orange,

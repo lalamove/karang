@@ -8,11 +8,7 @@ class Wrapper extends Component {
     selectedItem: {
       ds1: null,
       ds2: null,
-    },
-    dirty: {
-      ds1: false,
-      ds2: false,
-    },
+    }
   };
 
   handleOnChange = (selectedItem, dsState) => {
@@ -20,10 +16,6 @@ class Wrapper extends Component {
       selectedItem: {
         ...this.state.selectedItem,
         [dsState.id]: selectedItem,
-      },
-      dirty: {
-        ...this.state.dirty,
-        [dsState.id]: true,
       },
     });
   };
@@ -50,7 +42,6 @@ class Wrapper extends Component {
           onFocus={e => {
             console.log(e.target);
           }}
-          dirty={this.state.dirty['ds1']}
           required
         />
 
@@ -75,7 +66,6 @@ class Wrapper extends Component {
           }}
           onChange={this.handleOnChange}
           error="Error Message"
-          dirty={this.state.dirty['ds2']}
         />
       </div>
     );

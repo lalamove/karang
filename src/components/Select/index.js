@@ -7,7 +7,8 @@ import noop from 'utils/noop';
 import { compose } from 'recompose';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
-import { orange, white, offWhite, gray } from 'styles/colors';
+import { orange, white, offWhite, gray, lightGray } from 'styles/colors';
+import { fontWeight } from 'styles/fonts';
 
 const ItemList = styled.div`
   position: absolute;
@@ -22,7 +23,8 @@ const Item = styled.div`
   cursor: pointer;
   background-color: ${({ isActive }) => (isActive ? offWhite : white)};
   border-left-color: ${({ isActive }) => (isActive ? orange : white)};
-  font-weight: ${({ isSelected }) => (isSelected ? 'bold' : 'normal')};
+  font-weight: ${({ isSelected }) =>
+    isSelected ? fontWeight.bold : fontWeight.regular};
   width: 100%;
   &:hover,
   &:focus {
@@ -58,6 +60,7 @@ const RightSpan = styled.span`
 
 class Select extends Component {
   static propTypes = {
+    innerRef: func.isRequired,
     id: string,
     itemList: arrayOf(shape({})).isRequired,
     selectedItem: shape({
@@ -123,7 +126,7 @@ class Select extends Component {
                   selectedItem !== null ? selectedItem.value : ''
                 }`}</LeftSpan>
                 <RightSpan>
-                  <DropDownIcon color="#b4b4b4" size="24" />
+                  <DropDownIcon color={lightGray} size={24} />
                 </RightSpan>
               </Button>
               <div>
