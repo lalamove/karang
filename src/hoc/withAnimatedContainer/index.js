@@ -41,7 +41,7 @@ function withAnimatedContainer(WrappedComponent) {
       onBlur: func,
       onChange: func,
       style: shape({}),
-      className: '',
+      className: string,
     };
 
     static defaultProps = {

@@ -1,10 +1,19 @@
-import React, { Component, Fragment, forwardRef } from 'react';
-import { string, arrayOf, shape, func, bool, oneOfType, object } from 'prop-types';
+import React, { Component, forwardRef } from 'react';
+import {
+  string,
+  arrayOf,
+  shape,
+  func,
+  bool,
+  oneOfType,
+  object,
+} from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
-import DropDownIcon from 'icons/DropDownIcon';
-import noop from 'utils/noop';
 import { compose } from 'recompose';
+
+import noop from 'utils/noop';
+import DropDownIcon from 'icons/DropDownIcon';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
 import { orange, white, offWhite, gray, lightGray } from 'styles/colors';
@@ -19,20 +28,19 @@ const ItemList = styled.div`
 `;
 
 const Item = styled.div`
-  border-left: 2px solid #fff;
+  border-left: 2px solid ${({ isActive }) => (isActive ? orange : white)};
   cursor: pointer;
   background-color: ${({ isActive }) => (isActive ? offWhite : white)};
-  border-left-color: ${({ isActive }) => (isActive ? orange : white)};
   font-weight: ${({ isSelected }) =>
     isSelected ? fontWeight.bold : fontWeight.regular};
   width: 100%;
+  line-height: 32px;
+  height: 32px;
   &:hover,
   &:focus {
     background-color: ${offWhite};
     border-left-color: ${orange};
   }
-  line-height: 32px;
-  height: 32px;
 `;
 
 const ItemContent = styled.span`
@@ -61,25 +69,30 @@ const RightSpan = styled.span`
 class Select extends Component {
   static propTypes = {
     innerRef: oneOfType([func, object]),
-    id: string,
-    itemList: arrayOf(shape({})).isRequired,
+    id: string.isRequired,
+    itemList: arrayOf(
+      shape({
+        id: string,
+        value: string,
+      })
+    ).isRequired,
     selectedItem: shape({
       id: string,
       value: string,
     }),
-    onChange: func.isRequired,
+    onChange: func,
     onFocus: func,
     onBlur: func,
     required: bool,
   };
 
   static defaultProps = {
-    id: null,
+    onChange: noop,
     onFocus: noop,
     onBlur: noop,
     selectedItem: null,
-    required: false,
     innerRef: null,
+    required: false,
   };
 
   render() {
@@ -92,65 +105,53 @@ class Select extends Component {
       onBlur,
       id,
       required,
+      ...remainProps
     } = this.props;
 
     return (
-      <Fragment>
-        <Downshift
-          onChange={onChange}
-          itemToString={item => (item !== null ? item.value : null)}
-          id={id}
-        >
-          {({
-            isOpen,
-            getToggleButtonProps,
-            getItemProps,
-            highlightedIndex,
-          }) => (
-            <div
-              style={{
-                width: '100%',
-                height: '48px',
-              }}
+      <Downshift
+        id={id}
+        onChange={onChange}
+        itemToString={item => (item !== null ? item.value : null)}
+        {...remainProps}
+      >
+        {({ isOpen, getToggleButtonProps, getItemProps, highlightedIndex }) => (
+          <div style={{ width: '100%' }}>
+            <Button
+              {...getToggleButtonProps({
+                onFocus,
+                onBlur,
+                'data-required': required,
+                'data-name': id,
+              })}
+              innerRef={innerRef}
+              value={selectedItem !== null ? selectedItem.value : ''}
             >
-              <Button
-                {...getToggleButtonProps({
-                  onFocus,
-                  onBlur,
-                  'data-required': required,
-                  'data-name': id,
-                })}
-                innerRef={innerRef}
-                value={selectedItem !== null ? selectedItem.value : ''}
-              >
-                <LeftSpan>{`${
-                  selectedItem !== null ? selectedItem.value : ''
-                }`}</LeftSpan>
-                <RightSpan>
-                  <DropDownIcon color={lightGray} size={24} />
-                </RightSpan>
-              </Button>
-              <div>
-                {isOpen && (
-                  <ItemList>
-                    {itemList.map((item, index) => (
-                      <Item
-                        {...getItemProps({
-                          item,
-                          isActive: highlightedIndex === index,
-                        })}
-                        key={item.id}
-                      >
-                        <ItemContent>{item.value}</ItemContent>
-                      </Item>
-                    ))}
-                  </ItemList>
-                )}
-              </div>
-            </div>
-          )}
-        </Downshift>
-      </Fragment>
+              <LeftSpan>{`${
+                selectedItem !== null ? selectedItem.value : ''
+              }`}</LeftSpan>
+              <RightSpan>
+                <DropDownIcon color={lightGray} size={24} />
+              </RightSpan>
+            </Button>
+            {isOpen && (
+              <ItemList>
+                {itemList.map((item, index) => (
+                  <Item
+                    {...getItemProps({
+                      item,
+                      isActive: highlightedIndex === index,
+                    })}
+                    key={item.id}
+                  >
+                    <ItemContent>{item.value}</ItemContent>
+                  </Item>
+                ))}
+              </ItemList>
+            )}
+          </div>
+        )}
+      </Downshift>
     );
   }
 }

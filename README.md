@@ -26,6 +26,7 @@ yarn add git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git
 - Cannot be installed in Gitlab CI
 
     ```bash
+    - apk -v --update add openssh
     - mkdir ~/.ssh
     - printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'

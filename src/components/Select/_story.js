@@ -1,6 +1,5 @@
-/* eslint-disable */
 import React, { Component } from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import Select from './index';
 
 class Wrapper extends Component {
@@ -8,7 +7,7 @@ class Wrapper extends Component {
     selectedItem: {
       ds1: null,
       ds2: null,
-    }
+    },
   };
 
   handleOnChange = (selectedItem, dsState) => {
@@ -37,17 +36,14 @@ class Wrapper extends Component {
               value: 'Van',
             },
           ]}
-          selectedItem={this.state.selectedItem['ds1']}
+          selectedItem={this.state.selectedItem.ds1}
           onChange={this.handleOnChange}
-          onFocus={e => {
-            console.log(e.target);
-          }}
+          style={{ display: 'block' }}
           required
         />
-
         <br />
         <Select
-          id='ds2'
+          id="ds2"
           label="What is your vehicle type?"
           name="vehicleType"
           itemList={[
@@ -60,11 +56,9 @@ class Wrapper extends Component {
               value: 'Van',
             },
           ]}
-          selectedItem={this.state.selectedItem['ds2']}
-          onFocus={e => {
-            console.log(e.target);
-          }}
+          selectedItem={this.state.selectedItem.ds2}
           onChange={this.handleOnChange}
+          style={{ display: 'block' }}
           error="Error Message"
         />
       </div>

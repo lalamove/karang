@@ -21,6 +21,7 @@ const colors = {
   offWhite,
   black,
   facebook,
+  lightGray,
 };
 
 export default colors;
