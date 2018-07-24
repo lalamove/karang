@@ -6,7 +6,6 @@ import MagnifierIcon from 'icons/MagnifierIcon';
 import TextInput from './TextInput';
 
 const SearchContainer = styled.div`
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -14,12 +13,13 @@ const SearchContainer = styled.div`
   border: 1px solid ${offWhite};
   height: 30px;
   padding-left: 14px;
+  padding-right: 8px;
 `;
 
 const StyledTextInput = styled(TextInput)`
-  line-height: 1.143em; /* results in 16px with font size 14px */
+  line-height: 1.143rem; /* results in 16px with font size 14px */
   min-width: 20em;
-  padding-right: 0.5em;
+  padding: 0 0 0 0;
   margin-left: 10px;
 `;
 

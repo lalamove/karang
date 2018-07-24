@@ -9,7 +9,6 @@ class InputWrapper extends Component {
     address: 'Sample Address',
     companyName: '',
     industry: '',
-    searchValue: '',
   };
 
   handleChange = e => {
@@ -74,8 +73,6 @@ class InputWrapper extends Component {
         <br />
         <SearchInput
           name="searchValue"
-          value={this.state.searchValue}
-          onChange={this.handleChange}
           placeholder="Search for Order ID, Driver's Mobile"
         />
       </Fragment>
