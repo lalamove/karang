@@ -59,7 +59,6 @@ class Rating extends PureComponent {
       <RatingContainer>
         {[0, 1, 2, 3, 4].map(i => (
           <Star
-            id={i}
             key={i}
             color={this.colorFill(i)}
             size={this.props.size}

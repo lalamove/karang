@@ -19,13 +19,12 @@ const StarStyle = styled.span`
   }
 `;
 
-const Star = ({ onClick, onMouseEnter, onMouseLeave, color, size, id }) => (
+const Star = ({ onClick, onMouseEnter, onMouseLeave, color, size }) => (
   <StarStyle
     onClick={onClick}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
     size={size}
-    id={id}
   >
     <StarIcon color={color} size={size} />
   </StarStyle>
@@ -33,7 +32,6 @@ const Star = ({ onClick, onMouseEnter, onMouseLeave, color, size, id }) => (
 
 Star.propTypes = {
   size: oneOf([small, large]),
-  id: number.isRequired, // eslint-disable-line react/no-typos
   color: string.isRequired, // eslint-disable-line react/no-typos
   onClick: func,
   onMouseEnter: func,
