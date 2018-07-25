@@ -70,8 +70,6 @@ class InputWrapper extends Component {
           defaultValue="Testing"
           onChange={this.handleChange}
         />
-<<<<<<< HEAD
-=======
         <br />
         <SearchInput
           name="searchValue"
@@ -93,9 +91,8 @@ class InputWrapper extends Component {
           saveBtnText="Save Value"
           editBtnText="Edit Value"
           cancelBtnText="Cancel Value"
-          label="Billing Email"
+          placeholder="Billing Email"
         />
->>>>>>> Separated EditableInput
       </Fragment>
     );
   }

@@ -151,7 +151,7 @@ class EditableInput extends Component {
       <EditableInputContainer
         style={style}
         className={className}
-        innerRef={this.getReference}
+        ref={this.getReference}
       >
         {isEditable ? (
           <EnhancedTextInput
