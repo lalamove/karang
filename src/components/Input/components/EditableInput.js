@@ -18,7 +18,7 @@ const EditableInputContainer = styled.div`
   &:focus-within {
     border-color: ${orange};
   }
-  [class^='withAnimatedContainer__Container'] {
+  [class^='withErrorMessage__ScWrappedComponent'] {
     border-color: transparent;
   }
 `;
@@ -158,7 +158,7 @@ class EditableInput extends Component {
             isEditable={isEditable}
             label={isEditable ? label : ''}
             value={value}
-            ref={this.getInputReference}
+            innerRef={this.getInputReference}
             onChange={this.onInputChange}
             {...remainProps}
           />
