@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { arrayOf, bool, func, string } from 'prop-types';
+import { arrayOf, bool, func, string, oneOf } from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import noop from 'utils/noop';
@@ -16,8 +16,22 @@ const Input = styled.input`
   caret-color: ${orange};
   font-family: ${primaryFonts};
   font-size: ${fontSize.xxlarge};
-  width: 68px;
-  height: 68px;
+  ${({ variant }) => {
+    switch (variant) {
+      case 'small':
+        return css`
+          width: 52px;
+          height: 52px;
+        `;
+      case 'large':
+      default:
+        console.log(variant);
+        return css`
+          width: 68px;
+          height: 68px;
+        `;
+    }
+  }};
   outline: 0;
   margin: 0 8px 8px 8px;
   text-align: center;
@@ -44,6 +58,7 @@ class PinInput extends Component {
     disabled: bool,
     error: string,
     onChange: func,
+    variant: oneOf(['large', 'small']),
   };
 
   static defaultProps = {
@@ -51,6 +66,7 @@ class PinInput extends Component {
     disabled: false,
     error: '',
     onChange: noop,
+    variant: 'large',
   };
 
   state = {
@@ -101,7 +117,7 @@ class PinInput extends Component {
   };
 
   render() {
-    const { error, disabled } = this.props;
+    const { error, disabled, variant } = this.props;
     const pinBoxes = [...Array(4)].map((e, i) => (
       <Input
         maxLength="1"
@@ -118,6 +134,7 @@ class PinInput extends Component {
         }}
         error={error}
         disabled={disabled}
+        variant={variant}
       />
     ));
 

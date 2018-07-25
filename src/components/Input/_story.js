@@ -89,6 +89,9 @@ class PinInputWrapper extends Component {
         <br />
         <br />
         <PinInput pins={this.state.resetPassword} error="Error Message" />
+        <br />
+        <br />
+        <PinInput pins={this.state.resetPassword} variant="small" />
       </Fragment>
     );
   }
