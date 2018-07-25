@@ -16,8 +16,7 @@ import noop from 'utils/noop';
 import DropDownIcon from 'icons/DropDownIcon';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
-import { orange, white, offWhite, gray, lightGray } from 'styles/colors';
-import { fontWeight } from 'styles/fonts';
+import { orange, offWhite, gray, lightGray } from 'styles/colors';
 
 const ItemList = styled.div`
   position: absolute;
@@ -30,17 +29,14 @@ const ItemList = styled.div`
 const Item = styled.div`
   border-left: 2px solid ${({ isActive }) => (isActive ? orange : white)};
   cursor: pointer;
-  background-color: ${({ isActive }) => (isActive ? offWhite : white)};
-  font-weight: ${({ isSelected }) =>
-    isSelected ? fontWeight.bold : fontWeight.regular};
   width: 100%;
-  line-height: 32px;
-  height: 32px;
-  &:hover,
-  &:focus {
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
     background-color: ${offWhite};
     border-left-color: ${orange};
   }
+  line-height: 40px;
+  height: 40px;
 `;
 
 const ItemContent = styled.span`
@@ -140,7 +136,6 @@ class Select extends Component {
                   <Item
                     {...getItemProps({
                       item,
-                      isActive: highlightedIndex === index,
                     })}
                     key={item.id}
                   >
