@@ -7,6 +7,7 @@ class Wrapper extends Component {
     selectedItem: {
       ds1: null,
       ds2: null,
+      ds3: null,
     },
   };
 
@@ -60,6 +61,26 @@ class Wrapper extends Component {
           onChange={this.handleOnChange}
           style={{ display: 'block' }}
           error="Error Message"
+        />
+        <br />
+        <Select
+          id="ds3"
+          label="With disabled item"
+          name="vehicleType"
+          itemList={[
+            {
+              id: 'MOTORCYCLE',
+              value: 'Motorcycle',
+              disabled: true,
+            },
+            {
+              id: 'VAN',
+              value: 'Van',
+            },
+          ]}
+          selectedItem={this.state.selectedItem.ds3}
+          onChange={this.handleOnChange}
+          style={{ display: 'block' }}
         />
       </div>
     );
