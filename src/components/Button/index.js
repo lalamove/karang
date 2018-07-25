@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { transparentize, darken } from 'polished';
-import _omit from 'lodash/omit';
+// import _omit from 'lodash/omit';
 import Base from './style';
 
 import colors from 'styles/colors';
@@ -77,7 +77,7 @@ const Button = styled(Base)`
         `;
     }
   }}
-  
+
   /* loading */
   ${({ isLoading }) =>
     isLoading &&
@@ -111,12 +111,12 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export function withComponent(Comp) {
-  return Button.withComponent(props => {
-    const propsToFilter = Object.keys(Button.propTypes);
-    const filteredProps = _omit(props, propsToFilter);
-    return <Comp {...filteredProps}>{props.children}</Comp>;
-  });
-}
+// export function withComponent(Comp) {
+//   return Button.withComponent(props => {
+//     const propsToFilter = Object.keys(Button.propTypes);
+//     const filteredProps = _omit(props, propsToFilter);
+//     return <Comp {...filteredProps}>{props.children}</Comp>;
+//   });
+// }
 
 export default Button;

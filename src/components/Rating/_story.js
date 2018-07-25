@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Rating } from './index';
+import Rating from './index';
 import { small, large } from './ratingSizes';
 import styled from 'styled-components';
 
