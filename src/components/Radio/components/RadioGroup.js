@@ -35,12 +35,8 @@ class RadioGroup extends Component {
 
   render() {
     const { name, value } = this.props;
-    return (
-      <div>
-        {this.props.children(
-          radio({ name, onChange: this.handleChange, selected: value })
-        )}
-      </div>
+    return this.props.children(
+      radio({ name, onChange: this.handleChange, selected: value })
     );
   }
 }
