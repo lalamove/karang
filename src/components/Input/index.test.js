@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, mount, shallow } from 'enzyme';
-import AnimatedInput from './index';
+import Input from './index';
 
 // Enzyme doesn't work with forwardRef =>
 // Tests fail as code was refactored with forwardRef
@@ -8,7 +8,7 @@ import AnimatedInput from './index';
 
 describe('Snapshots', () => {
   it('Password', () => {
-    const wrapper = render(<AnimatedInput name="input" type="password" />);
+    const wrapper = render(<Input name="input" type="password" />);
     expect(wrapper).toMatchSnapshot();
   });
 

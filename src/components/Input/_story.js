@@ -70,29 +70,6 @@ class InputWrapper extends Component {
           defaultValue="Testing"
           onChange={this.handleChange}
         />
-        <br />
-        <SearchInput
-          name="searchValue"
-          placeholder="Search for Order ID, Driver's Mobile"
-        />
-        <br />
-        <EditableInput
-          name="Billing Email"
-          value="david.lam@lalamove.com"
-          onSave={address => {
-            console.log('saved', address);
-          }}
-          onCancel={address => {
-            console.log('cancel', address);
-          }}
-          ref={node => {
-            console.log('ref', node);
-          }}
-          saveBtnText="Save Value"
-          editBtnText="Edit Value"
-          cancelBtnText="Cancel Value"
-          placeholder="Billing Email"
-        />
       </Fragment>
     );
   }
@@ -129,7 +106,33 @@ class SearchInputWrapper extends Component {
   }
 }
 
+// eslint-disable-next-line
+class EditableInputWrapper extends Component {
+  render() {
+    return (
+      <EditableInput
+        name="Billing Email"
+        value="david.lam@lalamove.com"
+        onSave={address => {
+          console.log('saved', address);
+        }}
+        onCancel={address => {
+          console.log('cancel', address);
+        }}
+        ref={node => {
+          console.log('ref', node);
+        }}
+        saveBtnText="Save Value"
+        editBtnText="Edit Value"
+        cancelBtnText="Cancel Value"
+        label="Billing Email"
+      />
+    );
+  }
+}
+
 storiesOf('Input', module)
   .add('Input', () => <InputWrapper />)
   .add('PinInput', () => <PinInputWrapper />)
-  .add('SearchInput', () => <SearchInputWrapper />);
+  .add('SearchInput', () => <SearchInputWrapper />)
+  .add('EditableInput', () => <EditableInputWrapper />);
