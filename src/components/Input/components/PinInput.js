@@ -15,20 +15,20 @@ const Input = styled.input`
   border: 1px solid ${offWhite};
   caret-color: ${orange};
   font-family: ${primaryFonts};
-  font-size: ${fontSize.xxlarge};
   ${({ variant }) => {
     switch (variant) {
       case 'small':
         return css`
           width: 52px;
           height: 52px;
+          font-size: ${fontSize.xxlarge};
         `;
       case 'large':
       default:
-        console.log(variant);
         return css`
           width: 68px;
           height: 68px;
+          font-size: ${fontSize.xxxlarge};
         `;
     }
   }};

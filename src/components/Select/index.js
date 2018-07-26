@@ -16,7 +16,7 @@ import noop from 'utils/noop';
 import DropDownIcon from 'icons/DropDownIcon';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
-import { orange, gray, lightGray, white, veryLightGray } from 'styles/colors';
+import { orange, gray, lightGray, white, hoverGray } from 'styles/colors';
 
 const ItemList = styled.div`
   position: absolute;
@@ -32,7 +32,7 @@ const Item = styled.div`
   width: 100%;
   &:hover:not([disabled]),
   &:focus:not([disabled]) {
-    background-color: ${veryLightGray};
+    background-color: ${hoverGray};
     border-left-color: ${orange};
   }
   line-height: 40px;
