@@ -14,6 +14,7 @@ exports[`Snapshots Radio checked 1`] = `
 }
 
 .c4 {
+  display: inline-block;
   font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
 }
 
@@ -98,23 +99,24 @@ exports[`Snapshots Radio disabled 1`] = `
 }
 
 .c4 {
+  display: inline-block;
   font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
 }
 
-.jBgTuV:hover .c1,
-.jBgTuV > input:focus ~ .c1 {
+.hnkhzj:hover .c1,
+.hnkhzj > input:focus ~ .c1 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.22);
 }
 
-.jBgTuV > input:disabled ~ .c1 {
+.hnkhzj > input:disabled ~ .c1 {
   background-color: rgba(229,229,229,1);
 }
 
-.jBgTuV > input:disabled ~ .c3 {
+.hnkhzj > input:disabled ~ .c3 {
   opacity: 0.7;
 }
 
-.jBgTuV > input:checked ~ .c1:before {
+.hnkhzj > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -210,6 +212,7 @@ exports[`Snapshots Radio unchecked 1`] = `
 }
 
 .c4 {
+  display: inline-block;
   font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
 }
 
@@ -293,6 +296,7 @@ exports[`Snapshots Render children 1`] = `
 }
 
 .c4 {
+  display: inline-block;
   font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
 }
 
@@ -338,20 +342,20 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.gjntKS:hover .c1,
-.gjntKS > input:focus ~ .c1 {
+.cWBQOU:hover .c1,
+.cWBQOU > input:focus ~ .c1 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.22);
 }
 
-.gjntKS > input:disabled ~ .c1 {
+.cWBQOU > input:disabled ~ .c1 {
   background-color: rgba(229,229,229,1);
 }
 
-.gjntKS > input:disabled ~ .c3 {
+.cWBQOU > input:disabled ~ .c3 {
   opacity: 0.7;
 }
 
-.gjntKS > input:checked ~ .c1:before {
+.cWBQOU > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -360,7 +364,7 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.gjntKS:hover .c1 {
+.cWBQOU:hover .c1 {
   box-shadow: none;
 }
 
