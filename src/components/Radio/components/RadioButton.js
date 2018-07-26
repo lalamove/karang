@@ -18,6 +18,7 @@ const Radio = styled.span`
 `;
 
 const Text = styled.span`
+  display: inline-block;
   font-family: ${primaryFonts};
 `;
 
@@ -41,19 +42,20 @@ const Label = styled.label`
 
   /* prettier-ignore */
   &:hover ${/* sc-selector */ Radio},
-  > input:focus ~ ${/* sc-selector */ Radio} {
+  & > input:focus ~ ${/* sc-selector */ Radio} {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
   }
-
-  > input:disabled ~ ${/* sc-selector */ Radio} {
+  
+  /* stylelint-disable no-duplicate-selectors */
+  & > input:disabled ~ ${/* sc-selector */ Radio} {
     background-color: ${offWhite};
   }
 
-  > input:disabled ~ ${/* sc-selector */ Text} {
+  & > input:disabled ~ ${/* sc-selector */ Text} {
     opacity: 0.7;
   }
 
-  > input:checked ~ ${/* sc-selector */ Radio}:before {
+  & > input:checked ~ ${/* sc-selector */ Radio}:before {
     content: '';
     display: block;
     width: 100%;
@@ -61,7 +63,8 @@ const Label = styled.label`
     background: ${orange};
     border-radius: 50%;
   }
-
+  
+  /* stylelint-disable no-descending-specificity */
   ${props =>
     props.disabled &&
     css`
