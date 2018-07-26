@@ -74,6 +74,7 @@ const Container = styled.label`
   align-items: center;
   font-size: ${fontSize.regular};
   user-select: none;
+  line-height: 20px;
 
   &:hover ${Input} ~ ${Checkmark} {
     border: solid 1px ${silver};
