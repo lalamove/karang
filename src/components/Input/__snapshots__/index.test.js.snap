@@ -24,7 +24,7 @@ exports[`Snapshots Password 1`] = `
 
 .c4 {
   width: 100%;
-  padding: 14px 8px;
+  padding: 1em;
   border: none;
   color: rgba(51,49,50,1);
   font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
