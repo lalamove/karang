@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshots Password 1`] = `
+exports[`Input Snapshots Password 1`] = `
 .c2 {
   position: relative;
   display: -webkit-inline-box;
@@ -91,6 +91,70 @@ exports[`Snapshots Password 1`] = `
         </g>
       </svg>
     </button>
+  </div>
+</div>
+`;
+
+exports[`Input Snapshots Regular Input 1`] = `
+.c2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  border: 1px solid rgba(229,229,229,1);
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  text-align: left;
+}
+
+.c0 {
+  display: inline-block;
+}
+
+.c4 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: rgba(51,49,50,1);
+  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  caret-color: rgba(242,103,34,1);
+  font-size: 14px;
+  line-height: 20px;
+  resize: none;
+  outline: none;
+}
+
+.c3::-ms-reveal {
+  display: none;
+}
+
+.c1 {
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <input
+      autocomplete="new-password"
+      class="c3 c4"
+      id="llmInput_input"
+      label=""
+      name="input"
+      placeholder=""
+      type="text"
+    >
+      
+    </input>
   </div>
 </div>
 `;
