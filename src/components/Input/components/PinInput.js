@@ -122,7 +122,7 @@ class PinInput extends Component {
       <Input
         maxLength="1"
         name={i}
-        value={this.state.pins[i]}
+        value={this.state.pins[i] || ''}
         onKeyDown={this.handleKeyDown}
         onKeyPress={this.handleKeyPress}
         onChange={this.handleChange}
