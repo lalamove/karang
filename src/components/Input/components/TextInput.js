@@ -7,7 +7,7 @@ import { primaryFonts, fontSize } from 'styles/fonts';
 
 const InputField = styled.input`
   width: 100%;
-  padding: 14px 8px;
+  padding: 1em;
   border: none;
   color: ${black};
   font-family: ${primaryFonts};

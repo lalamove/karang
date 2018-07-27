@@ -8,7 +8,7 @@ import { primaryFonts, fontSize } from 'styles/fonts';
 const Container = styled.label`
   position: absolute;
   top: 50%;
-  left: 0.5em;
+  left: 1em;
   color: ${silver};
   font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
@@ -35,7 +35,8 @@ const Container = styled.label`
     (focused || dirty || error) &&
     css`
       top: 0;
-      padding: 0 4px 0 4px;
+      left: 0.5em;
+      padding: 0 4px;
       background-color: ${white};
       transform: translateY(-50%) scale(0.7);
     `};
