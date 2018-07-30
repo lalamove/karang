@@ -5,10 +5,12 @@ export { default as Card } from './components/Card';
 export { default as Checkbox } from './components/Checkbox';
 export { default as CountdownBar } from './components/CountdownBar';
 export { default as Form, Item } from './components/Form';
-export { default as Radio, RadioGroup } from './components/Radio';
+export { default as Heading } from './components/Heading';
 export { default as Input, PinInput, SearchInput } from './components/Input';
-export { default as Select } from './components/Select';
+export { default as List } from './components/List';
+export { default as Radio, RadioGroup } from './components/Radio';
 export { default as Rating } from './components/Rating';
+export { default as Select } from './components/Select';
 
 // for icons, export them here
 export { default as ErrorIcon } from './icons/Error';
