@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { transparentize, darken } from 'polished';
 
 import Base from './style';
+import omit from 'utils/omit';
 import colors from 'styles/colors';
 import loaderGif from 'assets/loader.gif';
 
@@ -102,5 +103,14 @@ Button.propTypes = {
   block: bool,
   children: node.isRequired,
 };
+
+// TODO: Review the usage
+export function withComponent(Comp) {
+  return Button.withComponent(props => {
+    const propsToFilter = Object.keys(Button.propTypes);
+    const filteredProps = omit(props, propsToFilter);
+    return <Comp {...filteredProps}>{props.children}</Comp>;
+  });
+}
 
 export default Button;
