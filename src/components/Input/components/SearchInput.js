@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { offWhite } from 'styles/colors';
 import { fontSize } from 'styles/fonts';
-import MagnifierIcon from 'icons/MagnifierIcon';
+import MagnifierIcon from 'icons/Magnifier';
 import TextInput from './TextInput';
 
 const SearchContainer = styled.div`

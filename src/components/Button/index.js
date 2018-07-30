@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool, oneOf, node } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { transparentize, darken } from 'polished';
-// import _omit from 'lodash/omit';
+
+import omit from 'utils/omit';
 import Base from './style';
-
 import colors from 'styles/colors';
-
 import loaderGif from 'assets/loader.gif';
 
 /* eslint-disable import/no-named-as-default-member */
@@ -98,25 +97,19 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  isLoading: PropTypes.bool,
-  large: PropTypes.bool,
-  variant: PropTypes.oneOf([
-    'default',
-    'primary',
-    'secondary',
-    'outline',
-    'link',
-  ]),
-  block: PropTypes.bool,
-  children: PropTypes.node.isRequired,
+  isLoading: bool,
+  large: bool,
+  variant: oneOf(['default', 'primary', 'secondary', 'outline', 'link']),
+  block: bool,
+  children: node.isRequired,
 };
 
-// export function withComponent(Comp) {
-//   return Button.withComponent(props => {
-//     const propsToFilter = Object.keys(Button.propTypes);
-//     const filteredProps = _omit(props, propsToFilter);
-//     return <Comp {...filteredProps}>{props.children}</Comp>;
-//   });
-// }
+export function withComponent(Comp) {
+  return Button.withComponent(props => {
+    const propsToFilter = Object.keys(Button.propTypes);
+    const filteredProps = omit(props, propsToFilter);
+    return <Comp {...filteredProps}>{props.children}</Comp>;
+  });
+}
 
 export default Button;

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { render, mount, shallow } from 'enzyme';
-import Radio, { RadioGroup } from './index';
+import Radio, { RadioGroup } from '../index';
 
 describe('Snapshots', () => {
   it('Radio unchecked', () => {

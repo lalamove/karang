@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import noop from 'utils/noop';
 
 import { small, large } from '../ratingSizes';
-import StarIcon from 'icons/StarIcon';
+import StarIcon from 'icons/Star';
 
 const StarStyle = styled.span`
   display: inline-block;

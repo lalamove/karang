@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'enzyme';
-import Input from './index';
+import Input from '../index';
 
 // Enzyme is still not fully support React 16.3 forwardRef
 // https://github.com/airbnb/enzyme/pull/1592

@@ -13,7 +13,7 @@ import styled from 'styled-components';
 import { compose } from 'recompose';
 
 import noop from 'utils/noop';
-import DropDownIcon from 'icons/DropDownIcon';
+import DropDownIcon from 'icons/DropDown';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
 import { orange, gray, lightGray, white, hoverGray } from 'styles/colors';

@@ -1,10 +1,5 @@
 import styled from 'styled-components';
-
-import colors from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
-
-const fontFamily = primaryFonts;
-const lightGray = colors.offWhite; // eslint-disable-line
 
 const Base = styled.button`
   /* structure */
@@ -16,7 +11,7 @@ const Base = styled.button`
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: ${fontFamily};
+  font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
   font-weight: 400;
   line-height: 1;
