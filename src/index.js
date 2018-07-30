@@ -13,8 +13,10 @@ export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
 
 // for icons, export them here
+export { default as DropDownIcon } from './icons/DropDown';
 export { default as ErrorIcon } from './icons/Error';
 export { default as EyeOffIcon } from './icons/EyeOff';
 export { default as EyeOnIcon } from './icons/EyeOn';
-export { default as DropDownIcon } from './icons/DropDown';
+export { default as InfoIcon } from './icons/Info';
+export { default as MagnifierIcon } from './icons/Magnifier';
 export { default as StarIcon } from './icons/Star';
