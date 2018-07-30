@@ -1,6 +1,10 @@
 // for components, export them here
 export { default as BaseApp } from './components/BaseApp';
-export { default as Button } from './components/Button';
+export {
+  default as Button,
+  CloseButton,
+  IconButton,
+} from './components/Button';
 export { default as Card } from './components/Card';
 export { default as Checkbox } from './components/Checkbox';
 export { default as CountdownBar } from './components/CountdownBar';
@@ -13,6 +17,7 @@ export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
 
 // for icons, export them here
+export { default as CrossIcon } from './icons/Cross';
 export { default as DropDownIcon } from './icons/DropDown';
 export { default as ErrorIcon } from './icons/Error';
 export { default as EyeOffIcon } from './icons/EyeOff';
