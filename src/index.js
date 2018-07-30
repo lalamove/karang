@@ -5,7 +5,7 @@ export { default as Card } from './components/Card';
 export { default as Checkbox } from './components/Checkbox';
 export { default as CountdownBar } from './components/CountdownBar';
 export { default as Form } from './components/Form';
-export { default as Heading } from './components/Heading';
+export { default as Heading, HeadingGroup } from './components/Heading';
 export { default as Input, PinInput, SearchInput } from './components/Input';
 export { default as List } from './components/List';
 export { default as Radio, RadioGroup } from './components/Radio';
