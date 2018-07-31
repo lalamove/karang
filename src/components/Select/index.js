@@ -84,6 +84,7 @@ class Select extends Component {
     onFocus: func,
     onBlur: func,
     required: bool,
+    disabled: bool,
   };
 
   static defaultProps = {
@@ -93,6 +94,7 @@ class Select extends Component {
     selectedItem: null,
     innerRef: null,
     required: false,
+    disabled: false,
   };
 
   render() {
@@ -105,6 +107,7 @@ class Select extends Component {
       onBlur,
       id,
       required,
+      disabled,
       ...remainProps
     } = this.props;
 
@@ -126,6 +129,7 @@ class Select extends Component {
               })}
               innerRef={innerRef}
               value={selectedItem !== null ? selectedItem.value : ''}
+              disabled={disabled}
             >
               <LeftSpan>{`${
                 selectedItem !== null ? selectedItem.value : ''
