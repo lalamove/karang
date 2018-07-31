@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Snapshots Card 1`] = `
+.c0 {
+  background-color: rgba(255,255,255,1);
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 28px 40px;
+  width: 480px;
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;
