@@ -58,7 +58,6 @@ class TextArea extends Component {
   static propTypes = {
     characterLimit: number,
     onChange: func,
-    style: shape({}),
     errorMsg: string,
     characterLimitMsgGenerator: func,
     exceedLimitMsgGenerator: func,
@@ -66,7 +65,6 @@ class TextArea extends Component {
   static defaultProps = {
     characterLimit: null,
     onChange: noop,
-    style: {},
     errorMsg: 'Character limit exceeded',
     characterLimitMsgGenerator: charactersLeft =>
       `Characters left: ${charactersLeft}`,

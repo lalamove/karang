@@ -30,7 +30,6 @@ const CharacterLimitDisplay = styled.div`
 const InnerInputArea = styled.textarea`
   font-family: ${primaryFonts};
   width: 100%;
-  height: calc(100% - 11px);
   border: 0px solid transparent;
   padding: 0px;
   resize: none;

@@ -18,6 +18,7 @@ class TextAreaWrapper extends Component {
           exceedLimitMsgGenerator={excessCharacters =>
             `Prop generated excess message: ${excessCharacters}`
           }
+          errorMsg="Prop generated error msg"
         />
         <br />
         <TextArea
