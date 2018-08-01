@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import Input, { PinInput, SearchInput, EditableInput, TextArea } from './index';
+import Input, { PinInput, SearchInput, EditableInput } from './index';
 
 class InputWrapper extends Component {
   state = {
@@ -134,31 +134,8 @@ class EditableInputWrapper extends Component {
   }
 }
 
-// eslint-disable-next-line
-class TextAreaWrapper extends Component {
-  render() {
-    return (
-      <Fragment>
-        <TextArea
-          name="Comments"
-          placeholder="+ Add any important instructions about your delivery"
-          style={{ width: '500px', height: '96px' }}
-          characterLimit={10}
-        />
-        <br />
-        <TextArea
-          name="Comments"
-          placeholder="+ Add any important instructions about your delivery"
-          style={{ width: '500px', height: '96px' }}
-        />
-      </Fragment>
-    );
-  }
-}
-
 storiesOf('Input', module)
   .add('Input', () => <InputWrapper />)
   .add('PinInput', () => <PinInputWrapper />)
   .add('SearchInput', () => <SearchInputWrapper />)
-  .add('EditableInput', () => <EditableInputWrapper />)
-  .add('TextArea', () => <TextAreaWrapper />);
+  .add('EditableInput', () => <EditableInputWrapper />);
