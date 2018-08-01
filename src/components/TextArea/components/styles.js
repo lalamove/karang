@@ -4,9 +4,10 @@ import { orange, lightGray, red } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const TextAreaContainer = styled.div`
-  height: calc(100% - 24px);
-  width: calc(100% - 24px);
-  padding: 11px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 11px 11px 6px 11px;
   border: 1px solid ${lightGray};
   ${({ focused }) =>
     focused &&
@@ -28,6 +29,7 @@ const CharacterLimitDisplay = styled.div`
 `;
 
 const InnerInputArea = styled.textarea`
+  display: block;
   font-family: ${primaryFonts};
   width: 100%;
   border: 0px solid transparent;
@@ -38,7 +40,10 @@ const InnerInputArea = styled.textarea`
   }
 
   ${({ hasCharacterLimit }) =>
-    hasCharacterLimit ? `height: calc(100% - 11px);` : `height: 100%;`};
+    hasCharacterLimit
+      ? `height: calc(100% - 16px);
+      `
+      : `height: calc(100% - 5px);`};
 
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
