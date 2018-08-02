@@ -57,9 +57,8 @@ function withAnimatedContainer(WrappedComponent) {
       className: '',
     };
 
-    constructor() {
-      super();
-      this.input = null;
+    static getDerivedStateFromProps({ value, defaultValue }, state) {
+      return { dirty: !!(value || defaultValue) };
     }
 
     state = {
@@ -95,7 +94,7 @@ function withAnimatedContainer(WrappedComponent) {
     updateDirtyState = () => {
       if (this.input) {
         this.setState({
-          dirty: this.input.value ? this.input.value.length > 0 : false,
+          dirty: !!this.input.value,
         });
       }
     };
