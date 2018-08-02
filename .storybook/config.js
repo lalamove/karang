@@ -5,13 +5,7 @@ import styled from 'styled-components';
 import App from 'components/BaseApp';
 
 const Container = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: #FFFFFF;
+  padding: 30px;
 `;
 
 const Decorator = (storyFn) => (

@@ -13,6 +13,7 @@ export const fontSize = {
   micro: '10px',
   small: '12px', // Label Text font size
   regular: '14px', // Body Text font size
+  medium: '16px', // Button font size
   large: '18px', // Title font size
   xlarge: '24px', // Popup Title font size
   xxlarge: '36px', // Pin Input small font size

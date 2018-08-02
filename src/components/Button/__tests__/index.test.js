@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'enzyme';
-import Button from './index';
+import Button from '../index';
 
 const types = {
   large: true,

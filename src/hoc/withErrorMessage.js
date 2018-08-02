@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { red } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
-import ErrorIcon from 'icons/ErrorIcon';
+import ErrorIcon from 'icons/Error';
 
 const Container = styled.div`
   display: inline-block;

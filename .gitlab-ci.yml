@@ -11,6 +11,7 @@ test:
   stage: test
   tags:
     - k8s
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
   script:
     - yarn install
     - yarn test-coverage

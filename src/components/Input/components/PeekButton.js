@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import noop from 'utils/noop';
 import { black } from 'styles/colors';
-import EyeOffIcon from 'icons/EyeOffIcon';
-import EyeOnIcon from 'icons/EyeOnIcon';
+import EyeOffIcon from 'icons/EyeOff';
+import EyeOnIcon from 'icons/EyeOn';
 
 const Button = styled.button`
   appearance: none;
