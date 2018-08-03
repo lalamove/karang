@@ -15,6 +15,7 @@ const Base = styled.button`
   font-size: ${fontSize.regular};
   font-weight: 400;
   line-height: 1;
+  text-align: center;
   cursor: pointer;
   outline: 0;
 
