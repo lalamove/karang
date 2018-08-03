@@ -28,6 +28,7 @@ class InputWrapper extends Component {
           autoFocus
         />
         <br />
+        <br />
         <Input
           type="password"
           label="Password"
@@ -35,6 +36,7 @@ class InputWrapper extends Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
+        <br />
         <br />
         <Input
           type="text"
@@ -45,6 +47,7 @@ class InputWrapper extends Component {
           error="Error Message Error Message Error Message Error Message Error Message Error Message Error Message"
         />
         <br />
+        <br />
         <Input
           type="text"
           label="Company Name"
@@ -54,6 +57,7 @@ class InputWrapper extends Component {
           selectAll
         />
         <br />
+        <br />
         <Input
           type="text"
           placeholder="Industry"
@@ -62,6 +66,7 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           cursorEnd
         />
+        <br />
         <br />
         <Input
           type="text"
