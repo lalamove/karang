@@ -17,7 +17,7 @@ const {
 } = colors;
 /* eslint-enable import/no-named-as-default-member */
 
-const Button = styled(Base)`
+const Button = Base.extend`
   /* layout */
   display: ${({ block }) => (block ? 'block' : 'inline-block')};
   ${({ block }) => block && 'width: 100%;'};

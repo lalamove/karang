@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import Button from './index';
+import Button, { ButtonWithComponent } from './index';
 
 const Container = styled.div`
   display: flex;
@@ -10,6 +10,8 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
 `;
+
+const CustomComponent = ButtonWithComponent('a');
 
 storiesOf('Button', module).add(
   'Basic',
@@ -70,6 +72,12 @@ storiesOf('Button', module).add(
         <Button disabled variant="primary" large isLoading block>
           Disabled
         </Button>
+      </Container>
+      <h4>WithComponent</h4>
+      <Container>
+        <CustomComponent href="#somewhere" variant="primary">
+          {'Button with <a href="#somewhere" /> tag'}
+        </CustomComponent>
       </Container>
     </div>
   ))
