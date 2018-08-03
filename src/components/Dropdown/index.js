@@ -1,91 +1,27 @@
 import React, { Component } from 'react';
-import {
-  string,
-  arrayOf,
-  shape,
-  func,
-  bool,
-  oneOfType,
-  object,
-} from 'prop-types';
+import { arrayOf, func, shape, string } from 'prop-types';
 import Downshift from 'downshift';
-import styled from 'styled-components';
 
 import DropdownButton from './components/DropdownButton';
 import DropdownList from './components/DropdownList';
 import noop from 'utils/noop';
 
-import flag from 'assets/testing.png'; // TODO: remove it later, just for testing
-
-const FlagIcon = styled.img`
-  max-width: 24px;
-  max-height: 24px;
-  vertical-align: middle;
-`;
-
-// TODO: Remove it later, just for testing
-const items = [
-  {
-    value: 'Option 1',
-    label: 'Option 1',
-    icon: <FlagIcon src={flag} />,
-    options: [
-      {
-        value: 'Option 1A',
-        label: 'Option 1A',
-        icon: <FlagIcon src={flag} />,
-      },
-      {
-        value: 'Option 1B',
-        label: 'Option 1B',
-        icon: <FlagIcon src={flag} />,
-        options: [
-          {
-            value: 'Option 2A',
-            label: 'Option 2A',
-            icon: <FlagIcon src={flag} />,
-          },
-          {
-            value: 'Option 2B',
-            label: 'Option 2B',
-            icon: <FlagIcon src={flag} />,
-          },
-          {
-            value: 'Option 2C',
-            label: 'Option 2C',
-            icon: <FlagIcon src={flag} />,
-          },
-        ],
-      },
-      {
-        value: 'Option 1C',
-        label: 'Option 1C',
-        icon: <FlagIcon src={flag} />,
-      },
-    ],
-  },
-  {
-    value: 'Option 2',
-    label: 'Option 2',
-    icon: <FlagIcon src={flag} />,
-  },
-];
-
 class Dropdown extends Component {
   static propTypes = {
+    items: arrayOf(shape({})).isRequired,
+    selectedItem: shape({}),
     onChange: func,
+    defaultLabel: string,
   };
 
   static defaultProps = {
+    selectedItem: null,
     onChange: noop,
-  };
-
-  state = {
-    selectedOption: null,
+    defaultLabel: 'Options',
   };
 
   handleChange = selectedOption => {
-    this.setState({ selectedOption });
+    // TODO: Remove this
     this.props.onChange(selectedOption);
   };
 
@@ -100,8 +36,14 @@ class Dropdown extends Component {
     }
   };
 
+  // TODO: Accessibility
+  // tab-index
+  // keyboard nav
+  // direction of submenu
+  // https://react-select.com/props#select-props
+
   render() {
-    const { selectedOption } = this.state;
+    const { items, selectedItem, defaultLabel } = this.props;
     return (
       <Downshift
         onChange={this.handleChange}
@@ -118,20 +60,25 @@ class Dropdown extends Component {
           isOpen,
           inputValue,
           highlightedIndex,
-          selectedItem,
+          selectedItem: dsSelectedItem,
         }) => (
           <div>
             <DropdownButton
-              icon={selectedOption && selectedOption.icon}
-              label={selectedOption ? selectedOption.label : 'testing'}
+              icon={
+                (selectedItem && selectedItem.icon) ||
+                (dsSelectedItem && dsSelectedItem.icon)
+              }
+              label={
+                (selectedItem && selectedItem.label) ||
+                (dsSelectedItem && dsSelectedItem.label) ||
+                defaultLabel
+              }
               {...getToggleButtonProps()}
             />
-            {console.log(highlightedIndex)}
-            {console.log(selectedItem)}
             {isOpen && (
               <DropdownList
                 items={items}
-                highlightedIndex={highlightedIndex}
+                // highlightedIndex={highlightedIndex}
                 getItemProps={getItemProps}
               />
             )}

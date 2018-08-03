@@ -20,7 +20,7 @@ const StyledList = styled(List)`
 class DropdownList extends Component {
   static propTypes = {
     items: arrayOf(shape({})).isRequired, // add shape
-    highlightedIndex: oneOfType([string, number]).isRequired,
+    // highlightedIndex: oneOfType([string, number]).isRequired,
     getItemProps: func,
   };
 
@@ -39,7 +39,7 @@ class DropdownList extends Component {
     this.setState({ selectedIds: updatedArray });
   };
 
-  renderList(items, highlightedIndex, getItemProps, depthLevel = 0) {
+  renderList(items, getItemProps, depthLevel = 0) {
     return (
       <Container>
         <StyledList
@@ -55,7 +55,7 @@ class DropdownList extends Component {
             if (this.state.selectedIds[depthLevel] === id && option.options) {
               subOptions = this.renderList(
                 option.options,
-                highlightedIndex,
+                // highlightedIndex,
                 getItemProps,
                 depthLevel + 1
               );
@@ -87,11 +87,11 @@ class DropdownList extends Component {
   render() {
     const {
       items,
-      highlightedIndex,
+      // highlightedIndex,
       getItemProps,
       ...remainProps
     } = this.props;
-    return this.renderList(items, highlightedIndex, getItemProps);
+    return this.renderList(items, getItemProps);
   }
 }
 

@@ -20,12 +20,12 @@ const Content = styled.div`
     switch (variant) {
       case 'small':
         return css`
-          padding: 6px 0 6px 0;
+          padding: 6px 6px 6px 0;
         `;
       case 'large':
       default:
         return css`
-          padding: 12px 0 12px 0;
+          padding: 12px 12px 12px 0;
         `;
     }
   }};
@@ -60,20 +60,6 @@ const LI = styled.li`
   border-left: 2px solid ${white};
   background-color: ${white};
   outline: 0;
-
-  ${({ variant }) => {
-    switch (variant) {
-      case 'small':
-        return css`
-          padding-right: 6px;
-        `;
-      case 'large':
-      default:
-        return css`
-          padding-right: 20px;
-        `;
-    }
-  }};
 
   &:not(:last-child) ${/* sc-selector */ Content} {
     ${({ variant }) => {
