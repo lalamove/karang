@@ -17,6 +17,7 @@ export { default as List } from './components/List';
 export { default as Radio, RadioGroup } from './components/Radio';
 export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
+export { default as TextArea } from './components/TextArea';
 
 // for icons, export them here
 export { default as CrossIcon } from './icons/Cross';
