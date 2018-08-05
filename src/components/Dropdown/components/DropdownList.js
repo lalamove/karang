@@ -21,36 +21,32 @@ class DropdownList extends Component {
   static propTypes = {
     items: arrayOf(shape({})).isRequired, // add shape
     highlightedIndex: oneOfType([string, number]),
+    onItemFocus: func,
     getItemProps: func,
-    setItemsCount: func,
+    setHighlightedIndex: func,
   };
 
   static defaultProps = {
-    getItemProps: noop,
-    setItemsCount: noop,
     highlightedIndex: null,
+    onItemFocus: noop,
+    getItemProps: noop,
+    setHighlightedIndex: noop,
   };
 
   state = {
     selectedIds: [],
   };
 
-  // onMouseEnter = (selectedId, depthLevel, count) => {
-  //   this.handleSelectedId(selectedId, depthLevel);
-  //   this.props.setItemsCount(depthLevel, count);
-  // };
+  onItemFocus = (depthLevel, count, id) => {
+    const { setHighlightedIndex, onItemFocus } = this.props;
+    onItemFocus(depthLevel, count, id);
+    setHighlightedIndex(id);
+  };
 
   handleSelectedId = (selectedId, depthLevel) => {
     const updatedArray = [...this.state.selectedIds];
     updatedArray[depthLevel] = selectedId;
     this.setState({ selectedIds: updatedArray });
-  };
-
-  setItemsCount = (depthLevel, count, id) => {
-    console.log('setItemsCount');
-    console.log(depthLevel, count);
-    console.log(id);
-    this.props.setItemsCount(depthLevel, count, id);
   };
 
   renderList(items, depthLevel = 0) {
@@ -64,19 +60,18 @@ class DropdownList extends Component {
             let subOptions;
 
             if (this.state.selectedIds[depthLevel] === id && option.options) {
-              subOptions = this.renderList(option.options, depthLevel + 1);
+              const newDepthLevel = depthLevel + 1;
+              subOptions = this.renderList(option.options, newDepthLevel);
             }
 
             return (
+              // keyboard events are handled in parent component
+              // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
               <Item
                 onMouseEnter={() => this.handleSelectedId(id, depthLevel)}
                 onMouseOver={() =>
                   !option.options &&
-                  this.setItemsCount(depthLevel, items.length, id)
-                }
-                onFocus={() =>
-                  !option.options &&
-                  this.setItemsCount(depthLevel, items.length, id)
+                  this.onItemFocus(depthLevel, items.length, id)
                 }
                 {...compose(
                   getItemProps,
@@ -89,7 +84,6 @@ class DropdownList extends Component {
                   options: subOptions,
                 })}
               >
-                {highlightedIndex}
                 {option.label}
               </Item>
             );
@@ -100,7 +94,7 @@ class DropdownList extends Component {
   }
 
   render() {
-    const { items, ...remainProps } = this.props;
+    const { items } = this.props;
     return this.renderList(items);
   }
 }
