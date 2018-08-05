@@ -20,61 +20,76 @@ const StyledList = styled(List)`
 class DropdownList extends Component {
   static propTypes = {
     items: arrayOf(shape({})).isRequired, // add shape
-    // highlightedIndex: oneOfType([string, number]).isRequired,
+    highlightedIndex: oneOfType([string, number]),
     getItemProps: func,
+    setItemsCount: func,
   };
 
   static defaultProps = {
     getItemProps: noop,
+    setItemsCount: noop,
+    highlightedIndex: null,
   };
 
   state = {
     selectedIds: [],
   };
 
-  handleSelectedId = (selected, depthLevel) => {
-    const updatedArray = this.state.selectedIds.slice(0);
-    updatedArray[depthLevel] = selected;
-    // console.log(updatedArray);
+  // onMouseEnter = (selectedId, depthLevel, count) => {
+  //   this.handleSelectedId(selectedId, depthLevel);
+  //   this.props.setItemsCount(depthLevel, count);
+  // };
+
+  handleSelectedId = (selectedId, depthLevel) => {
+    const updatedArray = [...this.state.selectedIds];
+    updatedArray[depthLevel] = selectedId;
     this.setState({ selectedIds: updatedArray });
   };
 
-  renderList(items, getItemProps, depthLevel = 0) {
+  setItemsCount = (depthLevel, count, id) => {
+    console.log('setItemsCount');
+    console.log(depthLevel, count);
+    console.log(id);
+    this.props.setItemsCount(depthLevel, count, id);
+  };
+
+  renderList(items, depthLevel = 0) {
+    const { highlightedIndex, getItemProps } = this.props;
+
     return (
       <Container>
-        <StyledList
-          hoverable
-          items={items}
-          variant="small"
-          nested={depthLevel !== 0}
-        >
+        <StyledList hoverable items={items} variant="small">
           {({ data: option, Item, index, getProps }) => {
             const id = `${depthLevel}_${index}`;
             let subOptions;
 
             if (this.state.selectedIds[depthLevel] === id && option.options) {
-              subOptions = this.renderList(
-                option.options,
-                // highlightedIndex,
-                getItemProps,
-                depthLevel + 1
-              );
+              subOptions = this.renderList(option.options, depthLevel + 1);
             }
 
             return (
               <Item
                 onMouseEnter={() => this.handleSelectedId(id, depthLevel)}
+                onMouseOver={() =>
+                  !option.options &&
+                  this.setItemsCount(depthLevel, items.length, id)
+                }
+                onFocus={() =>
+                  !option.options &&
+                  this.setItemsCount(depthLevel, items.length, id)
+                }
                 {...compose(
                   getItemProps,
                   getProps
                 )({
-                  // active: highlightedIndex === index,
+                  active: highlightedIndex === id,
                   index: id,
                   item: option,
                   icon: option.icon,
                   options: subOptions,
                 })}
               >
+                {highlightedIndex}
                 {option.label}
               </Item>
             );
@@ -85,13 +100,8 @@ class DropdownList extends Component {
   }
 
   render() {
-    const {
-      items,
-      // highlightedIndex,
-      getItemProps,
-      ...remainProps
-    } = this.props;
-    return this.renderList(items, getItemProps);
+    const { items, ...remainProps } = this.props;
+    return this.renderList(items);
   }
 }
 

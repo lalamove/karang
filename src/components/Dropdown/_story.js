@@ -27,6 +27,16 @@ const countries = [
         label: 'Chiang Mai',
         icon: <FlagIcon src={flag} />,
       },
+      {
+        value: 'TH_CNX2',
+        label: 'Chiang Mai2',
+        icon: <FlagIcon src={flag} />,
+      },
+      {
+        value: 'TH_CNX3',
+        label: 'Chiang Mai3',
+        icon: <FlagIcon src={flag} />,
+      },
     ],
   },
   {
