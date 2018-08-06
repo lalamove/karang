@@ -21,36 +21,31 @@ class DropdownList extends Component {
   static propTypes = {
     items: arrayOf(shape({})).isRequired, // add shape
     highlightedIndex: oneOfType([string, number]),
-    onItemFocus: func,
+    selectedIds: arrayOf(string),
     getItemProps: func,
-    setHighlightedIndex: func,
+    handleCurrentDepthLevel: func,
+    handleSelectedIds: func,
+    handleListCounts: func,
   };
 
   static defaultProps = {
     highlightedIndex: null,
-    onItemFocus: noop,
-    getItemProps: noop,
-    setHighlightedIndex: noop,
-  };
-
-  state = {
     selectedIds: [],
-  };
-
-  onItemFocus = (depthLevel, count, id) => {
-    const { setHighlightedIndex, onItemFocus } = this.props;
-    onItemFocus(depthLevel, count, id);
-    setHighlightedIndex(id);
-  };
-
-  handleSelectedId = (selectedId, depthLevel) => {
-    const updatedArray = [...this.state.selectedIds];
-    updatedArray[depthLevel] = selectedId;
-    this.setState({ selectedIds: updatedArray });
+    getItemProps: noop,
+    handleCurrentDepthLevel: noop,
+    handleSelectedIds: noop,
+    handleListCounts: noop,
   };
 
   renderList(items, depthLevel = 0) {
-    const { highlightedIndex, getItemProps } = this.props;
+    const {
+      highlightedIndex,
+      selectedIds,
+      getItemProps,
+      handleCurrentDepthLevel,
+      handleSelectedIds,
+      handleListCounts,
+    } = this.props;
 
     return (
       <Container>
@@ -59,19 +54,21 @@ class DropdownList extends Component {
             const id = `${depthLevel}_${index}`;
             let subOptions;
 
-            if (this.state.selectedIds[depthLevel] === id && option.options) {
+            if (selectedIds[depthLevel] === id && option.options) {
               const newDepthLevel = depthLevel + 1;
               subOptions = this.renderList(option.options, newDepthLevel);
+              handleListCounts(option.options.length, newDepthLevel);
+            } else if (selectedIds[depthLevel] === id) {
+              handleListCounts(items.length, depthLevel);
             }
 
             return (
               // keyboard events are handled in parent component
               // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
               <Item
-                onMouseEnter={() => this.handleSelectedId(id, depthLevel)}
+                onMouseEnter={() => handleSelectedIds(id, depthLevel)}
                 onMouseOver={() =>
-                  !option.options &&
-                  this.onItemFocus(depthLevel, items.length, id)
+                  !option.options && handleCurrentDepthLevel(depthLevel)
                 }
                 {...compose(
                   getItemProps,
