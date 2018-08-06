@@ -7,7 +7,7 @@ import DropdownIcon from 'icons/DropDown';
 import { lightGray } from 'styles/colors';
 
 const StyledButton = styled(Button)`
-  min-width: 80px; // TODO: ugly hack, need fix
+  min-width: 80px;
   width: auto;
   white-space: nowrap;
   padding: 0 4px 0 9px;

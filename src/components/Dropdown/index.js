@@ -7,6 +7,7 @@ import DropdownList from './components/DropdownList';
 import noop from 'utils/noop';
 
 const validIndex = /(\d+)_(-?\d+)/;
+let setHighlightedIndex;
 
 class Dropdown extends Component {
   static propTypes = {
@@ -22,46 +23,44 @@ class Dropdown extends Component {
     defaultLabel: 'Options',
   };
 
-  constructor(props) {
-    super(props);
-    this.child = React.createRef();
-  }
-
   state = {
-    currentDepthLevel: 0,
-    selectedIds: [],
+    depthLevel: 0,
+    highlightedIndexes: [],
     listCounts: [this.props.items.length],
   };
 
-  handleCurrentDepthLevel = depthLevel => {
-    const { currentDepthLevel } = this.state;
-    if (currentDepthLevel === depthLevel) return;
-    this.setState({ currentDepthLevel: depthLevel });
+  // sync highlighted indexes in state and Downshift
+  setHighlightedIndexes = (index, depthLevel) => {
+    setHighlightedIndex(index); // method in Downshift
+    this.handleHighlightedIndexes(index, depthLevel);
   };
 
-  handleSelectedIds = (id, depthLevel) => {
-    const { selectedIds } = this.state;
-    if (selectedIds[depthLevel] === id && selectedIds.length === depthLevel + 1)
+  handleDepthLevel = level => {
+    const { depthLevel } = this.state;
+    if (depthLevel === level) return;
+    this.setState({ depthLevel: level });
+  };
+
+  handleHighlightedIndexes = (index, depthLevel) => {
+    const { highlightedIndexes } = this.state;
+    const expectedCount = depthLevel + 1;
+    if (
+      highlightedIndexes[depthLevel] === index &&
+      highlightedIndexes.length === expectedCount
+    )
       return;
-    const tempArray = [...selectedIds];
-    tempArray[depthLevel] = id;
-    const updatedArray = tempArray.slice(0, depthLevel + 1);
-    this.setState({ selectedIds: updatedArray });
+    const updatedArray = [...highlightedIndexes].slice(0, expectedCount);
+    updatedArray[depthLevel] = index;
+    this.setState({ highlightedIndexes: updatedArray });
   };
 
   handleListCounts = (count, depthLevel) => {
     const { listCounts } = this.state;
-    if (
-      listCounts[depthLevel] === count &&
-      listCounts.length === depthLevel + 1
-    )
+    const expectedCount = depthLevel + 1;
+    if (listCounts[depthLevel] === count && listCounts.length === expectedCount)
       return;
-    const tempArray = [...listCounts];
-    tempArray[depthLevel] = count;
-    const updatedArray = tempArray.slice(0, depthLevel + 1);
-    console.log('handleListCounts');
-    console.log(count, depthLevel);
-    console.log('listCounts', updatedArray);
+    const updatedArray = [...listCounts].slice(0, expectedCount);
+    updatedArray[depthLevel] = count;
     this.setState({ listCounts: updatedArray });
   };
 
@@ -76,63 +75,65 @@ class Dropdown extends Component {
     }
   };
 
-  // override method defined in Downshift to support nested drop-down
-  moveHighlightedIndex = (setHighlightedIndex, moveAmount = 1) => {
-    const { selectedIds, currentDepthLevel, listCounts } = this.state;
-    // 1. get highlightedIndex
-    const baseId = selectedIds[currentDepthLevel] || '0_-1';
-    // 2. get count of current list
-    const count = listCounts[currentDepthLevel];
+  // override method defined in Downshift to support sub-options
+  moveHighlightedIndex = (moveAmount = 1) => {
+    const { highlightedIndexes, depthLevel, listCounts } = this.state;
+    // get highlightedIndex in state
+    const baseId = highlightedIndexes[depthLevel] || '0_-1';
+    // get current list count
+    const count = listCounts[depthLevel];
     const lastIndex = count - 1;
-    // 3. new index
-    const [, , baseIndex] = validIndex.exec(baseId);
-    let newIndex = parseInt(baseIndex, 10) + moveAmount;
-    if (newIndex < 0) {
-      newIndex = lastIndex;
-    } else if (newIndex > lastIndex) {
-      newIndex = 0;
+    // new index
+    const [, , subIndex] = validIndex.exec(baseId);
+    let updatedSubIndex = parseInt(subIndex, 10) + moveAmount;
+    if (updatedSubIndex < 0) {
+      updatedSubIndex = lastIndex;
+    } else if (updatedSubIndex > lastIndex) {
+      updatedSubIndex = 0;
     }
-    // 4. set new state
-    const newId = `${currentDepthLevel}_${newIndex}`;
-    setHighlightedIndex(newId);
-    this.handleSelectedIds(newId, currentDepthLevel);
+    // set updated highlightedIndexes
+    const updatedIndex = `${depthLevel}_${updatedSubIndex}`;
+    this.setHighlightedIndexes(updatedIndex, depthLevel);
   };
 
-  handleArrowRight = setHighlightedIndex => {
-    const { selectedIds, currentDepthLevel, listCounts } = this.state;
-    // 1. get highlightedIndex
-    const baseId = selectedIds[currentDepthLevel];
+  triggerSubOptions = (open = true) => {
+    const { highlightedIndexes, depthLevel, listCounts } = this.state;
+    const updatedDepthLevel = open ? depthLevel + 1 : depthLevel - 1;
+    if (updatedDepthLevel < 0) return;
+    // get highlightedIndex in state
+    const baseId = highlightedIndexes[depthLevel];
     if (baseId === null) return;
-    // 2. prevent if listCounts.length === currentDepthLevel
-    if (listCounts.length === currentDepthLevel + 1) return;
-    // 3. new index
-    const newDepthLevel = currentDepthLevel + 1;
-    const newId = `${newDepthLevel}_0`;
-    setHighlightedIndex(newId);
-    this.handleSelectedIds(newId, newDepthLevel);
-    this.handleCurrentDepthLevel(newDepthLevel);
+    // prevent update if listCounts length === updatedDepthLevel
+    if (listCounts.length === updatedDepthLevel) return;
+    // new index
+    const updatedIndex = open
+      ? `${updatedDepthLevel}_0`
+      : highlightedIndexes[updatedDepthLevel];
+    // set updated highlightedIndexes and updated depthLevel
+    this.handleDepthLevel(updatedDepthLevel);
+    this.setHighlightedIndexes(updatedIndex, updatedDepthLevel);
   };
 
-  handleKeyDown = (event, setHighlightedIndex) => {
-    switch (event.key) {
+  handleKeyDown = e => {
+    const moveAmount = e.shiftKey ? 5 : 1;
+    switch (e.key) {
       case 'ArrowDown':
         // eslint-disable-next-line no-param-reassign
-        event.nativeEvent.preventDownshiftDefault = true;
-        this.moveHighlightedIndex(setHighlightedIndex, 1);
+        e.nativeEvent.preventDownshiftDefault = true;
+        this.moveHighlightedIndex(moveAmount);
         break;
       case 'ArrowUp':
         // eslint-disable-next-line no-param-reassign
-        event.nativeEvent.preventDownshiftDefault = true;
-        this.moveHighlightedIndex(setHighlightedIndex, -1);
+        e.nativeEvent.preventDownshiftDefault = true;
+        this.moveHighlightedIndex(-moveAmount);
         break;
       case 'ArrowRight':
-        // trigger nested menu option
-        this.handleArrowRight(setHighlightedIndex);
+        // trigger subOption first option
+        this.triggerSubOptions(true);
         break;
       case 'ArrowLeft':
-        // close sub menu
-        break;
-      case 'Enter':
+        // close subOption
+        this.triggerSubOptions(false);
         break;
       default:
         break;
@@ -140,56 +141,62 @@ class Dropdown extends Component {
   };
 
   render() {
-    const { items, selectedItem, defaultLabel, onChange } = this.props;
+    const {
+      items,
+      selectedItem,
+      defaultLabel,
+      onChange,
+      ...remainProps
+    } = this.props;
+    const { highlightedIndexes } = this.state;
     return (
       <Downshift
         onChange={onChange}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
-        // TODO: pass remain props here
+        {...remainProps}
       >
         {({
           getInputProps,
           getItemProps,
-          getMenuProps,
           getToggleButtonProps,
           isOpen,
           highlightedIndex,
           selectedItem: dsSelectedItem,
-          setHighlightedIndex,
-        }) => (
-          <div>
-            <DropdownButton
-              icon={
-                (selectedItem && selectedItem.icon) ||
-                (dsSelectedItem && dsSelectedItem.icon)
-              }
-              label={
-                (selectedItem && selectedItem.label) ||
-                (dsSelectedItem && dsSelectedItem.label) ||
-                defaultLabel
-              }
-              {...getToggleButtonProps()}
-              {...getInputProps({
-                onKeyDown: event =>
-                  this.handleKeyDown(event, setHighlightedIndex),
-              })}
-            />
-            {isOpen && (
-              <DropdownList
-                ref={this.child}
-                items={items}
-                highlightedIndex={highlightedIndex}
-                getItemProps={getItemProps}
-                getMenuProps={getMenuProps}
-                selectedIds={this.state.selectedIds}
-                handleCurrentDepthLevel={this.handleCurrentDepthLevel}
-                handleSelectedIds={this.handleSelectedIds}
-                handleListCounts={this.handleListCounts}
+          setHighlightedIndex: dsSetHighlightedIndex,
+        }) => {
+          setHighlightedIndex = dsSetHighlightedIndex;
+          return (
+            <div>
+              <DropdownButton
+                icon={
+                  (selectedItem && selectedItem.icon) ||
+                  (dsSelectedItem && dsSelectedItem.icon)
+                }
+                label={
+                  (selectedItem && selectedItem.label) ||
+                  (dsSelectedItem && dsSelectedItem.label) ||
+                  defaultLabel
+                }
+                {...getToggleButtonProps()}
+                {...getInputProps({
+                  onKeyDown: e => this.handleKeyDown(e),
+                })}
               />
-            )}
-          </div>
-        )}
+              {isOpen && (
+                <DropdownList
+                  items={items}
+                  highlightedIndex={highlightedIndex}
+                  highlightedIndexes={highlightedIndexes}
+                  getItemProps={getItemProps}
+                  handleDepthLevel={this.handleDepthLevel}
+                  handleHighlightedIndexes={this.handleHighlightedIndexes}
+                  handleListCounts={this.handleListCounts}
+                />
+              )}
+            </div>
+          );
+        }}
       </Downshift>
     );
   }
