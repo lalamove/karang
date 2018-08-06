@@ -9,12 +9,12 @@ React components that implement [Lalamove Design](https://lalamove.com), for all
 Before installing this library, please make sure you have the following installed in your own repo:
 ```json
 {
+    "downshift": "^2.0.14",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "recompose": "^0.27.1",
-    "styled-components": "^3.3.3",
-    "downshift": "^2.0.14",
+    "styled-components": "^3.3.3"
 }
 ```
 
@@ -26,17 +26,17 @@ yarn add git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git
 - Cannot be installed in Gitlab CI
 
     ```bash
-    - apk -v --update add openssh
-    - mkdir ~/.ssh
-    - printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
-    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-    - chmod 600 -R ~/.ssh
+    apk -v --update add openssh
+    mkdir ~/.ssh
+    printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
+    '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    chmod 600 -R ~/.ssh
     ```
 
 - `npm prepare` is not executed inside **docker-node** image for git repository dependency
 
-    ```
-    - printf "unsafe-perm=true" > ~/.npmrc
+    ```bash
+    printf "unsafe-perm=true" > ~/.npmrc
     ```
 
 ## Usage
@@ -107,6 +107,8 @@ yarn lint:js
 ## run linter for CSS, including styled-components
 yarn lint:css
 ```
+
+Remember to export your components in `src/index.js`.
 
 Please make sure your changes is able to build **when you commit your changes**.
 ```bash
@@ -184,7 +186,7 @@ Install `Styled Components` plugin in IDE `Preferences | Plugins`. [(Installatio
 * Please help to add more here...
 
 ## Support
-* For any questions / bugs report, please feel free to [open an issue here](https://git.easygroup.co/andrew.mok/lalamove-ui/issues).
+* For any questions / bugs report, please feel free to [open an issue here](https://git.easygroup.co/lalamove/lalamove-ui/issues).
 
 ## License
 * [Copyright (c) 2018 Lalamove. All rights reserved.](./LICENSE.md)

@@ -25,7 +25,7 @@ const Content = styled.div`
       case 'large':
       default:
         return css`
-          padding: 12px 12px 12px 0;
+          padding: 12px 20px 12px 0;
         `;
     }
   }};

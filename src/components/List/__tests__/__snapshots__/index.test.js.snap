@@ -5,8 +5,8 @@ exports[`List component default 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding: 12px 20px 12px 0;
   line-height: 20px;
+  padding: 12px 20px 12px 0;
 }
 
 .c0 {
@@ -90,8 +90,8 @@ exports[`List component with icon 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding: 12px 20px 12px 0;
   line-height: 20px;
+  padding: 12px 20px 12px 0;
 }
 
 .c0 {
