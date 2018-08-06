@@ -31,6 +31,14 @@ const Button = Base.extend`
       font-weight: 700;
     `}
 
+  ${({ xlarge }) =>
+    xlarge &&
+    css`
+      padding: 1.14em 1em;
+      font-size: 18px;
+      font-weight: 700;
+    `}
+
   /* type */
   ${({ variant }) => {
     switch (variant) {
@@ -92,6 +100,7 @@ const Button = Base.extend`
 Button.defaultProps = {
   isLoading: false,
   large: false,
+  xlarge: false,
   variant: 'default',
   block: false,
 };
@@ -99,6 +108,7 @@ Button.defaultProps = {
 Button.propTypes = {
   isLoading: bool,
   large: bool,
+  xlarge: bool,
   variant: oneOf(['default', 'primary', 'secondary', 'outline', 'link']),
   block: bool,
   children: node.isRequired,

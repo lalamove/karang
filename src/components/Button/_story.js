@@ -79,6 +79,22 @@ storiesOf('Button', module).add(
           {'Button with <a href="#somewhere" /> tag'}
         </CustomComponent>
       </Container>
+      <h4>Extra Large</h4>
+      <Container>
+        <Button variant="link" xlarge>
+          Link
+        </Button>
+        <Button large>Default</Button>
+        <Button variant="primary" xlarge>
+          Primary
+        </Button>
+        <Button variant="secondary" xlarge>
+          Secondary
+        </Button>
+        <Button variant="outline" xlarge>
+          Outline
+        </Button>
+      </Container>
     </div>
   ))
 );
