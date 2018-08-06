@@ -17,6 +17,10 @@ const StyledList = styled(List)`
   left: 0;
 `;
 
+const haveSubOptionStyle = {
+  cursor: 'default',
+};
+
 class DropdownList extends Component {
   static propTypes = {
     items: arrayOf(shape({})).isRequired, // add shape
@@ -63,13 +67,7 @@ class DropdownList extends Component {
             }
 
             return (
-              // keyboard events are handled in parent component
-              // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
               <Item
-                onMouseEnter={() => handleHighlightedIndexes(index, depthLevel)}
-                onMouseOver={() =>
-                  !option.options && handleDepthLevel(depthLevel)
-                }
                 {...compose(
                   getItemProps,
                   getProps
@@ -79,6 +77,11 @@ class DropdownList extends Component {
                   item: option,
                   icon: option.icon,
                   options: subOptions,
+                  style: subOptions && haveSubOptionStyle,
+                  onMouseEnter: () =>
+                    handleHighlightedIndexes(index, depthLevel),
+                  onMouseOver: () =>
+                    !option.options && handleDepthLevel(depthLevel),
                 })}
               >
                 {option.label}

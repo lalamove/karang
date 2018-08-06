@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import Dropdown from './index';
-import flag from 'assets/testing.png';
 
 const FlagIcon = styled.img`
   max-width: 24px;
@@ -11,70 +10,64 @@ const FlagIcon = styled.img`
   vertical-align: middle;
 `;
 
+const Flag = (
+  <FlagIcon src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/320px-Flag_of_Thailand.svg.png" />
+);
+
 const countries = [
   {
     value: 'TH',
     label: 'Thailand',
-    icon: <FlagIcon src={flag} />,
+    icon: Flag,
     options: [
       {
         value: 'TH_BKK',
         label: 'Bangkok',
-        icon: <FlagIcon src={flag} />,
+        icon: Flag,
       },
       {
         value: 'TH_CNX',
         label: 'Chiang Mai',
-        icon: <FlagIcon src={flag} />,
-      },
-      {
-        value: 'TH_CNX2',
-        label: 'Chiang Mai2',
-        icon: <FlagIcon src={flag} />,
-      },
-      {
-        value: 'TH_CNX3',
-        label: 'Chiang Mai3',
-        icon: <FlagIcon src={flag} />,
+        icon: Flag,
       },
     ],
   },
   {
     value: 'HK_HKG',
     label: 'Hong Kong',
-    icon: <FlagIcon src={flag} />,
+    icon: Flag,
   },
   {
     value: 'VN_HCM',
     label: 'Vietnam',
-    icon: <FlagIcon src={flag} />,
+    icon: Flag,
   },
   {
     value: 'PH',
     label: 'Philippines',
-    icon: <FlagIcon src={flag} />,
+    icon: Flag,
     options: [
       {
         value: 'PH_MNL',
         label: 'Manila',
-        icon: <FlagIcon src={flag} />,
+        icon: Flag,
       },
       {
         value: 'PH_CEB',
         label: 'Cebu',
-        icon: <FlagIcon src={flag} />,
+        icon: Flag,
       },
     ],
   },
   {
     value: 'SG_SGN',
     label: 'Singapore',
-    icon: <FlagIcon src={flag} />,
+    icon: Flag,
   },
   {
     value: 'TW_TPE',
     label: 'Taiwan',
-    icon: <FlagIcon src={flag} />,
+    icon: Flag,
   },
 ];
 
