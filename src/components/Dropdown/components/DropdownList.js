@@ -59,8 +59,8 @@ class DropdownList extends Component {
             const index = `${depthLevel}_${subIndex}`;
             let subOptions;
             let newDepthLevel;
-            const haveSubOptions = option.options;
             const onFocus = highlightedIndexes[depthLevel] === index;
+            const haveSubOptions = Boolean(option.options);
 
             if (onFocus && haveSubOptions) {
               newDepthLevel = depthLevel + 1;
@@ -86,6 +86,7 @@ class DropdownList extends Component {
                 })}
               >
                 <Label
+                  onFocus={onFocus}
                   handleListCounts={onFocus ? handleListCounts : undefined}
                   count={haveSubOptions ? option.options.length : items.length}
                   depthLevel={haveSubOptions ? newDepthLevel : depthLevel}

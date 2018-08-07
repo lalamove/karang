@@ -1,10 +1,11 @@
 import { PureComponent } from 'react';
-import { func, node, number } from 'prop-types';
+import { bool, func, node, number } from 'prop-types';
 import noop from 'utils/noop';
 
 class Label extends PureComponent {
   static propTypes = {
     children: node.isRequired,
+    onFocus: bool,
     handleListCounts: func,
     count: number,
     depthLevel: number,
@@ -12,13 +13,16 @@ class Label extends PureComponent {
 
   static defaultProps = {
     handleListCounts: noop,
-    count: null,
-    depthLevel: null,
+    onFocus: false,
+    count: 0,
+    depthLevel: 0,
   };
 
-  componentDidMount() {
-    const { count, depthLevel, handleListCounts } = this.props;
-    handleListCounts(count, depthLevel);
+  componentDidUpdate(prevProps) {
+    const { count, depthLevel, onFocus, handleListCounts } = this.props;
+    if (prevProps.onFocus !== onFocus) {
+      handleListCounts(count, depthLevel);
+    }
   }
 
   render() {
