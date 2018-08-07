@@ -3,6 +3,7 @@ import { arrayOf, oneOfType, func, number, shape, string } from 'prop-types';
 import styled from 'styled-components';
 import { compose } from 'recompose';
 
+import Label from './Label';
 import List from 'components/List';
 import noop from 'utils/noop';
 
@@ -57,13 +58,13 @@ class DropdownList extends Component {
           {({ data: option, Item, index: subIndex, getProps }) => {
             const index = `${depthLevel}_${subIndex}`;
             let subOptions;
+            let newDepthLevel;
+            const haveSubOptions = option.options;
+            const onFocus = highlightedIndexes[depthLevel] === index;
 
-            if (highlightedIndexes[depthLevel] === index && option.options) {
-              const newDepthLevel = depthLevel + 1;
+            if (onFocus && haveSubOptions) {
+              newDepthLevel = depthLevel + 1;
               subOptions = this.renderList(option.options, newDepthLevel);
-              handleListCounts(option.options.length, newDepthLevel);
-            } else if (highlightedIndexes[depthLevel] === index) {
-              handleListCounts(items.length, depthLevel);
             }
 
             return (
@@ -84,7 +85,13 @@ class DropdownList extends Component {
                     !option.options && handleDepthLevel(depthLevel),
                 })}
               >
-                {option.label}
+                <Label
+                  handleListCounts={onFocus ? handleListCounts : undefined}
+                  count={haveSubOptions ? option.options.length : items.length}
+                  depthLevel={haveSubOptions ? newDepthLevel : depthLevel}
+                >
+                  {option.label}
+                </Label>
               </Item>
             );
           }}
