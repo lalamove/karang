@@ -34,7 +34,7 @@ const Button = Base.extend`
   ${({ xlarge }) =>
     xlarge &&
     css`
-      padding: 1.14em 1em;
+      padding: 0.9em 1em;
       font-size: 18px;
       font-weight: 700;
     `}
