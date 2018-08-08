@@ -104,7 +104,6 @@ Button.propTypes = {
   children: node.isRequired,
 };
 
-// TODO: Review the usage
 export function withComponent(Comp) {
   return Button.withComponent(props => {
     const propsToFilter = Object.keys(Button.propTypes);
@@ -113,4 +112,20 @@ export function withComponent(Comp) {
   });
 }
 
-export default Button;
+const Text = styled.span`
+  vertical-align: middle;
+  margin-left: 10px;
+`;
+
+// eslint-disable-next-line react/prop-types
+export default ({ icon, children, ...rest }) => {
+  if (icon) {
+    return (
+      <Button {...rest}>
+        {icon}
+        <Text>{children}</Text>
+      </Button>
+    );
+  }
+  return <Button {...rest}>{children}</Button>;
+};

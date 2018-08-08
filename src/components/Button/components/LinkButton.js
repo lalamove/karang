@@ -1,6 +1,6 @@
-import Button from './Button';
+import { withComponent } from './Button';
 
-const Link = Button.withComponent('a'); // eslint-disable-line import/no-named-as-default-member
+const Link = withComponent('a');
 const LinkButton = Link.extend`
   border-radius: 2px;
   margin-top: 20px;
