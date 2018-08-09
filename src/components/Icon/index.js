@@ -2,7 +2,7 @@ import React from 'react';
 import renderSVG from './IconHelper';
 import { PropTypes } from 'prop-types';
 
-const Icon = ({ type, color, size, options }) => {
+const Index = ({ type, color, size, options }) => {
   const style = {
     verticalAlign: 'middle',
     fill: color,
@@ -23,7 +23,7 @@ const Icon = ({ type, color, size, options }) => {
   );
 };
 
-export const iconType = Object.freeze({
+const iconType = Object.freeze({
   facebook: 'facebook',
   add: 'add',
   clock: 'clock',
@@ -41,14 +41,14 @@ const optionsObj = Object.freeze({
   angle: 0,
 });
 
-Icon.defaultProps = {
+Index.defaultProps = {
   type: iconType.question,
   color: 'currentColor',
   size: 20,
   options: { angle: null },
 };
 
-Icon.propTypes = {
+Index.propTypes = {
   type: PropTypes.oneOf(Object.keys(iconType)),
   // color: PropTypes.oneOf(Object.keys(colors)), TODO: to limit colors used
   color: PropTypes.string,
@@ -59,4 +59,4 @@ Icon.propTypes = {
   options: PropTypes.oneOf(Object.keys(optionsObj)),
 };
 
-export default Icon;
+export { Index as default, iconType };
