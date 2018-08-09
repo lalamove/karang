@@ -11,28 +11,29 @@ class TextAreaWrapper extends Component {
           name="Comments"
           placeholder="+ Add any important instructions about your delivery"
           style={{ width: '300px', height: '96px' }}
-          characterLimit={10}
+          maxLength="10"
           characterLimitMsgGenerator={charactersLeft =>
             `Prop generated characters left message: ${charactersLeft}`
           }
           exceedLimitMsgGenerator={excessCharacters =>
             `Prop generated excess message: ${excessCharacters}`
           }
-          errorMsg="Prop generated error msg"
+          error="Prop generated error"
+          disableForceLimit
         />
         <br />
         <br />
         <TextArea
           name="Comments"
-          placeholder="+ Add any important instructions about your delivery"
+          placeholder="By default, force limit applies"
           style={{ width: '300px', height: '96px' }}
-          characterLimit={5}
+          maxLength="5"
         />
         <br />
         <br />
         <TextArea
           name="Comments"
-          placeholder="No characterLimit, hence no message display"
+          placeholder="No maxLength, hence no message display"
           style={{ width: '300px', height: '96px' }}
         />
       </Fragment>
