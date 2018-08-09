@@ -12,6 +12,9 @@ const StyledButton = styled(Button)`
   white-space: nowrap;
   padding: 0 4px 0 9px;
   line-height: 30px;
+  &:focus:enabled {
+    box-shadow: none;
+  }
 `;
 
 const Icon = styled.div`

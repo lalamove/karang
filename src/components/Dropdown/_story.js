@@ -88,6 +88,7 @@ class Wrapper extends Component {
           items={countries}
           onChange={this.handleChange}
           selectedItem={selectedCountry}
+          direction="right"
         />
       </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { orange, offWhite, white } from 'styles/colors';
-import { arrayOf, bool, func, node, string, shape } from 'prop-types';
+import { arrayOf, bool, func, oneOf, node, string, shape } from 'prop-types';
 
 import noop from 'utils/noop';
 
@@ -22,7 +22,6 @@ const Content = styled.div`
         return css`
           padding: 6px 6px 6px 0;
         `;
-      case 'large':
       default:
         return css`
           padding: 12px 20px 12px 0;
@@ -32,16 +31,16 @@ const Content = styled.div`
 `;
 
 const UL = styled.ul`
-  ${resetList} box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  ${resetList} box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.22);
   display: inline-block;
   box-sizing: border-box;
+  background-color: ${white};
   ${({ variant }) => {
     switch (variant) {
       case 'small':
         return css`
           min-width: 12.5rem;
         `;
-      case 'large':
       default:
         return css`
           min-width: 16rem;
@@ -57,17 +56,21 @@ const activeStyle = css`
 
 const LI = styled.li`
   padding-left: 8px;
-  border-left: 2px solid ${white};
-  background-color: ${white};
+  border-left: 2px solid transparent;
   outline: 0;
+  position: relative;
 
   ${({ variant }) =>
     variant === 'small' &&
     css`
+      margin-top: 8px;
+      margin-bottom: 4px;
       &:not(:first-child) {
         margin-top: 4px;
       }
-      margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 8px;
+      }
     `};
 
   &:not(:last-child) ${/* sc-selector */ Content} {
@@ -77,7 +80,6 @@ const LI = styled.li`
           return css`
             border-bottom: 0;
           `;
-        case 'large':
         default:
           return css`
             border-bottom: 1px solid ${offWhite};
@@ -110,7 +112,6 @@ const Icon = styled.div`
         return css`
           margin: 7.5px 6px 0 0;
         `;
-      case 'large':
       default:
         return css`
           margin-top: 12px;
@@ -172,7 +173,7 @@ List.propTypes = {
   unique: string,
   items: arrayOf(shape({})).isRequired,
   hoverable: bool,
-  variant: string,
+  variant: oneOf(['small']),
   children: func,
 };
 

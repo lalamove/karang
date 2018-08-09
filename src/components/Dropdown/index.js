@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { arrayOf, func, shape, string } from 'prop-types';
+import { arrayOf, func, oneOf, shape, string } from 'prop-types';
 import Downshift from 'downshift';
+import styled from 'styled-components';
 
 import DropdownButton from './components/DropdownButton';
 import DropdownList from './components/DropdownList';
@@ -9,18 +10,25 @@ import noop from 'utils/noop';
 const validIndex = /(\d+)_(-?\d+)/;
 let setHighlightedIndex;
 
+const Container = styled.div`
+  display: inline-block;
+  position: relative;
+`;
+
 class Dropdown extends Component {
   static propTypes = {
     items: arrayOf(shape({})).isRequired,
     selectedItem: shape({}),
     onChange: func,
     defaultLabel: string,
+    direction: oneOf(['left', 'right']),
   };
 
   static defaultProps = {
     selectedItem: null,
     onChange: noop,
     defaultLabel: 'Options',
+    direction: 'right',
   };
 
   state = {
@@ -146,6 +154,7 @@ class Dropdown extends Component {
       selectedItem,
       defaultLabel,
       onChange,
+      direction,
       ...remainProps
     } = this.props;
     const { highlightedIndexes } = this.state;
@@ -168,32 +177,35 @@ class Dropdown extends Component {
           setHighlightedIndex = dsSetHighlightedIndex;
           return (
             <div>
-              <DropdownButton
-                icon={
-                  (selectedItem && selectedItem.icon) ||
-                  (dsSelectedItem && dsSelectedItem.icon)
-                }
-                label={
-                  (selectedItem && selectedItem.label) ||
-                  (dsSelectedItem && dsSelectedItem.label) ||
-                  defaultLabel
-                }
-                {...getToggleButtonProps()}
-                {...getInputProps({
-                  onKeyDown: e => this.handleKeyDown(e),
-                })}
-              />
-              {isOpen && (
-                <DropdownList
-                  items={items}
-                  highlightedIndex={highlightedIndex}
-                  highlightedIndexes={highlightedIndexes}
-                  getItemProps={getItemProps}
-                  handleDepthLevel={this.handleDepthLevel}
-                  handleHighlightedIndexes={this.handleHighlightedIndexes}
-                  handleListCounts={this.handleListCounts}
+              <Container>
+                <DropdownButton
+                  icon={
+                    (selectedItem && selectedItem.icon) ||
+                    (dsSelectedItem && dsSelectedItem.icon)
+                  }
+                  label={
+                    (selectedItem && selectedItem.label) ||
+                    (dsSelectedItem && dsSelectedItem.label) ||
+                    defaultLabel
+                  }
+                  {...getToggleButtonProps()}
+                  {...getInputProps({
+                    onKeyDown: e => this.handleKeyDown(e),
+                  })}
                 />
-              )}
+                {isOpen && (
+                  <DropdownList
+                    direction={direction}
+                    items={items}
+                    highlightedIndex={highlightedIndex}
+                    highlightedIndexes={highlightedIndexes}
+                    getItemProps={getItemProps}
+                    handleDepthLevel={this.handleDepthLevel}
+                    handleHighlightedIndexes={this.handleHighlightedIndexes}
+                    handleListCounts={this.handleListCounts}
+                  />
+                )}
+              </Container>
             </div>
           );
         }}
