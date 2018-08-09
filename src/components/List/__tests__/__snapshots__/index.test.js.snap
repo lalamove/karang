@@ -13,16 +13,17 @@ exports[`List component default 1`] = `
   list-style: none;
   padding: 0;
   margin: 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.22);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
   display: inline-block;
   box-sizing: border-box;
+  background-color: rgba(255,255,255,1);
   min-width: 16rem;
 }
 
 .c1 {
+  position: relative;
   padding-left: 8px;
-  border-left: 2px solid rgba(255,255,255,1);
-  background-color: rgba(255,255,255,1);
+  border-left: 2px solid transparent;
   outline: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -98,16 +99,17 @@ exports[`List component with icon 1`] = `
   list-style: none;
   padding: 0;
   margin: 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.22);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
   display: inline-block;
   box-sizing: border-box;
+  background-color: rgba(255,255,255,1);
   min-width: 16rem;
 }
 
 .c1 {
+  position: relative;
   padding-left: 8px;
-  border-left: 2px solid rgba(255,255,255,1);
-  background-color: rgba(255,255,255,1);
+  border-left: 2px solid transparent;
   outline: 0;
   display: -webkit-box;
   display: -webkit-flex;

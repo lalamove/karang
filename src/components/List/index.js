@@ -55,10 +55,10 @@ const activeStyle = css`
 `;
 
 const LI = styled.li`
+  position: relative;
   padding-left: 8px;
   border-left: 2px solid transparent;
   outline: 0;
-  position: relative;
 
   ${({ variant }) =>
     variant === 'small' &&

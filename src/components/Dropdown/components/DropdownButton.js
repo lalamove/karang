@@ -7,11 +7,11 @@ import DropdownIcon from 'icons/DropDown';
 import { lightGray } from 'styles/colors';
 
 const StyledButton = styled(Button)`
-  min-width: 80px;
   width: auto;
-  white-space: nowrap;
+  min-width: 80px;
   padding: 0 4px 0 9px;
   line-height: 30px;
+  white-space: nowrap;
   &:focus:enabled {
     box-shadow: none;
   }
