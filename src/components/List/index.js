@@ -61,6 +61,15 @@ const LI = styled.li`
   background-color: ${white};
   outline: 0;
 
+  ${({ variant }) =>
+    variant === 'small' &&
+    css`
+      &:not(:first-child) {
+        margin-top: 4px;
+      }
+      margin-bottom: 4px;
+    `};
+
   &:not(:last-child) ${/* sc-selector */ Content} {
     ${({ variant }) => {
       switch (variant) {
