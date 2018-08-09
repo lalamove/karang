@@ -1,5 +1,5 @@
 import React from 'react';
-import renderSVG from './IconHelper';
+import renderSVG, { iconType } from './IconHelper';
 import { PropTypes } from 'prop-types';
 
 const Index = ({ type, color, size, options }) => {
@@ -22,20 +22,6 @@ const Index = ({ type, color, size, options }) => {
     </svg>
   );
 };
-
-const iconType = Object.freeze({
-  facebook: 'facebook',
-  add: 'add',
-  clock: 'clock',
-  cross: 'cross',
-  notificationBell: 'notificationBell',
-  order: 'order',
-  pin: 'pin',
-  question: 'question',
-  arrow: 'arrow',
-  settingsGear: 'settingsGear',
-  smallLogo: 'smallLogo',
-});
 
 const optionsObj = Object.freeze({
   angle: 0,
