@@ -38,6 +38,7 @@ const placeholderStyle = `
 
 const InnerInputArea = styled.textarea`
   display: block;
+  flex-grow: 1;
   font-family: ${primaryFonts};
   width: 100%;
   border: 0px solid transparent;
