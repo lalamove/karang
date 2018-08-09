@@ -25,18 +25,11 @@ const Content = styled.span`
   line-height: 20px;
 `;
 
-const ArrowIcon = styled(DropdownIcon).attrs({
-  color: lightGray,
-  size: 24,
-})`
-  float: right;
-`;
-
 const DropdownButton = ({ icon, label, ...remainProps }) => (
   <StyledButton {...remainProps}>
     {icon && <Icon>{icon}</Icon>}
     <Content>{label}</Content>
-    <ArrowIcon />
+    <DropdownIcon color={lightGray} size={24} />
   </StyledButton>
 );
 
