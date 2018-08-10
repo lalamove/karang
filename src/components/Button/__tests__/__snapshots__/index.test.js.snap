@@ -10,7 +10,7 @@ exports[`Button-block 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -54,7 +54,7 @@ exports[`Button-disabled 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -98,7 +98,7 @@ exports[`Button-isLoading 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -146,7 +146,7 @@ exports[`Button-large 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -192,7 +192,7 @@ exports[`Button-variant-default 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -235,7 +235,7 @@ exports[`Button-variant-link 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -293,7 +293,7 @@ exports[`Button-variant-outline 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -336,7 +336,7 @@ exports[`Button-variant-primary 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -380,7 +380,7 @@ exports[`Button-variant-secondary 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC","Noto Sans JP",sans-serif;
+  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
