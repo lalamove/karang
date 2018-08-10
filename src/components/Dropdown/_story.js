@@ -11,7 +11,7 @@ const FlagIcon = styled.img`
 `;
 
 const Flag = (
-  <FlagIcon src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/320px-Flag_of_Thailand.svg.png" />
+  <FlagIcon src="https://s3-ap-southeast-1.amazonaws.com/lalamove-countriesflag/flag_TH.png" />
 );
 
 const countries = [

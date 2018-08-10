@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
-import { orange, offWhite, white } from 'styles/colors';
+import { black, orange, offWhite, white } from 'styles/colors';
+import { primaryFonts, fontSize } from 'styles/fonts';
 import { arrayOf, bool, func, oneOf, node, string, shape } from 'prop-types';
 
 import noop from 'utils/noop';
@@ -14,6 +15,8 @@ const resetList = css`
 
 const Content = styled.div`
   flex: 1;
+  font-family: ${primaryFonts};
+  font-size: ${fontSize.regular};
   line-height: 20px;
 
   ${({ variant }) => {
@@ -35,6 +38,7 @@ const UL = styled.ul`
   display: inline-block;
   box-sizing: border-box;
   background-color: ${white};
+  color: ${black};
   ${({ variant }) => {
     switch (variant) {
       case 'small':
@@ -106,11 +110,12 @@ const Wrapper = LI.extend`
 `;
 
 const Icon = styled.div`
+  align-self: center;
   ${({ variant }) => {
     switch (variant) {
       case 'small':
         return css`
-          margin: 7.5px 6px 0 0;
+          margin: 0 6px 0 0;
         `;
       default:
         return css`

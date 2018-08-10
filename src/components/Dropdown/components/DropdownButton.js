@@ -4,12 +4,13 @@ import styled from 'styled-components';
 
 import Button from 'components/Button';
 import DropdownIcon from 'icons/DropDown';
-import { lightGray } from 'styles/colors';
+import { white, lightGray } from 'styles/colors';
 
 const StyledButton = styled(Button)`
   width: auto;
   min-width: 80px;
   padding: 0 4px 0 9px;
+  background-color: ${white};
   line-height: 30px;
   white-space: nowrap;
   &:focus:enabled {

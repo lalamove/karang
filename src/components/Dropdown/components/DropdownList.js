@@ -11,14 +11,14 @@ import {
 import styled, { css } from 'styled-components';
 import { compose } from 'recompose';
 
-import Label from './Label';
-import List from 'components/List';
 import noop from 'utils/noop';
+import List from 'components/List';
+import Label from './Label';
 
 const StyledList = styled(List)`
   position: absolute;
   z-index: 1;
-  top: ${({ nested }) => (nested ? '-8px' : '32px')};
+  top: ${({ nested }) => (nested ? '-8px' : '100%')};
 
   ${({ nested, direction }) => {
     switch (direction) {
