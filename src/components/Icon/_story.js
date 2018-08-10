@@ -25,7 +25,6 @@ const IconWrapper = () => (
   <Fragment>
     <Container>
       {renderIcon(iconType.logo, 'black', 40)}
-      {renderIcon(iconType.phone, 'black', 40, { angle: 160 })}
       {renderIcon(iconType.facebook, 'black', 40)}
       {renderIcon(iconType.add, 'black', 40)}
       {renderIcon(iconType.clock, 'black', 40)}
@@ -37,24 +36,26 @@ const IconWrapper = () => (
       {renderIcon(iconType.newspaper, 'black', 40)}
       {renderIcon(iconType.saveDiagonal, 'black', 40)}
       {renderIcon(iconType.starDotted, 'black', 40)}
+      {renderIcon(iconType.bolt, 'black', 40)}
     </Container>
     <br />
     <br />
     <Container>
       {renderIcon(iconType.cross, 'black', 40)}
       {renderIcon(iconType.settingsGear, 'black', 40)}
-      {renderIcon(iconType.arrow, 'green', 40)}
+      {renderIcon(iconType.arrow, 'green', 40, { angle: 150 })}
       {renderIcon(iconType.order, 'black', 40)}
       {renderIcon(iconType.pin, 'black', 40)}
       {renderIcon(iconType.question, 'black', 40)}
       {renderIcon(iconType.warning, 'black', 40)}
       {renderIcon(iconType.appleLogo, 'black', 40)}
-      {renderIcon(iconType.nodriver, 'black', 40)}
+      {renderIcon(iconType.noDriver, 'black', 40)}
       {renderIcon(iconType.truckOutline, 'black', 40)}
       {renderIcon(iconType.dollarCircle, 'black', 40)}
       {renderIcon(iconType.starOutline, 'black', 40)}
       {renderIcon(iconType.dollarTorn, 'black', 40)}
       {renderIcon(iconType.restricted, 'black', 40)}
+      {renderIcon(iconType.pinCircle, 'black', 40)}
     </Container>
     <br />
     <br />
@@ -71,22 +72,51 @@ const IconWrapper = () => (
       {renderIcon(iconType.reversible, 'black', 40)}
       {renderIcon(iconType.walletOutline, 'black', 40)}
       {renderIcon(iconType.starCircled, 'black', 40)}
+      {renderIcon(iconType.pinOutline, 'black', 40)}
     </Container>
     <br />
     <br />
     <Container>
       {renderIcon(iconType.paperClip, 'black', 40)}
       {renderIcon(iconType.star, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
-      {renderIcon(iconType.walletOutline, 'black', 40)}
+      {renderIcon(iconType.cart, 'black', 40)}
+      {renderIcon(iconType.group, 'black', 40)}
+      {renderIcon(iconType.arrowDoubleSidedDiagonal, 'black', 40)}
+      {renderIcon(iconType.visaCard, 'black', 40)}
+      {renderIcon(iconType.unionPayCard, 'black', 40)}
+      {renderIcon(iconType.masterCard, 'black', 40)}
+      {renderIcon(iconType.dinersClubCard, 'black', 40)}
+      {renderIcon(iconType.jCBCard, 'black', 40)}
+      {renderIcon(iconType.momoCard, 'black', 40)}
+      {renderIcon(iconType.discoverCard, 'black', 40)}
+      {renderIcon(iconType.aMEXCard, 'black', 40)}
+    </Container>
+    <br />
+    <br />
+    <Container>
+      {renderIcon(iconType.settingsSliders, 'black', 40)}
+      {renderIcon(iconType.microphone, 'black', 40)}
+      {renderIcon(iconType.percentage, 'black', 40)}
+      {renderIcon(iconType.crossedParcelBox, 'black', 40)}
+      {renderIcon(iconType.tickedParcelBox, 'black', 40)}
+      {renderIcon(iconType.networkParcelBox, 'black', 40)}
+      {renderIcon(iconType.magnify, 'black', 40)}
+      {renderIcon(iconType.send, 'black', 40)}
+      {renderIcon(iconType.calendar, 'black', 40)}
+      {renderIcon(iconType.parcelBoxOutline, 'black', 40)}
+      {renderIcon(iconType.sendPaperPlane, 'black', 40)}
+      {renderIcon(iconType.refresh, 'black', 40)},
+    </Container>
+    <br />
+    <br />
+    <Container>
+      {renderIcon(iconType.save, 'black', 40)}
+      {renderIcon(iconType.editSymbol, 'black', 40)}
+      {renderIcon(iconType.privacyIcon1, 'black', 40)}
+      {renderIcon(iconType.privacyIcon2, 'black', 40)}
+      {renderIcon(iconType.facebookColored, 'black', 40)}
+      {renderIcon(iconType.googlePlusColored, 'black', 40)}
+      {renderIcon(iconType.phoneIcon1, 'black', 40)}
     </Container>
   </Fragment>
 );

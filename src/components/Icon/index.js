@@ -1,6 +1,7 @@
 import React from 'react';
-import renderSVG, { iconType } from './IconHelper';
+import iconType from './IconHelper';
 import { PropTypes } from 'prop-types';
+import _ from 'lodash';
 
 const Index = ({ type, color, size, options }) => {
   const style = {
@@ -18,7 +19,7 @@ const Index = ({ type, color, size, options }) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <g>{renderSVG(type, options)}</g>
+      <g>{type.renderSVG(options)}</g>
     </svg>
   );
 };
