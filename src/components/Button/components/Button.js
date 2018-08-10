@@ -102,7 +102,7 @@ const Button = Base.extend`
 
 Button.defaultProps = {
   isLoading: false,
-  size: '',
+  size: null,
   variant: 'default',
   block: false,
 };
