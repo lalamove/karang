@@ -1,23 +1,25 @@
 import styled from 'styled-components';
 
-import { orange, lightGray, red } from 'styles/colors';
+import { orange, lightGray, red, offWhite } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const TextAreaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
   padding: 11px 11px 6px 11px;
-  border: 1px solid ${lightGray};
-  ${({ focused }) =>
-    focused &&
-    `
-    border: 1px solid ${orange};
-    `};
+  border: 1px solid ${offWhite};
   ${({ error }) =>
-    error &&
-    `
+    error
+      ? `
     border: 1px solid ${red};
+    `
+      : `
+    &:focus-within {
+      border: 1px solid ${orange};
+    }
     `};
 `;
 
@@ -25,11 +27,18 @@ const CharacterLimitDisplay = styled.div`
   font-size: ${fontSize.small};
   font-family: ${primaryFonts};
   line-height: 16px;
-  color: lightGray;
+  color: ${lightGray};
+`;
+
+const placeholderStyle = `
+  color: ${lightGray};
+  font-size: ${fontSize.regular};
+  font-family: ${primaryFonts};
 `;
 
 const InnerInputArea = styled.textarea`
   display: block;
+  flex-grow: 1;
   font-family: ${primaryFonts};
   width: 100%;
   border: 0px solid transparent;
@@ -39,38 +48,24 @@ const InnerInputArea = styled.textarea`
     outline-width: 0;
   }
 
-  ${({ hasCharacterLimit }) =>
-    hasCharacterLimit
-      ? `height: calc(100% - 16px);
-      `
-      : `height: calc(100% - 5px);`};
-
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: lightGray;
-    font-size: ${fontSize.regular};
-    font-family: ${primaryFonts};
+    ${placeholderStyle};
   }
 
   &::-moz-placeholder {
     /* Firefox 19+ */
-    color: lightGray;
-    font-size: ${fontSize.regular};
-    font-family: ${primaryFonts};
+    ${placeholderStyle};
   }
 
   &:-ms-input-placeholder {
     /* IE 10+ */
-    color: lightGray;
-    font-size: ${fontSize.regular};
-    font-family: ${primaryFonts};
+    ${placeholderStyle};
   }
 
   &:-moz-placeholder {
     /* Firefox 18- */
-    color: lightGray;
-    font-size: ${fontSize.regular};
-    font-family: ${primaryFonts};
+    ${placeholderStyle};
   }
 `;
 

@@ -12,17 +12,15 @@ import withErrorMessage from 'hoc/withErrorMessage';
 // Presentational Component (Layout)
 const PresentationalTextArea = props => {
   const {
-    characterLimit,
     displayedCharacterLimitMsg,
     charactersLeft,
     style,
     error,
-    focused,
     ...remainProps
   } = props;
   return (
-    <TextAreaContainer style={style} error={error} focused={focused}>
-      <InnerInputArea hasCharacterLimit={!!characterLimit} {...remainProps} />
+    <TextAreaContainer style={style} error={error}>
+      <InnerInputArea {...remainProps} />
       <CharacterLimitDisplay>
         {displayedCharacterLimitMsg}
       </CharacterLimitDisplay>
@@ -31,21 +29,21 @@ const PresentationalTextArea = props => {
 };
 
 PresentationalTextArea.propTypes = {
-  characterLimit: number,
+  maxLength: number,
+  disableForceLimit: bool,
   displayedCharacterLimitMsg: string,
   charactersLeft: number,
   error: string,
-  focused: bool,
   style: shape({}),
 };
 
 PresentationalTextArea.defaultProps = {
-  characterLimit: null,
+  maxLength: null,
+  disableForceLimit: false,
   displayedCharacterLimitMsg: null,
   charactersLeft: null,
   style: {},
   error: null,
-  focused: false,
 };
 
 // HOC
@@ -56,16 +54,18 @@ const PresentationalTextAreaWithError = withErrorMessage(
 // Container Component (Logic)
 class TextArea extends Component {
   static propTypes = {
-    characterLimit: number,
+    maxLength: number,
+    disableForceLimit: bool,
     onChange: func,
-    errorMsg: string,
+    error: string,
     characterLimitMsgGenerator: func,
     exceedLimitMsgGenerator: func,
   };
   static defaultProps = {
-    characterLimit: null,
+    maxLength: null,
+    disableForceLimit: false,
     onChange: noop,
-    errorMsg: 'Character limit exceeded',
+    error: 'Character limit exceeded',
     characterLimitMsgGenerator: charactersLeft =>
       `Characters left: ${charactersLeft}`,
     exceedLimitMsgGenerator: excessCharacters =>
@@ -74,57 +74,42 @@ class TextArea extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      charactersLeft: props.characterLimit,
-      focused: false,
+      charactersLeft: props.maxLength,
     };
   }
   onTextAreaChange = e => {
-    if (this.props.characterLimit) {
-      const charactersLeft = this.props.characterLimit - e.target.value.length;
+    if (this.props.maxLength) {
+      const charactersLeft = this.props.maxLength - e.target.value.length;
       this.setState({
         charactersLeft,
       });
     }
     this.props.onChange(e);
   };
-  onFocus = e => {
-    this.setState({
-      focused: true,
-    });
-  };
-  onBlur = e => {
-    this.setState({
-      focused: false,
-    });
-  };
   render() {
-    const { charactersLeft, focused } = this.state;
+    const { charactersLeft } = this.state;
     const {
-      characterLimit,
-      errorMsg,
-      onChange: defaultOnChange,
-      characterLimitMsgGenerator: defaultCharacterLimitMsgGenerator,
-      exceedLimitMsgGenerator: defaultExceedLimitMsgGenerator,
+      maxLength,
+      disableForceLimit,
+      error,
+      onChange: __,
+      characterLimitMsgGenerator,
+      exceedLimitMsgGenerator,
       ...remainProps
     } = this.props;
     let displayedCharacterLimitMsg;
-    if (characterLimit) {
+    if (maxLength) {
       displayedCharacterLimitMsg =
         charactersLeft >= 0
-          ? defaultCharacterLimitMsgGenerator(charactersLeft)
-          : defaultExceedLimitMsgGenerator(-charactersLeft);
-    } else {
-      displayedCharacterLimitMsg = null;
+          ? characterLimitMsgGenerator(charactersLeft)
+          : exceedLimitMsgGenerator(-charactersLeft);
     }
     return (
       <PresentationalTextAreaWithError
-        characterLimit={characterLimit}
+        maxLength={disableForceLimit ? null : maxLength}
         charactersLeft={charactersLeft}
         onChange={this.onTextAreaChange}
-        focused={focused}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        error={charactersLeft < 0 ? errorMsg : null}
+        error={charactersLeft < 0 ? error : null}
         displayedCharacterLimitMsg={displayedCharacterLimitMsg}
         {...remainProps}
       />
