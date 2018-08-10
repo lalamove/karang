@@ -8,7 +8,7 @@ import { primaryFonts, fontSize } from 'styles/fonts';
 
 injectGlobal`
   ${normalize()}
-  
+
   html, body {
     height: 100%;
     font-family: ${primaryFonts};
