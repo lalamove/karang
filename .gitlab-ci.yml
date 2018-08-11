@@ -5,6 +5,7 @@ cache:
   - node_modules/
 stages:
 - test
+- deploy
 
 test:
   image: node:8.11-alpine
@@ -15,3 +16,18 @@ test:
   script:
     - yarn install
     - yarn test-coverage
+
+deploy:
+  image: node:8.11-alpine
+  stage: deploy
+  only:
+  - master
+  script:
+    - apk -v --update add python py-pip
+    - pip install awscli --upgrade
+    - yarn install
+    - yarn storybook:build
+    - AWS_ACCESS_KEY_ID=AKIAJKFWPBSAEI2FFBRQ AWS_SECRET_ACCESS_KEY=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 aws s3 cp .out s3://lalamove-ui/storybook --recursive
+    - AWS_ACCESS_KEY_ID=AKIAJKFWPBSAEI2FFBRQ AWS_SECRET_ACCESS_KEY=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 aws s3 ls s3://lalamove-ui/storybook --recursive
+    - echo "Upload completed"
+
