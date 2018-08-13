@@ -7,6 +7,7 @@ import {
   bool,
   oneOfType,
   object,
+  number,
 } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
@@ -72,12 +73,12 @@ class Select extends Component {
     id: string.isRequired,
     itemList: arrayOf(
       shape({
-        id: string,
+        id: oneOfType([string, number]),
         value: string,
       })
     ).isRequired,
     selectedItem: shape({
-      id: string,
+      id: oneOfType([string, number]),
       value: string,
     }),
     onChange: func,
