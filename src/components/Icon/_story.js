@@ -48,14 +48,12 @@ const IconWrapper = () => (
       {renderIcon(iconType.pin, 'black', 40)}
       {renderIcon(iconType.question, 'black', 40)}
       {renderIcon(iconType.warning, 'black', 40)}
-      {renderIcon(iconType.appleLogo, 'black', 40)}
       {renderIcon(iconType.noDriver, 'black', 40)}
       {renderIcon(iconType.truckOutline, 'black', 40)}
       {renderIcon(iconType.dollarCircle, 'black', 40)}
       {renderIcon(iconType.starOutline, 'black', 40)}
       {renderIcon(iconType.dollarTorn, 'black', 40)}
       {renderIcon(iconType.restricted, 'black', 40)}
-      {renderIcon(iconType.pinCircle, 'black', 40)}
     </Container>
     <br />
     <br />
@@ -98,14 +96,15 @@ const IconWrapper = () => (
       {renderIcon(iconType.microphone, 'black', 40)}
       {renderIcon(iconType.percentage, 'black', 40)}
       {renderIcon(iconType.crossedParcelBox, 'black', 40)}
-      {renderIcon(iconType.tickedParcelBox, 'black', 40)}
+      {renderIcon(iconType.tickedParcelBox, 'green', 40)}
       {renderIcon(iconType.networkParcelBox, 'black', 40)}
       {renderIcon(iconType.magnify, 'black', 40)}
       {renderIcon(iconType.send, 'black', 40)}
       {renderIcon(iconType.calendar, 'black', 40)}
       {renderIcon(iconType.parcelBoxOutline, 'black', 40)}
       {renderIcon(iconType.sendPaperPlane, 'black', 40)}
-      {renderIcon(iconType.refresh, 'black', 40)},
+      {renderIcon(iconType.refresh, 'black', 40)}
+      {renderIcon(iconType.visaLogo, 'black', 40)}
     </Container>
     <br />
     <br />
@@ -117,6 +116,29 @@ const IconWrapper = () => (
       {renderIcon(iconType.facebookColored, 'black', 40)}
       {renderIcon(iconType.googlePlusColored, 'black', 40)}
       {renderIcon(iconType.phoneIcon1, 'black', 40)}
+      {renderIcon(iconType.textMessage, 'black', 40)}
+      {renderIcon(iconType.textMessage2, 'black', 40)}
+      {renderIcon(iconType.magnify, 'black', 40)}
+      {renderIcon(iconType.magnifyingGlass, 'black', 40)}
+      {renderIcon(iconType.key, 'black', 40)}
+      {renderIcon(iconType.pin2, 'black', 40)}
+    </Container>
+    <br />
+    <br />
+    <Container>
+      {renderIcon(iconType.aMEXLogo, 'black', 40)}
+      {renderIcon(iconType.masterCardLogo, 'black', 40)}
+      {renderIcon(iconType.androidLogo, 'black', 40)}
+      {renderIcon(iconType.pinCircle, 'black', 40)}
+      {renderIcon(iconType.appleLogo, 'black', 40)}
+      {renderIcon(iconType.heart, 'black', 40)}
+      {renderIcon(iconType.directions, 'black', 40)}
+      {renderIcon(iconType.sound, 'black', 40)}
+      {renderIcon(iconType.spanner, 'black', 40)}
+      {renderIcon(iconType.bangkokBank, 'black', 40)}
+      {renderIcon(iconType.spanner, 'black', 40)}
+      {renderIcon(iconType.blockedGroup, 'black', 40)}
+      {renderIcon(iconType.addContact, 'black', 40)}
     </Container>
   </Fragment>
 );

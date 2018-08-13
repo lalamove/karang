@@ -29,6 +29,21 @@ import privacyIcon2 from './Icons/privacyIcon2';
 import facebookColored from './Icons/facebookColored';
 import googlePlusColored from './Icons/googlePlusColored';
 import phoneIcon1 from './Icons/phoneIcon1';
+import textMessage2 from './Icons/textMessage2';
+import magnifyingGlass from './Icons/magnifyingGlass';
+import key from './Icons/key';
+import pin2 from './Icons/pin2';
+import aMEXLogo from './Icons/aMEXLogo';
+import visaLogo from './Icons/visaLogo';
+import masterCardLogo from './Icons/masterCardLogo';
+import androidLogo from './Icons/androidLogo';
+import heartSymbol from './Icons/heartSymbol';
+import addContact from './Icons/addContact';
+import directions from './Icons/directions';
+import sound from './Icons/sound';
+import spanner from './Icons/spanner';
+import bangkokBank from './Icons/bangkokBank';
+import blockedGroup from './Icons/blockedGroup';
 
 export {
   pinCircle,
@@ -62,4 +77,19 @@ export {
   facebookColored,
   googlePlusColored,
   phoneIcon1,
+  textMessage2,
+  magnifyingGlass,
+  key,
+  pin2,
+  aMEXLogo,
+  visaLogo,
+  masterCardLogo,
+  androidLogo,
+  heartSymbol,
+  addContact,
+  directions,
+  sound,
+  spanner,
+  bangkokBank,
+  blockedGroup,
 };
