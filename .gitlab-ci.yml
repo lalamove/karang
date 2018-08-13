@@ -30,7 +30,7 @@ deploy:
     - pip install awscli --upgrade
     - yarn install
     - yarn storybook:build
-    - AWS_ACCESS_KEY_ID=AKIAJKFWPBSAEI2FFBRQ AWS_SECRET_ACCESS_KEY=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 aws s3 cp .out s3://lalamove-ui/storybook --recursive
-    - AWS_ACCESS_KEY_ID=AKIAJKFWPBSAEI2FFBRQ AWS_SECRET_ACCESS_KEY=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 aws s3 ls s3://lalamove-ui/storybook --recursive
+    - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 cp .out $S3_URL/storybook --recursive
+    - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL/storybook --recursive
     - echo "Upload completed"
 
