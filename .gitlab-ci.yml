@@ -21,7 +21,10 @@ deploy:
   image: node:8.11-alpine
   stage: deploy
   only:
-  - master
+  - master@lalamove/lalamove-ui
+  environment:
+    name: storybook
+    url: https://ui.lalamove.com/storybook/index.html
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
