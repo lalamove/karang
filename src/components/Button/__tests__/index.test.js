@@ -3,7 +3,7 @@ import { render } from 'enzyme';
 import Button from '../index';
 
 const types = {
-  large: true,
+  size: ['large', 'xlarge'],
   block: true,
   isLoading: true,
   variant: ['link', 'primary', 'secondary', 'outline', 'default'],
@@ -11,10 +11,10 @@ const types = {
 };
 
 for (const type in types) {
-  if (type === 'variant') {
-    types[type].map(variantType => {
-      it(`Button-${type}-${variantType}`, () => {
-        const prop = { [type]: variantType };
+  if (type === 'variant' || type === 'size') {
+    types[type].map(value => {
+      it(`Button-${type}-${value}`, () => {
+        const prop = { [type]: value };
         const wrapper = render(<Button {...prop}>hello</Button>);
         expect(wrapper).toMatchSnapshot();
       });

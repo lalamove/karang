@@ -27,7 +27,6 @@ class Wrapper extends Component {
 
   render() {
     const self = this;
-    console.log(this.props.children);
     const children = React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
         value: self.state.payment,
@@ -51,6 +50,34 @@ storiesOf('Radio', module)
         <Fragment>
           <RadioButton value="wallet">Wallet</RadioButton>
           <RadioButton value="cash">Cash</RadioButton>
+        </Fragment>
+      )}
+    </RadioGroup>
+  ))
+  .add('RadioGroupBtn', () => (
+    <RadioGroup name="payment">
+      {Radio => (
+        <Fragment>
+          <Radio value="wallet" style={{
+            border: "1px solid #E8E8E8",
+            padding: "0.75em",
+            color: "#58595B",
+            "font-size": "16px",
+            "margin-top": "0.5em",
+            display: "flex",
+            "line-height": "1.5em",
+            "align-items": "center"
+          }}>11:00 - 12:00</Radio>
+          <Radio value="cash" style={{
+            border: "1px solid #E8E8E8",
+            padding: "0.75em",
+            color: "#58595B",
+            "font-size": "16px",
+            "margin-top": "0.5em",
+            display: "flex",
+            "line-height": "1.5em",
+            "align-items": "center"
+          }}>13:00 - 14:00</Radio>
         </Fragment>
       )}
     </RadioGroup>

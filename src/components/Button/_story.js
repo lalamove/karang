@@ -41,6 +41,22 @@ storiesOf('Button', module).add(
           Outline
         </Button>
       </Container>
+      <h4>Extra Large</h4>
+      <Container>
+        <Button variant="link" size="xlarge">
+          Link
+        </Button>
+        <Button size="xlarge">Default</Button>
+        <Button variant="primary" size="xlarge">
+          Primary
+        </Button>
+        <Button variant="secondary" size="xlarge">
+          Secondary
+        </Button>
+        <Button variant="outline" size="xlarge">
+          Outline
+        </Button>
+      </Container>
       <h4>Block</h4>
       <Button block variant="primary">
         block primary
@@ -78,22 +94,6 @@ storiesOf('Button', module).add(
         <CustomComponent href="#somewhere" variant="primary">
           {'Button with <a href="#somewhere" /> tag'}
         </CustomComponent>
-      </Container>
-      <h4>Extra Large</h4>
-      <Container>
-        <Button variant="link" size="xlarge">
-          Link
-        </Button>
-        <Button size="xlarge">Default</Button>
-        <Button variant="primary" size="xlarge">
-          Primary
-        </Button>
-        <Button variant="secondary" size="xlarge">
-          Secondary
-        </Button>
-        <Button variant="outline" size="xlarge">
-          Outline
-        </Button>
       </Container>
     </div>
   ))
