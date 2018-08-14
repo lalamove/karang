@@ -75,7 +75,7 @@ class DropdownList extends Component {
       <StyledList
         hoverable
         items={items}
-        variant="small"
+        size="small"
         direction={direction}
         nested={depthLevel > 0}
       >

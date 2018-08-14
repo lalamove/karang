@@ -19,8 +19,8 @@ const Content = styled.div`
   font-size: ${fontSize.regular};
   line-height: 20px;
 
-  ${({ variant }) => {
-    switch (variant) {
+  ${({ size }) => {
+    switch (size) {
       case 'small':
         return css`
           padding: 6px 6px 6px 0;
@@ -39,8 +39,8 @@ const UL = styled.ul`
   box-sizing: border-box;
   background-color: ${white};
   color: ${black};
-  ${({ variant }) => {
-    switch (variant) {
+  ${({ size }) => {
+    switch (size) {
       case 'small':
         return css`
           min-width: 12.5rem;
@@ -64,8 +64,8 @@ const LI = styled.li`
   border-left: 2px solid transparent;
   outline: 0;
 
-  ${({ variant }) =>
-    variant === 'small' &&
+  ${({ size }) =>
+    size === 'small' &&
     css`
       margin-top: 8px;
       margin-bottom: 4px;
@@ -78,8 +78,8 @@ const LI = styled.li`
     `};
 
   &:not(:last-child) ${/* sc-selector */ Content} {
-    ${({ variant }) => {
-      switch (variant) {
+    ${({ size }) => {
+      switch (size) {
         case 'small':
           return css`
             border-bottom: 0;
@@ -111,8 +111,8 @@ const Wrapper = LI.extend`
 
 const Icon = styled.div`
   align-self: center;
-  ${({ variant }) => {
-    switch (variant) {
+  ${({ size }) => {
+    switch (size) {
       case 'small':
         return css`
           margin: 0 6px 0 0;
@@ -126,16 +126,16 @@ const Icon = styled.div`
   }};
 `;
 
-export const Item = ({ icon, variant, children, options, ...rest }) => (
-  <Wrapper variant={variant} {...rest}>
-    {icon && <Icon variant={variant}>{icon}</Icon>}
-    <Content variant={variant}>{children}</Content>
+export const Item = ({ icon, size, children, options, ...rest }) => (
+  <Wrapper size={size} {...rest}>
+    {icon && <Icon size={size}>{icon}</Icon>}
+    <Content size={size}>{children}</Content>
     {options}
   </Wrapper>
 );
 
-const List = ({ children, items, hoverable, unique, variant, ...rest }) => (
-  <UL variant={variant} {...rest}>
+const List = ({ children, items, hoverable, unique, size, ...rest }) => (
+  <UL size={size} {...rest}>
     {items.map((data, index) =>
       children({
         data,
@@ -144,7 +144,7 @@ const List = ({ children, items, hoverable, unique, variant, ...rest }) => (
         getProps: props => ({
           ...props,
           hoverable,
-          variant,
+          size,
           key: unique ? data[unique] : index,
           tabIndex: 0,
         }),
@@ -155,14 +155,14 @@ const List = ({ children, items, hoverable, unique, variant, ...rest }) => (
 
 Item.defaultProps = {
   icon: null,
-  variant: null,
+  size: null,
   children: null,
   options: null,
 };
 
 Item.propTypes = {
   icon: node,
-  variant: string,
+  size: string,
   children: node,
   options: node,
 };
@@ -170,7 +170,7 @@ Item.propTypes = {
 List.defaultProps = {
   hoverable: false,
   unique: '',
-  variant: null,
+  size: null,
   children: noop,
 };
 
@@ -178,7 +178,7 @@ List.propTypes = {
   unique: string,
   items: arrayOf(shape({})).isRequired,
   hoverable: bool,
-  variant: oneOf(['small']),
+  size: oneOf(['small']),
   children: func,
 };
 
