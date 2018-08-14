@@ -9,6 +9,7 @@ import noop from 'utils/noop';
 
 const validIndex = /(\d+)_(-?\d+)/;
 let setHighlightedIndex;
+let toggleMenu;
 
 const Container = styled.div`
   display: inline-block;
@@ -124,6 +125,7 @@ class Dropdown extends Component {
 
   handleKeyDown = e => {
     const moveAmount = e.shiftKey ? 5 : 1;
+    const arrowRightToOpenSubOptions = this.props.direction === 'right';
     switch (e.key) {
       case 'ArrowDown':
         // eslint-disable-next-line no-param-reassign
@@ -136,12 +138,13 @@ class Dropdown extends Component {
         this.moveHighlightedIndex(-moveAmount);
         break;
       case 'ArrowRight':
-        // trigger subOption first option
-        this.triggerSubOptions(true);
+        this.triggerSubOptions(arrowRightToOpenSubOptions);
         break;
       case 'ArrowLeft':
-        // close subOption
-        this.triggerSubOptions(false);
+        this.triggerSubOptions(!arrowRightToOpenSubOptions);
+        break;
+      case ' ':
+        toggleMenu();
         break;
       default:
         break;
@@ -173,8 +176,10 @@ class Dropdown extends Component {
           highlightedIndex,
           selectedItem: dsSelectedItem,
           setHighlightedIndex: dsSetHighlightedIndex,
+          toggleMenu: dsToggleMenu,
         }) => {
           setHighlightedIndex = dsSetHighlightedIndex;
+          toggleMenu = dsToggleMenu;
           return (
             <div>
               <Container>
