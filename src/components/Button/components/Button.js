@@ -23,13 +23,24 @@ const Button = Base.extend`
   ${({ block }) => block && 'width: 100%;'};
 
   /* size */
-  ${({ large }) =>
-    large &&
-    css`
-      padding: 0.75em 1em;
-      font-size: 16px;
-      font-weight: 700;
-    `}
+  ${({ size }) => {
+    switch (size) {
+      case 'large':
+        return css`
+          padding: 0.75em 1em;
+          font-size: 16px;
+          font-weight: 700;
+        `;
+      case 'xlarge':
+        return css`
+          padding: 0.9em 1em;
+          font-size: 18px;
+          font-weight: 700;
+        `;
+      default:
+        return css``;
+    }
+  }}
 
   /* type */
   ${({ variant }) => {
@@ -91,14 +102,14 @@ const Button = Base.extend`
 
 Button.defaultProps = {
   isLoading: false,
-  large: false,
+  size: null,
   variant: 'default',
   block: false,
 };
 
 Button.propTypes = {
   isLoading: bool,
-  large: bool,
+  size: oneOf(['large', 'xlarge']),
   variant: oneOf(['default', 'primary', 'secondary', 'outline', 'link']),
   block: bool,
   children: node.isRequired,

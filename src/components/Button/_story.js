@@ -27,17 +27,33 @@ storiesOf('Button', module).add(
       </Container>
       <h4>Large</h4>
       <Container>
-        <Button variant="link" large>
+        <Button variant="link" size="large">
           Link
         </Button>
-        <Button large>Default</Button>
-        <Button variant="primary" large>
+        <Button size="large">Default</Button>
+        <Button variant="primary" size="large">
           Primary
         </Button>
-        <Button variant="secondary" large>
+        <Button variant="secondary" size="large">
           Secondary
         </Button>
-        <Button variant="outline" large>
+        <Button variant="outline" size="large">
+          Outline
+        </Button>
+      </Container>
+      <h4>Extra Large</h4>
+      <Container>
+        <Button variant="link" size="xlarge">
+          Link
+        </Button>
+        <Button size="xlarge">Default</Button>
+        <Button variant="primary" size="xlarge">
+          Primary
+        </Button>
+        <Button variant="secondary" size="xlarge">
+          Secondary
+        </Button>
+        <Button variant="outline" size="xlarge">
           Outline
         </Button>
       </Container>
@@ -69,7 +85,7 @@ storiesOf('Button', module).add(
         <Button disabled variant="link">
           Disabled
         </Button>
-        <Button disabled variant="primary" large isLoading block>
+        <Button disabled variant="primary" size="large" isLoading block>
           Disabled
         </Button>
       </Container>

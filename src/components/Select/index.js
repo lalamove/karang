@@ -7,6 +7,7 @@ import {
   bool,
   oneOfType,
   object,
+  number,
 } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
@@ -21,7 +22,7 @@ import { orange, gray, lightGray, white, hoverGray } from 'styles/colors';
 const ItemList = styled.div`
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 99;
   left: -1px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
 `;
@@ -72,12 +73,12 @@ class Select extends Component {
     id: string.isRequired,
     itemList: arrayOf(
       shape({
-        id: string,
+        id: oneOfType([string, number]),
         value: string,
       })
     ).isRequired,
     selectedItem: shape({
-      id: string,
+      id: oneOfType([string, number]),
       value: string,
     }),
     onChange: func,
