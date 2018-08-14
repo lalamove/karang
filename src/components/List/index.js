@@ -110,11 +110,11 @@ const Wrapper = LI.extend`
 `;
 
 const Icon = styled.div`
-  align-self: center;
   ${({ size }) => {
     switch (size) {
       case 'small':
         return css`
+          align-self: center;
           margin: 0 6px 0 0;
         `;
       default:
