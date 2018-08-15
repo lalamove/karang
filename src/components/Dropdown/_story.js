@@ -1,95 +1,114 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import styled from 'styled-components';
+import InfoIcon from 'icons/Info';
 
 import Dropdown from './index';
 
-const FlagIcon = styled.img`
-  max-width: 24px;
-  max-height: 24px;
-  vertical-align: middle;
-`;
+const items = [
+  {
+    value: 'hello',
+    label: 'Hello world!',
+  },
+  {
+    value: 'bye',
+    label: 'Bye!',
+  },
+];
 
-const Flag = (
-  <FlagIcon src="https://s3-ap-southeast-1.amazonaws.com/lalamove-countriesflag/flag_TH.png" />
-);
-
-const countries = [
+const itemsWithSubmenu = [
   {
     value: 'TH',
     label: 'Thailand',
-    icon: Flag,
+    icon: <InfoIcon />,
     options: [
       {
         value: 'TH_BKK',
         label: 'Bangkok',
-        icon: Flag,
+        icon: <InfoIcon />,
       },
       {
         value: 'TH_CNX',
         label: 'Chiang Mai',
-        icon: Flag,
+        icon: <InfoIcon />,
       },
     ],
   },
   {
     value: 'HK_HKG',
     label: 'Hong Kong',
-    icon: Flag,
+    icon: <InfoIcon />,
   },
   {
     value: 'VN_HCM',
     label: 'Vietnam',
-    icon: Flag,
+    icon: <InfoIcon />,
   },
   {
     value: 'PH',
     label: 'Philippines',
-    icon: Flag,
+    icon: <InfoIcon />,
     options: [
       {
         value: 'PH_MNL',
         label: 'Manila',
-        icon: Flag,
+        icon: <InfoIcon />,
       },
       {
         value: 'PH_CEB',
         label: 'Cebu',
-        icon: Flag,
+        icon: <InfoIcon />,
       },
     ],
   },
   {
     value: 'SG_SGN',
     label: 'Singapore',
-    icon: Flag,
+    icon: <InfoIcon />,
   },
   {
     value: 'TW_TPE',
     label: 'Taiwan',
-    icon: Flag,
+    icon: <InfoIcon />,
   },
 ];
 
 class Wrapper extends Component {
   state = {
-    selectedCountry: countries[1],
+    dropdown1: itemsWithSubmenu[5],
+    dropdown2: itemsWithSubmenu[1],
   };
 
-  handleChange = selectedCountry => {
-    this.setState({ selectedCountry });
+  handleChange = (name, item) => {
+    this.setState({ [name]: item });
   };
 
   render() {
-    const { selectedCountry } = this.state;
+    const { dropdown1, dropdown2 } = this.state;
     return (
       <div>
+        <h4>Basic</h4>
+        <Dropdown items={items} />
+        <h4>Basic with icon</h4>
         <Dropdown
-          items={countries}
-          onChange={this.handleChange}
-          selectedItem={selectedCountry}
-          direction="right"
+          items={items.map(item =>
+            Object.assign({}, item, { icon: <InfoIcon /> })
+          )}
         />
+        <h4>Cascading menu with icon</h4>
+        <Dropdown
+          items={itemsWithSubmenu}
+          onChange={item => this.handleChange('dropdown1', item)}
+          selectedItem={dropdown1}
+        />
+        <h4 style={{ textAlign: 'right' }}>Cascading menu on right side</h4>
+        <div style={{ float: 'right' }}>
+          <Dropdown
+            items={itemsWithSubmenu}
+            onChange={item => this.handleChange('dropdown2', item)}
+            selectedItem={dropdown2}
+            direction="left"
+          />
+        </div>
       </div>
     );
   }
