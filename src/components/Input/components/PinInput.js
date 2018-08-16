@@ -142,6 +142,7 @@ class PinInput extends Component {
         error={error}
         disabled={disabled}
         variant={variant}
+        type="number"
       />
     ));
 
