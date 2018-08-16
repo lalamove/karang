@@ -10,6 +10,7 @@ export {
 export { default as Card } from './components/Card';
 export { default as Checkbox } from './components/Checkbox';
 export { default as CountdownBar } from './components/CountdownBar';
+export { default as Dropdown } from './components/Dropdown';
 export { default as Form } from './components/Form';
 export { default as Heading, HeadingGroup } from './components/Heading';
 export { default as Input, PinInput, SearchInput } from './components/Input';

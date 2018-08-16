@@ -1,4 +1,4 @@
-import React, { Component, Fragment, forwardRef } from 'react';
+import React, { PureComponent, Fragment, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
 import { branch, compose, toClass } from 'recompose';
 import styled from 'styled-components';
@@ -17,7 +17,7 @@ const StyledTextInput = styled(TextInput)`
   }
 `;
 
-class Input extends Component {
+class Input extends PureComponent {
   static propTypes = {
     innerRef: oneOfType([func, object]),
     type: string,
