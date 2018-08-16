@@ -18,7 +18,7 @@ const Button = styled.button`
 `;
 
 const PeekButton = ({ active, onClick }) => (
-  <Button onClick={onClick}>
+  <Button type="button" onClick={onClick}>
     {!active && <EyeOffIcon color={black} size={20} />}
     {active && <EyeOnIcon color={black} size={20} />}
   </Button>
