@@ -359,6 +359,12 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   text-align: center;
   border: 1px solid rgba(216,83,79,1);
   color: rgba(216,83,79,1);
+  -webkit-appearance: 0;
+  -webkit-border-radius: 0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  -webkit-padding-before: 0;
+  -webkit-padding-after: 0;
 }
 
 .c2:focus {
@@ -465,6 +471,12 @@ exports[`PinInput Snapshots Empty 1`] = `
   outline: 0;
   margin: 0 8px 8px 8px;
   text-align: center;
+  -webkit-appearance: 0;
+  -webkit-border-radius: 0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  -webkit-padding-before: 0;
+  -webkit-padding-after: 0;
 }
 
 .c2:focus {

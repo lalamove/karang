@@ -50,6 +50,13 @@ const Input = styled.input`
         border: 1px solid ${red};
       }
     `};
+
+  -webkit-appearance: 0;
+  -webkit-border-radius: 0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  -webkit-padding-before: 0;
+  -webkit-padding-after: 0;
 `;
 
 class PinInput extends Component {
