@@ -15,6 +15,7 @@ const Container = styled.label`
   font-size: ${fontSize.regular};
   user-select: none;
   line-height: 20px;
+  flex-shrink: 0;
 `;
 
 const Input = styled.input`
