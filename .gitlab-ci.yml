@@ -24,7 +24,7 @@ deploy:
   - master@lalamove/lalamove-ui
   environment:
     name: storybook
-    url: https://ui.lalamove.com/storybook/index.html
+    url: https://ui.lalamove.com/storybook
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
