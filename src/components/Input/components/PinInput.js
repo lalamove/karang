@@ -57,6 +57,12 @@ const Input = styled.input`
   -webkit-padding-end: 0;
   -webkit-padding-before: 0;
   -webkit-padding-after: 0;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 class PinInput extends Component {
@@ -143,6 +149,7 @@ class PinInput extends Component {
         disabled={disabled}
         variant={variant}
         type="number"
+        onPaste={ev => ev.preventDefault()}
       />
     ));
 
