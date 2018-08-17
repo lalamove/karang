@@ -12,7 +12,7 @@ import {
   truckOutline,
   logo,
   settingsGear,
-} from './IconFiles/Icons/basicIcons';
+} from './iconFiles/icons/basicIcons';
 import {
   pinCircle,
   arrowDoubleSidedCurved,
@@ -60,7 +60,7 @@ import {
   spanner,
   bangkokBank,
   blockedGroup,
-} from './IconFiles/IconExports';
+} from './iconFiles/exports';
 
 const iconType = Object.freeze({
   facebook: {
