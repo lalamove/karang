@@ -1,5 +1,5 @@
-import React from 'react';
-import { bool, func, node, shape, string } from 'prop-types';
+import React, { PureComponent } from 'react';
+import { bool, func, node, string } from 'prop-types';
 import styled, { css } from 'styled-components';
 import noop from 'utils/noop';
 import { orange, silver, offWhite } from 'styles/colors';
@@ -75,48 +75,50 @@ const Label = styled.label`
     `}
 `;
 
-const RadioButton = ({
-  children,
-  checked,
-  name,
-  style,
-  className,
-  onChange,
-  value,
-  disabled,
-}) => (
-  <Label className={className} style={style} disabled={disabled}>
-    <input
-      type="radio"
-      name={name}
-      onChange={onChange}
-      checked={checked}
-      value={value}
-      disabled={disabled}
-    />
-    <Radio /> <Text>{children}</Text>
-  </Label>
-);
+class RadioButton extends PureComponent {
+  static displayName = 'Radio';
 
-RadioButton.propTypes = {
-  style: shape({}),
-  className: string,
-  children: node,
-  name: string,
-  value: string.isRequired, // eslint-disable-line react/no-typos
-  checked: bool,
-  onChange: func,
-  disabled: bool,
-};
+  static propTypes = {
+    children: node,
+    name: string,
+    value: string.isRequired, // eslint-disable-line react/no-typos
+    checked: bool,
+    onChange: func,
+    disabled: bool,
+  };
 
-RadioButton.defaultProps = {
-  style: {},
-  className: null,
-  children: null,
-  name: null,
-  onChange: noop,
-  checked: false,
-  disabled: false,
-};
+  static defaultProps = {
+    children: null,
+    name: null,
+    onChange: noop,
+    checked: false,
+    disabled: false,
+  };
+
+  render() {
+    const {
+      children,
+      checked,
+      name,
+      onChange,
+      value,
+      disabled,
+      ...rest
+    } = this.props;
+    return (
+      <Label {...rest} disabled={disabled}>
+        <input
+          type="radio"
+          name={name}
+          onChange={onChange}
+          checked={checked}
+          value={value}
+          disabled={disabled}
+        />
+        <Radio /> <Text>{children}</Text>
+      </Label>
+    );
+  }
+}
 
 export default RadioButton;

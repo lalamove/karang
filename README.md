@@ -46,7 +46,7 @@ You must first initialize the library in order to set configuration globals.
 At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
 
 // TODO: Should allow configuration parameters passed as props here
-```jsx
+```jsx static
 import React from 'react';
 import { BaseApp } from 'lalamove-ui';
 
@@ -61,7 +61,7 @@ export default App;
 
 #### Using exported UI components
 Quick example to **get you started** in your own components / containers:
-```jsx
+```jsx static
 import React, { Fragment } from 'react';
 import { Radio } from 'lalamove-ui';
 
