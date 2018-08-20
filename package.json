@@ -21,7 +21,6 @@
     "doc:build": "npx styleguidist build",
     "precommit": "npm run prepare && lint-staged"
   },
-  "dependencies": {},
   "peerDependencies": {
     "downshift": "^2.0.14",
     "prop-types": "^15.6.1",
@@ -32,6 +31,7 @@
   },
   "devDependencies": {
     "@monastic.panic/enzyme-adapter-react-16": "^1.2.4",
+    "@storybook/addon-knobs": "^3.4.10",
     "@storybook/addon-info": "^3.4.5",
     "@storybook/react": "^3.4.4",
     "babel-core": "^6.26.3",

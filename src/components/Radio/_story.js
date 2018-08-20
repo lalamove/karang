@@ -1,83 +1,62 @@
-/* eslint-disable */
-import React, { Component, Fragment } from 'react';
-import styled from 'styled-components';
-import { storiesOf, action } from '@storybook/react';
+import React, { Fragment } from 'react';
+import { storiesOf } from '@storybook/react';
+import { select } from '@storybook/addon-knobs/react';
+
 import Radio, { RadioGroup } from './index';
 
-const Container = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-`;
-
-class Wrapper extends Component {
-  state = {
-    payment: 'wallet',
-  };
-
-  handleChange = value => {
-    this.setState({ payment: value });
-    this.props.action('select')(value);
-  };
-
-  render() {
-    const self = this;
-    const children = React.Children.map(this.props.children, child =>
-      React.cloneElement(child, {
-        value: self.state.payment,
-        onChange: self.handleChange,
-      })
-    );
-    return <Container>{children}</Container>;
-  }
-}
+const options = ['wallet', 'cash'];
 
 storiesOf('Radio', module)
-  .addDecorator(story => <Wrapper action={action}>{story()}</Wrapper>)
   .add('Basic', () => (
     <Radio name="payment" value="cash" disabled>
       Radio 1
     </Radio>
   ))
   .add('RadioGroup', () => (
-    <RadioGroup name="payment">
-      {RadioButton => (
-        <Fragment>
-          <RadioButton value="wallet">Wallet</RadioButton>
-          <RadioButton value="cash">Cash</RadioButton>
-        </Fragment>
-      )}
+    <RadioGroup name="payment" value={select('value', options, options[0])}>
+      {RadioButton =>
+        options.map(option => (
+          <RadioButton key={option} value={option}>
+            {option}
+          </RadioButton>
+        ))
+      }
     </RadioGroup>
   ))
   .add('RadioGroupBtn', () => (
-    <RadioGroup name="payment">
-      {Radio => (
+    <RadioGroup name="payment" value={select('value', options, 'cash')}>
+      {RadioButton => (
         <Fragment>
-          <Radio value="wallet" style={{
-            border: "1px solid #E8E8E8",
-            padding: "0.75em",
-            color: "#58595B",
-            "font-size": "16px",
-            "margin-top": "0.5em",
-            display: "flex",
-            "line-height": "1.5em",
-            "align-items": "center"
-          }}>11:00 - 12:00</Radio>
-          <Radio value="cash" style={{
-            border: "1px solid #E8E8E8",
-            padding: "0.75em",
-            color: "#58595B",
-            "font-size": "16px",
-            "margin-top": "0.5em",
-            display: "flex",
-            "line-height": "1.5em",
-            "align-items": "center"
-          }}>13:00 - 14:00</Radio>
+          <RadioButton
+            value="wallet"
+            style={{
+              border: '1px solid #E8E8E8',
+              padding: '0.75em',
+              color: '#58595B',
+              fontSize: '16px',
+              marginTop: '0.5em',
+              display: 'flex',
+              lineHeight: '1.5em',
+              alignItems: 'center',
+            }}
+          >
+            11:00 - 12:00
+          </RadioButton>
+          <RadioButton
+            value="cash"
+            style={{
+              border: '1px solid #E8E8E8',
+              padding: '0.75em',
+              color: '#58595B',
+              fontSize: '16px',
+              marginTop: '0.5em',
+              display: 'flex',
+              lineHeight: '1.5em',
+              alignItems: 'center',
+            }}
+          >
+            13:00 - 14:00
+          </RadioButton>
         </Fragment>
       )}
     </RadioGroup>
