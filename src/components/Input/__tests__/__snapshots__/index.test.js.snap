@@ -71,13 +71,12 @@ exports[`Input Snapshots Password 1`] = `
 }
 
 .c5 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   border: none;
-  background: none;
-  cursor: pointer;
-  outline: 0;
+}
+
+.c5:hover,
+.c5:focus {
+  background: rgba(229,229,229,1);
 }
 
 .c3::-ms-reveal {
@@ -200,13 +199,12 @@ exports[`Input Snapshots Password with a value 1`] = `
 }
 
 .c5 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   border: none;
-  background: none;
-  cursor: pointer;
-  outline: 0;
+}
+
+.c5:hover,
+.c5:focus {
+  background: rgba(229,229,229,1);
 }
 
 .c3::-ms-reveal {
