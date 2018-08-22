@@ -3,25 +3,25 @@ import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
-import { black } from 'styles/colors';
+import { black, offWhite } from 'styles/colors';
 import EyeOffIcon from 'icons/EyeOff';
 import EyeOnIcon from 'icons/EyeOn';
+import Button from 'components/Button';
 
-const Button = styled.button`
-  appearance: none;
+const ScButton = styled(Button)`
   border: none;
-  background: none;
-  cursor: pointer;
-  margin: 0 14px;
-  outline: 0;
-  padding: 0;
+
+  &:hover,
+  &:focus {
+    background: ${offWhite};
+  }
 `;
 
 const PeekButton = ({ active, onClick }) => (
-  <Button type="button" onClick={onClick}>
+  <ScButton onClick={onClick}>
     {!active && <EyeOffIcon color={black} size={20} />}
     {active && <EyeOnIcon color={black} size={20} />}
-  </Button>
+  </ScButton>
 );
 
 PeekButton.propTypes = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, oneOf, node } from 'prop-types';
+import { bool, oneOf, node, string } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { transparentize, darken } from 'polished';
 
@@ -105,6 +105,7 @@ Button.defaultProps = {
   size: null,
   variant: 'default',
   block: false,
+  type: 'button',
 };
 
 Button.propTypes = {
@@ -113,6 +114,7 @@ Button.propTypes = {
   variant: oneOf(['default', 'primary', 'secondary', 'outline', 'link']),
   block: bool,
   children: node.isRequired,
+  type: string,
 };
 
 export function withComponent(Comp) {
