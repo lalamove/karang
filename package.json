@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@monastic.panic/enzyme-adapter-react-16": "^1.2.4",
-    "@storybook/addon-knobs": "^3.4.10",
     "@storybook/addon-info": "^3.4.5",
+    "@storybook/addon-knobs": "^3.4.10",
     "@storybook/react": "^3.4.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.1",
@@ -99,5 +99,6 @@
       "!**/node_modules/**",
       "!**/_story.js"
     ]
-  }
+  },
+  "dependencies": {}
 }
