@@ -12,7 +12,6 @@ const Container = styled.label`
   align-items: center;
   color: ${gray};
   font-family: ${primaryFonts};
-  cursor: pointer;
   font-size: ${fontSize.regular};
   user-select: none;
   line-height: 20px;
@@ -31,9 +30,11 @@ const Input = styled.input`
 
 const Text = styled.span`
   padding-left: 28px;
+  cursor: pointer;
 
   ${Input}:disabled ~ & {
     opacity: 0.7;
+    cursor: not-allowed;
   }
 `;
 
@@ -42,6 +43,7 @@ const Checkmark = styled.span`
   width: 16px;
   height: 16px;
   border: solid 1px ${silver};
+  cursor: pointer;
 
   &:after {
     content: '';
@@ -70,22 +72,20 @@ const Checkmark = styled.span`
 
   ${Input}:disabled ~ & {
     background-color: ${offWhite};
+    cursor: not-allowed;
   }
 
   ${Input}:disabled ~ &:after {
     border-color: ${silver};
   }
 
-  ${Container}:hover & {
+  ${Container}:hover ${/* sc-selector */ Input}:not(:disabled) ~ & {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-  }
-
-  ${Container}:hover ${/* sc-selector */ Input} ~ & {
     border: solid 1px ${silver};
   }
 `;
 
-class CheckBox extends Component {
+class Checkbox extends Component {
   static defaultProps = {
     name: 'llm-checkbox',
     label: '',
@@ -102,6 +102,12 @@ class CheckBox extends Component {
     disabled: bool,
   };
 
+  state = { checked: this.props.checked };
+
+  handleChange = () => {
+    this.setState(state => ({ checked: !state.checked }));
+  };
+
   render() {
     const {
       checked,
@@ -111,14 +117,15 @@ class CheckBox extends Component {
       disabled,
       ...remainProps
     } = this.props;
+
     return (
       <Container htmlFor={name} {...remainProps}>
         <Input
           type="checkbox"
           name={name}
           id={name}
-          checked={checked}
-          onChange={onChange}
+          checked={onChange === noop ? this.state.checked : checked}
+          onChange={onChange === noop ? this.handleChange : onChange}
           disabled={disabled}
         />
         <Checkmark />
@@ -128,4 +135,4 @@ class CheckBox extends Component {
   }
 }
 
-export default CheckBox;
+export default Checkbox;

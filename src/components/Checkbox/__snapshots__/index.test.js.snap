@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(88,89,91,1);
+  font-family: "Noto Sans",sans-serif;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 20px;
+}
+
+.c3 {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c5 {
+  padding-left: 28px;
+  cursor: pointer;
+}
+
+.c2:disabled ~ .c5 {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.c4 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: solid 1px rgba(128,130,133,1);
+  cursor: pointer;
+}
+
+.c4:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  display: none;
+  width: 4px;
+  height: 9px;
+  border: solid rgba(242,103,34,1);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.c2:focus ~ .c4 {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c2:checked ~ .c4 {
+  background-color: rgba(255,255,255,1);
+}
+
+.c2:checked ~ .c4:after {
+  display: block;
+}
+
+.c2:disabled ~ .c4 {
+  background-color: rgba(229,229,229,1);
+  cursor: not-allowed;
+}
+
+.c2:disabled ~ .c4:after {
+  border-color: rgba(128,130,133,1);
+}
+
+.c0:hover .c2:not(:disabled) ~ .c4 {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+  border: solid 1px rgba(128,130,133,1);
+}
+
+<label
+  class="c0 c1"
+  for="llm-checkbox"
+>
+  <input
+    class="c2 c3"
+    id="llm-checkbox"
+    name="llm-checkbox"
+    type="checkbox"
+  >
+    
+  </input>
+  <span
+    class="c4"
+  >
+    
+  </span>
+  <span
+    class="c5"
+  >
+    
+  </span>
+</label>
+`;
