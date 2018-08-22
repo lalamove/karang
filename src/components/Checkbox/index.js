@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, bool, func } from 'prop-types';
+import { string, bool, func, node } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
@@ -109,7 +109,7 @@ const CheckBox = ({
 
 CheckBox.propTypes = {
   name: string.isRequired, // eslint-disable-line
-  label: string,
+  label: node,
   checked: bool,
   onChange: func,
   disabled: bool,
