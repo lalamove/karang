@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import Radio, { RadioGroup } from 'lalamove-ui';
+import { Radio } from 'lalamove-ui';
 ```
 
 ```js

@@ -157,9 +157,16 @@ class List extends Component {
     /** used as `key` for list items */
     unique: string,
     size: oneOf(['small', 'default']),
-    /** render(data<object>, Item<component>, getProps<func>) */
+    /**
+     * Render function
+     *
+     * @param {Object} data individual item in `items`
+     * @param {Component} Item react component
+     * @param {Function} getProps function to get props, pass the result to `Item`.
+     * Add custom props by passing an object as argument.
+     */
     render: func,
-    /** to be deprecated, use render */
+    /** @deprecated, use `render` */
     children: func,
   };
 

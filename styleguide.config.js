@@ -13,12 +13,20 @@ module.exports = {
   usageMode: 'expand',
   skipComponentsWithoutExample: true,
   getExampleFilename(componentPath) {
-    const p = path.join(componentPath, '../..');
-    const ComponentName = componentPath
+    let ComponentName = componentPath
       .split(path.sep)
       .pop()
       .split('.')
       .shift();
+
+    let p;
+    if (ComponentName === 'index') {
+      p = path.join(componentPath, '..');
+      ComponentName = p.split(path.sep).pop();
+    } else {
+      p = path.join(componentPath, '../..');
+    }
+
     return path.join(p, `${ComponentName}.md`);
   },
   pagePerSection: true,
@@ -29,7 +37,7 @@ module.exports = {
     },
     {
       name: 'UI Components',
-      components: 'src/components/**/[A-Z]*.js',
+      components: 'src/components/**/{index,[A-Z]*}.js',
     },
   ],
 };
