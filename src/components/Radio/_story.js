@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import { select } from '@storybook/addon-knobs/react';
+import { select, boolean } from '@storybook/addon-knobs/react';
 
 import Radio, { RadioGroup } from './index';
 
@@ -8,12 +8,12 @@ const options = ['wallet', 'cash'];
 
 storiesOf('Radio', module)
   .add('Basic', () => (
-    <Radio name="payment" value="cash" disabled>
+    <Radio name="payment" value="cash" disabled={boolean('disabled', false)}>
       Radio 1
     </Radio>
   ))
   .add('RadioGroup', () => (
-    <RadioGroup name="payment" value={select('value', options, options[0])}>
+    <RadioGroup name="payment" defaultValue={options[0]}>
       {RadioButton =>
         options.map(option => (
           <RadioButton key={option} value={option}>
@@ -24,7 +24,7 @@ storiesOf('Radio', module)
     </RadioGroup>
   ))
   .add('RadioGroupBtn', () => (
-    <RadioGroup name="payment" value={select('value', options, 'cash')}>
+    <RadioGroup name="payment" defaultValue={select('value', options, 'cash')}>
       {RadioButton => (
         <Fragment>
           <RadioButton

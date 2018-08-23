@@ -19,7 +19,8 @@ class RadioGroup extends Component {
     onChange: noop,
     children: noop,
     name: '',
-    value: '',
+    value: null,
+    defaultValue: null,
   };
 
   static propTypes = {
@@ -27,17 +28,49 @@ class RadioGroup extends Component {
     name: string,
     children: func,
     value: oneOfType([string, number, bool]),
+    defaultValue: oneOfType([string, number, bool]),
   };
 
+  state = {
+    value:
+      this.props.value !== null ? this.props.value : this.props.defaultValue,
+  };
+
+  componentDidUpdate(prevProps) {
+    const { value, defaultValue } = this.props;
+    if (value && defaultValue) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Trying to set defaultValue and value at the same time.' +
+          '\nComponent can only be either controlled or uncontrolled.'
+      );
+    }
+
+    if (this.props.value !== prevProps.value) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ value: this.props.value });
+    }
+  }
+
   handleChange = e => {
-    this.props.onChange(e.target.value);
+    const { onChange } = this.props;
+    const { value } = e.target;
+    if (this.props.value === null) {
+      this.setState(state => ({ value }));
+    } else {
+      onChange(value);
+    }
   };
 
   render() {
-    const { name, value } = this.props;
+    const { name } = this.props;
     return (
       this.props.children(
-        radio({ name, onChange: this.handleChange, selected: value })
+        radio({
+          name,
+          onChange: this.handleChange,
+          selected: this.state.value,
+        })
       ) || null
     );
   }
