@@ -38,7 +38,6 @@ exports[`List component size-small-default 1`] = `
   -webkit-box-align: top;
   -ms-flex-align: top;
   align-items: top;
-  cursor: pointer;
 }
 
 .c1:not(:first-child) {
@@ -137,7 +136,6 @@ exports[`List component size-small-with icon 1`] = `
   -webkit-box-align: top;
   -ms-flex-align: top;
   align-items: top;
-  cursor: pointer;
 }
 
 .c1:not(:first-child) {
@@ -248,11 +246,11 @@ exports[`List component size-undefined-default 1`] = `
   min-width: 16rem;
 }
 
-.jHCbEh:not(:last-child) .c2 {
+.khDFlP:not(:last-child) .c2 {
   border-bottom: 0;
 }
 
-.jZvrlJ:not(:last-child) .c2 {
+.bnCgke:not(:last-child) .c2 {
   border-bottom: 0;
 }
 
@@ -269,7 +267,6 @@ exports[`List component size-undefined-default 1`] = `
   -webkit-box-align: top;
   -ms-flex-align: top;
   align-items: top;
-  cursor: pointer;
 }
 
 .c1:not(:last-child) .c2 {
@@ -345,11 +342,11 @@ exports[`List component size-undefined-with icon 1`] = `
   min-width: 16rem;
 }
 
-.jHCbEh:not(:last-child) .c3 {
+.khDFlP:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
-.jZvrlJ:not(:last-child) .c3 {
+.bnCgke:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
@@ -366,7 +363,6 @@ exports[`List component size-undefined-with icon 1`] = `
   -webkit-box-align: top;
   -ms-flex-align: top;
   align-items: top;
-  cursor: pointer;
 }
 
 .c1:not(:last-child) .c3 {

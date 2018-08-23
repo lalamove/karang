@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean, select } from '@storybook/addon-knobs/react';
 
 import InfoIcon from 'icons/Info';
 import { orange } from 'styles/colors';
@@ -28,10 +28,16 @@ const items = [
   },
 ];
 
+const sizeOptions = { small: 'small', default: 'default' };
+
 storiesOf('List', module)
   .add('Basic', () => (
-    <List hoverable={boolean('hoverable', true)} unique="id" items={items}>
-      {({ data: { name, address, contact }, Item, getProps }) => (
+    <List
+      hoverable={boolean('hoverable', true)}
+      size={select('size', sizeOptions, 'default')}
+      unique="id"
+      items={items}
+      render={({ data: { name, address, contact }, Item, getProps }) => (
         <Item {...getProps()} icon={<InfoIcon color={orange} />}>
           <div>
             {name} <span className="light-silver">{address}</span>
@@ -39,11 +45,12 @@ storiesOf('List', module)
           <span className="f6 moon-gray">{contact}</span>
         </Item>
       )}
-    </List>
+    />
   ))
   .add('Small', () => (
     <List
       hoverable={boolean('hoverable', true)}
+      size={select('size', sizeOptions, 'small')}
       unique="id"
       items={[
         {
@@ -55,7 +62,6 @@ storiesOf('List', module)
           name: 'Chiang Mai',
         },
       ]}
-      size="small"
     >
       {({ data: { name }, Item, getProps }) => (
         <Item {...getProps()} icon={<InfoIcon />}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { black, orange, offWhite, white } from 'styles/colors';
@@ -95,6 +95,7 @@ const LI = styled.li`
   ${({ hoverable }) =>
     hoverable &&
     css`
+      cursor: pointer;
       &:hover,
       &:focus {
         ${activeStyle};
@@ -106,7 +107,6 @@ const LI = styled.li`
 const Wrapper = LI.extend`
   display: flex;
   align-items: top;
-  cursor: pointer;
 `;
 
 const Icon = styled.div`
@@ -126,31 +126,12 @@ const Icon = styled.div`
   }};
 `;
 
-export const Item = ({ icon, size, children, options, ...rest }) => (
+const Item = ({ icon, size, children, options, ...rest }) => (
   <Wrapper size={size} {...rest}>
     {icon && <Icon size={size}>{icon}</Icon>}
     <Content size={size}>{children}</Content>
     {options}
   </Wrapper>
-);
-
-const List = ({ children, items, hoverable, unique, size, ...rest }) => (
-  <UL size={size} {...rest}>
-    {items.map((data, index) =>
-      children({
-        data,
-        Item,
-        index,
-        getProps: props => ({
-          ...props,
-          hoverable,
-          size,
-          key: unique ? data[unique] : index,
-          tabIndex: 0,
-        }),
-      })
-    )}
-  </UL>
 );
 
 Item.defaultProps = {
@@ -167,19 +148,59 @@ Item.propTypes = {
   options: node,
 };
 
-List.defaultProps = {
-  hoverable: false,
-  unique: '',
-  size: null,
-  children: noop,
-};
+class List extends Component {
+  static propTypes = {
+    /** array of objects */
+    items: arrayOf(shape({})).isRequired,
+    /** enable item hover style */
+    hoverable: bool,
+    /** used as `key` for list items */
+    unique: string,
+    size: oneOf(['small', 'default']),
+    /** render(data<object>, Item<component>, getProps<func>) */
+    render: func,
+    /** to be deprecated, use render */
+    children: func,
+  };
 
-List.propTypes = {
-  unique: string,
-  items: arrayOf(shape({})).isRequired,
-  hoverable: bool,
-  size: oneOf(['small']),
-  children: func,
-};
+  static defaultProps = {
+    hoverable: false,
+    unique: '',
+    size: 'default',
+    render: noop,
+    children: noop,
+  };
+
+  render() {
+    const {
+      render,
+      children,
+      items,
+      hoverable,
+      unique,
+      size,
+      ...rest
+    } = this.props;
+    const renderFunc = children === noop ? render : children;
+    return (
+      <UL size={size} {...rest}>
+        {items.map((data, index) =>
+          renderFunc({
+            data,
+            Item,
+            index,
+            getProps: props => ({
+              ...props,
+              hoverable,
+              size,
+              key: unique ? data[unique] : index,
+              tabIndex: 0,
+            }),
+          })
+        )}
+      </UL>
+    );
+  }
+}
 
 export default List;
