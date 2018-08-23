@@ -1,5 +1,5 @@
 import React from 'react';
-import iconType from './IconHelper';
+import iconType from './iconHelper';
 import { PropTypes } from 'prop-types';
 import _ from 'lodash';
 
