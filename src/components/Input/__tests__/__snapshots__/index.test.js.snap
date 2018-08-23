@@ -35,16 +35,48 @@ exports[`Input Snapshots Password 1`] = `
   outline: none;
 }
 
-.c5 {
+.c6 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: none;
-  background: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
   cursor: pointer;
-  margin: 0 14px;
   outline: 0;
-  padding: 0;
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
+}
+
+.c6:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c6:hover:enabled,
+.c6:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c6:active:enabled {
+  box-shadow: none;
+}
+
+.c5 {
+  border: none;
+}
+
+.c5:hover,
+.c5:focus {
+  background: rgba(229,229,229,1);
 }
 
 .c3::-ms-reveal {
@@ -73,7 +105,8 @@ exports[`Input Snapshots Password 1`] = `
       
     </input>
     <button
-      class="c5"
+      class="c5 c6"
+      type="button"
     >
       <svg
         style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
@@ -130,16 +163,48 @@ exports[`Input Snapshots Password with a value 1`] = `
   outline: none;
 }
 
-.c5 {
+.c6 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: none;
-  background: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
   cursor: pointer;
-  margin: 0 14px;
   outline: 0;
-  padding: 0;
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
+}
+
+.c6:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c6:hover:enabled,
+.c6:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c6:active:enabled {
+  box-shadow: none;
+}
+
+.c5 {
+  border: none;
+}
+
+.c5:hover,
+.c5:focus {
+  background: rgba(229,229,229,1);
 }
 
 .c3::-ms-reveal {
@@ -169,7 +234,8 @@ exports[`Input Snapshots Password with a value 1`] = `
       
     </input>
     <button
-      class="c5"
+      class="c5 c6"
+      type="button"
     >
       <svg
         style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
