@@ -89,7 +89,8 @@ class Checkbox extends Component {
   static defaultProps = {
     name: 'llm-checkbox',
     label: '',
-    checked: false,
+    checked: null,
+    defaultChecked: false,
     onChange: noop,
     disabled: false,
   };
@@ -98,25 +99,36 @@ class Checkbox extends Component {
     name: string,
     label: node,
     checked: bool,
+    defaultChecked: bool,
     onChange: func,
     disabled: bool,
   };
 
-  state = { checked: this.props.checked };
+  state = {
+    checked:
+      this.props.checked === null
+        ? this.props.defaultChecked
+        : this.props.checked,
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.checked !== prevProps.checked) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ checked: this.props.checked });
+    }
+  }
 
   handleChange = () => {
-    this.setState(state => ({ checked: !state.checked }));
+    const { onChange } = this.props;
+    if (this.props.checked === null) {
+      this.setState(state => ({ checked: !state.checked }));
+    } else {
+      onChange(!this.props.checked);
+    }
   };
 
   render() {
-    const {
-      checked,
-      name,
-      label,
-      onChange,
-      disabled,
-      ...remainProps
-    } = this.props;
+    const { name, label, onChange, disabled, ...remainProps } = this.props;
 
     return (
       <Container htmlFor={name} {...remainProps}>
@@ -124,8 +136,8 @@ class Checkbox extends Component {
           type="checkbox"
           name={name}
           id={name}
-          checked={onChange === noop ? this.state.checked : checked}
-          onChange={onChange === noop ? this.handleChange : onChange}
+          checked={this.state.checked}
+          onChange={this.handleChange}
           disabled={disabled}
         />
         <Checkmark />
