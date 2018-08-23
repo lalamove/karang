@@ -1,7 +1,6 @@
 import React from 'react';
 import iconType from './iconHelper';
 import { PropTypes } from 'prop-types';
-import _ from 'lodash';
 
 const Index = ({ type, color, size, options }) => {
   const style = {
