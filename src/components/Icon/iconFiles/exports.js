@@ -1,95 +1,50 @@
-import pinCircle from './icons/pinCircle';
-import arrowDoubleSidedCurved from './icons/arrowDoubleSidedCurved';
-import arrowDoubleSidedDiagonal from './icons/arrowDoubleSidedDiagonal';
-import visaCard from './icons/visaCard';
-import unionPayCard from './icons/unionPayCard';
-import masterCard from './icons/masterCard';
-import dinersClubCard from './icons/dinersClubCard';
-import JCBCard from './icons/jCBCard';
-import momoCard from './icons/momoCard';
-import discoverCard from './icons/discoverCard';
-import aMEXCard from './icons/aMEXCard';
-import settingsSliders from './icons/settingsSliders';
-import microphone from './icons/microphone';
-import percentage from './icons/percentage';
-import crossedParcelBox from './icons/crossedParcelBox';
-import tickedParcelBox from './icons/tickedParcelBox';
-import networkParcelBox from './icons/networkParcelBox';
-import magnify from './icons/magnify';
-import send from './icons/send';
-import calendar from './icons/calendar';
-import parcelBoxOutline from './icons/parcelBoxOutline';
-import sendPaperPlane from './icons/sendPaperPlane';
-import download from './icons/download';
-import refresh from './icons/refresh';
-import save from './icons/saveIcon';
-import editSymbol from './icons/editSymbol';
-import privacyIcon1 from './icons/privacyIcon1';
-import privacyIcon2 from './icons/privacyIcon2';
-import facebookColored from './icons/facebookColored';
-import googlePlusColored from './icons/googlePlusColored';
-import phoneIcon1 from './icons/phoneIcon1';
-import textMessage2 from './icons/textMessage2';
-import magnifyingGlass from './icons/magnifyingGlass';
-import key from './icons/key';
-import pin2 from './icons/pin2';
-import aMEXLogo from './icons/aMEXLogo';
-import visaLogo from './icons/visaLogo';
-import masterCardLogo from './icons/masterCardLogo';
-import androidLogo from './icons/androidLogo';
-import heartSymbol from './icons/heartSymbol';
-import addContact from './icons/addContact';
-import directions from './icons/directions';
-import sound from './icons/sound';
-import spanner from './icons/spanner';
-import bangkokBank from './icons/bangkokBank';
-import blockedGroup from './icons/blockedGroup';
-
+export { default as pinCircle } from './icons/pinCircle';
 export {
-  pinCircle,
-  arrowDoubleSidedCurved,
-  arrowDoubleSidedDiagonal,
-  visaCard,
-  unionPayCard,
-  masterCard,
-  dinersClubCard,
-  JCBCard,
-  momoCard,
-  discoverCard,
-  aMEXCard,
-  settingsSliders,
-  microphone,
-  percentage,
-  crossedParcelBox,
-  tickedParcelBox,
-  networkParcelBox,
-  magnify,
-  send,
-  calendar,
-  parcelBoxOutline,
-  sendPaperPlane,
-  download,
-  refresh,
-  save,
-  editSymbol,
-  privacyIcon1,
-  privacyIcon2,
-  facebookColored,
-  googlePlusColored,
-  phoneIcon1,
-  textMessage2,
-  magnifyingGlass,
-  key,
-  pin2,
-  aMEXLogo,
-  visaLogo,
-  masterCardLogo,
-  androidLogo,
-  heartSymbol,
-  addContact,
-  directions,
-  sound,
-  spanner,
-  bangkokBank,
-  blockedGroup,
-};
+  default as arrowDoubleSidedCurved,
+} from './icons/arrowDoubleSidedCurved';
+export {
+  default as arrowDoubleSidedDiagonal,
+} from './icons/arrowDoubleSidedDiagonal';
+export { default as visaCard } from './icons/visaCard';
+export { default as unionPayCard } from './icons/unionPayCard';
+export { default as masterCard } from './icons/masterCard';
+export { default as dinersClubCard } from './icons/dinersClubCard';
+export { default as JCBCard } from './icons/jCBCard';
+export { default as momoCard } from './icons/momoCard';
+export { default as discoverCard } from './icons/discoverCard';
+export { default as aMEXCard } from './icons/aMEXCard';
+export { default as settingsSliders } from './icons/settingsSliders';
+export { default as microphone } from './icons/microphone';
+export { default as percentage } from './icons/percentage';
+export { default as crossedParcelBox } from './icons/crossedParcelBox';
+export { default as tickedParcelBox } from './icons/tickedParcelBox';
+export { default as networkParcelBox } from './icons/networkParcelBox';
+export { default as magnify } from './icons/magnify';
+export { default as send } from './icons/send';
+export { default as calendar } from './icons/calendar';
+export { default as parcelBoxOutline } from './icons/parcelBoxOutline';
+export { default as sendPaperPlane } from './icons/sendPaperPlane';
+export { default as download } from './icons/download';
+export { default as refresh } from './icons/refresh';
+export { default as save } from './icons/saveIcon';
+export { default as editSymbol } from './icons/editSymbol';
+export { default as privacyIcon1 } from './icons/privacyIcon1';
+export { default as privacyIcon2 } from './icons/privacyIcon2';
+export { default as facebookColored } from './icons/facebookColored';
+export { default as googlePlusColored } from './icons/googlePlusColored';
+export { default as phoneIcon1 } from './icons/phoneIcon1';
+export { default as textMessage2 } from './icons/textMessage2';
+export { default as magnifyingGlass } from './icons/magnifyingGlass';
+export { default as key } from './icons/key';
+export { default as pin2 } from './icons/pin2';
+export { default as aMEXLogo } from './icons/aMEXLogo';
+export { default as visaLogo } from './icons/visaLogo';
+export { default as masterCardLogo } from './icons/masterCardLogo';
+export { default as androidLogo } from './icons/androidLogo';
+export { default as heartSymbol } from './icons/heartSymbol';
+export { default as addContact } from './icons/addContact';
+export { default as directions } from './icons/directions';
+export { default as sound } from './icons/sound';
+export { default as spanner } from './icons/spanner';
+export { default as bangkokBank } from './icons/bangkokBank';
+export { default as blockedGroup } from './icons/blockedGroup';
