@@ -39,9 +39,8 @@ exports[`Dropdown Snapshots Dropdown 1`] = `
 .c1 {
   width: auto;
   min-width: 80px;
-  padding: 0 4px 0 9px;
+  padding: 0.5em 1em;
   background-color: rgba(255,255,255,1);
-  line-height: 30px;
   white-space: nowrap;
 }
 
@@ -50,45 +49,49 @@ exports[`Dropdown Snapshots Dropdown 1`] = `
 }
 
 .c3 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding: 6px 6px 6px 0;
-  line-height: 20px;
+  display: inline-block;
+  margin-right: 0.5em;
+  line-height: 1.6;
+  vertical-align: middle;
+}
+
+.c4 {
+  margin-right: -5px;
 }
 
 .c0 {
-  display: inline-block;
   position: relative;
+  display: inline-block;
 }
 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
   aria-labelledby="downshift-0-label"
+  class="c0"
   role="combobox"
 >
-  <div
-    class="c0"
+  <button
+    aria-autocomplete="list"
+    aria-haspopup="true"
+    aria-label="open menu"
+    aria-labelledby="downshift-0-label"
+    autocomplete="nope"
+    class="c1 c2"
+    data-toggle="true"
+    id="downshift-0-input"
+    role="button"
+    type="button"
+    value=""
   >
-    <button
-      aria-autocomplete="list"
-      aria-haspopup="true"
-      aria-label="open menu"
-      aria-labelledby="downshift-0-label"
-      autocomplete="nope"
-      class="c1 c2"
-      data-toggle="true"
-      id="downshift-0-input"
-      role="button"
-      type="button"
-      value=""
+    <span
+      class="c3"
     >
-      <span
-        class="c3"
-      >
-        Options
-      </span>
+      Options
+    </span>
+    <span
+      class="c4"
+    >
       <svg
         style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
         version="1.1"
@@ -108,7 +111,7 @@ exports[`Dropdown Snapshots Dropdown 1`] = `
           </svg>
         </g>
       </svg>
-    </button>
-  </div>
+    </span>
+  </button>
 </div>
 `;

@@ -12,8 +12,8 @@ let setHighlightedIndex;
 let toggleMenu;
 
 const Container = styled.div`
-  display: inline-block;
   position: relative;
+  display: inline-block;
 `;
 
 class Dropdown extends Component {
@@ -172,6 +172,7 @@ class Dropdown extends Component {
           getInputProps,
           getItemProps,
           getToggleButtonProps,
+          getRootProps,
           isOpen,
           highlightedIndex,
           selectedItem: dsSelectedItem,
@@ -181,37 +182,35 @@ class Dropdown extends Component {
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
           return (
-            <div>
-              <Container>
-                <DropdownButton
-                  icon={
-                    (selectedItem && selectedItem.icon) ||
-                    (dsSelectedItem && dsSelectedItem.icon)
-                  }
-                  label={
-                    (selectedItem && selectedItem.label) ||
-                    (dsSelectedItem && dsSelectedItem.label) ||
-                    defaultLabel
-                  }
-                  {...getToggleButtonProps()}
-                  {...getInputProps({
-                    onKeyDown: e => this.handleKeyDown(e),
-                  })}
+            <Container {...getRootProps({ refKey: 'innerRef' })}>
+              <DropdownButton
+                icon={
+                  (selectedItem && selectedItem.icon) ||
+                  (dsSelectedItem && dsSelectedItem.icon)
+                }
+                label={
+                  (selectedItem && selectedItem.label) ||
+                  (dsSelectedItem && dsSelectedItem.label) ||
+                  defaultLabel
+                }
+                {...getToggleButtonProps()}
+                {...getInputProps({
+                  onKeyDown: e => this.handleKeyDown(e),
+                })}
+              />
+              {isOpen && (
+                <DropdownList
+                  direction={direction}
+                  items={items}
+                  highlightedIndex={highlightedIndex}
+                  highlightedIndexes={highlightedIndexes}
+                  getItemProps={getItemProps}
+                  handleDepthLevel={this.handleDepthLevel}
+                  handleHighlightedIndexes={this.handleHighlightedIndexes}
+                  handleListCounts={this.handleListCounts}
                 />
-                {isOpen && (
-                  <DropdownList
-                    direction={direction}
-                    items={items}
-                    highlightedIndex={highlightedIndex}
-                    highlightedIndexes={highlightedIndexes}
-                    getItemProps={getItemProps}
-                    handleDepthLevel={this.handleDepthLevel}
-                    handleHighlightedIndexes={this.handleHighlightedIndexes}
-                    handleListCounts={this.handleListCounts}
-                  />
-                )}
-              </Container>
-            </div>
+              )}
+            </Container>
           );
         }}
       </Downshift>
