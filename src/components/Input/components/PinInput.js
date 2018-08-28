@@ -15,6 +15,10 @@ const Input = styled.input`
   border: 1px solid ${offWhite};
   caret-color: ${orange};
   font-family: ${primaryFonts};
+  padding: 0;
+  border-radius: 0;
+  appearance: none;
+
   ${({ variant }) => {
     switch (variant) {
       case 'small':
@@ -50,19 +54,6 @@ const Input = styled.input`
         border: 1px solid ${red};
       }
     `};
-
-  -webkit-appearance: 0;
-  -webkit-border-radius: 0;
-  -webkit-padding-start: 0;
-  -webkit-padding-end: 0;
-  -webkit-padding-before: 0;
-  -webkit-padding-after: 0;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
 `;
 
 class PinInput extends Component {
@@ -148,7 +139,7 @@ class PinInput extends Component {
         error={error}
         disabled={disabled}
         variant={variant}
-        type="number"
+        pattern="\d*"
         onPaste={ev => ev.preventDefault()}
       />
     ));
