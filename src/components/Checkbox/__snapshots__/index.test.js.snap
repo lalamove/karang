@@ -19,6 +19,9 @@ exports[`snapshot 1`] = `
   -ms-user-select: none;
   user-select: none;
   line-height: 20px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .c3 {
