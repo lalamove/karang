@@ -57,9 +57,8 @@ class RadioGroup extends Component {
     const { value } = e.target;
     if (this.props.value === null) {
       this.setState(state => ({ value }));
-    } else {
-      onChange(value);
     }
+    onChange(value);
   };
 
   render() {
