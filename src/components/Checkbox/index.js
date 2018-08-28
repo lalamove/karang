@@ -118,12 +118,12 @@ class Checkbox extends Component {
     }
   }
 
-  handleChange = () => {
+  handleChange = e => {
     const { onChange } = this.props;
     if (this.props.checked === null) {
       this.setState(state => ({ checked: !state.checked }));
     } else {
-      onChange(!this.props.checked);
+      onChange(e);
     }
   };
 
