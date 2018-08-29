@@ -35,6 +35,17 @@ class InputWrapper extends Component {
           name="password"
           value={this.state.password}
           onChange={this.handleChange}
+          masked
+        />
+        <br />
+        <br />
+        <Input
+          type="password"
+          label="not masked Password"
+          name="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+          masked={false}
         />
         <br />
         <br />

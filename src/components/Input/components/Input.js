@@ -42,7 +42,7 @@ class Input extends PureComponent {
     autoComplete: 'new-password',
     selectAll: false,
     cursorEnd: false,
-    masked: false,
+    masked: true,
   };
 
   state = {
@@ -73,7 +73,7 @@ class Input extends PureComponent {
     return (
       <Fragment>
         <StyledTextInput
-          type={masked ? 'text' : type}
+          type={!masked ? 'text' : type}
           name={name}
           label={label}
           placeholder={placeholder}
@@ -82,7 +82,7 @@ class Input extends PureComponent {
           innerRef={innerRef}
         />
         {type === 'password' && (
-          <PeekButton active={masked} onClick={this.changePeekStatus} />
+          <PeekButton active={!masked} onClick={this.changePeekStatus} />
         )}
       </Fragment>
     );
