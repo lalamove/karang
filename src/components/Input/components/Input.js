@@ -28,6 +28,7 @@ class Input extends PureComponent {
     autoComplete: string,
     selectAll: bool,
     cursorEnd: bool,
+    masked: bool,
   };
 
   static defaultProps = {
@@ -41,20 +42,21 @@ class Input extends PureComponent {
     autoComplete: 'new-password',
     selectAll: false,
     cursorEnd: false,
+    masked: false,
   };
 
   state = {
-    peekPassword: false,
+    masked: this.props.masked,
   };
 
   changePeekStatus = () => {
     this.setState(prevState => ({
-      peekPassword: !prevState.peekPassword,
+      masked: !prevState.masked,
     }));
   };
 
   render() {
-    const { peekPassword } = this.state;
+    const { masked } = this.state;
     const {
       type,
       name,
@@ -71,7 +73,7 @@ class Input extends PureComponent {
     return (
       <Fragment>
         <StyledTextInput
-          type={peekPassword ? 'text' : type}
+          type={masked ? 'text' : type}
           name={name}
           label={label}
           placeholder={placeholder}
@@ -80,7 +82,7 @@ class Input extends PureComponent {
           innerRef={innerRef}
         />
         {type === 'password' && (
-          <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
+          <PeekButton active={masked} onClick={this.changePeekStatus} />
         )}
       </Fragment>
     );
