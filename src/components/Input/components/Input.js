@@ -28,6 +28,7 @@ class Input extends PureComponent {
     autoComplete: string,
     selectAll: bool,
     cursorEnd: bool,
+    masked: bool,
   };
 
   static defaultProps = {
@@ -41,20 +42,29 @@ class Input extends PureComponent {
     autoComplete: 'new-password',
     selectAll: false,
     cursorEnd: false,
+    masked: true,
   };
 
   state = {
-    peekPassword: false,
+    masked: this.props.masked,
   };
+
+  componentDidMount() {
+    if (this.props.type !== 'password' && !this.props.masked) {
+      console.warn(
+        `Trying to set masked is false when type is not password. Only set masked when type is password.`
+      );
+    }
+  }
 
   changePeekStatus = () => {
     this.setState(prevState => ({
-      peekPassword: !prevState.peekPassword,
+      masked: !prevState.masked,
     }));
   };
 
   render() {
-    const { peekPassword } = this.state;
+    const { masked } = this.state;
     const {
       type,
       name,
@@ -71,7 +81,7 @@ class Input extends PureComponent {
     return (
       <Fragment>
         <StyledTextInput
-          type={peekPassword ? 'text' : type}
+          type={type === 'password' && !masked ? 'text' : type}
           name={name}
           label={label}
           placeholder={placeholder}
@@ -80,7 +90,7 @@ class Input extends PureComponent {
           innerRef={innerRef}
         />
         {type === 'password' && (
-          <PeekButton active={peekPassword} onClick={this.changePeekStatus} />
+          <PeekButton active={!masked} onClick={this.changePeekStatus} />
         )}
       </Fragment>
     );

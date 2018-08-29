@@ -15,6 +15,10 @@ const Input = styled.input`
   border: 1px solid ${offWhite};
   caret-color: ${orange};
   font-family: ${primaryFonts};
+  padding: 0;
+  border-radius: 0;
+  appearance: none;
+
   ${({ variant }) => {
     switch (variant) {
       case 'small':
@@ -59,6 +63,7 @@ class PinInput extends Component {
     error: string,
     onChange: func,
     variant: oneOf(['large', 'small']),
+    onPaste: func,
   };
 
   static defaultProps = {
@@ -67,6 +72,7 @@ class PinInput extends Component {
     error: '',
     onChange: noop,
     variant: 'large',
+    onPaste: e => e.preventDefault(),
   };
 
   state = {
@@ -117,7 +123,7 @@ class PinInput extends Component {
   };
 
   render() {
-    const { error, disabled, variant } = this.props;
+    const { error, disabled, variant, onPaste } = this.props;
     const pinBoxes = [...Array(4)].map((e, i) => (
       <Input
         maxLength="1"
@@ -135,6 +141,8 @@ class PinInput extends Component {
         error={error}
         disabled={disabled}
         variant={variant}
+        pattern="\d*"
+        onPaste={onPaste}
       />
     ));
 
