@@ -49,6 +49,14 @@ class Input extends PureComponent {
     masked: this.props.masked,
   };
 
+  componentDidMount() {
+    if (this.props.type !== 'password' && !this.props.masked) {
+      console.warn(
+        `Trying to set masked is false when type is not password. Only set masked when type is password.`
+      );
+    }
+  }
+
   changePeekStatus = () => {
     this.setState(prevState => ({
       masked: !prevState.masked,
@@ -73,7 +81,7 @@ class Input extends PureComponent {
     return (
       <Fragment>
         <StyledTextInput
-          type={!masked ? 'text' : type}
+          type={type === 'password' && !masked ? 'text' : type}
           name={name}
           label={label}
           placeholder={placeholder}
