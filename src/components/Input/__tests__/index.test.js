@@ -58,6 +58,13 @@ describe('Input', () => {
       expect(wrapper.find('PeekButton').exists()).toBe(true);
     });
 
+    it('the PeekButton for password Input should be on', () => {
+      const wrapper = render(
+        <Input name="input" type="password" masked={false} />
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it('check the input value based on value prop', () => {
       const wrapper = mount(<Input name="input" value="test" />);
       expect(wrapper.find('input').instance().value).toEqual('test');

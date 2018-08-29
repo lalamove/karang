@@ -1,5 +1,133 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Input Render the PeekButton for password Input should be on 1`] = `
+.c2 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  border: 1px solid rgba(229,229,229,1);
+  font-family: "Noto Sans",sans-serif;
+  text-align: left;
+}
+
+.c0 {
+  display: inline-block;
+}
+
+.c4 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: rgba(51,49,50,1);
+  font-family: "Noto Sans",sans-serif;
+  caret-color: rgba(242,103,34,1);
+  font-size: 14px;
+  line-height: 20px;
+  resize: none;
+  outline: none;
+}
+
+.c6 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
+}
+
+.c6:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c6:hover:enabled,
+.c6:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c6:active:enabled {
+  box-shadow: none;
+}
+
+.c5 {
+  border: none;
+}
+
+.c5:hover,
+.c5:focus {
+  background: rgba(229,229,229,1);
+}
+
+.c3::-ms-reveal {
+  display: none;
+}
+
+.c1 {
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <input
+      autocomplete="new-password"
+      class="c3 c4"
+      id="llmInput_input"
+      label=""
+      name="input"
+      placeholder=""
+      type="password"
+    >
+      
+    </input>
+    <button
+      class="c5 c6"
+      type="button"
+    >
+      <svg
+        style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M818.728 176.959c7.569 0 14.676 2.949 20.018 8.296 5.351 5.347 8.296 12.448 8.296 20.018s-2.945 14.671-8.296 20.018l-613.452 613.452c-5.347 5.351-12.453 8.301-20.022 8.301s-14.676-2.949-20.018-8.296c-5.351-5.347-8.296-12.448-8.296-20.018s2.945-14.671 8.296-20.018l613.452-613.452c5.347-5.351 12.453-8.301 20.022-8.301zM512 623.959c-5.828 0-11.585-0.448-17.233-1.293l127.896-127.906c0.854 5.649 1.302 11.406 1.302 17.238 0 30.149-11.585 58.33-32.612 79.358-21.023 21.023-49.204 32.603-79.353 32.603zM512 400.041c5.833 0 11.59 0.448 17.233 1.293l-127.891 127.901c-0.854-5.649-1.298-11.401-1.298-17.233 0-30.149 11.58-58.33 32.608-79.358 21.023-21.023 49.204-32.603 79.348-32.603zM933.862 507.272l2.841 4.728-2.841 4.728c-39.832 66.442-101.234 126.466-172.886 169.012-77.489 46.014-163.58 70.34-248.974 70.34-44.141 0-88.408-6.522-131.553-19.102l47.571-47.571c25.477 12.109 53.946 18.909 83.982 18.909 108.251 0 196.32-88.069 196.32-196.315 0-30.036-6.8-58.505-18.913-83.982l35.217-35.217c20.381 35.991 31.451 76.923 31.451 119.199 0 54.956-18.64 107.676-52.233 150.174 97.705-49.662 157.224-124.555 175.543-150.018-46.67-61.898-97.035-103.584-142.473-131.638l35.354-35.359c66.777 42.031 123.88 99.201 161.594 162.113zM144.502 512c16.030 22.306 64.248 83.317 142.52 131.549l-35.269 35.278c-66.72-42.022-123.833-99.191-161.608-162.089l-2.845-4.738 2.841-4.738c39.823-66.305 101.074-126.235 172.48-168.757 77.546-46.174 163.774-70.585 249.379-70.585 44.126 0 88.394 6.522 131.553 19.102l-47.571 47.566c-25.477-12.104-53.946-18.909-83.982-18.909-108.251 0-196.315 88.073-196.315 196.32 0 30.036 6.805 58.5 18.909 83.982l-35.217 35.217c-20.381-35.991-31.451-76.923-31.451-119.199 0-54.956 18.644-107.676 52.238-150.174-97.903 49.765-157.474 124.876-175.661 150.174z"
+          >
+            
+          </path>
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Input Snapshots Password 1`] = `
 .c2 {
   position: relative;
@@ -351,6 +479,11 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   border: 1px solid rgba(229,229,229,1);
   caret-color: rgba(242,103,34,1);
   font-family: "Noto Sans",sans-serif;
+  padding: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 68px;
   height: 68px;
   font-size: 48px;
@@ -359,12 +492,6 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   text-align: center;
   border: 1px solid rgba(216,83,79,1);
   color: rgba(216,83,79,1);
-  -webkit-appearance: 0;
-  -webkit-border-radius: 0;
-  -webkit-padding-start: 0;
-  -webkit-padding-end: 0;
-  -webkit-padding-before: 0;
-  -webkit-padding-after: 0;
 }
 
 .c2:focus {
@@ -373,12 +500,6 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 
 .c2:focus {
   border: 1px solid rgba(216,83,79,1);
-}
-
-.c2::-webkit-inner-spin-button,
-.c2::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 <div
@@ -394,7 +515,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         class="c2"
         maxlength="1"
         name="0"
-        type="number"
+        pattern="\\\\d*"
         value="1"
       >
         
@@ -404,7 +525,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         class="c2"
         maxlength="1"
         name="1"
-        type="number"
+        pattern="\\\\d*"
         value="2"
       >
         
@@ -414,7 +535,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         class="c2"
         maxlength="1"
         name="2"
-        type="number"
+        pattern="\\\\d*"
         value="3"
       >
         
@@ -424,7 +545,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         class="c2"
         maxlength="1"
         name="3"
-        type="number"
+        pattern="\\\\d*"
         value="4"
       >
         
@@ -475,28 +596,21 @@ exports[`PinInput Snapshots Empty 1`] = `
   border: 1px solid rgba(229,229,229,1);
   caret-color: rgba(242,103,34,1);
   font-family: "Noto Sans",sans-serif;
+  padding: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 68px;
   height: 68px;
   font-size: 48px;
   outline: 0;
   margin: 0 8px 8px 8px;
   text-align: center;
-  -webkit-appearance: 0;
-  -webkit-border-radius: 0;
-  -webkit-padding-start: 0;
-  -webkit-padding-end: 0;
-  -webkit-padding-before: 0;
-  -webkit-padding-after: 0;
 }
 
 .c2:focus {
   border: 1px solid rgba(242,103,34,1);
-}
-
-.c2::-webkit-inner-spin-button,
-.c2::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 <div
@@ -512,7 +626,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         class="c2"
         maxlength="1"
         name="0"
-        type="number"
+        pattern="\\\\d*"
         value=""
       >
         
@@ -522,7 +636,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         class="c2"
         maxlength="1"
         name="1"
-        type="number"
+        pattern="\\\\d*"
         value=""
       >
         
@@ -532,7 +646,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         class="c2"
         maxlength="1"
         name="2"
-        type="number"
+        pattern="\\\\d*"
         value=""
       >
         
@@ -542,7 +656,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         class="c2"
         maxlength="1"
         name="3"
-        type="number"
+        pattern="\\\\d*"
         value=""
       >
         
