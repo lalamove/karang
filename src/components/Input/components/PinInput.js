@@ -72,7 +72,7 @@ class PinInput extends Component {
     error: '',
     onChange: noop,
     variant: 'large',
-    onPaste: noop,
+    onPaste: e => e.preventDefault(),
   };
 
   state = {
@@ -122,16 +122,8 @@ class PinInput extends Component {
     this.props.onChange(newPins.join(''));
   };
 
-  handlePaste = e => {
-    if (this.props.onPaste !== noop) {
-      this.props.onPaste(e);
-    } else {
-      e.preventDefault();
-    }
-  };
-
   render() {
-    const { error, disabled, variant } = this.props;
+    const { error, disabled, variant, onPaste } = this.props;
     const pinBoxes = [...Array(4)].map((e, i) => (
       <Input
         maxLength="1"
@@ -150,7 +142,7 @@ class PinInput extends Component {
         disabled={disabled}
         variant={variant}
         pattern="\d*"
-        onPaste={this.handlePaste}
+        onPaste={onPaste}
       />
     ));
 
