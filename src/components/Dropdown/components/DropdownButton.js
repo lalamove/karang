@@ -7,7 +7,8 @@ import DropdownIcon from 'icons/DropDown';
 import { white, lightGray } from 'styles/colors';
 
 const StyledButton = styled(Button)`
-  width: auto;
+  display: flex;
+  width: 100%;
   min-width: 80px;
   padding: 0.5em 1em;
   background-color: ${white};
@@ -18,17 +19,19 @@ const StyledButton = styled(Button)`
 `;
 
 const Icon = styled.span`
-  display: inline-block;
+  /*display: inline-block;*/
+  flex: 0 0 auto;
+  align-self: center;
   margin-right: 0.5em;
   line-height: 1.6;
-  vertical-align: middle;
 `;
 
 const Content = styled.span`
-  display: inline-block;
+  flex: 1 1 auto;
+  align-self: center;
   margin-right: 0.5em;
   line-height: 1.6;
-  vertical-align: middle;
+  text-align: left;
 `;
 
 const Caret = styled.span`

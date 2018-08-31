@@ -7,6 +7,7 @@ import {
   number,
   shape,
   string,
+  bool,
 } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { compose } from 'recompose';
@@ -33,6 +34,12 @@ const StyledList = styled(List)`
         `;
     }
   }};
+
+  ${({ block }) =>
+    block &&
+    css`
+      width: 100%;
+    `};
 `;
 
 const haveSubOptionStyle = {
@@ -41,6 +48,7 @@ const haveSubOptionStyle = {
 
 class DropdownList extends Component {
   static propTypes = {
+    block: bool,
     items: arrayOf(shape({})).isRequired, // add shape
     direction: oneOf(['left', 'right']).isRequired,
     highlightedIndex: oneOfType([string, number]),
@@ -52,6 +60,7 @@ class DropdownList extends Component {
   };
 
   static defaultProps = {
+    block: false,
     highlightedIndex: null,
     highlightedIndexes: [],
     getItemProps: noop,
@@ -62,6 +71,7 @@ class DropdownList extends Component {
 
   renderList(items, depthLevel = 0) {
     const {
+      block,
       direction,
       highlightedIndex,
       highlightedIndexes,
@@ -73,6 +83,7 @@ class DropdownList extends Component {
 
     return (
       <StyledList
+        block={block}
         hoverable
         items={items}
         size="small"
