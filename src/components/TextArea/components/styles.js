@@ -4,12 +4,14 @@ import { orange, lightGray, red, offWhite } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const TextAreaContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  height: 100%;
   width: 100%;
-  padding: 11px 11px 6px 11px;
+  height: 100%;
+  padding: 1em;
+  padding-bottom: 3em;
   border: 1px solid ${offWhite};
   ${({ error }) =>
     error
@@ -24,10 +26,13 @@ const TextAreaContainer = styled.div`
 `;
 
 const CharacterLimitDisplay = styled.div`
-  font-size: ${fontSize.small};
-  font-family: ${primaryFonts};
-  line-height: 16px;
+  position: absolute;
+  bottom: 0.8rem;
+  left: 1rem;
   color: ${lightGray};
+  font-family: ${primaryFonts};
+  font-size: ${fontSize.small};
+  line-height: 1.4;
 `;
 
 const placeholderStyle = `
@@ -38,34 +43,20 @@ const placeholderStyle = `
 
 const InnerInputArea = styled.textarea`
   display: block;
-  flex-grow: 1;
-  font-family: ${primaryFonts};
+  flex: 1 1 auto;
   width: 100%;
-  border: 0px solid transparent;
-  padding: 0px;
+  padding: 0;
+  border: 0;
+  font-family: ${primaryFonts};
   resize: none;
-  &:focus {
-    outline-width: 0;
-  }
 
-  &::-webkit-input-placeholder {
+  &::placeholder {
     /* Chrome/Opera/Safari */
     ${placeholderStyle};
   }
 
-  &::-moz-placeholder {
-    /* Firefox 19+ */
-    ${placeholderStyle};
-  }
-
-  &:-ms-input-placeholder {
-    /* IE 10+ */
-    ${placeholderStyle};
-  }
-
-  &:-moz-placeholder {
-    /* Firefox 18- */
-    ${placeholderStyle};
+  &:focus {
+    outline-width: 0;
   }
 `;
 
