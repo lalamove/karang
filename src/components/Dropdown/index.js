@@ -166,7 +166,6 @@ class Dropdown extends Component {
         onChange={onChange}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
-        {...remainProps}
       >
         {({
           getInputProps,
@@ -182,7 +181,9 @@ class Dropdown extends Component {
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
           return (
-            <Container {...getRootProps({ refKey: 'innerRef' })}>
+            <Container
+              {...getRootProps({ ...remainProps, refKey: 'innerRef' })}
+            >
               <DropdownButton
                 icon={
                   (selectedItem && selectedItem.icon) ||
