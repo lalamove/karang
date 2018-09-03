@@ -1,7 +1,8 @@
 import React from 'react';
 import iconType from './iconHelper';
-import { PropTypes } from 'prop-types';
+import { oneOf, oneOfType, string, number } from 'prop-types';
 
+// TODO: options
 const Index = ({ type, color, size }) => {
   const style = {
     verticalAlign: 'middle',
@@ -29,12 +30,9 @@ Index.defaultProps = {
 };
 
 Index.propTypes = {
-  type: PropTypes.oneOf(Object.keys(iconType)).isRequired,
-  color: PropTypes.string, // color: PropTypes.oneOf(Object.keys(colors)), TODO: to limit colors used
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'large']),
-    PropTypes.number,
-  ]),
+  type: oneOf(Object.keys(iconType)).isRequired,
+  color: string, // color: oneOf(Object.keys(colors)) TODO: to limit colors used
+  size: oneOfType([oneOf(['small', 'large']), number]),
   // TODO: angle option, pass props to icon
 };
 

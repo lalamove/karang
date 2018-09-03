@@ -31,7 +31,7 @@ const bangkokBank = () => (
         <use id="Mask-Copy" fill="#073796" xlinkHref="#path-3" />
         <image
           id="download"
-          style={{ 'mix-blend-mode': 'lighten' }}
+          style={{ mixBlendMode: 'lighten' }}
           mask="url(#mask-4)"
           x="52"
           y="16"
