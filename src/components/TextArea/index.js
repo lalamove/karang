@@ -76,7 +76,21 @@ class TextArea extends Component {
     this.state = {
       charactersLeft: props.maxLength,
     };
+    this.textAreaRef = React.createRef();
   }
+
+  componentDidMount() {
+    if (this.textAreaRef) {
+      const { current } = this.textAreaRef;
+      if (current.props.value) {
+        const charactersLeft =
+          this.props.maxLength - current.props.value.length;
+        // eslint-disable-next-line react/no-did-mount-set-state
+        this.setState({ charactersLeft });
+      }
+    }
+  }
+
   onTextAreaChange = e => {
     if (this.props.maxLength) {
       const charactersLeft = this.props.maxLength - e.target.value.length;
@@ -86,6 +100,7 @@ class TextArea extends Component {
     }
     this.props.onChange(e);
   };
+
   render() {
     const { charactersLeft } = this.state;
     const {
@@ -112,6 +127,7 @@ class TextArea extends Component {
         error={charactersLeft < 0 ? error : null}
         displayedCharacterLimitMsg={displayedCharacterLimitMsg}
         {...remainProps}
+        ref={this.textAreaRef}
       />
     );
   }
