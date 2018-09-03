@@ -35,6 +35,7 @@ PresentationalTextArea.propTypes = {
   charactersLeft: number,
   error: string,
   style: shape({}),
+  value: string,
 };
 
 PresentationalTextArea.defaultProps = {
@@ -44,6 +45,7 @@ PresentationalTextArea.defaultProps = {
   charactersLeft: null,
   style: {},
   error: null,
+  value: '',
 };
 
 // HOC
@@ -60,6 +62,7 @@ class TextArea extends Component {
     error: string,
     characterLimitMsgGenerator: func,
     exceedLimitMsgGenerator: func,
+    value: string,
   };
   static defaultProps = {
     maxLength: null,
@@ -70,24 +73,20 @@ class TextArea extends Component {
       `Characters left: ${charactersLeft}`,
     exceedLimitMsgGenerator: excessCharacters =>
       `Excess characters: ${excessCharacters}`,
+    value: '',
   };
   constructor(props) {
     super(props);
     this.state = {
       charactersLeft: props.maxLength,
     };
-    this.textAreaRef = React.createRef();
   }
 
   componentDidMount() {
-    if (this.textAreaRef) {
-      const { current } = this.textAreaRef;
-      if (current.props.value) {
-        const charactersLeft =
-          this.props.maxLength - current.props.value.length;
-        // eslint-disable-next-line react/no-did-mount-set-state
-        this.setState({ charactersLeft });
-      }
+    if (this.props.value) {
+      const charactersLeft = this.props.maxLength - this.props.value.length;
+      // eslint-disable-next-line react/no-did-mount-set-state
+      this.setState({ charactersLeft });
     }
   }
 
@@ -127,7 +126,6 @@ class TextArea extends Component {
         error={charactersLeft < 0 ? error : null}
         displayedCharacterLimitMsg={displayedCharacterLimitMsg}
         {...remainProps}
-        ref={this.textAreaRef}
       />
     );
   }
