@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { arrayOf, func, oneOf, shape, string } from 'prop-types';
+import { arrayOf, func, oneOf, shape, string, bool } from 'prop-types';
 import Downshift from 'downshift';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import DropdownButton from './components/DropdownButton';
 import DropdownList from './components/DropdownList';
@@ -14,10 +14,16 @@ let toggleMenu;
 const Container = styled.div`
   position: relative;
   display: inline-block;
+  ${({ block }) =>
+    block &&
+    css`
+      display: block;
+    `};
 `;
 
 class Dropdown extends Component {
   static propTypes = {
+    block: bool,
     items: arrayOf(shape({})).isRequired,
     selectedItem: shape({}),
     onChange: func,
@@ -26,6 +32,7 @@ class Dropdown extends Component {
   };
 
   static defaultProps = {
+    block: false,
     selectedItem: null,
     onChange: noop,
     defaultLabel: 'Options',
@@ -153,6 +160,7 @@ class Dropdown extends Component {
 
   render() {
     const {
+      block,
       items,
       selectedItem,
       defaultLabel,
@@ -166,7 +174,6 @@ class Dropdown extends Component {
         onChange={onChange}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
-        {...remainProps}
       >
         {({
           getInputProps,
@@ -182,7 +189,9 @@ class Dropdown extends Component {
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
           return (
-            <Container {...getRootProps({ refKey: 'innerRef' })}>
+            <Container
+              {...getRootProps({ ...remainProps, block, refKey: 'innerRef' })}
+            >
               <DropdownButton
                 icon={
                   (selectedItem && selectedItem.icon) ||
@@ -200,6 +209,7 @@ class Dropdown extends Component {
               />
               {isOpen && (
                 <DropdownList
+                  block={block}
                   direction={direction}
                   items={items}
                   highlightedIndex={highlightedIndex}

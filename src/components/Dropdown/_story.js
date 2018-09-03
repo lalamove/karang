@@ -114,4 +114,6 @@ class Wrapper extends Component {
   }
 }
 
-storiesOf('Dropdown', module).add('Basic', () => <Wrapper />);
+storiesOf('Dropdown', module)
+  .add('Basic', () => <Wrapper />)
+  .add('block', () => <Dropdown block items={items} />);

@@ -37,7 +37,11 @@ exports[`Dropdown Snapshots Dropdown 1`] = `
 }
 
 .c1 {
-  width: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   min-width: 80px;
   padding: 0.5em 1em;
   background-color: rgba(255,255,255,1);
@@ -49,10 +53,15 @@ exports[`Dropdown Snapshots Dropdown 1`] = `
 }
 
 .c3 {
-  display: inline-block;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
   margin-right: 0.5em;
   line-height: 1.6;
-  vertical-align: middle;
+  text-align: left;
 }
 
 .c4 {
