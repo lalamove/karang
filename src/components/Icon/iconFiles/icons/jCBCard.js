@@ -1,6 +1,6 @@
 import React from 'react';
 
-const JCBCard = () => (
+const jCBCard = () => (
   <svg viewBox="0 0 217 217" version="1.1">
     <defs>
       <path
@@ -52,4 +52,4 @@ const JCBCard = () => (
   </svg>
 );
 
-export default JCBCard;
+export default jCBCard;

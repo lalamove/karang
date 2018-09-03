@@ -1,3 +1,4 @@
+export { default as arrow } from './icons/arrow';
 export { default as pinCircle } from './icons/pinCircle';
 export {
   default as arrowDoubleSidedCurved,
@@ -9,7 +10,7 @@ export { default as visaCard } from './icons/visaCard';
 export { default as unionPayCard } from './icons/unionPayCard';
 export { default as masterCard } from './icons/masterCard';
 export { default as dinersClubCard } from './icons/dinersClubCard';
-export { default as JCBCard } from './icons/jCBCard';
+export { default as jCBCard } from './icons/jCBCard';
 export { default as momoCard } from './icons/momoCard';
 export { default as discoverCard } from './icons/discoverCard';
 export { default as aMEXCard } from './icons/aMEXCard';

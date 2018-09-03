@@ -2,7 +2,7 @@ import React from 'react';
 import iconType from './iconHelper';
 import { PropTypes } from 'prop-types';
 
-const Index = ({ type, color, size, options }) => {
+const Index = ({ type, color, size }) => {
   const style = {
     verticalAlign: 'middle',
     fill: color,
@@ -18,31 +18,24 @@ const Index = ({ type, color, size, options }) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
-      <g>{type.renderSVG(options)}</g>
+      <g>{iconType[type]()}</g>
     </svg>
   );
 };
 
-const optionsObj = Object.freeze({
-  angle: 0,
-});
-
 Index.defaultProps = {
-  type: iconType.question,
-  color: 'currentColor',
+  color: 'black',
   size: 20,
-  options: { angle: null },
 };
 
 Index.propTypes = {
-  type: PropTypes.oneOf(Object.keys(iconType)),
-  // color: PropTypes.oneOf(Object.keys(colors)), TODO: to limit colors used
-  color: PropTypes.string,
+  type: PropTypes.oneOf(Object.keys(iconType)).isRequired,
+  color: PropTypes.string, // color: PropTypes.oneOf(Object.keys(colors)), TODO: to limit colors used
   size: PropTypes.oneOfType([
     PropTypes.oneOf(['small', 'large']),
     PropTypes.number,
   ]),
-  options: PropTypes.oneOf(Object.keys(optionsObj)),
+  // TODO: angle option, pass props to icon
 };
 
 export { Index as default, iconType };

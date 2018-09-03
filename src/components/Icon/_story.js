@@ -17,22 +17,14 @@ const IconWrapper = styled.div`
 
 const renderIcon = (type, color, size, options) => (
   <IconWrapper>
-    <Icon
-      // type, color, size, options
-      type={type}
-      color={color}
-      size={size}
-      options={options}
-    />
+    <Icon type={type} color={color} size={size} options={options} />
   </IconWrapper>
 );
 
 const Icons = () => (
   <Fragment>
     <Container>
-      {Object.keys(iconType).map(type =>
-        renderIcon(iconType[type], 'black', 40)
-      )}
+      {Object.keys(iconType).map(type => renderIcon(type, 'black', 40))}
     </Container>
   </Fragment>
 );
