@@ -35,6 +35,7 @@ PresentationalTextArea.propTypes = {
   charactersLeft: number,
   error: string,
   style: shape({}),
+  value: string,
 };
 
 PresentationalTextArea.defaultProps = {
@@ -44,6 +45,7 @@ PresentationalTextArea.defaultProps = {
   charactersLeft: null,
   style: {},
   error: null,
+  value: '',
 };
 
 // HOC
@@ -60,6 +62,7 @@ class TextArea extends Component {
     error: string,
     characterLimitMsgGenerator: func,
     exceedLimitMsgGenerator: func,
+    value: string,
   };
   static defaultProps = {
     maxLength: null,
@@ -70,6 +73,7 @@ class TextArea extends Component {
       `Characters left: ${charactersLeft}`,
     exceedLimitMsgGenerator: excessCharacters =>
       `Excess characters: ${excessCharacters}`,
+    value: '',
   };
   constructor(props) {
     super(props);
@@ -77,6 +81,15 @@ class TextArea extends Component {
       charactersLeft: props.maxLength,
     };
   }
+
+  componentDidMount() {
+    if (this.props.value) {
+      const charactersLeft = this.props.maxLength - this.props.value.length;
+      // eslint-disable-next-line react/no-did-mount-set-state
+      this.setState({ charactersLeft });
+    }
+  }
+
   onTextAreaChange = e => {
     if (this.props.maxLength) {
       const charactersLeft = this.props.maxLength - e.target.value.length;
@@ -86,6 +99,7 @@ class TextArea extends Component {
     }
     this.props.onChange(e);
   };
+
   render() {
     const { charactersLeft } = this.state;
     const {
