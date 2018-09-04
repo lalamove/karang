@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { bool, func, number } from 'prop-types';
-import { fontWeight } from 'styles/fonts';
 import styled from 'styled-components';
-import noop from 'utils/noop';
 
+import { fontWeight } from 'styles/fonts';
+import noop from 'utils/noop';
 import Button from 'components/Button';
+import Icon from 'components/Icon';
 
 const Container = styled.div`
   display: inline-flex;
@@ -16,6 +17,10 @@ const Text = styled.span`
   strong {
     font-weight: ${fontWeight.bold};
   }
+`;
+
+const SCButton = styled(Button)`
+  padding: 0.5em;
 `;
 
 class Pagination extends Component {
@@ -47,8 +52,16 @@ class Pagination extends Component {
           </strong>
           of <strong>{count}</strong>
         </Text>
-        <Button>Back</Button>
-        <Button>Next</Button>
+        <SCButton>
+          <Icon type="arrow" size={20} style={{ transform: 'rotate(90deg)' }} />
+        </SCButton>
+        <SCButton>
+          <Icon
+            type="arrow"
+            size={20}
+            style={{ transform: 'rotate(-90deg)' }}
+          />
+        </SCButton>
       </Container>
     );
   }
