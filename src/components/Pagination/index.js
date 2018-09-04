@@ -53,10 +53,16 @@ class Pagination extends Component {
           of <strong>{count}</strong>
         </Text>
         <SCButton>
-          <Icon type="arrow" size={20} style={{ transform: 'rotate(90deg)' }} />
+          <Icon
+            title="Prev"
+            type="arrow"
+            size={20}
+            style={{ transform: 'rotate(90deg)' }}
+          />
         </SCButton>
         <SCButton>
           <Icon
+            title="Next"
             type="arrow"
             size={20}
             style={{ transform: 'rotate(-90deg)' }}
