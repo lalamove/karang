@@ -1,9 +1,10 @@
 import React from 'react';
-import iconType from './iconHelper';
-import { oneOf, oneOfType, string, number } from 'prop-types';
+import { oneOf, string, number } from 'prop-types';
 
-// TODO: options
-const Index = ({ type, color, size }) => {
+import icons from './icons';
+import { black } from 'styles/colors';
+
+const Icon = ({ type, color, size, ...remainProps }) => {
   const style = {
     verticalAlign: 'middle',
     fill: color,
@@ -12,28 +13,21 @@ const Index = ({ type, color, size }) => {
   };
 
   return (
-    <svg
-      style={style}
-      viewBox="0 0 1024 1024"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
-      <g>{iconType[type]()}</g>
+    <svg style={style} viewBox="0 0 1024 1024" {...remainProps}>
+      {icons[type]}
     </svg>
   );
 };
 
-Index.defaultProps = {
-  color: 'black',
+Icon.defaultProps = {
+  color: black,
   size: 20,
 };
 
-Index.propTypes = {
-  type: oneOf(Object.keys(iconType)).isRequired,
-  color: string, // color: oneOf(Object.keys(colors)) TODO: to limit colors used
-  size: oneOfType([oneOf(['small', 'large']), number]),
-  // TODO: angle option, pass props to icon
+Icon.propTypes = {
+  type: oneOf(Object.keys(icons)).isRequired,
+  color: string, // TODO: to limit colors used
+  size: number, // TODO: to define small and large icon size
 };
 
-export { Index as default, iconType };
+export default Icon;

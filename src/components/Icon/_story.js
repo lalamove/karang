@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Icon, { iconType } from './index';
-
 import styled from 'styled-components';
+
+import Icon from './index';
+import icons from './icons';
 
 const Container = styled.div`
   display: flex;
@@ -15,18 +16,14 @@ const IconWrapper = styled.div`
   margin: 20px;
 `;
 
-const renderIcon = (type, color, size, options) => (
-  <IconWrapper>
-    <Icon type={type} color={color} size={size} options={options} />
-  </IconWrapper>
-);
-
 const Icons = () => (
-  <Fragment>
-    <Container>
-      {Object.keys(iconType).map(type => renderIcon(type, 'black', 40))}
-    </Container>
-  </Fragment>
+  <Container>
+    {Object.keys(icons).map(type => (
+      <IconWrapper key={`icon-${type}`}>
+        <Icon type={type} size={40} />
+      </IconWrapper>
+    ))}
+  </Container>
 );
 
 storiesOf('Icon', module).add('Icon', () => <Icons />);

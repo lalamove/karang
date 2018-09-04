@@ -13,6 +13,7 @@ export { default as CountdownBar } from './components/CountdownBar';
 export { default as Dropdown } from './components/Dropdown';
 export { default as Form } from './components/Form';
 export { default as Heading, HeadingGroup } from './components/Heading';
+export { default as Icon } from './components/Icon';
 export { default as Input, PinInput, SearchInput } from './components/Input';
 export { default as List } from './components/List';
 export { default as Radio, RadioGroup } from './components/Radio';
@@ -20,7 +21,7 @@ export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
 export { default as TextArea } from './components/TextArea';
 
-// for icons, export them here
+// DEPRECATED: Will use Icon component to replace following exports in upcoming release
 export { default as CrossIcon } from './icons/Cross';
 export { default as DropDownIcon } from './icons/DropDown';
 export { default as ErrorIcon } from './icons/Error';
