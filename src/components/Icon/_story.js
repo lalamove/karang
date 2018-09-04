@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Icon from './index';
 import icons from './icons';
+import { fontSize } from 'styles/fonts';
 
 const Container = styled.div`
   display: flex;
@@ -12,16 +13,25 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const IconWrapper = styled.div`
-  margin: 20px;
+const SCIcon = styled(Icon)`
+  display: block;
+  margin: 0.8em auto 0.8em auto;
+`;
+
+const Wrapper = styled.div`
+  width: 160px;
+  margin: 1.2em;
+  font-size: ${fontSize.small};
+  text-align: center;
 `;
 
 const Icons = () => (
   <Container>
     {Object.keys(icons).map(type => (
-      <IconWrapper key={`icon-${type}`}>
-        <Icon type={type} size={40} />
-      </IconWrapper>
+      <Wrapper key={`icon-${type}`}>
+        <SCIcon type={type} size={40} />
+        {type}
+      </Wrapper>
     ))}
   </Container>
 );

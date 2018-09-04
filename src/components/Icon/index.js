@@ -25,9 +25,13 @@ Icon.defaultProps = {
 };
 
 Icon.propTypes = {
+  /** Type of icon, view storybook for the string */
   type: oneOf(Object.keys(icons)).isRequired,
+  /** Color code of icon */
   color: string, // TODO: to limit colors used
+  /** Size of icon, in `px` */
   size: number, // TODO: to define small and large icon size
+  // TODO: theme: filled, outlined
 };
 
 export default Icon;
