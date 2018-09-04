@@ -1,19 +1,20 @@
 import React from 'react';
-import { oneOf, string, number } from 'prop-types';
+import { oneOf, string, number, shape } from 'prop-types';
 
 import icons from './icons';
 import { black } from 'styles/colors';
 
-const Icon = ({ type, color, size, ...remainProps }) => {
-  const style = {
+const Icon = ({ type, color, size, style, ...remainProps }) => {
+  const rootStyle = {
     verticalAlign: 'middle',
     fill: color,
     width: `${size}px`,
     height: `${size}px`,
+    ...style,
   };
 
   return (
-    <svg style={style} viewBox="0 0 1024 1024" {...remainProps}>
+    <svg style={rootStyle} viewBox="0 0 1024 1024" {...remainProps}>
       {icons[type]}
     </svg>
   );
@@ -22,6 +23,7 @@ const Icon = ({ type, color, size, ...remainProps }) => {
 Icon.defaultProps = {
   color: black,
   size: 20,
+  style: {},
 };
 
 Icon.propTypes = {
@@ -31,6 +33,7 @@ Icon.propTypes = {
   color: string, // TODO: to limit colors used
   /** Size of icon, in `px` */
   size: number, // TODO: to define small and large icon size
+  style: shape({}),
   // TODO: theme: filled, outlined
 };
 
