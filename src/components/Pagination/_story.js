@@ -6,7 +6,7 @@ import Pagination from './index';
 // eslint-disable-next-line react/prefer-stateless-function
 class Wrapper extends Component {
   render() {
-    return <Pagination />;
+    return <Pagination current={1} pageSize={20} total={36} />;
   }
 }
 

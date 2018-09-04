@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { bool, func, number } from 'prop-types';
+import { bool, func, number, string } from 'prop-types';
 import styled from 'styled-components';
 
-import { fontWeight } from 'styles/fonts';
 import noop from 'utils/noop';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
@@ -14,59 +13,84 @@ const Container = styled.div`
 
 const Text = styled.span`
   padding-right: 8px;
-  strong {
-    font-weight: ${fontWeight.bold};
-  }
 `;
 
 const SCButton = styled(Button)`
-  padding: 0.5em;
+  ${({ showLabel }) => !showLabel && 'padding: 0.5em;'};
 `;
 
 class Pagination extends Component {
   static propTypes = {
-    limit: number,
-    offset: number, // support custom page number as well ?
-    count: number,
-    onChange: func, // eslint-disable-line react/no-unused-prop-types
-    // onChange? or onPrev / onNext ?
+    current: number.isRequired,
+    pageSize: number.isRequired,
+    total: number.isRequired,
+    loading: bool,
+    prevLabel: string,
+    nextLabel: string,
+    showLabel: bool,
+    onChange: func,
   };
 
   static defaultProps = {
-    limit: 20,
-    offset: 0,
-    count: 36,
+    loading: false,
+    prevLabel: 'Prev',
+    nextLabel: 'Next',
+    showLabel: false,
     onChange: noop,
+  };
+
+  handleChange = () => {
+    this.props.onChange();
   };
 
   // TODO: multi lang usage
   render() {
-    const { count, offset, limit } = this.props;
+    const {
+      current,
+      pageSize,
+      total,
+      loading,
+      prevLabel,
+      nextLabel,
+      showLabel,
+    } = this.props;
     return (
       <Container>
         <Text>
-          Viewing
-          <strong>
-            {' '}
-            {offset + 1}-{(offset + 1) * limit}{' '}
-          </strong>
-          of <strong>{count}</strong>
+          Viewing {current * pageSize - pageSize + 1}-{current * pageSize} of{' '}
+          {total}
         </Text>
-        <SCButton>
-          <Icon
-            title="Prev"
-            type="arrow"
-            size={20}
-            style={{ transform: 'rotate(90deg)' }}
-          />
+        <SCButton
+          onClick={this.handleChange}
+          disabled={loading}
+          showLabel={showLabel}
+        >
+          {showLabel ? (
+            prevLabel
+          ) : (
+            <Icon
+              title={prevLabel}
+              type="arrow"
+              size={20}
+              style={{ transform: 'rotate(90deg)' }}
+            />
+          )}
         </SCButton>
-        <SCButton>
-          <Icon
-            title="Next"
-            type="arrow"
-            size={20}
-            style={{ transform: 'rotate(-90deg)' }}
-          />
+        <SCButton
+          onClick={this.handleChange}
+          disabled={loading}
+          showLabel={showLabel}
+        >
+          {showLabel ? (
+            nextLabel
+          ) : (
+            <Icon
+              title={nextLabel}
+              type="arrow"
+              size={20}
+              style={{ transform: 'rotate(-90deg)' }}
+            />
+          )}
         </SCButton>
       </Container>
     );
