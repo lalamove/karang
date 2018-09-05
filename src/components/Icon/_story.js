@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Icon, { iconType } from './index';
-
 import styled from 'styled-components';
+
+import Icon from './index';
+import icons from './icons';
+import { fontSize } from 'styles/fonts';
 
 const Container = styled.div`
   display: flex;
@@ -11,30 +13,27 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const IconWrapper = styled.div`
-  margin: 20px;
+const SCIcon = styled(Icon)`
+  display: block;
+  margin: 0.8em auto 0.8em auto;
 `;
 
-const renderIcon = (type, color, size, options) => (
-  <IconWrapper>
-    <Icon
-      // type, color, size, options
-      type={type}
-      color={color}
-      size={size}
-      options={options}
-    />
-  </IconWrapper>
-);
+const Wrapper = styled.div`
+  width: 160px;
+  margin: 1.2em;
+  font-size: ${fontSize.small};
+  text-align: center;
+`;
 
 const Icons = () => (
-  <Fragment>
-    <Container>
-      {Object.keys(iconType).map(type =>
-        renderIcon(iconType[type], 'black', 40)
-      )}
-    </Container>
-  </Fragment>
+  <Container>
+    {Object.keys(icons).map(type => (
+      <Wrapper key={`icon-${type}`}>
+        <SCIcon type={type} size={40} />
+        {type}
+      </Wrapper>
+    ))}
+  </Container>
 );
 
 storiesOf('Icon', module).add('Icon', () => <Icons />);

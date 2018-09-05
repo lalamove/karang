@@ -1,48 +1,40 @@
 import React from 'react';
-import iconType from './iconHelper';
-import { PropTypes } from 'prop-types';
+import { oneOf, string, number, shape } from 'prop-types';
 
-const Index = ({ type, color, size, options }) => {
-  const style = {
+import icons from './icons';
+import { black } from 'styles/colors';
+
+const Icon = ({ type, color, size, style, ...remainProps }) => {
+  const rootStyle = {
     verticalAlign: 'middle',
     fill: color,
     width: `${size}px`,
     height: `${size}px`,
+    ...style,
   };
 
   return (
-    <svg
-      style={style}
-      viewBox="0 0 1024 1024"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
-      <g>{type.renderSVG(options)}</g>
+    <svg style={rootStyle} viewBox="0 0 1024 1024" {...remainProps}>
+      {icons[type]}
     </svg>
   );
 };
 
-const optionsObj = Object.freeze({
-  angle: 0,
-});
-
-Index.defaultProps = {
-  type: iconType.question,
-  color: 'currentColor',
+Icon.defaultProps = {
+  color: black,
   size: 20,
-  options: { angle: null },
+  style: {},
 };
 
-Index.propTypes = {
-  type: PropTypes.oneOf(Object.keys(iconType)),
-  // color: PropTypes.oneOf(Object.keys(colors)), TODO: to limit colors used
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'large']),
-    PropTypes.number,
-  ]),
-  options: PropTypes.oneOf(Object.keys(optionsObj)),
+Icon.propTypes = {
+  /** Type of icon, view storybook for the string */
+  type: oneOf(Object.keys(icons)).isRequired,
+  /** Color code of icon */
+  color: string, // TODO: to limit colors used
+  /** Size of icon, in `px` */
+  size: number, // TODO: to define small and large icon size
+  style: shape({}),
+  // TODO: theme: filled, outlined
 };
 
-export { Index as default, iconType };
+export default Icon;

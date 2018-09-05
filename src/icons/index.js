@@ -1,7 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const Icon = ({ children, color, size }) => {
+// eslint-disable-next-line camelcase
+const DEPRECATED_Icon = ({ children, color, size }) => {
   const style = {
     verticalAlign: 'middle',
     fill: color,
@@ -22,13 +23,13 @@ const Icon = ({ children, color, size }) => {
   );
 };
 
-Icon.defaultProps = {
+DEPRECATED_Icon.defaultProps = {
   children: null,
   color: 'currentColor',
   size: 20,
 };
 
-Icon.propTypes = {
+DEPRECATED_Icon.propTypes = {
   children: PropTypes.node,
   // color: PropTypes.oneOf(Object.keys(colors)), TODO: to limit colors used
   color: PropTypes.string,
@@ -38,4 +39,4 @@ Icon.propTypes = {
   ]),
 };
 
-export default Icon;
+export default DEPRECATED_Icon; // eslint-disable-line camelcase

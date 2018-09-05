@@ -22,6 +22,7 @@ Install **Lalamove React UI Library** in your own repo:
 ```bash
 yarn add git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git
 ```
+
 #### Troubleshooting
 - Cannot be installed in Gitlab CI
 
@@ -46,7 +47,8 @@ You must first initialize the library in order to set configuration globals.
 At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
 
 // TODO: Should allow configuration parameters passed as props here
-```jsx static
+
+```bash
 import React from 'react';
 import { BaseApp } from 'lalamove-ui';
 
@@ -61,7 +63,7 @@ export default App;
 
 #### Using exported UI components
 Quick example to **get you started** in your own components / containers:
-```jsx static
+```bash
 import React, { Fragment } from 'react';
 import { Radio } from 'lalamove-ui';
 
@@ -82,8 +84,18 @@ Clone this repo, and run:
 ## install dependencies
 yarn
 
-## visit localhost:9092 to browse components library and usage
+## visit localhost:9092 to browse components library
 yarn storybook
+```
+
+## Styleguide
+Clone this repo, and run:
+```bash
+## install dependencies
+yarn
+
+## visit localhost:6060 to browse styleguide and usage
+yarn doc
 ```
 
 ## Components Development
@@ -108,7 +120,7 @@ yarn lint:js
 yarn lint:css
 ```
 
-Remember to export your components in `src/index.js`.
+**Remember to export your components in `src/index.js`.**
 
 Please make sure your changes is able to build **when you commit your changes**.
 ```bash
@@ -147,7 +159,7 @@ Commit your changes on **your own branch** in this repo / forked repo.
 Change `package.json` in your own repo to install your commit version (replace `<commit-id>` with your commit id):
 ```json
 "dependencies": {
-    "lalamove-ui": "git+ssh://git@git.easygroup.co:12888/andrew.mok/lalamove-ui.git#<commit-id>"
+    "lalamove-ui": "git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git#<commit-id>"
 }
 ```
 
@@ -175,15 +187,8 @@ To enable stylelint for `styled-components`, configure your editor to have style
 Install `Styled Components` plugin in IDE `Preferences | Plugins`. [(Installation Guide)](https://github.com/styled-components/webstorm-styled-components
 )
 
-## Coding Standard
-- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-
-## Todo
-* Avoid `injectGlobal` in `utils/fonts`, and allow users to config fonts in components level
-* Code cleanup for existing components
-* Increase unit test coverage
-* Theme support
-* Please help to add more here...
+## Contributing Guidelines
+- [lalamove-ui Contributing Guidelines](https://git.easygroup.co/lalamove/lalamove-ui/wikis/home)
 
 ## Support
 * For any questions / bugs report, please feel free to [open an issue here](https://git.easygroup.co/lalamove/lalamove-ui/issues).
