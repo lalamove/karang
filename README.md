@@ -48,7 +48,7 @@ At the top level of your application, instantiate an `BaseApp` component and pas
 
 // TODO: Should allow configuration parameters passed as props here
 
-```jsx
+```bash
 import React from 'react';
 import { BaseApp } from 'lalamove-ui';
 
@@ -63,7 +63,7 @@ export default App;
 
 #### Using exported UI components
 Quick example to **get you started** in your own components / containers:
-```jsx
+```bash
 import React, { Fragment } from 'react';
 import { Radio } from 'lalamove-ui';
 
