@@ -17,10 +17,7 @@ Object.keys(icons).map(type => {
     const wrapper = render(<Icon {...prop} />);
     expect(wrapper).toMatchSnapshot();
   });
-});
 
-// eslint-disable-next-line array-callback-return
-Object.keys(icons).map(type => {
   for (const prop in optionalProps) {
     if (Object.prototype.hasOwnProperty.call(optionalProps, prop)) {
       // eslint-disable-next-line array-callback-return
