@@ -37,8 +37,12 @@ class Pagination extends Component {
     nextLabel: string,
     /** Show text instead of icon for prev and next button */
     showLabel: bool,
-    /** Callback function, to be executed when clicked prev and next button, and it takes the
-     *  resulting page number and pageSize as its arguments: `func(nextPage, pageSize)` */
+    /**
+     * Callback function, to be executed when clicked prev and next button.
+     *
+     * @param {Integer} nextPage Next page number.
+     * @param {Integer} pageSize Number of items per page.
+     */
     onChange: func,
     /** Description next to pagination buttons */
     description: node,

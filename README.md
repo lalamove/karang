@@ -5,6 +5,9 @@ Version 0.1.0
 
 React components that implement [Lalamove Design](https://lalamove.com), for all web projects.
 
+- [Documentation](https://ui.lalamove.com/) - Detailed documentation for UI components
+- [Storybook](https://ui.lalamove.com/storybook) - Showcase and examples of UI components
+
 ## Install
 Before installing this library, please make sure you have the following installed in your own repo:
 ```json
@@ -88,7 +91,7 @@ yarn
 yarn storybook
 ```
 
-## Styleguide
+## Styleguide (Documentation)
 Clone this repo, and run:
 ```bash
 ## install dependencies
