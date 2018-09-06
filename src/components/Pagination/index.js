@@ -44,7 +44,8 @@ class Pagination extends Component {
      * @param {Integer} pageSize Number of items per page.
      */
     onChange: func,
-    /** Description next to pagination buttons */
+    /** Description text next to pagination buttons, use `{{firstRow}}` for first row number, use
+     *  `{{lastRow}}` for last row number, `{{total}}` for total number of items. */
     description: node,
     /** Default initial page number */
     defaultCurrent: number,
@@ -63,11 +64,22 @@ class Pagination extends Component {
     nextLabel: 'Next',
     showLabel: false,
     onChange: noop,
-    description: null,
+    description: 'Viewing {{firstRow}}-{{lastRow}} of {{total}}',
     defaultCurrent: 1,
     defaultPageSize: 20,
     defaultTotal: 40,
   };
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.current && props.current !== state.current) {
+      return { current: props.current };
+    } else if (props.pageSize && props.pageSize !== state.pageSize) {
+      return { pageSize: props.pageSize };
+    } else if (props.total && props.total !== state.total) {
+      return { total: props.total };
+    }
+    return null;
+  }
 
   state = {
     current: this.props.current || this.props.defaultCurrent,
@@ -125,7 +137,10 @@ class Pagination extends Component {
     return (
       <Container>
         <Text>
-          {description || `Viewing ${firstRow}-${lastRow} of ${total}`}
+          {description
+            .replace('{{firstRow}}', firstRow)
+            .replace('{{lastRow}}', lastRow)
+            .replace('{{total}}', total)}
         </Text>
         <SCButton
           onClick={this.prev}
