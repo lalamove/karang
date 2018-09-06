@@ -45,7 +45,8 @@ class Pagination extends Component {
      */
     onChange: func,
     /** Description text next to pagination buttons, use `{{firstRow}}` for first row number, use
-     *  `{{lastRow}}` for last row number, `{{total}}` for total number of items. */
+     *  `{{lastRow}}` for last row number, `{{total}}` for total number of items, `{{current}}`
+     *  for current page number, `{{totalPages}}` for total pages number. */
     description: node,
     /** Default initial page number */
     defaultCurrent: number,
@@ -140,7 +141,9 @@ class Pagination extends Component {
           {description
             .replace('{{firstRow}}', firstRow)
             .replace('{{lastRow}}', lastRow)
-            .replace('{{total}}', total)}
+            .replace('{{total}}', total)
+            .replace('{{current}}', current)
+            .replace('{{totalPages}}', this.totalPages())}
         </Text>
         <SCButton
           onClick={this.prev}
