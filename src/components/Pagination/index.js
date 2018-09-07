@@ -40,18 +40,18 @@ class Pagination extends Component {
     /** Show text instead of icon for prev and next button */
     showLabel: bool,
     /**
-     * Callback function, to be executed when clicked prev and next button.
+     * Callback function, to be executed when clicked prev and next button
      *
-     * @param {Integer} nextPage Next page number.
-     * @param {Integer} pageSize Number of items per page.
-     * @param {Integer} fromIndex 1-based index of item start from.
-     * @param {Integer} toIndex 1-based index of item end to.
+     * @param {Integer} nextPage Next page number
+     * @param {Integer} pageSize Number of items per page
+     * @param {Integer} fromIndex 1-based index of item start from
+     * @param {Integer} toIndex 1-based index of item end to
      */
     onChange: func,
     /** Description text next to pagination buttons, use `{{fromIndex}}` for 1-based index of item
      *  start from, `{{toIndex}}` for 1-based index of item end to, `{{total}}` for total number
      *  of items, `{{current}}` for current page number, `{{totalPages}}` for total
-     *  page number. */
+     *  page number */
     description: node,
     /** Default initial page number */
     defaultCurrent: number,
