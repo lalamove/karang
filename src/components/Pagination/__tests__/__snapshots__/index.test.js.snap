@@ -186,7 +186,7 @@ exports[`Snapshots Pagination with custom description 1`] = `
   <span
     class="c1"
   >
-    blah blah blah
+    blah 1-20 of 40
   </span>
   <button
     class="c2 c3"

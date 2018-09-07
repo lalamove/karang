@@ -17,7 +17,9 @@ describe('Snapshots', () => {
   });
 
   it('Pagination with custom description', () => {
-    const wrapper = render(<Pagination description="blah blah blah" />);
+    const wrapper = render(
+      <Pagination description="blah {{fromIndex}}-{{toIndex}} of {{total}}" />
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -112,7 +114,13 @@ describe('Functions', () => {
   });
 
   it('trigger onChange and state update when clicked next button', () => {
-    const wrapper = shallow(<Pagination />);
+    const wrapper = shallow(<Pagination defaultTotal={36} />);
+    expect(
+      wrapper
+        .find('Text')
+        .children()
+        .text()
+    ).toEqual('Viewing 1-20 of 36');
     const { current } = wrapper.state();
     wrapper
       .find('SCButton')
@@ -120,5 +128,11 @@ describe('Functions', () => {
       .simulate('click');
     const { current: updatedCurrent } = wrapper.state();
     expect(updatedCurrent).toEqual(current + 1);
+    expect(
+      wrapper
+        .find('Text')
+        .children()
+        .text()
+    ).toEqual('Viewing 21-36 of 36');
   });
 });

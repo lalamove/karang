@@ -15,6 +15,8 @@ const Text = styled.span`
   padding-right: 0.6em;
 `;
 
+Text.displayName = 'Text';
+
 const SCButton = styled(Button)`
   ${({ showLabel }) => !showLabel && 'padding: 0.5em;'};
 `;
@@ -42,10 +44,12 @@ class Pagination extends Component {
      *
      * @param {Integer} nextPage Next page number.
      * @param {Integer} pageSize Number of items per page.
+     * @param {Integer} fromIndex First row number.
+     * @param {Integer} toIndex Last row number.
      */
     onChange: func,
-    /** Description text next to pagination buttons, use `{{firstRow}}` for first row number, use
-     *  `{{lastRow}}` for last row number, `{{total}}` for total number of items, `{{current}}`
+    /** Description text next to pagination buttons, use `{{fromIndex}}` for first row number, use
+     *  `{{toIndex}}` for last row number, `{{total}}` for total number of items, `{{current}}`
      *  for current page number, `{{totalPages}}` for total pages number. */
     description: node,
     /** Default initial page number */
@@ -65,7 +69,7 @@ class Pagination extends Component {
     nextLabel: 'Next',
     showLabel: false,
     onChange: noop,
-    description: 'Viewing {{firstRow}}-{{lastRow}} of {{total}}',
+    description: 'Viewing {{fromIndex}}-{{toIndex}} of {{total}}',
     defaultCurrent: 1,
     defaultPageSize: 20,
     defaultTotal: 40,
@@ -103,7 +107,7 @@ class Pagination extends Component {
     if (!this.props.current) {
       this.setState({ current: nextPage });
     }
-    this.props.onChange(nextPage, pageSize);
+    this.props.onChange(nextPage, pageSize, this.fromIndex(), this.toIndex());
   };
 
   prev = () => {
@@ -124,8 +128,18 @@ class Pagination extends Component {
 
   totalPages = () => Math.ceil(this.state.total / this.state.pageSize);
 
-  render() {
+  fromIndex = () => {
+    const { current, pageSize } = this.state;
+    return current * pageSize - pageSize + 1;
+  };
+
+  toIndex = () => {
     const { current, pageSize, total } = this.state;
+    return current * pageSize > total ? total : current * pageSize;
+  };
+
+  render() {
+    const { current, total } = this.state;
     const {
       loading,
       prevLabel,
@@ -133,14 +147,12 @@ class Pagination extends Component {
       showLabel,
       description,
     } = this.props;
-    const firstRow = current * pageSize - pageSize + 1;
-    const lastRow = current * pageSize;
     return (
       <Container>
         <Text>
           {description
-            .replace('{{firstRow}}', firstRow)
-            .replace('{{lastRow}}', lastRow)
+            .replace('{{fromIndex}}', this.fromIndex())
+            .replace('{{toIndex}}', this.toIndex())
             .replace('{{total}}', total)
             .replace('{{current}}', current)
             .replace('{{totalPages}}', this.totalPages())}
