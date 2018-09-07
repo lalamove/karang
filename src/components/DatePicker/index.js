@@ -14,7 +14,7 @@ import {
 } from './utils/constants';
 import moment from 'moment';
 
-const { DateRangePicker, DateRangePickerShape } = ReactDates;
+const { DateRangePicker } = ReactDates;
 
 class LmDatePicker extends Component {
   constructor(props) {
@@ -71,6 +71,7 @@ class LmDatePicker extends Component {
         focusedInput={focusedInput}
         startDate={startDate}
         endDate={endDate}
+        showDefaultInputIcon={true}
       />
     );
   }
@@ -83,14 +84,6 @@ LmDatePicker.propTypes = {
   stateDateWrapper: PropTypes.func,
   initialStartDate: momentPropTypes.momentObj,
   initialEndDate: momentPropTypes.momentObj,
-
-  ...omit(DateRangePickerShape, [
-    'startDate',
-    'endDate',
-    'onDatesChange',
-    'focusedInput',
-    'onFocusChange',
-  ]),
 };
 
 LmDatePicker.defaultProps = {

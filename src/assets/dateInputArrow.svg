@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="896" height="1482" rx="8"></rect>
+        <path d="M8.2581598,5.43780429 L0.601610371,5.43780429 C0.269350138,5.43780429 0,5.19021982 0,4.8848089 C0,4.57939798 0.269350138,4.33181351 0.601610371,4.33181351 L8.32519357,4.33181351 L4.08520915,0.984457386 C3.84797789,0.806640122 3.79879861,0.46238517 3.98079575,0.21972231 C4.1627929,-0.0229405492 4.50704785,-0.0721198281 4.74971071,0.109877317 L10.2097581,4.42320365 L10.2382077,4.4490882 C10.3340927,4.54937499 10.3975226,4.67623495 10.4202211,4.81311495 L10.4238995,4.86342875 C10.4207953,5.03234048 10.3415595,5.19081209 10.2082926,5.2946425 L4.76357646,9.59597623 C4.66110398,9.68807627 4.52351795,9.73154591 4.37494248,9.71293905 C4.23806248,9.69024056 4.11120251,9.62681058 4.01091572,9.53092567 L3.97679326,9.49830095 L3.95542906,9.45620241 C3.83878856,9.22636024 3.87854196,8.94808642 4.06900057,8.74503526 L8.2581598,5.43780429 Z" id="path-3"></path>
+        <path d="M8.2581598,5.43780429 L0.601610371,5.43780429 C0.269350138,5.43780429 0,5.19021982 0,4.8848089 C0,4.57939798 0.269350138,4.33181351 0.601610371,4.33181351 L8.32519357,4.33181351 L4.08520915,0.984457386 C3.84797789,0.806640122 3.79879861,0.46238517 3.98079575,0.21972231 C4.1627929,-0.0229405492 4.50704785,-0.0721198281 4.74971071,0.109877317 L10.2097581,4.42320365 L10.2382077,4.4490882 C10.3340927,4.54937499 10.3975226,4.67623495 10.4202211,4.81311495 L10.4238995,4.86342875 C10.4207953,5.03234048 10.3415595,5.19081209 10.2082926,5.2946425 L4.76357646,9.59597623 C4.66110398,9.68807627 4.52351795,9.73154591 4.37494248,9.71293905 C4.23806248,9.69024056 4.11120251,9.62681058 4.01091572,9.53092567 L3.97679326,9.49830095 L3.95542906,9.45620241 C3.83878856,9.22636024 3.87854196,8.94808642 4.06900057,8.74503526 L8.2581598,5.43780429 Z" id="path-5"></path>
+    </defs>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Form-/-Date-picker" transform="translate(-1004.000000, -93.000000)">
+            <rect fill="#F4F6F8" x="0" y="0" width="1747" height="2574"></rect>
+            <g id="Group-6" transform="translate(724.000000, 55.000000)">
+                <g id="⌘/UIKIT/Background-description">
+                    <g id="Group" stroke-width="1" fill-rule="evenodd">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="BG" fill="#F4F6F8" xlink:href="#path-1"></use>
+                        <g id="⌘/UIKIT/White" mask="url(#mask-2)" fill="#FFFFFF">
+                            <rect id="BG" x="0" y="0" width="896" height="1489"></rect>
+                        </g>
+                    </g>
+                    <text id="Desc:" font-family=".AppleSystemUIFont" font-size="14" font-weight="normal" line-spacing="20" fill="#637381">
+                        <tspan x="0" y="1503">Input props</tspan>
+                    </text>
+                </g>
+                <g id="Date-Picker-/-Input-Props-02-/-Default" transform="translate(188.000000, 32.000000)">
+                    <rect id="Input-Props-bg-[6-12]" stroke="#B4B4B4" fill="#FFFFFF" x="0.5" y="0.5" width="235" height="31" rx="2"></rect>
+                    <g id="Date-to-Date-[4h]" transform="translate(12.000000, 6.000000)">
+                        <g id="Icon-/-Arrow-/-To" transform="translate(80.000000, 0.000000)">
+                            <g id="Fill-/-58595B" transform="translate(4.792627, 5.161290)">
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <use id="Mask" fill="#585858" fill-rule="nonzero" xlink:href="#path-3"></use>
+                                <g id="✱-/-Color-/-Nobel-/-700" mask="url(#mask-4)" fill="#585858">
+                                    <g transform="translate(-4.055300, -5.161290)" id="Rectangle-13">
+                                        <rect x="0" y="0" width="20" height="20"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Arrow-/-To" transform="translate(80.000000, 0.000000)">
+                            <g id="Fill-/-58595B" transform="translate(4.792627, 5.161290)">
+                                <mask id="mask-6" fill="white">
+                                    <use xlink:href="#path-5"></use>
+                                </mask>
+                                <use id="Mask" fill="#585858" fill-rule="nonzero" xlink:href="#path-5"></use>
+                                <g id="✱-/-Color-/-Nobel-/-700" mask="url(#mask-6)" fill="#585858">
+                                    <g transform="translate(-4.055300, -5.161290)" id="Rectangle-13">
+                                        <rect x="0" y="0" width="20" height="20"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
