@@ -48,9 +48,10 @@ class Pagination extends Component {
      * @param {Integer} toIndex Last row number.
      */
     onChange: func,
-    /** Description text next to pagination buttons, use `{{fromIndex}}` for first row number, use
-     *  `{{toIndex}}` for last row number, `{{total}}` for total number of items, `{{current}}`
-     *  for current page number, `{{totalPages}}` for total pages number. */
+    /** Description text next to pagination buttons, use `{{fromIndex}}` for 1-based index of item
+     *  start from, `{{toIndex}}` for 1-based index of item end to, `{{total}}` for total number
+     *  of items, `{{current}}` for current page number, `{{totalPages}}` for total
+     *  pages number. */
     description: node,
     /** Default initial page number */
     defaultCurrent: number,
