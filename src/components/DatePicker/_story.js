@@ -25,7 +25,11 @@ const DatePickerStory = () => {
   );
   return (
     <Container>
-      <LmDatePicker initialStartDate={null} initialEndDate={null} />
+      <LmDatePicker
+        initialStartDate={null}
+        initialEndDate={null}
+        isOutsideRange={() => false}
+      />
     </Container>
   );
 };
