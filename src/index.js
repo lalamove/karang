@@ -16,6 +16,7 @@ export { default as Heading, HeadingGroup } from './components/Heading';
 export { default as Icon } from './components/Icon';
 export { default as Input, PinInput, SearchInput } from './components/Input';
 export { default as List } from './components/List';
+export { default as Pagination } from './components/Pagination';
 export { default as Radio, RadioGroup } from './components/Radio';
 export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
