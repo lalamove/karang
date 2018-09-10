@@ -106,11 +106,5 @@
       "!**/_story.js"
     ]
   },
-  "dependencies": {
-    "lodash": "^4.17.10",
-    "moment": "^2.22.2",
-    "prop-types": "^15.6.2",
-    "react-dates": "^18.0.0",
-    "react-moment-proptypes": "^1.6.0"
-  }
+  "dependencies": {}
 }
