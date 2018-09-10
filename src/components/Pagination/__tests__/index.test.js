@@ -9,6 +9,13 @@ describe('Snapshots', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('Pagination with 0 items', () => {
+    const wrapper = render(
+      <Pagination current={1} total={0} pageSize={10} onChange={() => {}} />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('Pagination with 300 items, at first page with 10 items', () => {
     const wrapper = render(
       <Pagination current={1} total={300} pageSize={10} onChange={() => {}} />
