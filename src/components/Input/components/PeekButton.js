@@ -2,13 +2,12 @@ import React from 'react';
 import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
-import noop from 'utils/noop';
 import { black, offWhite } from 'styles/colors';
-import EyeOffIcon from 'icons/EyeOff';
-import EyeOnIcon from 'icons/EyeOn';
+import noop from 'utils/noop';
 import Button from 'components/Button';
+import Icon from 'components/Icon';
 
-const ScButton = styled(Button)`
+const SCButton = styled(Button)`
   border: none;
 
   &:hover,
@@ -18,10 +17,10 @@ const ScButton = styled(Button)`
 `;
 
 const PeekButton = ({ active, onClick }) => (
-  <ScButton onClick={onClick}>
-    {!active && <EyeOffIcon color={black} size={20} />}
-    {active && <EyeOnIcon color={black} size={20} />}
-  </ScButton>
+  <SCButton onClick={onClick}>
+    {!active && <Icon type="privacyIcon2" color={black} size={20} />}
+    {active && <Icon type="privacyIcon1" color={black} size={20} />}
+  </SCButton>
 );
 
 PeekButton.propTypes = {

@@ -1,41 +1,46 @@
-import React, { PureComponent, Fragment, forwardRef } from 'react';
+import React, { Component, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
-import { branch, compose, toClass } from 'recompose';
+import { branch, compose } from 'recompose';
 import styled from 'styled-components';
 
-import withAnimatedContainer from 'hoc/withAnimatedContainer';
-import withErrorMessage from 'hoc/withErrorMessage';
+import noop from 'utils/noop';
+import AnimatedBorder from '../../AnimatedBorder';
+import ErrorMessage from '../../ErrorMessage';
 import withSelectAll from 'hoc/withSelectAll';
 import withCursorEnd from 'hoc/withCursorEnd';
-
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
 
-const StyledTextInput = styled(TextInput)`
+const SCTextInput = styled(TextInput)`
   &::-ms-reveal {
     display: none;
   }
 `;
 
-class Input extends PureComponent {
+const Wrapper = styled.div`
+  display: inline-block;
+`;
+
+class Input extends Component {
   static propTypes = {
-    innerRef: oneOfType([func, object]),
+    forwardedRef: oneOfType([func, object]),
     type: string,
-    name: string.isRequired,
+    name: string,
     label: string,
-    placeholder: string,
     error: string,
     autoComplete: string,
     selectAll: bool,
     cursorEnd: bool,
     masked: bool,
+    onFocus: func,
+    onBlur: func,
   };
 
   static defaultProps = {
-    innerRef: null,
+    forwardedRef: null,
     type: 'text',
-    label: '',
-    placeholder: '',
+    name: null,
+    label: null,
     error: null,
     // autocomplete=off is ignored on non-login INPUT elements
     // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
@@ -43,70 +48,97 @@ class Input extends PureComponent {
     selectAll: false,
     cursorEnd: false,
     masked: true,
+    onFocus: noop,
+    onBlur: noop,
   };
 
+  static getDerivedStateFromProps({ value, defaultValue }) {
+    return { dirty: !!(value || defaultValue) };
+  }
+
   state = {
+    focused: false,
+    dirty: false,
     masked: this.props.masked,
   };
 
   componentDidMount() {
     if (this.props.type !== 'password' && !this.props.masked) {
+      // eslint-disable-next-line no-console
       console.warn(
         `Trying to set masked is false when type is not password. Only set masked when type is password.`
       );
     }
   }
 
-  changePeekStatus = () => {
+  onFocus = e => {
+    this.setState({ focused: true });
+    this.props.onFocus(e);
+  };
+
+  onBlur = e => {
+    this.setState({ focused: false });
+    this.props.onBlur(e);
+  };
+
+  changeMaskedState = () => {
     this.setState(prevState => ({
       masked: !prevState.masked,
     }));
   };
 
   render() {
-    const { masked } = this.state;
+    const { dirty, focused, masked } = this.state;
     const {
+      forwardedRef,
       type,
       name,
       label,
-      placeholder,
       autoComplete,
       error,
+      onFocus,
+      onBlur,
       selectAll,
       cursorEnd,
-      innerRef,
       ...remainProps
     } = this.props;
 
     return (
-      <Fragment>
-        <StyledTextInput
-          type={type === 'password' && !masked ? 'text' : type}
+      <Wrapper>
+        <AnimatedBorder
           name={name}
           label={label}
-          placeholder={placeholder}
-          autoComplete={autoComplete}
-          {...remainProps}
-          innerRef={innerRef}
-        />
-        {type === 'password' && (
-          <PeekButton active={!masked} onClick={this.changePeekStatus} />
-        )}
-      </Fragment>
+          dirty={dirty}
+          error={error !== null && error.length > 0}
+          focused={focused}
+        >
+          <SCTextInput
+            type={type === 'password' && !masked ? 'text' : type}
+            name={name}
+            label={label}
+            autoComplete={autoComplete}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            {...remainProps}
+            innerRef={forwardedRef}
+          />
+          {type === 'password' && (
+            <PeekButton active={!masked} onClick={this.changeMaskedState} />
+          )}
+        </AnimatedBorder>
+        <ErrorMessage error={error} />
+      </Wrapper>
     );
   }
 }
 
 const InputWithRef = forwardRef((props, ref) => (
-  <Input {...props} innerRef={ref} />
+  <Input forwardedRef={ref} {...props} />
 ));
 
 const EnhancedComp = compose(
   branch(props => props.selectAll, withSelectAll),
-  toClass,
-  branch(props => props.cursorEnd, withCursorEnd),
-  withErrorMessage,
-  withAnimatedContainer
+  branch(props => props.cursorEnd, withCursorEnd)
 )(InputWithRef);
 
 export default EnhancedComp;

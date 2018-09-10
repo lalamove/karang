@@ -24,7 +24,6 @@ class InputWrapper extends Component {
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
-          width={150}
           autoFocus
         />
         <br />
@@ -55,7 +54,7 @@ class InputWrapper extends Component {
           name="address"
           value={this.state.address}
           onChange={this.handleChange}
-          error="Error Message Error Message Error Message Error Message Error Message Error Message Error Message"
+          error="Error Message"
         />
         <br />
         <br />

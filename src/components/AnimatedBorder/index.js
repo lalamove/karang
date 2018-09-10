@@ -14,6 +14,7 @@ const Container = styled.div`
   border: 1px solid ${offWhite};
   font-family: ${primaryFonts};
   text-align: left;
+  width: 100%;
 
   ${({ focused }) =>
     focused &&
@@ -52,7 +53,7 @@ const AnimatedBorder = ({
 );
 
 AnimatedBorder.propTypes = {
-  /** Children elements, HTML elements / `React.ReactElement` is allowed */
+  /** Children elements, HTML elements or `React.ReactElement` are allowed */
   children: node,
   /** Status of label text position, text will be placed at top left position if `true` */
   dirty: bool,
