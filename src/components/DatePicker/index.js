@@ -6,8 +6,6 @@ import omit from 'lodash/omit';
 import momentPropTypes from 'react-moment-proptypes';
 import { string, bool, func, oneOfType, number, oneOf } from 'prop-types';
 import { START_DATE, END_DATE } from './utils/constants';
-import moment from 'moment';
-import icons from '../Icon/icons';
 
 const anchor = {
   left: 'left',
@@ -32,6 +30,8 @@ class DatePicker extends Component {
       startDate: props.initialStartDate,
       endDate: props.initialEndDate,
     };
+
+    this.props = omit(this.props, ['initialStartDate', 'initialEndDate']);
 
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
@@ -63,6 +63,9 @@ class DatePicker extends Component {
       'customInputIcon',
       'customArrowIcon',
       'onSelectionChange',
+      'autoFocus',
+      'initialStartDate',
+      'initialEndDate',
     ]);
 
     return (
@@ -79,11 +82,12 @@ class DatePicker extends Component {
 }
 
 DatePicker.propTypes = {
-  // example props for the demo
   autoFocusEndDate: bool,
   stateDateWrapper: func,
-  initialStartDate: momentPropTypes.momentObj, // eslint-disable-line
-  initialEndDate: momentPropTypes.momentObj, // eslint-disable-line
+  /* eslint-disable react/no-typos */
+  initialStartDate: momentPropTypes.momentObj,
+  initialEndDate: momentPropTypes.momentObj,
+  /* eslint-disable react/no-typos */
   disabled: oneOfType([bool, string]),
   displayFormat: string,
   onPrevMonthClick: func,
