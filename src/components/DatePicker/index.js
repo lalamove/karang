@@ -2,21 +2,21 @@ import 'react-dates/initialize';
 import './styles/dateRangePickerStyles.css';
 import React, { Component } from 'react';
 import * as ReactDates from 'react-dates';
-import { DateRangePickerPhrases } from './utils/defaultPhrases';
 import omit from 'lodash/omit';
-import PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
-import {
-  START_DATE,
-  END_DATE,
-  HORIZONTAL_ORIENTATION,
-  ANCHOR_LEFT,
-} from './utils/constants';
+import { string, bool, func, oneOfType, number, oneOf } from 'prop-types';
+import { START_DATE, END_DATE } from './utils/constants';
 import moment from 'moment';
+import icons from '../Icon/icons';
+
+const anchor = {
+  left: 'left',
+  right: 'right',
+};
 
 const { DateRangePicker } = ReactDates;
 
-class LmDatePicker extends Component {
+class DatePicker extends Component {
   constructor(props) {
     super(props);
 
@@ -43,6 +43,7 @@ class LmDatePicker extends Component {
       startDate: startDate && stateDateWrapper(startDate),
       endDate: endDate && stateDateWrapper(endDate),
     });
+    this.props.onSelectionChange(startDate, endDate);
   }
 
   onFocusChange(focusedInput) {
@@ -56,11 +57,12 @@ class LmDatePicker extends Component {
     // example wrapper but are not props on the SingleDatePicker itself and
     // thus, have to be omitted.
     const props = omit(this.props, [
-      'autoFocus',
       'autoFocusEndDate',
-      'initialStartDate',
-      'initialEndDate',
       'stateDateWrapper',
+      'showClearDates',
+      'customInputIcon',
+      'customArrowIcon',
+      'onSelectionChange',
     ]);
 
     return (
@@ -71,22 +73,49 @@ class LmDatePicker extends Component {
         focusedInput={focusedInput}
         startDate={startDate}
         endDate={endDate}
-        showDefaultInputIcon={true}
       />
     );
   }
 }
 
-LmDatePicker.propTypes = {
+DatePicker.propTypes = {
   // example props for the demo
-  autoFocus: PropTypes.bool,
-  autoFocusEndDate: PropTypes.bool,
-  stateDateWrapper: PropTypes.func,
-  initialStartDate: momentPropTypes.momentObj,
-  initialEndDate: momentPropTypes.momentObj,
+  autoFocusEndDate: bool,
+  stateDateWrapper: func,
+  initialStartDate: momentPropTypes.momentObj, // eslint-disable-line
+  initialEndDate: momentPropTypes.momentObj, // eslint-disable-line
+  disabled: oneOfType([bool, string]),
+  displayFormat: string,
+  onPrevMonthClick: func,
+  onNextMonthClick: func,
+  onClose: func,
+  isDayBlocked: func,
+  isDayHighlighted: func,
+  required: bool,
+  showDefaultInputIcon: bool,
+  numberOfMonths: number,
+  /** if set to true, shows days from the previous month in the current month */
+  enableOutsideDays: bool,
+  /** Minimum number of days ("nights"), users should select in range from DatePicker. */
+  minimumNights: number,
+  /** allows date picker to be anchored either left or right */
+  anchorDirection: oneOf(Object.keys(anchor)),
+  /** allows users to specify whether date picker remains open after end date is selected */
+  keepOpenOnDateSelect: bool,
+  onSelectionChange: func,
+  autoFocus: bool,
+  isRTL: bool,
+  startDateId: string,
+  endDateId: string,
+  startDatePlaceholderText: string,
+  endDatePlaceholderText: string,
+  horizontalMargin: number,
+  withPortal: bool,
+  withFullScreenPortal: bool,
+  initialVisibleMonth: func,
 };
 
-LmDatePicker.defaultProps = {
+DatePicker.defaultProps = {
   // example props for the demo
   autoFocus: false,
   autoFocusEndDate: false,
@@ -100,50 +129,33 @@ LmDatePicker.defaultProps = {
   endDatePlaceholderText: 'End Date',
   disabled: false,
   required: false,
-  screenReaderInputMessage: '',
-  showClearDates: false,
-  showDefaultInputIcon: false,
-  customInputIcon: null,
-  customArrowIcon: null,
-  customCloseIcon: null,
-  block: false,
-  small: false,
-  regular: false,
+  showDefaultInputIcon: true,
 
   // calendar presentation and interaction related props
-  renderMonthText: null,
-  orientation: HORIZONTAL_ORIENTATION,
-  anchorDirection: ANCHOR_LEFT,
+  anchorDirection: 'left',
   horizontalMargin: 0,
   withPortal: false,
   withFullScreenPortal: false,
-  initialVisibleMonth: null,
+  initialVisibleMonth: () => true,
   numberOfMonths: 2,
   keepOpenOnDateSelect: false,
-  reopenPickerOnClearDates: false,
   isRTL: false,
 
   // navigation related props
-  navPrev: null,
-  navNext: null,
   onPrevMonthClick() {},
   onNextMonthClick() {},
   onClose() {},
 
   // day presentation and interaction related props
-  renderCalendarDay: undefined,
-  renderDayContents: null,
   minimumNights: 1,
   enableOutsideDays: false,
   isDayBlocked: () => false,
   isDayHighlighted: () => false,
+  onSelectionChange: (startDate, endDate) => true,
 
   // internationalization
-  displayFormat: () => moment.localeData().longDateFormat('L'),
-  monthFormat: 'MMMM YYYY',
-  phrases: DateRangePickerPhrases,
-
+  displayFormat: 'DD-MM-YYYY',
   stateDateWrapper: date => date,
 };
 
-export default LmDatePicker;
+export default DatePicker;
