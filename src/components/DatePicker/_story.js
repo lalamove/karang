@@ -15,8 +15,6 @@ const Container = styled.div`
 const DatePickerStory = () => (
   <Container>
     <DatePicker
-      initialStartDate={null}
-      initialEndDate={null}
       isOutsideRange={() => false}
       onSelectionChange={(start, end) => console.log(start, end)}
     />
