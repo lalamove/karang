@@ -17,6 +17,8 @@ const DatePickerStory = () => (
     <DatePicker
       isOutsideRange={() => false}
       onSelectionChange={(start, end) => console.log(start, end)}
+      onPrevMonthClick={() => console.log('clicked prev month button')}
+      onNextMonthClick={() => console.log('clicked next month button')}
     />
   </Container>
 );

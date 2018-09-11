@@ -2,10 +2,12 @@ import 'react-dates/initialize';
 import './styles/dateRangePickerStyles.css';
 import React, { Component } from 'react';
 import * as ReactDates from 'react-dates';
+import { DateRangePickerPhrases } from './utils/defaultPhrases';
 import omit from 'lodash/omit';
+import * as PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
-import { string, bool, func, oneOfType, number, oneOf } from 'prop-types';
 import { START_DATE, END_DATE } from './utils/constants';
+import moment from 'moment';
 
 const anchor = {
   left: 'left',
@@ -13,10 +15,20 @@ const anchor = {
 };
 
 const { DateRangePicker } = ReactDates;
+const {
+  string,
+  bool,
+  func,
+  oneOfType,
+  number,
+  oneOf,
+  object,
+  node,
+} = PropTypes;
 
 class DatePicker extends Component {
   constructor(props) {
-    super(props);
+    super();
 
     let focusedInput = null;
     if (props.autoFocus) {
@@ -31,8 +43,6 @@ class DatePicker extends Component {
       endDate: props.initialEndDate,
     };
 
-    this.props = omit(this.props, ['initialStartDate', 'initialEndDate']);
-
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
   }
@@ -43,7 +53,6 @@ class DatePicker extends Component {
       startDate: startDate && stateDateWrapper(startDate),
       endDate: endDate && stateDateWrapper(endDate),
     });
-    this.props.onSelectionChange(startDate, endDate);
   }
 
   onFocusChange(focusedInput) {
@@ -53,19 +62,19 @@ class DatePicker extends Component {
   render() {
     const { focusedInput, startDate, endDate } = this.state;
 
-    // autoFocus, autoFocusEndDate, initialStartDate and initialEndDate are helper props for the
-    // example wrapper but are not props on the SingleDatePicker itself and
-    // thus, have to be omitted.
+    /*
+      autoFocus, autoFocusEndDate, initialStartDate, initialEndDate, onSelectionChange,
+      stateDateWrapper are helper props but are not props on the DateRangePicker itself and
+      thus, have to be omitted.
+    */
+
     const props = omit(this.props, [
-      'autoFocusEndDate',
-      'stateDateWrapper',
-      'showClearDates',
-      'customInputIcon',
-      'customArrowIcon',
-      'onSelectionChange',
       'autoFocus',
+      'autoFocusEndDate',
       'initialStartDate',
       'initialEndDate',
+      'stateDateWrapper',
+      'onSelectionChange',
     ]);
 
     return (
@@ -76,28 +85,41 @@ class DatePicker extends Component {
         focusedInput={focusedInput}
         startDate={startDate}
         endDate={endDate}
+        showDefaultInputIcon
       />
     );
   }
 }
 
 DatePicker.propTypes = {
+  /** If `true`, will automatically open DatePicker */
+  autoFocus: bool,
+  /** If `false`, will automatically open DatePicker on the endDate input */
   autoFocusEndDate: bool,
+  /** @ignore */
   stateDateWrapper: func,
   /* eslint-disable react/no-typos */
+  /** Allows developers to specify an initial start date for the DatePicker as a moment object */
   initialStartDate: momentPropTypes.momentObj,
+  /** Allows developers to specify an initial end date for the DatePicker as a moment object */
   initialEndDate: momentPropTypes.momentObj,
   /* eslint-disable react/no-typos */
+  /** @ignore */
+  startDateId: string,
+  /** When set to `true` DatePicker is disabled. Disables Start Date input when set to "startDate".
+   * Disables End Date input when set to "endDate" */
   disabled: oneOfType([bool, string]),
-  /** display format for date string */
-  displayFormat: string,
+  /** display format function for date string */
+  displayFormat: func,
+  /** Event that triggers when the previous month button is clicked */
   onPrevMonthClick: func,
+  /** Event that is triggered when the next month button is clicked */
   onNextMonthClick: func,
+  /** Event that is triggered when the DatePicker is closed */
   onClose: func,
-  isDayBlocked: func,
-  isDayHighlighted: func,
-  required: bool,
+  /** @ignore */
   showDefaultInputIcon: bool,
+  /** Number of Months to be displayed. default: 2 */
   numberOfMonths: number,
   /** if set to true, shows days from the previous month in the current month */
   enableOutsideDays: bool,
@@ -107,59 +129,69 @@ DatePicker.propTypes = {
   anchorDirection: oneOf(Object.keys(anchor)),
   /** allows users to specify whether date picker remains open after end date is selected */
   keepOpenOnDateSelect: bool,
+  /**
+   * @param {Object} startDate moment object
+   * @param {Object} endDate moment object
+   */
   onSelectionChange: func,
-  autoFocus: bool,
+  /** if set to `true` , the DatePicker is display Right to Left. `false`  by default */
   isRTL: bool,
-  startDateId: string,
+  /** @ignore */
   endDateId: string,
+  /** Allows developers to set a custom placeholder string for the startDate */
   startDatePlaceholderText: string,
+  /** Allows developers to set a custom placeholder string for the endDate */
   endDatePlaceholderText: string,
+  /** @ignore */
   horizontalMargin: number,
+  /** Opens DatePicker as portal */
   withPortal: bool,
+  /** Opens DatePicker as fullscreen portal */
   withFullScreenPortal: bool,
+  /** Function returning initial visible month of date picker.
+   *
+   * E.g. ```() => moment().add(-2, 'months')``` */
   initialVisibleMonth: func,
+  /** string defining the month format */
+  monthFormat: string,
+  /** @ignore */
+  phrases: {},
+  /** JSX node to replace default prev arrow. Use at your own risk */
+  navPrev: node,
+  /** JSX node to replace next prev arrow. Use at your own risk */
+  navNext: node,
 };
 
 DatePicker.defaultProps = {
-  // example props for the demo
   autoFocus: false,
   autoFocusEndDate: false,
   initialStartDate: null,
   initialEndDate: null,
-
-  // input related props
   startDateId: START_DATE,
   startDatePlaceholderText: 'Start Date',
   endDateId: END_DATE,
   endDatePlaceholderText: 'End Date',
   disabled: false,
-  required: false,
   showDefaultInputIcon: true,
-
-  // calendar presentation and interaction related props
   anchorDirection: 'left',
   horizontalMargin: 0,
   withPortal: false,
   withFullScreenPortal: false,
-  initialVisibleMonth: () => true,
+  initialVisibleMonth: null,
   numberOfMonths: 2,
   keepOpenOnDateSelect: false,
   isRTL: false,
-
-  // navigation related props
+  navPrev: null,
+  navNext: null,
   onPrevMonthClick() {},
   onNextMonthClick() {},
   onClose() {},
-
-  // day presentation and interaction related props
   minimumNights: 1,
   enableOutsideDays: false,
-  isDayBlocked: () => false,
-  isDayHighlighted: () => false,
+  displayFormat: () => moment.localeData().longDateFormat('L'),
+  monthFormat: 'MMMM YYYY',
+  phrases: DateRangePickerPhrases,
   onSelectionChange: (startDate, endDate) => true,
-
-  // internationalization
-  displayFormat: 'DD-MM-YYYY',
   stateDateWrapper: date => date,
 };
 
