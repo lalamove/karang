@@ -1,11 +1,11 @@
 import React, { Component, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
-import { branch, compose } from 'recompose';
+import { branch, compose, toClass } from 'recompose';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
-import AnimatedBorder from '../../AnimatedBorder';
-import ErrorMessage from '../../ErrorMessage';
+import AnimatedBorder from 'components/AnimatedBorder';
+import ErrorMessage from 'components/ErrorMessage';
 import withSelectAll from 'hoc/withSelectAll';
 import withCursorEnd from 'hoc/withCursorEnd';
 import TextInput from './TextInput';
@@ -27,6 +27,7 @@ class Input extends Component {
     type: string,
     name: string,
     label: string,
+    /** Error message of the element */
     error: string,
     autoComplete: string,
     selectAll: bool,
@@ -136,9 +137,11 @@ const InputWithRef = forwardRef((props, ref) => (
   <Input forwardedRef={ref} {...props} />
 ));
 
-const EnhancedComp = compose(
-  branch(props => props.selectAll, withSelectAll),
-  branch(props => props.cursorEnd, withCursorEnd)
-)(InputWithRef);
+// const EnhancedComp = compose(
+//   branch(props => props.selectAll, withSelectAll),
+//   branch(props => props.cursorEnd, withCursorEnd)
+// )(InputWithRef);
+//
+// export default EnhancedComp;
 
-export default EnhancedComp;
+export default InputWithRef;

@@ -24,6 +24,9 @@ class InputWrapper extends Component {
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
+          ref={node => {
+            console.log(node);
+          }}
           autoFocus
         />
         <br />
@@ -130,16 +133,7 @@ class EditableInputWrapper extends Component {
     return (
       <EditableInput
         name="Billing Email"
-        value="david.lam@lalamove.com"
-        onSave={address => {
-          console.log('saved', address);
-        }}
-        onCancel={address => {
-          console.log('cancel', address);
-        }}
-        ref={node => {
-          console.log('ref', node);
-        }}
+        value="alex.fok@lalamove.com"
         saveBtnText="Save Value"
         editBtnText="Edit Value"
         cancelBtnText="Cancel Value"

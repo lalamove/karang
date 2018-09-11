@@ -24,7 +24,9 @@ const PeekButton = ({ active, onClick }) => (
 );
 
 PeekButton.propTypes = {
+  /** PeekButton status */
   active: bool,
+  /** Callback function to be executed when user click on the button */
   onClick: func,
 };
 

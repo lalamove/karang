@@ -114,7 +114,7 @@ Button.propTypes = {
   variant: oneOf(['default', 'primary', 'secondary', 'outline', 'link']),
   block: bool,
   children: node.isRequired,
-  type: string,
+  type: oneOf(['button', 'submit', 'reset']),
 };
 
 export function withComponent(Comp) {
