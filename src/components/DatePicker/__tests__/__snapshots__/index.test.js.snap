@@ -15,6 +15,7 @@ exports[`DatePicker SnapShots DatePicker 1`] = `
       >
         <svg
           class="DateRangePickerInput_calendarIcon_svg DateRangePickerInput_calendarIcon_svg_1"
+          focusable="false"
           viewBox="0 0 1393.1 1500"
         >
           <path
@@ -55,6 +56,7 @@ exports[`DatePicker SnapShots DatePicker 1`] = `
       >
         <svg
           class="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1"
+          focusable="false"
           viewBox="0 0 1000 1000"
         >
           <path
