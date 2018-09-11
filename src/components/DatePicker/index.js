@@ -89,6 +89,7 @@ DatePicker.propTypes = {
   initialEndDate: momentPropTypes.momentObj,
   /* eslint-disable react/no-typos */
   disabled: oneOfType([bool, string]),
+  /** display format for date string */
   displayFormat: string,
   onPrevMonthClick: func,
   onNextMonthClick: func,
