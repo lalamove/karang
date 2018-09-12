@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots 1`] = `
+.c0 {
+  width: 100%;
+  border-spacing: 0;
+  line-height: 1.4;
+}
+
+.c0 thead th {
+  padding: 0.5em 1em;
+  border-top: 1px rgba(229,229,229,1) solid;
+  border-bottom: 1px rgba(229,229,229,1) solid;
+  color: rgba(128,130,133,1);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.c0 tbody td {
+  padding: 1em;
+  vertical-align: top;
+}
+
+.c0 tbody td:nth-child(1) {
+  border-left: 4px solid transparent;
+}
+
+.c1:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.c1:hover {
+  background: #f2f2f2;
+}
+
+.c1:hover td:nth-child(1) {
+  border-left-color: rgba(242,103,34,1);
+}
+
+<Table
+  columns={
+    Array [
+      Object {
+        "key": "name",
+        "label": "Name",
+      },
+      Object {
+        "key": "job",
+        "label": "Occupation",
+      },
+      Object {
+        "key": "hobbies",
+        "label": "Fun",
+      },
+    ]
+  }
+  data={
+    Array [
+      Object {
+        "hobbies": "basketball",
+        "id": 123,
+        "job": "CEO",
+        "name": "Chan",
+      },
+      Object {
+        "hobbies": "hockey",
+        "id": 312,
+        "job": "Hobo",
+        "name": "Chow",
+      },
+      Object {
+        "hobbies": "football",
+        "id": 352,
+        "job": "Carpenter",
+        "name": "Mannings",
+      },
+      Object {
+        "hobbies": "buy",
+        "id": 24523,
+        "job": "Business man",
+        "name": "Wong",
+      },
+      Object {
+        "hobbies": "eat",
+        "id": 47657,
+        "job": "Janitor",
+        "name": "Smith",
+      },
+      Object {
+        "hobbies": "sit",
+        "id": 5675,
+        "job": "PUTUS",
+        "name": "Trump",
+      },
+    ]
+  }
+  hoverable={false}
+  uniqueKey="id"
+>
+  <styled.table>
+    <table
+      className="c0"
+    >
+      <thead>
+        <tr>
+          <th
+            key="llm-table-th-name"
+          >
+            Name
+          </th>
+          <th
+            key="llm-table-th-job"
+          >
+            Occupation
+          </th>
+          <th
+            key="llm-table-th-hobbies"
+          >
+            Fun
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <styled.tr
+          hoverable={false}
+          key="123"
+        >
+          <tr
+            className="c1"
+          >
+            <td
+              key="llm-table-td-name"
+            >
+              Chan
+            </td>
+            <td
+              key="llm-table-td-job"
+            >
+              CEO
+            </td>
+            <td
+              key="llm-table-td-hobbies"
+            >
+              basketball
+            </td>
+          </tr>
+        </styled.tr>
+        <styled.tr
+          hoverable={false}
+          key="312"
+        >
+          <tr
+            className="c1"
+          >
+            <td
+              key="llm-table-td-name"
+            >
+              Chow
+            </td>
+            <td
+              key="llm-table-td-job"
+            >
+              Hobo
+            </td>
+            <td
+              key="llm-table-td-hobbies"
+            >
+              hockey
+            </td>
+          </tr>
+        </styled.tr>
+        <styled.tr
+          hoverable={false}
+          key="352"
+        >
+          <tr
+            className="c1"
+          >
+            <td
+              key="llm-table-td-name"
+            >
+              Mannings
+            </td>
+            <td
+              key="llm-table-td-job"
+            >
+              Carpenter
+            </td>
+            <td
+              key="llm-table-td-hobbies"
+            >
+              football
+            </td>
+          </tr>
+        </styled.tr>
+        <styled.tr
+          hoverable={false}
+          key="24523"
+        >
+          <tr
+            className="c1"
+          >
+            <td
+              key="llm-table-td-name"
+            >
+              Wong
+            </td>
+            <td
+              key="llm-table-td-job"
+            >
+              Business man
+            </td>
+            <td
+              key="llm-table-td-hobbies"
+            >
+              buy
+            </td>
+          </tr>
+        </styled.tr>
+        <styled.tr
+          hoverable={false}
+          key="47657"
+        >
+          <tr
+            className="c1"
+          >
+            <td
+              key="llm-table-td-name"
+            >
+              Smith
+            </td>
+            <td
+              key="llm-table-td-job"
+            >
+              Janitor
+            </td>
+            <td
+              key="llm-table-td-hobbies"
+            >
+              eat
+            </td>
+          </tr>
+        </styled.tr>
+        <styled.tr
+          hoverable={false}
+          key="5675"
+        >
+          <tr
+            className="c1"
+          >
+            <td
+              key="llm-table-td-name"
+            >
+              Trump
+            </td>
+            <td
+              key="llm-table-td-job"
+            >
+              PUTUS
+            </td>
+            <td
+              key="llm-table-td-hobbies"
+            >
+              sit
+            </td>
+          </tr>
+        </styled.tr>
+      </tbody>
+    </table>
+  </styled.table>
+</Table>
+`;
