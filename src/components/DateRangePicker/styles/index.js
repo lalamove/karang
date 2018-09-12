@@ -431,7 +431,7 @@ injectGlobal`
     line-height: 24px;
     text-align: center;
     padding-top: 22px;
-    padding-bottom: 37px;
+    padding-bottom: 59px;
     caption-side: initial;
   }
   
@@ -644,6 +644,7 @@ injectGlobal`
     position: relative;
     overflow: hidden;
     border-radius: 3px;
+    height: 298px;
   }
   .DayPicker_transitionContainer__horizontal {
     -webkit-transition: height 0.2s ease-in-out;
@@ -752,7 +753,7 @@ injectGlobal`
   .DateRangePickerInput {
     background-color: #fff;
     display: inline-block;
-    width: 220px;
+    width: 230px;
     position: relative;
   }
   .DateRangePickerInput__disabled {
