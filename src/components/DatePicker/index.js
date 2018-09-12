@@ -3,7 +3,6 @@ import './styles/dateRangePickerStyles.css';
 import React, { Component } from 'react';
 import * as ReactDates from 'react-dates';
 import { DateRangePickerPhrases } from './utils/defaultPhrases';
-import omit from 'lodash/omit';
 import * as PropTypes from 'prop-types';
 import momentPropTypes from 'react-moment-proptypes';
 import { START_DATE, END_DATE } from './utils/constants';
@@ -68,18 +67,19 @@ class DatePicker extends Component {
       thus, have to be omitted.
     */
 
-    const props = omit(this.props, [
-      'autoFocus',
-      'autoFocusEndDate',
-      'initialStartDate',
-      'initialEndDate',
-      'stateDateWrapper',
-      'onSelectionChange',
-    ]);
+    const {
+      autoFocus,
+      autoFocusEndDate,
+      initialStartDate,
+      initialEndDate,
+      stateDateWrapper,
+      onSelectionChange,
+      ...remainProps
+    } = this.props;
 
     return (
       <DateRangePicker
-        {...props}
+        {...remainProps}
         onDatesChange={this.onDatesChange}
         onFocusChange={this.onFocusChange}
         focusedInput={focusedInput}
@@ -154,8 +154,8 @@ DatePicker.propTypes = {
   initialVisibleMonth: func,
   /** string defining the month format */
   monthFormat: string,
-  /** @ignore */
-  phrases: {},
+  /* eslint-disable react/forbid-prop-types */
+  phrases: object,
   /** JSX node to replace default prev arrow. Use at your own risk */
   navPrev: node,
   /** JSX node to replace next prev arrow. Use at your own risk */
