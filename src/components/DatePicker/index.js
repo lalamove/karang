@@ -52,6 +52,7 @@ class DatePicker extends Component {
       startDate: startDate && stateDateWrapper(startDate),
       endDate: endDate && stateDateWrapper(endDate),
     });
+    this.props.onSelectionChange(startDate, endDate);
   }
 
   onFocusChange(focusedInput) {
