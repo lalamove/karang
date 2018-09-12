@@ -24,9 +24,6 @@ class InputWrapper extends Component {
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
-          ref={node => {
-            console.log(node);
-          }}
           autoFocus
         />
         <br />

@@ -16,6 +16,7 @@ exports[`Snapshots AnimatedBorder 1`] = `
   border: 1px solid rgba(229,229,229,1);
   font-family: "Noto Sans",sans-serif;
   text-align: left;
+  width: 100%;
 }
 
 <div
@@ -61,6 +62,7 @@ exports[`Snapshots AnimatedBorder with label 1`] = `
   border: 1px solid rgba(229,229,229,1);
   font-family: "Noto Sans",sans-serif;
   text-align: left;
+  width: 100%;
 }
 
 <div
@@ -119,6 +121,7 @@ exports[`Snapshots AnimatedBorder with label and dirty 1`] = `
   border: 1px solid rgba(229,229,229,1);
   font-family: "Noto Sans",sans-serif;
   text-align: left;
+  width: 100%;
 }
 
 <div
@@ -177,6 +180,7 @@ exports[`Snapshots AnimatedBorder with label and error 1`] = `
   border: 1px solid rgba(229,229,229,1);
   font-family: "Noto Sans",sans-serif;
   text-align: left;
+  width: 100%;
   border: 1px solid rgba(216,83,79,1);
 }
 
@@ -236,6 +240,7 @@ exports[`Snapshots AnimatedBorder with label and focused 1`] = `
   border: 1px solid rgba(229,229,229,1);
   font-family: "Noto Sans",sans-serif;
   text-align: left;
+  width: 100%;
   border: 1px solid rgba(242,103,34,1);
 }
 

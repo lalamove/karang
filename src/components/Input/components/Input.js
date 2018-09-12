@@ -1,6 +1,5 @@
 import React, { Component, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType } from 'prop-types';
-import { branch, compose, toClass } from 'recompose';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
@@ -27,7 +26,6 @@ class Input extends Component {
     type: string,
     name: string,
     label: string,
-    /** Error message of the element */
     error: string,
     autoComplete: string,
     selectAll: bool,
@@ -137,11 +135,4 @@ const InputWithRef = forwardRef((props, ref) => (
   <Input forwardedRef={ref} {...props} />
 ));
 
-// const EnhancedComp = compose(
-//   branch(props => props.selectAll, withSelectAll),
-//   branch(props => props.cursorEnd, withCursorEnd)
-// )(InputWithRef);
-//
-// export default EnhancedComp;
-
-export default InputWithRef;
+export default withSelectAll(withCursorEnd(InputWithRef));

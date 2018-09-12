@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import { oneOfType, func, object } from 'prop-types';
+import { bool, func, object, oneOfType } from 'prop-types';
 import noop from 'utils/noop';
 
 function withSelectAll(WrappedComponent) {
@@ -7,15 +7,19 @@ function withSelectAll(WrappedComponent) {
     static propTypes = {
       forwardedRef: oneOfType([func, object]),
       onClick: func,
+      selectAll: bool,
     };
 
     static defaultProps = {
       forwardedRef: null,
       onClick: noop,
+      selectAll: null,
     };
 
     onClick = e => {
-      e.target.select();
+      if (this.props.selectAll) {
+        e.target.select();
+      }
       this.props.onClick(e);
     };
 

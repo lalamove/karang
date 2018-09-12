@@ -11,8 +11,8 @@ import {
 } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
-import { compose } from 'recompose';
 
+import compose from 'utils/compose';
 import noop from 'utils/noop';
 import DropDownIcon from 'icons/DropDown';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';

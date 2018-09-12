@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { number, string, func, shape, bool } from 'prop-types';
+import styled from 'styled-components';
 
 import noop from 'utils/noop';
 import {
@@ -7,7 +8,11 @@ import {
   InnerInputArea,
   CharacterLimitDisplay,
 } from './components/styles';
-import withErrorMessage from 'hoc/withErrorMessage';
+import ErrorMessage from 'components/ErrorMessage';
+
+const Wrapper = styled.div`
+  display: inline-block;
+`;
 
 // Presentational Component (Layout)
 const PresentationalTextArea = props => {
@@ -47,11 +52,6 @@ PresentationalTextArea.defaultProps = {
   error: null,
   value: '',
 };
-
-// HOC
-const PresentationalTextAreaWithError = withErrorMessage(
-  PresentationalTextArea
-);
 
 // Container Component (Logic)
 class TextArea extends Component {
@@ -119,14 +119,17 @@ class TextArea extends Component {
           : exceedLimitMsgGenerator(-charactersLeft);
     }
     return (
-      <PresentationalTextAreaWithError
-        maxLength={disableForceLimit ? null : maxLength}
-        charactersLeft={charactersLeft}
-        onChange={this.onTextAreaChange}
-        error={charactersLeft < 0 ? error : null}
-        displayedCharacterLimitMsg={displayedCharacterLimitMsg}
-        {...remainProps}
-      />
+      <Wrapper>
+        <PresentationalTextArea
+          maxLength={disableForceLimit ? null : maxLength}
+          charactersLeft={charactersLeft}
+          onChange={this.onTextAreaChange}
+          error={charactersLeft < 0 ? error : null}
+          displayedCharacterLimitMsg={displayedCharacterLimitMsg}
+          {...remainProps}
+        />
+        <ErrorMessage error={error} />
+      </Wrapper>
     );
   }
 }

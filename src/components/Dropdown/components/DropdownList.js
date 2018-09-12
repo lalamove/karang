@@ -10,8 +10,8 @@ import {
   bool,
 } from 'prop-types';
 import styled, { css } from 'styled-components';
-import { compose } from 'recompose';
 
+import compose from 'utils/compose';
 import noop from 'utils/noop';
 import List from 'components/List';
 import Label from './Label';

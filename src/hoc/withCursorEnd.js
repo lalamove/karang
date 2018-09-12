@@ -1,21 +1,28 @@
 import React, { Component, forwardRef } from 'react';
-import { oneOfType, func, object } from 'prop-types';
+import { bool, func, object, oneOfType } from 'prop-types';
 import noop from 'utils/noop';
 
 function withCursorEnd(WrappedComponent) {
   class WithCursorEnd extends Component {
     static propTypes = {
+      cursorEnd: bool,
       forwardedRef: oneOfType([func, object]),
       onClick: func,
     };
 
     static defaultProps = {
+      cursorEnd: null,
       forwardedRef: null,
       onClick: noop,
     };
 
     onClick = e => {
-      e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+      if (this.props.cursorEnd) {
+        e.target.setSelectionRange(
+          e.target.value.length,
+          e.target.value.length
+        );
+      }
       this.props.onClick(e);
     };
 
