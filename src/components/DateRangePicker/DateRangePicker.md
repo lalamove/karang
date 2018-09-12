@@ -1,10 +1,10 @@
 ```js static
-  import { DatePicker } from 'lalamove-ui'
+  import { DateRangePicker } from 'lalamove-ui'
 ```
 
 ```jsx
   <div style={{ paddingBottom: '350px', marginLeft: '25%'}}> 
-    <DatePicker
+    <DateRangePicker
         isOutsideRange={() => false}
         onSelectionChange={(start, end) => console.log(start, end)}
         onPrevMonthClick={() => console.log('clicked prev month button')}
@@ -12,3 +12,5 @@
     />
   </div>
 ```
+
+Other properties of the DateRangePicker component can be accessed in the react-dates docs.
