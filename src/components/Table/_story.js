@@ -8,6 +8,9 @@ const columns = [
   {
     key: 'name',
     label: 'Name',
+    onSort: key => {
+      console.log('look', key);
+    },
   },
   {
     key: 'job',

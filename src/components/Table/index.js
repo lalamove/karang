@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bool, string, shape, arrayOf, func, object } from 'prop-types';
 
-import { SCTable, Row } from './style';
+import { SCTable, Row, TH } from './style';
 
 function findColumn(key, listOfcols) {
   return listOfcols.reduce((found, col) => {
@@ -44,6 +44,7 @@ class Table extends Component {
          * @param {object} allColumns `props.data`
          */
         render: func,
+        onSort: func,
       })
     ).isRequired,
     /** table data */
@@ -90,8 +91,14 @@ class Table extends Component {
       <SCTable {...remainProps}>
         <thead>
           <tr>
-            {columns.map(({ label, key }) => (
-              <th key={`llm-table-th-${key}`}>{label}</th>
+            {columns.map(({ label, key, onSort }) => (
+              <TH
+                key={`llm-table-th-${key}`}
+                // eslint-disable-next-line react/jsx-no-bind
+                onClick={onSort ? onSort.bind(null, key) : null}
+              >
+                <span>{label}</span>
+              </TH>
             ))}
           </tr>
         </thead>

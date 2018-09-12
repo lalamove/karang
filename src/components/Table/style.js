@@ -3,6 +3,27 @@ import { lighten } from 'polished';
 import { fontSize, fontWeight } from 'styles/fonts';
 import { offWhite, orange, silver } from 'styles/colors';
 
+const arrowMap = {
+  '↑': '2191',
+  '↓': '2193',
+};
+
+export const TH = styled.th`
+  ${({ onClick }) =>
+    onClick &&
+    css`
+      cursor: pointer;
+      > span {
+        vertical-align: middle;
+      }
+      > span:after {
+        content: \"\\${arrowMap['↓']}\";
+        vertical-align: middle;
+        margin-left: 0.5em;
+      }
+    `};
+`;
+
 export const SCTable = styled.table`
   width: 100%;
   border-spacing: 0;
