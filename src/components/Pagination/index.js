@@ -90,7 +90,9 @@ class Pagination extends Component {
   state = {
     current: this.props.current || this.props.defaultCurrent,
     pageSize: this.props.pageSize || this.props.defaultPageSize,
-    total: this.props.total || this.props.defaultTotal,
+    total:
+      // handle if total is 0
+      this.props.total !== null ? this.props.total : this.props.defaultTotal,
   };
 
   componentDidMount() {
@@ -130,8 +132,8 @@ class Pagination extends Component {
   totalPages = () => Math.ceil(this.state.total / this.state.pageSize);
 
   fromIndex = () => {
-    const { current, pageSize } = this.state;
-    return current * pageSize - pageSize + 1;
+    const { current, pageSize, total } = this.state;
+    return total === 0 ? 0 : current * pageSize - pageSize + 1;
   };
 
   toIndex = () => {
