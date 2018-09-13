@@ -787,21 +787,21 @@ injectGlobal`
     visibility: hidden;
   }
   .DateRangePickerInput_clearDates {
-    background: red;
-    border: 0;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    cursor: pointer;
-    padding: 10px;
-    margin: 0 10px 0 5px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+     background: 0 0;
+      border: 0;
+      color: inherit;
+      font: inherit;
+      line-height: normal;
+      overflow: visible;
+      cursor: pointer;
+      padding: 10px;
+      margin: 0 10px 0 5px;
+      position: absolute;
+      right: 9.5%;
+      top: 48%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
   }
   .DateRangePickerInput_clearDates__small {
     padding: 6px;
@@ -864,7 +864,7 @@ injectGlobal`
     display: block;
   }
   .DateRangePicker_picker {
-    z-index: 1;
+    z-index: 5;
     background-color: #fff;
     position: absolute;
   }

@@ -72,7 +72,7 @@ class DateRangePicker extends Component {
 
   onFocusChange(focusedInput) {
     this.setState({ focusedInput });
-    this.props.onPickerFocusChange(focusedInput);
+    this.props.onInputFocusChange(focusedInput);
   }
 
   render() {
@@ -89,7 +89,7 @@ class DateRangePicker extends Component {
       endDate,
       stateDateWrapper,
       onSelectionChange,
-      onPickerFocusChange,
+      onInputFocusChange,
       ...remainProps
     } = this.props;
 
@@ -118,9 +118,9 @@ DateRangePicker.propTypes = {
    */
   onSelectionChange: func,
   /**
-   * @param {Object} focusedInput object
+   * @param {string} focusedInput object
    */
-  onPickerFocusChange: func,
+  onInputFocusChange: func,
   /** string value of the input */
   focusedInput: oneOf([START_DATE, END_DATE]),
   /** @ignore */
@@ -143,7 +143,7 @@ DateRangePicker.defaultProps = {
   startDate: null,
   endDate: null,
   onSelectionChange: (startDate, endDate) => true,
-  onPickerFocusChange: focusedInput => true,
+  onInputFocusChange: focusedInput => true,
   focusedInput: null,
   stateDateWrapper: date => date,
   autoFocus: false,

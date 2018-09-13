@@ -3,7 +3,7 @@
 ```
 
 ```jsx
-  <div style={{ paddingBottom: '350px', marginLeft: '25%'}}> 
+  <div style={{ marginLeft: '25%'}}> 
     <DateRangePicker
         isOutsideRange={() => false}
         onSelectionChange={(start, end) => console.log(start, end)}
