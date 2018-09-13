@@ -7,6 +7,7 @@ import { Table } from 'lalamove-ui';
 ```
 
 **Basic**
+
 ```js
 <Table
   columns={[
@@ -26,22 +27,20 @@ import { Table } from 'lalamove-ui';
       title: 'Better Call Saul',
       rating: 5,
       year: '2016',
-
     },
     {
       id: 'the-office',
       title: 'The Office',
       rating: 3,
       year: '2004',
-
-    }
+    },
   ]}
 />
 ```
 
 **Render function**
 
-Use `render` function to customize how you wish to render the table cell. 
+Use `render` function to customize how you wish to render the table cell.
 Here the rating value is rendered as a `<Rating />` component.
 
 ```js static
@@ -63,14 +62,14 @@ columns={[
     {
       key: 'r',
       label: 'How good',
-      render: val => <Rating value={val} />
+      render: val => <Rating value={val} />,
     },
     { key: 'y', label: 'Year' },
   ]}
   data={[
     { id: 'breaking-bad', t: 'Breaking Bad', r: 5, y: '2008' },
     { id: 'better-call-saul', t: 'Better Call Saul', r: 5, y: '2016' },
-    { id: 'the-office', t: 'The Office', r: 3, y: '2004' }
+    { id: 'the-office', t: 'The Office', r: 3, y: '2004' },
   ]}
 />
 ```
@@ -166,7 +165,6 @@ const data = [
   { id: 352, name: 'Mannings', age: 31, income: 80000 },
   { id: 312, name: 'Chow', age: 12, income: 0 },
 ];
-
 ```
 
 ```js
@@ -187,7 +185,7 @@ const data = [
 />
 ```
 
-We can derive data from other columns. As we all know handsome-ness is based on an individual's income and age. We can create a new column named 'Handsome-ness'. 
+We can derive data from other columns. As we all know handsome-ness is based on an individual's income and age. We can create a new column named 'Handsome-ness'.
 
 Notice it does not have a corresponding data property, by using the `render` function, we can conjure up our own data based on `income` and `age` property of each individual record comparing to the average.
 
@@ -240,3 +238,108 @@ columns={[
 ```
 
 **Usage with `<Pagination/>`**
+
+_coming soon_
+
+**Advance usage**
+
+```js
+const Pagination = require('components/Pagination').default;
+const url = 'https://api.hkma.gov.hk/public/coin-cart-schedule';
+
+const encodeQueryData = data => {
+  const ret = Object.entries(data).map(
+    ([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+  );
+  return ret.join('&');
+};
+
+class TableExample extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      pagesize: 5,
+      current: 1,
+      sortby: null,
+      sortorder: 'default',
+      data: [],
+      fetching: false,
+    };
+    this.fetchData = this.fetchData.bind(this);
+  }
+  componentDidMount() {}
+
+  fetchData() {
+    this.setState({ fetching: true });
+    const { pagesize, current, sortby, sortorder } = this.state;
+    console.log('in fetch', sortby, sortorder);
+    const offset = (current - 1) * 5;
+    fetch(
+      `${url}?lang=en&${encodeQueryData({
+        ...(sortorder !== 'default'
+          ? {
+              sortby,
+              sortorder,
+            }
+          : {}),
+        offset,
+        pagesize,
+      })}`
+    )
+      .then(resp => resp.json())
+      .then(({ result: records }) =>
+        this.setState({ data: records.records, fetching: false })
+      );
+  }
+
+  render() {
+    return (
+      <div>
+        <Button isLoading={this.state.fetching} onClick={this.fetchData}>
+          Fetch data
+        </Button>
+
+        <Table
+          hoverable
+          columns={[
+            { key: 'district', label: 'Address' },
+            {
+              key: 'cart_no',
+              label: 'Carts (sort in frontend only)',
+              onSort: (key, order) => (a, b) => {
+                switch (order) {
+                  case 'desc':
+                    return b[key] - a[key];
+                  case 'asc':
+                    return a[key] - b[key];
+                  default:
+                    return 0;
+                }
+              },
+            },
+            {
+              key: 'start_date',
+              label: 'Start date (sort by api, see console)',
+              onSort: (key, order) => {
+                console.log(key, order);
+                this.setState({ sortby: key, sortorder: order }, this.fetchData);
+              },
+            },
+            { key: 'remarks', label: 'What' },
+          ]}
+          data={this.state.data}
+        />
+        <Pagination
+          onChange={nextPage => this.setState({ current: nextPage }, this.fetchData)}
+          current={this.state.current}
+          loading={this.state.fetching}
+          pageSize={this.state.pagesize}
+          description="{{fromIndex}}-{{toIndex}}"
+          total={1000}
+        />
+      </div>
+    );
+  }
+}
+<TableExample />;
+```

@@ -40,4 +40,7 @@ module.exports = {
       components: 'src/components/**/{index,[A-Z]*}.js',
     },
   ],
+  template: {
+    favicon: 'https://web.dev.lalamove.com/favicon.png',
+  },
 };

@@ -13,6 +13,7 @@ class Table extends Component {
   static propTypes = {
     /** enable hover style for row */
     hoverable: bool,
+    /** enable alternate style for row */
     alternate: bool,
     /** columns controls */
     columns: arrayOf(
