@@ -62,10 +62,9 @@ class DateRangePicker extends Component {
   }
 
   onDatesChange({ startDate, endDate }) {
-    const { stateDateWrapper } = this.props;
     this.setState({
-      startDate: startDate && stateDateWrapper(startDate),
-      endDate: endDate && stateDateWrapper(endDate),
+      startDate,
+      endDate,
     });
     this.props.onSelectionChange(startDate, endDate);
   }
@@ -77,7 +76,7 @@ class DateRangePicker extends Component {
 
   render() {
     /*
-      autoFocus, autoFocusEndDate, onSelectionChange, stateDateWrapper
+      autoFocus, autoFocusEndDate, onSelectionChange,
       are helper props but are not props on the DateRangePicker itself and
       thus, have to be omitted.
     */
@@ -87,7 +86,6 @@ class DateRangePicker extends Component {
       autoFocusEndDate,
       startDate,
       endDate,
-      stateDateWrapper,
       onSelectionChange,
       onInputFocusChange,
       ...remainProps
@@ -127,10 +125,6 @@ DateRangePicker.propTypes = {
   startDateId: string,
   /** @ignore */
   endDateId: string,
-  /** If `true`, will automatically open DateRangePicker */
-  stateDateWrapper: func,
-  /** When set to `true` DateRangePicker is disabled. Disables Start Date input when set to "startDate".
-   * Disables End Date input when set to "endDate" */
   /** @ignore */
   autoFocus: bool,
   /** If `false`, will automatically open DateRangePicker on the endDate input */
@@ -145,7 +139,6 @@ DateRangePicker.defaultProps = {
   onSelectionChange: (startDate, endDate) => true,
   onInputFocusChange: focusedInput => true,
   focusedInput: null,
-  stateDateWrapper: date => date,
   autoFocus: false,
   autoFocusEndDate: false,
   startDateId: START_DATE,
