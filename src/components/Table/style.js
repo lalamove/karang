@@ -1,26 +1,38 @@
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { fontSize, fontWeight } from 'styles/fonts';
-import { offWhite, orange, silver } from 'styles/colors';
+import { offWhite, orange, lightGray } from 'styles/colors';
 
 const arrowMap = {
-  '↑': '2191',
-  '↓': '2193',
+  default: '2195',
+  asc: '2191',
+  desc: '2193',
 };
 
-export const TH = styled.th`
-  ${({ onClick }) =>
+export const ColTitle = styled.div`
+  padding: 0.5em 1em;
+  border-top: 1px ${offWhite} solid;
+  border-bottom: 1px ${offWhite} solid;
+  color: ${lightGray};
+  font-size: ${fontSize.small};
+  font-weight: ${fontWeight.bold};
+  text-align: left;
+  user-select: none;
+
+  ${({ onClick, sorted }) =>
     onClick &&
     css`
       cursor: pointer;
-      > span {
-        vertical-align: middle;
+
+      &:hover {
+        background: ${lighten(0.05, offWhite)};
       }
-      > span:after {
-        content: \"\\${arrowMap['↓']}\";
-        vertical-align: middle;
+
+      ${sorted &&
+        css`&:after {
+        content: '\\${arrowMap[sorted]}';
         margin-left: 0.5em;
-      }
+      }`};
     `};
 `;
 
@@ -28,16 +40,6 @@ export const SCTable = styled.table`
   width: 100%;
   border-spacing: 0;
   line-height: 1.4;
-
-  thead th {
-    padding: 0.5em 1em;
-    border-top: 1px ${offWhite} solid;
-    border-bottom: 1px ${offWhite} solid;
-    color: ${silver};
-    font-size: ${fontSize.small}px;
-    font-weight: ${fontWeight.bold};
-    text-align: left;
-  }
 
   tbody td {
     padding: 1em;

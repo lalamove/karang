@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bool, string, shape, arrayOf, func, object } from 'prop-types';
 
-import { SCTable, Row, TH } from './style';
+import { SCTable, Row, ColTitle } from './style';
 
 function findColumn(key, listOfcols) {
   return listOfcols.reduce((found, col) => {
@@ -53,6 +53,25 @@ class Table extends Component {
     uniqueKey: string,
   };
 
+  state = { sortBy: null, orderBy: 0 };
+
+  sortOrders = ['default', 'desc', 'asc'];
+
+  handleSort = (colKey, handler) => {
+    if (!handler) return null;
+    return () => {
+      const { orderBy } = this.state;
+      // next sort order, overflow will wrap back to default
+      const nextSortOrder = this.sortOrders[orderBy + 1] ? orderBy + 1 : 0;
+      this.setState({ sortBy: colKey, orderBy: nextSortOrder }, () => {
+        handler.apply(null, [
+          this.state.sortBy,
+          this.sortOrders[this.state.orderBy],
+        ]);
+      });
+    };
+  };
+
   renderRowCols(cols = {}) {
     const { columns } = this.props;
     return Object.keys(cols)
@@ -92,13 +111,18 @@ class Table extends Component {
         <thead>
           <tr>
             {columns.map(({ label, key, onSort }) => (
-              <TH
-                key={`llm-table-th-${key}`}
-                // eslint-disable-next-line react/jsx-no-bind
-                onClick={onSort ? onSort.bind(null, key) : null}
-              >
-                <span>{label}</span>
-              </TH>
+              <th key={`llm-table-th-${key}`}>
+                <ColTitle
+                  sorted={
+                    this.state.sortBy === key
+                      ? this.sortOrders[this.state.orderBy]
+                      : this.sortOrders[0]
+                  }
+                  onClick={this.handleSort(key, onSort)}
+                >
+                  {label}
+                </ColTitle>
+              </th>
             ))}
           </tr>
         </thead>

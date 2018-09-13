@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs/react';
 
 import Table from './index';
@@ -8,9 +9,7 @@ const columns = [
   {
     key: 'name',
     label: 'Name',
-    onSort: key => {
-      console.log('look', key);
-    },
+    onSort: action('onSort'),
   },
   {
     key: 'job',
@@ -19,6 +18,7 @@ const columns = [
   {
     key: 'hobbies',
     label: 'Fun',
+    onSort: action('onSort'),
   },
 ];
 
