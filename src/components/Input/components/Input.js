@@ -62,6 +62,7 @@ class Input extends Component {
   };
 
   componentDidMount() {
+    // TODO: warn if placeholder & label exist at same time
     if (this.props.type !== 'password' && !this.props.masked) {
       // eslint-disable-next-line no-console
       console.warn(
