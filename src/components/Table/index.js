@@ -56,14 +56,18 @@ class Table extends Component {
   state = { sortBy: null, orderBy: 0 };
 
   sortOrders = ['default', 'desc', 'asc'];
+  sortMemo = {};
 
   handleSort = (colKey, handler) => {
     if (!handler) return null;
+    this.sortMemo[colKey] = 0;
     return () => {
-      const { orderBy } = this.state;
       // next sort order, overflow will wrap back to default
-      const nextSortOrder = this.sortOrders[orderBy + 1] ? orderBy + 1 : 0;
+      const nextSortOrder = this.sortOrders[this.sortMemo[colKey] + 1]
+        ? this.sortMemo[colKey] + 1
+        : 0;
       this.setState({ sortBy: colKey, orderBy: nextSortOrder }, () => {
+        this.sortMemo[colKey] = this.state.orderBy;
         handler.apply(null, [
           this.state.sortBy,
           this.sortOrders[this.state.orderBy],
