@@ -118,7 +118,7 @@ DateRangePicker.propTypes = {
    */
   onSelectionChange: func,
   /**
-   * @param {string} focusedInput object
+   * @param {string} focusedInput The focused input string
    */
   onInputFocusChange: func,
   /** string value of the input */
