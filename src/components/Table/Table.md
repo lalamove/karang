@@ -59,41 +59,18 @@ columns={[
 ```js
 <Table
   columns={[
+    { key: 't', label: 'Title' },
     {
-      key: 'title',
-      label: 'Title',
-    },
-    {
-      key: 'rating',
+      key: 'r',
       label: 'How good',
       render: val => <Rating value={val} />
     },
-    {
-      key: 'year',
-      label: 'Year',
-    },
+    { key: 'y', label: 'Year' },
   ]}
   data={[
-    {
-      id: 'breaking-bad',
-      title: 'Breaking Bad',
-      rating: 5,
-      year: '2008',
-    },
-    {
-      id: 'better-call-saul',
-      title: 'Better Call Saul',
-      rating: 5,
-      year: '2016',
-
-    },
-    {
-      id: 'the-office',
-      title: 'The Office',
-      rating: 3,
-      year: '2004',
-
-    }
+    { id: 'breaking-bad', t: 'Breaking Bad', r: 5, y: '2008' },
+    { id: 'better-call-saul', t: 'Better Call Saul', r: 5, y: '2016' },
+    { id: 'the-office', t: 'The Office', r: 3, y: '2004' }
   ]}
 />
 ```
@@ -160,54 +137,12 @@ columns={[
     },
   ]}
   data={[
-    {
-      id: 24523,
-      name: 'Wong',
-      age: 43,
-      job: 'Business man',
-      hobbies: '購買',
-      income: 40000,
-    },
-    {
-      id: 47657,
-      name: 'Smith',
-      age: 35,
-      job: 'Janitor',
-      hobbies: '吃',
-      income: 20000,
-    },
-    {
-      id: 5675,
-      name: 'Trump',
-      age: 72,
-      job: 'PUTUS',
-      hobbies: '坐',
-      income: 1,
-    },
-    {
-      id: 123,
-      name: 'Chan',
-      age: 54,
-      job: 'CEO',
-      hobbies: '籃球',
-      income: 30000,
-    },
-    {
-      id: 352,
-      name: 'Mannings',
-      age: 31,
-      job: 'Carpenter',
-      hobbies: '足球',
-      income: 80000,
-    },
-    {
-      id: 312,
-      name: 'Chow',
-      age: 12,
-      job: 'Hobo',
-      hobbies: '曲棍球',
-      income: 0,
-    },
+    { id: 24523, name: 'Wong', age: 43, job: 'Business man', hobbies: '購買' },
+    { id: 47657, name: 'Smith', age: 35, job: 'Janitor', hobbies: '吃' },
+    { id: 5675, name: 'Trump', age: 72, job: 'PUTUS', hobbies: '坐' },
+    { id: 123, name: 'Chan', age: 54, job: 'CEO', hobbies: '籃球' },
+    { id: 352, name: 'Mannings', age: 31, job: 'Carpenter', hobbies: '足球' },
+    { id: 312, name: 'Chow', age: 12, job: 'Hobo', hobbies: '曲棍球' },
   ]}
 />
 ```
@@ -299,3 +234,5 @@ columns={[
   ]}
 />
 ```
+
+**Usage with `<Pagination/>`**
