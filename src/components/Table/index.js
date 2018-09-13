@@ -6,12 +6,14 @@ import { SCTable, Row, ColTitle } from './style';
 class Table extends Component {
   static defaultProps = {
     hoverable: false,
+    alternate: true,
     uniqueKey: 'id',
   };
 
   static propTypes = {
     /** enable hover style for row */
     hoverable: bool,
+    alternate: bool,
     /** columns controls */
     columns: arrayOf(
       shape({
@@ -93,7 +95,7 @@ class Table extends Component {
   }
 
   renderRows(rows) {
-    const { uniqueKey, hoverable } = this.props;
+    const { uniqueKey, hoverable, alternate } = this.props;
     let daRows = rows;
     if (this.sortFunc) {
       daRows = [...rows].sort(this.sortFunc);
@@ -102,6 +104,7 @@ class Table extends Component {
       <Row
         key={row[uniqueKey] || `llm-table-row-${index}`}
         hoverable={hoverable}
+        alternate={alternate}
       >
         {this.renderRowCols(row)}
       </Row>
@@ -110,7 +113,14 @@ class Table extends Component {
 
   render() {
     // extract our own props so it doesn't pollute
-    const { uniqueKey, data, columns, hoverable, ...remainProps } = this.props;
+    const {
+      uniqueKey,
+      data,
+      columns,
+      hoverable,
+      alternate,
+      ...remainProps
+    } = this.props;
 
     return (
       <SCTable {...remainProps}>

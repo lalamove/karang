@@ -59,10 +59,13 @@ export const SCTable = styled.table`
 `;
 
 export const Row = styled.tr`
-  &:nth-child(even) {
-    background: ${lighten(0.08, offWhite)};
-  }
-  ${({ hoverable }) =>
+  ${({ alternate }) =>
+    alternate &&
+    css`
+      &:nth-child(even) {
+        background: ${lighten(0.08, offWhite)};
+      }
+    `} ${({ hoverable }) =>
     hoverable &&
     css`
       &:hover {

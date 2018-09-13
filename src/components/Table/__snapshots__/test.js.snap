@@ -38,6 +38,7 @@ exports[`snapshots 1`] = `
 }
 
 <Table
+  alternate={true}
   columns={
     Array [
       Object {
@@ -152,6 +153,7 @@ exports[`snapshots 1`] = `
       </thead>
       <tbody>
         <styled.tr
+          alternate={true}
           hoverable={false}
           key="123"
         >
@@ -176,6 +178,7 @@ exports[`snapshots 1`] = `
           </tr>
         </styled.tr>
         <styled.tr
+          alternate={true}
           hoverable={false}
           key="312"
         >
@@ -200,6 +203,7 @@ exports[`snapshots 1`] = `
           </tr>
         </styled.tr>
         <styled.tr
+          alternate={true}
           hoverable={false}
           key="352"
         >
@@ -224,6 +228,7 @@ exports[`snapshots 1`] = `
           </tr>
         </styled.tr>
         <styled.tr
+          alternate={true}
           hoverable={false}
           key="24523"
         >
@@ -248,6 +253,7 @@ exports[`snapshots 1`] = `
           </tr>
         </styled.tr>
         <styled.tr
+          alternate={true}
           hoverable={false}
           key="47657"
         >
@@ -272,6 +278,7 @@ exports[`snapshots 1`] = `
           </tr>
         </styled.tr>
         <styled.tr
+          alternate={true}
           hoverable={false}
           key="5675"
         >

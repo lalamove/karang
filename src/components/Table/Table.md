@@ -39,7 +39,7 @@ import { Table } from 'lalamove-ui';
 />
 ```
 
-**Rendering function**
+**Render function**
 
 Use `render` function to customize how you wish to render the table cell. 
 Here the rating value is rendered as a `<Rating />` component.
@@ -76,6 +76,10 @@ columns={[
 ```
 
 **Sortable columns**
+
+_Supports frontend and api sorting_
+
+Table data is sortable by column. You can choose to have it sorted purely presentationally, or sort `props.data` yourself when `onSort` function is triggered.
 
 ```js
 <Table

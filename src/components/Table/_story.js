@@ -134,6 +134,7 @@ storiesOf('Table', module)
   .add('Basic', () => (
     <Table
       hoverable={boolean('hoverable', false)}
+      alternate={boolean('alternate', false)}
       columns={basicColumns}
       data={data}
     />
@@ -141,6 +142,7 @@ storiesOf('Table', module)
   .add('Sortable', () => (
     <Table
       hoverable={boolean('hoverable', false)}
+      alternate={boolean('alternate', false)}
       columns={sortableColumns}
       data={data}
     />
