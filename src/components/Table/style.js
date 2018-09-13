@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { fontSize, fontWeight } from 'styles/fonts';
-import { offWhite, orange, lightGray } from 'styles/colors';
+import { offWhite, orange, lightGray, gray } from 'styles/colors';
 
 const arrowMap = {
   default: '2195',
@@ -11,8 +11,6 @@ const arrowMap = {
 
 export const ColTitle = styled.div`
   padding: 0.5em 1em;
-  border-top: 1px ${offWhite} solid;
-  border-bottom: 1px ${offWhite} solid;
   color: ${lightGray};
   font-size: ${fontSize.small};
   font-weight: ${fontWeight.bold};
@@ -32,6 +30,10 @@ export const ColTitle = styled.div`
         css`&:after {
         content: '\\${arrowMap[sorted]}';
         margin-left: 0.5em;
+        ${sorted !== 'default' &&
+          css`
+            color: ${gray};
+          `}
       }`};
     `};
 `;
@@ -40,6 +42,11 @@ export const SCTable = styled.table`
   width: 100%;
   border-spacing: 0;
   line-height: 1.4;
+
+  th {
+    border-top: 1px ${offWhite} solid;
+    border-bottom: 1px ${offWhite} solid;
+  }
 
   tbody td {
     padding: 1em;

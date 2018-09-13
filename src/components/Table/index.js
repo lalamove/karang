@@ -20,25 +20,26 @@ class Table extends Component {
         /** [required] for display as column title */
         label: string,
         /**
-         * [optional] column render function, if not provide\n
-         * will simply render the value of that key
+         * [optional] column render function, if not provide
+         * will simply render the value of that key<br>
          *
-         * @param {any} columnData value of `props.data[i][key]`
-         * @param {object} allColumns `props.data[i]`
-         * @param {array} allRows `props.data`
+         * @param {any} columnData value of `props.data[i][key]`<br>
+         * @param {object} allColumns `props.data[i]`<br>
+         * @param {array} allRows `props.data`<br>
          */
         render: func,
         /**
-         * [optional] Table become sortable when provided.
+         * [optional] Table become sortable when provided.<br>
          * Get called when user click on the column title,
          * you can choose to take care of the sorting yourself
-         * and update `props.data` or return a sorting function
-         * that will get passed into `Array.proptotype.sort()`.
-         * e.g. `(a, b) => b - a`
+         * and update `props.data`.<br>
+         * Or return a sorting function that will get passed into
+         * `Array.proptotype.sort()`.<br>
+         * e.g. `(a, b) => b - a`<br>
          *
-         * @param {string} column key
-         * @param {string} sorting order, one of: `default`, `desc`, `asc`
-         * @returns {func} [optional] this function will be use as the sorting function (frontend only)
+         * @param {string} column key<br>
+         * @param {string} sorting order, one of: `default`, `desc`, `asc`<br>
+         * @returns {func} [optional] this function will be use as the sorting function (frontend only)<br>
          */
         onSort: func,
       })

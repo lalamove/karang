@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  require: [path.resolve(__dirname, 'styleguide/setup.js')],
+  require: [path.resolve(__dirname, '.styleguide/setup.js')],
   ignore: [
     '**/__tests__/**',
     '**/*.test.{js,jsx,ts,tsx}',
@@ -9,7 +9,7 @@ module.exports = {
     '**/*.d.ts',
     '**/_story.{js,jsx,ts,tsx}',
   ],
-  exampleMode: 'expand',
+  exampleMode: 'collapse',
   usageMode: 'expand',
   skipComponentsWithoutExample: true,
   getExampleFilename(componentPath) {
