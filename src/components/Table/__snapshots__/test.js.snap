@@ -1,20 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`snapshots 1`] = `
+.c1 {
+  padding: 0.5em 1em;
+  border-top: 1px rgba(229,229,229,1) solid;
+  border-bottom: 1px rgba(229,229,229,1) solid;
+  color: rgba(180,180,180,1);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .c0 {
   width: 100%;
   border-spacing: 0;
   line-height: 1.4;
-}
-
-.c0 thead th {
-  padding: 0.5em 1em;
-  border-top: 1px rgba(229,229,229,1) solid;
-  border-bottom: 1px rgba(229,229,229,1) solid;
-  color: rgba(128,130,133,1);
-  font-size: 12px;
-  font-weight: 700;
-  text-align: left;
 }
 
 .c0 tbody td {
@@ -22,20 +26,12 @@ exports[`snapshots 1`] = `
   vertical-align: top;
 }
 
-.c0 tbody td:nth-child(1) {
+.c0 tbody td:first-of-type {
   border-left: 4px solid transparent;
 }
 
-.c1:nth-child(even) {
+.c2:nth-child(even) {
   background: #f9f9f9;
-}
-
-.c1:hover {
-  background: #f2f2f2;
-}
-
-.c1:hover td:nth-child(1) {
-  border-left-color: rgba(242,103,34,1);
 }
 
 <Table
@@ -107,17 +103,47 @@ exports[`snapshots 1`] = `
           <th
             key="llm-table-th-name"
           >
-            Name
+            <styled.div
+              onClick={null}
+              sorted="default"
+            >
+              <div
+                className="c1"
+                onClick={null}
+              >
+                Name
+              </div>
+            </styled.div>
           </th>
           <th
             key="llm-table-th-job"
           >
-            Occupation
+            <styled.div
+              onClick={null}
+              sorted="default"
+            >
+              <div
+                className="c1"
+                onClick={null}
+              >
+                Occupation
+              </div>
+            </styled.div>
           </th>
           <th
             key="llm-table-th-hobbies"
           >
-            Fun
+            <styled.div
+              onClick={null}
+              sorted="default"
+            >
+              <div
+                className="c1"
+                onClick={null}
+              >
+                Fun
+              </div>
+            </styled.div>
           </th>
         </tr>
       </thead>
@@ -127,7 +153,7 @@ exports[`snapshots 1`] = `
           key="123"
         >
           <tr
-            className="c1"
+            className="c2"
           >
             <td
               key="llm-table-td-name"
@@ -151,7 +177,7 @@ exports[`snapshots 1`] = `
           key="312"
         >
           <tr
-            className="c1"
+            className="c2"
           >
             <td
               key="llm-table-td-name"
@@ -175,7 +201,7 @@ exports[`snapshots 1`] = `
           key="352"
         >
           <tr
-            className="c1"
+            className="c2"
           >
             <td
               key="llm-table-td-name"
@@ -199,7 +225,7 @@ exports[`snapshots 1`] = `
           key="24523"
         >
           <tr
-            className="c1"
+            className="c2"
           >
             <td
               key="llm-table-td-name"
@@ -223,7 +249,7 @@ exports[`snapshots 1`] = `
           key="47657"
         >
           <tr
-            className="c1"
+            className="c2"
           >
             <td
               key="llm-table-td-name"
@@ -247,7 +273,7 @@ exports[`snapshots 1`] = `
           key="5675"
         >
           <tr
-            className="c1"
+            className="c2"
           >
             <td
               key="llm-table-td-name"
