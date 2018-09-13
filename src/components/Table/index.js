@@ -3,23 +3,6 @@ import { bool, string, shape, arrayOf, func, object } from 'prop-types';
 
 import { SCTable, Row, ColTitle } from './style';
 
-function findColumn(key, listOfcols) {
-  return listOfcols.reduce((found, col) => {
-    if (found === null && col.key === key) {
-      return col;
-    }
-    return found;
-  }, null);
-}
-
-const includeIn = columns => colKey => !!findColumn(colKey, columns);
-
-const byColumnsOrder = columns => (a, b) => {
-  const aIndex = columns.findIndex(({ key }) => key === a);
-  const bIndex = columns.findIndex(({ key }) => key === b);
-  return aIndex - bIndex;
-};
-
 class Table extends Component {
   static defaultProps = {
     hoverable: false,
@@ -37,7 +20,7 @@ class Table extends Component {
         /** [required] for display as column title */
         label: string,
         /**
-         * [optional] column render function, if not provide
+         * [optional] column render function, if not provide\n
          * will simply render the value of that key
          *
          * @param {any} columnData value of `props.data[i][key]`
@@ -46,9 +29,12 @@ class Table extends Component {
          */
         render: func,
         /**
-         * [optional] table become sortable when provided
-         * you still have to take care of the sorting
-         * and updating of `props.data`
+         * [optional] Table become sortable when provided.
+         * Get called when user click on the column title,
+         * you can choose to take care of the sorting yourself
+         * and update `props.data` or return a sorting function
+         * that will get passed into `Array.proptotype.sort()`.
+         * e.g. `(a, b) => b - a`
          *
          * @param {string} column key
          * @param {string} sorting order, one of: `default`, `desc`, `asc`
@@ -103,20 +89,6 @@ class Table extends Component {
         </td>
       );
     });
-    //     return Object.keys(cols)
-    //       .filter(includeIn(columns))
-    //       .sort(byColumnsOrder(columns))
-    //       .map(col => {
-    //         const { render } = findColumn(col, columns);
-    //         const hasRenderFunc = typeof render === 'function';
-    //         const colData = cols[col];
-    //
-    //         return (
-    //           <td key={`llm-table-td-${col}`}>
-    //             {hasRenderFunc ? render(colData, cols) : colData}
-    //           </td>
-    //         );
-    //       });
   }
 
   renderRows(rows) {
@@ -124,7 +96,6 @@ class Table extends Component {
     let daRows = rows;
     if (this.sortFunc) {
       daRows = [...rows].sort(this.sortFunc);
-      console.log('daRows', daRows);
     }
     return daRows.map((row, index) => (
       <Row

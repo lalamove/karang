@@ -25,7 +25,6 @@ const basicColumns = [
     render(_, dude, dudes) {
       const maxAge = Math.max(...dudes.map(({ age }) => age));
       const maxIncome = Math.max(...dudes.map(({ income }) => income));
-      // const min = Math.min(ages);
       const ageRate = 6 - Math.round((dude.age / maxAge) * 5);
       const incomeRate = Math.round((dude.income / maxIncome) * 5);
       const rate = Math.round((ageRate + incomeRate) / 2);
@@ -75,7 +74,7 @@ const sortableColumns = [
   },
   {
     key: 'hobbies',
-    label: 'Fun',
+    label: 'Fun (sort yourself)',
     onSort: action('onSort'),
   },
 ];
