@@ -48,7 +48,72 @@ import { Table } from 'lalamove-ui';
 />
 ```
 
-**Sortable Columns**
+**Rendering function**
+
+Use `render` function to customize how you wish to render the table cell. 
+Here the rating value is rendered as a `<Rating />` component.
+
+```js static
+columns={[
+  {
+    key: 'title',
+    label: 'Title',
+  },
+  {
+    key: 'rating',
+    label: 'How good',
+    render: val => <Rating value={val} />
+  },
+  {
+    key: 'year',
+    label: 'Year',
+  },
+]}
+```
+
+```js
+<Table
+  columns={[
+    {
+      key: 'title',
+      label: 'Title',
+    },
+    {
+      key: 'rating',
+      label: 'How good',
+      render: val => <Rating value={val} />
+    },
+    {
+      key: 'year',
+      label: 'Year',
+    },
+  ]}
+  data={[
+    {
+      id: 'breaking-bad',
+      title: 'Breaking Bad',
+      rating: 5,
+      year: '2008',
+    },
+    {
+      id: 'better-call-saul',
+      title: 'Better Call Saul',
+      rating: 5,
+      year: '2016',
+
+    },
+    {
+      id: 'the-office',
+      title: 'The Office',
+      rating: 3,
+      year: '2004',
+
+    }
+  ]}
+/>
+```
+
+**Sortable columns**
 
 ```js
 <Table
