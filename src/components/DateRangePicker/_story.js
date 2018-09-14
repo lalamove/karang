@@ -15,8 +15,6 @@ const Container = styled.div`
 const DateRangePickerStory = () => (
   <Container>
     <DateRangePicker
-      startDate={moment()}
-      endDate={moment().add(3, 'months')}
       isOutsideRange={() => false}
       onSelectionChange={(start, end) => console.log(start, end)}
       onPrevMonthClick={() => console.log('clicked prev month button')}
