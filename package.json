@@ -29,7 +29,8 @@
     "react-dom": "^16.3.2",
     "react-moment-proptypes": "^1.6.0",
     "recompose": "^0.27.1",
-    "styled-components": "^3.3.3"
+    "styled-components": "^3.3.3",
+    "react-dates": "^18.0.2"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.4.5",

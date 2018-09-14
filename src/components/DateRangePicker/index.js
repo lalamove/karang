@@ -2,7 +2,7 @@ import 'react-dates/initialize';
 import './styles';
 import React, { Component } from 'react';
 import { DateRangePicker as RDDateRangePicker } from 'react-dates';
-import * as PropTypes from 'prop-types';
+import { string, bool, func, oneOf, instanceOf } from 'prop-types';
 import moment from 'moment';
 import noop from '../../utils/noop';
 
@@ -13,8 +13,6 @@ const anchor = {
 
 const START_DATE = 'startDate';
 const END_DATE = 'endDate';
-
-const { string, bool, func, oneOf, instanceOf } = PropTypes;
 
 class DateRangePicker extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
