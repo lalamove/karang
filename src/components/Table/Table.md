@@ -12,7 +12,7 @@ import { Table } from 'lalamove-ui';
 <Table
   columns={[
     { key: 'title', label: 'Title' },
-    { key: 'rating', label: 'How good' },
+    { key: 'rating', label: 'How good', align: 'center' },
     { key: 'year', label: 'Year' },
   ]}
   data={[
@@ -101,6 +101,7 @@ Table data is sortable by column. You can choose to have it sorted purely presen
     {
       key: 'age',
       label: 'Years on Earth',
+      align: 'center',
       onSort: (key, order) => {
         return (a, b) => {
           switch (order) {
@@ -117,7 +118,7 @@ Table data is sortable by column. You can choose to have it sorted purely presen
     {
       key: 'job',
       label: 'Occupation (sort yourself, see console)',
-      // colKey == hobbies
+      // colKey == job
       // order == one of 'default', 'desc', 'asc'
       onSort: (colKey, order) => {
         /* May trigger api with sorting data here */
@@ -239,7 +240,7 @@ columns={[
 
 **Usage with `<Pagination/>`**
 
-_coming soon_
+_more details coming soon_
 
 **Advance usage**
 
@@ -267,7 +268,7 @@ class TableExample extends React.Component {
     };
     this.fetchData = this.fetchData.bind(this);
   }
-  componentDidMount() {}
+  componentDidMount() { this.fetchData() }
 
   fetchData() {
     this.setState({ fetching: true });
@@ -325,7 +326,9 @@ class TableExample extends React.Component {
                 this.setState({ sortby: key, sortorder: order }, this.fetchData);
               },
             },
-            { key: 'remarks', label: 'What' },
+            { key: 'remarks', label: 'What', render(data) {
+              return <ul>{data.split(';').map(str => <li>{str}</li>)}</ul>
+            } },
           ]}
           data={this.state.data}
         />

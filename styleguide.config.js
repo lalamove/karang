@@ -38,6 +38,7 @@ module.exports = {
     {
       name: 'UI Components',
       components: 'src/components/**/{index,[A-Z]*}.js',
+      sectionDepth: 2,
     },
   ],
   template: {

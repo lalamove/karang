@@ -14,7 +14,7 @@ export const ColTitle = styled.div`
   color: ${lightGray};
   font-size: ${fontSize.small};
   font-weight: ${fontWeight.bold};
-  text-align: left;
+  text-align: inherit;
   user-select: none;
 
   ${({ onClick, sorted }) =>

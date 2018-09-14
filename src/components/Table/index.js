@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { bool, string, shape, arrayOf, func, object } from 'prop-types';
+import { bool, string, shape, arrayOf, func, object, oneOf } from 'prop-types';
 
 import { SCTable, Row, ColTitle } from './style';
 
@@ -22,6 +22,10 @@ class Table extends Component {
         key: string,
         /** [required] for display as column title */
         label: string,
+        /** [optional] align column. 'left|right|center|justify'<br>
+         * @see  https://www.w3schools.com/tags/att_td_align.asp
+         */
+        align: oneOf(['left', 'center', 'right', 'justify']),
         /**
          * [optional] column render function, if not provide
          * will simply render the value of that key<br>
@@ -83,12 +87,12 @@ class Table extends Component {
 
   renderRowCols(cols = {}) {
     const { columns } = this.props;
-    return columns.map(({ key, render }) => {
+    return columns.map(({ key, render, align = 'left' }) => {
       const hasRenderFunc = typeof render === 'function';
       const colData = cols[key];
 
       return (
-        <td key={`llm-table-td-${key}`}>
+        <td key={`llm-table-td-${key}`} align={align}>
           {hasRenderFunc ? render(colData, cols, this.props.data) : colData}
         </td>
       );
@@ -127,8 +131,8 @@ class Table extends Component {
       <SCTable {...remainProps}>
         <thead>
           <tr>
-            {columns.map(({ label, key, onSort }) => (
-              <th key={`llm-table-th-${key}`}>
+            {columns.map(({ label, key, onSort, align = 'left' }) => (
+              <th key={`llm-table-th-${key}`} align={align}>
                 <ColTitle
                   sorted={
                     this.state.sortBy === key
