@@ -23,7 +23,14 @@ export default {
       format: 'es',
     },
   ],
-  external: ['styled-components', 'react', 'react-dom', 'recompose'],
+  external: [
+    'styled-components',
+    'react',
+    'react-dom',
+    'recompose',
+    'react-dates',
+    'react-dates/initialize',
+  ],
   plugins: [
     external(),
     postcss({

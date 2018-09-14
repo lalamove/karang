@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Solid/long-arrow-alt-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M9.90979176,6.52536515 L0.721932445,6.52536515 C0.323220165,6.52536515 0,6.22826378 0,5.86177068 C0,5.49527757 0.323220165,5.19817621 0.721932445,5.19817621 L9.99023228,5.19817621 L4.90225097,1.18134886 C4.61757346,0.967968146 4.55855833,0.554862204 4.7769549,0.263666772 C4.99535148,-0.0275286591 5.40845742,-0.0865437937 5.69965285,0.13185278 L12.2517097,5.30784438 L12.2858493,5.33890583 C12.4009112,5.45924998 12.4770272,5.61148194 12.5042653,5.77573794 L12.5086794,5.8361145 C12.5049543,6.03880858 12.4098713,6.2289745 12.2499511,6.353571 L5.71629175,11.5151715 C5.59332478,11.6256915 5.42822154,11.6778551 5.24993097,11.6555269 C5.08567497,11.6282887 4.93344302,11.5521727 4.81309887,11.4371108 L4.77215191,11.3979611 L4.74651487,11.3474429 C4.60654627,11.0716323 4.65425035,10.7377037 4.88280068,10.4940423 L9.90979176,6.52536515 Z" id="path-1"></path>
+    </defs>
+    <g id="Components" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.900000036">
+        <g id="Form-/-Date-picker" transform="translate(-936.000000, -1174.000000)">
+            <g id="Group-6" transform="translate(724.000000, 55.000000)">
+                <g id="Group-9" transform="translate(188.000000, 1086.000000)">
+                    <g id="Group-10" transform="translate(24.000000, 33.000000)">
+                        <g id="Solid/long-arrow-alt-left_export">
+                            <g id="Icon-/-Arrow-/-To" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) ">
+                                <g id="Fill-/-58595B" transform="translate(5.751152, 6.193548)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="Mask" fill="#585858" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                    <g mask="url(#mask-2)" fill="#535353" id="orange">
+                                        <g transform="translate(-4.866359, -6.193548)">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
