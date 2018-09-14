@@ -21,7 +21,6 @@ export { default as Radio, RadioGroup } from './components/Radio';
 export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
 export { default as TextArea } from './components/TextArea';
-export { default as DateRangePicker } from './components/DateRangePicker';
 
 // DEPRECATED: Will use Icon component to replace following exports in upcoming release
 export { default as CrossIcon } from './icons/Cross';
