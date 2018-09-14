@@ -268,7 +268,9 @@ class TableExample extends React.Component {
     };
     this.fetchData = this.fetchData.bind(this);
   }
-  componentDidMount() { this.fetchData() }
+  componentDidMount() {
+    this.fetchData();
+  }
 
   fetchData() {
     this.setState({ fetching: true });
@@ -320,20 +322,47 @@ class TableExample extends React.Component {
             },
             {
               key: 'start_date',
-              label: 'Start date (sort by api, see console)',
+              label: 'Period (sort by api, see console)',
+              render: (_, record) => {
+                return (
+                  <ul>
+                    <li>
+                      {dateFns.format(record['start_date'], '[Begins:] MMM Do')}
+                    </li>
+                    <li>
+                      {dateFns.format(record['end_date'], '[Ends:] MMM Do')}
+                    </li>
+                  </ul>
+                );
+              },
               onSort: (key, order) => {
                 console.log(key, order);
-                this.setState({ sortby: key, sortorder: order }, this.fetchData);
+                this.setState(
+                  { sortby: key, sortorder: order },
+                  this.fetchData
+                );
               },
             },
-            { key: 'remarks', label: 'What', render(data) {
-              return <ul>{data.split(';').map(str => <li>{str}</li>)}</ul>
-            } },
+            {
+              key: 'duration',
+              label: '⏳',
+              render: (_, { start_date, end_date }) =>
+                dateFns.distanceInWords(end_date, start_date),
+            },
+            {
+              key: 'remarks',
+              label: 'What',
+              render(data) {
+                return <ul>{data.split(';').map(str => <li>{str}</li>)}</ul>;
+              },
+            },
           ]}
           data={this.state.data}
         />
         <Pagination
-          onChange={nextPage => this.setState({ current: nextPage }, this.fetchData)}
+          onChange={nextPage =>
+            this.setState({ current: nextPage }, this.fetchData)
+          }
           current={this.state.current}
           loading={this.state.fetching}
           pageSize={this.state.pagesize}

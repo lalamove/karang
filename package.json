@@ -42,6 +42,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "cross-env": "^5.1.4",
+    "date-fns": "^1.29.0",
     "downshift": "^2.0.14",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
