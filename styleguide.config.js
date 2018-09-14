@@ -10,7 +10,7 @@ module.exports = {
     '**/_story.{js,jsx,ts,tsx}',
   ],
   exampleMode: 'collapse',
-  usageMode: 'expand',
+  usageMode: 'collapse',
   skipComponentsWithoutExample: true,
   getExampleFilename(componentPath) {
     let ComponentName = componentPath
