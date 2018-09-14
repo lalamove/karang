@@ -18,31 +18,29 @@ class Table extends Component {
     /** columns controls */
     columns: arrayOf(
       shape({
-        /** [required] value of this key `props.data[key]` will be rendered into `<td/>` */
-        key: string,
-        /** [required] for display as column title */
-        label: string,
-        /** [optional] align column. 'left|right|center|justify'<br>
-         * @see  https://www.w3schools.com/tags/att_td_align.asp
+        /** value of this key `props.data[key]` will be rendered into `<td/>` */
+        key: string.isRequired,
+        /** for display as column title */
+        label: string.isRequired,
+        /** align column. `left|right|center|justify`<br>
+         *  @see  https://www.w3schools.com/tags/att_td_align.asp
          */
         align: oneOf(['left', 'center', 'right', 'justify']),
-        /**
-         * [optional] column render function, if not provide
-         * will simply render the value of that key<br>
+        /** column render function<br>
+         * if not provide will simply render the value of that key<br>
          *
          * @param {any} columnData value of `props.data[i][key]`<br>
          * @param {object} allColumns `props.data[i]`<br>
          * @param {array} allRows `props.data`<br>
          */
         render: func,
-        /**
-         * [optional] Table become sortable when provided.<br>
-         * Get called when user click on the column title,
+        /** `<Table/>` become sortable when provided,
+         * get called when user click on the column title<br>
          * you can choose to take care of the sorting yourself
-         * and update `props.data`.<br>
-         * Or return a sorting function that will get passed into
+         * and update `props.data`<br>
+         * optionally returns a sorting function that will get passed into
          * `Array.proptotype.sort()`.<br>
-         * e.g. `(a, b) => b - a`<br>
+         *     e.g. `(a, b) => b - a`<br>
          *
          * @param {string} column key<br>
          * @param {string} sorting order, one of: `default`, `desc`, `asc`<br>
