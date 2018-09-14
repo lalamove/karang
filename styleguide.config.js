@@ -44,4 +44,13 @@ module.exports = {
   template: {
     favicon: 'https://web.dev.lalamove.com/favicon.png',
   },
+  theme: {
+    color: {
+      link: '#4484ce',
+      linkHover: '#f19f4d',
+    },
+    fontFamily: {
+      base: ['BlinkMacSystemFont', 'sans-serif'],
+    },
+  },
 };
