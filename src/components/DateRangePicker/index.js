@@ -35,12 +35,22 @@ class DateRangePicker extends Component {
     this.onFocusChange = this.onFocusChange.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { startDate, endDate } = nextProps;
+    if (startDate !== this.props.startDate || endDate !== this.props.endDate) {
+      this.setState({
+        startDate,
+        endDate,
+      });
+    }
+  }
+
   onDatesChange({ startDate, endDate }) {
     this.setState({
       startDate,
       endDate,
     });
-    this.props.onSelectionChange(startDate, endDate);
+    this.props.onDatesChange({ startDate, endDate });
   }
 
   onFocusChange(focusedInput) {
@@ -60,7 +70,7 @@ class DateRangePicker extends Component {
       autoFocusEndDate,
       startDate,
       endDate,
-      onSelectionChange,
+      onDatesChange,
       onInputFocusChange,
       ...remainProps
     } = this.props;
@@ -105,6 +115,7 @@ DateRangePicker.propTypes = {
   autoFocusEndDate: bool,
   /** Function that returns the display format for the dates. `e.g: moment.localeData().longDateFormat('L')`, */
   displayFormat: func,
+  onDatesChange: func,
 };
 
 DateRangePicker.defaultProps = {
@@ -118,6 +129,7 @@ DateRangePicker.defaultProps = {
   startDateId: START_DATE,
   endDateId: END_DATE,
   displayFormat: () => 'DD-MM-YYYY',
+  onDatesChange: ({ startDate, endDate }) => true,
 };
 
 export default DateRangePicker;
