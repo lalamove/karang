@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import DatePicker from './index';
+import DateRangePicker from './index';
 import moment from 'moment';
 import styled from 'styled-components';
 
@@ -12,9 +12,9 @@ const Container = styled.div`
   width: 400px;
 `;
 
-const DatePickerStory = () => (
+const DateRangePickerStory = () => (
   <Container>
-    <DatePicker
+    <DateRangePicker
       isOutsideRange={() => false}
       onSelectionChange={(start, end) => console.log(start, end)}
       onPrevMonthClick={() => console.log('clicked prev month button')}
@@ -23,4 +23,6 @@ const DatePickerStory = () => (
   </Container>
 );
 
-storiesOf('Date Picker', module).add('DatePicker', () => <DatePickerStory />);
+storiesOf('DateRangePicker', module).add('DateRangePicker', () => (
+  <DateRangePickerStory />
+));
