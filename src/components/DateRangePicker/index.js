@@ -17,6 +17,30 @@ const END_DATE = 'endDate';
 const { string, bool, func, oneOf, instanceOf } = PropTypes;
 
 class DateRangePicker extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.onDatesChange !== noop) {
+      if (nextProps.startDate !== prevState.startDate) {
+        if (nextProps.startDate) {
+          return { startDate: nextProps.startDate };
+        }
+      } else if (nextProps.endDate !== prevState.endDate) {
+        if (nextProps.endDate) {
+          return { endDate: nextProps.endDate };
+        }
+      }
+    }
+
+    if (nextProps.onFocusChange !== noop) {
+      if (nextProps.focusedInput !== prevState.focusedInput) {
+        if (nextProps.focusedInput) {
+          return { focusedInput: nextProps.focusedInput };
+        }
+      }
+    }
+
+    return null;
+  }
+
   constructor(props) {
     super();
 
