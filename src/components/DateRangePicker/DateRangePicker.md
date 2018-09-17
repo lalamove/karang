@@ -5,10 +5,13 @@
 ```jsx
   <div style={{ marginLeft: '25%'}}> 
     <DateRangePicker
-        isOutsideRange={() => false}
-        onSelectionChange={(start, end) => console.log(start, end)}
-        onPrevMonthClick={() => console.log('clicked prev month button')}
-        onNextMonthClick={() => console.log('clicked next month button')}
+       isOutsideRange={() => false}
+       onDatesChange={({ startDate, endDate }) =>
+         console.log(startDate, endDate)
+       }
+       onFocusChange={focusedInput => console.log(focusedInput)}
+       onPrevMonthClick={() => console.log('clicked prev month button')}
+       onNextMonthClick={() => console.log('clicked next month button')}
     />
   </div>
 ```
