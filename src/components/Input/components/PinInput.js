@@ -7,11 +7,6 @@ import ErrorMessage from '../../ErrorMessage';
 import { red, orange, offWhite } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
-const Wrapper = styled.div`
-  display: inline-block;
-  white-space: nowrap;
-`;
-
 const Input = styled.input`
   border: 1px solid ${offWhite};
   caret-color: ${orange};
@@ -55,6 +50,19 @@ const Input = styled.input`
         border: 1px solid ${red};
       }
     `};
+`;
+
+const Wrapper = styled.div`
+  display: inline-block;
+  white-space: nowrap;
+
+  ${/* sc-selector */ Input}:first-of-type {
+    margin-left: 0;
+  }
+
+  ${/* sc-selector */ Input}:last-of-type {
+    margin-right: 0;
+  }
 `;
 
 class PinInput extends Component {
