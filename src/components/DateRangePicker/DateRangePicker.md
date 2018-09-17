@@ -6,8 +6,8 @@
   <div style={{ marginLeft: '25%'}}> 
     <DateRangePicker
        isOutsideRange={() => false}
-       onDatesChange={({ startDate, endDate }) =>
-         console.log(startDate, endDate)
+       onDatesChange={newDates =>
+         console.log(newDates.startDate, newDates.endDate)
        }
        onFocusChange={focusedInput => console.log(focusedInput)}
        onPrevMonthClick={() => console.log('clicked prev month button')}

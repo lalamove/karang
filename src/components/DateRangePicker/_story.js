@@ -44,8 +44,8 @@ const DateRangePickerStory = () => {
       startDate={moment(startDateString, 'DD-MM-YYYY')}
       endDate={moment(endDateString, 'DD-MM-YYYY')}
       isOutsideRange={() => false}
-      onDatesChange={({ startDate, endDate }) =>
-        console.log(startDate, endDate)
+      onDatesChange={newDates =>
+        console.log(newDates.startDate, newDates.endDate)
       }
       onFocusChange={focusedInput => {
         console.log(focusedInput);
