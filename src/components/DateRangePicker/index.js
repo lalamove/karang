@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'react-dates/initialize';
 import './styles';
 import { DateRangePicker as RDDateRangePicker } from 'react-dates';
-import { string, bool, func, oneOf, instanceOf } from 'prop-types';
+import { string, bool, func, oneOf, instanceOf, number } from 'prop-types';
 import moment from 'moment';
 
 const START_DATE = 'startDate';
@@ -111,6 +111,8 @@ DateRangePicker.propTypes = {
   autoFocusEndDate: bool,
   /** Function that returns the display format for the dates. `e.g: moment.localeData().longDateFormat('L')`, */
   displayFormat: func,
+  /** Allows users to specify minimum numnber of days (nights) that must be selected */
+  minimumNights: number, // react-dates prop
 };
 
 DateRangePicker.defaultProps = {
@@ -124,6 +126,7 @@ DateRangePicker.defaultProps = {
   startDateId: START_DATE,
   endDateId: END_DATE,
   displayFormat: () => 'DD-MM-YYYY',
+  minimumNights: 0,
 };
 
 export default DateRangePicker;
