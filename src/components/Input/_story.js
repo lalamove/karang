@@ -83,7 +83,6 @@ class InputWrapper extends Component {
           label="Uncontrolled Component"
           name="testing"
           defaultValue="Testing"
-          onChange={this.handleChange}
         />
       </Fragment>
     );

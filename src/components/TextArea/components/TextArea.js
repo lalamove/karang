@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { string } from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import { orange, black } from 'styles/colors';
+import { orange, black, silver } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const SCTextArea = styled.textarea`
@@ -16,6 +16,10 @@ const SCTextArea = styled.textarea`
   font-size: ${fontSize.regular};
   resize: none;
   outline: none;
+
+  &::placeholder {
+    color: ${silver};
+  }
 
   ${({ label }) =>
     label &&
@@ -34,11 +38,12 @@ const TextArea = forwardRef(
 
 TextArea.propTypes = {
   label: string,
-  name: string.isRequired, // eslint-disable-line react/no-typos
+  name: string,
 };
 
 TextArea.defaultProps = {
   label: null,
+  name: null,
 };
 
 export default TextArea;

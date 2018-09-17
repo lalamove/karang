@@ -1,13 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-// TODO
-// import { text, boolean, number } from '@storybook/addon-knobs/react';
+import { text, boolean, number } from '@storybook/addon-knobs/react';
 import TextArea from './index';
 
-storiesOf('TextArea', module).add('TextArea', () => (
+const Wrapper = () => (
   <TextArea
-    placeholder="testing"
-    maxLength={140}
+    placeholder={text('placeholder', 'Placeholder')}
+    maxLength={number('maxLength', 140)}
     style={{ width: '300px', height: '96px' }}
+    allowExceed={boolean('allowExceed', false)}
   />
-));
+);
+
+storiesOf('TextArea', module).add('Basic', () => <Wrapper />);

@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { string } from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import { orange, black } from 'styles/colors';
+import { orange, black, silver } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const InputField = styled.input`
@@ -16,6 +16,10 @@ const InputField = styled.input`
   line-height: 20px;
   resize: none;
   outline: none;
+
+  &::placeholder {
+    color: ${silver};
+  }
 
   ${({ label }) =>
     label &&
