@@ -39,54 +39,57 @@ const SCButton = styled(Button)`
   margin: 0 4px;
 `;
 
-class EditableInput extends Component {
-  static propTypes = {
-    forwardedRef: oneOfType([func, object]),
-    style: shape({}),
-    className: string,
-    disabled: bool,
-    error: string,
-    label: string,
-    value: string,
-    defaultValue: string,
-    onBlur: func,
-    onChange: func,
-    onFocus: func,
-    onSave: func,
-    onCancel: func,
-    saveLabel: string,
-    editLabel: string,
-    cancelLabel: string,
-    // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
-    saveBtnText: string,
-    editBtnText: string,
-    cancelBtnText: string,
-    isEditable: bool,
-  };
+const propTypes = {
+  forwardedRef: oneOfType([func, object]),
+  style: shape({}),
+  className: string,
+  disabled: bool,
+  error: string,
+  label: string,
+  value: string,
+  defaultValue: string,
+  onBlur: func,
+  onChange: func,
+  onFocus: func,
+  onSave: func,
+  onCancel: func,
+  saveLabel: string,
+  editLabel: string,
+  cancelLabel: string,
+  // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
+  saveBtnText: string,
+  editBtnText: string,
+  cancelBtnText: string,
+  isEditable: bool,
+};
 
-  static defaultProps = {
-    forwardedRef: null,
-    style: null,
-    className: null,
-    disabled: false,
-    error: null,
-    label: null,
-    value: null,
-    defaultValue: null,
-    onBlur: noop,
-    onChange: noop,
-    onFocus: noop,
-    onSave: noop,
-    onCancel: noop,
-    saveLabel: 'Save',
-    editLabel: 'Edit',
-    cancelLabel: 'Cancel',
-    // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
-    saveBtnText: null,
-    editBtnText: null,
-    cancelBtnText: null,
-    isEditable: null,
-  };
+const defaultProps = {
+  forwardedRef: null,
+  style: null,
+  className: null,
+  disabled: false,
+  error: null,
+  label: null,
+  value: null,
+  defaultValue: null,
+  onBlur: noop,
+  onChange: noop,
+  onFocus: noop,
+  onSave: noop,
+  onCancel: noop,
+  saveLabel: 'Save',
+  editLabel: 'Edit',
+  cancelLabel: 'Cancel',
+  // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
+  saveBtnText: null,
+  editBtnText: null,
+  cancelBtnText: null,
+  isEditable: null,
+};
+
+class Comp extends Component {
+  static propTypes = propTypes;
+  static defaultProps = defaultProps;
 
   state = {
     editing: this.props.isEditable || false, // TODO: `isEditable` is deprecated
@@ -263,6 +266,13 @@ class EditableInput extends Component {
   }
 }
 
-export default forwardRef((props, ref) => (
-  <EditableInput forwardedRef={ref} {...props} />
+const CompWithRef = forwardRef((props, ref) => (
+  <Comp forwardedRef={ref} {...props} />
 ));
+
+// Ugly fix for React Styleguidist as it cannot recognize forwardRef
+const EditableInput = props => <CompWithRef {...props} />;
+EditableInput.propTypes = propTypes;
+EditableInput.defaultProps = defaultProps;
+
+export default EditableInput;

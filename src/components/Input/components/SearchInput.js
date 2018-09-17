@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { string } from 'prop-types';
 import styled from 'styled-components';
 
 import { black, offWhite } from 'styles/colors';
@@ -23,11 +24,30 @@ const SCTextInput = styled(TextInput)`
   margin-left: 10px;
 `;
 
-const SearchInput = forwardRef((props, ref) => (
+const CompWithRef = forwardRef((props, ref) => (
   <Container>
     <Icon type="magnifyingGlass" color={black} size={20} />
     <SCTextInput innerRef={ref} {...props} />
   </Container>
 ));
+
+// Ugly fix for React Styleguidist as it cannot recognize forwardRef
+const SearchInput = props => <CompWithRef {...props} />;
+
+SearchInput.propTypes = {
+  /** Type of input field to render, check
+   *  [this](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) for more types */
+  type: string,
+  /** Specify a text that appears in the input field when it is empty. */
+  placeholder: string,
+  /** Name of input field, which is submitted with the value as part of form data. */
+  name: string,
+};
+
+SearchInput.defaultProps = {
+  type: 'text',
+  placeholder: null,
+  name: null,
+};
 
 export default SearchInput;

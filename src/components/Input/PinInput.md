@@ -5,5 +5,5 @@ import { PinInput } from 'lalamove-ui';
 ```
 
 ```js
-
+<PinInput />
 ```

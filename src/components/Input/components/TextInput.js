@@ -45,7 +45,7 @@ const TextInput = forwardRef(
 TextInput.propTypes = {
   type: string,
   label: string,
-  name: string, // eslint-disable-line react/no-typos
+  name: string,
 };
 
 TextInput.defaultProps = {

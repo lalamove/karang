@@ -3,6 +3,7 @@ import { bool, func, string, object, oneOfType } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
+import compose from 'utils/compose';
 import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
 import withSelectAll from 'hoc/withSelectAll';
@@ -20,36 +21,39 @@ const Wrapper = styled.div`
   display: inline-block;
 `;
 
-class Input extends Component {
-  static propTypes = {
-    forwardedRef: oneOfType([func, object]),
-    type: string,
-    name: string,
-    label: string,
-    error: string,
-    autoComplete: string,
-    selectAll: bool,
-    cursorEnd: bool,
-    masked: bool,
-    onFocus: func,
-    onBlur: func,
-  };
+const propTypes = {
+  forwardedRef: oneOfType([func, object]),
+  type: string,
+  name: string,
+  label: string,
+  error: string,
+  autoComplete: string,
+  selectAll: bool,
+  cursorEnd: bool,
+  masked: bool,
+  onFocus: func,
+  onBlur: func,
+};
 
-  static defaultProps = {
-    forwardedRef: null,
-    type: 'text',
-    name: null,
-    label: null,
-    error: null,
-    // autocomplete=off is ignored on non-login INPUT elements
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
-    autoComplete: 'new-password',
-    selectAll: false,
-    cursorEnd: false,
-    masked: true,
-    onFocus: noop,
-    onBlur: noop,
-  };
+const defaultProps = {
+  forwardedRef: null,
+  type: 'text',
+  name: null,
+  label: null,
+  error: null,
+  // autocomplete=off is ignored on non-login INPUT elements
+  // https://bugs.chromium.org/p/chromium/issues/detail?id=468153#c164
+  autoComplete: 'new-password',
+  selectAll: false,
+  cursorEnd: false,
+  masked: true,
+  onFocus: noop,
+  onBlur: noop,
+};
+
+class Comp extends Component {
+  static propTypes = propTypes;
+  static defaultProps = defaultProps;
 
   static getDerivedStateFromProps({ value, defaultValue }) {
     return { dirty: !!(value || defaultValue) };
@@ -132,8 +136,18 @@ class Input extends Component {
   }
 }
 
-const InputWithRef = forwardRef((props, ref) => (
-  <Input forwardedRef={ref} {...props} />
+const CompWithRef = forwardRef((props, ref) => (
+  <Comp forwardedRef={ref} {...props} />
 ));
 
-export default withSelectAll(withCursorEnd(InputWithRef));
+const InputComp = compose(
+  withSelectAll,
+  withCursorEnd
+)(CompWithRef);
+
+// Ugly fix for React Styleguidist as it cannot recognize forwardRef
+const Input = props => <InputComp {...props} />;
+Input.propTypes = propTypes;
+Input.defaultProps = defaultProps;
+
+export default Input;
