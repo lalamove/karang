@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  require: [path.resolve(__dirname, 'styleguide/setup.js')],
+  require: [path.resolve(__dirname, '.styleguide/setup.js')],
   ignore: [
     '**/__tests__/**',
     '**/*.test.{js,jsx,ts,tsx}',
@@ -9,8 +9,8 @@ module.exports = {
     '**/*.d.ts',
     '**/_story.{js,jsx,ts,tsx}',
   ],
-  exampleMode: 'expand',
-  usageMode: 'expand',
+  exampleMode: 'collapse',
+  usageMode: 'collapse',
   skipComponentsWithoutExample: true,
   getExampleFilename(componentPath) {
     let ComponentName = componentPath
@@ -38,6 +38,19 @@ module.exports = {
     {
       name: 'UI Components',
       components: 'src/components/**/{index,[A-Z]*}.js',
+      sectionDepth: 2,
     },
   ],
+  template: {
+    favicon: 'https://web.dev.lalamove.com/favicon.png',
+  },
+  theme: {
+    color: {
+      link: '#4484ce',
+      linkHover: '#f19f4d',
+    },
+    fontFamily: {
+      base: ['BlinkMacSystemFont', 'sans-serif'],
+    },
+  },
 };
