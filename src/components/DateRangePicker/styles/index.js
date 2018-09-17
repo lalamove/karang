@@ -1,10 +1,11 @@
 import { injectGlobal } from 'styled-components';
 // do similar stuff for other icons
-import calendarIcon from '../../../assets/calendarIcon.svg';
-import leftArrow from '../../../assets/leftArrow.svg';
-import rightArrow from '../../../assets/rightArrow.svg';
+import calendarIcon from '../../Icon/icons/others/calendarIcon.svg';
+import leftArrow from '../../Icon/icons/others/leftArrow.svg';
+import rightArrow from '../../Icon/icons/others/rightArrow.svg';
 
 injectGlobal`
+.llm-date-range-picker {
   .PresetDateRangePicker_panel {
     padding: 0 22px 11px;
   }
@@ -912,4 +913,5 @@ injectGlobal`
     width: 15px;
     fill: #cacccd;
   }
+}
 `;

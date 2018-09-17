@@ -1,15 +1,9 @@
+import React, { Component } from 'react';
 import 'react-dates/initialize';
 import './styles';
-import React, { Component } from 'react';
 import { DateRangePicker as RDDateRangePicker } from 'react-dates';
-import { string, bool, func, oneOf, instanceOf } from 'prop-types';
+import { string, bool, func, oneOf, instanceOf, number } from 'prop-types';
 import moment from 'moment';
-import noop from '../../utils/noop';
-
-const anchor = {
-  left: 'left',
-  right: 'right',
-};
 
 const START_DATE = 'startDate';
 const END_DATE = 'endDate';
@@ -30,27 +24,38 @@ class DateRangePicker extends Component {
       startDate: props.startDate,
       endDate: props.endDate,
     };
-
-    this.onDatesChange = this.onDatesChange.bind(this);
-    this.onFocusChange = this.onFocusChange.bind(this);
   }
 
-  onDatesChange({ startDate, endDate }) {
+  componentWillReceiveProps(nextProps) {
+    const { startDate, endDate } = nextProps;
+    if (startDate && startDate !== this.props.startDate) {
+      this.setState({
+        startDate,
+      });
+    }
+    if (endDate && endDate !== this.props.endDate) {
+      this.setState({
+        endDate,
+      });
+    }
+  }
+
+  onDatesChange = ({ startDate, endDate }) => {
     this.setState({
       startDate,
       endDate,
     });
-    this.props.onSelectionChange(startDate, endDate);
-  }
+    this.props.onDatesChange({ startDate, endDate });
+  };
 
-  onFocusChange(focusedInput) {
+  onFocusChange = focusedInput => {
     this.setState({ focusedInput });
-    this.props.onInputFocusChange(focusedInput);
-  }
+    this.props.onFocusChange(focusedInput);
+  };
 
   render() {
     /*
-      autoFocus, autoFocusEndDate, onSelectionChange,
+      autoFocus, autoFocusEndDate, onDatesChange, onFocusChange,
       are helper props but are not props on the DateRangePicker itself and
       thus, have to be omitted.
     */
@@ -60,21 +65,23 @@ class DateRangePicker extends Component {
       autoFocusEndDate,
       startDate,
       endDate,
-      onSelectionChange,
-      onInputFocusChange,
+      onDatesChange,
+      onFocusChange,
       ...remainProps
     } = this.props;
 
     return (
-      <RDDateRangePicker
-        {...remainProps}
-        onDatesChange={this.onDatesChange}
-        onFocusChange={this.onFocusChange}
-        focusedInput={this.state.focusedInput}
-        startDate={this.state.startDate}
-        endDate={this.state.endDate}
-        showDefaultInputIcon
-      />
+      <div className="llm-date-range-picker">
+        <RDDateRangePicker
+          {...remainProps}
+          onDatesChange={this.onDatesChange}
+          onFocusChange={this.onFocusChange}
+          focusedInput={this.state.focusedInput}
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
+          showDefaultInputIcon
+        />
+      </div>
     );
   }
 }
@@ -85,14 +92,16 @@ DateRangePicker.propTypes = {
   /** Allows developers to specify an initial end date for the DateRangePicker as a moment object */
   endDate: instanceOf(moment),
   /**
-   * @param {Object} startDate moment object
-   * @param {Object} endDate moment object
+   * @param {Object} dates object
+   * @param {Object} dates.startDate moment object for the startDate
+   * @param {Object} dates.endDate moment object for the endDate
+
    */
-  onSelectionChange: func,
+  onDatesChange: func,
   /**
    * @param {string} focusedInput The focused input string
    */
-  onInputFocusChange: func,
+  onFocusChange: func,
   /** string value of the input */
   focusedInput: oneOf([START_DATE, END_DATE]),
   /** @ignore */
@@ -105,19 +114,22 @@ DateRangePicker.propTypes = {
   autoFocusEndDate: bool,
   /** Function that returns the display format for the dates. `e.g: moment.localeData().longDateFormat('L')`, */
   displayFormat: func,
+  /** Allows users to specify minimum numnber of days (nights) that must be selected */
+  minimumNights: number, // react-dates prop
 };
 
 DateRangePicker.defaultProps = {
   startDate: null,
   endDate: null,
-  onSelectionChange: (startDate, endDate) => true,
-  onInputFocusChange: focusedInput => true,
+  onDatesChange: ({ startDate, endDate }) => true,
+  onFocusChange: focusedInput => true,
   focusedInput: null,
   autoFocus: false,
   autoFocusEndDate: false,
   startDateId: START_DATE,
   endDateId: END_DATE,
   displayFormat: () => 'DD-MM-YYYY',
+  minimumNights: 0,
 };
 
 export default DateRangePicker;
