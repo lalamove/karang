@@ -92,8 +92,7 @@ DateRangePicker.propTypes = {
   /** Allows developers to specify an initial end date for the DateRangePicker as a moment object */
   endDate: instanceOf(moment),
   /**
-   * @param {Object} startDate moment object
-   * @param {Object} endDate moment object
+   * @param {Object}{startDate, endDate} object
    */
   onDatesChange: func,
   /**
