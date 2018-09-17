@@ -10,6 +10,7 @@ export {
 export { default as Card } from './components/Card';
 export { default as Checkbox } from './components/Checkbox';
 export { default as CountdownBar } from './components/CountdownBar';
+export { default as DateRangePicker } from './components/DateRangePicker';
 export { default as Dropdown } from './components/Dropdown';
 export { default as Form } from './components/Form';
 export { default as Heading, HeadingGroup } from './components/Heading';
@@ -20,9 +21,8 @@ export { default as Pagination } from './components/Pagination';
 export { default as Radio, RadioGroup } from './components/Radio';
 export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
-export { default as TextArea } from './components/TextArea';
-export { default as DateRangePicker } from './components/DateRangePicker';
 export { default as Table } from './components/Table';
+export { default as TextArea } from './components/TextArea';
 
 // DEPRECATED: Will use Icon component to replace following exports in upcoming release
 export { default as CrossIcon } from './icons/Cross';
