@@ -5,7 +5,6 @@ cache:
   - node_modules/
 stages:
 - test
-- storybook
 - doc
 
 test:
@@ -20,7 +19,9 @@ test:
 
 storybook:
   image: node:8.11-alpine
-  stage: storybook
+  stage: doc
+  tags:
+    - k8s
   only:
   - master@lalamove/lalamove-ui
   environment:
@@ -35,9 +36,11 @@ storybook:
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL/storybook --recursive
     - echo "Upload completed"
 
-doc:
+styleguide:
   image: node:8.11-alpine
   stage: doc
+  tags:
+    - k8s
   only:
   - master@lalamove/lalamove-ui
   environment:
