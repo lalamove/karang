@@ -96,6 +96,7 @@ import walletOutline from './others/walletOutline';
 import warning from './others/warning';
 import warningCircle from './others/warningCircle';
 import zip from './others/zip';
+import onOff from './others/onOff';
 
 const icons = Object.freeze({
   // Basic
@@ -195,6 +196,7 @@ const icons = Object.freeze({
   warning,
   warningCircle,
   zip,
+  onOff,
 });
 
 export default icons;
