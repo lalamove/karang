@@ -35,15 +35,12 @@ const ErrorMessage = ({ error }) =>
   );
 
 ErrorMessage.propTypes = {
-  /** Children elements, HTML elements or `React.ReactElement` are allowed */
-  children: node,
   /** Error message */
   error: string,
 };
 
 ErrorMessage.defaultProps = {
   error: null,
-  children: null,
 };
 
 export default ErrorMessage;

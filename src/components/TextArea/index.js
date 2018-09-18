@@ -13,7 +13,7 @@ import styled, { css } from 'styled-components';
 import noop from 'utils/noop';
 import { silver } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
-import TextAreaComp from './components/TextArea';
+import TextAreaComp from './components/TextAreaComp';
 import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
 
@@ -48,54 +48,92 @@ const characterLimitMsgFunc = charactersLeft =>
 const exceedLimitMsgFunc = excessCharacters =>
   `Excess characters: ${excessCharacters}`;
 
-class TextArea extends Component {
-  static propTypes = {
-    forwardedRef: oneOfType([func, object]),
-    maxLength: number,
-    allowExceed: bool,
-    onChange: func,
-    onFocus: func,
-    onBlur: func,
-    name: string,
-    label: string,
-    error: string,
-    limitMsg: string,
-    exceedLimitMsg: string,
-    style: shape({}),
-    className: string,
-    value: string,
-    defaultValue: string,
-    readOnly: bool,
-    // TODO: `disableForceLimit`, `characterLimitMsgGenerator`,
-    // `exceedLimitMsgGenerator` are deprecated
-    disableForceLimit: bool,
-    characterLimitMsgGenerator: func,
-    exceedLimitMsgGenerator: func,
-  };
+const propTypes = {
+  /** @ignore */
+  forwardedRef: oneOfType([func, object]),
+  /** Characters limit of textarea */
+  maxLength: number,
+  /** Allow user to continue to type when the characters count over `maxLength` */
+  allowExceed: bool,
+  /**
+   * Callback function, to be executed when user type in textarea
+   *
+   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   */
+  onChange: func,
+  /**
+   * Callback function, to be executed when user focus on textarea
+   *
+   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   */
+  onFocus: func,
+  /**
+   * Callback function, to be executed when user blur on textarea
+   *
+   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   */
+  onBlur: func,
+  /** Name of the component */
+  name: string,
+  /** Label of the component */
+  label: string,
+  /** Error message of the component */
+  error: string,
+  /** Message to be shown at the bottom of component. Use `{{charactersLeft}}` for the
+   *  characters remaining, use `{{count}}` for characters count. */
+  limitMsg: string,
+  /** Message to be shown at the bottom of component, when the characters count over
+   *  `maxLength`. Use `{{charactersExceed}}` for the characters exceed count, use `{{count}}` for
+   *  characters count. */
+  exceedLimitMsg: string,
+  /** @ignore */
+  style: shape({}),
+  /** @ignore */
+  className: string,
+  /** Textarea content value */
+  value: string,
+  /** Initial textarea content value, use it if you want to leave the component
+   *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
+  defaultValue: string,
+  /** @ignore */
+  readOnly: bool,
+  // TODO: `disableForceLimit`, `characterLimitMsgGenerator`,
+  // `exceedLimitMsgGenerator` are deprecated
+  /** @deprecated Please use `allowExceed` */
+  disableForceLimit: bool,
+  /** @deprecated Please use `limitMsg` */
+  characterLimitMsgGenerator: func,
+  /** @deprecated Please use `exceedLimitMsg` */
+  exceedLimitMsgGenerator: func,
+};
 
-  static defaultProps = {
-    forwardedRef: null,
-    maxLength: null,
-    allowExceed: false,
-    onChange: noop,
-    onFocus: noop,
-    onBlur: noop,
-    name: null,
-    label: null,
-    error: null,
-    limitMsg: 'Characters left: {{charactersLeft}}',
-    exceedLimitMsg: 'Exceed characters: {{charactersLeft}}',
-    style: null,
-    className: null,
-    value: null,
-    defaultValue: null,
-    readOnly: false,
-    // TODO: `disableForceLimit`, `characterLimitMsgGenerator`,
-    // `exceedLimitMsgGenerator` are deprecated
-    disableForceLimit: false,
-    characterLimitMsgGenerator: characterLimitMsgFunc,
-    exceedLimitMsgGenerator: exceedLimitMsgFunc,
-  };
+const defaultProps = {
+  forwardedRef: null,
+  maxLength: null,
+  allowExceed: false,
+  onChange: noop,
+  onFocus: noop,
+  onBlur: noop,
+  name: null,
+  label: null,
+  error: null,
+  limitMsg: 'Characters left: {{charactersLeft}}',
+  exceedLimitMsg: 'Exceed characters: {{charactersExceed}}',
+  style: null,
+  className: null,
+  value: null,
+  defaultValue: null,
+  readOnly: false,
+  // TODO: `disableForceLimit`, `characterLimitMsgGenerator`,
+  // `exceedLimitMsgGenerator` are deprecated
+  disableForceLimit: false,
+  characterLimitMsgGenerator: characterLimitMsgFunc,
+  exceedLimitMsgGenerator: exceedLimitMsgFunc,
+};
+
+class Comp extends Component {
+  static propTypes = propTypes;
+  static defaultProps = defaultProps;
 
   static getDerivedStateFromProps({ onChange, value }) {
     if (onChange !== noop) {
@@ -206,7 +244,11 @@ class TextArea extends Component {
           {maxLength && (
             <CountMessage>
               {message
-                .replace('{{charactersLeft}}', Math.abs(charactersLeft))
+                .replace('{{charactersLeft}}', charactersLeft)
+                .replace(
+                  '{{charactersExceed}}',
+                  charactersLeft < 0 ? charactersLeft * -1 : 0
+                )
                 .replace('{{count}}', count)}
             </CountMessage>
           )}
@@ -217,8 +259,13 @@ class TextArea extends Component {
   }
 }
 
-const Comp = forwardRef(({ innerRef, ...remainProps }, ref) => (
-  <TextArea forwardedRef={ref} {...remainProps} />
+const CompWithRef = forwardRef(({ innerRef, ...remainProps }, ref) => (
+  <Comp forwardedRef={ref} {...remainProps} />
 ));
 
-export default Comp;
+// Ugly fix for React Styleguidist as it cannot recognize forwardRef
+const TextArea = ({ forwardedRef, ...props }) => <CompWithRef {...props} />;
+TextArea.propTypes = propTypes;
+TextArea.defaultProps = defaultProps;
+
+export default TextArea;

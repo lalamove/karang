@@ -30,20 +30,20 @@ const SCTextArea = styled.textarea`
     `};
 `;
 
-const TextArea = forwardRef(
+const TextAreaComp = forwardRef(
   ({ innerRef, name, label, ...remainProps }, ref) => (
     <SCTextArea innerRef={ref} name={name} label={label} {...remainProps} />
   )
 );
 
-TextArea.propTypes = {
+TextAreaComp.propTypes = {
   label: string,
   name: string,
 };
 
-TextArea.defaultProps = {
+TextAreaComp.defaultProps = {
   label: null,
   name: null,
 };
 
-export default TextArea;
+export default TextAreaComp;
