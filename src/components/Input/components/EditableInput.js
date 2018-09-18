@@ -40,26 +40,73 @@ const SCButton = styled(Button)`
 `;
 
 const propTypes = {
+  /** @ignore */
   forwardedRef: oneOfType([func, object]),
+  /** @ignore */
   style: shape({}),
+  /** @ignore */
   className: string,
+  /** Disable the input fields if it is `true` */
   disabled: bool,
+  /** Error message of the component */
   error: string,
+  /** Label of the component */
   label: string,
+  /** Input content value */
   value: string,
+  /** Initial input content value, use it if you want to leave the component
+   *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
   defaultValue: string,
+  /**
+   * Callback function, to be executed when user blur on input field
+   *
+   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   */
   onBlur: func,
+  /**
+   * Callback function, to be executed when user type in input field
+   *
+   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   */
   onChange: func,
+  /**
+   * Callback function, to be executed when user clicked Edit button
+   *
+   * @param {string} value value that editing
+   */
+  onEdit: func,
+  /**
+   * Callback function, to be executed when user focus on input field
+   *
+   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   */
   onFocus: func,
+  /**
+   * Callback function, to be executed when user clicked Save button
+   *
+   * @param {string} value saved value
+   */
   onSave: func,
+  /**
+   * Callback function, to be executed when user clicked Cancel button
+   *
+   * @param {string} value last saved value
+   */
   onCancel: func,
+  /** Text of save button */
   saveLabel: string,
+  /** Text of edit button */
   editLabel: string,
+  /** Text of cancel button */
   cancelLabel: string,
   // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
+  /** @deprecated Please use `saveLabel` */
   saveBtnText: string,
+  /** @deprecated Please use `editLabel` */
   editBtnText: string,
+  /** @deprecated Please use `cancelLabel` */
   cancelBtnText: string,
+  /** @deprecated Please use `disabled` */
   isEditable: bool,
 };
 
@@ -74,6 +121,7 @@ const defaultProps = {
   defaultValue: null,
   onBlur: noop,
   onChange: noop,
+  onEdit: noop,
   onFocus: noop,
   onSave: noop,
   onCancel: noop,
@@ -148,6 +196,7 @@ class Comp extends Component {
         this.input.focus();
       }
     );
+    this.props.onEdit(value);
   };
 
   onCancelBtnClick = e => {
@@ -271,7 +320,9 @@ const CompWithRef = forwardRef((props, ref) => (
 ));
 
 // Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const EditableInput = props => <CompWithRef {...props} />;
+const EditableInput = ({ forwardedRef, ...props }) => (
+  <CompWithRef {...props} />
+);
 EditableInput.propTypes = propTypes;
 EditableInput.defaultProps = defaultProps;
 

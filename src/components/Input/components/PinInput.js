@@ -69,9 +69,9 @@ class PinInput extends Component {
   static propTypes = {
     /** Array of 4 pins values */
     pins: arrayOf(string),
-    /** Disable the input fields */
+    /** Disable the edit button if it is `true` */
     disabled: bool,
-    /** Error message of the element */
+    /** Error message of the component */
     error: string,
     /**
      * Callback function, to be executed when user typed number in the input fields

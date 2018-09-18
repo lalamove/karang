@@ -32,7 +32,8 @@ const CompWithRef = forwardRef((props, ref) => (
 ));
 
 // Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const SearchInput = props => <CompWithRef {...props} />;
+// eslint-disable-next-line react/prop-types
+const SearchInput = ({ innerRef, ...props }) => <CompWithRef {...props} />;
 
 SearchInput.propTypes = {
   /** Type of input field to render, check
