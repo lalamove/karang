@@ -13,6 +13,9 @@ import question from './basic/question';
 import settingsGear from './basic/settingsGear';
 import truckOutline from './basic/truckOutline';
 
+// Communication
+import CommunicationIcons from './communication';
+
 // Others
 import aMEXCard from './others/aMEXCard';
 import aMEXLogo from './others/aMEXLogo';
@@ -61,7 +64,6 @@ import notebookBookmark from './others/notebookBookmark';
 import paperClip from './others/paperClip';
 import parcelBoxOutline from './others/parcelBoxOutline';
 import percentage from './others/percentage';
-import phoneIcon1 from './others/phoneIcon1';
 import pin2 from './others/pin2';
 import pinCircle from './others/pinCircle';
 import pinOutline from './others/pinOutline';
@@ -112,6 +114,9 @@ const icons = Object.freeze({
   settingsGear,
   truckOutline,
 
+  // Communication
+  ...CommunicationIcons,
+
   // Others
   aMEXCard,
   aMEXLogo,
@@ -160,7 +165,7 @@ const icons = Object.freeze({
   paperClip,
   parcelBoxOutline,
   percentage,
-  phoneIcon1,
+  phoneIcon1: CommunicationIcons.phone, // TODO: DEPRECATED, for backward compatibility only
   pin2,
   pinCircle,
   pinOutline,
