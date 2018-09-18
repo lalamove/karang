@@ -1,7 +1,7 @@
 import React from 'react';
 
 const onOff = (
-  <svg version="1.1" viewBox="0 0 217 217">
+  <svg version="1.1" viewBox="25 25 165 165">
     <path d="M0,0h217v217h-217Z" fill="none" />
     <path
       fill="#000"
