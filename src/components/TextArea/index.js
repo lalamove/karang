@@ -148,12 +148,31 @@ class Comp extends Component {
   };
 
   componentDidMount() {
-    const { value, readOnly, onChange } = this.props;
+    const {
+      value,
+      readOnly,
+      onChange,
+      disableForceLimit,
+      characterLimitMsgGenerator,
+      exceedLimitMsgGenerator,
+    } = this.props;
     if ((value || value === '') && onChange === noop && !readOnly) {
       console.error(
         '[TextArea] You provided a `value` prop to a form field without an `onChange` handler.' +
           '\nThis will render a read-only field. If the field should be mutable use' +
           ' `defaultValue`. Otherwise, set either `onChange` or `readOnly`.'
+      );
+    }
+    if (
+      disableForceLimit ||
+      characterLimitMsgGenerator !== characterLimitMsgFunc ||
+      exceedLimitMsgGenerator !== exceedLimitMsgFunc
+    ) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[TextArea] prop `disableForceLimit`, `characterLimitMsgGenerator`,' +
+          ' `exceedLimitMsgGenerator` are deprecated. Please check documentation for better' +
+          ' alternative.'
       );
     }
   }

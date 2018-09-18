@@ -5,6 +5,7 @@ exports[`Snapshots ErrorMessage 1`] = `
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
+  text-align: left;
 }
 
 .c2 {
