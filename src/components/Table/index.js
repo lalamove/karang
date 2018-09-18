@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { bool, string, shape, arrayOf, func, object, oneOf } from 'prop-types';
 
+import noop from 'utils/noop';
+
 import { SCTable, Row, ColTitle } from './style';
 
 class Table extends Component {
@@ -55,30 +57,41 @@ class Table extends Component {
     uniqueKey: string,
   };
 
-  state = { sortBy: null, orderBy: 0 };
+  static sortOrders = ['default', 'desc', 'asc'];
 
-  sortOrders = ['default', 'desc', 'asc'];
-  sortMemo = {};
-  sortFunc = null;
+  state = {
+    sortBy: null,
+    orderBy: 0,
+    sortMemo: this.props.columns.reduce(
+      (memo, { key }) => ({
+        ...memo,
+        [key]: 0,
+      }),
+      {}
+    ),
+    currentSortFunc: noop,
+  };
 
   handleSort = (colKey, handler) => {
     if (!handler) return null;
-    if (this.sortMemo[colKey] === undefined) {
-      this.sortMemo[colKey] = 0;
-    }
     return () => {
+      const { sortMemo, sortBy } = this.state;
       // next sort order, overflow will wrap back to default
-      const nextSortOrder = this.sortOrders[this.sortMemo[colKey] + 1]
-        ? this.sortMemo[colKey] + 1
+      const nextSortOrder = Table.sortOrders[sortMemo[colKey] + 1]
+        ? sortMemo[colKey] + 1
         : 0;
-      this.setState({ sortBy: colKey, orderBy: nextSortOrder }, () => {
-        this.sortMemo = { [colKey]: this.state.orderBy }; // reset other keys
-        this.sortFunc = handler.apply(null, [
-          this.state.sortBy,
-          this.sortOrders[this.state.orderBy],
-        ]);
-        // force update to have the sortFunc applied
-        this.forceUpdate();
+      this.setState({
+        sortBy: colKey,
+        orderBy: nextSortOrder,
+        sortMemo: {
+          ...sortMemo,
+          [sortBy]: 0,
+          [colKey]: nextSortOrder,
+        },
+        currentSortFunc: handler.apply(null, [
+          colKey,
+          Table.sortOrders[nextSortOrder],
+        ]),
       });
     };
   };
@@ -99,9 +112,10 @@ class Table extends Component {
 
   renderRows(rows) {
     const { uniqueKey, hoverable, alternate } = this.props;
+    const { currentSortFunc } = this.state;
     let daRows = rows;
-    if (this.sortFunc) {
-      daRows = [...rows].sort(this.sortFunc);
+    if (currentSortFunc !== noop) {
+      daRows = [...rows].sort(currentSortFunc);
     }
     return daRows.map((row, index) => (
       <Row
@@ -134,8 +148,8 @@ class Table extends Component {
                 <ColTitle
                   sorted={
                     this.state.sortBy === key
-                      ? this.sortOrders[this.state.orderBy]
-                      : this.sortOrders[0]
+                      ? Table.sortOrders[this.state.orderBy]
+                      : Table.sortOrders[0]
                   }
                   onClick={this.handleSort(key, onSort)}
                 >
