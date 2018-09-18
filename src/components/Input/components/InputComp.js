@@ -144,15 +144,13 @@ class Comp extends Component {
     } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper style={style} className={className}>
         <AnimatedBorder
           name={name}
           label={label}
           dirty={dirty}
           error={error !== null && error.length > 0}
           focused={focused}
-          style={style}
-          className={className}
         >
           <SCTextInput
             type={type === 'password' && !masked ? 'text' : type}
