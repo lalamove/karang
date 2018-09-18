@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import { bool, func, string, object, oneOfType } from 'prop-types';
+import { bool, func, string, object, oneOfType, shape } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
@@ -24,6 +24,10 @@ const Wrapper = styled.div`
 const propTypes = {
   /** @ignore */
   forwardedRef: oneOfType([func, object]),
+  /** @ignore */
+  style: shape({}),
+  /** @ignore */
+  className: string,
   /** Type of the component, will show the peek button when `type` is `password` */
   type: string,
   /** Name of the component */
@@ -56,6 +60,8 @@ const propTypes = {
 
 const defaultProps = {
   forwardedRef: null,
+  style: null,
+  className: null,
   type: 'text',
   name: null,
   label: null,
@@ -123,6 +129,8 @@ class Comp extends Component {
     const { dirty, focused, masked } = this.state;
     const {
       forwardedRef,
+      style,
+      className,
       type,
       name,
       label,
@@ -143,6 +151,8 @@ class Comp extends Component {
           dirty={dirty}
           error={error !== null && error.length > 0}
           focused={focused}
+          style={style}
+          className={className}
         >
           <SCTextInput
             type={type === 'password' && !masked ? 'text' : type}

@@ -51,6 +51,10 @@ const exceedLimitMsgFunc = excessCharacters =>
 const propTypes = {
   /** @ignore */
   forwardedRef: oneOfType([func, object]),
+  /** @ignore */
+  style: shape({}),
+  /** @ignore */
+  className: string,
   /** Characters limit of textarea */
   maxLength: number,
   /** Allow user to continue to type when the characters count over `maxLength` */
@@ -86,10 +90,6 @@ const propTypes = {
    *  `maxLength`. Use `{{charactersExceed}}` for the characters exceed count, use `{{count}}` for
    *  characters count. */
   exceedLimitMsg: string,
-  /** @ignore */
-  style: shape({}),
-  /** @ignore */
-  className: string,
   /** Textarea content value */
   value: string,
   /** Initial textarea content value, use it if you want to leave the component
@@ -109,6 +109,8 @@ const propTypes = {
 
 const defaultProps = {
   forwardedRef: null,
+  style: null,
+  className: null,
   maxLength: null,
   allowExceed: false,
   onChange: noop,
@@ -119,8 +121,6 @@ const defaultProps = {
   error: null,
   limitMsg: 'Characters left: {{charactersLeft}}',
   exceedLimitMsg: 'Exceed characters: {{charactersExceed}}',
-  style: null,
-  className: null,
   value: null,
   defaultValue: null,
   readOnly: false,
