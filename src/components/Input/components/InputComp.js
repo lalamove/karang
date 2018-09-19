@@ -47,13 +47,13 @@ const propTypes = {
   /**
    * Callback function, to be executed when user focus on input field
    *
-   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onFocus: func,
   /**
    * Callback function, to be executed when user blur on input field
    *
-   * @param {Event} event https://developer.mozilla.org/en-US/docs/Web/API/Event
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
 };
