@@ -10912,7 +10912,7 @@ exports[`Icon-onOff 1`] = `
 >
   <svg
     version="1.1"
-    viewBox="25 25 165 165"
+    viewBox="0 0 217 217"
   >
     <path
       d="M0,0h217v217h-217Z"
@@ -10936,7 +10936,7 @@ exports[`Icon-onOff-color-rgba(216,83,79,1) 1`] = `
 >
   <svg
     version="1.1"
-    viewBox="25 25 165 165"
+    viewBox="0 0 217 217"
   >
     <path
       d="M0,0h217v217h-217Z"
@@ -10960,7 +10960,7 @@ exports[`Icon-onOff-color-rgba(242,103,34,1) 1`] = `
 >
   <svg
     version="1.1"
-    viewBox="25 25 165 165"
+    viewBox="0 0 217 217"
   >
     <path
       d="M0,0h217v217h-217Z"
@@ -10984,7 +10984,7 @@ exports[`Icon-onOff-size-20 1`] = `
 >
   <svg
     version="1.1"
-    viewBox="25 25 165 165"
+    viewBox="0 0 217 217"
   >
     <path
       d="M0,0h217v217h-217Z"
@@ -11008,7 +11008,7 @@ exports[`Icon-onOff-size-40 1`] = `
 >
   <svg
     version="1.1"
-    viewBox="25 25 165 165"
+    viewBox="0 0 217 217"
   >
     <path
       d="M0,0h217v217h-217Z"
