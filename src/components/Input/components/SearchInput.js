@@ -39,9 +39,9 @@ SearchInput.propTypes = {
   /** Type of input field to render, check
    *  [this](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) for more types */
   type: string,
-  /** Specify a text that appears in the input field when it is empty. */
+  /** Specify a text that appears in the input field when it is empty */
   placeholder: string,
-  /** Name of input field, which is submitted with the value as part of form data. */
+  /** Name of input field, which is submitted with the value as part of form data */
   name: string,
 };
 

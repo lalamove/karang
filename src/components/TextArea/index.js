@@ -84,11 +84,11 @@ const propTypes = {
   /** Error message of the component */
   error: string,
   /** Message to be shown at the bottom of component. Use `{{charactersLeft}}` for the
-   *  characters remaining, use `{{count}}` for characters count. */
+   *  characters remaining, use `{{count}}` for characters count */
   limitMsg: string,
   /** Message to be shown at the bottom of component, when the characters count over
    *  `maxLength`. Use `{{charactersExceed}}` for the characters exceed count, use `{{count}}` for
-   *  characters count. */
+   *  characters count */
   exceedLimitMsg: string,
   /** Textarea content value */
   value: string,

@@ -38,9 +38,10 @@ const propTypes = {
   error: string,
   /** @ignore */
   autoComplete: string,
-  /** Select all when user click on the input field */
+  /** Select all when user click on the input field. Should not be used together with `cursorEnd` */
   selectAll: bool,
-  /** Move the cursor to the end of value when user click on the input field */
+  /** Move the cursor to the end of value when user click on the input field. Should not be used
+   *  together with `selectAll` */
   cursorEnd: bool,
   /** Show the password by default if it is `false`, only effective when `type` is `password` */
   masked: bool,
