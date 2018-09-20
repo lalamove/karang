@@ -16,9 +16,11 @@ import truckOutline from './basic/truckOutline';
 // Communication
 import CommunicationIcons from './communication';
 
+// Payments
+import PaymentIcons from './payments';
+
 // Others
-import aMEXCard from './others/aMEXCard';
-import aMEXLogo from './others/aMEXLogo';
+
 import addContact from './others/addContact';
 import androidLogo from './others/androidLogo';
 import appleLogo from './others/appleLogo';
@@ -26,21 +28,17 @@ import arrow from './others/arrow';
 import arrowDoubleSidedCurved from './others/arrowDoubleSidedCurved';
 import arrowDoubleSidedDiagonal from './others/arrowDoubleSidedDiagonal';
 import arrowHorizontal from './others/arrowHorizontal';
-import bangkokBank from './others/bangkokBank';
+
 import blockedGroup from './others/blockedGroup';
 import bolt from './others/bolt';
 import calendar from './others/calendar';
 import cameraOutline from './others/cameraOutline';
-import cart from './others/cart';
-import cashOutline from './others/cashOutline';
-import cashVertical from './others/cashVertical';
+
 import clippedPaper from './others/clippedPaper';
 import crossedParcelBox from './others/crossedParcelBox';
-import dinersClubCard from './others/dinersClubCard';
+
 import directions from './others/directions';
-import discoverCard from './others/discoverCard';
-import dollarCircle from './others/dollarCircle';
-import dollarTorn from './others/dollarTorn';
+
 import dottedArrow from './others/dottedArrow';
 import download from './others/download';
 import editSymbol from './others/editSymbol';
@@ -50,12 +48,11 @@ import googlePlusColored from './others/googlePlusColored';
 import googlePlusOutline from './others/googlePlusOutline';
 import group from './others/group';
 import heartSymbol from './others/heartSymbol';
-import jCBCard from './others/jCBCard';
+
 import key from './others/key';
 import magnify from './others/magnify';
 import magnifyingGlass from './others/magnifyingGlass';
-import masterCard from './others/masterCard';
-import masterCardLogo from './others/masterCardLogo';
+
 import microphone from './others/microphone';
 import momoCard from './others/momoCard';
 import networkParcelBox from './others/networkParcelBox';
@@ -90,11 +87,9 @@ import textMessage2 from './others/textMessage2';
 import tickMark from './others/tickMark';
 import tickMarkCircle from './others/tickMarkCircle';
 import tickedParcelBox from './others/tickedParcelBox';
-import unionPayCard from './others/unionPayCard';
+
 import van from './others/van';
-import visaCard from './others/visaCard';
-import visaLogo from './others/visaLogo';
-import walletOutline from './others/walletOutline';
+
 import warning from './others/warning';
 import warningCircle from './others/warningCircle';
 import zip from './others/zip';
@@ -119,9 +114,10 @@ const icons = Object.freeze({
   // Communication
   ...CommunicationIcons,
 
+  // Payments
+  ...PaymentIcons,
+
   // Others
-  aMEXCard,
-  aMEXLogo,
   addContact,
   androidLogo,
   appleLogo,
@@ -129,21 +125,13 @@ const icons = Object.freeze({
   arrowDoubleSidedCurved,
   arrowDoubleSidedDiagonal,
   arrowHorizontal,
-  bangkokBank,
   blockedGroup,
   bolt,
   calendar,
   cameraOutline,
-  cart,
-  cashOutline,
-  cashVertical,
   clippedPaper,
   crossedParcelBox,
-  dinersClubCard,
   directions,
-  discoverCard,
-  dollarCircle,
-  dollarTorn,
   dottedArrow,
   download,
   editSymbol,
@@ -153,12 +141,9 @@ const icons = Object.freeze({
   googlePlusOutline,
   group,
   heartSymbol,
-  jCBCard,
   key,
   magnify,
   magnifyingGlass,
-  masterCard,
-  masterCardLogo,
   microphone,
   momoCard,
   networkParcelBox,
@@ -194,11 +179,7 @@ const icons = Object.freeze({
   tickMark,
   tickMarkCircle,
   tickedParcelBox,
-  unionPayCard,
   van,
-  visaCard,
-  visaLogo,
-  walletOutline,
   warning,
   warningCircle,
   zip,
