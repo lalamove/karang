@@ -14,8 +14,8 @@ import masterCardLogo from './masterCardLogo';
 import unionPayCard from './unionPayCard';
 import visaCard from './visaCard';
 import visaLogo from './visaLogo';
-import walletOutline from './walletOutline';
 import walletAdd from './walletAdd';
+import walletOutline from './walletOutline';
 
 const PaymentIcons = {
   aMEXCard,
@@ -34,8 +34,8 @@ const PaymentIcons = {
   unionPayCard,
   visaCard,
   visaLogo,
-  walletOutline,
   walletAdd,
+  walletOutline,
 };
 
 export default PaymentIcons;

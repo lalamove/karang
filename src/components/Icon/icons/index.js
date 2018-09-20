@@ -8,13 +8,15 @@ import logo from './basic/logo';
 import noDriver from './basic/noDriver';
 import notificationBell from './basic/notificationBell';
 import order from './basic/order';
-import pin from './basic/pin';
 import question from './basic/question';
 import settingsGear from './basic/settingsGear';
 import truckOutline from './basic/truckOutline';
 
 // Communication
 import CommunicationIcons from './communication';
+
+// Maps
+import MapsIcons from './maps';
 
 // Payments
 import PaymentIcons from './payments';
@@ -28,17 +30,13 @@ import arrow from './others/arrow';
 import arrowDoubleSidedCurved from './others/arrowDoubleSidedCurved';
 import arrowDoubleSidedDiagonal from './others/arrowDoubleSidedDiagonal';
 import arrowHorizontal from './others/arrowHorizontal';
-
 import blockedGroup from './others/blockedGroup';
 import bolt from './others/bolt';
 import calendar from './others/calendar';
 import cameraOutline from './others/cameraOutline';
-
 import clippedPaper from './others/clippedPaper';
 import crossedParcelBox from './others/crossedParcelBox';
-
 import directions from './others/directions';
-
 import dottedArrow from './others/dottedArrow';
 import download from './others/download';
 import editSymbol from './others/editSymbol';
@@ -48,16 +46,15 @@ import googlePlusColored from './others/googlePlusColored';
 import googlePlusOutline from './others/googlePlusOutline';
 import group from './others/group';
 import heartSymbol from './others/heartSymbol';
-
 import key from './others/key';
 import magnify from './others/magnify';
 import magnifyingGlass from './others/magnifyingGlass';
-
 import microphone from './others/microphone';
 import momoCard from './others/momoCard';
 import networkParcelBox from './others/networkParcelBox';
 import newspaper from './others/newspaper';
 import notebookBookmark from './others/notebookBookmark';
+import onOff from './others/onOff';
 import paperClip from './others/paperClip';
 import parcelBoxOutline from './others/parcelBoxOutline';
 import percentage from './others/percentage';
@@ -87,13 +84,10 @@ import textMessage2 from './others/textMessage2';
 import tickMark from './others/tickMark';
 import tickMarkCircle from './others/tickMarkCircle';
 import tickedParcelBox from './others/tickedParcelBox';
-
 import van from './others/van';
-
 import warning from './others/warning';
 import warningCircle from './others/warningCircle';
 import zip from './others/zip';
-import onOff from './others/onOff';
 
 const icons = Object.freeze({
   // Basic
@@ -105,13 +99,16 @@ const icons = Object.freeze({
   noDriver,
   notificationBell,
   order,
-  pin,
+  pin: MapsIcons.pinFill, // TODO: DEPRECATED, for backward compatibility only
   question,
   settingsGear,
   truckOutline,
 
   // Communication
   ...CommunicationIcons,
+
+  // Maps
+  ...MapsIcons,
 
   // Payments
   ...PaymentIcons,
@@ -148,6 +145,7 @@ const icons = Object.freeze({
   networkParcelBox,
   newspaper,
   notebookBookmark,
+  onOff,
   paperClip,
   parcelBoxOutline,
   percentage,
@@ -182,7 +180,6 @@ const icons = Object.freeze({
   warning,
   warningCircle,
   zip,
-  onOff,
 });
 
 export default icons;
