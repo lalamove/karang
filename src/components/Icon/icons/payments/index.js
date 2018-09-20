@@ -1,4 +1,3 @@
-import walletAdd from './walletAdd';
 import aMEXCard from './aMEXCard';
 import aMEXLogo from './aMEXLogo';
 import bangkokBank from './bangkokBank';
@@ -16,9 +15,9 @@ import unionPayCard from './unionPayCard';
 import visaCard from './visaCard';
 import visaLogo from './visaLogo';
 import walletOutline from './walletOutline';
+import walletAdd from './walletAdd';
 
 const PaymentIcons = {
-  walletAdd,
   aMEXCard,
   aMEXLogo,
   bangkokBank,
@@ -36,6 +35,7 @@ const PaymentIcons = {
   visaCard,
   visaLogo,
   walletOutline,
+  walletAdd,
 };
 
 export default PaymentIcons;
