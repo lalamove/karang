@@ -388,6 +388,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         maxlength="1"
         name="0"
         pattern="\\\\d*"
+        type="number"
         value="1"
       >
         
@@ -398,6 +399,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         maxlength="1"
         name="1"
         pattern="\\\\d*"
+        type="number"
         value="2"
       >
         
@@ -408,6 +410,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         maxlength="1"
         name="2"
         pattern="\\\\d*"
+        type="number"
         value="3"
       >
         
@@ -418,6 +421,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         maxlength="1"
         name="3"
         pattern="\\\\d*"
+        type="number"
         value="4"
       >
         
@@ -499,6 +503,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         maxlength="1"
         name="0"
         pattern="\\\\d*"
+        type="number"
         value=""
       >
         
@@ -509,6 +514,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         maxlength="1"
         name="1"
         pattern="\\\\d*"
+        type="number"
         value=""
       >
         
@@ -519,6 +525,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         maxlength="1"
         name="2"
         pattern="\\\\d*"
+        type="number"
         value=""
       >
         
@@ -529,6 +536,7 @@ exports[`PinInput Snapshots Empty 1`] = `
         maxlength="1"
         name="3"
         pattern="\\\\d*"
+        type="number"
         value=""
       >
         
