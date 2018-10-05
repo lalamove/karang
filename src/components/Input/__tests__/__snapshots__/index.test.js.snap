@@ -473,6 +473,12 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   border: 1px solid rgba(242,103,34,1);
 }
 
+.c2::-webkit-inner-spin-button,
+.c2::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .c2:focus {
   border: 1px solid rgba(216,83,79,1);
 }
@@ -609,6 +615,12 @@ exports[`PinInput Snapshots Empty 1`] = `
 
 .c2:focus {
   border: 1px solid rgba(242,103,34,1);
+}
+
+.c2::-webkit-inner-spin-button,
+.c2::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .c0 {
