@@ -22,6 +22,12 @@ const Input = styled.input`
     border: 1px solid ${orange};
   }
 
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   ${({ size }) => {
     switch (size) {
       case 'small':
