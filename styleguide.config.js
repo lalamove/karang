@@ -37,17 +37,14 @@ module.exports = {
     },
     {
       name: 'UI Components',
+      components: 'src/components/!(Input|TextArea)/**/{index,[A-Z]*}.js',
       sections: [
         {
           name: 'Input',
           components: 'src/components/@(Input|TextArea)/**/{index,[A-Z]*}.js',
         },
-        {
-          name: 'Others',
-          components: 'src/components/!(Input|TextArea)/**/{index,[A-Z]*}.js',
-        },
       ],
-      sectionDepth: 2,
+      sectionDepth: 1,
     },
   ],
   template: {
