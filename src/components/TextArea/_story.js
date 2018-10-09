@@ -3,15 +3,13 @@ import { storiesOf } from '@storybook/react';
 import { text, boolean, number } from '@storybook/addon-knobs/react';
 import TextArea from './index';
 
-storiesOf('TextArea', module).add('TextArea', () => (
+const Wrapper = () => (
   <TextArea
-    placeholder={text('placeholder', 'test placeholder')}
-    maxLength={number('limit', 140)}
-    name="comments"
+    placeholder={text('placeholder', 'Placeholder')}
+    maxLength={number('maxLength', 140)}
     style={{ width: '300px', height: '96px' }}
-    error={text('error', ' Error Message')}
-    disableForceLimit={boolean('disableForceLimit', false)}
+    allowExceed={boolean('allowExceed', false)}
   />
-));
+);
 
-// TODO: add other props
+storiesOf('TextArea', module).add('Basic', () => <Wrapper />);

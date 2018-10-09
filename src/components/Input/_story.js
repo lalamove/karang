@@ -24,7 +24,6 @@ class InputWrapper extends Component {
           name="username"
           value={this.state.username}
           onChange={this.handleChange}
-          width={150}
           autoFocus
         />
         <br />
@@ -55,7 +54,7 @@ class InputWrapper extends Component {
           name="address"
           value={this.state.address}
           onChange={this.handleChange}
-          error="Error Message Error Message Error Message Error Message Error Message Error Message Error Message"
+          error="Error Message"
         />
         <br />
         <br />
@@ -84,7 +83,6 @@ class InputWrapper extends Component {
           label="Uncontrolled Component"
           name="testing"
           defaultValue="Testing"
-          onChange={this.handleChange}
         />
       </Fragment>
     );
@@ -131,16 +129,7 @@ class EditableInputWrapper extends Component {
     return (
       <EditableInput
         name="Billing Email"
-        value="david.lam@lalamove.com"
-        onSave={address => {
-          console.log('saved', address);
-        }}
-        onCancel={address => {
-          console.log('cancel', address);
-        }}
-        ref={node => {
-          console.log('ref', node);
-        }}
+        value="alex.fok@lalamove.com"
         saveBtnText="Save Value"
         editBtnText="Edit Value"
         cancelBtnText="Cancel Value"

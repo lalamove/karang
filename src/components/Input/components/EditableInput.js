@@ -1,187 +1,329 @@
-import React, { Component, forwardRef } from 'react';
-import { func, string, bool, shape } from 'prop-types';
+import React, { Component, Fragment, forwardRef } from 'react';
+import { bool, func, oneOfType, object, string, shape } from 'prop-types';
 import styled from 'styled-components';
-import { compose } from 'recompose';
 
 import noop from 'utils/noop';
-import { offWhite, orange } from 'styles/colors';
-import withAnimatedContainer from 'hoc/withAnimatedContainer';
-import withErrorMessage from 'hoc/withErrorMessage';
-import TextInput from 'components/Input/components/TextInput'; // eslint-disable-line import/no-named-as-default, import/no-named-as-default-member
-import ButtonContainer from './ButtonContainer';
-import NoneditableDisplay from './NoneditableDisplay';
+import AnimatedBorder from 'components/AnimatedBorder';
+import Button from 'components/Button';
+import ErrorMessage from 'components/ErrorMessage';
+import TextInput from './TextInput';
 
-const EditableInputContainer = styled.div`
-  display: flex;
-  width: 400px;
-  border: 1px solid ${offWhite};
-  &:focus-within {
-    border-color: ${orange};
-  }
-  [class^='withErrorMessage__ScWrappedComponent'] {
-    border-color: transparent;
-  }
+const Wrapper = styled.div`
+  display: inline-block;
 `;
 
-const EnhancedTextInput = compose(
-  withErrorMessage,
-  withAnimatedContainer
-)(TextInput);
+const SCAnimatedBorder = styled(AnimatedBorder)`
+  width: 400px;
+`;
 
-class EditableInput extends Component {
-  static propTypes = {
-    value: string,
-    isEditable: bool,
-    innerRef: func,
-    type: string,
-    label: string,
-    error: string,
-    onChange: func,
-    onSave: func,
-    onCancel: func,
-    saveBtnText: string,
-    editBtnText: string,
-    cancelBtnText: string,
-    style: shape({}),
-    className: string,
-  };
+const TextDisplay = styled.div`
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  padding: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+`;
 
-  static defaultProps = {
-    value: '',
-    isEditable: false,
-    innerRef: noop,
-    type: 'text',
-    label: '',
-    error: null,
-    onChange: noop,
-    onSave: noop,
-    onCancel: noop,
-    saveBtnText: 'Save',
-    editBtnText: 'Edit',
-    cancelBtnText: 'Cancel',
-    style: {},
-    className: '',
-  };
+const BtnContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  flex-shrink: 0;
+`;
+
+const SCButton = styled(Button)`
+  min-width: 80px;
+  height: 32px;
+  margin: 0 4px;
+`;
+
+const propTypes = {
+  /** @ignore */
+  forwardedRef: oneOfType([func, object]),
+  /** @ignore */
+  style: shape({}),
+  /** @ignore */
+  className: string,
+  /** Disable the input fields if it is `true` */
+  disabled: bool,
+  /** Error message of the component */
+  error: string,
+  /** Label of the component */
+  label: string,
+  /** Input content value */
+  value: string,
+  /** Initial input content value, use it if you want to leave the component
+   *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
+  defaultValue: string,
+  /**
+   * Callback function, to be executed when user blur on input field
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onBlur: func,
+  /**
+   * Callback function, to be executed when user type in input field
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onChange: func,
+  /**
+   * Callback function, to be executed when user clicked Edit button
+   *
+   * @param {string} value value that editing
+   */
+  onEdit: func,
+  /**
+   * Callback function, to be executed when user focus on input field
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onFocus: func,
+  /**
+   * Callback function, to be executed when user clicked Save button
+   *
+   * @param {string} value saved value
+   */
+  onSave: func,
+  /**
+   * Callback function, to be executed when user clicked Cancel button
+   *
+   * @param {string} value last saved value
+   */
+  onCancel: func,
+  /** Text of save button */
+  saveLabel: string,
+  /** Text of edit button */
+  editLabel: string,
+  /** Text of cancel button */
+  cancelLabel: string,
+  // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
+  /** @deprecated Please use `saveLabel` */
+  saveBtnText: string,
+  /** @deprecated Please use `editLabel` */
+  editBtnText: string,
+  /** @deprecated Please use `cancelLabel` */
+  cancelBtnText: string,
+  /** @deprecated Please use `disabled` */
+  isEditable: bool,
+};
+
+const defaultProps = {
+  forwardedRef: null,
+  style: null,
+  className: null,
+  disabled: false,
+  error: null,
+  label: null,
+  value: null,
+  defaultValue: null,
+  onBlur: noop,
+  onChange: noop,
+  onEdit: noop,
+  onFocus: noop,
+  onSave: noop,
+  onCancel: noop,
+  saveLabel: 'Save',
+  editLabel: 'Edit',
+  cancelLabel: 'Cancel',
+  // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
+  saveBtnText: null,
+  editBtnText: null,
+  cancelBtnText: null,
+  isEditable: null,
+};
+
+class Comp extends Component {
+  static propTypes = propTypes;
+  static defaultProps = defaultProps;
 
   state = {
-    value: this.props.value,
-    lastSavedValue: this.props.value,
-    isEditable: this.props.isEditable,
+    editing: this.props.isEditable || false, // TODO: `isEditable` is deprecated
+    dirty: !!this.props.value,
+    focused: false,
+    value: this.props.value || this.props.defaultValue,
+    lastSavedValue: this.props.value || this.props.defaultValue,
   };
 
-  componentDidUpdate = (_, prevState) => {
-    if (!prevState.isEditable) {
-      this.focusTextInput();
-    }
-  };
-
-  onSaveButtonClick = e => {
-    this.props.onSave(this.state.value);
-    this.setState({
-      isEditable: !this.state.isEditable,
-    });
-  };
-
-  onEditButtonClick = e => {
-    this.setState({
-      isEditable: !this.state.isEditable,
-      lastSavedValue: this.state.value,
-    });
-  };
-
-  onCancelButtonClick = e => {
-    this.props.onCancel(this.state.lastSavedValue);
-    this.setState({
-      value: this.state.lastSavedValue,
-      isEditable: !this.state.isEditable,
-    });
-    e.target.blur();
-  };
-
-  onInputChange = e => {
+  componentDidMount() {
     const {
-      target: { value },
-    } = e;
-    this.props.onChange(e);
-    this.setState({ value });
-  };
-
-  getReference = node => {
-    const { innerRef } = this.props;
-    if (innerRef) {
-      if (typeof innerRef === 'function') {
-        innerRef(node);
-      } else {
-        innerRef.current = node;
-      }
-    }
-  };
-
-  getInputReference = node => {
-    this.input = node;
-  };
-
-  focusTextInput = () => {
-    this.input.focus();
-    this.input.setSelectionRange(
-      this.input.value.length,
-      this.input.value.length
-    );
-  };
-
-  render() {
-    const { isEditable, value } = this.state;
-    const {
-      innerRef,
-      type,
-      label,
-      error,
-      onChange,
-      value: _,
-      onCancel,
+      value,
+      defaultValue,
       onSave,
       saveBtnText,
       editBtnText,
       cancelBtnText,
+      isEditable,
+    } = this.props;
+    if (value && defaultValue) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[EditableInput] Trying to set defaultValue and value at the same time. Component can' +
+          ' only be either controlled or uncontrolled.'
+      );
+    }
+    if (!onSave) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[EditableInput] Missing prop `onSave`. Component become uncontrolled.'
+      );
+    }
+    if (saveBtnText || editBtnText || cancelBtnText || isEditable) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[EditableInput] prop `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are' +
+          ' deprecated. Please check documentation for better alternative.'
+      );
+    }
+  }
+
+  onSaveBtnClick = () => {
+    const { editing } = this.state;
+    this.setState({ editing: !editing });
+    this.props.onSave(this.state.value);
+  };
+
+  onEditBtnClick = () => {
+    const { editing, value } = this.state;
+    this.setState(
+      {
+        editing: !editing,
+        lastSavedValue: value,
+      },
+      () => {
+        this.input.focus();
+      }
+    );
+    this.props.onEdit(value);
+  };
+
+  onCancelBtnClick = e => {
+    const { editing, lastSavedValue } = this.state;
+    this.setState({
+      editing: !editing,
+      value: lastSavedValue,
+    });
+    this.props.onCancel(this.state.lastSavedValue);
+    // remove focus from button
+    e.target.blur();
+  };
+
+  onChange = e => {
+    const {
+      target: { value },
+    } = e;
+    this.setState({
+      value,
+      dirty: !!value,
+    });
+    this.props.onChange(e);
+  };
+
+  onFocus = e => {
+    this.setState({ focused: true });
+    this.props.onFocus(e);
+  };
+
+  onBlur = e => {
+    this.setState({ focused: false });
+    this.props.onBlur(e);
+  };
+
+  getReference = node => {
+    const { forwardedRef } = this.props;
+    this.input = node;
+
+    if (forwardedRef) {
+      if (typeof forwardedRef === 'function') {
+        forwardedRef(node);
+      } else {
+        forwardedRef.current = node;
+      }
+    }
+  };
+
+  render() {
+    const { dirty, editing, focused, value } = this.state;
+    const {
       style,
       className,
+      disabled,
+      label,
+      error,
+      value: _value,
+      defaultValue: _defaultValue,
+      onBlur,
+      onChange,
+      onCancel,
+      onFocus,
+      onSave,
+      saveLabel,
+      cancelLabel,
+      editLabel,
+      // TODO: `saveBtnText`, `editBtnText`, `cancelBtnText`, `isEditable` are deprecated
+      saveBtnText,
+      editBtnText,
+      cancelBtnText,
+      isEditable: _isEditable,
       ...remainProps
     } = this.props;
     return (
-      <EditableInputContainer
-        style={style}
-        className={className}
-        ref={this.getReference}
-      >
-        {isEditable ? (
-          <EnhancedTextInput
-            isEditable={isEditable}
-            label={isEditable ? label : ''}
-            value={value}
-            innerRef={this.getInputReference}
-            onChange={this.onInputChange}
-            {...remainProps}
-          />
-        ) : (
-          <NoneditableDisplay value={value} {...remainProps} />
-        )}
-        <ButtonContainer
-          isEditable={isEditable}
-          saveBtnText={saveBtnText}
-          cancelBtnText={cancelBtnText}
-          editBtnText={editBtnText}
-          onSaveButtonClick={this.onSaveButtonClick}
-          onEditButtonClick={this.onEditButtonClick}
-          onCancelButtonClick={this.onCancelButtonClick}
-          innerRef={node => {
-            this.editButton = node;
-          }}
-        />
-      </EditableInputContainer>
+      <Wrapper>
+        <SCAnimatedBorder
+          label={label}
+          dirty={dirty}
+          error={error !== null && error.length > 0}
+          focused={focused}
+          style={style}
+          className={className}
+        >
+          {editing ? (
+            <TextInput
+              label={label}
+              value={value}
+              onBlur={this.onBlur}
+              onChange={this.onChange}
+              onFocus={this.onFocus}
+              {...remainProps}
+              ref={this.getReference}
+            />
+          ) : (
+            <TextDisplay>{value}</TextDisplay>
+          )}
+          <BtnContainer>
+            {editing ? (
+              <Fragment>
+                <SCButton onClick={this.onCancelBtnClick} variant="link">
+                  {cancelBtnText || cancelLabel}
+                </SCButton>
+                <SCButton onClick={this.onSaveBtnClick} variant="outline">
+                  {saveBtnText || saveLabel}
+                </SCButton>
+              </Fragment>
+            ) : (
+              <SCButton onClick={this.onEditBtnClick} disabled={disabled}>
+                {editBtnText || editLabel}
+              </SCButton>
+            )}
+          </BtnContainer>
+        </SCAnimatedBorder>
+        <ErrorMessage error={error} />
+      </Wrapper>
     );
   }
 }
 
-export default forwardRef((props, ref) => (
-  <EditableInput innerRef={ref} {...props} />
+const CompWithRef = forwardRef((props, ref) => (
+  <Comp forwardedRef={ref} {...props} />
 ));
+
+// Ugly fix for React Styleguidist as it cannot recognize forwardRef
+const EditableInput = ({ forwardedRef, ...props }) => (
+  <CompWithRef {...props} />
+);
+EditableInput.propTypes = propTypes;
+EditableInput.defaultProps = defaultProps;
+
+export default EditableInput;

@@ -5,15 +5,15 @@ import styled, { css } from 'styled-components';
 import { orange, black, silver } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
-const InputField = styled.input`
+const SCTextArea = styled.textarea`
   width: 100%;
-  padding: 1em;
+  height: 100%;
+  padding: 0;
   border: none;
   color: ${black};
   font-family: ${primaryFonts};
   caret-color: ${orange};
   font-size: ${fontSize.regular};
-  line-height: 20px;
   resize: none;
   outline: none;
 
@@ -30,28 +30,20 @@ const InputField = styled.input`
     `};
 `;
 
-const TextInput = forwardRef(
-  ({ innerRef, type, name, label, ...remainProps }, ref) => (
-    <InputField
-      innerRef={ref}
-      type={type}
-      name={name}
-      label={label}
-      {...remainProps}
-    />
+const TextAreaComp = forwardRef(
+  ({ innerRef, name, label, ...remainProps }, ref) => (
+    <SCTextArea innerRef={ref} name={name} label={label} {...remainProps} />
   )
 );
 
-TextInput.propTypes = {
-  type: string,
+TextAreaComp.propTypes = {
   label: string,
   name: string,
 };
 
-TextInput.defaultProps = {
-  type: 'text',
+TextAreaComp.defaultProps = {
   label: null,
   name: null,
 };
 
-export default TextInput;
+export default TextAreaComp;

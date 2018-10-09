@@ -18,7 +18,6 @@ Before installing this library, please make sure you have the following installe
     "react": "^16.3.2",
     "react-dates": "^18.0.2",
     "react-dom": "^16.3.2",
-    "recompose": "^0.27.1",
     "styled-components": "^3.3.3"
 }
 ```

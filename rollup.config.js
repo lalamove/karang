@@ -24,12 +24,11 @@ export default {
     },
   ],
   external: [
-    'styled-components',
     'react',
     'react-dom',
-    'recompose',
     'react-dates',
     'react-dates/initialize',
+    'styled-components',
   ],
   plugins: [
     external(),

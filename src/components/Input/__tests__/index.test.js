@@ -11,7 +11,7 @@ describe('Input', () => {
 
     it('Password with a value', () => {
       const wrapper = render(
-        <Input name="input" type="password" value="dummy" />
+        <Input name="input" type="password" defaultValue="dummy" />
       );
       expect(wrapper).toMatchSnapshot();
     });
@@ -66,7 +66,7 @@ describe('Input', () => {
     });
 
     it('check the input value based on value prop', () => {
-      const wrapper = mount(<Input name="input" value="test" />);
+      const wrapper = mount(<Input name="input" defaultValue="test" />);
       expect(wrapper.find('input').instance().value).toEqual('test');
     });
 
@@ -82,11 +82,11 @@ describe('Input', () => {
       expect(wrapper.find('label').text()).toEqual('test');
     });
 
-    it('check the label value based on label prop', () => {
+    it('check the error message', () => {
       const wrapper = mount(<Input name="input" error="Error Message" />);
       expect(
         wrapper
-          .find('WithErrorMessage')
+          .find('ErrorMessage')
           .find('span')
           .at(1)
           .text()
@@ -124,10 +124,10 @@ describe('PinInput', () => {
 
     it('renders an error message div', () => {
       const wrapper = mount(<PinInput error="Error Message" />);
-      expect(wrapper.find('WithErrorMessage').length).toBe(1);
+      expect(wrapper.find('ErrorMessage').length).toBe(1);
       expect(
         wrapper
-          .find('WithErrorMessage')
+          .find('ErrorMessage')
           .find('span')
           .at(1)
           .text()
