@@ -95,6 +95,7 @@ class PinInput extends Component {
     size: oneOf(['large', 'small']),
     /** @deprecated Please use `size` */
     variant: string, // TODO: `variant` is deprecated
+    type: string,
   };
 
   static defaultProps = {
@@ -105,6 +106,7 @@ class PinInput extends Component {
     onPaste: e => e.preventDefault(),
     size: 'large',
     variant: null,
+    type: 'text',
   };
 
   state = {
@@ -139,22 +141,21 @@ class PinInput extends Component {
     }
   };
 
-  handleKeyPress = e => {
-    const keyCode = e.keyCode || e.which;
-    const keyValue = String.fromCharCode(keyCode);
-    if (/\D/.test(keyValue)) {
-      e.preventDefault();
-    }
-  };
-
   handleChange = e => {
     const { value, name } = e.target;
+    // remove values attached after delete value in ios
+    const trimValue = value.replace(/^\s+|\s+$/gm, '');
+    // solve issue on android browser to insert dash from the keyboard
+    if (/\D/.test(trimValue)) {
+      e.preventDefault();
+      return;
+    }
     const index = parseInt(name, 10);
     const newPins = Array.from(this.state.pins);
-    newPins[index] = value;
+    newPins[index] = trimValue;
     this.setState({ pins: newPins });
 
-    if (index < 3 && value !== '') {
+    if (index < 3 && trimValue !== '') {
       e.target.nextSibling.focus();
       e.target.nextSibling.select();
     }
@@ -163,7 +164,7 @@ class PinInput extends Component {
   };
 
   render() {
-    const { disabled, error, size, variant, onPaste } = this.props;
+    const { disabled, error, size, variant, onPaste, type } = this.props;
     const pinBoxes = [...Array(4)].map((e, i) => (
       <Input
         maxLength="1"
@@ -174,7 +175,6 @@ class PinInput extends Component {
         value={this.state.pins[i] || ''}
         onChange={this.handleChange}
         onKeyDown={this.handleKeyDown}
-        onKeyPress={this.handleKeyPress}
         onPaste={onPaste}
         autoComplete="new-password"
         size={variant || size} // TODO: `variant` is deprecated
@@ -182,7 +182,7 @@ class PinInput extends Component {
         innerRef={input => {
           this.lastInput = input;
         }}
-        type="number"
+        type={type}
         autoFocus={i === 0}
       />
     ));
