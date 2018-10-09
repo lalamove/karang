@@ -158,6 +158,10 @@ class Dropdown extends Component {
     }
   };
 
+  handleOuterClick = () => {
+    this.setState({ highlightedIndexes: [] });
+  };
+
   render() {
     const {
       block,
@@ -172,6 +176,7 @@ class Dropdown extends Component {
     return (
       <Downshift
         onChange={onChange}
+        onOuterClick={this.handleOuterClick}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
       >
