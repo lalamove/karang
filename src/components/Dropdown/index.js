@@ -27,6 +27,7 @@ class Dropdown extends Component {
     items: arrayOf(shape({})).isRequired,
     selectedItem: shape({}),
     onChange: func,
+    onOuterClick: func,
     defaultLabel: string,
     direction: oneOf(['left', 'right']),
   };
@@ -35,6 +36,7 @@ class Dropdown extends Component {
     block: false,
     selectedItem: null,
     onChange: noop,
+    onOuterClick: noop,
     defaultLabel: 'Options',
     direction: 'right',
   };
@@ -158,8 +160,14 @@ class Dropdown extends Component {
     }
   };
 
-  handleOuterClick = () => {
+  handleChange = selection => {
     this.setState({ highlightedIndexes: [] });
+    this.props.onChange(selection);
+  };
+
+  handleOuterClick = stateAndHelpers => {
+    this.setState({ highlightedIndexes: [] });
+    this.props.onOuterClick(stateAndHelpers);
   };
 
   render() {
@@ -169,13 +177,14 @@ class Dropdown extends Component {
       selectedItem,
       defaultLabel,
       onChange,
+      onOuterClick,
       direction,
       ...remainProps
     } = this.props;
     const { highlightedIndexes } = this.state;
     return (
       <Downshift
-        onChange={onChange}
+        onChange={this.handleChange}
         onOuterClick={this.handleOuterClick}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
