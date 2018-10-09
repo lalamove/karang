@@ -108,6 +108,11 @@ describe('PinInput', () => {
       );
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('change type', () => {
+      const wrapper = render(<PinInput type="tel" />);
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 
   describe('Render', () => {
