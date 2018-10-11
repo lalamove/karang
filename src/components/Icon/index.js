@@ -2,7 +2,6 @@ import React from 'react';
 import { oneOf, string, number, shape } from 'prop-types';
 
 import icons from './icons';
-import { black } from 'styles/colors';
 
 const Icon = ({ type, color, size, style, ...remainProps }) => {
   const rootStyle = {
@@ -21,7 +20,7 @@ const Icon = ({ type, color, size, style, ...remainProps }) => {
 };
 
 Icon.defaultProps = {
-  color: black,
+  color: 'currentColor',
   size: 20,
   style: {},
 };
