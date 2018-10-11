@@ -69,7 +69,7 @@ exports[`Snapshots Pagination with 0 items 1`] = `
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
       title="Prev"
       viewBox="0 0 1024 1024"
     >
@@ -99,7 +99,7 @@ exports[`Snapshots Pagination with 0 items 1`] = `
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(-90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
       title="Next"
       viewBox="0 0 1024 1024"
     >
@@ -195,7 +195,7 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
       title="Prev"
       viewBox="0 0 1024 1024"
     >
@@ -224,7 +224,7 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(-90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
       title="Next"
       viewBox="0 0 1024 1024"
     >
@@ -320,7 +320,7 @@ exports[`Snapshots Pagination with custom description 1`] = `
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
       title="Prev"
       viewBox="0 0 1024 1024"
     >
@@ -349,7 +349,7 @@ exports[`Snapshots Pagination with custom description 1`] = `
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(-90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
       title="Next"
       viewBox="0 0 1024 1024"
     >
@@ -520,7 +520,7 @@ exports[`Snapshots Pagination with default value 1`] = `
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
       title="Prev"
       viewBox="0 0 1024 1024"
     >
@@ -549,7 +549,7 @@ exports[`Snapshots Pagination with default value 1`] = `
     type="button"
   >
     <svg
-      style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px;transform:rotate(-90deg)"
+      style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
       title="Next"
       viewBox="0 0 1024 1024"
     >
