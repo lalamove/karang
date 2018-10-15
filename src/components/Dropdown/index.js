@@ -23,12 +23,19 @@ const Container = styled.div`
 
 class Dropdown extends Component {
   static propTypes = {
+    /** Fit the width to its parent width when it is `true` */
     block: bool,
+    /** Pop menu items */
     items: arrayOf(shape({})).isRequired,
+    /** The currently selected item */
     selectedItem: shape({}),
+    /** Callback function, to be executed when user selected an item and it has changed */
     onChange: func,
+    /** Callback function, to be executed when user clicked outside of pop menu */
     onOuterClick: func,
+    /** Label of the component, will be shown before user selected option */
     defaultLabel: string,
+    /** Open direction of pop menu */
     direction: oneOf(['left', 'right']),
   };
 

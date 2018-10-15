@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown Snapshots Dropdown 1`] = `
+exports[`Dropdown Snapshots render 1`] = `
 .c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
