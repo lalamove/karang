@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown Snapshots Dropdown 1`] = `
+exports[`Dropdown Snapshots render 1`] = `
 .c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -89,6 +89,131 @@ exports[`Dropdown Snapshots Dropdown 1`] = `
     class="c1 c2"
     data-toggle="true"
     id="downshift-0-input"
+    role="button"
+    type="button"
+    value=""
+  >
+    <span
+      class="c3"
+    >
+      Options
+    </span>
+    <span
+      class="c4"
+    >
+      <svg
+        style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <svg
+            viewBox="0 0 40 40"
+          >
+            <path
+              d="m31 16.4q0 0.3-0.2 0.5l-10.4 10.4q-0.3 0.3-0.5 0.3t-0.6-0.3l-10.4-10.4q-0.2-0.2-0.2-0.5t0.2-0.5l1.2-1.1q0.2-0.2 0.5-0.2t0.5 0.2l8.8 8.8 8.7-8.8q0.3-0.2 0.5-0.2t0.6 0.2l1.1 1.1q0.2 0.2 0.2 0.5z"
+            >
+              
+            </path>
+          </svg>
+        </g>
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Dropdown Snapshots render 2`] = `
+.c2 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
+}
+
+.c2:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c2:hover:enabled,
+.c2:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c2:active:enabled {
+  box-shadow: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-width: 80px;
+  padding: 0.5em 1em;
+  background-color: rgba(255,255,255,1);
+  white-space: nowrap;
+}
+
+.c1:focus:enabled {
+  box-shadow: none;
+}
+
+.c3 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin-right: 0.5em;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.c4 {
+  margin-right: -5px;
+}
+
+.c0 {
+  position: relative;
+  display: inline-block;
+}
+
+<div
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-labelledby="downshift-1-label"
+  class="c0"
+  role="combobox"
+>
+  <button
+    aria-autocomplete="list"
+    aria-haspopup="true"
+    aria-label="open menu"
+    aria-labelledby="downshift-1-label"
+    autocomplete="off"
+    class="c1 c2"
+    data-toggle="true"
+    id="downshift-1-input"
     role="button"
     type="button"
     value=""

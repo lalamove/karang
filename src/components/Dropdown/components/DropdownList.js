@@ -18,7 +18,7 @@ import Label from './Label';
 
 const StyledList = styled(List)`
   position: absolute;
-  z-index: 1;
+  z-index: 400;
   top: ${({ nested }) => (nested ? '-8px' : '100%')};
 
   ${({ nested, direction }) => {

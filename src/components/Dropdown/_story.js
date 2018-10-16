@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import InfoIcon from 'icons/Info';
 
 import Dropdown from './index';
+import Icon from '../Icon';
 
 const items = [
   {
@@ -19,56 +19,56 @@ const itemsWithSubmenu = [
   {
     value: 'TH',
     label: 'Thailand',
-    icon: <InfoIcon />,
+    icon: <Icon type="pinFill" />,
     options: [
       {
         value: 'TH_BKK',
         label: 'Bangkok',
-        icon: <InfoIcon />,
+        icon: <Icon type="pinFill" />,
       },
       {
         value: 'TH_CNX',
         label: 'Chiang Mai',
-        icon: <InfoIcon />,
+        icon: <Icon type="pinFill" />,
       },
     ],
   },
   {
     value: 'HK_HKG',
     label: 'Hong Kong',
-    icon: <InfoIcon />,
+    icon: <Icon type="pinFill" />,
   },
   {
     value: 'VN_HCM',
     label: 'Vietnam',
-    icon: <InfoIcon />,
+    icon: <Icon type="pinFill" />,
   },
   {
     value: 'PH',
     label: 'Philippines',
-    icon: <InfoIcon />,
+    icon: <Icon type="pinFill" />,
     options: [
       {
         value: 'PH_MNL',
         label: 'Manila',
-        icon: <InfoIcon />,
+        icon: <Icon type="pinFill" />,
       },
       {
         value: 'PH_CEB',
         label: 'Cebu',
-        icon: <InfoIcon />,
+        icon: <Icon type="pinFill" />,
       },
     ],
   },
   {
     value: 'SG_SGN',
     label: 'Singapore',
-    icon: <InfoIcon />,
+    icon: <Icon type="pinFill" />,
   },
   {
     value: 'TW_TPE',
     label: 'Taiwan',
-    icon: <InfoIcon />,
+    icon: <Icon type="pinFill" />,
   },
 ];
 
@@ -91,7 +91,7 @@ class Wrapper extends Component {
         <h4>Basic with icon</h4>
         <Dropdown
           items={items.map(item =>
-            Object.assign({}, item, { icon: <InfoIcon /> })
+            Object.assign({}, item, { icon: <Icon type="pinFill" /> })
           )}
         />
         <h4>Cascading menu with icon</h4>

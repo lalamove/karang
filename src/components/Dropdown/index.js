@@ -23,11 +23,19 @@ const Container = styled.div`
 
 class Dropdown extends Component {
   static propTypes = {
+    /** Fit the width to its parent width when it is `true` */
     block: bool,
+    /** Pop menu items */
     items: arrayOf(shape({})).isRequired,
+    /** The currently selected item */
     selectedItem: shape({}),
+    /** Callback function, to be executed when user selected an item and it has changed */
     onChange: func,
+    /** Callback function, to be executed when user clicked outside of pop menu */
+    onOuterClick: func,
+    /** Label of the component, will be shown before user selected option */
     defaultLabel: string,
+    /** Open direction of pop menu */
     direction: oneOf(['left', 'right']),
   };
 
@@ -35,6 +43,7 @@ class Dropdown extends Component {
     block: false,
     selectedItem: null,
     onChange: noop,
+    onOuterClick: noop,
     defaultLabel: 'Options',
     direction: 'right',
   };
@@ -158,6 +167,16 @@ class Dropdown extends Component {
     }
   };
 
+  handleChange = selection => {
+    this.setState({ highlightedIndexes: [] });
+    this.props.onChange(selection);
+  };
+
+  handleOuterClick = stateAndHelpers => {
+    this.setState({ highlightedIndexes: [] });
+    this.props.onOuterClick(stateAndHelpers);
+  };
+
   render() {
     const {
       block,
@@ -165,13 +184,15 @@ class Dropdown extends Component {
       selectedItem,
       defaultLabel,
       onChange,
+      onOuterClick,
       direction,
       ...remainProps
     } = this.props;
     const { highlightedIndexes } = this.state;
     return (
       <Downshift
-        onChange={onChange}
+        onChange={this.handleChange}
+        onOuterClick={this.handleOuterClick}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
       >
