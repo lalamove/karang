@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import CrossIcon from 'icons/Cross';
+
+import Icon from 'components/Icon';
 import { orange, offWhite } from 'styles/colors';
 
 const Button = styled.button`
@@ -21,7 +22,7 @@ const Button = styled.button`
 
 const CloseButton = props => (
   <Button {...props}>
-    <CrossIcon />
+    <Icon type="cross" />
   </Button>
 );
 

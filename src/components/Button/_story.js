@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import Button, { ButtonWithComponent } from './index';
+import Button, { ButtonWithComponent, CloseButton } from './index';
 
 const Container = styled.div`
   display: flex;
@@ -94,6 +94,7 @@ storiesOf('Button', module).add(
         <CustomComponent href="#somewhere" variant="primary">
           {'Button with <a href="#somewhere" /> tag'}
         </CustomComponent>
+        <CloseButton />
       </Container>
     </div>
   ))
