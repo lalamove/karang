@@ -3,6 +3,7 @@ import { injectGlobal } from 'styled-components';
 import calendarIcon from '../../Icon/icons/others/calendarIcon.svg';
 import leftArrow from '../../Icon/icons/others/leftArrow.svg';
 import rightArrow from '../../Icon/icons/others/rightArrow.svg';
+import { primaryFonts, fontWeight } from 'styles/fonts';
 
 injectGlobal`
 .llm-date-range-picker {
@@ -19,7 +20,7 @@ injectGlobal`
     padding: 4px 12px;
     margin-right: 8px;
     font: inherit;
-    font-weight: 700;
+    font-weight: ${fontWeight.bold};
     line-height: normal;
     overflow: visible;
     -moz-box-sizing: border-box;
@@ -245,7 +246,7 @@ injectGlobal`
   }
   .DayPickerKeyboardShortcuts_title {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: ${fontWeight.bold};
     margin: 0;
   }
   .DayPickerKeyboardShortcuts_list {
@@ -277,7 +278,7 @@ injectGlobal`
     cursor: pointer;
     font-size: 12px;
     color: rgba(83, 83, 83, 1);
-    font-family: 'Noto Sans', sans-serif;
+    font-family: ${primaryFonts};
     line-height: 16px;
     text-align: center;
     width: 36px;
@@ -426,8 +427,8 @@ injectGlobal`
   .CalendarMonth_caption {
     height: 24px;
     font-size: 16px;
-    font-family: 'Noto Sans', serif;
-    font-weight: bold;
+    font-family: ${primaryFonts};
+    font-weight: ${fontWeight.bold};
     color: rgba(83, 83, 83, 1);
     line-height: 24px;
     text-align: center;
@@ -633,7 +634,7 @@ injectGlobal`
     font-size: 12px;
   }
   .DayPicker_weekHeader_li {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: ${primaryFonts};
     height: 16px;
     display: inline-block;
     text-align: center;
@@ -684,7 +685,7 @@ injectGlobal`
     background: #e2e2e2;
   }
   .DateInput_input {
-    font-family: 'Noto Sans', sans-serif !important;
+    font-family: ${primaryFonts} !important;
     font-size: 14px;
     line-height: 16px;
     background-color: #fff;

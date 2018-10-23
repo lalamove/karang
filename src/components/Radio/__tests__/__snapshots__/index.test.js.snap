@@ -15,7 +15,7 @@ exports[`Snapshots Radio checked 1`] = `
 
 .c4 {
   display: inline-block;
-  font-family: "Noto Sans",sans-serif;
+  font-family: 'Noto Sans',sans-serif;
 }
 
 .c0 {
@@ -100,7 +100,7 @@ exports[`Snapshots Radio disabled 1`] = `
 
 .c4 {
   display: inline-block;
-  font-family: "Noto Sans",sans-serif;
+  font-family: 'Noto Sans',sans-serif;
 }
 
 .hnkhzj:hover .c1,
@@ -213,7 +213,7 @@ exports[`Snapshots Radio unchecked 1`] = `
 
 .c4 {
   display: inline-block;
-  font-family: "Noto Sans",sans-serif;
+  font-family: 'Noto Sans',sans-serif;
 }
 
 .c0 {
@@ -297,7 +297,7 @@ exports[`Snapshots Render children 1`] = `
 
 .c4 {
   display: inline-block;
-  font-family: "Noto Sans",sans-serif;
+  font-family: 'Noto Sans',sans-serif;
 }
 
 .c0 {

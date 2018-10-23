@@ -12,7 +12,7 @@ exports[`snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: rgba(88,89,91,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: 'Noto Sans',sans-serif;
   font-size: 14px;
   -webkit-user-select: none;
   -moz-user-select: none;

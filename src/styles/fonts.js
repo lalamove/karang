@@ -1,11 +1,13 @@
 import { injectGlobal } from 'styled-components';
 
 injectGlobal`
-@import url(../assets/fonts/NotoSans-Regular.ttf);
-  @import url(../assets/fonts/NotoSans-Bold.ttf);
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('../assets/fonts/NotoSans-Regular.ttf') format('truetype');
+  }
 `;
 
-export const primaryFonts = 'Noto Sans, sans-serif';
+export const primaryFonts = "'Noto Sans', sans-serif";
 
 export const fontSize = {
   micro: '10px',
