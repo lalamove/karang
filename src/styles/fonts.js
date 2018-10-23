@@ -1,10 +1,11 @@
 import { injectGlobal } from 'styled-components';
 
 injectGlobal`
-  @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+@import url(../assets/fonts/NotoSans-Regular.ttf);
+  @import url(../assets/fonts/NotoSans-Bold.ttf);
 `;
 
-export const primaryFonts = '"Noto Sans", sans-serif';
+export const primaryFonts = 'Noto Sans, sans-serif';
 
 export const fontSize = {
   micro: '10px',
