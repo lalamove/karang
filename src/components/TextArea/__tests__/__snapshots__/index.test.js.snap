@@ -7,7 +7,7 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
   padding: 0;
   border: none;
   color: rgba(51,49,50,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
   resize: none;
@@ -43,7 +43,6 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
   border: 1px solid rgba(216,83,79,1);
@@ -58,7 +57,6 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
 
 .c6 {
   color: rgba(216,83,79,1);
-  font-family: "Noto Sans",sans-serif;
   font-size: 12px;
 }
 
@@ -154,7 +152,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
   padding: 0;
   border: none;
   color: rgba(51,49,50,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
   resize: none;
@@ -190,7 +188,6 @@ exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -233,7 +230,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   padding: 0;
   border: none;
   color: rgba(51,49,50,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
   resize: none;
@@ -277,7 +274,6 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   top: 50%;
   left: 1em;
   color: rgba(128,130,133,1);
-  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   line-height: 1;
   white-space: nowrap;
@@ -305,7 +301,6 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -329,7 +324,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
 .c5 {
   padding-top: 0.5em;
   color: rgba(128,130,133,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   font-size: 12px;
 }
 
@@ -367,7 +362,7 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
   padding: 0;
   border: none;
   color: rgba(51,49,50,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
   resize: none;
@@ -403,7 +398,6 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -427,7 +421,7 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
 .c4 {
   padding-top: 0.5em;
   color: rgba(128,130,133,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   font-size: 12px;
 }
 

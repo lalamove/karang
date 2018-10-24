@@ -19,6 +19,7 @@ const SCTextInput = styled(TextInput)`
 
 const Wrapper = styled.div`
   display: inline-block;
+  font-family: inherit;
 `;
 
 const propTypes = {

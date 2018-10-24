@@ -1,14 +1,3 @@
-import { injectGlobal } from 'styled-components';
-
-injectGlobal`
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('../assets/fonts/NotoSans-Regular.ttf') format('truetype');
-  }
-`;
-
-export const primaryFonts = '"Noto Sans", sans-serif';
-
 export const fontSize = {
   micro: '10px',
   small: '12px', // Label Text font size
@@ -26,7 +15,6 @@ export const fontWeight = {
 };
 
 export default {
-  primaryFonts,
   fontWeight,
   fontSize,
 };

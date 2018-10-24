@@ -3,14 +3,13 @@ import { bool, string } from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import { red, orange, silver, white } from 'styles/colors';
-import { primaryFonts, fontSize } from 'styles/fonts';
+import { fontSize } from 'styles/fonts';
 
 const Container = styled.label`
   position: absolute;
   top: 50%;
   left: 1em;
   color: ${silver};
-  font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
   line-height: 1;
   white-space: nowrap;

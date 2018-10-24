@@ -14,7 +14,6 @@ exports[`Input Snapshots Password 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -24,7 +23,7 @@ exports[`Input Snapshots Password 1`] = `
   padding: 1em;
   border: none;
   color: rgba(51,49,50,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
   line-height: 20px;
@@ -57,7 +56,7 @@ exports[`Input Snapshots Password 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -98,6 +97,7 @@ exports[`Input Snapshots Password 1`] = `
 
 .c0 {
   display: inline-block;
+  font-family: inherit;
 }
 
 <div
@@ -192,7 +192,6 @@ exports[`Input Snapshots Password with a value 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -202,7 +201,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   padding: 1em;
   border: none;
   color: rgba(51,49,50,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
   line-height: 20px;
@@ -235,7 +234,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -276,6 +275,7 @@ exports[`Input Snapshots Password with a value 1`] = `
 
 .c0 {
   display: inline-block;
+  font-family: inherit;
 }
 
 <div
@@ -371,7 +371,6 @@ exports[`Input Snapshots Regular Input 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -381,7 +380,7 @@ exports[`Input Snapshots Regular Input 1`] = `
   padding: 1em;
   border: none;
   color: rgba(51,49,50,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
   line-height: 20px;
@@ -411,6 +410,7 @@ exports[`Input Snapshots Regular Input 1`] = `
 
 .c0 {
   display: inline-block;
+  font-family: inherit;
 }
 
 <div
@@ -441,7 +441,6 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 
 .c5 {
   color: rgba(216,83,79,1);
-  font-family: "Noto Sans",sans-serif;
   font-size: 12px;
 }
 
@@ -453,7 +452,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 .c2 {
   border: 1px solid rgba(229,229,229,1);
   caret-color: rgba(242,103,34,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   padding: 0;
   border-radius: 0;
   -webkit-appearance: none;
@@ -599,7 +598,7 @@ exports[`PinInput Snapshots Empty 1`] = `
 .c2 {
   border: 1px solid rgba(229,229,229,1);
   caret-color: rgba(242,103,34,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   padding: 0;
   border-radius: 0;
   -webkit-appearance: none;
@@ -691,7 +690,7 @@ exports[`PinInput Snapshots change type 1`] = `
 .c2 {
   border: 1px solid rgba(229,229,229,1);
   caret-color: rgba(242,103,34,1);
-  font-family: "Noto Sans",sans-serif;
+  font-family: inherit;
   padding: 0;
   border-radius: 0;
   -webkit-appearance: none;

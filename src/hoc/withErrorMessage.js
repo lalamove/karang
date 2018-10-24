@@ -3,7 +3,7 @@ import { oneOfType, func, object, string, shape } from 'prop-types';
 import styled from 'styled-components';
 
 import { red } from 'styles/colors';
-import { primaryFonts, fontSize } from 'styles/fonts';
+import { fontSize } from 'styles/fonts';
 import ErrorIcon from 'icons/Error';
 
 const Container = styled.div`
@@ -18,7 +18,6 @@ const ErrorMessageContainer = styled.div`
 
 const Text = styled.span`
   color: ${red};
-  font-family: ${primaryFonts};
   font-size: ${fontSize.small};
 `;
 

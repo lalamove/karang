@@ -22,6 +22,7 @@ const SCTextInput = styled(TextInput)`
   min-width: 20em;
   padding: 0;
   margin-left: 10px;
+  font-family: inherit;
 `;
 
 const CompWithRef = forwardRef((props, ref) => (

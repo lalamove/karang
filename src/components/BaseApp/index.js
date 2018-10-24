@@ -4,14 +4,13 @@ import { injectGlobal } from 'styled-components';
 import { normalize } from 'polished';
 
 import { orange } from 'styles/colors';
-import { primaryFonts, fontSize } from 'styles/fonts';
+import { fontSize } from 'styles/fonts';
 
 injectGlobal`
   ${normalize()}
 
   html, body {
     height: 100%;
-    font-family: ${primaryFonts};
     font-size: ${fontSize.regular};
     line-height: 1.143;
   }

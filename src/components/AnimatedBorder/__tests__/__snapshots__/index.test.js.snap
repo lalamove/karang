@@ -14,7 +14,6 @@ exports[`Snapshots AnimatedBorder 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -32,7 +31,6 @@ exports[`Snapshots AnimatedBorder with label 1`] = `
   top: 50%;
   left: 1em;
   color: rgba(128,130,133,1);
-  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   line-height: 1;
   white-space: nowrap;
@@ -60,7 +58,6 @@ exports[`Snapshots AnimatedBorder with label 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -84,7 +81,6 @@ exports[`Snapshots AnimatedBorder with label and dirty 1`] = `
   top: 50%;
   left: 1em;
   color: rgba(128,130,133,1);
-  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   line-height: 1;
   white-space: nowrap;
@@ -119,7 +115,6 @@ exports[`Snapshots AnimatedBorder with label and dirty 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
 }
@@ -142,7 +137,6 @@ exports[`Snapshots AnimatedBorder with label and error 1`] = `
   top: 50%;
   left: 1em;
   color: rgba(128,130,133,1);
-  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   line-height: 1;
   white-space: nowrap;
@@ -178,7 +172,6 @@ exports[`Snapshots AnimatedBorder with label and error 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
   border: 1px solid rgba(216,83,79,1);
@@ -202,7 +195,6 @@ exports[`Snapshots AnimatedBorder with label and focused 1`] = `
   top: 50%;
   left: 1em;
   color: rgba(128,130,133,1);
-  font-family: "Noto Sans",sans-serif;
   font-size: 14px;
   line-height: 1;
   white-space: nowrap;
@@ -238,7 +230,6 @@ exports[`Snapshots AnimatedBorder with label and focused 1`] = `
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
   border: 1px solid rgba(229,229,229,1);
-  font-family: "Noto Sans",sans-serif;
   text-align: left;
   width: 100%;
   border: 1px solid rgba(242,103,34,1);

@@ -3,7 +3,6 @@ import { bool, node, string } from 'prop-types';
 import styled from 'styled-components';
 
 import { red, orange, offWhite } from 'styles/colors';
-import { primaryFonts } from 'styles/fonts';
 import Placeholder from './components/Placeholder';
 
 const Container = styled.div`
@@ -12,7 +11,6 @@ const Container = styled.div`
   flex: 1;
   flex-flow: row nowrap;
   border: 1px solid ${offWhite};
-  font-family: ${primaryFonts};
   text-align: left;
   width: 100%;
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { black, orange, offWhite, white } from 'styles/colors';
-import { primaryFonts, fontSize } from 'styles/fonts';
+import { fontSize } from 'styles/fonts';
 import { arrayOf, bool, func, oneOf, node, string, shape } from 'prop-types';
 
 import noop from 'utils/noop';
@@ -15,7 +15,6 @@ const resetList = css`
 
 const Content = styled.div`
   flex: 1;
-  font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
   line-height: 20px;
 

@@ -5,12 +5,12 @@ import styled, { css } from 'styled-components';
 import noop from 'utils/noop';
 import ErrorMessage from '../../ErrorMessage';
 import { red, orange, offWhite } from 'styles/colors';
-import { primaryFonts, fontSize } from 'styles/fonts';
+import { fontSize } from 'styles/fonts';
 
 const Input = styled.input`
   border: 1px solid ${offWhite};
   caret-color: ${orange};
-  font-family: ${primaryFonts};
+  font-family: inherit;
   padding: 0;
   border-radius: 0;
   appearance: none;

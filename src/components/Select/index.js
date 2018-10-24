@@ -46,6 +46,7 @@ const Item = styled.div`
 
 const ItemContent = styled.span`
   padding-left: 10px;
+  font-family: inherit;
 `;
 
 const Button = styled.button`
@@ -55,12 +56,14 @@ const Button = styled.button`
   outline: none;
   padding: 12px;
   color: ${gray};
+  font-family: inherit;
 `;
 
 const LeftSpan = styled.span`
   float: left;
   line-height: 24px;
   height: 24px;
+  font-family: inherit;
 `;
 
 const RightSpan = styled.span`

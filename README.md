@@ -64,6 +64,19 @@ const App = () => (
 
 export default App;
 ```
+#### Fonts
+Add your font files or hosted font urls in your App's **`index.html`** file. The Storybook 
+component showcase and the documentation examples use Google's **`"Noto Sans"`** font. 
+```html
+<link rel="stylesheet" href="https://fonts....." />
+```
+Finally, apply your font to the parent container of the **`lalamove-ui`** component as shown below.
+```css static
+  .your-css-class {
+      font-family: "your selected font", sans-serif; /* backup font */
+      font-size: 15px; /* example size */
+  }
+```
 
 #### Using exported UI components
 Quick example to **get you started** in your own components / containers:

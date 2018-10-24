@@ -10,6 +10,7 @@ import TextInput from './TextInput';
 
 const Wrapper = styled.div`
   display: inline-block;
+  font-family: inherit;
 `;
 
 const SCAnimatedBorder = styled(AnimatedBorder)`
@@ -22,6 +23,7 @@ const TextDisplay = styled.div`
   line-height: 20px;
   padding: 1em;
   overflow: hidden;
+  font-family: inherit;
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
