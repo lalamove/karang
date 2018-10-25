@@ -2,8 +2,7 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { withInfo } from '@storybook/addon-info';
-import styled, { injectGlobal } from 'styled-components';
-import { fontSize } from 'styles/fonts';
+import styled from 'styled-components';
 
 import App from 'components/BaseApp';
 

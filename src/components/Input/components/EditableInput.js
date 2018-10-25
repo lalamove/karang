@@ -1,7 +1,6 @@
 import React, { Component, Fragment, forwardRef } from 'react';
 import { bool, func, oneOfType, object, string, shape } from 'prop-types';
 import styled from 'styled-components';
-import { primaryFonts } from 'styles/fonts';
 
 import noop from 'utils/noop';
 import AnimatedBorder from 'components/AnimatedBorder';
@@ -11,7 +10,6 @@ import TextInput from './TextInput';
 
 const Wrapper = styled.div`
   display: inline-block;
-  font-family: ${primaryFonts};
 `;
 
 const SCAnimatedBorder = styled(AnimatedBorder)`
@@ -24,7 +22,6 @@ const TextDisplay = styled.div`
   line-height: 20px;
   padding: 1em;
   overflow: hidden;
-  font-family: ${primaryFonts};
   white-space: nowrap;
   text-overflow: ellipsis;
 `;

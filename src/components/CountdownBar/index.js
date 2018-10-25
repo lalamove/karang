@@ -20,7 +20,6 @@ const Container = styled.div`
   border-radius: 2px;
   color: ${white};
   cursor: not-allowed;
-  font-family: ${primaryFonts};
   font-size: ${fontSize.medium};
   font-weight: ${fontWeight.bold};
   height: 2.625em;

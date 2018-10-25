@@ -8,7 +8,6 @@ import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
 import withSelectAll from 'hoc/withSelectAll';
 import withCursorEnd from 'hoc/withCursorEnd';
-import { primaryFonts } from 'styles/fonts';
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
 
@@ -20,7 +19,6 @@ const SCTextInput = styled(TextInput)`
 
 const Wrapper = styled.div`
   display: inline-block;
-  font-family: ${primaryFonts};
 `;
 
 const propTypes = {

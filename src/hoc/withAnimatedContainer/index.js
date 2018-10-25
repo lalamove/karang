@@ -12,8 +12,8 @@ const Container = styled.div`
   display: inline-flex;
   flex: 1;
   flex-flow: row nowrap;
-  font-family: ${primaryFonts};
   border: 1px solid ${offWhite};
+  font-family: ${primaryFonts};
   text-align: left;
 
   ${({ focused }) =>

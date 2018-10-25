@@ -18,7 +18,6 @@ import DropDownIcon from 'icons/DropDown';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
 import { orange, gray, lightGray, white, hoverGray } from 'styles/colors';
-import { primaryFonts } from 'styles/fonts';
 
 const ItemList = styled.div`
   position: absolute;
@@ -47,7 +46,6 @@ const Item = styled.div`
 
 const ItemContent = styled.span`
   padding-left: 10px;
-  font-family: ${primaryFonts};
 `;
 
 const Button = styled.button`
@@ -57,14 +55,12 @@ const Button = styled.button`
   outline: none;
   padding: 12px;
   color: ${gray};
-  font-family: ${primaryFonts};
 `;
 
 const LeftSpan = styled.span`
   float: left;
   line-height: 24px;
   height: 24px;
-  font-family: ${primaryFonts};
 `;
 
 const RightSpan = styled.span`
