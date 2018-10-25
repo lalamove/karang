@@ -3,7 +3,7 @@ import { string } from 'prop-types';
 import styled from 'styled-components';
 
 import { black, offWhite } from 'styles/colors';
-import { fontSize } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 import Icon from 'components/Icon';
 import TextInput from './TextInput';
 
@@ -22,7 +22,7 @@ const SCTextInput = styled(TextInput)`
   min-width: 20em;
   padding: 0;
   margin-left: 10px;
-  font-family: inherit;
+  font-family: ${primaryFonts};
 `;
 
 const CompWithRef = forwardRef((props, ref) => (

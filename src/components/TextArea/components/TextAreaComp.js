@@ -3,7 +3,7 @@ import { string } from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import { orange, black, silver } from 'styles/colors';
-import { fontSize } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 
 const SCTextArea = styled.textarea`
   width: 100%;
@@ -11,7 +11,7 @@ const SCTextArea = styled.textarea`
   padding: 0;
   border: none;
   color: ${black};
-  font-family: inherit;
+  font-family: ${primaryFonts};
   caret-color: ${orange};
   font-size: ${fontSize.regular};
   resize: none;

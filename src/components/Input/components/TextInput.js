@@ -3,14 +3,14 @@ import { string } from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import { orange, black, silver } from 'styles/colors';
-import { fontSize } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 
 const InputField = styled.input`
   width: 100%;
   padding: 1em;
   border: none;
   color: ${black};
-  font-family: inherit;
+  font-family: ${primaryFonts};
   caret-color: ${orange};
   font-size: ${fontSize.regular};
   line-height: 20px;

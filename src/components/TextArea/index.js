@@ -12,7 +12,7 @@ import styled, { css } from 'styled-components';
 
 import noop from 'utils/noop';
 import { silver } from 'styles/colors';
-import { fontSize } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 import TextAreaComp from './components/TextAreaComp';
 import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
@@ -37,7 +37,7 @@ const SCAnimatedBorder = styled(AnimatedBorder)`
 const CountMessage = styled.div`
   padding-top: 0.5em;
   color: ${silver};
-  font-family: inherit;
+  font-family: ${primaryFonts};
   font-size: ${fontSize.small};
 `;
 

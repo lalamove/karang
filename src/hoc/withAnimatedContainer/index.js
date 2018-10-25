@@ -2,6 +2,7 @@ import React, { Component, forwardRef } from 'react';
 import { bool, oneOfType, func, object, string, shape } from 'prop-types';
 import styled from 'styled-components';
 import { red, orange, offWhite } from 'styles/colors';
+import { primaryFonts } from 'styles/fonts';
 import noop from 'utils/noop';
 
 import Placeholder from './components/Placeholder';
@@ -11,6 +12,7 @@ const Container = styled.div`
   display: inline-flex;
   flex: 1;
   flex-flow: row nowrap;
+  font-family: ${primaryFonts};
   border: 1px solid ${offWhite};
   text-align: left;
 

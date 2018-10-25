@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 import noop from 'utils/noop';
 import { orange, gray, silver, white, offWhite } from 'styles/colors';
-import { fontSize } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 
 const Container = styled.label`
   position: relative;
   display: inline-flex;
   align-items: center;
   color: ${gray};
+  font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
   user-select: none;
   line-height: 20px;

@@ -10,6 +10,7 @@ exports[`Snapshots ErrorMessage 1`] = `
 
 .c2 {
   color: rgba(216,83,79,1);
+  font-family: "Noto Sans",sans-serif;
   font-size: 12px;
 }
 

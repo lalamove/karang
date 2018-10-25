@@ -3,6 +3,7 @@ import { bool, func, node, string } from 'prop-types';
 import styled, { css } from 'styled-components';
 import noop from 'utils/noop';
 import { orange, silver, offWhite } from 'styles/colors';
+import { primaryFonts } from 'styles/fonts';
 
 const Radio = styled.span`
   display: inline-block;
@@ -18,6 +19,7 @@ const Radio = styled.span`
 
 const Text = styled.span`
   display: inline-block;
+  font-family: ${primaryFonts};
 `;
 
 const Label = styled.label`

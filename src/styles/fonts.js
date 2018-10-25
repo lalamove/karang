@@ -1,3 +1,11 @@
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+`;
+
+export const primaryFonts = '"Noto Sans", sans-serif';
+
 export const fontSize = {
   micro: '10px',
   small: '12px', // Label Text font size
@@ -15,6 +23,7 @@ export const fontWeight = {
 };
 
 export default {
+  primaryFonts,
   fontWeight,
   fontSize,
 };

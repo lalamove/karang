@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import { lighten } from 'polished';
 
 import { orange, white } from 'styles/colors';
-import { fontSize, fontWeight } from 'styles/fonts';
+import { primaryFonts, fontSize, fontWeight } from 'styles/fonts';
 
 const fillup = keyframes`
   from {
@@ -20,6 +20,7 @@ const Container = styled.div`
   border-radius: 2px;
   color: ${white};
   cursor: not-allowed;
+  font-family: ${primaryFonts};
   font-size: ${fontSize.medium};
   font-weight: ${fontWeight.bold};
   height: 2.625em;

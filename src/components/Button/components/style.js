@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontSize } from 'styles/fonts';
+import { primaryFonts, fontSize } from 'styles/fonts';
 
 const Base = styled.button`
   /* structure */
@@ -11,7 +11,7 @@ const Base = styled.button`
   border: 1px currentColor solid;
   background-color: transparent;
   border-radius: 2px;
-  font-family: inherit;
+  font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
   font-weight: 400;
   line-height: 1;
