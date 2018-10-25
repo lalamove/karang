@@ -8,13 +8,6 @@ import { fontSize } from 'styles/fonts';
 
 injectGlobal`
   ${normalize()}
-
-  html, body {
-    height: 100%;
-    font-size: ${fontSize.regular};
-    line-height: 1.143;
-  }
-
   a {
     color: ${orange};
     text-decoration: none;
