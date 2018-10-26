@@ -65,9 +65,10 @@ const App = () => (
 export default App;
 ```
 #### Fonts
-Add your font files or hosted font urls in your App's **`index.html`** file as shown below.
+Please embed the required fonts into your application, for example, you can copy this code into the 
+`<head>` element of your web app.
 ```html
-<link rel="stylesheet" href="https://fonts....." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" />
 ```
 
 #### Using exported UI components

@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import { lighten } from 'polished';
 
 import { orange, white } from 'styles/colors';
-import { primaryFonts, fontSize, fontWeight } from 'styles/fonts';
+import { fontSize, fontWeight } from 'styles/fonts';
 
 const fillup = keyframes`
   from {
