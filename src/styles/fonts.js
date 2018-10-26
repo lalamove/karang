@@ -1,9 +1,5 @@
 import { injectGlobal } from 'styled-components';
 
-injectGlobal`
-  @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
-`;
-
 export const primaryFonts = '"Noto Sans", sans-serif';
 
 export const fontSize = {
