@@ -687,7 +687,6 @@ exports[`PinInput Snapshots Empty 1`] = `
 </div>
 `;
 
-
 exports[`PinInput Snapshots change type 1`] = `
 .c2 {
   border: 1px solid rgba(229,229,229,1);

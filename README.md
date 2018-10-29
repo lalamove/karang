@@ -64,6 +64,12 @@ const App = () => (
 
 export default App;
 ```
+#### Fonts
+Please embed the required fonts into your application, for example, you can copy the following code into the 
+`<head>` element of your web app.
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" />
+```
 
 #### Using exported UI components
 Quick example to **get you started** in your own components / containers:
