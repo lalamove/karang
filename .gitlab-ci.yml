@@ -30,7 +30,7 @@ version:
   stage: version
   only:
     refs:
-      - master@andrew.mok/lalamove-ui
+      - master@lalamove/lalamove-ui
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
