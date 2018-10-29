@@ -1,9 +1,9 @@
 import dateFns from 'date-fns';
+import { injectGlobal } from 'styled-components';
 import BaseApp from '../src/components/BaseApp';
 import Button from '../src/components/Button';
 import Rating from '../src/components/Rating';
-import { injectGlobal } from 'styled-components';
-import { fontSize} from 'styles/fonts';
+import { fontSize } from 'styles/fonts';
 
 injectGlobal`
   @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
