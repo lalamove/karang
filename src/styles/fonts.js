@@ -1,5 +1,3 @@
-import { injectGlobal } from 'styled-components';
-
 export const primaryFonts = '"Noto Sans", sans-serif';
 
 export const fontSize = {
