@@ -69,6 +69,7 @@ Please embed the required fonts into your application, for example, you can copy
 `<head>` element of your web app.
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" />
 ```
 
 #### Using exported UI components

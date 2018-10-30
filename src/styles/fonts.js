@@ -1,4 +1,4 @@
-export const primaryFonts = '"Noto Sans", sans-serif';
+export const primaryFonts = 'Noto Sans, "Noto Sans TC", sans-serif';
 
 export const fontSize = {
   micro: '10px',
