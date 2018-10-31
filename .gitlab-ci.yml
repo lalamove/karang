@@ -5,7 +5,15 @@ cache:
   - node_modules/
 stages:
 - test
+- version
 - doc
+before_script:
+  - apk update
+  - apk -v --update add git openssh
+  - mkdir ~/.ssh
+  - printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - chmod 600 -R ~/.ssh
 
 test:
   image: node:8.11-alpine
@@ -17,13 +25,34 @@ test:
     - yarn install
     - yarn test-coverage
 
+version:
+  image: node:8.11-alpine
+  stage: version
+  only:
+    refs:
+      - master@lalamove/lalamove-ui
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /DOC:/
+  script:
+     - REMOTE_URL=`git remote get-url --push origin`
+     - REMOTE_URL=${REMOTE_URL//*"@git.easygroup.co"/"ssh://git@git.easygroup.co:12888"}
+     - git config user.email "$GITLAB_USER_EMAIL"
+     - git config user.name "$GITLAB_USER_NAME"
+     - case "$CI_COMMIT_TITLE" in "MAJOR:"*) npm version major;; "MINOR:"*) npm version minor;; *) npm version patch;; esac
+     - git push $REMOTE_URL HEAD:$CI_COMMIT_REF_NAME --follow-tags
+     - echo "Version updated"
+
 storybook:
   image: node:8.11-alpine
   stage: doc
   tags:
     - k8s
   only:
-  - master@lalamove/lalamove-ui
+    refs:
+      - master@lalamove/lalamove-ui
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /DOC:/
   environment:
     name: storybook
     url: https://ui.lalamove.com/storybook
@@ -42,7 +71,10 @@ styleguide:
   tags:
     - k8s
   only:
-  - master@lalamove/lalamove-ui
+    refs:
+      - master@lalamove/lalamove-ui
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /DOC:/
   environment:
     name: doc
     url: https://ui.lalamove.com
