@@ -65,13 +65,25 @@ describe('Dropdown', () => {
   });
 
   describe('Functions', () => {
-    it('select first option with keyboard', () => {
+    it('select first option with keyboard by Enter', () => {
       const onChange = jest.fn();
       const wrapper = mount(<Dropdown items={items} onChange={onChange} />);
       const button = wrapper.find('button');
       button.simulate('keydown', { key: ' ' });
       button.simulate('keydown', { key: 'ArrowDown' });
       button.simulate('keydown', { key: 'Enter' });
+      expect(onChange).toHaveBeenCalledTimes(1);
+      expect(onChange).toHaveBeenCalledWith(items[0]);
+      expect(button.instance().value).toBe(items[0].value);
+    });
+
+    it('select first option with keyboard by spacebar', () => {
+      const onChange = jest.fn();
+      const wrapper = mount(<Dropdown items={items} onChange={onChange} />);
+      const button = wrapper.find('button');
+      button.simulate('keydown', { key: ' ' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: ' ' });
       expect(onChange).toHaveBeenCalledTimes(1);
       expect(onChange).toHaveBeenCalledWith(items[0]);
       expect(button.instance().value).toBe(items[0].value);
