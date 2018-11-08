@@ -1,3 +1,14 @@
+// Color Scheme from web design system
+import mineShaft from './colors/mineShaft';
+import mountainMeadow from './colors/mountainMeadow';
+import nobel from './colors/nobel';
+import pictonBlue from './colors/pictonBlue';
+import primary from './colors/primary';
+import secondary from './colors/secondary';
+import treePoppy from './colors/treePoppy';
+import valencia from './colors/valencia';
+
+// TODO: Remove following exports
 export const red = 'rgba(216,83,79,1)';
 export const orange = 'rgba(242,103,34,1)';
 export const green = 'rgba(0,137,91,1)';
@@ -11,7 +22,17 @@ export const offWhite = 'rgba(229,229,229,1)';
 export const white = 'rgba(255,255,255,1)';
 export const facebook = 'rgba(59,89,152,1)';
 
-const colors = {
+const colors = Object.freeze({
+  mineShaft,
+  mountainMeadow,
+  nobel,
+  pictonBlue,
+  primary,
+  secondary,
+  treePoppy,
+  valencia,
+
+  // TODO: Remove following exports
   red,
   orange,
   green,
@@ -24,6 +45,16 @@ const colors = {
   offWhite,
   white,
   facebook,
-};
+});
 
-export default colors;
+export {
+  colors as default,
+  mineShaft,
+  mountainMeadow,
+  nobel,
+  pictonBlue,
+  primary,
+  secondary,
+  treePoppy,
+  valencia,
+};
