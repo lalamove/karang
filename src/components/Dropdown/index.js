@@ -10,6 +10,7 @@ import noop from 'utils/noop';
 const validIndex = /(\d+)_(-?\d+)/;
 let setHighlightedIndex;
 let toggleMenu;
+let selectHighlightedItem;
 
 const Container = styled.div`
   position: relative;
@@ -139,7 +140,15 @@ class Dropdown extends Component {
     this.setHighlightedIndexes(updatedIndex, updatedDepthLevel);
   };
 
-  handleKeyDown = e => {
+  selectHighlightedItem = () => {
+    const { depthLevel, listCounts } = this.state;
+    const subOptionsAvailable = listCounts.length - 1 > depthLevel;
+    if (!subOptionsAvailable) {
+      selectHighlightedItem();
+    }
+  };
+
+  handleKeyDown = (e, isOpen) => {
     const moveAmount = e.shiftKey ? 5 : 1;
     const arrowRightToOpenSubOptions = this.props.direction === 'right';
     switch (e.key) {
@@ -160,7 +169,11 @@ class Dropdown extends Component {
         this.triggerSubOptions(!arrowRightToOpenSubOptions);
         break;
       case ' ':
-        toggleMenu();
+        if (!isOpen) {
+          toggleMenu();
+        } else {
+          this.selectHighlightedItem();
+        }
         break;
       default:
         break;
@@ -203,10 +216,12 @@ class Dropdown extends Component {
           getRootProps,
           isOpen,
           highlightedIndex,
+          selectHighlightedItem: dsSelectHighlightedItem,
           selectedItem: dsSelectedItem,
           setHighlightedIndex: dsSetHighlightedIndex,
           toggleMenu: dsToggleMenu,
         }) => {
+          selectHighlightedItem = dsSelectHighlightedItem;
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
           return (
@@ -225,7 +240,7 @@ class Dropdown extends Component {
                 }
                 {...getToggleButtonProps()}
                 {...getInputProps({
-                  onKeyDown: e => this.handleKeyDown(e),
+                  onKeyDown: e => this.handleKeyDown(e, isOpen),
                 })}
               />
               {isOpen && (

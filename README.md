@@ -1,12 +1,10 @@
-# Lalamove React UI Library
-Version 0.1.0
-
-**Still in development. Use it at your own risk.**
-
+# lalamove-ui
 React components that implement [Lalamove Design](https://lalamove.com), for all web projects.
 
-- [Documentation](https://ui.lalamove.com/) - Detailed documentation for UI components
+- [Introduction](http://bit.ly/llm-ui-introduction) - Introduction of lalamove-ui
+- [Documentation](https://ui.lalamove.com) - Detailed documentation for UI components
 - [Storybook](https://ui.lalamove.com/storybook) - Showcase and examples of UI components
+- [Lanhu](http://bit.ly/llm-ui-lanhu) - UI system design guideline
 
 ## Install
 Before installing this library, please make sure you have the following installed in your own repo:
@@ -22,9 +20,11 @@ Before installing this library, please make sure you have the following installe
 }
 ```
 
-Install **Lalamove React UI Library** in your own repo:
+Install **lalamove-ui** in your own repo:
+
+- Replace `<version-number>` with the [latest version number](https://git.easygroup.co/lalamove/lalamove-ui/tags):
 ```bash
-yarn add git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git
+yarn add git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git#<version-number>
 ```
 
 #### Troubleshooting
@@ -48,9 +48,14 @@ yarn add git+ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git
 #### Initialize the library at the top level
 You must first initialize the library in order to set configuration globals.
 
-At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
+First, please embed the required fonts into your application, for example, you can copy the following code into the 
+`<head>` element of your web app.
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" />
+```
 
-// TODO: Should allow configuration parameters passed as props here
+At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
 
 ```bash
 import React from 'react';
@@ -63,13 +68,6 @@ const App = () => (
 );
 
 export default App;
-```
-#### Fonts
-Please embed the required fonts into your application, for example, you can copy the following code into the 
-`<head>` element of your web app.
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" />
 ```
 
 #### Using exported UI components
