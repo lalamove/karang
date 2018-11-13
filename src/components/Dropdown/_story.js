@@ -86,7 +86,7 @@ const Basic = () => (
     <h4>Block</h4>
     <Dropdown items={items} block />
     <h4>Compact</h4>
-    <Dropdown type="compact" items={items} />
+    <Dropdown variant="compact" items={items} />
   </div>
 );
 

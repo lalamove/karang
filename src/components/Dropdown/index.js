@@ -41,9 +41,9 @@ class Dropdown extends Component {
     defaultLabel: string,
     /** Open direction of pop menu */
     direction: oneOf(['left', 'right']),
-    /** Type of component, `default` is the component with select button, `compact` is the component
-     *  with expand icon button */
-    type: oneOf(['default', 'compact']),
+    /** Variant of component, `default` is the component with select button, `compact` is the
+     *  component with expand icon button */
+    variant: oneOf(['default', 'compact']),
   };
 
   static defaultProps = {
@@ -54,7 +54,7 @@ class Dropdown extends Component {
     onSelect: noop,
     defaultLabel: 'Options',
     direction: 'right',
-    type: 'default',
+    variant: 'default',
   };
 
   state = {
@@ -214,7 +214,7 @@ class Dropdown extends Component {
       onChange,
       onOuterClick,
       direction,
-      type,
+      variant,
       ...remainProps
     } = this.props;
     const { highlightedIndexes } = this.state;
@@ -245,7 +245,7 @@ class Dropdown extends Component {
             <Container
               {...getRootProps({ ...remainProps, block, refKey: 'innerRef' })}
             >
-              {type === 'compact' && (
+              {variant === 'compact' && (
                 <ExpandButton
                   {...getToggleButtonProps()}
                   {...getInputProps({
@@ -253,7 +253,7 @@ class Dropdown extends Component {
                   })}
                 />
               )}
-              {type !== 'compact' && (
+              {variant !== 'compact' && (
                 <DropdownButton
                   icon={
                     (selectedItem && selectedItem.icon) ||
