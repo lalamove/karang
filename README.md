@@ -197,10 +197,7 @@ Install `Styled Components` plugin in IDE `Preferences | Plugins`. [(Installatio
 )
 
 ## Contributing Guidelines
-- [lalamove-ui Contributing Guidelines](https://git.easygroup.co/lalamove/lalamove-ui/wikis/home)
-
-## Support
-* For any questions / bugs report, please feel free to [open an issue here](https://git.easygroup.co/lalamove/lalamove-ui/issues).
+- [lalamove-ui Contributing Guidelines](./CONTRIBUTING.md)
 
 ## License
 * [Copyright (c) 2018 Lalamove. All rights reserved.](./LICENSE.md)
