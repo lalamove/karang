@@ -15,6 +15,9 @@ import truckOutline from './basic/truckOutline';
 // Communication
 import CommunicationIcons from './communication';
 
+// Content
+import ContentIcons from './content';
+
 // Maps
 import MapsIcons from './maps';
 
@@ -106,6 +109,9 @@ const icons = Object.freeze({
 
   // Communication
   ...CommunicationIcons,
+
+  // Content
+  ...ContentIcons,
 
   // Maps
   ...MapsIcons,
