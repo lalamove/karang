@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
@@ -72,7 +73,24 @@ const itemsWithSubmenu = [
   },
 ];
 
-class Wrapper extends Component {
+const Basic = () => (
+  <div>
+    <h4>Basic</h4>
+    <Dropdown items={items} />
+    <h4>Basic with icon</h4>
+    <Dropdown
+      items={items.map(item =>
+        Object.assign({}, item, { icon: <Icon type="pinFill" /> })
+      )}
+    />
+    <h4>Block</h4>
+    <Dropdown items={items} block />
+    <h4>Compact</h4>
+    <Dropdown variant="compact" items={items} />
+  </div>
+);
+
+class CascadingMenu extends Component {
   state = {
     dropdown1: itemsWithSubmenu[5],
     dropdown2: itemsWithSubmenu[1],
@@ -86,14 +104,6 @@ class Wrapper extends Component {
     const { dropdown1, dropdown2 } = this.state;
     return (
       <div>
-        <h4>Basic</h4>
-        <Dropdown items={items} />
-        <h4>Basic with icon</h4>
-        <Dropdown
-          items={items.map(item =>
-            Object.assign({}, item, { icon: <Icon type="pinFill" /> })
-          )}
-        />
         <h4>Cascading menu with icon</h4>
         <Dropdown
           items={itemsWithSubmenu}
@@ -115,5 +125,5 @@ class Wrapper extends Component {
 }
 
 storiesOf('Dropdown', module)
-  .add('Basic', () => <Wrapper />)
-  .add('block', () => <Dropdown block items={items} />);
+  .add('Basic', () => <Basic />)
+  .add('Cascading menu', () => <CascadingMenu />);

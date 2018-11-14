@@ -5,11 +5,13 @@ import styled, { css } from 'styled-components';
 
 import DropdownButton from './components/DropdownButton';
 import DropdownList from './components/DropdownList';
+import ExpandButton from './components/ExpandButton';
 import noop from 'utils/noop';
 
 const validIndex = /(\d+)_(-?\d+)/;
 let setHighlightedIndex;
 let toggleMenu;
+let selectHighlightedItem;
 
 const Container = styled.div`
   position: relative;
@@ -32,11 +34,16 @@ class Dropdown extends Component {
     /** Callback function, to be executed when user selected an item and it has changed */
     onChange: func,
     /** Callback function, to be executed when user clicked outside of pop menu */
+    onSelect: func,
+    /** Callback function, to be executed when user selected an item */
     onOuterClick: func,
     /** Label of the component, will be shown before user selected option */
     defaultLabel: string,
     /** Open direction of pop menu */
     direction: oneOf(['left', 'right']),
+    /** Variant of component, `default` is the component with select button, `compact` is the
+     *  component with expand icon button */
+    variant: oneOf(['default', 'compact']),
   };
 
   static defaultProps = {
@@ -44,8 +51,10 @@ class Dropdown extends Component {
     selectedItem: null,
     onChange: noop,
     onOuterClick: noop,
+    onSelect: noop,
     defaultLabel: 'Options',
     direction: 'right',
+    variant: 'default',
   };
 
   state = {
@@ -139,7 +148,15 @@ class Dropdown extends Component {
     this.setHighlightedIndexes(updatedIndex, updatedDepthLevel);
   };
 
-  handleKeyDown = e => {
+  selectHighlightedItem = () => {
+    const { depthLevel, listCounts } = this.state;
+    const subOptionsAvailable = listCounts.length - 1 > depthLevel;
+    if (!subOptionsAvailable) {
+      selectHighlightedItem();
+    }
+  };
+
+  handleKeyDown = (e, isOpen) => {
     const moveAmount = e.shiftKey ? 5 : 1;
     const arrowRightToOpenSubOptions = this.props.direction === 'right';
     switch (e.key) {
@@ -160,7 +177,11 @@ class Dropdown extends Component {
         this.triggerSubOptions(!arrowRightToOpenSubOptions);
         break;
       case ' ':
-        toggleMenu();
+        if (!isOpen) {
+          toggleMenu();
+        } else {
+          this.selectHighlightedItem();
+        }
         break;
       default:
         break;
@@ -177,6 +198,13 @@ class Dropdown extends Component {
     this.props.onOuterClick(stateAndHelpers);
   };
 
+  handleSelect = selectedItem => {
+    if (selectedItem.onSelect) {
+      selectedItem.onSelect(selectedItem);
+    }
+    this.props.onSelect(selectedItem);
+  };
+
   render() {
     const {
       block,
@@ -186,6 +214,7 @@ class Dropdown extends Component {
       onChange,
       onOuterClick,
       direction,
+      variant,
       ...remainProps
     } = this.props;
     const { highlightedIndexes } = this.state;
@@ -193,6 +222,7 @@ class Dropdown extends Component {
       <Downshift
         onChange={this.handleChange}
         onOuterClick={this.handleOuterClick}
+        onSelect={this.handleSelect}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
       >
@@ -203,31 +233,43 @@ class Dropdown extends Component {
           getRootProps,
           isOpen,
           highlightedIndex,
+          selectHighlightedItem: dsSelectHighlightedItem,
           selectedItem: dsSelectedItem,
           setHighlightedIndex: dsSetHighlightedIndex,
           toggleMenu: dsToggleMenu,
         }) => {
+          selectHighlightedItem = dsSelectHighlightedItem;
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
           return (
             <Container
               {...getRootProps({ ...remainProps, block, refKey: 'innerRef' })}
             >
-              <DropdownButton
-                icon={
-                  (selectedItem && selectedItem.icon) ||
-                  (dsSelectedItem && dsSelectedItem.icon)
-                }
-                label={
-                  (selectedItem && selectedItem.label) ||
-                  (dsSelectedItem && dsSelectedItem.label) ||
-                  defaultLabel
-                }
-                {...getToggleButtonProps()}
-                {...getInputProps({
-                  onKeyDown: e => this.handleKeyDown(e),
-                })}
-              />
+              {variant === 'compact' && (
+                <ExpandButton
+                  {...getToggleButtonProps()}
+                  {...getInputProps({
+                    onKeyDown: e => this.handleKeyDown(e),
+                  })}
+                />
+              )}
+              {variant !== 'compact' && (
+                <DropdownButton
+                  icon={
+                    (selectedItem && selectedItem.icon) ||
+                    (dsSelectedItem && dsSelectedItem.icon)
+                  }
+                  label={
+                    (selectedItem && selectedItem.label) ||
+                    (dsSelectedItem && dsSelectedItem.label) ||
+                    defaultLabel
+                  }
+                  {...getToggleButtonProps()}
+                  {...getInputProps({
+                    onKeyDown: e => this.handleKeyDown(e, isOpen),
+                  })}
+                />
+              )}
               {isOpen && (
                 <DropdownList
                   block={block}

@@ -18790,6 +18790,221 @@ exports[`Icon-visaLogo-size-40 1`] = `
 </svg>
 `;
 
+exports[`Icon-vmenu 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <circle
+        cx="108"
+        cy="68"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="108"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="148"
+        r="9"
+      >
+        
+      </circle>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-vmenu-color-rgba(216,83,79,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(216,83,79,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <circle
+        cx="108"
+        cy="68"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="108"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="148"
+        r="9"
+      >
+        
+      </circle>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-vmenu-color-rgba(242,103,34,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(242,103,34,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <circle
+        cx="108"
+        cy="68"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="108"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="148"
+        r="9"
+      >
+        
+      </circle>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-vmenu-size-20 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <circle
+        cx="108"
+        cy="68"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="108"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="148"
+        r="9"
+      >
+        
+      </circle>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-vmenu-size-40 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:40px;height:40px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <circle
+        cx="108"
+        cy="68"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="108"
+        r="9"
+      >
+        
+      </circle>
+      <circle
+        cx="108"
+        cy="148"
+        r="9"
+      >
+        
+      </circle>
+    </g>
+  </svg>
+</svg>
+`;
+
 exports[`Icon-walletAdd 1`] = `
 <svg
   style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
