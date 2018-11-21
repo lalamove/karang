@@ -7,7 +7,7 @@ exports[`Snapshots Radio checked 1`] = `
   width: 16px;
   height: 16px;
   padding: 2px;
-  border: 1px solid rgba(128,130,133,1);
+  border: 1px solid #B4B4B4;
   margin-right: 0.2em;
   border-radius: 50%;
   vertical-align: middle;
@@ -40,15 +40,22 @@ exports[`Snapshots Radio checked 1`] = `
 
 .c0:hover .c1,
 .c0 > input:focus ~ .c1 {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+  border: 1px solid #B4B4B4;
 }
 
-.c0 > input:disabled ~ .c1 {
-  background-color: rgba(229,229,229,1);
+.c0:hover > input:not(:checked):not(:disabled) ~ .c1,
+.c0:active > input:not(:checked):not(:disabled) ~ .c1 {
+  border: 1px solid #303030;
 }
 
+.c0:active > input:not(:checked):not(:disabled) ~ .c1,
+.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c0 > input:disabled ~ .c1,
 .c0 > input:disabled ~ .c3 {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .c0 > input:checked ~ .c1:before {
@@ -56,11 +63,12 @@ exports[`Snapshots Radio checked 1`] = `
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(242,103,34,1);
+  background: #F16622;
   border-radius: 50%;
 }
 
 <label
+  checked=""
   class="c0"
 >
   <input
@@ -92,7 +100,7 @@ exports[`Snapshots Radio disabled 1`] = `
   width: 16px;
   height: 16px;
   padding: 2px;
-  border: 1px solid rgba(128,130,133,1);
+  border: 1px solid #B4B4B4;
   margin-right: 0.2em;
   border-radius: 50%;
   vertical-align: middle;
@@ -103,25 +111,32 @@ exports[`Snapshots Radio disabled 1`] = `
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
 }
 
-.hnkhzj:hover .c1,
-.hnkhzj > input:focus ~ .c1 {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+.kTJrDb:hover .c1,
+.kTJrDb > input:focus ~ .c1 {
+  border: 1px solid #B4B4B4;
 }
 
-.hnkhzj > input:disabled ~ .c1 {
-  background-color: rgba(229,229,229,1);
+.kTJrDb:hover > input:not(:checked):not(:disabled) ~ .c1,
+.kTJrDb:active > input:not(:checked):not(:disabled) ~ .c1 {
+  border: 1px solid #303030;
 }
 
-.hnkhzj > input:disabled ~ .c3 {
-  opacity: 0.7;
+.kTJrDb:active > input:not(:checked):not(:disabled) ~ .c1,
+.kTJrDb > input:focus:not(:checked):not(:disabled) ~ .c1 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.hnkhzj > input:checked ~ .c1:before {
+.kTJrDb > input:disabled ~ .c1,
+.kTJrDb > input:disabled ~ .c3 {
+  opacity: 0.5;
+}
+
+.kTJrDb > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(242,103,34,1);
+  background: #F16622;
   border-radius: 50%;
 }
 
@@ -148,15 +163,22 @@ exports[`Snapshots Radio disabled 1`] = `
 
 .c0:hover .c1,
 .c0 > input:focus ~ .c1 {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+  border: 1px solid #B4B4B4;
 }
 
-.c0 > input:disabled ~ .c1 {
-  background-color: rgba(229,229,229,1);
+.c0:hover > input:not(:checked):not(:disabled) ~ .c1,
+.c0:active > input:not(:checked):not(:disabled) ~ .c1 {
+  border: 1px solid #303030;
 }
 
+.c0:active > input:not(:checked):not(:disabled) ~ .c1,
+.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c0 > input:disabled ~ .c1,
 .c0 > input:disabled ~ .c3 {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .c0 > input:checked ~ .c1:before {
@@ -164,7 +186,7 @@ exports[`Snapshots Radio disabled 1`] = `
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(242,103,34,1);
+  background: #F16622;
   border-radius: 50%;
 }
 
@@ -205,7 +227,7 @@ exports[`Snapshots Radio unchecked 1`] = `
   width: 16px;
   height: 16px;
   padding: 2px;
-  border: 1px solid rgba(128,130,133,1);
+  border: 1px solid #B4B4B4;
   margin-right: 0.2em;
   border-radius: 50%;
   vertical-align: middle;
@@ -238,15 +260,22 @@ exports[`Snapshots Radio unchecked 1`] = `
 
 .c0:hover .c1,
 .c0 > input:focus ~ .c1 {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+  border: 1px solid #B4B4B4;
 }
 
-.c0 > input:disabled ~ .c1 {
-  background-color: rgba(229,229,229,1);
+.c0:hover > input:not(:checked):not(:disabled) ~ .c1,
+.c0:active > input:not(:checked):not(:disabled) ~ .c1 {
+  border: 1px solid #303030;
 }
 
+.c0:active > input:not(:checked):not(:disabled) ~ .c1,
+.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c0 > input:disabled ~ .c1,
 .c0 > input:disabled ~ .c3 {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .c0 > input:checked ~ .c1:before {
@@ -254,7 +283,7 @@ exports[`Snapshots Radio unchecked 1`] = `
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(242,103,34,1);
+  background: #F16622;
   border-radius: 50%;
 }
 
@@ -289,7 +318,7 @@ exports[`Snapshots Render children 1`] = `
   width: 16px;
   height: 16px;
   padding: 2px;
-  border: 1px solid rgba(128,130,133,1);
+  border: 1px solid #B4B4B4;
   margin-right: 0.2em;
   border-radius: 50%;
   vertical-align: middle;
@@ -322,15 +351,22 @@ exports[`Snapshots Render children 1`] = `
 
 .c0:hover .c1,
 .c0 > input:focus ~ .c1 {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+  border: 1px solid #B4B4B4;
 }
 
-.c0 > input:disabled ~ .c1 {
-  background-color: rgba(229,229,229,1);
+.c0:hover > input:not(:checked):not(:disabled) ~ .c1,
+.c0:active > input:not(:checked):not(:disabled) ~ .c1 {
+  border: 1px solid #303030;
 }
 
+.c0:active > input:not(:checked):not(:disabled) ~ .c1,
+.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c0 > input:disabled ~ .c1,
 .c0 > input:disabled ~ .c3 {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .c0 > input:checked ~ .c1:before {
@@ -338,33 +374,40 @@ exports[`Snapshots Render children 1`] = `
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(242,103,34,1);
+  background: #F16622;
   border-radius: 50%;
 }
 
-.cWBQOU:hover .c1,
-.cWBQOU > input:focus ~ .c1 {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+.hNeHJU:hover .c1,
+.hNeHJU > input:focus ~ .c1 {
+  border: 1px solid #B4B4B4;
 }
 
-.cWBQOU > input:disabled ~ .c1 {
-  background-color: rgba(229,229,229,1);
+.hNeHJU:hover > input:not(:checked):not(:disabled) ~ .c1,
+.hNeHJU:active > input:not(:checked):not(:disabled) ~ .c1 {
+  border: 1px solid #303030;
 }
 
-.cWBQOU > input:disabled ~ .c3 {
-  opacity: 0.7;
+.hNeHJU:active > input:not(:checked):not(:disabled) ~ .c1,
+.hNeHJU > input:focus:not(:checked):not(:disabled) ~ .c1 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.cWBQOU > input:checked ~ .c1:before {
+.hNeHJU > input:disabled ~ .c1,
+.hNeHJU > input:disabled ~ .c3 {
+  opacity: 0.5;
+}
+
+.hNeHJU > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(242,103,34,1);
+  background: #F16622;
   border-radius: 50%;
 }
 
-.cWBQOU:hover .c1 {
+.hNeHJU:hover .c1 {
   box-shadow: none;
 }
 

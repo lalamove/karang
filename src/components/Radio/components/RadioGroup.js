@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { bool, func, string, number, oneOfType } from 'prop-types';
+import { bool, func, string, number, oneOf, oneOfType } from 'prop-types';
 import noop from 'utils/noop';
 import Radio from './RadioButton';
 
-function radio({ name, selected, onChange }) {
+function radio({ name, variant, selected, onChange }) {
   return ({ ...props }) => (
     <Radio
       {...props}
       name={name}
+      variant={variant}
       onChange={onChange}
       checked={props.value === selected} // eslint-disable-line react/prop-types
     />
@@ -19,6 +20,7 @@ class RadioGroup extends Component {
     onChange: noop,
     children: noop,
     name: '',
+    variant: 'default',
     value: null,
     defaultValue: null,
   };
@@ -27,6 +29,7 @@ class RadioGroup extends Component {
     onChange: func,
     name: string,
     children: func,
+    variant: oneOf(['default', 'list', 'toggle']),
     value: oneOfType([string, number, bool]),
     defaultValue: oneOfType([string, number, bool]),
   };
@@ -62,11 +65,12 @@ class RadioGroup extends Component {
   };
 
   render() {
-    const { name } = this.props;
+    const { name, variant } = this.props;
     return (
       this.props.children(
         radio({
           name,
+          variant,
           onChange: this.handleChange,
           selected: this.state.value,
         })
