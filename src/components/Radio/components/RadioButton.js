@@ -159,10 +159,7 @@ const Button = styled.label`
         background-color: ${primary.main};
       }
 
-      &:hover
-        > ${/* sc-selector */ Text},
-        &:active
-        > ${/* sc-selector */ Text} {
+      &:hover > ${/* sc-selector */ Text} {
         color: #fff;
       }
 
@@ -177,13 +174,21 @@ class RadioButton extends PureComponent {
   static displayName = 'Radio';
 
   static propTypes = {
+    /** @ignore */
     children: node,
+    /** @ignore */
     name: string,
+    /** Value of the radio button */
     value: string.isRequired, // eslint-disable-line react/no-typos
     checked: bool,
+    /** Callback function, to be executed when user selected the radio button and it has changed */
     onChange: func,
+    /** Disable the radio button if it is `true` */
     disabled: bool,
+    /** Fit the width to its parent width when it is `true` */
     block: bool,
+    /** Variant of the radio button, `default` is the circle buttons, `list` is the circle buttons
+     *  with border, `toggle` is the toggle buttons */
     variant: oneOf(['default', 'list', 'toggle']),
   };
 

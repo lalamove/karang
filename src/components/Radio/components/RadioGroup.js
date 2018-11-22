@@ -26,11 +26,19 @@ class RadioGroup extends Component {
   };
 
   static propTypes = {
+    /** Callback function, to be executed when user selected an option and it has changed */
     onChange: func,
+    /** Name of children */
     name: string,
+    /** @ignore */
     children: func,
+    /** Variant of children, `default` is the circle buttons, `list` is the circle buttons
+     *  with border, `toggle` is the toggle buttons */
     variant: oneOf(['default', 'list', 'toggle']),
+    /** Selected value */
     value: oneOfType([string, number, bool]),
+    /** Initial selected value, use it if you want to leave the component
+     *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
     defaultValue: oneOfType([string, number, bool]),
   };
 
