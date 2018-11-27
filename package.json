@@ -11,15 +11,15 @@
     "build": "rollup -c",
     "test": "react-scripts test --env=jsdom",
     "test-coverage": "react-scripts test --env=jsdom --coverage",
-    "prepare": "npm run build",
-    "lint": "npm run lint:css",
+    "prepare": "yarn build",
+    "lint": "yarn lint:css",
     "lint:js": "eslint \"src/**/*.js\"",
     "lint:css": "stylelint \"src/**/*.{css|js}\"",
     "storybook": "start-storybook -p 9002 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "doc": "npx styleguidist server",
     "doc:build": "npx styleguidist build",
-    "precommit": "npm run prepare && lint-staged"
+    "precommit": "yarn prepare && lint-staged"
   },
   "peerDependencies": {
     "downshift": "^2.0.14",
