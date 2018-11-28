@@ -93,9 +93,12 @@ exports[`snapshots align 1`] = `
     ]
   }
   hoverable={false}
+  onRowClick={[Function]}
   uniqueKey="id"
 >
-  <styled.table>
+  <styled.table
+    onRowClick={[Function]}
+  >
     <table
       className="c0"
     >
@@ -188,9 +191,11 @@ exports[`snapshots align 1`] = `
           alternate={true}
           hoverable={false}
           key="123s"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -228,9 +233,11 @@ exports[`snapshots align 1`] = `
           alternate={true}
           hoverable={false}
           key="123e"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -268,9 +275,11 @@ exports[`snapshots align 1`] = `
           alternate={true}
           hoverable={false}
           key="123w"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -406,9 +415,12 @@ exports[`snapshots basic 1`] = `
     ]
   }
   hoverable={false}
+  onRowClick={[Function]}
   uniqueKey="id"
 >
-  <styled.table>
+  <styled.table
+    onRowClick={[Function]}
+  >
     <table
       className="c0"
     >
@@ -469,9 +481,11 @@ exports[`snapshots basic 1`] = `
           alternate={true}
           hoverable={false}
           key="123"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -497,9 +511,11 @@ exports[`snapshots basic 1`] = `
           alternate={true}
           hoverable={false}
           key="312"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -525,9 +541,11 @@ exports[`snapshots basic 1`] = `
           alternate={true}
           hoverable={false}
           key="352"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -553,9 +571,11 @@ exports[`snapshots basic 1`] = `
           alternate={true}
           hoverable={false}
           key="24523"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -581,9 +601,11 @@ exports[`snapshots basic 1`] = `
           alternate={true}
           hoverable={false}
           key="47657"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
@@ -609,9 +631,11 @@ exports[`snapshots basic 1`] = `
           alternate={true}
           hoverable={false}
           key="5675"
+          onClick={[Function]}
         >
           <tr
             className="c2"
+            onClick={[Function]}
           >
             <td
               align="left"
