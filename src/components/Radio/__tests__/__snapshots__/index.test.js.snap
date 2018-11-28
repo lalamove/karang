@@ -72,6 +72,7 @@ exports[`Snapshots Radio checked 1`] = `
   class="c0"
 >
   <input
+    aria-checked="true"
     checked=""
     name="demo"
     type="radio"
@@ -199,6 +200,7 @@ exports[`Snapshots Radio disabled 1`] = `
   disabled=""
 >
   <input
+    aria-checked="false"
     disabled=""
     name="demo"
     type="radio"
@@ -291,6 +293,7 @@ exports[`Snapshots Radio unchecked 1`] = `
   class="c0"
 >
   <input
+    aria-checked="false"
     name="demo"
     type="radio"
     value="blah"
@@ -415,6 +418,7 @@ exports[`Snapshots Render children 1`] = `
   class="c0"
 >
   <input
+    aria-checked="false"
     name="demo"
     type="radio"
     value="blah"

@@ -75,14 +75,16 @@ class RadioGroup extends Component {
   render() {
     const { name, variant } = this.props;
     return (
-      this.props.children(
-        radio({
-          name,
-          variant,
-          onChange: this.handleChange,
-          selected: this.state.value,
-        })
-      ) || null
+      <div aria-labelledby={name}>
+        {this.props.children(
+          radio({
+            name,
+            variant,
+            onChange: this.handleChange,
+            selected: this.state.value,
+          })
+        ) || null}
+      </div>
     );
   }
 }

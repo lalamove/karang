@@ -228,6 +228,7 @@ class RadioButton extends PureComponent {
           type="radio"
           name={name}
           onChange={onChange}
+          aria-checked={checked}
           checked={checked}
           value={value}
           disabled={disabled}
