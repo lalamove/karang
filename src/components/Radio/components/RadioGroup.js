@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { bool, func, string, number, oneOfType } from 'prop-types';
+import { bool, func, string, number, oneOf, oneOfType } from 'prop-types';
 import noop from 'utils/noop';
 import Radio from './RadioButton';
 
-function radio({ name, selected, onChange }) {
+function radio({ name, variant, selected, onChange }) {
   return ({ ...props }) => (
     <Radio
       {...props}
       name={name}
+      variant={variant}
       onChange={onChange}
       checked={props.value === selected} // eslint-disable-line react/prop-types
     />
@@ -19,15 +20,25 @@ class RadioGroup extends Component {
     onChange: noop,
     children: noop,
     name: '',
+    variant: 'default',
     value: null,
     defaultValue: null,
   };
 
   static propTypes = {
+    /** Callback function, to be executed when user selected an option and it has changed */
     onChange: func,
+    /** Name of children */
     name: string,
+    /** @ignore */
     children: func,
+    /** Variant of children, `default` is the circle buttons, `list` is the circle buttons
+     *  with border, `toggle` is the toggle buttons */
+    variant: oneOf(['default', 'list', 'toggle']),
+    /** Selected value */
     value: oneOfType([string, number, bool]),
+    /** Initial selected value, use it if you want to leave the component
+     *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
     defaultValue: oneOfType([string, number, bool]),
   };
 
@@ -62,15 +73,18 @@ class RadioGroup extends Component {
   };
 
   render() {
-    const { name } = this.props;
+    const { name, variant } = this.props;
     return (
-      this.props.children(
-        radio({
-          name,
-          onChange: this.handleChange,
-          selected: this.state.value,
-        })
-      ) || null
+      <div aria-labelledby={name}>
+        {this.props.children(
+          radio({
+            name,
+            variant,
+            onChange: this.handleChange,
+            selected: this.state.value,
+          })
+        ) || null}
+      </div>
     );
   }
 }
