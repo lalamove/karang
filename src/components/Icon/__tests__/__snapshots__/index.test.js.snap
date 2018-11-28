@@ -830,6 +830,176 @@ exports[`Icon-addContact-size-40 1`] = `
 </svg>
 `;
 
+exports[`Icon-addstop 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <path
+        d="M108,27a81,81,0,1,0,81,81A81,81,0,0,0,108,27Zm0,153a72,72,0,1,1,72-72A72,72,0,0,1,108,180Z"
+        data-name="<Compound Path>"
+        id="_Compound_Path_"
+      >
+        
+      </path>
+      <path
+        d="M154.85,103H113V61.15c0-2.29-2.71-4.15-5-4.15s-5,1.86-5,4.15V103H61.15c-2.29,0-4.15,2.71-4.15,5s1.86,5,4.15,5H103v41.81c0,2.29,2.71,4.15,5,4.15s5-1.86,5-4.15V113h41.85c2.29,0,4.15-2.71,4.15-5S157.14,103,154.85,103Z"
+      >
+        
+      </path>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-addstop-color-rgba(216,83,79,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(216,83,79,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <path
+        d="M108,27a81,81,0,1,0,81,81A81,81,0,0,0,108,27Zm0,153a72,72,0,1,1,72-72A72,72,0,0,1,108,180Z"
+        data-name="<Compound Path>"
+        id="_Compound_Path_"
+      >
+        
+      </path>
+      <path
+        d="M154.85,103H113V61.15c0-2.29-2.71-4.15-5-4.15s-5,1.86-5,4.15V103H61.15c-2.29,0-4.15,2.71-4.15,5s1.86,5,4.15,5H103v41.81c0,2.29,2.71,4.15,5,4.15s5-1.86,5-4.15V113h41.85c2.29,0,4.15-2.71,4.15-5S157.14,103,154.85,103Z"
+      >
+        
+      </path>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-addstop-color-rgba(242,103,34,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(242,103,34,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <path
+        d="M108,27a81,81,0,1,0,81,81A81,81,0,0,0,108,27Zm0,153a72,72,0,1,1,72-72A72,72,0,0,1,108,180Z"
+        data-name="<Compound Path>"
+        id="_Compound_Path_"
+      >
+        
+      </path>
+      <path
+        d="M154.85,103H113V61.15c0-2.29-2.71-4.15-5-4.15s-5,1.86-5,4.15V103H61.15c-2.29,0-4.15,2.71-4.15,5s1.86,5,4.15,5H103v41.81c0,2.29,2.71,4.15,5,4.15s5-1.86,5-4.15V113h41.85c2.29,0,4.15-2.71,4.15-5S157.14,103,154.85,103Z"
+      >
+        
+      </path>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-addstop-size-20 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <path
+        d="M108,27a81,81,0,1,0,81,81A81,81,0,0,0,108,27Zm0,153a72,72,0,1,1,72-72A72,72,0,0,1,108,180Z"
+        data-name="<Compound Path>"
+        id="_Compound_Path_"
+      >
+        
+      </path>
+      <path
+        d="M154.85,103H113V61.15c0-2.29-2.71-4.15-5-4.15s-5,1.86-5,4.15V103H61.15c-2.29,0-4.15,2.71-4.15,5s1.86,5,4.15,5H103v41.81c0,2.29,2.71,4.15,5,4.15s5-1.86,5-4.15V113h41.85c2.29,0,4.15-2.71,4.15-5S157.14,103,154.85,103Z"
+      >
+        
+      </path>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-addstop-size-40 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:40px;height:40px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <rect
+        height="217"
+        style="fill:none"
+        width="217"
+      >
+        
+      </rect>
+      <path
+        d="M108,27a81,81,0,1,0,81,81A81,81,0,0,0,108,27Zm0,153a72,72,0,1,1,72-72A72,72,0,0,1,108,180Z"
+        data-name="<Compound Path>"
+        id="_Compound_Path_"
+      >
+        
+      </path>
+      <path
+        d="M154.85,103H113V61.15c0-2.29-2.71-4.15-5-4.15s-5,1.86-5,4.15V103H61.15c-2.29,0-4.15,2.71-4.15,5s1.86,5,4.15,5H103v41.81c0,2.29,2.71,4.15,5,4.15s5-1.86,5-4.15V113h41.85c2.29,0,4.15-2.71,4.15-5S157.14,103,154.85,103Z"
+      >
+        
+      </path>
+    </g>
+  </svg>
+</svg>
+`;
+
 exports[`Icon-androidLogo 1`] = `
 <svg
   style="vertical-align:middle;fill:currentColor;width:20px;height:20px"

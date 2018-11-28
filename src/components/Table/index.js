@@ -10,6 +10,7 @@ class Table extends Component {
     hoverable: false,
     alternate: true,
     uniqueKey: 'id',
+    onRowClick: noop,
   };
 
   static propTypes = {
@@ -55,6 +56,11 @@ class Table extends Component {
     data: arrayOf(object).isRequired,
     /** the unique property (usually id) of individual object in `props.data` */
     uniqueKey: string,
+    /** get called when row is clicked
+     * @param {object} contains row data `props.data[i]`<br>
+     * @param {string} the value of the `uniqueKey` set<br>
+     */
+    onRowClick: func,
   };
 
   static sortOrders = ['default', 'desc', 'asc'];
@@ -111,7 +117,7 @@ class Table extends Component {
   }
 
   renderRows(rows) {
-    const { uniqueKey, hoverable, alternate } = this.props;
+    const { uniqueKey, hoverable, alternate, onRowClick } = this.props;
     const { currentSortFunc } = this.state;
     let daRows = rows;
     if (currentSortFunc !== noop) {
@@ -122,6 +128,7 @@ class Table extends Component {
         key={row[uniqueKey] || `llm-table-row-${index}`}
         hoverable={hoverable}
         alternate={alternate}
+        onClick={() => onRowClick(row, row[uniqueKey])}
       >
         {this.renderRowCols(row)}
       </Row>

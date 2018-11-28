@@ -139,6 +139,32 @@ storiesOf('Table', module)
       data={data}
     />
   ))
+  .add('onRowClick', () => (
+    <Table
+      hoverable={boolean('hoverable', true)}
+      alternate={boolean('alternate', false)}
+      columns={[
+        {
+          key: 'id',
+          label: 'ID',
+        },
+        {
+          key: 'name',
+          label: 'Name',
+        },
+        {
+          key: 'age',
+          label: 'Years on Earth',
+        },
+        {
+          key: 'hobbies',
+          label: 'Hobbies',
+        },
+      ]}
+      data={data}
+      onRowClick={action('onRowClick')}
+    />
+  ))
   .add('Sortable', () => (
     <Table
       hoverable={boolean('hoverable', false)}

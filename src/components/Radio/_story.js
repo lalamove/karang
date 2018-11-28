@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { select, boolean } from '@storybook/addon-knobs/react';
+import { boolean } from '@storybook/addon-knobs/react';
 
 import Radio, { RadioGroup } from './index';
 
@@ -13,51 +13,36 @@ storiesOf('Radio', module)
     </Radio>
   ))
   .add('RadioGroup', () => (
-    <RadioGroup name="payment" defaultValue={options[0]}>
-      {RadioButton =>
-        options.map(option => (
-          <RadioButton key={option} value={option}>
-            {option}
-          </RadioButton>
-        ))
-      }
-    </RadioGroup>
-  ))
-  .add('RadioGroupBtn', () => (
-    <RadioGroup name="payment" defaultValue={select('value', options, 'cash')}>
-      {RadioButton => (
-        <Fragment>
-          <RadioButton
-            value="wallet"
-            style={{
-              border: '1px solid #E8E8E8',
-              padding: '0.75em',
-              color: '#58595B',
-              fontSize: '16px',
-              marginTop: '0.5em',
-              display: 'flex',
-              lineHeight: '1.5em',
-              alignItems: 'center',
-            }}
-          >
-            11:00 - 12:00
-          </RadioButton>
-          <RadioButton
-            value="cash"
-            style={{
-              border: '1px solid #E8E8E8',
-              padding: '0.75em',
-              color: '#58595B',
-              fontSize: '16px',
-              marginTop: '0.5em',
-              display: 'flex',
-              lineHeight: '1.5em',
-              alignItems: 'center',
-            }}
-          >
-            13:00 - 14:00
-          </RadioButton>
-        </Fragment>
-      )}
-    </RadioGroup>
+    <div>
+      <h4>Default</h4>
+      <RadioGroup name="payment2" defaultValue={options[0]}>
+        {RadioButton =>
+          options.map(option => (
+            <RadioButton key={option} value={option}>
+              {option}
+            </RadioButton>
+          ))
+        }
+      </RadioGroup>
+      <h4>List</h4>
+      <RadioGroup name="payment3" defaultValue={options[0]} variant="list">
+        {RadioButton =>
+          options.map(option => (
+            <RadioButton key={option} value={option} block>
+              {option}
+            </RadioButton>
+          ))
+        }
+      </RadioGroup>
+      <h4>Button</h4>
+      <RadioGroup name="payment4" defaultValue={options[0]} variant="toggle">
+        {RadioButton =>
+          options.map(option => (
+            <RadioButton key={option} value={option} block>
+              {option}
+            </RadioButton>
+          ))
+        }
+      </RadioGroup>
+    </div>
   ));

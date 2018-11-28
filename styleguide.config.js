@@ -46,6 +46,10 @@ module.exports = {
       ],
       sectionDepth: 1,
     },
+    {
+      name: 'Contributing Guidelines',
+      content: 'CONTRIBUTING.md',
+    },
   ],
   template: {
     favicon: 'https://web.dev.lalamove.com/favicon.png',
