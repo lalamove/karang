@@ -57,8 +57,8 @@ class Table extends Component {
     /** the unique property (usually id) of individual object in `props.data` */
     uniqueKey: string,
     /** get called when row is clicked
-     * @param {object} contains row data `props.data[i]`<br>
-     * @param {string} the value of the `uniqueKey` set<br>
+     * @param {object} data contains row data `props.data[i]`<br>
+     * @param {string} key the value of the `uniqueKey` set<br>
      */
     onRowClick: func,
   };
