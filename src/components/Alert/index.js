@@ -84,11 +84,19 @@ const icon = {
   info: 'warning',
 };
 
-const Alert = ({ type, variant, message, description, onDismiss }) => (
-  <Container type={type} variant={variant}>
+const Alert = ({
+  type,
+  variant,
+  message,
+  description,
+  onDismiss,
+  ...props
+}) => (
+  <Container type={type} variant={variant} {...props}>
     <StyledIcon type={icon[type]} color={white} size={24} />
     <Content>
-      <span>{message}</span> <span>{description}</span>
+      <span>{message}</span>
+      {description && <span>{description}</span>}
     </Content>
     <CloseButton onClick={onDismiss}>
       <Icon type="cross" color={white} size={24} />
