@@ -1,6 +1,6 @@
 {
   "name": "lalamove-ui",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "React components that implement Lalamove Design.",
   "private": true,
   "main": "dist/index.js",
