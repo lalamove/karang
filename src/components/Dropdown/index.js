@@ -48,7 +48,7 @@ class Dropdown extends Component {
 
   static defaultProps = {
     block: false,
-    selectedItem: null,
+    selectedItem: undefined,
     onChange: noop,
     onOuterClick: noop,
     onSelect: noop,
@@ -223,6 +223,7 @@ class Dropdown extends Component {
         onChange={this.handleChange}
         onOuterClick={this.handleOuterClick}
         onSelect={this.handleSelect}
+        selectedItem={selectedItem}
         itemToString={item => (item ? item.value : '')}
         stateReducer={this.stateReducer}
       >
