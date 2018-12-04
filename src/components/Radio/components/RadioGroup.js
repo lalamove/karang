@@ -73,9 +73,9 @@ class RadioGroup extends Component {
   };
 
   render() {
-    const { name, variant } = this.props;
+    const { name, variant, ...rest } = this.props;
     return (
-      <div aria-labelledby={name}>
+      <div {...rest} aria-labelledby={name}>
         {this.props.children(
           radio({
             name,
