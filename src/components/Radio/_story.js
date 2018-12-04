@@ -15,7 +15,11 @@ storiesOf('Radio', module)
   .add('RadioGroup', () => (
     <div>
       <h4>Default</h4>
-      <RadioGroup name="payment2" defaultValue={options[0]}>
+      <RadioGroup
+        className="hahahaha"
+        name="payment2"
+        defaultValue={options[0]}
+      >
         {RadioButton =>
           options.map(option => (
             <RadioButton key={option} value={option}>

@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import { bool, func, string, number, oneOf, oneOfType } from 'prop-types';
+import styled from 'styled-components';
 import noop from 'utils/noop';
-import Radio from './RadioButton';
+import RadioButton from './RadioButton';
+
+const Wrapper = styled.div`
+  margin-right: -0.5em;
+  margin-left: -0.5em;
+`;
+
+const Radio = styled(RadioButton)`
+  ${Wrapper} & {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+  }
+`;
 
 function radio({ name, variant, selected, onChange }) {
   return ({ ...props }) => (
@@ -75,7 +88,7 @@ class RadioGroup extends Component {
   render() {
     const { name, variant, ...rest } = this.props;
     return (
-      <div {...rest} aria-labelledby={name}>
+      <Wrapper {...rest} aria-labelledby={name}>
         {this.props.children(
           radio({
             name,
@@ -84,7 +97,7 @@ class RadioGroup extends Component {
             selected: this.state.value,
           })
         ) || null}
-      </div>
+      </Wrapper>
     );
   }
 }
