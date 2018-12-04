@@ -48,7 +48,7 @@ exports[`Input Snapshots Password 1`] = `
   color: rgba(128,130,133,1);
 }
 
-.c5 {
+.c6 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -64,23 +64,26 @@ exports[`Input Snapshots Password 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
 }
 
-.c5:disabled {
+.c6:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.c5:hover:enabled,
-.c5:focus:enabled {
+.c6:hover:enabled,
+.c6:focus:enabled {
   box-shadow: 0 2px 4px rgba(0,0,0,0.22);
 }
 
-.c5:active:enabled {
+.c6:active:enabled {
   box-shadow: none;
+}
+
+.c5 {
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
 }
 
 .c4 {
@@ -115,7 +118,7 @@ exports[`Input Snapshots Password 1`] = `
       
     </input>
     <button
-      class="c4 c5"
+      class="c4 c5 c6"
       type="button"
     >
       <svg
@@ -226,7 +229,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   color: rgba(128,130,133,1);
 }
 
-.c5 {
+.c6 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -242,23 +245,26 @@ exports[`Input Snapshots Password with a value 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
 }
 
-.c5:disabled {
+.c6:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.c5:hover:enabled,
-.c5:focus:enabled {
+.c6:hover:enabled,
+.c6:focus:enabled {
   box-shadow: 0 2px 4px rgba(0,0,0,0.22);
 }
 
-.c5:active:enabled {
+.c6:active:enabled {
   box-shadow: none;
+}
+
+.c5 {
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
 }
 
 .c4 {
@@ -294,7 +300,7 @@ exports[`Input Snapshots Password with a value 1`] = `
       
     </input>
     <button
-      class="c4 c5"
+      class="c4 c5 c6"
       type="button"
     >
       <svg
