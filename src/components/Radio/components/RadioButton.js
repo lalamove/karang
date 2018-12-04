@@ -25,6 +25,7 @@ const Text = styled.span`
 `;
 
 const Label = styled.label`
+  display: inline-block;
   cursor: pointer;
 
   input {
@@ -101,9 +102,10 @@ const Label = styled.label`
 `;
 
 const Button = styled.label`
+  display: inline-block;
   padding: 1em;
-  margin: 0.8em 0;
   border: 2px solid ${nobel['200']};
+  margin: 0.8em 0;
   border-radius: 5px;
   background-color: #fff;
   cursor: pointer;
