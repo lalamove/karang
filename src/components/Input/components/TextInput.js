@@ -13,7 +13,6 @@ const InputField = styled.input`
   font-family: ${primaryFonts};
   caret-color: ${orange};
   font-size: ${fontSize.regular};
-  line-height: 20px;
   resize: none;
   outline: none;
 

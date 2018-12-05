@@ -17,25 +17,22 @@ const SCAnimatedBorder = styled(AnimatedBorder)`
 `;
 
 const TextDisplay = styled.div`
-  width: 100%;
-  height: 20px;
-  line-height: 20px;
-  padding: 1em;
   overflow: hidden;
-  white-space: nowrap;
+  width: 100%;
+  padding: 1em;
   text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const BtnContainer = styled.div`
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   padding: 0 8px;
-  flex-shrink: 0;
 `;
 
 const SCButton = styled(Button)`
   min-width: 80px;
-  height: 32px;
   margin: 0 4px;
 `;
 
