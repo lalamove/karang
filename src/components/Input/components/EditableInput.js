@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const SCAnimatedBorder = styled(AnimatedBorder)`
-  width: 400px;
+  min-width: 16em;
 `;
 
 const TextDisplay = styled.div`
