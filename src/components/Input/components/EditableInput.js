@@ -9,21 +9,24 @@ import ErrorMessage from 'components/ErrorMessage';
 import SCInput from './TextInput';
 
 const TextInput = styled(SCInput)`
-  flex-shrink: 1;
+  flex: 1 1 60%;
 `;
 
 const Wrapper = styled.div`
   display: inline-block;
+  max-width: 100%;
 `;
 
 const SCAnimatedBorder = styled(AnimatedBorder)`
+  box-sizing: border-box;
   min-width: 16em;
+  max-width: 100%;
+  padding-right: 1em;
 `;
 
 const TextDisplay = styled.div`
-  flex-shrink: 1;
+  flex: 1 1 60%;
   overflow: hidden;
-  width: 100%;
   padding: 1em;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -33,12 +36,12 @@ const BtnContainer = styled.div`
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  margin-right: 8px;
+  margin-right: -0.5em;
+  margin-left: -0.5em;
 `;
 
 const SCButton = styled(Button)`
-  min-width: 80px;
-  margin: 0 4px;
+  margin: 0 0.5em;
 `;
 
 const propTypes = {

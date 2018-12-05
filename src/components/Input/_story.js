@@ -127,15 +127,17 @@ class SearchInputWrapper extends Component {
 class EditableInputWrapper extends Component {
   render() {
     return (
-      <EditableInput
-        block
-        name="Billing Email"
-        value="alex.fok@lalamove.com"
-        saveBtnText="Save Value"
-        editBtnText="Edit Value"
-        cancelBtnText="Cancel Value"
-        label="Billing Email"
-      />
+      <div style={{ maxWidth: '20em' }}>
+        <EditableInput
+          block
+          name="Billing Email"
+          value="alex.fok@lalamove.com"
+          saveBtnText="Save Value"
+          editBtnText="Edit Value"
+          cancelBtnText="Cancel Value"
+          label="Billing Email"
+        />
+      </div>
     );
   }
 }
