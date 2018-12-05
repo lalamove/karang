@@ -128,6 +128,7 @@ class EditableInputWrapper extends Component {
   render() {
     return (
       <EditableInput
+        block
         name="Billing Email"
         value="alex.fok@lalamove.com"
         saveBtnText="Save Value"

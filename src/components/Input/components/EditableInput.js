@@ -6,7 +6,11 @@ import noop from 'utils/noop';
 import AnimatedBorder from 'components/AnimatedBorder';
 import Button from 'components/Button';
 import ErrorMessage from 'components/ErrorMessage';
-import TextInput from './TextInput';
+import SCInput from './TextInput';
+
+const TextInput = styled(SCInput)`
+  flex-shrink: 1;
+`;
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -17,6 +21,7 @@ const SCAnimatedBorder = styled(AnimatedBorder)`
 `;
 
 const TextDisplay = styled.div`
+  flex-shrink: 1;
   overflow: hidden;
   width: 100%;
   padding: 1em;
@@ -284,7 +289,7 @@ class Comp extends Component {
               onChange={this.onChange}
               onFocus={this.onFocus}
               {...remainProps}
-              ref={this.getReference}
+              innerRef={this.getReference}
             />
           ) : (
             <TextDisplay>{value}</TextDisplay>
