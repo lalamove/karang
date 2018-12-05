@@ -8,8 +8,6 @@ stages:
 - test
 - version
 - doc
-before_script:
-  - yarn config set cache-folder .yarn
 
 test:
   image: node:10.14-alpine
@@ -18,7 +16,7 @@ test:
     - k8s
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
   script:
-    - yarn install --pure-lockfile --network-concurrency 1
+    - yarn install --pure-lockfile --network-concurrency 1 --cache-folder .yarn
     - yarn test-coverage
 
 version:
@@ -55,7 +53,7 @@ storybook:
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
-    - yarn install --pure-lockfile --network-concurrency 1
+    - yarn install --pure-lockfile --network-concurrency 1 --cache-folder .yarn
     - yarn storybook:build
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 cp .out $S3_URL/storybook --recursive
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL/storybook --recursive
@@ -77,7 +75,7 @@ styleguide:
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
-    - yarn install --pure-lockfile --network-concurrency 1
+    - yarn install --pure-lockfile --network-concurrency 1 --cache-folder .yarn
     - yarn doc:build
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 cp styleguide $S3_URL --recursive
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL --recursive
