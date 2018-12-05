@@ -28,7 +28,7 @@ const BtnContainer = styled.div`
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  padding: 0 8px;
+  margin-right: 8px;
 `;
 
 const SCButton = styled(Button)`
