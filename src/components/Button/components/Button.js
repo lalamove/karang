@@ -65,6 +65,7 @@ const Button = styled(Base)`
       case 'link':
         return css`
           border: none;
+          padding: 0;
           color: ${primaryColor};
 
           &:active {
