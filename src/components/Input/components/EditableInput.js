@@ -216,13 +216,9 @@ class Comp extends Component {
   };
 
   onChange = e => {
-    const {
-      target: { value },
-    } = e;
-    this.setState({
-      value,
-      dirty: !!value,
-    });
+    const { value } = e.target;
+
+    this.setState({ value, dirty: !!value });
     this.props.onChange(e);
   };
 
@@ -285,7 +281,7 @@ class Comp extends Component {
           className={className}
         >
           <TextInput
-            disabled={!editing}
+            // disabled={!editing}
             label={label}
             value={value}
             onBlur={this.onBlur}

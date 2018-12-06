@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import noop from 'utils/noop';
 import compose from 'utils/compose';
 import AnimatedBorder from 'components/AnimatedBorder';
-import ErrorMessage from 'components/ErrorMessage';
+import RawErrorMsg from 'components/ErrorMessage';
 import withSelectAll from 'hoc/withSelectAll';
 import withCursorEnd from 'hoc/withCursorEnd';
 import TextInput from './TextInput';
@@ -18,7 +18,15 @@ const SCTextInput = styled(TextInput)`
 `;
 
 const Wrapper = styled.div`
+  position: relative;
   display: inline-block;
+`;
+
+const ErrorMessage = styled(RawErrorMsg)`
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  left: 0;
 `;
 
 const propTypes = {

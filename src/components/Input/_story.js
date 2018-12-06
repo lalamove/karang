@@ -58,6 +58,8 @@ class InputWrapper extends Component {
         />
         <br />
         <br />
+        <br />
+        <br />
         <Input
           type="text"
           label="Company Name"

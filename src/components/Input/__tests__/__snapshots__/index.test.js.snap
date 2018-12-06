@@ -99,6 +99,7 @@ exports[`Input Snapshots Password 1`] = `
 }
 
 .c0 {
+  position: relative;
   display: inline-block;
 }
 
@@ -279,6 +280,7 @@ exports[`Input Snapshots Password with a value 1`] = `
 }
 
 .c0 {
+  position: relative;
   display: inline-block;
 }
 
@@ -413,6 +415,7 @@ exports[`Input Snapshots Regular Input 1`] = `
 }
 
 .c0 {
+  position: relative;
   display: inline-block;
 }
 

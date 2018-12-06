@@ -24,10 +24,10 @@ const IconWrapper = styled.span`
   margin-left: 1em;
 `;
 
-const ErrorMessage = ({ error }) =>
+const ErrorMessage = ({ error, ...rest }) =>
   error &&
   error.length > 0 && (
-    <Container>
+    <Container {...rest}>
       <IconWrapper>
         <Icon type="warning" color={red} size={13} />
       </IconWrapper>
