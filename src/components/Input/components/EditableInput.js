@@ -284,19 +284,16 @@ class Comp extends Component {
           style={style}
           className={className}
         >
-          {editing ? (
-            <TextInput
-              label={label}
-              value={value}
-              onBlur={this.onBlur}
-              onChange={this.onChange}
-              onFocus={this.onFocus}
-              {...remainProps}
-              innerRef={this.getReference}
-            />
-          ) : (
-            <TextDisplay>{value}</TextDisplay>
-          )}
+          <TextInput
+            disabled={!editing}
+            label={label}
+            value={value}
+            onBlur={this.onBlur}
+            onChange={this.onChange}
+            onFocus={this.onFocus}
+            {...remainProps}
+            innerRef={this.getReference}
+          />
           <BtnContainer>
             {editing ? (
               <Fragment>
