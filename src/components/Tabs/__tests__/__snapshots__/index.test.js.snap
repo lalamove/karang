@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab Snapshots Deselected 1`] = `
+<styled.li
+  selected={false}
+>
+  <Styled(LinkButton)
+    onClick={[Function]}
+    selected={false}
+  >
+    Foo
+  </Styled(LinkButton)>
+</styled.li>
+`;
+
+exports[`Tab Snapshots Selected 1`] = `
+<styled.li
+  selected={true}
+>
+  <Styled(LinkButton)
+    onClick={[Function]}
+    selected={true}
+  >
+    Foo
+  </Styled(LinkButton)>
+</styled.li>
+`;
+
+exports[`TabBar Snapshots No tabs 1`] = `<styled.ul />`;
+
+exports[`TabBar Snapshots Non-tab children 1`] = `
+<styled.ul>
+  Not a tab at all.
+</styled.ul>
+`;
+
+exports[`TabBar Snapshots Selected tabs 1`] = `
+<styled.ul>
+  <Tab
+    key=".0"
+    name="foo"
+    onClick={[Function]}
+    selected={true}
+  >
+    Foo
+  </Tab>
+  <Tab
+    key=".1"
+    name="bar"
+    onClick={[Function]}
+    selected={false}
+  >
+    Bar
+  </Tab>
+</styled.ul>
+`;
+
+exports[`TabBar Snapshots Some tabs 1`] = `
+<styled.ul>
+  <Tab
+    key=".0"
+    name="foo"
+    onClick={[Function]}
+    selected={false}
+  >
+    Foo
+  </Tab>
+  <Tab
+    key=".1"
+    name="bar"
+    onClick={[Function]}
+    selected={false}
+  >
+    Bar
+  </Tab>
+</styled.ul>
+`;
