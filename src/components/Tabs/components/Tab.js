@@ -9,6 +9,7 @@ import noop from 'utils/noop';
 
 const Container = styled.li`
   display: inline-block;
+  padding: 0;
   border-bottom: ${({ selected }) =>
     selected ? `2px solid ${primaryColor}` : 'none'};
 `;
