@@ -11,14 +11,21 @@ class InputWrapper extends Component {
     industry: '',
   };
 
+  componentDidMount() {
+    console.log(this.input.current);
+  }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  input = React.createRef();
 
   render() {
     return (
       <Fragment>
         <Input
+          ref={this.input}
           type="text"
           label="Username"
           name="username"

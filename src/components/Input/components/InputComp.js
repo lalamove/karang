@@ -181,18 +181,19 @@ class Comp extends Component {
   }
 }
 
-const CompWithRef = forwardRef((props, ref) => (
+const Input = forwardRef((props, ref) => (
   <Comp forwardedRef={ref} {...props} />
 ));
 
 const InputComp = compose(
   withSelectAll,
   withCursorEnd
-)(CompWithRef);
+)(Input);
 
 // Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const Input = ({ forwardedRef, ...props }) => <InputComp {...props} />;
-Input.propTypes = propTypes;
-Input.defaultProps = defaultProps;
+// const Input = ({ forwardedRef, ...props }) => <InputComp {...props} />;
+// Input.displayName = 'Input';
+// Input.propTypes = propTypes;
+// Input.defaultProps = defaultProps;
 
-export default Input;
+export default InputComp;
