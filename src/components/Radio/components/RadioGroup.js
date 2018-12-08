@@ -90,7 +90,7 @@ class RadioGroup extends Component {
   };
 
   render() {
-    const { name, variant, disabled, ...rest } = this.props;
+    const { name, variant, disabled, onChange, ...rest } = this.props;
     return (
       <Wrapper {...rest} aria-labelledby={name}>
         {this.props.children(
