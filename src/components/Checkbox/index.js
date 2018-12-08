@@ -122,9 +122,8 @@ class Checkbox extends Component {
     const { onChange } = this.props;
     if (this.props.checked === null) {
       this.setState(state => ({ checked: !state.checked }));
-    } else {
-      onChange(e);
     }
+    onChange(e);
   };
 
   render() {
