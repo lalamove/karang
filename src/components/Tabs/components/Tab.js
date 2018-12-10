@@ -14,8 +14,7 @@ const Container = styled.li`
     selected ? `2px solid ${primaryColor}` : 'none'};
 `;
 
-const LinkButton = props => <Button {...props} variant="link" />;
-const TabButton = styled(LinkButton)`
+const TabButton = styled(Button).attrs({ variant: 'link' })`
   padding: 1.25em;
   color: ${({ selected }) => (selected ? primaryColor : lightGray)};
 

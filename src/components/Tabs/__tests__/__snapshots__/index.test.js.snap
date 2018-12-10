@@ -4,12 +4,12 @@ exports[`Tab Snapshots Deselected 1`] = `
 <styled.li
   selected={false}
 >
-  <Styled(LinkButton)
+  <Styled(Component)
     onClick={[Function]}
     selected={false}
   >
     Foo
-  </Styled(LinkButton)>
+  </Styled(Component)>
 </styled.li>
 `;
 
@@ -17,12 +17,12 @@ exports[`Tab Snapshots Selected 1`] = `
 <styled.li
   selected={true}
 >
-  <Styled(LinkButton)
+  <Styled(Component)
     onClick={[Function]}
     selected={true}
   >
     Foo
-  </Styled(LinkButton)>
+  </Styled(Component)>
 </styled.li>
 `;
 
