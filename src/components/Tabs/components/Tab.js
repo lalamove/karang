@@ -7,12 +7,7 @@ import Button from 'components/Button';
 import { orange as primaryColor, lightGray } from 'styles/colors';
 import noop from 'utils/noop';
 
-const Container = styled.li`
-  display: inline-block;
-  padding: 0;
-  border-bottom: ${({ selected }) =>
-    selected ? `2px solid ${primaryColor}` : 'none'};
-`;
+import { TabContainer } from '../style';
 
 const TabButton = styled(Button).attrs({ variant: 'link' })`
   padding: 1.25em;
@@ -39,11 +34,11 @@ const TabButton = styled(Button).attrs({ variant: 'link' })`
 `;
 
 const Tab = ({ children, selected, onTabChange, name }) => (
-  <Container selected={selected}>
+  <TabContainer selected={selected}>
     <TabButton selected={selected} onClick={() => onTabChange(name)}>
       {children}
     </TabButton>
-  </Container>
+  </TabContainer>
 );
 
 Tab.propTypes = {

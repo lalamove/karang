@@ -262,6 +262,12 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   text-decoration: underline;
 }
 
+.c0 {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
 .c5 {
   display: inline-block;
   padding: 0;
@@ -318,12 +324,6 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
 .c2:focus:enabled {
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c0 {
-  display: block;
-  list-style: none;
-  padding: 0;
 }
 
 <ul
@@ -408,6 +408,12 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   text-decoration: underline;
 }
 
+.c0 {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
 .c1 {
   display: inline-block;
   padding: 0;
@@ -435,12 +441,6 @@ exports[`TabBar Snapshots Some tabs 1`] = `
 .c2:focus:enabled {
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-.c0 {
-  display: block;
-  list-style: none;
-  padding: 0;
 }
 
 <ul

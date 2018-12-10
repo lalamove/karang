@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import { func, node, string } from 'prop-types';
-import styled from 'styled-components';
 
 import noop from 'utils/noop';
 import Tab from './Tab';
 
-const TabBarContainer = styled.ul`
-  display: block;
-  list-style: none;
-  padding: 0;
-`;
+import { TabBarContainer } from '../style';
 
 class TabBar extends Component {
   static propTypes = {
