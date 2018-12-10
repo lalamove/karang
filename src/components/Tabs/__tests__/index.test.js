@@ -1,17 +1,17 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount, render } from 'enzyme';
 
 import Tab, { TabBar } from '../index';
 
 describe('Tab', () => {
   describe('Snapshots', () => {
     it('Deselected', () => {
-      const wrapper = shallow(<Tab name="foo">Foo</Tab>);
+      const wrapper = render(<Tab name="foo">Foo</Tab>);
       expect(wrapper).toMatchSnapshot();
     });
 
     it('Selected', () => {
-      const wrapper = shallow(
+      const wrapper = render(
         <Tab name="foo" selected>
           Foo
         </Tab>
@@ -37,12 +37,12 @@ describe('Tab', () => {
 describe('TabBar', () => {
   describe('Snapshots', () => {
     it('No tabs', () => {
-      const wrapper = shallow(<TabBar />);
+      const wrapper = render(<TabBar />);
       expect(wrapper).toMatchSnapshot();
     });
 
     it('Some tabs', () => {
-      const wrapper = shallow(
+      const wrapper = render(
         <TabBar>
           <Tab name="foo">Foo</Tab>
           <Tab name="bar">Bar</Tab>
@@ -52,7 +52,7 @@ describe('TabBar', () => {
     });
 
     it('Selected tabs', () => {
-      const wrapper = shallow(
+      const wrapper = render(
         <TabBar activeTab="foo">
           <Tab name="foo">Foo</Tab>
           <Tab name="bar">Bar</Tab>
@@ -62,7 +62,7 @@ describe('TabBar', () => {
     });
 
     it('Non-tab children', () => {
-      const wrapper = shallow(<TabBar>Not a tab at all.</TabBar>);
+      const wrapper = render(<TabBar>Not a tab at all.</TabBar>);
       expect(wrapper).toMatchSnapshot();
     });
   });

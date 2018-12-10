@@ -1,77 +1,470 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tab Snapshots Deselected 1`] = `
-<styled.li
-  selected={false}
+.c3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c3:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c3:hover:enabled,
+.c3:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c3:active:enabled {
+  box-shadow: none;
+}
+
+.c2 {
+  display: inline-block;
+  border: none;
+  color: rgba(242,103,34,1);
+}
+
+.c2:active {
+  box-shadow: none;
+  color: #a43d0a;
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+.c2:hover:enabled,
+.c2:focus:enabled {
+  box-shadow: none;
+  color: rgba(242,103,34,0.7);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  display: inline-block;
+  padding: 0;
+  border-bottom: none;
+}
+
+.c1 {
+  padding: 1.25em;
+  color: rgba(180,180,180,1);
+  text-shadow: none;
+}
+
+.c1:hover:enabled {
+  color: rgba(242,103,34,1);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:active:enabled {
+  color: #a43d0a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus:enabled {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<li
+  class="c0"
 >
-  <Styled(Component)
-    onClick={[Function]}
-    selected={false}
+  <button
+    class="c1 c2 c3"
+    type="button"
   >
     Foo
-  </Styled(Component)>
-</styled.li>
+  </button>
+</li>
 `;
 
 exports[`Tab Snapshots Selected 1`] = `
-<styled.li
-  selected={true}
+.c3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c3:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c3:hover:enabled,
+.c3:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c3:active:enabled {
+  box-shadow: none;
+}
+
+.c2 {
+  display: inline-block;
+  border: none;
+  color: rgba(242,103,34,1);
+}
+
+.c2:active {
+  box-shadow: none;
+  color: #a43d0a;
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+.c2:hover:enabled,
+.c2:focus:enabled {
+  box-shadow: none;
+  color: rgba(242,103,34,0.7);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  display: inline-block;
+  padding: 0;
+  border-bottom: 2px solid rgba(242,103,34,1);
+}
+
+.c1 {
+  padding: 1.25em;
+  color: rgba(242,103,34,1);
+  text-shadow: -0.75px 0px 0px rgba(242,103,34,1),-0.75px 0px 0px rgba(242,103,34,1);
+}
+
+.c1:hover:enabled {
+  color: rgba(242,103,34,1);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:active:enabled {
+  color: #a43d0a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1:focus:enabled {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<li
+  class="c0"
+  selected=""
 >
-  <Styled(Component)
-    onClick={[Function]}
-    selected={true}
+  <button
+    class="c1 c2 c3"
+    selected=""
+    type="button"
   >
     Foo
-  </Styled(Component)>
-</styled.li>
+  </button>
+</li>
 `;
 
-exports[`TabBar Snapshots No tabs 1`] = `""`;
+exports[`TabBar Snapshots No tabs 1`] = `null`;
 
 exports[`TabBar Snapshots Non-tab children 1`] = `
-<styled.ul>
+.c0 {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
   Not a tab at all.
-</styled.ul>
+</ul>
 `;
 
 exports[`TabBar Snapshots Selected tabs 1`] = `
-<styled.ul>
-  <Tab
-    key=".0"
-    name="foo"
-    onTabChange={[Function]}
-    selected={true}
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c4:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c4:hover:enabled,
+.c4:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c4:active:enabled {
+  box-shadow: none;
+}
+
+.c3 {
+  display: inline-block;
+  border: none;
+  color: rgba(242,103,34,1);
+}
+
+.c3:active {
+  box-shadow: none;
+  color: #a43d0a;
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+.c3:hover:enabled,
+.c3:focus:enabled {
+  box-shadow: none;
+  color: rgba(242,103,34,0.7);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5 {
+  display: inline-block;
+  padding: 0;
+  border-bottom: none;
+}
+
+.c1 {
+  display: inline-block;
+  padding: 0;
+  border-bottom: 2px solid rgba(242,103,34,1);
+}
+
+.c6 {
+  padding: 1.25em;
+  color: rgba(180,180,180,1);
+  text-shadow: none;
+}
+
+.c6:hover:enabled {
+  color: rgba(242,103,34,1);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:active:enabled {
+  color: #a43d0a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c6:focus:enabled {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2 {
+  padding: 1.25em;
+  color: rgba(242,103,34,1);
+  text-shadow: -0.75px 0px 0px rgba(242,103,34,1),-0.75px 0px 0px rgba(242,103,34,1);
+}
+
+.c2:hover:enabled {
+  color: rgba(242,103,34,1);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:active:enabled {
+  color: #a43d0a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:focus:enabled {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1"
+    selected=""
   >
-    Foo
-  </Tab>
-  <Tab
-    key=".1"
-    name="bar"
-    onTabChange={[Function]}
-    selected={false}
+    <button
+      class="c2 c3 c4"
+      selected=""
+      type="button"
+    >
+      Foo
+    </button>
+  </li>
+  <li
+    class="c5"
   >
-    Bar
-  </Tab>
-</styled.ul>
+    <button
+      class="c6 c3 c4"
+      type="button"
+    >
+      Bar
+    </button>
+  </li>
+</ul>
 `;
 
 exports[`TabBar Snapshots Some tabs 1`] = `
-<styled.ul>
-  <Tab
-    key=".0"
-    name="foo"
-    onTabChange={[Function]}
-    selected={false}
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c4:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c4:hover:enabled,
+.c4:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c4:active:enabled {
+  box-shadow: none;
+}
+
+.c3 {
+  display: inline-block;
+  border: none;
+  color: rgba(242,103,34,1);
+}
+
+.c3:active {
+  box-shadow: none;
+  color: #a43d0a;
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+.c3:hover:enabled,
+.c3:focus:enabled {
+  box-shadow: none;
+  color: rgba(242,103,34,0.7);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1 {
+  display: inline-block;
+  padding: 0;
+  border-bottom: none;
+}
+
+.c2 {
+  padding: 1.25em;
+  color: rgba(180,180,180,1);
+  text-shadow: none;
+}
+
+.c2:hover:enabled {
+  color: rgba(242,103,34,1);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:active:enabled {
+  color: #a43d0a;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2:focus:enabled {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1"
   >
-    Foo
-  </Tab>
-  <Tab
-    key=".1"
-    name="bar"
-    onTabChange={[Function]}
-    selected={false}
+    <button
+      class="c2 c3 c4"
+      type="button"
+    >
+      Foo
+    </button>
+  </li>
+  <li
+    class="c1"
   >
-    Bar
-  </Tab>
-</styled.ul>
+    <button
+      class="c2 c3 c4"
+      type="button"
+    >
+      Bar
+    </button>
+  </li>
+</ul>
 `;
