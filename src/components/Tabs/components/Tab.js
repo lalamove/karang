@@ -35,7 +35,12 @@ const TabButton = styled(Button).attrs({ variant: 'link' })`
 
 const Tab = ({ children, selected, onTabChange, name }) => (
   <TabContainer selected={selected}>
-    <TabButton selected={selected} onClick={() => onTabChange(name)}>
+    <TabButton
+      aria-selected={selected}
+      onClick={() => onTabChange(name)}
+      role="tab"
+      selected={selected}
+    >
       {children}
     </TabButton>
   </TabContainer>

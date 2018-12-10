@@ -30,7 +30,7 @@ class TabBar extends Component {
     const { activeTab, children, onTabChange } = this.props;
 
     return React.Children.count(children) ? (
-      <TabBarContainer>
+      <TabBarContainer role="tablist">
         {React.Children.map(
           children,
           child =>

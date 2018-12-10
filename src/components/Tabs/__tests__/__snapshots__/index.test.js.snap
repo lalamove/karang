@@ -87,7 +87,9 @@ exports[`Tab Snapshots Deselected 1`] = `
   class="c0"
 >
   <button
+    aria-selected="false"
     class="c1 c2 c3"
+    role="tab"
     type="button"
   >
     Foo
@@ -183,7 +185,9 @@ exports[`Tab Snapshots Selected 1`] = `
   selected=""
 >
   <button
+    aria-selected="true"
     class="c1 c2 c3"
+    role="tab"
     selected=""
     type="button"
   >
@@ -203,6 +207,7 @@ exports[`TabBar Snapshots Non-tab children 1`] = `
 
 <ul
   class="c0"
+  role="tablist"
 >
   Not a tab at all.
 </ul>
@@ -328,13 +333,16 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
 
 <ul
   class="c0"
+  role="tablist"
 >
   <li
     class="c1"
     selected=""
   >
     <button
+      aria-selected="true"
       class="c2 c3 c4"
+      role="tab"
       selected=""
       type="button"
     >
@@ -345,7 +353,9 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
     class="c5"
   >
     <button
+      aria-selected="false"
       class="c6 c3 c4"
+      role="tab"
       type="button"
     >
       Bar
@@ -445,12 +455,15 @@ exports[`TabBar Snapshots Some tabs 1`] = `
 
 <ul
   class="c0"
+  role="tablist"
 >
   <li
     class="c1"
   >
     <button
+      aria-selected="false"
       class="c2 c3 c4"
+      role="tab"
       type="button"
     >
       Foo
@@ -460,7 +473,9 @@ exports[`TabBar Snapshots Some tabs 1`] = `
     class="c1"
   >
     <button
+      aria-selected="false"
       class="c2 c3 c4"
+      role="tab"
       type="button"
     >
       Bar
