@@ -26,7 +26,7 @@ exports[`Tab Snapshots Selected 1`] = `
 </styled.li>
 `;
 
-exports[`TabBar Snapshots No tabs 1`] = `<styled.ul />`;
+exports[`TabBar Snapshots No tabs 1`] = `""`;
 
 exports[`TabBar Snapshots Non-tab children 1`] = `
 <styled.ul>

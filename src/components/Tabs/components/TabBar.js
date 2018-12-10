@@ -34,7 +34,7 @@ class TabBar extends Component {
   render() {
     const { activeTab, children, onTabChange } = this.props;
 
-    return (
+    return React.Children.count(children) ? (
       <TabBarContainer>
         {React.Children.map(
           children,
@@ -47,7 +47,7 @@ class TabBar extends Component {
               : child
         )}
       </TabBarContainer>
-    );
+    ) : null;
   }
 }
 
