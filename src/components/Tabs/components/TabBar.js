@@ -41,11 +41,8 @@ class TabBar extends Component {
           child =>
             child.type === Tab
               ? React.cloneElement(child, {
+                  onTabChange,
                   selected: activeTab === child.props.name,
-                  onClick: e => {
-                    e.target.blur();
-                    onTabChange(child.props.name);
-                  },
                 })
               : child
         )}

@@ -21,15 +21,15 @@ describe('Tab', () => {
   });
 
   describe('Functions', () => {
-    it('trigger onClick when clicked', () => {
-      const clickHandler = jest.fn();
+    it('trigger onTabChange when clicked', () => {
+      const tabChangeHandler = jest.fn();
       const wrapper = mount(
-        <Tab name="foo" onClick={clickHandler}>
+        <Tab name="foo" onTabChange={tabChangeHandler}>
           Foo
         </Tab>
       );
       wrapper.find('button').simulate('click');
-      expect(clickHandler).toHaveBeenCalledTimes(1);
+      expect(tabChangeHandler).toHaveBeenCalledTimes(1);
     });
   });
 });

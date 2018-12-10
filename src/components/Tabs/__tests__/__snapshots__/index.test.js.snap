@@ -39,7 +39,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   <Tab
     key=".0"
     name="foo"
-    onClick={[Function]}
+    onTabChange={[Function]}
     selected={true}
   >
     Foo
@@ -47,7 +47,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   <Tab
     key=".1"
     name="bar"
-    onClick={[Function]}
+    onTabChange={[Function]}
     selected={false}
   >
     Bar
@@ -60,7 +60,7 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   <Tab
     key=".0"
     name="foo"
-    onClick={[Function]}
+    onTabChange={[Function]}
     selected={false}
   >
     Foo
@@ -68,7 +68,7 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   <Tab
     key=".1"
     name="bar"
-    onClick={[Function]}
+    onTabChange={[Function]}
     selected={false}
   >
     Bar

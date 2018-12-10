@@ -34,13 +34,20 @@ const TabButton = styled(Button).attrs({ variant: 'link' })`
   }
 `;
 
-const Tab = ({ children, selected, onClick, name }) => (
-  <Container selected={selected}>
-    <TabButton selected={selected} onClick={onClick}>
-      {children}
-    </TabButton>
-  </Container>
-);
+const Tab = ({ children, selected, onTabChange, name }) => {
+  const onClick = e => {
+    e.target.blur();
+    onTabChange(name);
+  };
+
+  return (
+    <Container selected={selected}>
+      <TabButton selected={selected} onClick={onClick}>
+        {children}
+      </TabButton>
+    </Container>
+  );
+};
 
 Tab.propTypes = {
   /** Children elements */
@@ -48,14 +55,14 @@ Tab.propTypes = {
   /** Name of the tab */
   name: string.isRequired, // eslint-disable-line react/no-typos
   /** Callback function. Managed by TabBar */
-  onClick: func,
+  onTabChange: func,
   /** Display the selected state. Managed by TabBar */
   selected: bool,
 };
 
 Tab.defaultProps = {
   children: null,
-  onClick: noop,
+  onTabChange: noop,
   selected: false,
 };
 
