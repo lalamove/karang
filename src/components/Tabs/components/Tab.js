@@ -28,26 +28,23 @@ const TabButton = styled(Button).attrs({ variant: 'link' })`
     text-decoration: none;
   }
 
-  &:focus:enabled {
+  &:active:enabled {
     color: ${darken(0.2, primaryColor)};
+    text-decoration: none;
+  }
+
+  &:focus:enabled {
     text-decoration: none;
   }
 `;
 
-const Tab = ({ children, selected, onTabChange, name }) => {
-  const onClick = e => {
-    e.target.blur();
-    onTabChange(name);
-  };
-
-  return (
-    <Container selected={selected}>
-      <TabButton selected={selected} onClick={onClick}>
-        {children}
-      </TabButton>
-    </Container>
-  );
-};
+const Tab = ({ children, selected, onTabChange, name }) => (
+  <Container selected={selected}>
+    <TabButton selected={selected} onClick={() => onTabChange(name)}>
+      {children}
+    </TabButton>
+  </Container>
+);
 
 Tab.propTypes = {
   /** Children elements */
