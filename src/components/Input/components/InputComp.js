@@ -1,11 +1,11 @@
 import React, { Component, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType, shape } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import noop from 'utils/noop';
 import compose from 'utils/compose';
 import AnimatedBorder from 'components/AnimatedBorder';
-import ErrorMessage from 'components/ErrorMessage';
+import RawErrorMsg from 'components/ErrorMessage';
 import withSelectAll from 'hoc/withSelectAll';
 import withCursorEnd from 'hoc/withCursorEnd';
 import TextInput from './TextInput';
@@ -18,7 +18,21 @@ const SCTextInput = styled(TextInput)`
 `;
 
 const Wrapper = styled.div`
+  position: relative;
   display: inline-block;
+
+  ${({ error }) =>
+    error &&
+    css`
+      padding-bottom: 2em;
+    `};
+`;
+
+const ErrorMessage = styled(RawErrorMsg)`
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  left: 0;
 `;
 
 const propTypes = {
@@ -145,7 +159,7 @@ class Comp extends Component {
     } = this.props;
 
     return (
-      <Wrapper style={style} className={className}>
+      <Wrapper style={style} className={className} error={error}>
         <AnimatedBorder
           name={name}
           label={label}
@@ -173,17 +187,18 @@ class Comp extends Component {
   }
 }
 
-const CompWithRef = forwardRef((props, ref) => (
+const InputComp = forwardRef((props, ref) => (
   <Comp forwardedRef={ref} {...props} />
 ));
 
-const InputComp = compose(
+const Input = compose(
   withSelectAll,
   withCursorEnd
-)(CompWithRef);
+)(InputComp);
 
 // Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const Input = ({ forwardedRef, ...props }) => <InputComp {...props} />;
+// const Input = ({ forwardedRef, ...props }) => <InputComp {...props} />;
+Input.displayName = 'Input';
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
 

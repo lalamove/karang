@@ -331,6 +331,7 @@ exports[`Button-variant-link 1`] = `
 .c0 {
   display: inline-block;
   border: none;
+  padding: 0;
   color: rgba(242,103,34,1);
 }
 

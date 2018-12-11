@@ -27,7 +27,6 @@ exports[`Input Snapshots Password 1`] = `
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
-  line-height: 20px;
   resize: none;
   outline: none;
 }
@@ -100,6 +99,7 @@ exports[`Input Snapshots Password 1`] = `
 }
 
 .c0 {
+  position: relative;
   display: inline-block;
 }
 
@@ -208,7 +208,6 @@ exports[`Input Snapshots Password with a value 1`] = `
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
-  line-height: 20px;
   resize: none;
   outline: none;
 }
@@ -281,6 +280,7 @@ exports[`Input Snapshots Password with a value 1`] = `
 }
 
 .c0 {
+  position: relative;
   display: inline-block;
 }
 
@@ -390,7 +390,6 @@ exports[`Input Snapshots Regular Input 1`] = `
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: rgba(242,103,34,1);
   font-size: 14px;
-  line-height: 20px;
   resize: none;
   outline: none;
 }
@@ -416,6 +415,7 @@ exports[`Input Snapshots Regular Input 1`] = `
 }
 
 .c0 {
+  position: relative;
   display: inline-block;
 }
 

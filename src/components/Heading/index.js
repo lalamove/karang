@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { string, node, oneOf } from 'prop-types';
+import styled, { css } from 'styled-components';
 
-import { silver } from 'styles/colors';
-import { fontWeight } from 'styles/fonts';
+import { silver, black } from 'styles/colors';
+import { fontWeight, fontSize } from 'styles/fonts';
 
 export const HeadingGroup = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 `;
 
 const Heading = styled.span`
@@ -17,10 +17,23 @@ const Heading = styled.span`
   }
   margin: 0.5em 0;
   color: ${silver};
-  font-size: 0.857em;
   font-weight: ${fontWeight.bold};
   line-height: 1.286;
-  text-transform: uppercase;
+  ${({ size }) => {
+    switch (size) {
+      case 'large':
+        return css`
+          font-size: ${fontSize.large};
+          color: ${black};
+        `;
+      case 'default':
+      default:
+        return css`
+          font-size: ${fontSize.small};
+          text-transform: uppercase;
+        `;
+    }
+  }};
 `;
 
 const HeadingComp = ({ htmlTag, children, ...rest }) => {
@@ -29,13 +42,15 @@ const HeadingComp = ({ htmlTag, children, ...rest }) => {
 };
 
 HeadingComp.defaultProps = {
+  size: 'default',
   htmlTag: 'span',
   children: null,
 };
 
 HeadingComp.propTypes = {
-  htmlTag: PropTypes.string,
-  children: PropTypes.node,
+  size: oneOf(['default', 'large']),
+  htmlTag: string,
+  children: node,
 };
 
 export default HeadingComp;

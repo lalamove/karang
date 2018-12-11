@@ -19,6 +19,7 @@ exports[`Snapshots Radio checked 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   cursor: pointer;
 }
 
@@ -112,27 +113,27 @@ exports[`Snapshots Radio disabled 1`] = `
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
 }
 
-.kTJrDb:hover .c1,
-.kTJrDb > input:focus ~ .c1 {
+.dvXODT:hover .c1,
+.dvXODT > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.kTJrDb:hover > input:not(:checked):not(:disabled) ~ .c1,
-.kTJrDb:active > input:not(:checked):not(:disabled) ~ .c1 {
+.dvXODT:hover > input:not(:checked):not(:disabled) ~ .c1,
+.dvXODT:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.kTJrDb:active > input:not(:checked):not(:disabled) ~ .c1,
-.kTJrDb > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.dvXODT:active > input:not(:checked):not(:disabled) ~ .c1,
+.dvXODT > input:focus:not(:checked):not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.kTJrDb > input:disabled ~ .c1,
-.kTJrDb > input:disabled ~ .c3 {
+.dvXODT > input:disabled ~ .c1,
+.dvXODT > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.kTJrDb > input:checked ~ .c1:before {
+.dvXODT > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -142,6 +143,7 @@ exports[`Snapshots Radio disabled 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   cursor: pointer;
   cursor: not-allowed;
 }
@@ -241,6 +243,7 @@ exports[`Snapshots Radio unchecked 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   cursor: pointer;
 }
 
@@ -333,6 +336,7 @@ exports[`Snapshots Render children 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   cursor: pointer;
 }
 
@@ -381,27 +385,27 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.hNeHJU:hover .c1,
-.hNeHJU > input:focus ~ .c1 {
+.cljgdb:hover .c1,
+.cljgdb > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.hNeHJU:hover > input:not(:checked):not(:disabled) ~ .c1,
-.hNeHJU:active > input:not(:checked):not(:disabled) ~ .c1 {
+.cljgdb:hover > input:not(:checked):not(:disabled) ~ .c1,
+.cljgdb:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.hNeHJU:active > input:not(:checked):not(:disabled) ~ .c1,
-.hNeHJU > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.cljgdb:active > input:not(:checked):not(:disabled) ~ .c1,
+.cljgdb > input:focus:not(:checked):not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.hNeHJU > input:disabled ~ .c1,
-.hNeHJU > input:disabled ~ .c3 {
+.cljgdb > input:disabled ~ .c1,
+.cljgdb > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.hNeHJU > input:checked ~ .c1:before {
+.cljgdb > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -410,7 +414,7 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.hNeHJU:hover .c1 {
+.cljgdb:hover .c1 {
   box-shadow: none;
 }
 
