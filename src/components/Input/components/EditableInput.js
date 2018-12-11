@@ -6,37 +6,42 @@ import noop from 'utils/noop';
 import AnimatedBorder from 'components/AnimatedBorder';
 import Button from 'components/Button';
 import ErrorMessage from 'components/ErrorMessage';
-import TextInput from './TextInput';
+import SCInput from './TextInput';
+
+const TextInput = styled(SCInput)`
+  flex: 1 1 60%;
+`;
 
 const Wrapper = styled.div`
   display: inline-block;
+  max-width: 100%;
 `;
 
 const SCAnimatedBorder = styled(AnimatedBorder)`
-  width: 400px;
+  box-sizing: border-box;
+  min-width: 16em;
+  max-width: 100%;
+  padding-right: 1em;
 `;
 
 const TextDisplay = styled.div`
-  width: 100%;
-  height: 20px;
-  line-height: 20px;
-  padding: 1em;
+  flex: 1 1 60%;
   overflow: hidden;
-  white-space: nowrap;
+  padding: 1em;
   text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const BtnContainer = styled.div`
   display: flex;
-  align-items: center;
-  padding: 0 8px;
   flex-shrink: 0;
+  align-items: center;
+  margin-right: -0.5em;
+  margin-left: -0.5em;
 `;
 
 const SCButton = styled(Button)`
-  min-width: 80px;
-  height: 32px;
-  margin: 0 4px;
+  margin: 0 0.5em;
 `;
 
 const propTypes = {
@@ -211,13 +216,9 @@ class Comp extends Component {
   };
 
   onChange = e => {
-    const {
-      target: { value },
-    } = e;
-    this.setState({
-      value,
-      dirty: !!value,
-    });
+    const { value } = e.target;
+
+    this.setState({ value, dirty: !!value });
     this.props.onChange(e);
   };
 
@@ -279,19 +280,16 @@ class Comp extends Component {
           style={style}
           className={className}
         >
-          {editing ? (
-            <TextInput
-              label={label}
-              value={value}
-              onBlur={this.onBlur}
-              onChange={this.onChange}
-              onFocus={this.onFocus}
-              {...remainProps}
-              ref={this.getReference}
-            />
-          ) : (
-            <TextDisplay>{value}</TextDisplay>
-          )}
+          <TextInput
+            // disabled={!editing}
+            label={label}
+            value={value}
+            onBlur={this.onBlur}
+            onChange={this.onChange}
+            onFocus={this.onFocus}
+            {...remainProps}
+            innerRef={this.getReference}
+          />
           <BtnContainer>
             {editing ? (
               <Fragment>

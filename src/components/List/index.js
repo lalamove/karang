@@ -104,7 +104,7 @@ const LI = styled.li`
   ${({ active }) => active && activeStyle};
 `;
 
-const Wrapper = LI.extend`
+const Wrapper = styled(LI)`
   display: flex;
   align-items: top;
 `;

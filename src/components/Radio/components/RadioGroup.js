@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 import { bool, func, string, number, oneOf, oneOfType } from 'prop-types';
+import styled from 'styled-components';
 import noop from 'utils/noop';
-import Radio from './RadioButton';
+import RadioButton from './RadioButton';
 
-function radio({ name, variant, selected, onChange }) {
+const Wrapper = styled.div`
+  margin-right: -0.5em;
+  margin-left: -0.5em;
+`;
+
+const Radio = styled(RadioButton)`
+  ${Wrapper} & {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+  }
+`;
+
+function radio({ name, variant, selected, onChange, disabled }) {
   return ({ ...props }) => (
     <Radio
       {...props}
@@ -11,6 +24,7 @@ function radio({ name, variant, selected, onChange }) {
       variant={variant}
       onChange={onChange}
       checked={props.value === selected} // eslint-disable-line react/prop-types
+      disabled={disabled}
     />
   );
 }
@@ -23,6 +37,7 @@ class RadioGroup extends Component {
     variant: 'default',
     value: null,
     defaultValue: null,
+    disabled: false,
   };
 
   static propTypes = {
@@ -40,6 +55,8 @@ class RadioGroup extends Component {
     /** Initial selected value, use it if you want to leave the component
      *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
     defaultValue: oneOfType([string, number, bool]),
+    /** Disable the radio buttons if it is set to `true` */
+    disabled: bool,
   };
 
   state = {
@@ -73,18 +90,19 @@ class RadioGroup extends Component {
   };
 
   render() {
-    const { name, variant } = this.props;
+    const { name, variant, disabled, onChange, ...rest } = this.props;
     return (
-      <div aria-labelledby={name}>
+      <Wrapper {...rest} aria-labelledby={name}>
         {this.props.children(
           radio({
             name,
             variant,
             onChange: this.handleChange,
             selected: this.state.value,
+            disabled,
           })
         ) || null}
-      </div>
+      </Wrapper>
     );
   }
 }

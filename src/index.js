@@ -16,12 +16,18 @@ export { default as Dropdown } from './components/Dropdown';
 export { default as Form } from './components/Form';
 export { default as Heading, HeadingGroup } from './components/Heading';
 export { default as Icon } from './components/Icon';
-export { default as Input, PinInput, SearchInput } from './components/Input';
+export {
+  default as Input,
+  PinInput,
+  SearchInput,
+  EditableInput,
+} from './components/Input';
 export { default as List } from './components/List';
 export { default as Pagination } from './components/Pagination';
 export { default as Radio, RadioGroup } from './components/Radio';
 export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
+export { default as Tab, TabBar } from './components/Tabs';
 export { default as Table } from './components/Table';
 export { default as TextArea } from './components/TextArea';
 

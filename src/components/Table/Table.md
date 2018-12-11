@@ -74,6 +74,40 @@ columns={[
 />
 ```
 
+**onRowClick**
+
+Supply a callback function to listen to clicks on the table rows.
+It's a good UX practice to also make it `hoverable`.
+
+```js static
+<Table
+  hoverable
+  onRowClick={(data, id) => alert(`${id}\n${JSON.stringify(data)}`)}
+  ...
+/>
+```
+
+```js
+<Table
+  hoverable
+  onRowClick={(data, id) => alert(`${id}\n${JSON.stringify(data)}`)}
+  columns={[
+    { key: 't', label: 'Title' },
+    {
+      key: 'r',
+      label: 'How good',
+      render: val => <Rating value={val} />,
+    },
+    { key: 'y', label: 'Year' },
+  ]}
+  data={[
+    { id: 'breaking-bad', t: 'Breaking Bad', r: 5, y: '2008' },
+    { id: 'better-call-saul', t: 'Better Call Saul', r: 5, y: '2016' },
+    { id: 'the-office', t: 'The Office', r: 3, y: '2004' },
+  ]}
+/>
+```
+
 **Sortable columns**
 
 _Supports frontend and api sorting_

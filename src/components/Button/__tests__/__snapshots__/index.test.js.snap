@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button-block 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -17,28 +17,31 @@ exports[`Button-block 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: block;
   width: 100%;
   border-color: rgba(229,229,229,1);
   color: rgba(88,89,91,1);
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -46,7 +49,7 @@ exports[`Button-block 1`] = `
 `;
 
 exports[`Button-disabled 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -62,27 +65,30 @@ exports[`Button-disabled 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   border-color: rgba(229,229,229,1);
   color: rgba(88,89,91,1);
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   disabled=""
   type="button"
 >
@@ -91,7 +97,7 @@ exports[`Button-disabled 1`] = `
 `;
 
 exports[`Button-isLoading 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -107,6 +113,23 @@ exports[`Button-isLoading 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   border-color: rgba(229,229,229,1);
   color: rgba(88,89,91,1);
@@ -117,22 +140,8 @@ exports[`Button-isLoading 1`] = `
   color: rgba(0,0,0,0);
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -140,7 +149,7 @@ exports[`Button-isLoading 1`] = `
 `;
 
 exports[`Button-size-large 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -156,6 +165,23 @@ exports[`Button-size-large 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   padding: 0.75em 1em;
   font-size: 16px;
@@ -164,22 +190,8 @@ exports[`Button-size-large 1`] = `
   color: rgba(88,89,91,1);
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -187,7 +199,7 @@ exports[`Button-size-large 1`] = `
 `;
 
 exports[`Button-size-xlarge 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -203,6 +215,23 @@ exports[`Button-size-xlarge 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   padding: 0.9em 1em;
   font-size: 18px;
@@ -211,22 +240,8 @@ exports[`Button-size-xlarge 1`] = `
   color: rgba(88,89,91,1);
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -234,7 +249,7 @@ exports[`Button-size-xlarge 1`] = `
 `;
 
 exports[`Button-variant-default 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -250,27 +265,30 @@ exports[`Button-variant-default 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   border-color: rgba(229,229,229,1);
   color: rgba(88,89,91,1);
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -278,7 +296,7 @@ exports[`Button-variant-default 1`] = `
 `;
 
 exports[`Button-variant-link 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -294,23 +312,27 @@ exports[`Button-variant-link 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-  display: inline-block;
-  border: none;
-  color: rgba(242,103,34,1);
 }
 
-.c0:disabled {
+.c1:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.c0:hover:enabled,
-.c0:focus:enabled {
+.c1:hover:enabled,
+.c1:focus:enabled {
   box-shadow: 0 2px 4px rgba(0,0,0,0.22);
 }
 
-.c0:active:enabled {
+.c1:active:enabled {
   box-shadow: none;
+}
+
+.c0 {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  color: rgba(242,103,34,1);
 }
 
 .c0:active {
@@ -329,7 +351,7 @@ exports[`Button-variant-link 1`] = `
 }
 
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -337,7 +359,7 @@ exports[`Button-variant-link 1`] = `
 `;
 
 exports[`Button-variant-outline 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -353,27 +375,30 @@ exports[`Button-variant-outline 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   color: rgba(242,103,34,1);
   border-color: rgba(242,103,34,1);
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -381,7 +406,7 @@ exports[`Button-variant-outline 1`] = `
 `;
 
 exports[`Button-variant-primary 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -397,28 +422,31 @@ exports[`Button-variant-primary 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   background-color: rgba(242,103,34,1);
   border-color: rgba(242,103,34,1);
   color: white;
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello
@@ -426,7 +454,7 @@ exports[`Button-variant-primary 1`] = `
 `;
 
 exports[`Button-variant-secondary 1`] = `
-.c0 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -442,28 +470,31 @@ exports[`Button-variant-secondary 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.c1:hover:enabled,
+.c1:focus:enabled {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+}
+
+.c1:active:enabled {
+  box-shadow: none;
+}
+
+.c0 {
   display: inline-block;
   background-color: rgba(250,162,27,1);
   border-color: rgba(250,162,27,1);
   color: white;
 }
 
-.c0:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c0:active:enabled {
-  box-shadow: none;
-}
-
 <button
-  class="c0"
+  class="c0 c1"
   type="button"
 >
   hello

@@ -3,30 +3,24 @@ cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
   - node_modules/
+  - .yarn
 stages:
 - test
 - version
 - doc
-before_script:
-  - apk update
-  - apk -v --update add git openssh
-  - mkdir ~/.ssh
-  - printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
-  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-  - chmod 600 -R ~/.ssh
 
 test:
-  image: node:8.11-alpine
+  image: node:10.14-alpine
   stage: test
   tags:
     - k8s
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
   script:
-    - yarn install
+    - yarn install --pure-lockfile --network-concurrency 1 --cache-folder .yarn
     - yarn test-coverage
 
 version:
-  image: node:8.11-alpine
+  image: node:10.14-alpine
   stage: version
   only:
     refs:
@@ -35,6 +29,12 @@ version:
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
   script:
+     - apk update
+     - apk -v --update add git openssh
+     - mkdir ~/.ssh
+     - printf '%s\n' "$SSH_KEY" > ~/.ssh/id_rsa
+     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+     - chmod 600 -R ~/.ssh
      - REMOTE_URL=`git remote get-url --push origin`
      - REMOTE_URL=${REMOTE_URL//*"@git.easygroup.co"/"ssh://git@git.easygroup.co:12888"}
      - git config user.email "$GITLAB_USER_EMAIL"
@@ -44,7 +44,7 @@ version:
      - echo "Version updated"
 
 storybook:
-  image: node:8.11-alpine
+  image: node:10.14-alpine
   stage: doc
   tags:
     - k8s
@@ -59,14 +59,14 @@ storybook:
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
-    - yarn install
+    - yarn install --pure-lockfile --network-concurrency 1 --cache-folder .yarn
     - yarn storybook:build
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 cp .out $S3_URL/storybook --recursive
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL/storybook --recursive
     - echo "Upload completed"
 
 styleguide:
-  image: node:8.11-alpine
+  image: node:10.14-alpine
   stage: doc
   tags:
     - k8s
@@ -81,7 +81,7 @@ styleguide:
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
-    - yarn install
+    - yarn install --pure-lockfile --network-concurrency 1 --cache-folder .yarn
     - yarn doc:build
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 cp styleguide $S3_URL --recursive
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL --recursive

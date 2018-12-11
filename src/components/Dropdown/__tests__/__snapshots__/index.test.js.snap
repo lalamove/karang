@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown Snapshots render 1`] = `
-.c2 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -17,23 +17,26 @@ exports[`Dropdown Snapshots render 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
 }
 
-.c2:disabled {
+.c3:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.c2:hover:enabled,
-.c2:focus:enabled {
+.c3:hover:enabled,
+.c3:focus:enabled {
   box-shadow: 0 2px 4px rgba(0,0,0,0.22);
 }
 
-.c2:active:enabled {
+.c3:active:enabled {
   box-shadow: none;
+}
+
+.c2 {
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
 }
 
 .c1 {
@@ -52,7 +55,7 @@ exports[`Dropdown Snapshots render 1`] = `
   box-shadow: none;
 }
 
-.c3 {
+.c4 {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -64,7 +67,7 @@ exports[`Dropdown Snapshots render 1`] = `
   text-align: left;
 }
 
-.c4 {
+.c5 {
   margin-right: -5px;
 }
 
@@ -86,7 +89,7 @@ exports[`Dropdown Snapshots render 1`] = `
     aria-label="open menu"
     aria-labelledby="downshift-0-label"
     autocomplete="off"
-    class="c1 c2"
+    class="c1 c2 c3"
     data-toggle="true"
     id="downshift-0-input"
     role="button"
@@ -94,12 +97,12 @@ exports[`Dropdown Snapshots render 1`] = `
     value=""
   >
     <span
-      class="c3"
+      class="c4"
     >
       Options
     </span>
     <span
-      class="c4"
+      class="c5"
     >
       <svg
         style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
@@ -126,7 +129,7 @@ exports[`Dropdown Snapshots render 1`] = `
 `;
 
 exports[`Dropdown Snapshots render 2`] = `
-.c2 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -142,23 +145,26 @@ exports[`Dropdown Snapshots render 2`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
 }
 
-.c2:disabled {
+.c3:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.c2:hover:enabled,
-.c2:focus:enabled {
+.c3:hover:enabled,
+.c3:focus:enabled {
   box-shadow: 0 2px 4px rgba(0,0,0,0.22);
 }
 
-.c2:active:enabled {
+.c3:active:enabled {
   box-shadow: none;
+}
+
+.c2 {
+  display: inline-block;
+  border-color: rgba(229,229,229,1);
+  color: rgba(88,89,91,1);
 }
 
 .c1 {
@@ -177,7 +183,7 @@ exports[`Dropdown Snapshots render 2`] = `
   box-shadow: none;
 }
 
-.c3 {
+.c4 {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -189,7 +195,7 @@ exports[`Dropdown Snapshots render 2`] = `
   text-align: left;
 }
 
-.c4 {
+.c5 {
   margin-right: -5px;
 }
 
@@ -211,7 +217,7 @@ exports[`Dropdown Snapshots render 2`] = `
     aria-label="open menu"
     aria-labelledby="downshift-1-label"
     autocomplete="off"
-    class="c1 c2"
+    class="c1 c2 c3"
     data-toggle="true"
     id="downshift-1-input"
     role="button"
@@ -219,12 +225,12 @@ exports[`Dropdown Snapshots render 2`] = `
     value=""
   >
     <span
-      class="c3"
+      class="c4"
     >
       Options
     </span>
     <span
-      class="c4"
+      class="c5"
     >
       <svg
         style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"

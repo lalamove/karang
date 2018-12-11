@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, oneOf, node, string } from 'prop-types';
+import { bool, oneOf, node } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { transparentize, darken } from 'polished';
 
@@ -17,7 +17,7 @@ const {
 } = colors;
 /* eslint-enable import/no-named-as-default-member */
 
-const Button = Base.extend`
+const Button = styled(Base)`
   /* layout */
   display: ${({ block }) => (block ? 'block' : 'inline-block')};
   ${({ block }) => block && 'width: 100%;'};
@@ -65,6 +65,7 @@ const Button = Base.extend`
       case 'link':
         return css`
           border: none;
+          padding: 0;
           color: ${primaryColor};
 
           &:active {

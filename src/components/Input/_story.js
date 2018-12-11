@@ -11,14 +11,21 @@ class InputWrapper extends Component {
     industry: '',
   };
 
+  componentDidMount() {
+    console.log(this.input.current);
+  }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  input = React.createRef();
 
   render() {
     return (
       <Fragment>
         <Input
+          ref={this.input}
           type="text"
           label="Username"
           name="username"
@@ -56,6 +63,8 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           error="Error Message"
         />
+        <br />
+        <br />
         <br />
         <br />
         <Input
@@ -127,14 +136,17 @@ class SearchInputWrapper extends Component {
 class EditableInputWrapper extends Component {
   render() {
     return (
-      <EditableInput
-        name="Billing Email"
-        value="alex.fok@lalamove.com"
-        saveBtnText="Save Value"
-        editBtnText="Edit Value"
-        cancelBtnText="Cancel Value"
-        label="Billing Email"
-      />
+      <div style={{ maxWidth: '20em' }}>
+        <EditableInput
+          block
+          name="Billing Email"
+          value="alex.fok@lalamove.com"
+          saveBtnText="Save Value"
+          editBtnText="Edit Value"
+          cancelBtnText="Cancel Value"
+          label="Billing Email"
+        />
+      </div>
     );
   }
 }

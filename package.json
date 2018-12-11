@@ -11,15 +11,15 @@
     "build": "rollup -c",
     "test": "react-scripts test --env=jsdom",
     "test-coverage": "react-scripts test --env=jsdom --coverage",
-    "prepare": "npm run build",
-    "lint": "npm run lint:css",
+    "prepare": "yarn build",
+    "lint": "yarn lint:css",
     "lint:js": "eslint \"src/**/*.js\"",
     "lint:css": "stylelint \"src/**/*.{css|js}\"",
     "storybook": "start-storybook -p 9002 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "doc": "npx styleguidist server",
     "doc:build": "npx styleguidist build",
-    "precommit": "npm run prepare && lint-staged"
+    "precommit": "yarn prepare && lint-staged"
   },
   "peerDependencies": {
     "downshift": "^2.0.14",
@@ -28,7 +28,7 @@
     "react": "^16.3.2",
     "react-dates": "^18.0.2",
     "react-dom": "^16.3.2",
-    "styled-components": "^3.3.3"
+    "styled-components": "^3.4.10"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.10",
@@ -75,7 +75,7 @@
     "rollup-plugin-peer-deps-external": "^2.0.0",
     "rollup-plugin-postcss": "^1.1.0",
     "rollup-plugin-url": "^1.3.0",
-    "styled-components": "^3.3.3",
+    "styled-components": "^3.4.10",
     "stylelint": "^9.2.0",
     "stylelint-config-idiomatic-css": "^1.0.5",
     "stylelint-config-recommended": "^2.1.0",
