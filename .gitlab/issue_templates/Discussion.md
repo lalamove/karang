@@ -1,6 +1,6 @@
 <!--
 
-Please put short and descriptive title above.
+Please put the short and descriptive title above.
 
 -->
 
