@@ -84,11 +84,12 @@ describe('Input', () => {
 
     it('check the error message', () => {
       const wrapper = mount(<Input name="input" error="Error Message" />);
+      expect(wrapper.find('ErrorMessage').length).toBe(1);
       expect(
         wrapper
           .find('ErrorMessage')
           .find('span')
-          .at(1)
+          .first()
           .text()
       ).toEqual('Error Message');
     });
@@ -134,7 +135,7 @@ describe('PinInput', () => {
         wrapper
           .find('ErrorMessage')
           .find('span')
-          .at(1)
+          .first()
           .text()
       ).toBe('Error Message');
     });
