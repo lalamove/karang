@@ -6,7 +6,7 @@ Please put the short and descriptive title above.
 
 ### Summary
 
-(A short summary of the issue reported)
+<!-- A short summary of the issue reported. -->
 
 - [ ] Backend related errors
 - [ ] Functional errors
@@ -17,15 +17,15 @@ Please put the short and descriptive title above.
 
 ### Steps to reproduce
 
-(How we can reproduce the issue)
+<!-- How we can reproduce the issue. -->
 
 ### Actual results / behavior
 
-(What actually happens, with screen captures or screen recording for visual bugs)
+<!-- What actually happens, with screen captures or screen recording for visual bugs. -->
 
 ### Expected results / behavior
 
-(What you should see / expect instead)
+<!-- What you should see / expect instead. -->
 
 ### Environments
 
@@ -34,7 +34,7 @@ Please put the short and descriptive title above.
 * node version: (run `node -v` in your terminal)
 * npm version: (run `npm -v` in your terminal)
 
-(with your package.json if possible)
+<!-- with your package.json if possible -->
 
 ### OS & browser that experience the problem
 
@@ -43,6 +43,6 @@ Please put the short and descriptive title above.
 
 ### Relevant code / error log, optional
 
-(a link to your commit / code block that might be responsible for the problem if possible)
+<!-- a link to your commit / code block that might be responsible for the problem if possible. -->
 
 /label ~bug

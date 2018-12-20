@@ -6,7 +6,7 @@ Please put the short and descriptive title above.
 
 ### Summary
 
-(A short summary of the issue for discussion)
+<!-- A short summary of the issue for discussion. -->
 
 ### Items for discussion
 
@@ -20,6 +20,6 @@ Please put the short and descriptive title above.
 * Follow-up action 2
 * Follow-up action 3
 
-(please cc persons here or assign this issue to someone to follow up)
+<!-- Please cc persons here or assign this issue to someone to follow up. -->
 
 /label ~discussion

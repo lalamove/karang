@@ -9,7 +9,7 @@ Please check the documentation for the contributing guideline.
 
 ### Summary
 
-(A short summary of the issue reported)
+<!-- A short summary of the issue reported. -->
 
 - [ ] Missing documentation
 - [ ] Incorrect documentation
@@ -17,17 +17,17 @@ Please check the documentation for the contributing guideline.
 
 ### Relevant components
 
-(State the related components name here)
+<!-- State the related components name here. -->
 
 ### Details of the issue
 
-(Details of the issues mentions above)
+<!-- Details of the issues mentions above. -->
 
 ### Follow-up actions
 * Follow-up action 1
 * Follow-up action 2
 * Follow-up action 3
 
-(Please assign this issue to code owner to follow up)
+<!-- Please assign this issue to code owner to follow up. -->
 
 /label ~docs

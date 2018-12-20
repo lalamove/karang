@@ -14,20 +14,25 @@ Before you submit a pull request, please:
 
 ### Summary
 
-(A short summary of the feature request)
+<!-- A short summary of the feature request -->
 
 - [ ] Extend existing component
 - [ ] New component wanted
 
 ### Feature Details
 
-(Details of feature requested)
+<!-- Details of feature requested -->
 
 ### Follow-up actions
 * Follow-up action 1
 * Follow-up action 2
 * Follow-up action 3
 
-(Please assign this issue to code owner to follow up; also please communicate with PM if needed)
+<!--
+
+Please assign this issue to code owner to follow up.
+Also please communicate with PM if needed.
+
+-->
 
 /label ~feature
