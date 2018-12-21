@@ -10,14 +10,19 @@ import { primaryFonts, fontSize } from 'styles/fonts';
 
 const Input = styled.input`
   padding: 0;
+  border: 1px solid ${nobel.main};
+  border-radius: 0;
   margin: 0 0.15em;
   font-family: ${primaryFonts};
   text-align: center;
-  border: 1px solid ${nobel.main};
-  border-radius: 0;
   appearance: none;
   outline: 0;
   caret-color: ${primary.main};
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    margin: 0;
+  }
 
   &:focus {
     border: 1px solid ${primary.main};
@@ -26,11 +31,6 @@ const Input = styled.input`
 
   &::selection {
     background: ${rgba(primary.main, 0.1)};
-  }
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    margin: 0;
   }
 
   ${({ size }) => {
@@ -54,9 +54,9 @@ const Input = styled.input`
   ${({ error }) =>
     error &&
     css`
-      color: ${valencia.main};
       border: 1px solid ${valencia.main};
       background: ${rgba(valencia.main, 0.1)};
+      color: ${valencia.main};
 
       &:focus {
         border: 1px solid ${valencia.main};

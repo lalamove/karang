@@ -50,9 +50,6 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
 }
 
 .c4 {
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
-  line-height: 1.4;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -61,17 +58,20 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  line-height: 1.4;
 }
 
 .c5 {
-  color: rgba(216,83,79,1);
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  font-size: 12px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   width: 0;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 12px;
+  color: rgba(216,83,79,1);
 }
 
 .c6 {

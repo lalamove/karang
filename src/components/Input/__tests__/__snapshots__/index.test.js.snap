@@ -439,9 +439,6 @@ exports[`Input Snapshots Regular Input 1`] = `
 
 exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 .c4 {
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
-  line-height: 1.4;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -450,17 +447,20 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  line-height: 1.4;
 }
 
 .c5 {
-  color: rgba(216,83,79,1);
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  font-size: 12px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   width: 0;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 12px;
+  color: rgba(216,83,79,1);
 }
 
 .c6 {
@@ -469,11 +469,11 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 
 .c3 {
   padding: 0;
+  border: 1px solid #B4B4B4;
+  border-radius: 0;
   margin: 0 0.15em;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: center;
-  border: 1px solid #B4B4B4;
-  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -482,9 +482,14 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   width: 68px;
   height: 68px;
   font-size: 48px;
-  color: #D8534F;
   border: 1px solid #D8534F;
   background: rgba(216,83,79,0.1);
+  color: #D8534F;
+}
+
+.c3::-webkit-inner-spin-button,
+.c3::-webkit-outer-spin-button {
+  margin: 0;
 }
 
 .c3:focus {
@@ -494,11 +499,6 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 
 .c3::selection {
   background: rgba(241,102,34,0.1);
-}
-
-.c3::-webkit-inner-spin-button,
-.c3::-webkit-outer-spin-button {
-  margin: 0;
 }
 
 .c3:focus {
@@ -633,11 +633,11 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 exports[`PinInput Snapshots Empty 1`] = `
 .c3 {
   padding: 0;
+  border: 1px solid #B4B4B4;
+  border-radius: 0;
   margin: 0 0.15em;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: center;
-  border: 1px solid #B4B4B4;
-  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -648,6 +648,11 @@ exports[`PinInput Snapshots Empty 1`] = `
   font-size: 48px;
 }
 
+.c3::-webkit-inner-spin-button,
+.c3::-webkit-outer-spin-button {
+  margin: 0;
+}
+
 .c3:focus {
   border: 1px solid #F16622;
   box-shadow: 0 0 0 4px rgba(241,102,34,0.2);
@@ -655,11 +660,6 @@ exports[`PinInput Snapshots Empty 1`] = `
 
 .c3::selection {
   background: rgba(241,102,34,0.1);
-}
-
-.c3::-webkit-inner-spin-button,
-.c3::-webkit-outer-spin-button {
-  margin: 0;
 }
 
 .c1 {
@@ -737,11 +737,11 @@ exports[`PinInput Snapshots Empty 1`] = `
 exports[`PinInput Snapshots change type 1`] = `
 .c3 {
   padding: 0;
+  border: 1px solid #B4B4B4;
+  border-radius: 0;
   margin: 0 0.15em;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: center;
-  border: 1px solid #B4B4B4;
-  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -752,6 +752,11 @@ exports[`PinInput Snapshots change type 1`] = `
   font-size: 48px;
 }
 
+.c3::-webkit-inner-spin-button,
+.c3::-webkit-outer-spin-button {
+  margin: 0;
+}
+
 .c3:focus {
   border: 1px solid #F16622;
   box-shadow: 0 0 0 4px rgba(241,102,34,0.2);
@@ -759,11 +764,6 @@ exports[`PinInput Snapshots change type 1`] = `
 
 .c3::selection {
   background: rgba(241,102,34,0.1);
-}
-
-.c3::-webkit-inner-spin-button,
-.c3::-webkit-outer-spin-button {
-  margin: 0;
 }
 
 .c1 {
