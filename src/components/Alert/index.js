@@ -98,9 +98,11 @@ const Alert = ({
       <span>{message}</span>
       {description && <span>{description}</span>}
     </Content>
-    <CloseButton onClick={onDismiss}>
-      <Icon type="cross" color={white} size={24} />
-    </CloseButton>
+    {onDismiss && (
+      <CloseButton onClick={onDismiss}>
+        <Icon type="cross" color={white} size={24} />
+      </CloseButton>
+    )}
   </Container>
 );
 
