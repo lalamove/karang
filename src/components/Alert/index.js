@@ -98,11 +98,12 @@ const Alert = ({
       <span>{message}</span>
       {description && <span>{description}</span>}
     </Content>
-    {onDismiss && (
-      <CloseButton onClick={onDismiss}>
-        <Icon type="cross" color={white} size={24} />
-      </CloseButton>
-    )}
+    {onDismiss &&
+      onDismiss !== noop && (
+        <CloseButton onClick={onDismiss}>
+          <Icon type="cross" color={white} size={24} />
+        </CloseButton>
+      )}
   </Container>
 );
 
