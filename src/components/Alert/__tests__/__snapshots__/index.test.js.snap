@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Snapshots Alert-type-error 1`] = `
+.c1 {
+  margin: 0 0.5em 0 0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 1.2em;
+}
+
+.c2 span {
+  margin: 2px;
+  display: inline-block;
+}
+
+.c2 span:first-child {
+  font-weight: bold;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.1em;
+  color: rgba(255,255,255,1);
+  background: rgba(216,83,79,0.9);
+}
+
+<div
+  class="c0"
+  type="error"
+>
+  <svg
+    class="c1"
+    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
+    viewBox="0 0 1024 1024"
+  >
+    <svg
+      viewBox="0 0 217 217"
+    >
+      <g>
+        <rect
+          height="217"
+          style="fill:none"
+          width="217"
+        >
+          
+        </rect>
+        <path
+          d="M109,36.62a9.23,9.23,0,0,1,6.56,2.7,9.74,9.74,0,0,1,1.83,2.61,9.6,9.6,0,0,0,.65,1.12l70.43,122,.15.24a9.27,9.27,0,0,1-8,14.14l-.66,0c-.2,0-.41,0-.62,0h-.52l-141,0h-.56a9.24,9.24,0,0,1-8-4.62,9.29,9.29,0,0,1-.93-7.07l0-.05a8.74,8.74,0,0,1,1.26-2.73,8.13,8.13,0,0,0,.58-1L100.53,42c.12-.19.23-.38.34-.59a8.81,8.81,0,0,1,1.56-2.1A9.23,9.23,0,0,1,109,36.62M31.17,159.81h0M109,27.62A18.22,18.22,0,0,0,96.07,33a17.53,17.53,0,0,0-3.17,4.28h0L22.17,159.81v0a17.73,17.73,0,0,0-2.54,5.52,18.24,18.24,0,0,0,17.65,23h.56l141.53,0h0c.43,0,.85,0,1.28,0a18.27,18.27,0,0,0,15.62-27.89L125.49,38h0a18.68,18.68,0,0,0-3.53-5A18.22,18.22,0,0,0,109,27.62Z"
+        >
+          
+        </path>
+        <circle
+          cx="109"
+          cy="158.63"
+          r="9"
+        >
+          
+        </circle>
+        <path
+          d="M118,131.5a9,9,0,0,1-18,0V77.37a9,9,0,0,1,18,0Z"
+        >
+          
+        </path>
+      </g>
+    </svg>
+  </svg>
+  <div
+    class="c2"
+  >
+    <span>
+      Foo
+    </span>
+    <span>
+      Bar
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Snapshots Alert-type-info 1`] = `
+.c1 {
+  margin: 0 0.5em 0 0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 1.2em;
+}
+
+.c2 span {
+  margin: 2px;
+  display: inline-block;
+}
+
+.c2 span:first-child {
+  font-weight: bold;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.1em;
+  color: rgba(255,255,255,1);
+  background: rgba(47,160,237,0.9);
+}
+
+<div
+  class="c0"
+  type="info"
+>
+  <svg
+    class="c1"
+    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
+    viewBox="0 0 1024 1024"
+  >
+    <svg
+      viewBox="0 0 217 217"
+    >
+      <g>
+        <rect
+          height="217"
+          style="fill:none"
+          width="217"
+        >
+          
+        </rect>
+        <path
+          d="M109,36.62a9.23,9.23,0,0,1,6.56,2.7,9.74,9.74,0,0,1,1.83,2.61,9.6,9.6,0,0,0,.65,1.12l70.43,122,.15.24a9.27,9.27,0,0,1-8,14.14l-.66,0c-.2,0-.41,0-.62,0h-.52l-141,0h-.56a9.24,9.24,0,0,1-8-4.62,9.29,9.29,0,0,1-.93-7.07l0-.05a8.74,8.74,0,0,1,1.26-2.73,8.13,8.13,0,0,0,.58-1L100.53,42c.12-.19.23-.38.34-.59a8.81,8.81,0,0,1,1.56-2.1A9.23,9.23,0,0,1,109,36.62M31.17,159.81h0M109,27.62A18.22,18.22,0,0,0,96.07,33a17.53,17.53,0,0,0-3.17,4.28h0L22.17,159.81v0a17.73,17.73,0,0,0-2.54,5.52,18.24,18.24,0,0,0,17.65,23h.56l141.53,0h0c.43,0,.85,0,1.28,0a18.27,18.27,0,0,0,15.62-27.89L125.49,38h0a18.68,18.68,0,0,0-3.53-5A18.22,18.22,0,0,0,109,27.62Z"
+        >
+          
+        </path>
+        <circle
+          cx="109"
+          cy="158.63"
+          r="9"
+        >
+          
+        </circle>
+        <path
+          d="M118,131.5a9,9,0,0,1-18,0V77.37a9,9,0,0,1,18,0Z"
+        >
+          
+        </path>
+      </g>
+    </svg>
+  </svg>
+  <div
+    class="c2"
+  >
+    <span>
+      Foo
+    </span>
+    <span>
+      Bar
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Snapshots Alert-type-success 1`] = `
+.c1 {
+  margin: 0 0.5em 0 0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 1.2em;
+}
+
+.c2 span {
+  margin: 2px;
+  display: inline-block;
+}
+
+.c2 span:first-child {
+  font-weight: bold;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.1em;
+  color: rgba(255,255,255,1);
+  background: rgba(25,188,155,0.9);
+}
+
+<div
+  class="c0"
+  type="success"
+>
+  <svg
+    class="c1"
+    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
+    viewBox="0 0 1024 1024"
+  >
+    <svg
+      viewBox="0 0 217 217"
+    >
+      <g>
+        <rect
+          height="217"
+          style="fill:none"
+          width="217"
+        >
+          
+        </rect>
+        <path
+          d="M108,27a81,81,0,1,0,81,81A81,81,0,0,0,108,27Zm0,153a72,72,0,1,1,72-72A72,72,0,0,1,108,180Z"
+        >
+          
+        </path>
+        <path
+          d="M99.63,134.69a4.5,4.5,0,0,1-6.37,0l-.07-.07L69.33,110.7l-.17-.15a4.5,4.5,0,0,1,6.37-6.36l-.15-.15,21.07,21.29L140.38,81.4l.09-.09a4.5,4.5,0,0,1,6.37,6.37l.59-.74L99.69,134.68Z"
+        >
+          
+        </path>
+      </g>
+    </svg>
+  </svg>
+  <div
+    class="c2"
+  >
+    <span>
+      Foo
+    </span>
+    <span>
+      Bar
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Snapshots Alert-type-warning 1`] = `
+.c1 {
+  margin: 0 0.5em 0 0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 1.2em;
+}
+
+.c2 span {
+  margin: 2px;
+  display: inline-block;
+}
+
+.c2 span:first-child {
+  font-weight: bold;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.1em;
+  color: rgba(255,255,255,1);
+  background: rgba(247,152,28,0.9);
+}
+
+<div
+  class="c0"
+  type="warning"
+>
+  <svg
+    class="c1"
+    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
+    viewBox="0 0 1024 1024"
+  >
+    <svg
+      viewBox="0 0 217 217"
+    >
+      <g>
+        <rect
+          height="217"
+          style="fill:none"
+          width="217"
+        >
+          
+        </rect>
+        <path
+          d="M109,36.62a9.23,9.23,0,0,1,6.56,2.7,9.74,9.74,0,0,1,1.83,2.61,9.6,9.6,0,0,0,.65,1.12l70.43,122,.15.24a9.27,9.27,0,0,1-8,14.14l-.66,0c-.2,0-.41,0-.62,0h-.52l-141,0h-.56a9.24,9.24,0,0,1-8-4.62,9.29,9.29,0,0,1-.93-7.07l0-.05a8.74,8.74,0,0,1,1.26-2.73,8.13,8.13,0,0,0,.58-1L100.53,42c.12-.19.23-.38.34-.59a8.81,8.81,0,0,1,1.56-2.1A9.23,9.23,0,0,1,109,36.62M31.17,159.81h0M109,27.62A18.22,18.22,0,0,0,96.07,33a17.53,17.53,0,0,0-3.17,4.28h0L22.17,159.81v0a17.73,17.73,0,0,0-2.54,5.52,18.24,18.24,0,0,0,17.65,23h.56l141.53,0h0c.43,0,.85,0,1.28,0a18.27,18.27,0,0,0,15.62-27.89L125.49,38h0a18.68,18.68,0,0,0-3.53-5A18.22,18.22,0,0,0,109,27.62Z"
+        >
+          
+        </path>
+        <circle
+          cx="109"
+          cy="158.63"
+          r="9"
+        >
+          
+        </circle>
+        <path
+          d="M118,131.5a9,9,0,0,1-18,0V77.37a9,9,0,0,1,18,0Z"
+        >
+          
+        </path>
+      </g>
+    </svg>
+  </svg>
+  <div
+    class="c2"
+  >
+    <span>
+      Foo
+    </span>
+    <span>
+      Bar
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Snapshots Alert-variant-default 1`] = `
+.c1 {
+  margin: 0 0.5em 0 0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 1.2em;
+}
+
+.c2 span {
+  margin: 2px;
+  display: inline-block;
+}
+
+.c2 span:first-child {
+  font-weight: bold;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.1em;
+  color: rgba(255,255,255,1);
+  background: rgba(47,160,237,0.9);
+}
+
+<div
+  class="c0"
+  type="info"
+>
+  <svg
+    class="c1"
+    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
+    viewBox="0 0 1024 1024"
+  >
+    <svg
+      viewBox="0 0 217 217"
+    >
+      <g>
+        <rect
+          height="217"
+          style="fill:none"
+          width="217"
+        >
+          
+        </rect>
+        <path
+          d="M109,36.62a9.23,9.23,0,0,1,6.56,2.7,9.74,9.74,0,0,1,1.83,2.61,9.6,9.6,0,0,0,.65,1.12l70.43,122,.15.24a9.27,9.27,0,0,1-8,14.14l-.66,0c-.2,0-.41,0-.62,0h-.52l-141,0h-.56a9.24,9.24,0,0,1-8-4.62,9.29,9.29,0,0,1-.93-7.07l0-.05a8.74,8.74,0,0,1,1.26-2.73,8.13,8.13,0,0,0,.58-1L100.53,42c.12-.19.23-.38.34-.59a8.81,8.81,0,0,1,1.56-2.1A9.23,9.23,0,0,1,109,36.62M31.17,159.81h0M109,27.62A18.22,18.22,0,0,0,96.07,33a17.53,17.53,0,0,0-3.17,4.28h0L22.17,159.81v0a17.73,17.73,0,0,0-2.54,5.52,18.24,18.24,0,0,0,17.65,23h.56l141.53,0h0c.43,0,.85,0,1.28,0a18.27,18.27,0,0,0,15.62-27.89L125.49,38h0a18.68,18.68,0,0,0-3.53-5A18.22,18.22,0,0,0,109,27.62Z"
+        >
+          
+        </path>
+        <circle
+          cx="109"
+          cy="158.63"
+          r="9"
+        >
+          
+        </circle>
+        <path
+          d="M118,131.5a9,9,0,0,1-18,0V77.37a9,9,0,0,1,18,0Z"
+        >
+          
+        </path>
+      </g>
+    </svg>
+  </svg>
+  <div
+    class="c2"
+  >
+    <span>
+      Foo
+    </span>
+    <span>
+      Bar
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Alert Snapshots Alert-variant-toast 1`] = `
+.c1 {
+  margin: 0 0.5em 0 0;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 1.2em;
+}
+
+.c2 span {
+  margin: 2px;
+  display: inline-block;
+}
+
+.c2 span:first-child {
+  font-weight: bold;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1.1em;
+  color: rgba(255,255,255,1);
+  background: rgba(47,160,237,0.9);
+  width: 21em;
+}
+
+<div
+  class="c0"
+  type="info"
+>
+  <svg
+    class="c1"
+    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
+    viewBox="0 0 1024 1024"
+  >
+    <svg
+      viewBox="0 0 217 217"
+    >
+      <g>
+        <rect
+          height="217"
+          style="fill:none"
+          width="217"
+        >
+          
+        </rect>
+        <path
+          d="M109,36.62a9.23,9.23,0,0,1,6.56,2.7,9.74,9.74,0,0,1,1.83,2.61,9.6,9.6,0,0,0,.65,1.12l70.43,122,.15.24a9.27,9.27,0,0,1-8,14.14l-.66,0c-.2,0-.41,0-.62,0h-.52l-141,0h-.56a9.24,9.24,0,0,1-8-4.62,9.29,9.29,0,0,1-.93-7.07l0-.05a8.74,8.74,0,0,1,1.26-2.73,8.13,8.13,0,0,0,.58-1L100.53,42c.12-.19.23-.38.34-.59a8.81,8.81,0,0,1,1.56-2.1A9.23,9.23,0,0,1,109,36.62M31.17,159.81h0M109,27.62A18.22,18.22,0,0,0,96.07,33a17.53,17.53,0,0,0-3.17,4.28h0L22.17,159.81v0a17.73,17.73,0,0,0-2.54,5.52,18.24,18.24,0,0,0,17.65,23h.56l141.53,0h0c.43,0,.85,0,1.28,0a18.27,18.27,0,0,0,15.62-27.89L125.49,38h0a18.68,18.68,0,0,0-3.53-5A18.22,18.22,0,0,0,109,27.62Z"
+        >
+          
+        </path>
+        <circle
+          cx="109"
+          cy="158.63"
+          r="9"
+        >
+          
+        </circle>
+        <path
+          d="M118,131.5a9,9,0,0,1-18,0V77.37a9,9,0,0,1,18,0Z"
+        >
+          
+        </path>
+      </g>
+    </svg>
+  </svg>
+  <div
+    class="c2"
+  >
+    <span>
+      Foo
+    </span>
+    <span>
+      Bar
+    </span>
+  </div>
+</div>
+`;
