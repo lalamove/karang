@@ -115,7 +115,7 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  type: null,
+  type: 'info',
   variant: 'default',
   description: null,
   onDismiss: noop,
