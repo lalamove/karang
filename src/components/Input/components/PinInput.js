@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
 import { arrayOf, bool, func, string, oneOf } from 'prop-types';
 import styled, { css } from 'styled-components';
+import { rgba } from 'polished';
 
+import ErrorMessage from 'components/ErrorMessage';
 import noop from 'utils/noop';
-import ErrorMessage from '../../ErrorMessage';
-import { red, orange, offWhite } from 'styles/colors';
+import { primary, valencia, nobel } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const Input = styled.input`
-  border: 1px solid ${offWhite};
-  caret-color: ${orange};
-  font-family: ${primaryFonts};
   padding: 0;
+  border: 1px solid ${nobel.main};
   border-radius: 0;
+  margin: 0 0.15em;
+  font-family: ${primaryFonts};
+  text-align: center;
   appearance: none;
   outline: 0;
-  margin: 0 8px 8px 8px;
-  text-align: center;
-
-  &:focus {
-    border: 1px solid ${orange};
-  }
+  caret-color: ${primary.main};
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
     margin: 0;
+  }
+
+  &:focus {
+    border: 1px solid ${primary.main};
+    box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
+  }
+
+  &::selection {
+    background: ${rgba(primary.main, 0.1)};
   }
 
   ${({ size }) => {
@@ -49,11 +54,17 @@ const Input = styled.input`
   ${({ error }) =>
     error &&
     css`
-      border: 1px solid ${red};
-      color: ${red};
+      border: 1px solid ${valencia.main};
+      background: ${rgba(valencia.main, 0.1)};
+      color: ${valencia.main};
 
       &:focus {
-        border: 1px solid ${red};
+        border: 1px solid ${valencia.main};
+        box-shadow: 0 0 0 4px ${rgba(valencia.main, 0.5)};
+      }
+
+      &::selection {
+        background: ${rgba(valencia.main, 0.1)};
       }
     `};
 `;
@@ -69,6 +80,10 @@ const Wrapper = styled.div`
   ${/* sc-selector */ Input}:last-of-type {
     margin-right: 0;
   }
+`;
+
+const Container = styled.div`
+  display: inline-block;
 `;
 
 class PinInput extends Component {
@@ -150,6 +165,7 @@ class PinInput extends Component {
       e.preventDefault();
       return;
     }
+
     const index = parseInt(name, 10);
     const newPins = Array.from(this.state.pins);
     newPins[index] = trimValue;
@@ -188,10 +204,10 @@ class PinInput extends Component {
     ));
 
     return (
-      <Wrapper>
-        {pinBoxes}
+      <Container>
+        <Wrapper>{pinBoxes}</Wrapper>
         <ErrorMessage error={error} />
-      </Wrapper>
+      </Container>
     );
   }
 }

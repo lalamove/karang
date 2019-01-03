@@ -11,10 +11,6 @@ class InputWrapper extends Component {
     industry: '',
   };
 
-  componentDidMount() {
-    console.log(this.input.current);
-  }
-
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -24,6 +20,7 @@ class InputWrapper extends Component {
   render() {
     return (
       <Fragment>
+        <h4>Basic</h4>
         <Input
           ref={this.input}
           type="text"
@@ -33,8 +30,7 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           autoFocus
         />
-        <br />
-        <br />
+        <h4>Password</h4>
         <Input
           type="password"
           label="Password"
@@ -43,18 +39,16 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           masked
         />
-        <br />
-        <br />
+        <h4>Non-masked password</h4>
         <Input
           type="password"
-          label="not masked Password"
+          label="Non-masked Password"
           name="password"
           value={this.state.password}
           onChange={this.handleChange}
           masked={false}
         />
-        <br />
-        <br />
+        <h4>With error message</h4>
         <Input
           type="text"
           label="Address"
@@ -63,10 +57,7 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           error="Error Message"
         />
-        <br />
-        <br />
-        <br />
-        <br />
+        <h4>Select all when clicked</h4>
         <Input
           type="text"
           label="Company Name"
@@ -75,30 +66,28 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           selectAll
         />
-        <br />
-        <br />
+        <h4>Move cursor to end of input</h4>
         <Input
           type="text"
-          placeholder="Industry"
+          label="Industry"
           name="industry"
           value={this.state.industry}
           onChange={this.handleChange}
           cursorEnd
         />
-        <br />
-        <br />
+        <h4>Uncontrolled component</h4>
         <Input
           type="text"
-          label="Uncontrolled Component"
-          name="testing"
-          defaultValue="Testing"
+          label="Uncontrolled"
+          name="uncontrolled"
+          defaultValue=""
         />
       </Fragment>
     );
   }
 }
 
-// eslint-disable-next-line
+// eslint-disable-next-line react/no-multi-comp
 class PinInputWrapper extends Component {
   state = {
     register: ['', '', '', ''],
@@ -108,48 +97,38 @@ class PinInputWrapper extends Component {
   render() {
     return (
       <Fragment>
+        <h4>Basic</h4>
         <PinInput pins={this.state.register} />
-        <br />
-        <br />
+        <h4>With error message</h4>
         <PinInput pins={this.state.resetPassword} error="Error Message" />
-        <br />
-        <br />
-        <PinInput pins={this.state.resetPassword} variant="small" />
+        <h4>Small size</h4>
+        <PinInput pins={this.state.resetPassword} size="small" />
       </Fragment>
     );
   }
 }
 
-// eslint-disable-next-line
-class SearchInputWrapper extends Component {
-  render() {
-    return (
-      <SearchInput
-        name="searchValue"
-        placeholder="Search for Order ID, Driver's Mobile"
-      />
-    );
-  }
-}
+const SearchInputWrapper = () => (
+  <SearchInput
+    name="searchValue"
+    placeholder="Search for Order ID, Driver's Mobile"
+  />
+);
 
-// eslint-disable-next-line
-class EditableInputWrapper extends Component {
-  render() {
-    return (
-      <div style={{ maxWidth: '20em' }}>
-        <EditableInput
-          block
-          name="Billing Email"
-          value="alex.fok@lalamove.com"
-          saveBtnText="Save Value"
-          editBtnText="Edit Value"
-          cancelBtnText="Cancel Value"
-          label="Billing Email"
-        />
-      </div>
-    );
-  }
-}
+// TODO: Code cleanup
+const EditableInputWrapper = () => (
+  <div style={{ maxWidth: '20em' }}>
+    <EditableInput
+      block
+      name="Billing Email"
+      value="alex.fok@lalamove.com"
+      saveBtnText="Save Value"
+      editBtnText="Edit Value"
+      cancelBtnText="Cancel Value"
+      label="Billing Email"
+    />
+  </div>
+);
 
 storiesOf('Input', module)
   .add('Input', () => <InputWrapper />)
