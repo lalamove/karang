@@ -1,8 +1,8 @@
 <!--
 
-Please put short and descriptive title above.
+Please put the short and descriptive title above.
 
-Good pull requests are a big help to our repository. 
+Good pull requests are a big help to our repository.
 Please check the documentation for the contributing guideline.
 
 Before you submit a pull request, please:
@@ -14,20 +14,25 @@ Before you submit a pull request, please:
 
 ### Summary
 
-(A short summary of the feature request)
+<!-- A short summary of the feature request -->
 
 - [ ] Extend existing component
 - [ ] New component wanted
 
 ### Feature Details
 
-(Details of feature requested)
+<!-- Details of feature requested -->
 
 ### Follow-up actions
 * Follow-up action 1
 * Follow-up action 2
 * Follow-up action 3
 
-(Please assign this issue to code owner to follow up; also please communicate with PM if needed)
+<!--
+
+Please assign this issue to code owner to follow up.
+Also please communicate with PM if needed.
+
+-->
 
 /label ~feature
