@@ -98,9 +98,11 @@ const Alert = ({
       <span>{message}</span>
       {description && <span>{description}</span>}
     </Content>
-    <CloseButton onClick={onDismiss}>
-      <Icon type="cross" color={white} size={24} />
-    </CloseButton>
+    {onDismiss !== noop && (
+      <CloseButton onClick={onDismiss}>
+        <Icon type="cross" color={white} size={24} />
+      </CloseButton>
+    )}
   </Container>
 );
 
@@ -113,7 +115,7 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  type: null,
+  type: 'info',
   variant: 'default',
   description: null,
   onDismiss: noop,
