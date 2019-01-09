@@ -1,11 +1,13 @@
 import addstop from './addstop';
-import vmenu from './vmenu';
 import language from './language';
+import settings from './settings';
+import vmenu from './vmenu';
 
 const ContentIcons = {
   addstop,
-  vmenu,
   language,
+  settings,
+  vmenu,
 };
 
 export default ContentIcons;

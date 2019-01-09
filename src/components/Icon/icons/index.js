@@ -6,26 +6,18 @@ import cross from './basic/cross';
 import facebook from './basic/facebook';
 import logo from './basic/logo';
 import noDriver from './basic/noDriver';
-import notificationBell from './basic/notificationBell';
 import order from './basic/order';
 import question from './basic/question';
-import settingsGear from './basic/settingsGear';
 import truckOutline from './basic/truckOutline';
 
-// Communication
+// Category
+import AlertIcons from './alert';
 import CommunicationIcons from './communication';
-
-// Content
 import ContentIcons from './content';
-
-// Maps
 import MapsIcons from './maps';
-
-// Payments
 import PaymentIcons from './payments';
 
-// Others
-
+// Others (To be deprecated)
 import addContact from './others/addContact';
 import androidLogo from './others/androidLogo';
 import appleLogo from './others/appleLogo';
@@ -85,11 +77,8 @@ import syncIcon from './others/syncIcon';
 import textMessage from './others/textMessage';
 import textMessage2 from './others/textMessage2';
 import tickMark from './others/tickMark';
-import tickMarkCircle from './others/tickMarkCircle';
 import tickedParcelBox from './others/tickedParcelBox';
 import van from './others/van';
-import warning from './others/warning';
-import warningCircle from './others/warningCircle';
 import zip from './others/zip';
 
 const icons = Object.freeze({
@@ -100,12 +89,15 @@ const icons = Object.freeze({
   facebook,
   logo,
   noDriver,
-  notificationBell,
+  notificationBell: AlertIcons.alert, // TODO: DEPRECATED, for backward compatibility only
   order,
   pin: MapsIcons.pinFill, // TODO: DEPRECATED, for backward compatibility only
   question,
-  settingsGear,
+  settingsGear: ContentIcons.settings, // TODO: DEPRECATED, for backward compatibility only
   truckOutline,
+
+  // Alert
+  ...AlertIcons,
 
   // Communication
   ...CommunicationIcons,
@@ -180,11 +172,10 @@ const icons = Object.freeze({
   textMessage,
   textMessage2,
   tickMark,
-  tickMarkCircle,
+  tickMarkCircle: AlertIcons.success, // TODO: DEPRECATED, for backward compatibility only
   tickedParcelBox,
   van,
-  warning,
-  warningCircle,
+  warningCircle: AlertIcons.info, // TODO: DEPRECATED, for backward compatibility only
   zip,
 });
 

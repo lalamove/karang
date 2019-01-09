@@ -2,9 +2,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
-import Icon from './index';
-import icons from './icons';
 import { fontSize } from 'styles/fonts';
+
+import Icon from './index';
+
+// Category
+import AlertIcons from './icons/alert';
+import CommunicationIcons from './icons/communication';
+import ContentIcons from './icons/content';
+import MapsIcons from './icons/maps';
+import PaymentIcons from './icons/payments';
+
+// Others
+import icons from './icons';
 
 const Container = styled.div`
   display: flex;
@@ -25,9 +35,10 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const Icons = () => (
+// eslint-disable-next-line react/prop-types
+const Icons = ({ category }) => (
   <Container>
-    {Object.keys(icons).map(type => (
+    {Object.keys(category).map(type => (
       <Wrapper key={`icon-${type}`}>
         <SCIcon type={type} size={40} />
         {type}
@@ -36,4 +47,10 @@ const Icons = () => (
   </Container>
 );
 
-storiesOf('Icon', module).add('Icon', () => <Icons />);
+storiesOf('Icon', module)
+  .add('Alert', () => <Icons category={AlertIcons} />)
+  .add('Communication', () => <Icons category={CommunicationIcons} />)
+  .add('Content', () => <Icons category={ContentIcons} />)
+  .add('Maps', () => <Icons category={MapsIcons} />)
+  .add('Payment', () => <Icons category={PaymentIcons} />)
+  .add('Others (To be deprecated)', () => <Icons category={icons} />);
