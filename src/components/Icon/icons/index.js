@@ -14,6 +14,7 @@ import truckOutline from './basic/truckOutline';
 import AlertIcons from './alert';
 import CommunicationIcons from './communication';
 import ContentIcons from './content';
+import EmojiIcons from './emoji';
 import MapsIcons from './maps';
 import PaymentIcons from './payments';
 
@@ -104,6 +105,9 @@ const icons = Object.freeze({
 
   // Content
   ...ContentIcons,
+
+  // Emoji
+  ...EmojiIcons,
 
   // Maps
   ...MapsIcons,

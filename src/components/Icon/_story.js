@@ -10,6 +10,7 @@ import Icon from './index';
 import AlertIcons from './icons/alert';
 import CommunicationIcons from './icons/communication';
 import ContentIcons from './icons/content';
+import EmojiIcons from './icons/emoji';
 import MapsIcons from './icons/maps';
 import PaymentIcons from './icons/payments';
 
@@ -51,6 +52,7 @@ storiesOf('Icon', module)
   .add('Alert', () => <Icons category={AlertIcons} />)
   .add('Communication', () => <Icons category={CommunicationIcons} />)
   .add('Content', () => <Icons category={ContentIcons} />)
+  .add('Emoji', () => <Icons category={EmojiIcons} />)
   .add('Maps', () => <Icons category={MapsIcons} />)
   .add('Payment', () => <Icons category={PaymentIcons} />)
   .add('Others (To be deprecated)', () => <Icons category={icons} />);
