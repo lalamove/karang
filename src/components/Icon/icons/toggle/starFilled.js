@@ -1,6 +1,6 @@
 import React from 'react';
 
-const star = (
+const starFilled = (
   <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
@@ -9,4 +9,4 @@ const star = (
   </svg>
 );
 
-export default star;
+export default starFilled;

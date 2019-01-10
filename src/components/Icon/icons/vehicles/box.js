@@ -1,7 +1,7 @@
 import React from 'react';
 
-const cart = (
-  <svg viewBox="40 40 130 130">
+const box = (
+  <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
       <path d="M144.43,61.34a5,5,0,0,0-6.3-3.2l-45.7,14.8a5,5,0,0,0-3.2,6.3l14.8,45.7a5,5,0,0,0,6.3,3.2l45.7-14.8a5,5,0,0,0,3.2-6.3ZM94,77.74l20.4-6.6,7.3,22.6a2.38,2.38,0,0,0,2.4,1.7,2.2,2.2,0,0,0,.8-.1,2.47,2.47,0,0,0,1.6-3.1l-7.3-22.7,20.4-6.6,14.8,45.7-45.7,14.8Z" />
@@ -10,4 +10,4 @@ const cart = (
   </svg>
 );
 
-export default cart;
+export default box;

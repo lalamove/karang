@@ -1,5 +1,4 @@
-// TODO: Naming & Classification
-// Basic
+// Basic (To be deprecated)
 import add from './basic/add';
 import clock from './basic/clock';
 import cross from './basic/cross';
@@ -8,7 +7,6 @@ import logo from './basic/logo';
 import noDriver from './basic/noDriver';
 import order from './basic/order';
 import question from './basic/question';
-import truckOutline from './basic/truckOutline';
 
 // Category
 import AlertIcons from './alert';
@@ -16,7 +14,9 @@ import CommunicationIcons from './communication';
 import ContentIcons from './content';
 import EmojiIcons from './emoji';
 import MapsIcons from './maps';
-import PaymentIcons from './payments';
+import PaymentsIcons from './payments';
+import ToggleIcons from './toggle';
+import VehiclesIcons from './vehicles';
 
 // Others (To be deprecated)
 import addContact from './others/addContact';
@@ -46,7 +46,6 @@ import key from './others/key';
 import magnify from './others/magnify';
 import magnifyingGlass from './others/magnifyingGlass';
 import microphone from './others/microphone';
-import momoCard from './others/momoCard';
 import networkParcelBox from './others/networkParcelBox';
 import newspaper from './others/newspaper';
 import notebookBookmark from './others/notebookBookmark';
@@ -69,17 +68,12 @@ import sendPaperPlane from './others/sendPaperPlane';
 import settingsSliders from './others/settingsSliders';
 import sound from './others/sound';
 import spanner from './others/spanner';
-import star from './others/star';
 import starAdd from './others/starAdd';
 import starCircled from './others/starCircled';
-import starDotted from './others/starDotted';
-import starOutline from './others/starOutline';
 import syncIcon from './others/syncIcon';
 import textMessage from './others/textMessage';
 import textMessage2 from './others/textMessage2';
-import tickMark from './others/tickMark';
 import tickedParcelBox from './others/tickedParcelBox';
-import van from './others/van';
 import zip from './others/zip';
 
 const icons = Object.freeze({
@@ -95,7 +89,7 @@ const icons = Object.freeze({
   pin: MapsIcons.pinFill, // TODO: DEPRECATED, for backward compatibility only
   question,
   settingsGear: ContentIcons.settings, // TODO: DEPRECATED, for backward compatibility only
-  truckOutline,
+  truckOutline: VehiclesIcons.truck, // TODO: DEPRECATED, for backward compatibility only
 
   // Alert
   ...AlertIcons,
@@ -113,7 +107,13 @@ const icons = Object.freeze({
   ...MapsIcons,
 
   // Payments
-  ...PaymentIcons,
+  ...PaymentsIcons,
+
+  // Toggle
+  ...ToggleIcons,
+
+  // Vehicles
+  ...VehiclesIcons,
 
   // Others
   addContact,
@@ -127,6 +127,7 @@ const icons = Object.freeze({
   bolt,
   calendar,
   cameraOutline,
+  cart: VehiclesIcons.box, // TODO: DEPRECATED, for backward compatibility only
   clippedPaper,
   crossedParcelBox,
   directions,
@@ -143,7 +144,7 @@ const icons = Object.freeze({
   magnify,
   magnifyingGlass,
   microphone,
-  momoCard,
+  momoCard: PaymentsIcons.momo, // TODO: DEPRECATED, for backward compatibility only
   networkParcelBox,
   newspaper,
   notebookBookmark,
@@ -167,18 +168,17 @@ const icons = Object.freeze({
   settingsSliders,
   sound,
   spanner,
-  star,
+  // star,
   starAdd,
   starCircled,
-  starDotted,
-  starOutline,
+  // starDotted,
+  // starOutline,
   syncIcon,
   textMessage,
   textMessage2,
-  tickMark,
+  tickMark: ToggleIcons.tick,
   tickMarkCircle: AlertIcons.success, // TODO: DEPRECATED, for backward compatibility only
   tickedParcelBox,
-  van,
   warningCircle: AlertIcons.info, // TODO: DEPRECATED, for backward compatibility only
   zip,
 });

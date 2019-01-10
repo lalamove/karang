@@ -1,6 +1,6 @@
 import React from 'react';
 
-const cashVertical = (
+const cashHKDVertical = (
   <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
@@ -10,4 +10,4 @@ const cashVertical = (
   </svg>
 );
 
-export default cashVertical;
+export default cashHKDVertical;
