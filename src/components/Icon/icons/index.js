@@ -8,6 +8,7 @@ import question from './basic/question';
 
 // Category
 import AlertIcons from './alert';
+import ArrowsIcons from './arrows';
 import CommunicationIcons from './communication';
 import ContentIcons from './content';
 import EmojiIcons from './emoji';
@@ -19,7 +20,7 @@ import VehiclesIcons from './vehicles';
 
 // Others (To be deprecated)
 import addContact from './others/addContact';
-import arrow from './others/arrow';
+// import arrow from './others/arrow';
 import arrowDoubleSidedCurved from './others/arrowDoubleSidedCurved';
 import arrowDoubleSidedDiagonal from './others/arrowDoubleSidedDiagonal';
 import arrowHorizontal from './others/arrowHorizontal';
@@ -91,6 +92,9 @@ const icons = Object.freeze({
   // Alert
   ...AlertIcons,
 
+  // Arrows
+  ...ArrowsIcons,
+
   // Communication
   ...CommunicationIcons,
 
@@ -122,7 +126,7 @@ const icons = Object.freeze({
   androidLogo: LogoIcons.android, // TODO: DEPRECATED, for backward compatibility only
   aMEXLogo: LogoIcons.amex, // TODO: DEPRECATED, for backward compatibility only
   appleLogo: LogoIcons.apple, // TODO: DEPRECATED, for backward compatibility only
-  arrow,
+  arrow: ArrowsIcons.dropdown, // TODO: DEPRECATED, for backward compatibility only
   arrowDoubleSidedCurved,
   arrowDoubleSidedDiagonal,
   arrowHorizontal,

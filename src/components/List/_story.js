@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, select } from '@storybook/addon-knobs/react';
 
-import InfoIcon from 'icons/Info';
+import Icon from 'components/Icon';
 import { orange } from 'styles/colors';
 
 import List from './index';
@@ -38,7 +38,7 @@ storiesOf('List', module)
       unique="id"
       items={items}
       render={({ data: { name, address, contact }, Item, getProps }) => (
-        <Item {...getProps()} icon={<InfoIcon color={orange} />}>
+        <Item {...getProps()} icon={<Icon type="info" color={orange} />}>
           <div>
             {name} <span className="light-silver">{address}</span>
           </div>
@@ -64,7 +64,7 @@ storiesOf('List', module)
       ]}
     >
       {({ data: { name }, Item, getProps }) => (
-        <Item {...getProps()} icon={<InfoIcon />}>
+        <Item {...getProps()} icon={<Icon type="info" color={orange} />}>
           {name}
         </Item>
       )}

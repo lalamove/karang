@@ -8,6 +8,7 @@ import Icon from './index';
 
 // Category
 import AlertIcons from './icons/alert';
+import ArrowsIcons from './icons/arrows';
 import CommunicationIcons from './icons/communication';
 import ContentIcons from './icons/content';
 import EmojiIcons from './icons/emoji';
@@ -53,6 +54,7 @@ const Icons = ({ category }) => (
 
 storiesOf('Icon', module)
   .add('Alert', () => <Icons category={AlertIcons} />)
+  .add('Arrows', () => <Icons category={ArrowsIcons} />)
   .add('Communication', () => <Icons category={CommunicationIcons} />)
   .add('Content', () => <Icons category={ContentIcons} />)
   .add('Emoji', () => <Icons category={EmojiIcons} />)

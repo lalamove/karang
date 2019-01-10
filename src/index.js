@@ -30,13 +30,3 @@ export { default as Select } from './components/Select';
 export { default as Tab, TabBar } from './components/Tabs';
 export { default as Table } from './components/Table';
 export { default as TextArea } from './components/TextArea';
-
-// DEPRECATED: Will use Icon component to replace following exports in upcoming release
-export { default as CrossIcon } from './icons/Cross';
-export { default as DropDownIcon } from './icons/DropDown';
-export { default as ErrorIcon } from './icons/Error';
-export { default as EyeOffIcon } from './icons/EyeOff';
-export { default as EyeOnIcon } from './icons/EyeOn';
-export { default as InfoIcon } from './icons/Info';
-export { default as MagnifierIcon } from './icons/Magnifier';
-export { default as StarIcon } from './icons/Star';
