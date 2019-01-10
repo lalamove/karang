@@ -2,8 +2,6 @@
 import add from './basic/add';
 import clock from './basic/clock';
 import cross from './basic/cross';
-import facebook from './basic/facebook';
-import logo from './basic/logo';
 import noDriver from './basic/noDriver';
 import order from './basic/order';
 import question from './basic/question';
@@ -13,6 +11,7 @@ import AlertIcons from './alert';
 import CommunicationIcons from './communication';
 import ContentIcons from './content';
 import EmojiIcons from './emoji';
+import LogoIcons from './logo';
 import MapsIcons from './maps';
 import PaymentsIcons from './payments';
 import ToggleIcons from './toggle';
@@ -20,8 +19,6 @@ import VehiclesIcons from './vehicles';
 
 // Others (To be deprecated)
 import addContact from './others/addContact';
-import androidLogo from './others/androidLogo';
-import appleLogo from './others/appleLogo';
 import arrow from './others/arrow';
 import arrowDoubleSidedCurved from './others/arrowDoubleSidedCurved';
 import arrowDoubleSidedDiagonal from './others/arrowDoubleSidedDiagonal';
@@ -81,8 +78,8 @@ const icons = Object.freeze({
   add,
   clock,
   cross,
-  facebook,
-  logo,
+  // facebook,
+  logo: LogoIcons.lalamoveFilled, // TODO: DEPRECATED, for backward compatibility only
   noDriver,
   notificationBell: AlertIcons.alert, // TODO: DEPRECATED, for backward compatibility only
   order,
@@ -103,6 +100,11 @@ const icons = Object.freeze({
   // Emoji
   ...EmojiIcons,
 
+  // Files
+
+  // Logo
+  ...LogoIcons,
+
   // Maps
   ...MapsIcons,
 
@@ -117,8 +119,9 @@ const icons = Object.freeze({
 
   // Others
   addContact,
-  androidLogo,
-  appleLogo,
+  androidLogo: LogoIcons.android, // TODO: DEPRECATED, for backward compatibility only
+  aMEXLogo: LogoIcons.amex, // TODO: DEPRECATED, for backward compatibility only
+  appleLogo: LogoIcons.apple, // TODO: DEPRECATED, for backward compatibility only
   arrow,
   arrowDoubleSidedCurved,
   arrowDoubleSidedDiagonal,
@@ -143,6 +146,7 @@ const icons = Object.freeze({
   key,
   magnify,
   magnifyingGlass,
+  masterCardLogo: LogoIcons.master, // TODO: DEPRECATED, for backward compatibility only
   microphone,
   momoCard: PaymentsIcons.momo, // TODO: DEPRECATED, for backward compatibility only
   networkParcelBox,
@@ -179,8 +183,12 @@ const icons = Object.freeze({
   tickMark: ToggleIcons.tick,
   tickMarkCircle: AlertIcons.success, // TODO: DEPRECATED, for backward compatibility only
   tickedParcelBox,
+  visaLogo: LogoIcons.visa,
   warningCircle: AlertIcons.info, // TODO: DEPRECATED, for backward compatibility only
   zip,
 });
+
+// dollarCircle, // files/notes/link
+// dollarTorn, // files/receipt
 
 export default icons;

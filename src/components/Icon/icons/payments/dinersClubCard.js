@@ -2,13 +2,19 @@ import React from 'react';
 
 const dinersClubCard = (
   <svg viewBox="0 0 217 217">
-    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenOdd">
-      <rect x="0" y="0" width="217" height="217" />
-      <g transform="translate(0.000000, 36.000000)">
+    <g
+      id="Icon-/-Payment-/-Credit-Card-/-Diner-/-217*217"
+      stroke="none"
+      strokeWidth="1"
+      fill="none"
+      fillRule="evenodd"
+    >
+      <rect id="Rectangle-12" x="0" y="0" width="217" height="217" />
+      <g id="Group-7" transform="translate(0.000000, 36.000000)">
         <mask id="dinersClubCard-mask-2" fill="white">
           <path d="M14.4666667,0 L202.533333,0 C210.523053,-1.56602803e-14 217,6.47694729 217,14.4666667 L217,130.2 C217,138.189719 210.523053,144.666667 202.533333,144.666667 L14.4666667,144.666667 C6.47694729,144.666667 9.78458427e-16,138.189719 0,130.2 L0,14.4666667 C-9.78458427e-16,6.47694729 6.47694729,1.46768764e-15 14.4666667,0 Z" />
         </mask>
-        <use fill="#F3F4F4" />
+        <use id="Mask" fill="#F3F4F4" xlinkHref="#path-1" />
         <g mask="url(#dinersClubCard-mask-2)">
           <g transform="translate(68.716667, 36.166667)">
             <path

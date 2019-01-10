@@ -17,8 +17,6 @@ import discountSignFilled from './discountSignFilled';
 import discoverCard from './discoverCard';
 import donation from './donation';
 import jcbCard from './jcbCard';
-import kasikornBank from './kasikornBank';
-import krungthaiBank from './krungthaiBank';
 import masterCard from './masterCard';
 import momo from './momo';
 import pricing from './pricing';
@@ -43,7 +41,7 @@ const PaymentIcons = {
   cashPHP,
   cashVND,
   creditCard,
-  creditCardAdd,
+  // creditCardAdd,
   creditCardBack,
   creditCardFront,
   dinersClubCard,
@@ -53,8 +51,6 @@ const PaymentIcons = {
   discoverCard,
   donation,
   jcbCard,
-  kasikornBank,
-  krungthaiBank,
   masterCard,
   momo,
   pricing,

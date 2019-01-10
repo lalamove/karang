@@ -11,6 +11,7 @@ import AlertIcons from './icons/alert';
 import CommunicationIcons from './icons/communication';
 import ContentIcons from './icons/content';
 import EmojiIcons from './icons/emoji';
+import LogoIcons from './icons/logo';
 import MapsIcons from './icons/maps';
 import PaymentsIcons from './icons/payments';
 import ToggleIcons from './icons/toggle';
@@ -55,6 +56,7 @@ storiesOf('Icon', module)
   .add('Communication', () => <Icons category={CommunicationIcons} />)
   .add('Content', () => <Icons category={ContentIcons} />)
   .add('Emoji', () => <Icons category={EmojiIcons} />)
+  .add('Logo', () => <Icons category={LogoIcons} />)
   .add('Maps', () => <Icons category={MapsIcons} />)
   .add('Payments', () => <Icons category={PaymentsIcons} />)
   .add('Toggle', () => <Icons category={ToggleIcons} />)
