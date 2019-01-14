@@ -12,6 +12,7 @@ import ArrowsIcons from './arrows';
 import CommunicationIcons from './communication';
 import ContentIcons from './content';
 import EmojiIcons from './emoji';
+import FilesIcons from './files';
 import LogoIcons from './logo';
 import MapsIcons from './maps';
 import PaymentsIcons from './payments';
@@ -47,7 +48,6 @@ import notebookBookmark from './others/notebookBookmark';
 import onOff from './others/onOff';
 import paperClip from './others/paperClip';
 import parcelBoxOutline from './others/parcelBoxOutline';
-import percentage from './others/percentage';
 import pin2 from './others/pin2';
 import pinCircle from './others/pinCircle';
 import pinOutline from './others/pinOutline';
@@ -102,6 +102,7 @@ const icons = Object.freeze({
   ...EmojiIcons,
 
   // Files
+  ...FilesIcons,
 
   // Logo
   ...LogoIcons,
@@ -130,7 +131,7 @@ const icons = Object.freeze({
   arrowDoubleSidedCurved,
   arrowDoubleSidedDiagonal,
   arrowHorizontal,
-  blockedGroup: UsersIcons.groupBanned,
+  blockedGroup: UsersIcons.groupBanned, // TODO: DEPRECATED, for backward compatibility only
   bolt,
   calendar,
   cameraOutline,
@@ -138,6 +139,8 @@ const icons = Object.freeze({
   clippedPaper,
   crossedParcelBox,
   directions,
+  dollarCircle: FilesIcons.noteLink, // TODO: DEPRECATED, for backward compatibility only
+  dollarTorn: FilesIcons.receipt, // TODO: DEPRECATED, for backward compatibility only
   dottedArrow,
   download,
   editSymbol,
@@ -159,7 +162,7 @@ const icons = Object.freeze({
   onOff,
   paperClip,
   parcelBoxOutline,
-  percentage,
+  percentage: PaymentsIcons.discount, // TODO: DEPRECATED, for backward compatibility only
   phoneIcon1: CommunicationIcons.phone, // TODO: DEPRECATED, for backward compatibility only
   pin2,
   pinCircle,
@@ -191,8 +194,5 @@ const icons = Object.freeze({
   warningCircle: AlertIcons.info, // TODO: DEPRECATED, for backward compatibility only
   zip,
 });
-
-// dollarCircle, // files/notes/link
-// dollarTorn, // files/receipt
 
 export default icons;
