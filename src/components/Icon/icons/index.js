@@ -16,15 +16,13 @@ import LogoIcons from './logo';
 import MapsIcons from './maps';
 import PaymentsIcons from './payments';
 import ToggleIcons from './toggle';
+import UsersIcons from './users';
 import VehiclesIcons from './vehicles';
 
 // Others (To be deprecated)
-import addContact from './others/addContact';
-// import arrow from './others/arrow';
 import arrowDoubleSidedCurved from './others/arrowDoubleSidedCurved';
 import arrowDoubleSidedDiagonal from './others/arrowDoubleSidedDiagonal';
 import arrowHorizontal from './others/arrowHorizontal';
-import blockedGroup from './others/blockedGroup';
 import bolt from './others/bolt';
 import calendar from './others/calendar';
 import cameraOutline from './others/cameraOutline';
@@ -38,7 +36,6 @@ import facebookColored from './others/facebookColored';
 import facebookOutlineCircle from './others/facebookOutlineCircle';
 import googlePlusColored from './others/googlePlusColored';
 import googlePlusOutline from './others/googlePlusOutline';
-import group from './others/group';
 import heartSymbol from './others/heartSymbol';
 import key from './others/key';
 import magnify from './others/magnify';
@@ -118,11 +115,14 @@ const icons = Object.freeze({
   // Toggle
   ...ToggleIcons,
 
+  // Users
+  ...UsersIcons,
+
   // Vehicles
   ...VehiclesIcons,
 
   // Others
-  addContact,
+  addContact: UsersIcons.userAdd, // TODO: DEPRECATED, for backward compatibility only
   androidLogo: LogoIcons.android, // TODO: DEPRECATED, for backward compatibility only
   aMEXLogo: LogoIcons.amex, // TODO: DEPRECATED, for backward compatibility only
   appleLogo: LogoIcons.apple, // TODO: DEPRECATED, for backward compatibility only
@@ -130,7 +130,7 @@ const icons = Object.freeze({
   arrowDoubleSidedCurved,
   arrowDoubleSidedDiagonal,
   arrowHorizontal,
-  blockedGroup,
+  blockedGroup: UsersIcons.groupBanned,
   bolt,
   calendar,
   cameraOutline,
@@ -145,7 +145,7 @@ const icons = Object.freeze({
   facebookOutlineCircle,
   googlePlusColored,
   googlePlusOutline,
-  group,
+  group: UsersIcons.group, // TODO: DEPRECATED, for backward compatibility only
   heartSymbol,
   key,
   magnify,

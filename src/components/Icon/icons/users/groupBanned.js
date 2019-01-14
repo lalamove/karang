@@ -1,14 +1,11 @@
 import React from 'react';
 
-const blockedGroup = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217 217">
+const groupBanned = (
+  <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
       <path d="M175.43,48.42a90.86,90.86,0,0,0-7.85-7.85,90,90,0,0,0-127,127,90.86,90.86,0,0,0,7.85,7.85,90,90,0,0,0,127-127ZM28,108A80,80,0,0,1,160.49,47.65L47.65,160.49A79.68,79.68,0,0,1,28,108Zm80,80a79.68,79.68,0,0,1-52.49-19.65L168.35,55.51A80,80,0,0,1,108,188Z" />
-      <path
-        style={{ fill: 'none' }}
-        d="M56,145l3.23-3.23A7.17,7.17,0,0,0,56,145Z"
-      />
+      <path className="cls-1" d="M56,145l3.23-3.23A7.17,7.17,0,0,0,56,145Z" />
       <path
         style={{ fill: 'none' }}
         d="M64.45,104.28c0-4.56-1.08-15.2-11.08-15.49H53c-4.15,0-7,2-8.77,6.15a25.12,25.12,0,0,0-1.67,9.35c0,7.34,2.91,15.27,11.07,15.49h.33C61.2,119.77,64.45,112,64.45,104.28Z"
@@ -27,4 +24,4 @@ const blockedGroup = (
   </svg>
 );
 
-export default blockedGroup;
+export default groupBanned;

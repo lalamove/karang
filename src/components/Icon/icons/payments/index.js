@@ -1,4 +1,4 @@
-import amexCard from './amexCard2';
+import amexCard from './amexCard';
 import bangkokBank from './bangkokBank';
 import bank from './bank';
 import cash from './cash';
@@ -16,7 +16,7 @@ import discountSign from './discountSign';
 import discountSignFilled from './discountSignFilled';
 import discoverCard from './discoverCard';
 import donation from './donation';
-import jcbCard from './jcbCard2';
+import jcbCard from './jcbCard';
 import masterCard from './masterCard';
 import momo from './momo';
 import pricing from './pricing';
