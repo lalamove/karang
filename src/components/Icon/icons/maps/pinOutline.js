@@ -1,6 +1,6 @@
 import React from 'react';
 
-const pin2 = (
+const pinOutline = (
   <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
@@ -9,4 +9,4 @@ const pin2 = (
   </svg>
 );
 
-export default pin2;
+export default pinOutline;

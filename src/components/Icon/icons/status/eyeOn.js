@@ -1,7 +1,7 @@
 import React from 'react';
 
-const privacyIcon1 = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 217 217">
+const eyeOn = (
+  <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
       <path d="M108,131.73a23.59,23.59,0,1,0-16.82-6.91A23.64,23.64,0,0,0,108,131.73Zm0-37.33A13.6,13.6,0,1,1,94.4,108,13.46,13.46,0,0,1,108,94.4Z" />
@@ -10,4 +10,4 @@ const privacyIcon1 = (
   </svg>
 );
 
-export default privacyIcon1;
+export default eyeOn;

@@ -16,6 +16,8 @@ import FilesIcons from './icons/files';
 import LogoIcons from './icons/logo';
 import MapsIcons from './icons/maps';
 import PaymentsIcons from './icons/payments';
+import SocialIcons from './icons/social';
+import StatusIcons from './icons/status';
 import ToggleIcons from './icons/toggle';
 import UserIcons from './icons/users';
 import VehiclesIcons from './icons/vehicles';
@@ -64,6 +66,8 @@ storiesOf('Icon', module)
   .add('Logo', () => <Icons category={LogoIcons} />)
   .add('Maps', () => <Icons category={MapsIcons} />)
   .add('Payments', () => <Icons category={PaymentsIcons} />)
+  .add('Social', () => <Icons category={SocialIcons} />)
+  .add('Status', () => <Icons category={StatusIcons} />)
   .add('Toggle', () => <Icons category={ToggleIcons} />)
   .add('Users', () => <Icons category={UserIcons} />)
   .add('Vehicles', () => <Icons category={VehiclesIcons} />)
