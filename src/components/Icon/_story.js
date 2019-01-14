@@ -14,9 +14,11 @@ import ContentIcons from './icons/content';
 import DateIcons from './icons/date';
 import EmojiIcons from './icons/emoji';
 import FilesIcons from './icons/files';
+import ImagesIcons from './icons/images';
 import LogoIcons from './icons/logo';
 import MapsIcons from './icons/maps';
 import PaymentsIcons from './icons/payments';
+import ServicesIcons from './icons/services';
 import SocialIcons from './icons/social';
 import StatusIcons from './icons/status';
 import ToggleIcons from './icons/toggle';
@@ -65,9 +67,11 @@ storiesOf('Icon', module)
   .add('Emoji', () => <Icons category={EmojiIcons} />)
   .add('Date', () => <Icons category={DateIcons} />)
   .add('Files', () => <Icons category={FilesIcons} />)
+  .add('Images', () => <Icons category={ImagesIcons} />)
   .add('Logo', () => <Icons category={LogoIcons} />)
   .add('Maps', () => <Icons category={MapsIcons} />)
   .add('Payments', () => <Icons category={PaymentsIcons} />)
+  .add('Services', () => <Icons category={ServicesIcons} />)
   .add('Social', () => <Icons category={SocialIcons} />)
   .add('Status', () => <Icons category={StatusIcons} />)
   .add('Toggle', () => <Icons category={ToggleIcons} />)

@@ -13,9 +13,11 @@ import ContentIcons from './content';
 import DateIcons from './date';
 import EmojiIcons from './emoji';
 import FilesIcons from './files';
+import ImagesIcons from './images';
 import LogoIcons from './logo';
 import MapsIcons from './maps';
 import PaymentsIcons from './payments';
+import ServicesIcons from './services';
 import SocialIcons from './social';
 import StatusIcons from './status';
 import ToggleIcons from './toggle';
@@ -84,9 +86,11 @@ const icons = Object.freeze({
   ...DateIcons,
   ...EmojiIcons,
   ...FilesIcons,
+  ...ImagesIcons,
   ...LogoIcons,
   ...MapsIcons,
   ...PaymentsIcons,
+  ...ServicesIcons,
   ...SocialIcons,
   ...StatusIcons,
   ...ToggleIcons,
