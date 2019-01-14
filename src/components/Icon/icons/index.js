@@ -17,6 +17,7 @@ import ImagesIcons from './images';
 import LogoIcons from './logo';
 import MapsIcons from './maps';
 import PaymentsIcons from './payments';
+import SecurityIcons from './security';
 import ServicesIcons from './services';
 import SocialIcons from './social';
 import StatusIcons from './status';
@@ -90,6 +91,7 @@ const icons = Object.freeze({
   ...LogoIcons,
   ...MapsIcons,
   ...PaymentsIcons,
+  ...SecurityIcons,
   ...ServicesIcons,
   ...SocialIcons,
   ...StatusIcons,

@@ -18,6 +18,7 @@ import ImagesIcons from './icons/images';
 import LogoIcons from './icons/logo';
 import MapsIcons from './icons/maps';
 import PaymentsIcons from './icons/payments';
+import SecurityIcons from './icons/security';
 import ServicesIcons from './icons/services';
 import SocialIcons from './icons/social';
 import StatusIcons from './icons/status';
@@ -71,6 +72,7 @@ storiesOf('Icon', module)
   .add('Logo', () => <Icons category={LogoIcons} />)
   .add('Maps', () => <Icons category={MapsIcons} />)
   .add('Payments', () => <Icons category={PaymentsIcons} />)
+  .add('Security', () => <Icons category={SecurityIcons} />)
   .add('Services', () => <Icons category={ServicesIcons} />)
   .add('Social', () => <Icons category={SocialIcons} />)
   .add('Status', () => <Icons category={StatusIcons} />)
