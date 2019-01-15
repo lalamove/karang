@@ -1,8 +1,8 @@
 import { injectGlobal } from 'styled-components';
 // do similar stuff for other icons
-import calendarIcon from '../../Icon/icons/others/calendarIcon.svg';
-import leftArrow from '../../Icon/icons/others/leftArrow.svg';
-import rightArrow from '../../Icon/icons/others/rightArrow.svg';
+import calendarIcon from 'assets/calendar.svg';
+import leftArrow from 'assets/leftArrow.svg';
+import rightArrow from 'assets/rightArrow.svg';
 import { primaryFonts, fontWeight } from 'styles/fonts';
 
 injectGlobal`

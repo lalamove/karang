@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import { fontSize } from 'styles/fonts';
 
+import Alert from '../Alert';
 import Icon from './index';
 
 // Category
@@ -26,9 +27,7 @@ import StatusIcons from './icons/status';
 import ToggleIcons from './icons/toggle';
 import UserIcons from './icons/users';
 import VehiclesIcons from './icons/vehicles';
-
-// Others
-import icons from './icons';
+import OthersIcons from './icons/others'; // TODO: DEPRECATED, for backward compatibility only
 
 const Container = styled.div`
   display: flex;
@@ -81,4 +80,13 @@ storiesOf('Icon', module)
   .add('Toggle', () => <Icons category={ToggleIcons} />)
   .add('Users', () => <Icons category={UserIcons} />)
   .add('Vehicles', () => <Icons category={VehiclesIcons} />)
-  .add('Others (To be deprecated)', () => <Icons category={icons} />);
+  .add('Others (Deprecated)', () => (
+    <Fragment>
+      <Alert
+        type="warning"
+        message="Deprecated"
+        description="The icons below has been deprecated, and they will be removed in future version. Please replace with the name advised in documentation."
+      />
+      <Icons category={OthersIcons} />
+    </Fragment>
+  ));

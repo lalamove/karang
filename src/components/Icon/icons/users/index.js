@@ -8,6 +8,7 @@ import userAdd from './userAdd';
 import userAssign from './userAssign';
 import userGroup from './userGroup';
 import userMark from './userMark';
+import userMarkColored from './userMarkColored';
 import userOrder from './userOrder';
 import userTel from './userTel';
 
@@ -22,6 +23,7 @@ const UsersIcons = {
   userAssign,
   userGroup,
   userMark,
+  userMarkColored,
   userOrder,
   userTel,
 };

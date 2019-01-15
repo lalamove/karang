@@ -1,6 +1,6 @@
 import React from 'react';
 
-const noDriver = (
+const userMarkColored = (
   <svg viewBox="-20 -20 200 200">
     <g fill="none" fillRule="evenOdd">
       <circle cx="81.5" cy="81.5" fill="#f2f2f2" r="78.5" />
@@ -16,4 +16,4 @@ const noDriver = (
   </svg>
 );
 
-export default noDriver;
+export default userMarkColored;

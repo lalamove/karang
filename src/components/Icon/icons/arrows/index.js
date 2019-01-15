@@ -1,5 +1,7 @@
 import back from './back';
 import dropdown from './dropdown';
+import horizontalArrow from './horizontalArrow';
+import horizontalArrowDotted from './horizontalArrowDotted';
 import more from './more';
 import refresh from './refresh';
 import repeat from './repeat';
@@ -13,6 +15,8 @@ import up2 from './up2';
 const ArrowsIcons = {
   back,
   dropdown,
+  horizontalArrow,
+  horizontalArrowDotted,
   more,
   refresh,
   repeat,
