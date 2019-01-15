@@ -11,6 +11,7 @@ import ArrowsIcons from './arrows';
 import CommunicationIcons from './communication';
 import ContentIcons from './content';
 import DateIcons from './date';
+import DevicesIcons from './devices';
 import EmojiIcons from './emoji';
 import FilesIcons from './files';
 import ImagesIcons from './images';
@@ -85,6 +86,7 @@ const icons = Object.freeze({
   ...CommunicationIcons,
   ...ContentIcons,
   ...DateIcons,
+  ...DevicesIcons,
   ...EmojiIcons,
   ...FilesIcons,
   ...ImagesIcons,

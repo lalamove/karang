@@ -12,6 +12,7 @@ import ArrowsIcons from './icons/arrows';
 import CommunicationIcons from './icons/communication';
 import ContentIcons from './icons/content';
 import DateIcons from './icons/date';
+import DevicesIcons from './icons/devices';
 import EmojiIcons from './icons/emoji';
 import FilesIcons from './icons/files';
 import ImagesIcons from './icons/images';
@@ -67,6 +68,7 @@ storiesOf('Icon', module)
   .add('Content', () => <Icons category={ContentIcons} />)
   .add('Emoji', () => <Icons category={EmojiIcons} />)
   .add('Date', () => <Icons category={DateIcons} />)
+  .add('Devices', () => <Icons category={DevicesIcons} />)
   .add('Files', () => <Icons category={FilesIcons} />)
   .add('Images', () => <Icons category={ImagesIcons} />)
   .add('Logo', () => <Icons category={LogoIcons} />)
