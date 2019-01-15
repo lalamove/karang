@@ -1,6 +1,6 @@
 import React from 'react';
 
-const reversible = (
+const reroute3 = (
   <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
@@ -10,4 +10,4 @@ const reversible = (
   </svg>
 );
 
-export default reversible;
+export default reroute3;

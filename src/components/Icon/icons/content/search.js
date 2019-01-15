@@ -1,6 +1,6 @@
 import React from 'react';
 
-const magnifyingGlass = (
+const search = (
   <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
@@ -9,4 +9,4 @@ const magnifyingGlass = (
   </svg>
 );
 
-export default magnifyingGlass;
+export default search;

@@ -1,7 +1,4 @@
 // Basic (To be deprecated)
-import add from './basic/add';
-import clock from './basic/clock';
-import cross from './basic/cross';
 import noDriver from './basic/noDriver';
 import question from './basic/question';
 
@@ -27,49 +24,15 @@ import UsersIcons from './users';
 import VehiclesIcons from './vehicles';
 
 // Others (To be deprecated)
-import arrowDoubleSidedCurved from './others/arrowDoubleSidedCurved';
-import arrowDoubleSidedDiagonal from './others/arrowDoubleSidedDiagonal';
 import arrowHorizontal from './others/arrowHorizontal';
-import bolt from './others/bolt';
-import calendar from './others/calendar';
-import cameraOutline from './others/cameraOutline';
-import clippedPaper from './others/clippedPaper';
-import directions from './others/directions';
 import dottedArrow from './others/dottedArrow';
-import download from './others/download';
-import editSymbol from './others/editSymbol';
-import facebookColored from './others/facebookColored';
-import facebookOutlineCircle from './others/facebookOutlineCircle';
-import googlePlusColored from './others/googlePlusColored';
-import googlePlusOutline from './others/googlePlusOutline';
-import heartSymbol from './others/heartSymbol';
-import key from './others/key';
-import magnify from './others/magnify';
-import magnifyingGlass from './others/magnifyingGlass';
-import microphone from './others/microphone';
-import newspaper from './others/newspaper';
-import notebookBookmark from './others/notebookBookmark';
-import paperClip from './others/paperClip';
-import refresh from './others/refresh';
-import restricted from './others/restricted';
-import reversible from './others/reversible';
-import saveDiagonal from './others/saveDiagonal';
-import saveIcon from './others/saveIcon';
-import send from './others/send';
-import sendPaperPlane from './others/sendPaperPlane';
-import settingsSliders from './others/settingsSliders';
-import spanner from './others/spanner';
-import starAdd from './others/starAdd';
 import starCircled from './others/starCircled';
-import syncIcon from './others/syncIcon';
-import textMessage from './others/textMessage';
-import textMessage2 from './others/textMessage2';
 
 const icons = Object.freeze({
   // Basic
-  add,
-  clock,
-  cross,
+  // add,
+  clock: DateIcons.recent,
+  cross: ContentIcons.close,
   // facebook,
   logo: LogoIcons.lalamoveFilled, // TODO: DEPRECATED, for backward compatibility only
   noDriver,
@@ -107,71 +70,71 @@ const icons = Object.freeze({
   aMEXLogo: LogoIcons.amex, // TODO: DEPRECATED, for backward compatibility only
   appleLogo: LogoIcons.apple, // TODO: DEPRECATED, for backward compatibility only
   arrow: ArrowsIcons.dropdown, // TODO: DEPRECATED, for backward compatibility only
-  arrowDoubleSidedCurved,
-  arrowDoubleSidedDiagonal,
+  arrowDoubleSidedCurved: ArrowsIcons.reroute, // TODO: DEPRECATED, for backward compatibility only
+  arrowDoubleSidedDiagonal: ContentIcons.resize,
   arrowHorizontal,
   blockedGroup: UsersIcons.groupBanned, // TODO: DEPRECATED, for backward compatibility only
-  bolt,
-  calendar,
-  cameraOutline,
+  bolt: PaymentsIcons.priorityFee, // TODO: DEPRECATED, for backward compatibility only
+  calendar: DateIcons.calendar, // TODO: DEPRECATED, for backward compatibility only
+  cameraOutline: ImagesIcons.camera, // TODO: DEPRECATED, for backward compatibility only
   cart: VehiclesIcons.box, // TODO: DEPRECATED, for backward compatibility only
-  clippedPaper,
+  clippedPaper: PaymentsIcons.rates, // TODO: DEPRECATED, for backward compatibility only
   crossedParcelBox: StatusIcons.cancelled, // TODO: DEPRECATED, for backward compatibility only
-  directions,
+  directions: MapsIcons.navigation, // TODO: DEPRECATED, for backward compatibility only
   dollarCircle: FilesIcons.noteLink, // TODO: DEPRECATED, for backward compatibility only
   dollarTorn: FilesIcons.receipt, // TODO: DEPRECATED, for backward compatibility only
   dottedArrow,
-  download,
-  editSymbol,
-  facebookColored,
-  facebookOutlineCircle,
-  googlePlusColored,
-  googlePlusOutline,
+  download: ContentIcons.download,
+  editSymbol: ContentIcons.edit,
+  facebookColored: SocialIcons.socialFacebookColored, // TODO: DEPRECATED, for backward compatibility only
+  facebookOutlineCircle: SocialIcons.socialFacebook, // TODO: DEPRECATED, for backward compatibility only
+  googlePlusColored: SocialIcons.socialGooglePlusColored, // TODO: DEPRECATED, for backward compatibility only
+  googlePlusOutline: SocialIcons.socialGooglePlus, // TODO: DEPRECATED, for backward compatibility only
   group: UsersIcons.group, // TODO: DEPRECATED, for backward compatibility only
-  heartSymbol,
-  key,
-  magnify,
-  magnifyingGlass,
+  heartSymbol: SocialIcons.favourite, // TODO: DEPRECATED, for backward compatibility only
+  // key: SecurityIcons.key,
+  magnify: ContentIcons.details,
+  magnifyingGlass: ContentIcons.search,
   masterCardLogo: LogoIcons.master, // TODO: DEPRECATED, for backward compatibility only
-  microphone,
+  microphone: CommunicationIcons.voice, // TODO: DEPRECATED, for backward compatibility only
   momoCard: PaymentsIcons.momo, // TODO: DEPRECATED, for backward compatibility only
   networkParcelBox: StatusIcons.assigning, // TODO: DEPRECATED, for backward compatibility only
-  newspaper,
-  notebookBookmark,
+  newspaper: CommunicationIcons.notification, // TODO: DEPRECATED, for backward compatibility only
+  notebookBookmark: CommunicationIcons.addressBook, // TODO: DEPRECATED, for backward compatibility only
   // onOff,
-  paperClip,
+  paperClip: ContentIcons.link,
   parcelBoxOutline: StatusIcons.defaultStatus, // TODO: DEPRECATED, for backward compatibility only
   percentage: PaymentsIcons.discount, // TODO: DEPRECATED, for backward compatibility only
-  phoneIcon1: CommunicationIcons.phone, // TODO: DEPRECATED, for backward compatibility only
+  phoneIcon1: CommunicationIcons.tel, // TODO: DEPRECATED, for backward compatibility only
   pin2: MapsIcons.pin, // TODO: DEPRECATED, for backward compatibility only
   pinCircle: MapsIcons.pinCircle, // TODO: DEPRECATED, for backward compatibility only
   pinOutline: MapsIcons.pinOutline, // TODO: DEPRECATED, for backward compatibility only
   privacyIcon1: StatusIcons.eyeOn, // TODO: DEPRECATED, for backward compatibility only
   privacyIcon2: StatusIcons.eyeOff, // TODO: DEPRECATED, for backward compatibility only
-  refresh,
-  restricted,
-  reversible,
-  saveDiagonal,
-  saveIcon,
-  send,
-  sendPaperPlane,
-  settingsSliders,
+  // refresh,
+  restricted: StatusIcons.ban, // TODO: DEPRECATED, for backward compatibility only
+  reversible: ArrowsIcons.reroute3, // TODO: DEPRECATED, for backward compatibility only
+  saveDiagonal: ContentIcons.collapse,
+  saveIcon: ContentIcons.save,
+  // send,
+  sendPaperPlane: CommunicationIcons.send, // TODO: DEPRECATED, for backward compatibility only
+  settingsSliders: ContentIcons.slider, // TODO: DEPRECATED, for backward compatibility only
   sound: StatusIcons.soundOn, // TODO: DEPRECATED, for backward compatibility only
-  spanner,
+  spanner: ContentIcons.config,
   // star,
-  starAdd,
-  starCircled,
+  starAdd: ServicesIcons.requests,
+  starCircled, // content/starMark
   // starDotted,
   // starOutline,
-  syncIcon,
-  textMessage,
-  textMessage2,
+  syncIcon: ArrowsIcons.refresh, // TODO: DEPRECATED, for backward compatibility only
+  textMessage: CommunicationIcons.remark, // TODO: DEPRECATED, for backward compatibility only
+  textMessage2: CommunicationIcons.message, // TODO: DEPRECATED, for backward compatibility only
   tickMark: ToggleIcons.tick, // TODO: DEPRECATED, for backward compatibility only
   tickMarkCircle: AlertIcons.success, // TODO: DEPRECATED, for backward compatibility only
   tickedParcelBox: StatusIcons.completed, // TODO: DEPRECATED, for backward compatibility only
   visaLogo: LogoIcons.visa, // TODO: DEPRECATED, for backward compatibility only
   warningCircle: AlertIcons.info, // TODO: DEPRECATED, for backward compatibility only
-  zip: FilesIcons.zip, // TODO: DEPRECATED, for backward compatibility only
+  zip: FilesIcons.fileZip, // TODO: DEPRECATED, for backward compatibility only
 });
 
 export default icons;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const saveDiagonal = (
+const collapse = (
   <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
@@ -10,4 +10,4 @@ const saveDiagonal = (
   </svg>
 );
 
-export default saveDiagonal;
+export default collapse;

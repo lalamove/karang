@@ -1,6 +1,6 @@
 import React from 'react';
 
-const editSymbol = (
+const edit = (
   <svg viewBox="0 0 217 217">
     <g>
       <rect style={{ fill: 'none' }} width="217" height="217" />
@@ -9,4 +9,4 @@ const editSymbol = (
   </svg>
 );
 
-export default editSymbol;
+export default edit;
