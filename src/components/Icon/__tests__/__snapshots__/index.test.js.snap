@@ -33385,626 +33385,6 @@ exports[`Icon-navigation-size-40 1`] = `
 </svg>
 `;
 
-exports[`Icon-neturalColored 1`] = `
-<svg
-  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    version="1.1"
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#F8A732"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalColored-color-rgba(216,83,79,1) 1`] = `
-<svg
-  style="vertical-align:middle;fill:rgba(216,83,79,1);width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    version="1.1"
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#F8A732"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalColored-color-rgba(242,103,34,1) 1`] = `
-<svg
-  style="vertical-align:middle;fill:rgba(242,103,34,1);width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    version="1.1"
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#F8A732"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalColored-size-20 1`] = `
-<svg
-  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    version="1.1"
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#F8A732"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalColored-size-40 1`] = `
-<svg
-  style="vertical-align:middle;fill:currentColor;width:40px;height:40px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    version="1.1"
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#F8A732"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalDark 1`] = `
-<svg
-  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#A8A8A8"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        id="Rectangle-14"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalDark-color-rgba(216,83,79,1) 1`] = `
-<svg
-  style="vertical-align:middle;fill:rgba(216,83,79,1);width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#A8A8A8"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        id="Rectangle-14"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalDark-color-rgba(242,103,34,1) 1`] = `
-<svg
-  style="vertical-align:middle;fill:rgba(242,103,34,1);width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#A8A8A8"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        id="Rectangle-14"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalDark-size-20 1`] = `
-<svg
-  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#A8A8A8"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        id="Rectangle-14"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
-exports[`Icon-neturalDark-size-40 1`] = `
-<svg
-  style="vertical-align:middle;fill:currentColor;width:40px;height:40px"
-  viewBox="0 0 1024 1024"
->
-  <svg
-    viewBox="0 0 217 217"
-  >
-    <g
-      fill="none"
-      fill-rule="evenodd"
-      stroke="none"
-      stroke-width="1"
-    >
-      <g
-        fill-rule="nonzero"
-        transform="translate(27.000000, 28.000000)"
-      >
-        <path
-          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
-          fill="#A8A8A8"
-        >
-          
-        </path>
-        <polygon
-          fill="#000000"
-          opacity="0.5"
-          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
-        >
-          
-        </polygon>
-        <g
-          fill="#000000"
-          opacity="0.5"
-          transform="translate(45.550000, 58.050000)"
-        >
-          <polygon
-            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
-          >
-            
-          </polygon>
-          <polygon
-            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
-          >
-            
-          </polygon>
-        </g>
-      </g>
-      <rect
-        height="217"
-        id="Rectangle-14"
-        width="217"
-        x="0"
-        y="0"
-      >
-        
-      </rect>
-    </g>
-  </svg>
-</svg>
-`;
-
 exports[`Icon-networkParcelBox 1`] = `
 <svg
   style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
@@ -34205,6 +33585,626 @@ exports[`Icon-networkParcelBox-size-40 1`] = `
       >
         
       </path>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralColored 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    version="1.1"
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#F8A732"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralColored-color-rgba(216,83,79,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(216,83,79,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    version="1.1"
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#F8A732"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralColored-color-rgba(242,103,34,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(242,103,34,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    version="1.1"
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#F8A732"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralColored-size-20 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    version="1.1"
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#F8A732"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralColored-size-40 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:40px;height:40px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    version="1.1"
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#F8A732"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralDark 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#A8A8A8"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        id="Rectangle-14"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralDark-color-rgba(216,83,79,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(216,83,79,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#A8A8A8"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        id="Rectangle-14"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralDark-color-rgba(242,103,34,1) 1`] = `
+<svg
+  style="vertical-align:middle;fill:rgba(242,103,34,1);width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#A8A8A8"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        id="Rectangle-14"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralDark-size-20 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:20px;height:20px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#A8A8A8"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        id="Rectangle-14"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
+    </g>
+  </svg>
+</svg>
+`;
+
+exports[`Icon-neutralDark-size-40 1`] = `
+<svg
+  style="vertical-align:middle;fill:currentColor;width:40px;height:40px"
+  viewBox="0 0 1024 1024"
+>
+  <svg
+    viewBox="0 0 217 217"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+      stroke="none"
+      stroke-width="1"
+    >
+      <g
+        fill-rule="nonzero"
+        transform="translate(27.000000, 28.000000)"
+      >
+        <path
+          d="M139.2751,23.72436 C170.907625,55.356885 170.907625,106.64325 139.2751,138.27564 C107.642575,169.908165 56.35621,169.908165 24.72382,138.27564 C-6.908705,106.643115 -6.908705,55.35675 24.72382,23.72436 C56.356345,-7.908165 107.64271,-7.908165 139.2751,23.72436"
+          fill="#A8A8A8"
+        >
+          
+        </path>
+        <polygon
+          fill="#000000"
+          opacity="0.5"
+          points="31.429 61.452 62.479 61.452 62.479 92.502 31.429 92.502"
+        >
+          
+        </polygon>
+        <g
+          fill="#000000"
+          opacity="0.5"
+          transform="translate(45.550000, 58.050000)"
+        >
+          <polygon
+            points="53.2845 0.702 87.0345 0.702 87.0345 34.452 53.2845 34.452"
+          >
+            
+          </polygon>
+          <polygon
+            points="0.675 65.0295 72.225 65.0295 72.225 71.7795 0.675 71.7795"
+          >
+            
+          </polygon>
+        </g>
+      </g>
+      <rect
+        height="217"
+        id="Rectangle-14"
+        width="217"
+        x="0"
+        y="0"
+      >
+        
+      </rect>
     </g>
   </svg>
 </svg>

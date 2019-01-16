@@ -6,8 +6,8 @@ import likeColored from './likeColored';
 import likeDark from './likeDark';
 import loveColored from './loveColored';
 import loveDark from './loveDark';
-import neturalColored from './neturalColored';
-import neturalDark from './neturalDark';
+import neutralColored from './neutralColored';
+import neutralDark from './neutralDark';
 
 const EmojiIcons = {
   dislikeColored,
@@ -18,8 +18,8 @@ const EmojiIcons = {
   likeDark,
   loveColored,
   loveDark,
-  neturalColored,
-  neturalDark,
+  neutralColored,
+  neutralDark,
 };
 
 export default EmojiIcons;
