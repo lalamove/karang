@@ -1,29 +1,19 @@
 import React from 'react';
 
 const visaCard = (
-  <svg viewBox="0 0 217 217" version="1.1">
-    <defs>
-      <path
-        d="M14.4666667,0 L202.533333,0 C210.523053,-1.56602803e-14 217,6.47694729 217,14.4666667 L217,130.2 C217,138.189719 210.523053,144.666667 202.533333,144.666667 L14.4666667,144.666667 C6.47694729,144.666667 9.78458427e-16,138.189719 0,130.2 L0,14.4666667 C-9.78458427e-16,6.47694729 6.47694729,1.46768764e-15 14.4666667,0 Z"
-        id="path-1"
-      />
-    </defs>
-    <g
-      id="Icon-/-Payment-/-Credit-Card-/-Visa-/-217*217"
-      stroke="none"
-      strokeWidth="1"
-      fill="none"
-      fillRule="evenOdd"
-    >
-      <rect id="Rectangle-12" x="0" y="0" width="217" height="217" />
-      <g id="Rectangle-5" transform="translate(0.000000, 36.000000)">
-        <g id="Rectangle-5-+-Rectangle-5-+-Group-Mask">
-          <mask id="mask-2" fill="white">
-            <use xlinkHref="#path-1" />
+  <svg viewBox="0 0 217 217">
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenOdd">
+      <rect x="0" y="0" width="217" height="217" />
+      <g transform="translate(0.000000, 36.000000)">
+        <g>
+          <mask fill="white">
+            <path
+              d="M14.4666667,0 L202.533333,0 C210.523053,-1.56602803e-14 217,6.47694729 217,14.4666667 L217,130.2 C217,138.189719 210.523053,144.666667 202.533333,144.666667 L14.4666667,144.666667 C6.47694729,144.666667 9.78458427e-16,138.189719 0,130.2 L0,14.4666667 C-9.78458427e-16,6.47694729 6.47694729,1.46768764e-15 14.4666667,0 Z"
+              id="path-1"
+            />
           </mask>
-          <use id="Mask" fill="#F3F4F4" xlinkHref="#path-1" />
+          <use fill="#F3F4F4" xlinkHref="#path-1" />
           <rect
-            id="Rectangle-5"
             fill="#26337A"
             mask="url(#mask-2)"
             x="-10.85"
@@ -32,7 +22,6 @@ const visaCard = (
             height="39.7833333"
           />
           <rect
-            id="Rectangle-5"
             fill="#EC982D"
             mask="url(#mask-2)"
             x="-10.85"
@@ -40,7 +29,7 @@ const visaCard = (
             width="231.466667"
             height="39.7833333"
           />
-          <g id="Group" mask="url(#mask-2)" fill="#26337A" fillRule="nonzero">
+          <g mask="url(#mask-2)" fill="#26337A" fillRule="nonzero">
             <g transform="translate(42.000000, 48.000000)" id="Shape">
               <path d="M13.0708333,39.0791667 C14.7625,34.2875 15.95,31.2166667 16.65,29.8666667 L30.7125,1.22083333 L41,1.22083333 L16.65,48.8125 L5.77916667,48.8125 L1.64583333,1.22083333 L11.25,1.22083333 L12.9083333,29.8666667 C12.9916667,30.8416667 13.0375,32.2916667 13.0375,34.1958333 C12.9875,36.4333333 12.925,38.0625 12.8416667,39.0791667 L13.0708333,39.0791667 Z" />
               <polygon points="36.7041667 48.8125 46.8625 1.22083333 56.7916667 1.22083333 46.6333333 48.8125" />

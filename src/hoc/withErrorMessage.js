@@ -2,9 +2,9 @@ import React, { Component, forwardRef } from 'react';
 import { oneOfType, func, object, string, shape } from 'prop-types';
 import styled from 'styled-components';
 
+import Icon from '../components/Icon';
 import { red } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
-import ErrorIcon from 'icons/Error';
 
 const Container = styled.div`
   display: inline-block;
@@ -22,7 +22,7 @@ const Text = styled.span`
   font-size: ${fontSize.small};
 `;
 
-const Icon = styled.span`
+const IconWrapper = styled.span`
   float: right;
   margin-left: 1em;
 `;
@@ -76,9 +76,9 @@ function withErrorMessage(WrappedComponent) {
           {error &&
             error.length > 0 && (
               <ErrorMessageContainer>
-                <Icon>
-                  <ErrorIcon color={red} size={13} />
-                </Icon>
+                <IconWrapper>
+                  <Icon type="warning" color={red} size={13} />
+                </IconWrapper>
                 <Text>{error}</Text>
               </ErrorMessageContainer>
             )}

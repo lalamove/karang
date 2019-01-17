@@ -3,9 +3,9 @@ import { oneOf, string, number, shape } from 'prop-types';
 
 import icons from './icons';
 
-const Icon = ({ type, color, size, style, ...remainProps }) => {
+const Icon = ({ type, color, size, verticalAlign, style, ...remainProps }) => {
   const rootStyle = {
-    verticalAlign: 'middle',
+    verticalAlign,
     fill: color,
     width: `${size}px`,
     height: `${size}px`,
@@ -23,16 +23,20 @@ Icon.defaultProps = {
   color: 'currentColor',
   size: 20,
   style: {},
+  verticalAlign: 'middle',
 };
 
 Icon.propTypes = {
   /** Type of icon, view storybook for the string */
   type: oneOf(Object.keys(icons)).isRequired,
   /** Color code of icon */
-  color: string, // TODO: to limit colors used
+  color: string,
   /** Size of icon, in `px` */
   size: number, // TODO: to define small and large icon size
+  /** Additional style apply to icon */
   style: shape({}),
+  /** Vertical align of icon, default is `middle` */
+  verticalAlign: string,
   // TODO: theme: filled, outlined
 };
 
