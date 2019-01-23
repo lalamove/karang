@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { shape } from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
@@ -48,7 +49,6 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-// eslint-disable-next-line react/prop-types
 const Icons = ({ category }) => (
   <Container>
     {Object.keys(category).map(type => (
@@ -59,6 +59,10 @@ const Icons = ({ category }) => (
     ))}
   </Container>
 );
+
+Icons.propTypes = {
+  category: shape().isRequired,
+};
 
 storiesOf('Icon', module)
   .add('Alert', () => <Icons category={AlertIcons} />)
