@@ -20,10 +20,10 @@ import homeLogo from './homeLogo';
 import language from './language';
 import link from './link';
 import listview from './listview';
-import menuColored from './menuColored';
-import menuUnreadColored from './menuUnreadColored';
+import menu from './menu';
+import menuUnread from './menuUnread';
 import remove from './remove';
-import removeColored from './removeColored';
+import removeFilled from './removeFilled';
 import resize from './resize';
 import save from './save';
 import search from './search';
@@ -59,10 +59,10 @@ const ContentIcons = {
   language,
   link,
   listview,
-  menuColored,
-  menuUnreadColored,
+  menu,
+  menuUnread,
   remove,
-  removeColored,
+  removeFilled,
   resize,
   save,
   search,

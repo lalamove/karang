@@ -27,6 +27,15 @@ Please refer to [Storybook](https://ui.lalamove.com/storybook/?selectedKind=Icon
 <Icon type="lalamoveFilled" size={40} />
 ```
 
+**Emoji Icon**
+```js
+<Icon type="hate" color="#E15453" />
+<Icon type="dislike" color="#F07A40" />
+<Icon type="neutral" color="#FFA744" />
+<Icon type="like" color="#80AE64" />
+<Icon type="love" color="#00BC9C" />
+```
+
 **Deprecated information**
 
 The following icons name has been deprecated, and they will be removed in future version. Please **replace** with the following name:
