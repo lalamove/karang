@@ -29,6 +29,13 @@ class Rating extends PureComponent {
     hoverValue: 0,
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ value: this.props.value });
+    }
+  }
+
   onClick = i => {
     const value = i + 1; // map from index to value
     this.setState({ value });
