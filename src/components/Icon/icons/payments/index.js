@@ -1,41 +1,81 @@
-import aMEXCard from './aMEXCard';
-import aMEXLogo from './aMEXLogo';
+import amexCard from './amexCard';
 import bangkokBank from './bangkokBank';
-import cart from './cart';
-import cashOutline from './cashOutline';
-import cashVertical from './cashVertical';
+import bank from './bank';
+import cash from './cash';
+import cashHKD from './cashHKD';
+import cashHKDVertical from './cashHKDVertical';
+import cashPHP from './cashPHP';
+import cashVND from './cashVND';
+import creditCard from './creditCard';
+// import creditCardAdd from './creditCardAdd';
+import creditCardBack from './creditCardBack';
+import creditCardFront from './creditCardFront';
 import dinersClubCard from './dinersClubCard';
+import discount from './discount';
+import discountSign from './discountSign';
+import discountSignFilled from './discountSignFilled';
 import discoverCard from './discoverCard';
-import dollarCircle from './dollarCircle';
-import dollarTorn from './dollarTorn';
-import jCBCard from './jCBCard';
+import donation from './donation';
+import jcbCard from './jcbCard';
 import masterCard from './masterCard';
-import masterCardLogo from './masterCardLogo';
+import momo from './momo';
+import pricing from './pricing';
+import priorityFee from './priorityFee';
+import promoCode from './promoCode';
+import rates from './rates';
+import rewards from './rewards';
+import terms from './terms';
 import unionPayCard from './unionPayCard';
 import visaCard from './visaCard';
-import visaLogo from './visaLogo';
+import wallet from './wallet';
 import walletAdd from './walletAdd';
-import walletOutline from './walletOutline';
+import walletBig from './walletBig';
 
 const PaymentIcons = {
-  aMEXCard,
-  aMEXLogo,
+  amexCard,
   bangkokBank,
-  cart,
-  cashOutline,
-  cashVertical,
+  bank,
+  cash,
+  cashHKD,
+  cashHKDVertical,
+  cashPHP,
+  cashVND,
+  creditCard,
+  // creditCardAdd,
+  creditCardBack,
+  creditCardFront,
   dinersClubCard,
+  discount,
+  discountSign,
+  discountSignFilled,
   discoverCard,
-  dollarCircle,
-  dollarTorn,
-  jCBCard,
+  donation,
+  jcbCard,
   masterCard,
-  masterCardLogo,
+  momo,
+  pricing,
+  priorityFee,
+  promoCode,
+  rates,
+  rewards,
+  terms,
   unionPayCard,
   visaCard,
-  visaLogo,
+  wallet,
   walletAdd,
-  walletOutline,
+  walletBig,
+
+  // TODO: DEPRECATED
+  aMEXCard: amexCard,
+  cashOutline: cashHKD,
+  cashVertical: cashHKDVertical,
+  jCBCard: jcbCard,
+  walletOutline: wallet,
+  // aMEXLogo,
+  // dollarCircle, // files/notes/link
+  // dollarTorn, // files/receipt
+  // masterCardLogo,
+  // visaLogo,
 };
 
 export default PaymentIcons;

@@ -80,8 +80,8 @@ const Container = styled.div`
 const icon = {
   warning: 'warning',
   error: 'warning',
-  success: 'tickMarkCircle',
-  info: 'warning',
+  success: 'success',
+  info: 'info',
 };
 
 const Alert = ({
@@ -107,7 +107,7 @@ const Alert = ({
 );
 
 Alert.propTypes = {
-  type: string,
+  type: oneOf(['warning', 'error', 'success', 'info']),
   variant: oneOf(['default', 'toast']),
   message: string.isRequired, // eslint-disable-line react/no-typos
   description: string,

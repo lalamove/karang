@@ -3,7 +3,7 @@ import { node, string } from 'prop-types';
 import styled from 'styled-components';
 
 import Button from 'components/Button';
-import DropdownIcon from 'icons/DropDown';
+import Icon from 'components/Icon';
 import { white, lightGray } from 'styles/colors';
 
 const StyledButton = styled(Button)`
@@ -18,8 +18,7 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const Icon = styled.span`
-  /*display: inline-block;*/
+const CustomIcon = styled.span`
   flex: 0 0 auto;
   align-self: center;
   margin-right: 0.5em;
@@ -40,10 +39,10 @@ const Caret = styled.span`
 
 const DropdownButton = ({ icon, label, ...remainProps }) => (
   <StyledButton {...remainProps}>
-    {icon && <Icon>{icon}</Icon>}
+    {icon && <CustomIcon>{icon}</CustomIcon>}
     <Content>{label}</Content>
     <Caret>
-      <DropdownIcon color={lightGray} size={24} />
+      <Icon type="dropdown" color={lightGray} size={24} />
     </Caret>
   </StyledButton>
 );

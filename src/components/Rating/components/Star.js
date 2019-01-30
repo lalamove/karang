@@ -1,11 +1,11 @@
 import React from 'react';
-import { func, string, number, oneOf } from 'prop-types';
+import { func, string, oneOf } from 'prop-types';
 import styled from 'styled-components';
 
 import noop from 'utils/noop';
 
+import Icon from 'components/Icon';
 import { small, large } from '../ratingSizes';
-import StarIcon from 'icons/Star';
 
 const StarStyle = styled.span`
   display: inline-block;
@@ -26,7 +26,7 @@ const Star = ({ onClick, onMouseEnter, onMouseLeave, color, size }) => (
     onMouseLeave={onMouseLeave}
     size={size}
   >
-    <StarIcon color={color} size={size} />
+    <Icon type="starFilled" color={color} size={size} />
   </StarStyle>
 );
 

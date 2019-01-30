@@ -12,9 +12,9 @@ import {
 import Downshift from 'downshift';
 import styled from 'styled-components';
 
+import Icon from 'components/Icon';
 import compose from 'utils/compose';
 import noop from 'utils/noop';
-import DropDownIcon from 'icons/DropDown';
 import withAnimatedContainer from 'hoc/withAnimatedContainer';
 import withErrorMessage from 'hoc/withErrorMessage';
 import { orange, gray, lightGray, white, hoverGray } from 'styles/colors';
@@ -136,7 +136,7 @@ class Select extends Component {
                 selectedItem !== null ? selectedItem.value : ''
               }`}</LeftSpan>
               <RightSpan>
-                <DropDownIcon color={lightGray} size={24} />
+                <Icon type="dropdown" color={lightGray} size={24} />
               </RightSpan>
             </Button>
             {isOpen && (
