@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import Icon from 'components/Icon';
 import Button, { ButtonWithComponent, CloseButton } from './index';
+import { white, primary } from 'styles/colors';
 
 const Container = styled.div`
   display: flex;
@@ -95,6 +97,28 @@ storiesOf('Button', module).add(
           {'Button with <a href="#somewhere" /> tag'}
         </CustomComponent>
         <CloseButton />
+      </Container>
+      <h4>With Icon</h4>
+      <Container>
+        <Button icon={<Icon type="star" />}>With Icon</Button>
+        <Button
+          icon={<Icon type="starFilled" color={white} />}
+          variant="primary"
+        >
+          With Icon
+        </Button>
+        <Button
+          icon={<Icon type="starFilled" color={white} />}
+          variant="secondary"
+        >
+          With Icon
+        </Button>
+        <Button
+          icon={<Icon type="star" color={primary.main} />}
+          variant="outline"
+        >
+          With Icon
+        </Button>
       </Container>
     </div>
   ))
