@@ -4,27 +4,20 @@ import Select from './index';
 
 class Wrapper extends Component {
   state = {
-    selectedItem: {
-      ds1: null,
-      ds2: null,
-      ds3: null,
-    },
+    selected1: null,
+    selected2: null,
+    selected3: null,
   };
 
-  handleOnChange = (selectedItem, dsState) => {
-    this.setState({
-      selectedItem: {
-        ...this.state.selectedItem,
-        [dsState.id]: selectedItem,
-      },
-    });
+  handleOnChange = (selectedItem, name) => {
+    this.setState({ [name]: selectedItem });
   };
 
   render() {
     return (
       <div>
         <Select
-          id="ds1"
+          // id="ds1"
           label="What is your vehicle type?"
           name="vehicleType"
           itemList={[
@@ -37,8 +30,8 @@ class Wrapper extends Component {
               value: 'Van',
             },
           ]}
-          selectedItem={this.state.selectedItem.ds1}
-          onChange={this.handleOnChange}
+          selectedItem={this.state.selected1}
+          onChange={selected => this.handleOnChange(selected, 'selected1')}
           style={{ display: 'block' }}
           required
         />
@@ -57,8 +50,8 @@ class Wrapper extends Component {
               value: 'Van',
             },
           ]}
-          selectedItem={this.state.selectedItem.ds2}
-          onChange={this.handleOnChange}
+          selectedItem={this.state.selected2}
+          onChange={selected => this.handleOnChange(selected, 'selected2')}
           style={{ display: 'block' }}
           error="Error Message"
         />
@@ -78,8 +71,8 @@ class Wrapper extends Component {
               value: 'Van',
             },
           ]}
-          selectedItem={this.state.selectedItem.ds3}
-          onChange={this.handleOnChange}
+          selectedItem={this.state.selected3}
+          onChange={selected => this.handleOnChange(selected, 'selected3')}
           style={{ display: 'block' }}
         />
       </div>
