@@ -9,7 +9,7 @@ import {
   number,
 } from 'prop-types';
 import Downshift from 'downshift';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
@@ -24,11 +24,7 @@ const Wrapper = styled.div`
   position: relative;
   display: block;
 
-  ${({ error }) =>
-    error &&
-    css`
-      padding-bottom: 2em;
-    `};
+  ${({ error }) => error && `padding-bottom: 2em;`};
 `;
 
 const Container = styled.div`
@@ -43,6 +39,8 @@ const Button = styled.button`
   border: none;
   background: transparent;
   outline: none;
+
+  ${({ disabled }) => disabled && `cursor: not-allowed;`};
 `;
 
 const StyledList = styled(List)`
@@ -51,6 +49,11 @@ const StyledList = styled(List)`
   left: 0;
   z-index: 400; // TODO: z-index
   width: 100%;
+
+  li[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 const Content = styled.span`
@@ -148,6 +151,7 @@ class Select extends Component {
           focused={focused}
           dirty={!!selectedItem}
           error={!!error}
+          disabled={disabled}
         >
           <Downshift
             id={id} // For backward compilable
@@ -155,25 +159,17 @@ class Select extends Component {
             onChange={onChange}
             itemToString={item => (item ? item.value : '')}
           >
-            {({
-              isOpen,
-              getToggleButtonProps,
-              getItemProps,
-              getRootProps,
-              // highlightedIndex,
-            }) => (
+            {({ isOpen, getToggleButtonProps, getItemProps, getRootProps }) => (
               <Container
                 {...getRootProps({ name, ...props, refKey: 'innerRef' })}
               >
                 <Button
                   {...getToggleButtonProps({
-                    // 'data-name': id,
                     'data-required': required, // For backward compilable
                     onBlur: this.onBlur,
                     onFocus: this.onFocus,
+                    disabled,
                   })}
-                  // disabled={disabled}
-                  // TODO: Disabled
                 >
                   <Content>{selectedItem && selectedItem.value}</Content>
                   <Caret>
@@ -191,7 +187,7 @@ class Select extends Component {
                         {...getItemProps({
                           key: data.value,
                           item: data,
-                          // disabled: item.disabled,
+                          disabled: data.disabled,
                         })}
                       >
                         {data.value}

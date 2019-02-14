@@ -142,12 +142,7 @@ describe('PinInput', () => {
 
     it('when error is undefined, does not render any error div', () => {
       const wrapper = mount(<PinInput />);
-      expect(wrapper.find('WithErrorMessage').find('span').length).toBe(0);
-    });
-
-    it('when error is undefined, does not render any error div', () => {
-      const wrapper = mount(<PinInput />);
-      expect(wrapper.find('WithErrorMessage').find('span').length).toBe(0);
+      expect(wrapper.find('ErrorMessage').find('span').length).toBe(0);
     });
   });
 });

@@ -32,7 +32,6 @@ class Wrapper extends Component {
           ]}
           selectedItem={this.state.selected1}
           onChange={selected => this.handleOnChange(selected, 'selected1')}
-          style={{ display: 'block' }}
           required
         />
         <br />
@@ -52,7 +51,6 @@ class Wrapper extends Component {
           ]}
           selectedItem={this.state.selected2}
           onChange={selected => this.handleOnChange(selected, 'selected2')}
-          style={{ display: 'block' }}
           error="Error Message"
         />
         <br />
@@ -73,7 +71,7 @@ class Wrapper extends Component {
           ]}
           selectedItem={this.state.selected3}
           onChange={selected => this.handleOnChange(selected, 'selected3')}
-          style={{ display: 'block' }}
+          disabled
         />
       </div>
     );
