@@ -33,9 +33,9 @@ class Dropdown extends Component {
     selectedItem: shape({}),
     /** Callback function, to be executed when user selected an item and it has changed */
     onChange: func,
-    /** Callback function, to be executed when user clicked outside of pop menu */
-    onSelect: func,
     /** Callback function, to be executed when user selected an item */
+    onSelect: func,
+    /** Callback function, to be executed when user clicked outside of pop menu */
     onOuterClick: func,
     /** Label of the component, will be shown before user selected option */
     defaultLabel: string,

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {
-  string,
   arrayOf,
-  shape,
-  func,
   bool,
+  func,
   oneOfType,
+  node,
   number,
+  string,
+  shape,
 } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
@@ -33,9 +34,10 @@ const Container = styled.div`
 
 const Button = styled.button`
   display: flex;
+  align-items: flex-end;
   width: 100%;
-  padding: 1em;
-  color: ${mineShaft['500']};
+  padding: 10px;
+  color: ${mineShaft['900']};
   border: none;
   background: transparent;
   outline: none;
@@ -43,22 +45,15 @@ const Button = styled.button`
   ${({ disabled }) => disabled && `cursor: not-allowed;`};
 `;
 
-const StyledList = styled(List)`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 400; // TODO: z-index
-  width: 100%;
-
-  li[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+const CustomIcon = styled.span`
+  flex: 0 0 auto;
+  align-self: center;
+  margin-right: 0.5em;
+  line-height: 1.6;
 `;
 
 const Content = styled.span`
   flex: 1 1 auto;
-  color: ${mineShaft['900']};
   font-family: ${primaryFonts};
   line-height: 1.6;
   text-align: left;
@@ -67,6 +62,19 @@ const Content = styled.span`
 const Caret = styled.span`
   margin-right: -5px;
   color: ${nobel.main};
+`;
+
+const StyledList = styled(List)`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 400;
+  width: 100%;
+
+  li[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 const StyledErrorMessage = styled(ErrorMessage)`
@@ -78,33 +86,73 @@ const StyledErrorMessage = styled(ErrorMessage)`
 
 class Select extends Component {
   static propTypes = {
+    /** Id of the component */
     id: string,
+    /** Name of the component */
     name: string,
+    /** Label of the component */
     label: string,
+    /** Error message of the component */
     error: string,
+    /** The currently selected item */
     selectedItem: shape({
+      /** @deprecated */
       id: oneOfType([string, number]), // For backward compilable
+      /** Element shown next to label */
+      icon: node,
+      /** Value of the option */
       value: string,
+      /** Label of the option for users */
       label: string,
     }),
+    /** Select items */
     items: arrayOf(
       shape({
+        /** @deprecated */
         id: oneOfType([string, number]), // For backward compilable
+        /** Element shown next to label */
+        icon: node,
+        /** Value of the option */
         value: string,
+        /** Label of the option for users */
         label: string,
       })
     ),
+    /** @deprecated Please use `items` */
     itemList: arrayOf(
       shape({
+        /** @deprecated */
         id: oneOfType([string, number]), // For backward compilable
+        /** Element shown next to label */
+        icon: node,
+        /** Value of the option */
         value: string,
+        /** Label of the option for users */
         label: string,
       })
     ),
+    /** For backward compilable only, append `data-required` to the select if it is `true` */
     required: bool,
+    /** Disable the select if it is `true` */
     disabled: bool,
+    /**
+     * Callback function, to be executed when user selected an item and it has changed
+     *
+     * @param {any} selectedItem
+     * @param {object} stateAndHelpers
+     */
     onChange: func,
+    /**
+     * Callback function, to be executed when user trigger to open select dropdown
+     *
+     * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+     */
     onFocus: func,
+    /**
+     * Callback function, to be executed when user leave the select dropdown
+     *
+     * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+     */
     onBlur: func,
   };
 
@@ -126,6 +174,17 @@ class Select extends Component {
   state = {
     focused: false,
   };
+
+  componentDidMount() {
+    const { itemList } = this.props;
+    if (itemList.length) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[Select] prop `itemList` deprecated. Please check documentation for better' +
+          ' alternative.'
+      );
+    }
+  }
 
   onFocus = e => {
     this.setState({ focused: true });
@@ -183,6 +242,10 @@ class Select extends Component {
                     disabled,
                   })}
                 >
+                  {selectedItem &&
+                    selectedItem.icon && (
+                      <CustomIcon>{selectedItem.icon}</CustomIcon>
+                    )}
                   <Content>
                     {selectedItem && (selectedItem.label || selectedItem.value)}
                   </Content>
@@ -204,7 +267,7 @@ class Select extends Component {
                           disabled: data.disabled,
                         })}
                       >
-                        {data.label || data.value}
+                        {data.icon} {data.label || data.value}
                       </Item>
                     )}
                   />
