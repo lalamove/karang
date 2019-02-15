@@ -83,15 +83,24 @@ class Select extends Component {
     label: string,
     error: string,
     selectedItem: shape({
-      id: oneOfType([string, number]),
+      id: oneOfType([string, number]), // For backward compilable
       value: string,
+      label: string,
     }),
+    items: arrayOf(
+      shape({
+        id: oneOfType([string, number]), // For backward compilable
+        value: string,
+        label: string,
+      })
+    ),
     itemList: arrayOf(
       shape({
-        id: oneOfType([string, number]),
+        id: oneOfType([string, number]), // For backward compilable
         value: string,
+        label: string,
       })
-    ).isRequired,
+    ),
     required: bool,
     disabled: bool,
     onChange: func,
@@ -105,6 +114,8 @@ class Select extends Component {
     label: null,
     error: null,
     selectedItem: null,
+    items: [],
+    itemList: [],
     required: false,
     disabled: false,
     onChange: noop,
@@ -132,7 +143,8 @@ class Select extends Component {
       name,
       label,
       error,
-      itemList,
+      items,
+      itemList, // For backward compilable
       selectedItem,
       onChange,
       onFocus,
@@ -171,7 +183,9 @@ class Select extends Component {
                     disabled,
                   })}
                 >
-                  <Content>{selectedItem && selectedItem.value}</Content>
+                  <Content>
+                    {selectedItem && (selectedItem.label || selectedItem.value)}
+                  </Content>
                   <Caret>
                     <Icon type="dropdown" size={24} />
                   </Caret>
@@ -180,7 +194,7 @@ class Select extends Component {
                   <StyledList
                     hoverable
                     size="small"
-                    items={itemList}
+                    items={items.length ? items : itemList}
                     render={({ data, Item, getProps }) => (
                       <Item
                         {...getProps()}
@@ -190,7 +204,7 @@ class Select extends Component {
                           disabled: data.disabled,
                         })}
                       >
-                        {data.value}
+                        {data.label || data.value}
                       </Item>
                     )}
                   />

@@ -2,10 +2,21 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import Select from './index';
 
+const items = [
+  {
+    value: 'MOTORCYCLE',
+    label: 'Motorcycle',
+  },
+  {
+    value: 'VAN',
+    label: 'Van',
+  },
+];
+
 class Wrapper extends Component {
   state = {
     selected1: null,
-    selected2: null,
+    selected2: items[0],
     selected3: null,
   };
 
@@ -16,49 +27,29 @@ class Wrapper extends Component {
   render() {
     return (
       <div>
+        <h4>Basic</h4>
         <Select
-          // id="ds1"
           label="What is your vehicle type?"
           name="vehicleType"
-          itemList={[
-            {
-              id: 'MOTORCYCLE',
-              value: 'Motorcycle',
-            },
-            {
-              id: 'VAN',
-              value: 'Van',
-            },
-          ]}
+          items={items}
           selectedItem={this.state.selected1}
           onChange={selected => this.handleOnChange(selected, 'selected1')}
           required
         />
-        <br />
+        <h4>With error message</h4>
         <Select
-          id="ds2"
           label="What is your vehicle type?"
           name="vehicleType"
-          itemList={[
-            {
-              id: 'MOTORCYCLE',
-              value: 'Motorcycle',
-            },
-            {
-              id: 'VAN',
-              value: 'Van',
-            },
-          ]}
+          items={items}
           selectedItem={this.state.selected2}
           onChange={selected => this.handleOnChange(selected, 'selected2')}
           error="Error Message"
         />
-        <br />
+        <h4>With disabled item</h4>
         <Select
-          id="ds3"
           label="With disabled item"
           name="vehicleType"
-          itemList={[
+          items={[
             {
               id: 'MOTORCYCLE',
               value: 'Motorcycle',
@@ -71,7 +62,6 @@ class Wrapper extends Component {
           ]}
           selectedItem={this.state.selected3}
           onChange={selected => this.handleOnChange(selected, 'selected3')}
-          disabled
         />
       </div>
     );
