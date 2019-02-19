@@ -66,7 +66,7 @@ const Caret = styled.span`
 
 const StyledList = styled(List)`
   position: absolute;
-  top: 100%;
+  top: calc(100% + 1px);
   left: 0;
   z-index: 400;
   width: 100%;
