@@ -16,6 +16,13 @@ const Container = styled.div`
   text-align: left;
   width: 100%;
 
+  ${({ disabled }) =>
+    disabled &&
+    `
+    opacity: 0.5;
+    cursor: not-allowed;
+    `};
+
   ${({ focused }) =>
     focused &&
     `
@@ -34,11 +41,17 @@ const AnimatedBorder = ({
   dirty,
   error,
   focused,
+  disabled,
   label,
   name,
   ...remainProps
 }) => (
-  <Container error={error} focused={focused} {...remainProps}>
+  <Container
+    error={error}
+    focused={focused}
+    disabled={disabled}
+    {...remainProps}
+  >
     {label && (
       <Placeholder
         title={label}
@@ -61,6 +74,8 @@ AnimatedBorder.propTypes = {
   error: bool,
   /** Status of focused border, orange border will be applied if `true` */
   focused: bool,
+  /** True if disable interaction with the element, applying opacity to the border */
+  disabled: bool,
   /** Label text that will be shown on border / inside the border */
   label: string,
   /** Name that used to reference the children and label text */
@@ -72,6 +87,7 @@ AnimatedBorder.defaultProps = {
   dirty: false,
   error: false,
   focused: false,
+  disabled: false,
   label: null,
   name: null,
 };

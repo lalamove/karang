@@ -128,7 +128,7 @@ export function withComponent(Comp) {
 
 const Text = styled.span`
   vertical-align: middle;
-  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 // eslint-disable-next-line react/prop-types
@@ -136,8 +136,8 @@ export default ({ icon, children, ...rest }) => {
   if (icon) {
     return (
       <Button {...rest}>
-        {icon}
         <Text>{children}</Text>
+        {icon}
       </Button>
     );
   }

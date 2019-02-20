@@ -2,12 +2,15 @@ import React, { Component, forwardRef } from 'react';
 import { bool, func, string, object, oneOfType, shape } from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import noop from 'utils/noop';
-import compose from 'utils/compose';
 import AnimatedBorder from 'components/AnimatedBorder';
 import RawErrorMsg from 'components/ErrorMessage';
+
 import withSelectAll from 'hoc/withSelectAll';
 import withCursorEnd from 'hoc/withCursorEnd';
+import noop from 'utils/noop';
+import compose from 'utils/compose';
+import { GROUND } from 'styles/zIndex';
+
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
 
@@ -30,7 +33,7 @@ const Wrapper = styled.div`
 
 const ErrorMessage = styled(RawErrorMsg)`
   position: absolute;
-  z-index: 1;
+  z-index: ${GROUND + 1};
   right: 0;
   left: 0;
 `;
