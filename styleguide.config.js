@@ -9,8 +9,8 @@ module.exports = {
     '**/*.d.ts',
     '**/_story.{js,jsx,ts,tsx}',
   ],
-  exampleMode: 'collapse',
-  usageMode: 'collapse',
+  exampleMode: 'expand',
+  usageMode: 'expand',
   skipComponentsWithoutExample: true,
   getExampleFilename(componentPath) {
     let ComponentName = componentPath
@@ -29,6 +29,7 @@ module.exports = {
 
     return path.join(p, `${ComponentName}.md`);
   },
+  title: 'Lalamove UI Library',
   pagePerSection: true,
   sections: [
     {
@@ -53,11 +54,45 @@ module.exports = {
   ],
   template: {
     favicon: 'https://web.dev.lalamove.com/favicon.png',
+    head: {
+      meta: [
+        {
+          name: 'description',
+          content:
+            'React components that implement Lalamove Design, for all web projects.',
+        },
+        {
+          name: 'keywords',
+          content: 'lalamove, ui, react, library, github',
+        },
+        {
+          property: 'og:title',
+          content: 'Lalamove UI Library',
+        },
+        {
+          property: 'og:description',
+          content:
+            'React components that implement Lalamove Design, for all web projects.',
+        },
+        {
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          property: 'og:url',
+          content: 'https://ui.lalamove.com',
+        },
+        {
+          property: 'og:image',
+          content: 'https://web.dev.lalamove.com/meta.png',
+        },
+      ],
+    },
   },
   theme: {
     color: {
-      link: '#4484ce',
-      linkHover: '#f19f4d',
+      link: '#f26722',
+      linkHover: '#f26722',
     },
     fontFamily: {
       base: ['BlinkMacSystemFont', 'sans-serif'],
