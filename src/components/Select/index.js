@@ -98,7 +98,7 @@ class Select extends Component {
     /** The currently selected item */
     selectedItem: shape({
       /** @deprecated */
-      id: oneOfType([string, number]), // For backward compilable
+      id: oneOfType([string, number]), // For backward compatible
       /** Element shown next to label */
       icon: node,
       /** Value of the option */
@@ -110,7 +110,7 @@ class Select extends Component {
     items: arrayOf(
       shape({
         /** @deprecated */
-        id: oneOfType([string, number]), // For backward compilable
+        id: oneOfType([string, number]), // For backward compatible
         /** Element shown next to label */
         icon: node,
         /** Value of the option */
@@ -123,7 +123,7 @@ class Select extends Component {
     itemList: arrayOf(
       shape({
         /** @deprecated */
-        id: oneOfType([string, number]), // For backward compilable
+        id: oneOfType([string, number]), // For backward compatible
         /** Element shown next to label */
         icon: node,
         /** Value of the option */
@@ -132,7 +132,7 @@ class Select extends Component {
         label: string,
       })
     ),
-    /** For backward compilable only, append `data-required` to the select if it is `true` */
+    /** For backward compatible only, append `data-required` to the select if it is `true` */
     required: bool,
     /** Disable the select if it is `true` */
     disabled: bool,
@@ -204,7 +204,7 @@ class Select extends Component {
       label,
       error,
       items,
-      itemList, // For backward compilable
+      itemList, // For backward compatible
       selectedItem,
       onChange,
       onFocus,
@@ -226,7 +226,7 @@ class Select extends Component {
           disabled={disabled}
         >
           <Downshift
-            id={id} // For backward compilable
+            id={id} // For backward compatible
             selectedItem={selectedItem}
             onChange={onChange}
             itemToString={item => (item ? item.value : '')}
@@ -237,7 +237,7 @@ class Select extends Component {
               >
                 <Button
                   {...getToggleButtonProps({
-                    'data-required': required, // For backward compilable
+                    'data-required': required, // For backward compatible
                     onBlur: this.onBlur,
                     onFocus: this.onFocus,
                     disabled,
