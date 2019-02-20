@@ -1,86 +1,84 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+
+import Icon from 'components/Icon';
 import Select from './index';
+
+const items = [
+  {
+    value: 'MOTORCYCLE',
+    label: 'Motorcycle',
+  },
+  {
+    value: 'VAN',
+    label: 'Van',
+  },
+];
+
+const itemsWithIcons = items.map(item => ({
+  ...item,
+  icon: <Icon type="bikeFilled" />,
+}));
+
+const itemsWithDisabledItem = [
+  {
+    id: 'MOTORCYCLE',
+    value: 'Motorcycle',
+    disabled: true,
+  },
+  {
+    id: 'VAN',
+    value: 'Van',
+  },
+];
 
 class Wrapper extends Component {
   state = {
-    selectedItem: {
-      ds1: null,
-      ds2: null,
-      ds3: null,
-    },
+    select1: null,
+    select2: null,
+    select3: items[0],
+    select4: null,
   };
 
-  handleOnChange = (selectedItem, dsState) => {
-    this.setState({
-      selectedItem: {
-        ...this.state.selectedItem,
-        [dsState.id]: selectedItem,
-      },
-    });
+  handleOnChange = (selectedItem, name) => {
+    this.setState({ [name]: selectedItem });
   };
 
   render() {
     return (
       <div>
+        <h4>Basic</h4>
         <Select
-          id="ds1"
           label="What is your vehicle type?"
           name="vehicleType"
-          itemList={[
-            {
-              id: 'MOTORCYCLE',
-              value: 'Motorcycle',
-            },
-            {
-              id: 'VAN',
-              value: 'Van',
-            },
-          ]}
-          selectedItem={this.state.selectedItem.ds1}
-          onChange={this.handleOnChange}
-          style={{ display: 'block' }}
-          required
+          items={items}
+          selectedItem={this.state.select1}
+          onChange={selected => this.handleOnChange(selected, 'select1')}
         />
-        <br />
+        <h4>With icon</h4>
         <Select
-          id="ds2"
           label="What is your vehicle type?"
           name="vehicleType"
-          itemList={[
-            {
-              id: 'MOTORCYCLE',
-              value: 'Motorcycle',
-            },
-            {
-              id: 'VAN',
-              value: 'Van',
-            },
-          ]}
-          selectedItem={this.state.selectedItem.ds2}
-          onChange={this.handleOnChange}
-          style={{ display: 'block' }}
+          items={itemsWithIcons}
+          selectedItem={this.state.select2}
+          onChange={selected => this.handleOnChange(selected, 'select2')}
+        />
+        <h4>With error message</h4>
+        <Select
+          label="What is your vehicle type?"
+          name="vehicleType"
+          items={items}
+          selectedItem={this.state.select3}
+          onChange={selected => this.handleOnChange(selected, 'select3')}
           error="Error Message"
         />
-        <br />
+        <h4>With disabled item</h4>
         <Select
-          id="ds3"
           label="With disabled item"
           name="vehicleType"
-          itemList={[
-            {
-              id: 'MOTORCYCLE',
-              value: 'Motorcycle',
-              disabled: true,
-            },
-            {
-              id: 'VAN',
-              value: 'Van',
-            },
-          ]}
-          selectedItem={this.state.selectedItem.ds3}
-          onChange={this.handleOnChange}
-          style={{ display: 'block' }}
+          items={itemsWithDisabledItem}
+          selectedItem={this.state.select4}
+          onChange={selected => this.handleOnChange(selected, 'select4')}
         />
       </div>
     );

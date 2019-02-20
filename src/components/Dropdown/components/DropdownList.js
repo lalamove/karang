@@ -11,14 +11,17 @@ import {
 } from 'prop-types';
 import styled, { css } from 'styled-components';
 
+import List from 'components/List';
+
 import compose from 'utils/compose';
 import noop from 'utils/noop';
-import List from 'components/List';
+import { DROPDOWN } from 'styles/zIndex';
+
 import Label from './Label';
 
 const StyledList = styled(List)`
   position: absolute;
-  z-index: 400;
+  z-index: ${DROPDOWN};
   top: ${({ nested }) => (nested ? '-8px' : '100%')};
 
   ${({ nested, direction }) => {

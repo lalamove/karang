@@ -1,107 +1,210 @@
-import React, { Component, forwardRef } from 'react';
+import React, { Component } from 'react';
 import {
-  string,
   arrayOf,
-  shape,
-  func,
   bool,
+  func,
   oneOfType,
-  object,
+  node,
   number,
+  string,
+  shape,
 } from 'prop-types';
 import Downshift from 'downshift';
 import styled from 'styled-components';
 
+import AnimatedBorder from 'components/AnimatedBorder';
+import ErrorMessage from 'components/ErrorMessage';
 import Icon from 'components/Icon';
-import compose from 'utils/compose';
+import List from 'components/List';
+
 import noop from 'utils/noop';
-import withAnimatedContainer from 'hoc/withAnimatedContainer';
-import withErrorMessage from 'hoc/withErrorMessage';
-import { orange, gray, lightGray, white, hoverGray } from 'styles/colors';
+import { mineShaft, nobel } from 'styles/colors';
+import { primaryFonts } from 'styles/fonts';
+import { DROPDOWN, GROUND } from 'styles/zIndex';
 
-const ItemList = styled.div`
-  position: absolute;
-  width: 100%;
-  z-index: 99;
-  left: -1px;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
+const Wrapper = styled.div`
+  position: relative;
+  display: block;
+
+  ${({ error }) => error && `padding-bottom: 2em;`};
 `;
 
-const Item = styled.div`
-  border-left: 2px solid ${({ isActive }) => (isActive ? orange : white)};
-  cursor: pointer;
+const Container = styled.div`
   width: 100%;
-  &:hover:not([disabled]),
-  &:focus:not([disabled]) {
-    background-color: ${hoverGray};
-    border-left-color: ${orange};
-  }
-  line-height: 40px;
-  height: 40px;
-  background: ${white};
-  &[disabled] {
-    color: ${lightGray};
-  }
-`;
-
-const ItemContent = styled.span`
-  padding-left: 10px;
 `;
 
 const Button = styled.button`
+  display: flex;
+  align-items: flex-end;
   width: 100%;
-  background: transparent;
+  padding: 10px;
+  color: ${mineShaft['900']};
   border: none;
+  background: transparent;
   outline: none;
-  padding: 12px;
-  color: ${gray};
+
+  ${({ disabled }) => disabled && `cursor: not-allowed;`};
 `;
 
-const LeftSpan = styled.span`
-  float: left;
-  line-height: 24px;
-  height: 24px;
+const CustomIcon = styled.span`
+  flex: 0 0 auto;
+  align-self: center;
+  margin-right: 0.5em;
+  line-height: 1.6;
 `;
 
-const RightSpan = styled.span`
-  float: right;
+const Content = styled.span`
+  flex: 1 1 auto;
+  font-family: ${primaryFonts};
+  line-height: 1.6;
+  text-align: left;
+`;
+
+const Caret = styled.span`
+  margin-right: -5px;
+  color: ${nobel.main};
+`;
+
+const StyledList = styled(List)`
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  z-index: ${DROPDOWN};
+  width: 100%;
+
+  li[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+`;
+
+const StyledErrorMessage = styled(ErrorMessage)`
+  position: absolute;
+  z-index: ${GROUND + 1};
+  right: 0;
+  left: 0;
 `;
 
 class Select extends Component {
   static propTypes = {
-    innerRef: oneOfType([func, object]),
-    id: string.isRequired,
+    /** Id of the component */
+    id: string,
+    /** Name of the component */
+    name: string,
+    /** Label of the component */
+    label: string,
+    /** Error message of the component */
+    error: string,
+    /** The currently selected item */
+    selectedItem: shape({
+      /** @deprecated */
+      id: oneOfType([string, number]), // For backward compatible
+      /** Element shown next to label */
+      icon: node,
+      /** Value of the option */
+      value: string,
+      /** Label of the option for users */
+      label: string,
+    }),
+    /** Select items */
+    items: arrayOf(
+      shape({
+        /** @deprecated */
+        id: oneOfType([string, number]), // For backward compatible
+        /** Element shown next to label */
+        icon: node,
+        /** Value of the option */
+        value: string,
+        /** Label of the option for users */
+        label: string,
+      })
+    ),
+    /** @deprecated Please use `items` */
     itemList: arrayOf(
       shape({
-        id: oneOfType([string, number]),
+        /** @deprecated */
+        id: oneOfType([string, number]), // For backward compatible
+        /** Element shown next to label */
+        icon: node,
+        /** Value of the option */
         value: string,
+        /** Label of the option for users */
+        label: string,
       })
-    ).isRequired,
-    selectedItem: shape({
-      id: oneOfType([string, number]),
-      value: string,
-    }),
-    onChange: func,
-    onFocus: func,
-    onBlur: func,
+    ),
+    /** For backward compatible only, append `data-required` to the select if it is `true` */
     required: bool,
+    /** Disable the select if it is `true` */
     disabled: bool,
+    /**
+     * Callback function, to be executed when user selected an item and it has changed
+     *
+     * @param {any} selectedItem
+     * @param {object} stateAndHelpers
+     */
+    onChange: func,
+    /**
+     * Callback function, to be executed when user trigger to open select dropdown
+     *
+     * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+     */
+    onFocus: func,
+    /**
+     * Callback function, to be executed when user leave the select dropdown
+     *
+     * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+     */
+    onBlur: func,
   };
 
   static defaultProps = {
+    id: null,
+    name: null,
+    label: null,
+    error: null,
+    selectedItem: null,
+    items: [],
+    itemList: [],
+    required: false,
+    disabled: false,
     onChange: noop,
     onFocus: noop,
     onBlur: noop,
-    selectedItem: null,
-    innerRef: null,
-    required: false,
-    disabled: false,
+  };
+
+  state = {
+    focused: false,
+  };
+
+  componentDidMount() {
+    const { itemList } = this.props;
+    if (itemList.length) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[Select] prop `itemList` deprecated. Please check documentation for better' +
+          ' alternative.'
+      );
+    }
+  }
+
+  onFocus = e => {
+    this.setState({ focused: true });
+    this.props.onFocus(e);
+  };
+
+  onBlur = e => {
+    this.setState({ focused: false });
+    this.props.onBlur(e);
   };
 
   render() {
+    const { focused } = this.state;
     const {
-      innerRef,
-      itemList,
+      name,
+      label,
+      error,
+      items,
+      itemList, // For backward compatible
       selectedItem,
       onChange,
       onFocus,
@@ -109,65 +212,75 @@ class Select extends Component {
       id,
       required,
       disabled,
-      ...remainProps
+      ...props
     } = this.props;
-
+    // TODO: getInputProps
     return (
-      <Downshift
-        id={id}
-        onChange={onChange}
-        itemToString={item => (item !== null ? item.value : null)}
-        {...remainProps}
-      >
-        {({ isOpen, getToggleButtonProps, getItemProps, highlightedIndex }) => (
-          <div style={{ width: '100%' }}>
-            <Button
-              {...getToggleButtonProps({
-                onFocus,
-                onBlur,
-                'data-required': required,
-                'data-name': id,
-              })}
-              innerRef={innerRef}
-              value={selectedItem !== null ? selectedItem.value : ''}
-              disabled={disabled}
-            >
-              <LeftSpan>{`${
-                selectedItem !== null ? selectedItem.value : ''
-              }`}</LeftSpan>
-              <RightSpan>
-                <Icon type="dropdown" color={lightGray} size={24} />
-              </RightSpan>
-            </Button>
-            {isOpen && (
-              <ItemList>
-                {itemList.map((item, index) => (
-                  <Item
-                    {...getItemProps({
-                      item,
-                      disabled: item.disabled,
-                    })}
-                    key={item.id}
-                  >
-                    <ItemContent>{item.value}</ItemContent>
-                  </Item>
-                ))}
-              </ItemList>
+      <Wrapper error={error}>
+        <AnimatedBorder
+          name={name}
+          label={label}
+          focused={focused}
+          dirty={!!selectedItem}
+          error={!!error}
+          disabled={disabled}
+        >
+          <Downshift
+            id={id} // For backward compatible
+            selectedItem={selectedItem}
+            onChange={onChange}
+            itemToString={item => (item ? item.value : '')}
+          >
+            {({ isOpen, getToggleButtonProps, getItemProps, getRootProps }) => (
+              <Container
+                {...getRootProps({ name, ...props, refKey: 'innerRef' })}
+              >
+                <Button
+                  {...getToggleButtonProps({
+                    'data-required': required, // For backward compatible
+                    onBlur: this.onBlur,
+                    onFocus: this.onFocus,
+                    disabled,
+                  })}
+                >
+                  {selectedItem &&
+                    selectedItem.icon && (
+                      <CustomIcon>{selectedItem.icon}</CustomIcon>
+                    )}
+                  <Content>
+                    {selectedItem && (selectedItem.label || selectedItem.value)}
+                  </Content>
+                  <Caret>
+                    <Icon type="dropdown" size={24} />
+                  </Caret>
+                </Button>
+                {isOpen && (
+                  <StyledList
+                    hoverable
+                    size="small"
+                    items={items.length ? items : itemList}
+                    render={({ data, Item, getProps }) => (
+                      <Item
+                        {...getProps()}
+                        {...getItemProps({
+                          key: data.value,
+                          item: data,
+                          disabled: data.disabled,
+                        })}
+                      >
+                        {data.icon} {data.label || data.value}
+                      </Item>
+                    )}
+                  />
+                )}
+              </Container>
             )}
-          </div>
-        )}
-      </Downshift>
+          </Downshift>
+        </AnimatedBorder>
+        <StyledErrorMessage error={error} />
+      </Wrapper>
     );
   }
 }
 
-const SelectWithRef = forwardRef((props, ref) => (
-  <Select {...props} innerRef={ref} />
-));
-
-const EnhancedComp = compose(
-  withErrorMessage,
-  withAnimatedContainer
-)(SelectWithRef);
-
-export default EnhancedComp;
+export default Select;
