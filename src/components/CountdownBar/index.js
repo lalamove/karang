@@ -5,6 +5,7 @@ import { lighten } from 'polished';
 
 import { orange, white } from 'styles/colors';
 import { fontSize, fontWeight } from 'styles/fonts';
+import { GROUND } from 'styles/zIndex';
 
 const fillup = keyframes`
   from {
@@ -44,7 +45,7 @@ const Label = styled.div`
   position: absolute;
   text-align: center;
   width: 100%;
-  z-index: 1;
+  z-index: ${GROUND + 1};
 `;
 
 export default class CountdownBar extends PureComponent {

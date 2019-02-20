@@ -20,6 +20,7 @@ import List from 'components/List';
 import noop from 'utils/noop';
 import { mineShaft, nobel } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
+import { DROPDOWN, GROUND } from 'styles/zIndex';
 
 const Wrapper = styled.div`
   position: relative;
@@ -68,7 +69,7 @@ const StyledList = styled(List)`
   position: absolute;
   top: calc(100% + 1px);
   left: 0;
-  z-index: 400;
+  z-index: ${DROPDOWN};
   width: 100%;
 
   li[disabled] {
@@ -79,7 +80,7 @@ const StyledList = styled(List)`
 
 const StyledErrorMessage = styled(ErrorMessage)`
   position: absolute;
-  z-index: 1;
+  z-index: ${GROUND + 1};
   right: 0;
   left: 0;
 `;
