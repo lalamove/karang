@@ -1,6 +1,7 @@
 import addressBook from './addressBook';
 import contactBook from './contactBook';
 import conversation from './conversation';
+import email from './email';
 import message from './message';
 import notification from './notification';
 import phoneVibrate from './phoneVibrate';
@@ -13,6 +14,7 @@ const CommunicationIcons = {
   addressBook,
   contactBook,
   conversation,
+  email,
   message,
   notification,
   phoneVibrate,
