@@ -7,10 +7,12 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "scripts": {
-    "start": "rollup -c -w",
-    "build": "rollup -c",
-    "test": "react-scripts test --env=jsdom",
-    "test-coverage": "react-scripts test --env=jsdom --coverage",
+    "start": "BABEL_ENV=esm rollup -c -w",
+    "build": "BABEL_ENV=esm rollup -c",
+    "build:cjs": "NODE_ENV=production BABEL_ENV=cjs babel --config-file ./babel.config.js ./src --out-dir ./build --ignore \"**/*.test.js\",\"**/_story.js\" ",
+    "build:esm": "NODE_ENV=production BABEL_ENV=esm babel --config-file ./babel.config.js ./src --out-dir ./build/esm --ignore \"**/*.test.js\",\"**/_story.js\"",
+    "test": "jest ./src",
+    "test-coverage": "jest ./src --coverage",
     "prepare": "yarn build",
     "lint": "yarn lint:css",
     "lint:js": "eslint \"src/**/*.js\"",
@@ -31,29 +33,35 @@
     "styled-components": "^3.4.10"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^3.4.10",
     "@storybook/addon-info": "^3.4.5",
     "@storybook/addon-knobs": "^3.4.10",
     "@storybook/react": "^3.4.4",
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.1",
-    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-styled-components": "^1.5.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
     "cross-env": "^5.1.4",
     "date-fns": "^1.29.0",
     "downshift": "^2.0.14",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-config-react-app": "^2.1.0",
     "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.12.4",
     "husky": "^0.14.3",
+    "jest": "^24.1.0",
+    "jest-cli": "^24.1.0",
     "jest-enzyme": "^6.0.0",
     "jest-styled-components": "^5.0.1",
     "lint-staged": "^7.1.0",
@@ -63,12 +71,11 @@
     "react": "^16.3.2",
     "react-dates": "^18.0.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "^1.1.4",
     "react-styleguidist": "^7.3.11",
-    "rollup": "^0.54.0",
+    "rollup": "^1.2.2",
     "rollup-plugin-alias": "^1.4.0",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-babel-minify": "^6.0.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-babel-minify": "^7.0.0",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-filesize": "^4.0.1",
     "rollup-plugin-node-resolve": "^3.0.2",
@@ -96,6 +103,9 @@
     ]
   },
   "jest": {
+    "modulePaths": [
+      "src"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
@@ -103,7 +113,15 @@
       "src/**/*.{js,jsx}",
       "!**/node_modules/**",
       "!**/_story.js"
-    ]
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/utils/setupTests"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(svg|gif)$": "<rootDir>/test/utils/svgTransform.js"
+    }
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/core": "^7.3.3"
+  }
 }

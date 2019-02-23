@@ -177,9 +177,7 @@ exports[`List component size-small-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
   <li
     class="c1 c2"
@@ -192,9 +190,7 @@ exports[`List component size-small-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
   <li
     class="c1 c2"
@@ -207,9 +203,7 @@ exports[`List component size-small-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
   <li
     class="c1 c2"
@@ -222,9 +216,7 @@ exports[`List component size-small-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
 </ul>
 `;
@@ -252,11 +244,11 @@ exports[`List component size-undefined-default 1`] = `
   min-width: 16rem;
 }
 
-.hHMiSk:not(:last-child) .c3 {
+.dMclmc:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
-.fhTqdJ:not(:last-child) .c3 {
+.ilGAzr:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
@@ -351,11 +343,11 @@ exports[`List component size-undefined-with icon 1`] = `
   min-width: 16rem;
 }
 
-.hHMiSk:not(:last-child) .c4 {
+.dMclmc:not(:last-child) .c4 {
   border-bottom: 0;
 }
 
-.fhTqdJ:not(:last-child) .c4 {
+.ilGAzr:not(:last-child) .c4 {
   border-bottom: 0;
 }
 
@@ -400,9 +392,7 @@ exports[`List component size-undefined-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
   <li
     class="c1 c2"
@@ -415,9 +405,7 @@ exports[`List component size-undefined-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
   <li
     class="c1 c2"
@@ -430,9 +418,7 @@ exports[`List component size-undefined-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
   <li
     class="c1 c2"
@@ -445,9 +431,7 @@ exports[`List component size-undefined-with icon 1`] = `
     </div>
     <div
       class="c4 c5"
-    >
-      
-    </div>
+    />
   </li>
 </ul>
 `;

@@ -98,4 +98,31 @@ module.exports = {
       base: ['BlinkMacSystemFont', 'sans-serif'],
     },
   },
+  webpackConfig: {
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components'),
+      },
+    },
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
+        {
+          test: /\.(png|jpg|gif|svg)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+              },
+            },
+          ],
+        },
+      ],
+    },
+  },
 };
