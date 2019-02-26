@@ -133,7 +133,7 @@ exports[`Button-isLoading 1`] = `
   display: inline-block;
   border-color: rgba(229,229,229,1);
   color: rgba(88,89,91,1);
-  background-image: url(loader.gif);
+  background-image: url();
   background-position: center;
   background-size: 16px;
   background-repeat: no-repeat;

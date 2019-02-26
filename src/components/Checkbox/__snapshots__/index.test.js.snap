@@ -101,18 +101,12 @@ exports[`snapshot 1`] = `
     id="llm-checkbox"
     name="llm-checkbox"
     type="checkbox"
-  >
-    
-  </input>
+  />
   <span
     class="c4"
-  >
-    
-  </span>
+  />
   <span
     class="c5"
-  >
-    
-  </span>
+  />
 </label>
 `;

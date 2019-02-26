@@ -8,7 +8,7 @@ class Wrapper extends Component {
     activeTab: 'first',
   };
 
-  onTabChange = (tabName: string) => {
+  onTabChange = tabName => {
     this.setState({ activeTab: tabName });
   };
 
