@@ -9,6 +9,12 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     ],
+    [
+      'inline-import-data-uri',
+      {
+        extensions: ['.svg', '.gif'],
+      },
+    ],
   ],
   presets: [
     [

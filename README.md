@@ -13,6 +13,7 @@ Before installing this library, please make sure you have the following installe
     "downshift": "^2.0.14",
     "prop-types": "^15.6.1",
     "moment": "^2.22.1",
+    "polished": "^3.0.0",
     "react": "^16.3.2",
     "react-dates": "^18.0.2",
     "react-dom": "^16.3.2",
@@ -72,7 +73,7 @@ export default App;
 
 #### Using exported UI components
 Quick example to **get you started** in your own components / containers:
-```bash
+```js
 import React, { Fragment } from 'react';
 import { Radio } from 'lalamove-ui';
 
@@ -85,6 +86,11 @@ const MyComponent = () => (
 );
 
 export default MyComponent;
+```
+
+We do support partial import for smaller built too
+```js
+import Radio from 'lalamove-ui/dist/components/Radio';
 ```
 
 ## Storybook
