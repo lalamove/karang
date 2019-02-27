@@ -16,11 +16,24 @@ class Wrapper extends Component {
     const { activeTab } = this.state;
 
     return (
-      <TabBar activeTab={activeTab} onTabChange={this.onTabChange}>
-        <Tab name="first">First section</Tab>
-        <Tab name="second">Section section</Tab>
-        <Tab name="third">Third section</Tab>
-      </TabBar>
+      <div>
+        <h4>Default</h4>
+        <TabBar activeTab={activeTab} onTabChange={this.onTabChange}>
+          <Tab name="first">First section</Tab>
+          <Tab name="second">Second section</Tab>
+          <Tab name="third">Third section</Tab>
+        </TabBar>
+        <h4>Rounded</h4>
+        <TabBar
+          activeTab={activeTab}
+          onTabChange={this.onTabChange}
+          variant="rounded"
+        >
+          <Tab name="first">First section</Tab>
+          <Tab name="second">Second section</Tab>
+          <Tab name="third">Third section</Tab>
+        </TabBar>
+      </div>
     );
   }
 }

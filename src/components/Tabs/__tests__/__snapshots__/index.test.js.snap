@@ -1,5 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Tab Snapshots Deselected (rounded variant) 1`] = `
+.c0 {
+  display: inline-block;
+  margin: 0 0.25em;
+}
+
+.c0:first-child {
+  margin-left: 0;
+}
+
+.c0:last-child {
+  margin-right: 0;
+}
+
+.c1 {
+  display: block;
+  box-sizing: border-box;
+  min-width: 10rem;
+  padding: 0.25em 1em;
+  border: 1px solid #E8E8E8;
+  border-radius: 2em;
+  text-align: center;
+  color: #B4B4B4;
+  cursor: pointer;
+}
+
+.c1:hover,
+.c1:active {
+  background-color: #F1F1F1;
+}
+
+.c1:active,
+.c1:focus {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+<li
+  class="c0"
+>
+  <label
+    aria-selected="false"
+    class="c1"
+    role="tab"
+  >
+    Foo
+  </label>
+</li>
+`;
+
 exports[`Tab Snapshots Deselected 1`] = `
 .c3 {
   -webkit-appearance: none;
@@ -95,6 +144,71 @@ exports[`Tab Snapshots Deselected 1`] = `
   >
     Foo
   </button>
+</li>
+`;
+
+exports[`Tab Snapshots Selected (rounded variant) 1`] = `
+.c0 {
+  display: inline-block;
+  margin: 0 0.25em;
+}
+
+.c0:first-child {
+  margin-left: 0;
+}
+
+.c0:last-child {
+  margin-right: 0;
+}
+
+.c1 {
+  display: block;
+  box-sizing: border-box;
+  min-width: 10rem;
+  padding: 0.25em 1em;
+  border: 1px solid #E8E8E8;
+  border-radius: 2em;
+  text-align: center;
+  color: #B4B4B4;
+  cursor: pointer;
+  border: 1px solid rgba(242,103,34,1);
+  color: white;
+  font-weight: bold;
+  background-color: rgba(242,103,34,1);
+}
+
+.c1:hover,
+.c1:active {
+  background-color: #F1F1F1;
+}
+
+.c1:active,
+.c1:focus {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c1:hover,
+.c1:active {
+  background-color: rgba(242,103,34,1);
+}
+
+.c1:active,
+.c1:focus {
+  box-shadow: 0 0 0 4px rgba(242,103,34,0.2);
+}
+
+<li
+  class="c0"
+  selected=""
+>
+  <label
+    aria-selected="true"
+    class="c1"
+    role="tab"
+    selected=""
+  >
+    Foo
+  </label>
 </li>
 `;
 
@@ -212,6 +326,115 @@ exports[`TabBar Snapshots Non-tab children 1`] = `
   role="tablist"
 >
   Not a tab at all.
+</ul>
+`;
+
+exports[`TabBar Snapshots Rounded variant 1`] = `
+.c0 {
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
+.c1 {
+  display: inline-block;
+  margin: 0 0.25em;
+}
+
+.c1:first-child {
+  margin-left: 0;
+}
+
+.c1:last-child {
+  margin-right: 0;
+}
+
+.c3 {
+  display: block;
+  box-sizing: border-box;
+  min-width: 10rem;
+  padding: 0.25em 1em;
+  border: 1px solid #E8E8E8;
+  border-radius: 2em;
+  text-align: center;
+  color: #B4B4B4;
+  cursor: pointer;
+}
+
+.c3:hover,
+.c3:active {
+  background-color: #F1F1F1;
+}
+
+.c3:active,
+.c3:focus {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c2 {
+  display: block;
+  box-sizing: border-box;
+  min-width: 10rem;
+  padding: 0.25em 1em;
+  border: 1px solid #E8E8E8;
+  border-radius: 2em;
+  text-align: center;
+  color: #B4B4B4;
+  cursor: pointer;
+  border: 1px solid rgba(242,103,34,1);
+  color: white;
+  font-weight: bold;
+  background-color: rgba(242,103,34,1);
+}
+
+.c2:hover,
+.c2:active {
+  background-color: #F1F1F1;
+}
+
+.c2:active,
+.c2:focus {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c2:hover,
+.c2:active {
+  background-color: rgba(242,103,34,1);
+}
+
+.c2:active,
+.c2:focus {
+  box-shadow: 0 0 0 4px rgba(242,103,34,0.2);
+}
+
+<ul
+  class="c0"
+  role="tablist"
+>
+  <li
+    class="c1"
+    selected=""
+  >
+    <label
+      aria-selected="true"
+      class="c2"
+      role="tab"
+      selected=""
+    >
+      Foo
+    </label>
+  </li>
+  <li
+    class="c1"
+  >
+    <label
+      aria-selected="false"
+      class="c3"
+      role="tab"
+    >
+      Bar
+    </label>
+  </li>
 </ul>
 `;
 
