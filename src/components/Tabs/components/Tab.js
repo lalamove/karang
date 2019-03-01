@@ -1,13 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
-import { bool, node, string, func } from 'prop-types';
-import { darken } from 'polished';
+import { bool, func, node, oneOf, string } from 'prop-types';
+import styled, { css } from 'styled-components';
+import { darken, rgba } from 'polished';
 
 import Button from 'components/Button';
-import { orange as primaryColor, lightGray } from 'styles/colors';
+import { nobel, orange as primaryColor, lightGray } from 'styles/colors';
 import noop from 'utils/noop';
 
-import { TabContainer } from '../style';
+import { TabContainer, RoundedTabContainer } from '../style';
 
 const TabButton = styled(Button).attrs({ variant: 'link' })`
   padding: 1.25em;
@@ -33,34 +33,89 @@ const TabButton = styled(Button).attrs({ variant: 'link' })`
   }
 `;
 
-const Tab = ({ children, selected, onTabChange, name }) => (
-  <TabContainer selected={selected}>
-    <TabButton
-      aria-selected={selected}
-      onClick={() => onTabChange(name)}
-      role="tab"
-      selected={selected}
-    >
-      {children}
-    </TabButton>
-  </TabContainer>
-);
+const RoundedTabButton = styled.label`
+  display: block;
+  box-sizing: border-box;
+  min-width: 10rem;
+  padding: 0.25em 1em;
+  border: 1px solid ${nobel['200']};
+  border-radius: 2em;
+  text-align: center;
+  color: ${nobel.main};
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: ${nobel['100']};
+  }
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 4px ${rgba(nobel.main, 0.2)};
+  }
+
+  ${({ selected }) =>
+    selected &&
+    css`
+      border: 1px solid ${primaryColor};
+      color: white;
+      font-weight: bold;
+      background-color: ${primaryColor};
+
+      &:hover,
+      &:active {
+        background-color: ${primaryColor};
+      }
+
+      &:active,
+      &:focus {
+        box-shadow: 0 0 0 4px ${rgba(primaryColor, 0.2)};
+      }
+    `};
+`;
+
+const Tab = ({ children, selected, onTabChange, name, variant, ...rest }) => {
+  let Container;
+  let Content;
+  if (variant === 'rounded') {
+    Container = RoundedTabContainer;
+    Content = RoundedTabButton;
+  } else {
+    Container = TabContainer;
+    Content = TabButton;
+  }
+  return (
+    <Container selected={selected} {...rest}>
+      <Content
+        aria-selected={selected}
+        onClick={() => onTabChange(name)}
+        role="tab"
+        selected={selected}
+      >
+        {children}
+      </Content>
+    </Container>
+  );
+};
 
 Tab.propTypes = {
   /** Children elements */
   children: node,
   /** Name of the tab */
-  name: string.isRequired, // eslint-disable-line react/no-typos
+  name: string.isRequired,
   /** Callback function. Managed by TabBar */
   onTabChange: func,
   /** Display the selected state. Managed by TabBar */
   selected: bool,
+  /** Variant of tab button, `default` renders button with bottom border, `rounded` renders rounded button */
+  variant: oneOf(['default', 'rounded']),
 };
 
 Tab.defaultProps = {
   children: null,
   onTabChange: noop,
   selected: false,
+  variant: 'default',
 };
 
 export default Tab;
