@@ -107,10 +107,16 @@ const Alert = ({
 );
 
 Alert.propTypes = {
+  /** Type of Alert component */
   type: oneOf(['warning', 'error', 'success', 'info']),
+  /** Variant of Alert component, controlling the size of the Alert */
   variant: oneOf(['default', 'toast']),
+  /** Title of the Alert message */
   message: string.isRequired, // eslint-disable-line react/no-typos
+  /** Description of the Alert message */
   description: string,
+  /** Callback function, to be executed when clicked close button. No close button if no
+   *  function passed */
   onDismiss: func,
 };
 
