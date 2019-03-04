@@ -3,7 +3,8 @@ import SvgIcon from './SVGIcon';
 
 declare function createSvgIcon(
   path: React.ComponentType,
-  displayName: string
+  displayName: string,
+  viewBox: string
 ): typeof SvgIcon;
 
 export default createSvgIcon;

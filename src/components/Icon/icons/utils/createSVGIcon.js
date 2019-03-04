@@ -1,8 +1,12 @@
 import React from 'react';
 import SVGIcon from './SVGIcon';
 
-function createSVGIcon(path, displayName) {
-  const Icon = props => <SVGIcon {...props}>{path}</SVGIcon>;
+function createSVGIcon(path, displayName, viewBox = '0 0 217 217') {
+  const Icon = props => (
+    <SVGIcon viewBox={viewBox} {...props}>
+      {path}
+    </SVGIcon>
+  );
 
   Icon.displayName = `${displayName}Icon`;
   return React.memo(Icon);

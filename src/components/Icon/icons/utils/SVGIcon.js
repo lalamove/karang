@@ -30,7 +30,7 @@ SVGIcon.defaultProps = {
   size: 20,
   style: {},
   verticalAlign: 'middle',
-  viewBox: '0 0 1024 1024',
+  viewBox: '0 0 217 217',
 };
 
 SVGIcon.propTypes = {
