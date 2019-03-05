@@ -6,11 +6,13 @@ import icons from './icons';
 
 const { NODE_ENV } = process.env;
 
+console.log(NODE_ENV);
+
 let warnOnce = false;
 const GenericIcon = props => {
   if (NODE_ENV !== 'production') {
     warning(
-      warnOnce && NODE_ENV !== 'test',
+      warnOnce,
       [
         'Generic Icon would be deprecated in v1.',
         'Please switch to exact name import before migrating to v1',

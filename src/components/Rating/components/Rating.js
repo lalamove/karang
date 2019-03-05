@@ -2,10 +2,11 @@ import React, { PureComponent } from 'react';
 import { func, oneOf } from 'prop-types';
 import styled from 'styled-components';
 
+import { gold, offWhite } from 'styles/colors';
 import noop from 'utils/noop';
+
 import { small, large } from '../ratingSizes';
 import Star from './Star';
-import { gold, offWhite } from 'styles/colors';
 
 const RatingContainer = styled.div`
   display: inline-block;
@@ -25,21 +26,24 @@ class Rating extends PureComponent {
   };
 
   state = {
+    // eslint-disable-next-line react/destructuring-assignment
     value: Math.min(Math.max(this.props.value, 0), 5),
     hoverValue: 0,
   };
 
   componentDidUpdate(prevProps) {
-    if (prevProps.value !== this.props.value) {
+    const { value } = this.props;
+    if (prevProps.value !== value) {
       // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ value: this.props.value });
+      this.setState({ value });
     }
   }
 
   onClick = i => {
+    const { onClick } = this.props;
     const value = i + 1; // map from index to value
     this.setState({ value });
-    this.props.onClick(value);
+    onClick(value);
   };
 
   onMouseEnter = i => {
@@ -55,27 +59,25 @@ class Rating extends PureComponent {
   };
 
   colorFill = i => {
-    if (this.state.hoverValue) {
-      return i < this.state.hoverValue ? gold : offWhite;
+    const { hoverValue, value } = this.state;
+    if (hoverValue) {
+      return i < hoverValue ? gold : offWhite;
     }
-    return i < this.state.value ? gold : offWhite;
+    return i < value ? gold : offWhite;
   };
 
   render() {
+    const { size, onClick } = this.props;
     return (
       <RatingContainer>
         {[0, 1, 2, 3, 4].map(i => (
           <Star
             key={i}
             color={this.colorFill(i)}
-            size={this.props.size}
-            onClick={this.props.onClick !== noop ? () => this.onClick(i) : null}
-            onMouseEnter={
-              this.props.onClick !== noop ? () => this.onMouseEnter(i) : null
-            }
-            onMouseLeave={
-              this.props.onClick !== noop ? () => this.onMouseLeave(i) : null
-            }
+            size={size}
+            onClick={onClick !== noop ? () => this.onClick(i) : null}
+            onMouseEnter={onClick !== noop ? () => this.onMouseEnter(i) : null}
+            onMouseLeave={onClick !== noop ? () => this.onMouseLeave(i) : null}
           />
         ))}
       </RatingContainer>
