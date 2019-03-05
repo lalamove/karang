@@ -110,6 +110,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.3.3"
+    "@babel/core": "^7.3.3",
+    "warning": "^4.0.3"
   }
 }

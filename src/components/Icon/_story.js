@@ -72,11 +72,11 @@ storiesOf('Icon', module)
   .add('Content', () => <IconGallery category={ContentIcons} />)
   .add('Emoji', () => (
     <Fragment>
-      {/* <Alert
+      <Alert
         type="info"
         message="Color code required"
         description="The icons below are suggested to be used with color. Please check the documentation for examples."
-      /> */}
+      />
       <IconGallery category={EmojiIcons} colored />
     </Fragment>
   ))
