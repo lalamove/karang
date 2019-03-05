@@ -15,6 +15,7 @@ const SVGIcon = ({
     fill: color,
     width: `${size}px`,
     height: `${size}px`,
+    ...style,
   };
 
   return (

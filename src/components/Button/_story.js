@@ -2,9 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import Icon from 'components/Icon';
-import Button, { ButtonWithComponent, CloseButton } from './index';
+
+import StarIcon from 'components/Icon/icons/toggle/star';
+import StarFilledIcon from 'components/Icon/icons/toggle/starFilled';
 import { white, primary } from 'styles/colors';
+
+import Button, { ButtonWithComponent, CloseButton } from './index';
 
 const Container = styled.div`
   display: flex;
@@ -100,23 +103,14 @@ storiesOf('Button', module).add(
       </Container>
       <h4>With Icon</h4>
       <Container>
-        <Button icon={<Icon type="star" />}>With Icon</Button>
-        <Button
-          icon={<Icon type="starFilled" color={white} />}
-          variant="primary"
-        >
+        <Button icon={<StarIcon />}>With Icon</Button>
+        <Button icon={<StarFilledIcon color={white} />} variant="primary">
           With Icon
         </Button>
-        <Button
-          icon={<Icon type="starFilled" color={white} />}
-          variant="secondary"
-        >
+        <Button icon={<StarFilledIcon color={white} />} variant="secondary">
           With Icon
         </Button>
-        <Button
-          icon={<Icon type="star" color={primary.main} />}
-          variant="outline"
-        >
+        <Button icon={<StarIcon color={primary.main} />} variant="outline">
           With Icon
         </Button>
       </Container>

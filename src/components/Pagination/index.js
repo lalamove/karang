@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import noop from 'utils/noop';
 import Button from 'components/Button';
-import Icon from 'components/Icon';
+import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
 
 const Container = styled.div`
   display: inline-flex;
@@ -79,14 +79,17 @@ class Pagination extends Component {
   static getDerivedStateFromProps(props, state) {
     if (props.current && props.current !== state.current) {
       return { current: props.current };
-    } else if (props.pageSize && props.pageSize !== state.pageSize) {
+    }
+    if (props.pageSize && props.pageSize !== state.pageSize) {
       return { pageSize: props.pageSize };
-    } else if (props.total && props.total !== state.total) {
+    }
+    if (props.total && props.total !== state.total) {
       return { total: props.total };
     }
     return null;
   }
 
+  /* eslint-disable react/destructuring-assignment */
   state = {
     current: this.props.current || this.props.defaultCurrent,
     pageSize: this.props.pageSize || this.props.defaultPageSize,
@@ -94,9 +97,11 @@ class Pagination extends Component {
       // handle if total is 0
       this.props.total !== null ? this.props.total : this.props.defaultTotal,
   };
+  /* eslint-enable react/destructuring-assignment */
 
   componentDidMount() {
-    if (this.props.current && this.props.onChange === noop) {
+    const { current, onChange } = this.props;
+    if (current && onChange === noop) {
       // eslint-disable-next-line no-console
       console.warn(
         'No `onChange` handler provided with `current` prop. This will render a read-only' +
@@ -106,30 +111,41 @@ class Pagination extends Component {
   }
 
   handleChange = nextPage => {
-    const { pageSize } = this.props;
-    if (!this.props.current) {
+    const { pageSize, current, onChange } = this.props;
+    if (!current) {
       this.setState({ current: nextPage });
     }
-    this.props.onChange(nextPage, pageSize, this.fromIndex(), this.toIndex());
+    onChange(nextPage, pageSize, this.fromIndex(), this.toIndex());
   };
 
   prev = () => {
+    const { current } = this.state;
     if (this.hasPrev()) {
-      this.handleChange(this.state.current - 1);
+      this.handleChange(current - 1);
     }
   };
 
   next = () => {
+    const { current } = this.state;
     if (this.hasNext()) {
-      this.handleChange(this.state.current + 1);
+      this.handleChange(current + 1);
     }
   };
 
-  hasPrev = () => this.state.current > 1;
+  hasPrev = () => {
+    const { current } = this.state;
+    return current > 1;
+  };
 
-  hasNext = () => this.state.current < this.totalPages();
+  hasNext = () => {
+    const { current } = this.state;
+    return current < this.totalPages();
+  };
 
-  totalPages = () => Math.ceil(this.state.total / this.state.pageSize);
+  totalPages = () => {
+    const { total, pageSize } = this.state;
+    return Math.ceil(total / pageSize);
+  };
 
   fromIndex = () => {
     const { current, pageSize, total } = this.state;
@@ -168,9 +184,8 @@ class Pagination extends Component {
           {showLabel ? (
             prevLabel
           ) : (
-            <Icon
+            <DropDownIcon
               title={prevLabel}
-              type="arrow"
               size={20}
               style={{ transform: 'rotate(90deg)' }}
             />
@@ -184,9 +199,8 @@ class Pagination extends Component {
           {showLabel ? (
             nextLabel
           ) : (
-            <Icon
+            <DropDownIcon
               title={nextLabel}
-              type="arrow"
               size={20}
               style={{ transform: 'rotate(-90deg)' }}
             />

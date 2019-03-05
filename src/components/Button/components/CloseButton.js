@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Icon from 'components/Icon';
+import CloseIcon from 'components/Icon/icons/content/close';
 import { orange, offWhite } from 'styles/colors';
 
 const Button = styled.button`
@@ -22,7 +22,7 @@ const Button = styled.button`
 
 const CloseButton = props => (
   <Button {...props}>
-    <Icon type="cross" />
+    <CloseIcon />
   </Button>
 );
 

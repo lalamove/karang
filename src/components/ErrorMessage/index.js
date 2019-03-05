@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { red } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
-import Icon from 'components/Icon';
+import WarningIcon from 'components/Icon/icons/alert/warning';
 
 const Container = styled.div`
   display: flex;
@@ -17,9 +17,9 @@ const Container = styled.div`
 const Text = styled.span`
   flex-grow: 1;
   width: 0;
+  color: ${red};
   font-family: ${primaryFonts};
   font-size: ${fontSize.small};
-  color: ${red};
 `;
 
 const IconWrapper = styled.span`
@@ -32,7 +32,7 @@ const ErrorMessage = ({ error, ...rest }) =>
     <Container {...rest}>
       <Text>{error}</Text>
       <IconWrapper>
-        <Icon type="warning" color={red} size={13} />
+        <WarningIcon color={red} size={13} />
       </IconWrapper>
     </Container>
   );
