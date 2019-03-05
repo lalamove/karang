@@ -51,7 +51,7 @@ initialState = { selected: items[0] };
 **Cascading menu with icon**
 
 ```js
-const Icon = require('components/Icon').default;
+const Icon = require('../../components/Icon').default;
 const items = [
   {
     icon: <Icon type="pinFill" />,

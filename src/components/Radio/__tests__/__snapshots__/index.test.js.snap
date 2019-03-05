@@ -78,20 +78,14 @@ exports[`Snapshots Radio checked 1`] = `
     name="demo"
     type="radio"
     value="blah"
-  >
-    
-  </input>
+  />
   <span
     class="c1 c2"
-  >
-    
-  </span>
+  />
    
   <span
     class="c3 c4"
-  >
-    
-  </span>
+  />
 </label>
 `;
 
@@ -113,27 +107,27 @@ exports[`Snapshots Radio disabled 1`] = `
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
 }
 
-.dvXODT:hover .c1,
-.dvXODT > input:focus ~ .c1 {
+.ldhGzr:hover .c1,
+.ldhGzr > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.dvXODT:hover > input:not(:checked):not(:disabled) ~ .c1,
-.dvXODT:active > input:not(:checked):not(:disabled) ~ .c1 {
+.ldhGzr:hover > input:not(:checked):not(:disabled) ~ .c1,
+.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.dvXODT:active > input:not(:checked):not(:disabled) ~ .c1,
-.dvXODT > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c1,
+.ldhGzr > input:focus:not(:checked):not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.dvXODT > input:disabled ~ .c1,
-.dvXODT > input:disabled ~ .c3 {
+.ldhGzr > input:disabled ~ .c1,
+.ldhGzr > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.dvXODT > input:checked ~ .c1:before {
+.ldhGzr > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -207,20 +201,14 @@ exports[`Snapshots Radio disabled 1`] = `
     name="demo"
     type="radio"
     value="blah"
-  >
-    
-  </input>
+  />
   <span
     class="c1 c2"
-  >
-    
-  </span>
+  />
    
   <span
     class="c3 c4"
-  >
-    
-  </span>
+  />
 </label>
 `;
 
@@ -300,20 +288,14 @@ exports[`Snapshots Radio unchecked 1`] = `
     name="demo"
     type="radio"
     value="blah"
-  >
-    
-  </input>
+  />
   <span
     class="c1 c2"
-  >
-    
-  </span>
+  />
    
   <span
     class="c3 c4"
-  >
-    
-  </span>
+  />
 </label>
 `;
 
@@ -385,27 +367,27 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.cljgdb:hover .c1,
-.cljgdb > input:focus ~ .c1 {
+.gFEYXP:hover .c1,
+.gFEYXP > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.cljgdb:hover > input:not(:checked):not(:disabled) ~ .c1,
-.cljgdb:active > input:not(:checked):not(:disabled) ~ .c1 {
+.gFEYXP:hover > input:not(:checked):not(:disabled) ~ .c1,
+.gFEYXP:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.cljgdb:active > input:not(:checked):not(:disabled) ~ .c1,
-.cljgdb > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.gFEYXP:active > input:not(:checked):not(:disabled) ~ .c1,
+.gFEYXP > input:focus:not(:checked):not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.cljgdb > input:disabled ~ .c1,
-.cljgdb > input:disabled ~ .c3 {
+.gFEYXP > input:disabled ~ .c1,
+.gFEYXP > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.cljgdb > input:checked ~ .c1:before {
+.gFEYXP > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -414,7 +396,7 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.cljgdb:hover .c1 {
+.gFEYXP:hover .c1 {
   box-shadow: none;
 }
 
@@ -426,14 +408,10 @@ exports[`Snapshots Render children 1`] = `
     name="demo"
     type="radio"
     value="blah"
-  >
-    
-  </input>
+  />
   <span
     class="c1 c2"
-  >
-    
-  </span>
+  />
    
   <span
     class="c3 c4"

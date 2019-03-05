@@ -18,6 +18,24 @@ describe('Tab', () => {
       );
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('Deselected (rounded variant)', () => {
+      const wrapper = render(
+        <Tab name="foo" variant="rounded">
+          Foo
+        </Tab>
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('Selected (rounded variant)', () => {
+      const wrapper = render(
+        <Tab name="foo" selected variant="rounded">
+          Foo
+        </Tab>
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 
   describe('Functions', () => {
@@ -54,6 +72,16 @@ describe('TabBar', () => {
     it('Selected tabs', () => {
       const wrapper = render(
         <TabBar activeTab="foo">
+          <Tab name="foo">Foo</Tab>
+          <Tab name="bar">Bar</Tab>
+        </TabBar>
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('Rounded variant', () => {
+      const wrapper = render(
+        <TabBar activeTab="foo" variant="rounded">
           <Tab name="foo">Foo</Tab>
           <Tab name="bar">Bar</Tab>
         </TabBar>

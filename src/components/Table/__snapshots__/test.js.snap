@@ -96,7 +96,7 @@ exports[`snapshots align 1`] = `
   onRowClick={[Function]}
   uniqueKey="id"
 >
-  <styled.table
+  <style__SCTable
     onRowClick={[Function]}
   >
     <table
@@ -108,7 +108,7 @@ exports[`snapshots align 1`] = `
             align="left"
             key="llm-table-th-id"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -118,13 +118,13 @@ exports[`snapshots align 1`] = `
               >
                 hmnn
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
           <th
             align="left"
             key="llm-table-th-propL"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -134,13 +134,13 @@ exports[`snapshots align 1`] = `
               >
                 hmnn
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
           <th
             align="center"
             key="llm-table-th-propC"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -150,13 +150,13 @@ exports[`snapshots align 1`] = `
               >
                 Blah
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
           <th
             align="right"
             key="llm-table-th-propR"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -166,13 +166,13 @@ exports[`snapshots align 1`] = `
               >
                 hmnn
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
           <th
             align="justify"
             key="llm-table-th-propJ"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -182,12 +182,12 @@ exports[`snapshots align 1`] = `
               >
                 Blah
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
         </tr>
       </thead>
       <tbody>
-        <styled.tr
+        <style__Row
           alternate={true}
           hoverable={false}
           key="123s"
@@ -228,8 +228,8 @@ exports[`snapshots align 1`] = `
               justify
             </td>
           </tr>
-        </styled.tr>
-        <styled.tr
+        </style__Row>
+        <style__Row
           alternate={true}
           hoverable={false}
           key="123e"
@@ -270,8 +270,8 @@ exports[`snapshots align 1`] = `
               justify
             </td>
           </tr>
-        </styled.tr>
-        <styled.tr
+        </style__Row>
+        <style__Row
           alternate={true}
           hoverable={false}
           key="123w"
@@ -312,10 +312,10 @@ exports[`snapshots align 1`] = `
               justify
             </td>
           </tr>
-        </styled.tr>
+        </style__Row>
       </tbody>
     </table>
-  </styled.table>
+  </style__SCTable>
 </Table>
 `;
 
@@ -418,7 +418,7 @@ exports[`snapshots basic 1`] = `
   onRowClick={[Function]}
   uniqueKey="id"
 >
-  <styled.table
+  <style__SCTable
     onRowClick={[Function]}
   >
     <table
@@ -430,7 +430,7 @@ exports[`snapshots basic 1`] = `
             align="left"
             key="llm-table-th-name"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -440,13 +440,13 @@ exports[`snapshots basic 1`] = `
               >
                 Name
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
           <th
             align="left"
             key="llm-table-th-job"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -456,13 +456,13 @@ exports[`snapshots basic 1`] = `
               >
                 Occupation
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
           <th
             align="left"
             key="llm-table-th-hobbies"
           >
-            <styled.div
+            <style__ColTitle
               onClick={null}
               sorted="default"
             >
@@ -472,12 +472,12 @@ exports[`snapshots basic 1`] = `
               >
                 Fun
               </div>
-            </styled.div>
+            </style__ColTitle>
           </th>
         </tr>
       </thead>
       <tbody>
-        <styled.tr
+        <style__Row
           alternate={true}
           hoverable={false}
           key="123"
@@ -506,8 +506,8 @@ exports[`snapshots basic 1`] = `
               basketball
             </td>
           </tr>
-        </styled.tr>
-        <styled.tr
+        </style__Row>
+        <style__Row
           alternate={true}
           hoverable={false}
           key="312"
@@ -536,8 +536,8 @@ exports[`snapshots basic 1`] = `
               hockey
             </td>
           </tr>
-        </styled.tr>
-        <styled.tr
+        </style__Row>
+        <style__Row
           alternate={true}
           hoverable={false}
           key="352"
@@ -566,8 +566,8 @@ exports[`snapshots basic 1`] = `
               football
             </td>
           </tr>
-        </styled.tr>
-        <styled.tr
+        </style__Row>
+        <style__Row
           alternate={true}
           hoverable={false}
           key="24523"
@@ -596,8 +596,8 @@ exports[`snapshots basic 1`] = `
               buy
             </td>
           </tr>
-        </styled.tr>
-        <styled.tr
+        </style__Row>
+        <style__Row
           alternate={true}
           hoverable={false}
           key="47657"
@@ -626,8 +626,8 @@ exports[`snapshots basic 1`] = `
               eat
             </td>
           </tr>
-        </styled.tr>
-        <styled.tr
+        </style__Row>
+        <style__Row
           alternate={true}
           hoverable={false}
           key="5675"
@@ -656,9 +656,9 @@ exports[`snapshots basic 1`] = `
               sit
             </td>
           </tr>
-        </styled.tr>
+        </style__Row>
       </tbody>
     </table>
-  </styled.table>
+  </style__SCTable>
 </Table>
 `;
