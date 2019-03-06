@@ -84,6 +84,9 @@ const icon = {
   info: 'info',
 };
 
+/**
+ * Alert component is used to give feedback to the user action or state changes.
+ */
 const Alert = ({
   type,
   variant,
