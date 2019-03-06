@@ -1,7 +1,8 @@
 import React from 'react';
+import createSVGIcon from '../utils/createSVGIcon';
 
-const timer = (
-  <svg viewBox="0 0 217 217">
+const timer = createSVGIcon(
+  <React.Fragment>
     <path
       d="M108.5,188C64.7,188,29,152.3,29,108.5C29,64.7,64.7,29,108.5,29c43.8,0,79.5,35.7,79.5,79.5C188,152.3,152.3,188,108.5,188
 	z M108.5,39C70.2,39,39,70.2,39,108.5S70.2,178,108.5,178s69.5-31.2,69.5-69.5S146.8,39,108.5,39z"
@@ -14,7 +15,8 @@ const timer = (
 		c0.8-0.8,1.3-2,1.3-3.2c0-1.2-0.5-2.3-1.3-3.2C148.6,108.9,147.5,108.4,146.2,108.4L146.2,108.4z"
       />
     </g>
-  </svg>
+  </React.Fragment>,
+  'Timer'
 );
 
 export default timer;

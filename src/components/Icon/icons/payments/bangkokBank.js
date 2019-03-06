@@ -1,7 +1,8 @@
 import React from 'react';
+import createSVGIcon from '../utils/createSVGIcon';
 
-const bangkokBank = (
-  <svg viewBox="0 0 217 217" version="1.1">
+const bangkokBank = createSVGIcon(
+  <React.Fragment>
     <defs>
       <path
         d="M14.4666667,0 L202.533333,0 C210.523053,-1.56602803e-14 217,6.47694729 217,14.4666667 L217,130.2 C217,138.189719 210.523053,144.666667 202.533333,144.666667 L14.4666667,144.666667 C6.47694729,144.666667 9.78458427e-16,138.189719 0,130.2 L0,14.4666667 C-9.78458427e-16,6.47694729 6.47694729,1.46768764e-15 14.4666667,0 Z"
@@ -41,7 +42,8 @@ const bangkokBank = (
         />
       </g>
     </g>
-  </svg>
+  </React.Fragment>,
+  'BangkokBank'
 );
 
 export default bangkokBank;

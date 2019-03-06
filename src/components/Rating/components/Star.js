@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import noop from 'utils/noop';
 
-import Icon from 'components/Icon';
+import StarFilledIcon from 'components/Icon/icons/toggle/starFilled';
 import { small, large } from '../ratingSizes';
 
 const StarStyle = styled.span`
@@ -26,7 +26,7 @@ const Star = ({ onClick, onMouseEnter, onMouseLeave, color, size }) => (
     onMouseLeave={onMouseLeave}
     size={size}
   >
-    <Icon type="starFilled" color={color} size={size} />
+    <StarFilledIcon color={color} size={size} />
   </StarStyle>
 );
 

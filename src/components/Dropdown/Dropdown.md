@@ -27,7 +27,7 @@ const items = [
 Example for using `<Dropdown />` with custom `onChange()` function
 
 ```js
-const Icon = require('components/Icon').default;
+const Icon = require('components/Icon/icons/content/vmenu').default;
 const items = [
   {
     icon: <Icon type="pinFill" />,
@@ -51,7 +51,7 @@ initialState = { selected: items[0] };
 **Cascading menu with icon**
 
 ```js
-const Icon = require('../../components/Icon').default;
+const Icon = require('../../components/Icon/icons/content/vmenu').default;
 const items = [
   {
     icon: <Icon type="pinFill" />,

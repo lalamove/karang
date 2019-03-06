@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import { black, offWhite } from 'styles/colors';
 import noop from 'utils/noop';
 import Button from 'components/Button';
-import Icon from 'components/Icon';
+import EyeOnIcon from 'components/Icon/icons/status/eyeOn';
+import EyeOffIcon from 'components/Icon/icons/status/eyeOff';
 
 const SCButton = styled(Button)`
   border: none;
@@ -18,8 +19,8 @@ const SCButton = styled(Button)`
 
 const PeekButton = ({ active, onClick }) => (
   <SCButton onClick={onClick}>
-    {!active && <Icon type="privacyIcon2" color={black} size={20} />}
-    {active && <Icon type="privacyIcon1" color={black} size={20} />}
+    {!active && <EyeOffIcon color={black} size={20} />}
+    {active && <EyeOnIcon color={black} size={20} />}
   </SCButton>
 );
 

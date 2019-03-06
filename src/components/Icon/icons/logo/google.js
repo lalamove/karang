@@ -1,7 +1,8 @@
 import React from 'react';
+import createSVGIcon from '../utils/createSVGIcon';
 
-const google = (
-  <svg viewBox="0 0 217 217">
+const google = createSVGIcon(
+  <React.Fragment>
     <path
       d="M109,59.3c15.2,0,25.5,6.6,31.3,12.1l22.9-22.3C149.1,36,130.9,28,109,28c-31.7,0-59,18.2-72.4,44.6L62.8,93
 	C69.4,73.4,87.6,59.3,109,59.3C109,59.3,109,59.3,109,59.3z"
@@ -18,7 +19,8 @@ const google = (
       d="M109,190c21.9,0,40.2-7.2,53.6-19.6l-25.6-19.8c-6.8,4.8-16,8.1-28.1,8.1c-21.4,0-39.6-14.1-46.1-33.7
 	l-26.2,20.3C50,171.8,77.3,190,109,190C109,190,109,190,109,190z"
     />
-  </svg>
+  </React.Fragment>,
+  'Google'
 );
 
 export default google;

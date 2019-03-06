@@ -13,8 +13,8 @@ exports[`Alert Snapshots Alert-type-error 1`] = `
 }
 
 .c2 span {
-  margin: 2px;
   display: inline-block;
+  margin: 2px;
 }
 
 .c2 span:first-child {
@@ -39,18 +39,18 @@ exports[`Alert Snapshots Alert-type-error 1`] = `
   class="c0"
   type="error"
 >
-  <svg
+  <div
     class="c1"
-    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
-    viewBox="0 0 1024 1024"
   >
     <svg
+      focusable="false"
+      style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
       viewBox="0 0 217 217"
     >
       <g>
         <rect
+          fill="none"
           height="217"
-          style="fill:none"
           width="217"
         />
         <path
@@ -66,7 +66,7 @@ exports[`Alert Snapshots Alert-type-error 1`] = `
         />
       </g>
     </svg>
-  </svg>
+  </div>
   <div
     class="c2"
   >
@@ -93,8 +93,8 @@ exports[`Alert Snapshots Alert-type-info 1`] = `
 }
 
 .c2 span {
-  margin: 2px;
   display: inline-block;
+  margin: 2px;
 }
 
 .c2 span:first-child {
@@ -119,12 +119,12 @@ exports[`Alert Snapshots Alert-type-info 1`] = `
   class="c0"
   type="info"
 >
-  <svg
+  <div
     class="c1"
-    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
-    viewBox="0 0 1024 1024"
   >
     <svg
+      focusable="false"
+      style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
       viewBox="0 0 217 217"
     >
       <path
@@ -132,7 +132,7 @@ exports[`Alert Snapshots Alert-type-info 1`] = `
         transform="translate(27 27)"
       />
     </svg>
-  </svg>
+  </div>
   <div
     class="c2"
   >
@@ -159,8 +159,8 @@ exports[`Alert Snapshots Alert-type-success 1`] = `
 }
 
 .c2 span {
-  margin: 2px;
   display: inline-block;
+  margin: 2px;
 }
 
 .c2 span:first-child {
@@ -185,18 +185,18 @@ exports[`Alert Snapshots Alert-type-success 1`] = `
   class="c0"
   type="success"
 >
-  <svg
+  <div
     class="c1"
-    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
-    viewBox="0 0 1024 1024"
   >
     <svg
+      focusable="false"
+      style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
       viewBox="0 0 217 217"
     >
       <g>
         <rect
+          fill="none"
           height="217"
-          style="fill:none"
           width="217"
         />
         <path
@@ -207,7 +207,7 @@ exports[`Alert Snapshots Alert-type-success 1`] = `
         />
       </g>
     </svg>
-  </svg>
+  </div>
   <div
     class="c2"
   >
@@ -234,8 +234,8 @@ exports[`Alert Snapshots Alert-type-warning 1`] = `
 }
 
 .c2 span {
-  margin: 2px;
   display: inline-block;
+  margin: 2px;
 }
 
 .c2 span:first-child {
@@ -260,18 +260,18 @@ exports[`Alert Snapshots Alert-type-warning 1`] = `
   class="c0"
   type="warning"
 >
-  <svg
+  <div
     class="c1"
-    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
-    viewBox="0 0 1024 1024"
   >
     <svg
+      focusable="false"
+      style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
       viewBox="0 0 217 217"
     >
       <g>
         <rect
+          fill="none"
           height="217"
-          style="fill:none"
           width="217"
         />
         <path
@@ -287,7 +287,7 @@ exports[`Alert Snapshots Alert-type-warning 1`] = `
         />
       </g>
     </svg>
-  </svg>
+  </div>
   <div
     class="c2"
   >
@@ -314,8 +314,8 @@ exports[`Alert Snapshots Alert-variant-default 1`] = `
 }
 
 .c2 span {
-  margin: 2px;
   display: inline-block;
+  margin: 2px;
 }
 
 .c2 span:first-child {
@@ -340,12 +340,12 @@ exports[`Alert Snapshots Alert-variant-default 1`] = `
   class="c0"
   type="info"
 >
-  <svg
+  <div
     class="c1"
-    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
-    viewBox="0 0 1024 1024"
   >
     <svg
+      focusable="false"
+      style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
       viewBox="0 0 217 217"
     >
       <path
@@ -353,7 +353,7 @@ exports[`Alert Snapshots Alert-variant-default 1`] = `
         transform="translate(27 27)"
       />
     </svg>
-  </svg>
+  </div>
   <div
     class="c2"
   >
@@ -380,8 +380,8 @@ exports[`Alert Snapshots Alert-variant-toast 1`] = `
 }
 
 .c2 span {
-  margin: 2px;
   display: inline-block;
+  margin: 2px;
 }
 
 .c2 span:first-child {
@@ -407,12 +407,12 @@ exports[`Alert Snapshots Alert-variant-toast 1`] = `
   class="c0"
   type="info"
 >
-  <svg
+  <div
     class="c1"
-    style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
-    viewBox="0 0 1024 1024"
   >
     <svg
+      focusable="false"
+      style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
       viewBox="0 0 217 217"
     >
       <path
@@ -420,7 +420,7 @@ exports[`Alert Snapshots Alert-variant-toast 1`] = `
         transform="translate(27 27)"
       />
     </svg>
-  </svg>
+  </div>
   <div
     class="c2"
   >

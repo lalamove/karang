@@ -27,13 +27,14 @@
     "moment": "^2.22.2",
     "polished": "^3.0.0",
     "prop-types": "^15.6.2",
-    "react": "^16.3.2",
+    "react": "^16.6.0",
     "react-dates": "^18.0.2",
-    "react-dom": "^16.3.2",
+    "react-dom": "^16.6.0",
     "styled-components": "^3.4.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
@@ -50,7 +51,7 @@
     "date-fns": "^1.29.0",
     "downshift": "^2.0.14",
     "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-adapter-react-16": "^1.10.0",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -69,9 +70,9 @@
     "npx": "^10.2.0",
     "polished": "^3.0.0",
     "prettier": "^1.12.1",
-    "react": "^16.3.2",
+    "react": "^16.8.3",
     "react-dates": "^18.0.2",
-    "react-dom": "^16.3.2",
+    "react-dom": "^16.8.3",
     "react-styleguidist": "^7.3.11",
     "styled-components": "^3.4.10",
     "stylelint": "^9.2.0",
@@ -110,6 +111,6 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.3.3"
+    "warning": "^4.0.3"
   }
 }

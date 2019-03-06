@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Icon from 'components/Icon';
+import BikeFilledIcon from 'components/Icon/icons/vehicles/bikeFilled';
 import Select from './index';
 
 const items = [
@@ -17,7 +17,7 @@ const items = [
 
 const itemsWithIcons = items.map(item => ({
   ...item,
-  icon: <Icon type="bikeFilled" />,
+  icon: <BikeFilledIcon />,
 }));
 
 const itemsWithDisabledItem = [
@@ -45,6 +45,7 @@ class Wrapper extends Component {
   };
 
   render() {
+    const { select1, select2, select3, select4 } = this.state;
     return (
       <div>
         <h4>Basic</h4>
@@ -52,7 +53,7 @@ class Wrapper extends Component {
           label="What is your vehicle type?"
           name="vehicleType"
           items={items}
-          selectedItem={this.state.select1}
+          selectedItem={select1}
           onChange={selected => this.handleOnChange(selected, 'select1')}
         />
         <h4>With icon</h4>
@@ -60,7 +61,7 @@ class Wrapper extends Component {
           label="What is your vehicle type?"
           name="vehicleType"
           items={itemsWithIcons}
-          selectedItem={this.state.select2}
+          selectedItem={select2}
           onChange={selected => this.handleOnChange(selected, 'select2')}
         />
         <h4>With error message</h4>
@@ -68,7 +69,7 @@ class Wrapper extends Component {
           label="What is your vehicle type?"
           name="vehicleType"
           items={items}
-          selectedItem={this.state.select3}
+          selectedItem={select3}
           onChange={selected => this.handleOnChange(selected, 'select3')}
           error="Error Message"
         />
@@ -77,7 +78,7 @@ class Wrapper extends Component {
           label="With disabled item"
           name="vehicleType"
           items={itemsWithDisabledItem}
-          selectedItem={this.state.select4}
+          selectedItem={select4}
           onChange={selected => this.handleOnChange(selected, 'select4')}
         />
       </div>

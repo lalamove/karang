@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
+import PinFilledIcon from 'components/Icon/icons/maps/pinFilled';
 import Dropdown from './index';
-import Icon from '../Icon';
 
 const items = [
   {
@@ -20,56 +20,56 @@ const itemsWithSubmenu = [
   {
     value: 'TH',
     label: 'Thailand',
-    icon: <Icon type="pinFill" />,
+    icon: <PinFilledIcon />,
     options: [
       {
         value: 'TH_BKK',
         label: 'Bangkok',
-        icon: <Icon type="pinFill" />,
+        icon: <PinFilledIcon />,
       },
       {
         value: 'TH_CNX',
         label: 'Chiang Mai',
-        icon: <Icon type="pinFill" />,
+        icon: <PinFilledIcon />,
       },
     ],
   },
   {
     value: 'HK_HKG',
     label: 'Hong Kong',
-    icon: <Icon type="pinFill" />,
+    icon: <PinFilledIcon />,
   },
   {
     value: 'VN_HCM',
     label: 'Vietnam',
-    icon: <Icon type="pinFill" />,
+    icon: <PinFilledIcon />,
   },
   {
     value: 'PH',
     label: 'Philippines',
-    icon: <Icon type="pinFill" />,
+    icon: <PinFilledIcon />,
     options: [
       {
         value: 'PH_MNL',
         label: 'Manila',
-        icon: <Icon type="pinFill" />,
+        icon: <PinFilledIcon />,
       },
       {
         value: 'PH_CEB',
         label: 'Cebu',
-        icon: <Icon type="pinFill" />,
+        icon: <PinFilledIcon />,
       },
     ],
   },
   {
     value: 'SG_SGN',
     label: 'Singapore',
-    icon: <Icon type="pinFill" />,
+    icon: <PinFilledIcon />,
   },
   {
     value: 'TW_TPE',
     label: 'Taiwan',
-    icon: <Icon type="pinFill" />,
+    icon: <PinFilledIcon />,
   },
 ];
 
@@ -80,7 +80,7 @@ const Basic = () => (
     <h4>Basic with icon</h4>
     <Dropdown
       items={items.map(item =>
-        Object.assign({}, item, { icon: <Icon type="pinFill" /> })
+        Object.assign({}, item, { icon: <PinFilledIcon /> })
       )}
     />
     <h4>Block</h4>
