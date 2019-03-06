@@ -18,7 +18,7 @@ const colors = [
 describe('Badge', () => {
   it('With colors', () => {
     colors.forEach(color => {
-      expect(render(<Pill color={color}>12</Pill>)).toMatchSnapshot();
+      expect(render(<Pill variant={color}>12</Pill>)).toMatchSnapshot();
     });
   });
 
@@ -26,7 +26,7 @@ describe('Badge', () => {
     colors.forEach(color => {
       expect(
         render(
-          <Pill color={color} solid>
+          <Pill variant={color} solid>
             12
           </Pill>
         )

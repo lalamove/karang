@@ -16,25 +16,25 @@ storiesOf('Badge', module)
     <Container>
       <h4>Solid</h4>
       <Badge solid>Unknown</Badge>
-      <Badge color="secondary" solid>
+      <Badge variant="secondary" solid>
         Assigning
       </Badge>
-      <Badge color="pictonBlue" solid>
+      <Badge variant="pictonBlue" solid>
         Matched
       </Badge>
-      <Badge color="pictonBlueDark" solid>
+      <Badge variant="pictonBlueDark" solid>
         On-going
       </Badge>
-      <Badge color="valencia" solid>
+      <Badge variant="valencia" solid>
         Cancelled
       </Badge>
-      <Badge color="mountainMeadow" solid>
+      <Badge variant="mountainMeadow" solid>
         Completed
       </Badge>
       <h4>Solid in small size</h4>
       <Badge
         icon={<Icon type="unsave3" size={12} />}
-        color="secondary"
+        variant="secondary"
         size="small"
         solid
       >
@@ -46,15 +46,15 @@ storiesOf('Badge', module)
     <Container>
       <h4>Subtle</h4>
       <Badge>Unknown</Badge>
-      <Badge color="secondary">Assigning</Badge>
-      <Badge color="pictonBlue">Matched</Badge>
-      <Badge color="pictonBlueDark">On-going</Badge>
-      <Badge color="valencia">Cancelled</Badge>
-      <Badge color="mountainMeadow">Completed</Badge>
+      <Badge variant="secondary">Assigning</Badge>
+      <Badge variant="pictonBlue">Matched</Badge>
+      <Badge variant="pictonBlueDark">On-going</Badge>
+      <Badge variant="valencia">Cancelled</Badge>
+      <Badge variant="mountainMeadow">Completed</Badge>
       <h4>Subtle in small size</h4>
       <Badge
         icon={<Icon type="unsave3" size={12} />}
-        color="secondary"
+        variant="secondary"
         size="small"
       >
         Unsaved Delivery Info

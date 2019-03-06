@@ -36,7 +36,7 @@ const StyledBadge = styled.span.attrs({
   line-height: 1;
   text-align: center;
   border: 1px solid;
-  border-color: ${({ color }) => colorsMap[color] || colorsMap.default};
+  border-color: ${({ variant }) => colorsMap[variant] || colorsMap.default};
   ${({ size }) =>
     size === 'small'
       ? css`
@@ -48,12 +48,12 @@ const StyledBadge = styled.span.attrs({
   ${({ solid }) =>
     solid
       ? css`
-          background-color: ${({ color }) =>
-            colorsMap[color] || colorsMap.default};
+          background-color: ${({ variant }) =>
+            colorsMap[variant] || colorsMap.default};
           color: ${white};
         `
       : css`
-          color: ${({ color }) => colorsMap[color] || colorsMap.default};
+          color: ${({ variant }) => colorsMap[variant] || colorsMap.default};
         `};
 `;
 
@@ -65,16 +65,16 @@ const Text = styled.span`
 /**
  * Badge component is label with a background color for displaying status or text.
  */
-const Badge = ({ icon, color, children, ...rest }) => {
+const Badge = ({ icon, variant, children, ...rest }) => {
   if (icon)
     return (
-      <StyledBadge {...rest} color={color}>
+      <StyledBadge {...rest} variant={variant}>
         {icon}
         <Text>{children}</Text>
       </StyledBadge>
     );
   return (
-    <StyledBadge {...rest} color={color}>
+    <StyledBadge {...rest} variant={variant}>
       {children}
     </StyledBadge>
   );
@@ -85,8 +85,8 @@ Badge.propTypes = {
   children: node.isRequired,
   /** Icon component shown next to the text */
   icon: node,
-  /** Color of Badge component */
-  color: oneOf([
+  /** Variant color of Badge component */
+  variant: oneOf([
     'default',
     'mineShaft',
     'mountainMeadow',
@@ -106,7 +106,7 @@ Badge.propTypes = {
 
 Badge.defaultProps = {
   icon: null,
-  color: 'default',
+  variant: 'default',
   size: 'default',
   solid: false,
 };

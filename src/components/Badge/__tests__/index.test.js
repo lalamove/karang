@@ -18,7 +18,7 @@ const colors = [
 describe('Badge', () => {
   it('With colors', () => {
     colors.forEach(color => {
-      expect(render(<Badge color={color}>Testing</Badge>)).toMatchSnapshot();
+      expect(render(<Badge variant={color}>Testing</Badge>)).toMatchSnapshot();
     });
   });
 
@@ -26,7 +26,7 @@ describe('Badge', () => {
     colors.forEach(color => {
       expect(
         render(
-          <Badge color={color} solid>
+          <Badge variant={color} solid>
             Testing
           </Badge>
         )

@@ -14,12 +14,12 @@ import { Badge } from 'lalamove-ui';
 
 **Solid colored badge**
 ```js
-<Badge color="secondary" solid>Assigning</Badge>
+<Badge variant="secondary" solid>Assigning</Badge>
 ```
 
 **Solid colored badge with smaller size and icon**
 ```js
-<Badge color="secondary" icon={<Icon type="unsave" size={12}/>} size="small" solid>Unsaved</Badge>
+<Badge variant="secondary" icon={<Icon type="unsave" size={12}/>} size="small" solid>Unsaved</Badge>
 ```
 
 **Subtle Badge**
@@ -29,10 +29,10 @@ import { Badge } from 'lalamove-ui';
 
 **Subtle colored badge**
 ```js
-<Badge color="secondary">Assigning</Badge>
+<Badge variant="secondary">Assigning</Badge>
 ```
 
 **Subtle colored badge with smaller size and icon**
 ```js
-<Badge color="secondary" icon={<Icon type="unsave" size={12}/>} size="small">Unsaved</Badge>
+<Badge variant="secondary" icon={<Icon type="unsave" size={12}/>} size="small">Unsaved</Badge>
 ```

@@ -15,38 +15,38 @@ storiesOf('Pill', module)
     <Container>
       <h4>Solid</h4>
       <Pill solid>12</Pill>
-      <Pill color="secondary" solid>
+      <Pill variant="secondary" solid>
         12
       </Pill>
-      <Pill color="pictonBlue" solid>
+      <Pill variant="pictonBlue" solid>
         12
       </Pill>
-      <Pill color="pictonBlueDark" solid>
+      <Pill variant="pictonBlueDark" solid>
         12
       </Pill>
-      <Pill color="valencia" solid>
+      <Pill variant="valencia" solid>
         12
       </Pill>
-      <Pill color="mountainMeadow" solid>
+      <Pill variant="mountainMeadow" solid>
         12
       </Pill>
       <h4>Solid in small size</h4>
       <Pill size="small" solid>
         12
       </Pill>
-      <Pill color="secondary" size="small" solid>
+      <Pill variant="secondary" size="small" solid>
         12
       </Pill>
-      <Pill color="pictonBlue" size="small" solid>
+      <Pill variant="pictonBlue" size="small" solid>
         12
       </Pill>
-      <Pill color="pictonBlueDark" size="small" solid>
+      <Pill variant="pictonBlueDark" size="small" solid>
         12
       </Pill>
-      <Pill color="valencia" size="small" solid>
+      <Pill variant="valencia" size="small" solid>
         12
       </Pill>
-      <Pill color="mountainMeadow" size="small" solid>
+      <Pill variant="mountainMeadow" size="small" solid>
         12
       </Pill>
     </Container>
@@ -55,26 +55,26 @@ storiesOf('Pill', module)
     <Container>
       <h4>Subtle</h4>
       <Pill>12</Pill>
-      <Pill color="secondary">12</Pill>
-      <Pill color="pictonBlue">12</Pill>
-      <Pill color="pictonBlueDark">12</Pill>
-      <Pill color="valencia">12</Pill>
-      <Pill color="mountainMeadow">12</Pill>
+      <Pill variant="secondary">12</Pill>
+      <Pill variant="pictonBlue">12</Pill>
+      <Pill variant="pictonBlueDark">12</Pill>
+      <Pill variant="valencia">12</Pill>
+      <Pill variant="mountainMeadow">12</Pill>
       <h4>Subtle in small size</h4>
       <Pill size="small">12</Pill>
-      <Pill color="secondary" size="small">
+      <Pill variant="secondary" size="small">
         12
       </Pill>
-      <Pill color="pictonBlue" size="small">
+      <Pill variant="pictonBlue" size="small">
         12
       </Pill>
-      <Pill color="pictonBlueDark" size="small">
+      <Pill variant="pictonBlueDark" size="small">
         12
       </Pill>
-      <Pill color="valencia" size="small">
+      <Pill variant="valencia" size="small">
         12
       </Pill>
-      <Pill color="mountainMeadow" size="small">
+      <Pill variant="mountainMeadow" size="small">
         12
       </Pill>
     </Container>

@@ -15,12 +15,12 @@ import { Pill } from 'lalamove-ui';
 
 **Solid colored badge**
 ```js
-<Pill color="secondary" solid>12</Pill>
+<Pill variant="secondary" solid>12</Pill>
 ```
 
 **Solid colored badge with smaller size**
 ```js
-<Pill color="secondary" size="small" solid>12</Pill>
+<Pill variant="secondary" size="small" solid>12</Pill>
 ```
 
 **Subtle Badge**
@@ -30,10 +30,10 @@ import { Pill } from 'lalamove-ui';
 
 **Subtle colored badge**
 ```js
-<Pill color="secondary">12</Pill>
+<Pill variant="secondary">12</Pill>
 ```
 
 **Subtle colored badge with smaller size**
 ```js
-<Pill color="secondary" size="small">12</Pill>
+<Pill variant="secondary" size="small">12</Pill>
 ```

@@ -39,24 +39,24 @@ const StyledPill = styled.span.attrs({
   text-align: center;
   border: 1px solid;
   border-radius: 1em;
-  border-color: ${({ color }) => colorsMap[color] || colorsMap.default};
+  border-color: ${({ variant }) => colorsMap[variant] || colorsMap.default};
   ${({ solid }) =>
     solid
       ? css`
-          background-color: ${({ color }) =>
-            colorsMap[color] || colorsMap.default};
+          background-color: ${({ variant }) =>
+            colorsMap[variant] || colorsMap.default};
           color: ${white};
         `
       : css`
-          color: ${({ color }) => colorsMap[color] || colorsMap.default};
+          color: ${({ variant }) => colorsMap[variant] || colorsMap.default};
         `};
 `;
 
 /**
  * Pill component is label with a background color for displaying numerical value.
  */
-const Pill = ({ color, children, ...rest }) => (
-  <StyledPill {...rest} color={color}>
+const Pill = ({ variant, children, ...rest }) => (
+  <StyledPill {...rest} variant={variant}>
     {children}
   </StyledPill>
 );
@@ -64,8 +64,8 @@ const Pill = ({ color, children, ...rest }) => (
 Pill.propTypes = {
   /** Text in the Pill component */
   children: node.isRequired,
-  /** Color of Pill component */
-  color: oneOf([
+  /** Variant of Pill component */
+  variant: oneOf([
     'default',
     'mineShaft',
     'mountainMeadow',
@@ -84,7 +84,7 @@ Pill.propTypes = {
 };
 
 Pill.defaultProps = {
-  color: 'default',
+  variant: 'default',
   size: 'default',
   solid: false,
 };
