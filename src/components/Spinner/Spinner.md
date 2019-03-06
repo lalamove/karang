@@ -5,9 +5,13 @@ import { Spinner } from 'lalamove-ui';
 ```
 
 **Basic**
-
 ```js
 <Spinner />
+```
+
+**Basic with custom size**
+```js
+<Spinner size={36} />
 ```
 
 **Basic with large size**

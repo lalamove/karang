@@ -1,61 +1,43 @@
-import { oneOf, string } from 'prop-types';
-import styled, { css, keyframes } from 'styled-components';
-import { transparentize } from 'polished';
+import React from 'react';
+import { oneOfType, string, number } from 'prop-types';
 import { primary } from 'styles/colors';
 
-const load8 = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-  `;
+const sizeMap = {
+  large: 80,
+};
 
-const Spinner = styled.span`
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  vertical-align: middle;
-
-  border-width: 0.2em;
-  border-style: solid;
-  border-color: ${({ color }) => transparentize(0.8, color)};
-  border-left-color: ${({ color }) => color};
-
-  ${({ size }) =>
-    size === 'large' &&
-    css`
-      border-width: 0.1em;
-    `}text-indent: -9999em;
-  transform: translateZ(0);
-  animation: ${load8} 1.1s infinite linear;
-
-  &,
-  &:after {
-    border-radius: 50%;
-    width: 1em;
-    height: 1em;
-    ${({ size }) =>
-      size === 'large'
-        ? css`
-            display: block;
-            font-size: 10rem;
-          `
-        : css`
-            font-size: 1rem;
-          `};
-  }
-`;
+const Spinner = ({ size, color }) => (
+  <svg
+    width={sizeMap[size] || size}
+    height={sizeMap[size] || size}
+    viewBox="0 0 50 50"
+    xmlSpace="preserve"
+  >
+    <path
+      fill={color}
+      d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+    >
+      <animateTransform
+        attributeType="xml"
+        attributeName="transform"
+        type="rotate"
+        from="0 25 25"
+        to="360 25 25"
+        dur="0.6s"
+        repeatCount="indefinite"
+      />
+    </path>
+  </svg>
+);
 
 Spinner.defaultProps = {
-  size: null,
+  size: 16,
   color: primary.main,
 };
 
 Spinner.propTypes = {
-  /** Size of the spinner */
-  size: oneOf(['large']),
+  /** Size of the spinner, in number or `large` */
+  size: oneOfType([string, number]),
   /** Color of the spinner */
   color: string,
 };

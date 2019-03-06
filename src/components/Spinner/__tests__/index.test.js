@@ -1,9 +1,13 @@
 /* globals render */
 import React from 'react';
-import Spinner from './index';
+import Spinner from '../index';
 
 test('Spinner', () => {
   expect(render(<Spinner />)).toMatchSnapshot();
+});
+
+test('Spinner with custom size', () => {
+  expect(render(<Spinner size={36} />)).toMatchSnapshot();
 });
 
 test('Spinner with large size', () => {
