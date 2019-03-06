@@ -73,7 +73,7 @@ export default App;
 
 #### Using exported UI components
 Quick example to **get you started** in your own components / containers:
-```js
+```bash
 import React, { Fragment } from 'react';
 import { Radio } from 'lalamove-ui';
 
@@ -89,7 +89,7 @@ export default MyComponent;
 ```
 
 We do support partial import for smaller built too
-```js
+```bash
 import Radio from 'lalamove-ui/dist/components/Radio';
 ```
 
