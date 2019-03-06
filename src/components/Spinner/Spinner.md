@@ -1,3 +1,6 @@
+#### When to use:
+* Used to indicate a loading state.
+
 #### Usage:
 
 ```js static
@@ -9,17 +12,19 @@ import { Spinner } from 'lalamove-ui';
 <Spinner />
 ```
 
-**Basic with custom size**
+**Changing the size**
+
+You can change the sizing of the component by passing number (in `px`) or `large`.
 ```js
 <Spinner size={36} />
 ```
-
-**Basic with large size**
 ```js
 <Spinner size="large" />
 ```
 
-**Basic with custom color**
+**Changing the color**
+
+You can customize the component color by passing color code.
 ```js
 <Spinner color="#d8534f" />
 ```
