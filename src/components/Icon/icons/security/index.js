@@ -1,9 +1,2 @@
-import key from './key';
-import lock from './lock';
-
-const securityIcons = {
-  key,
-  lock,
-};
-
-export default securityIcons;
+export { default as key } from './key';
+export { default as lock } from './lock';

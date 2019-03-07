@@ -10,7 +10,7 @@ stages:
 - doc
 
 test:
-  image: node:10.14-alpine
+  image: node:10-alpine
   stage: test
   tags:
     - k8s
@@ -20,7 +20,7 @@ test:
     - yarn test-coverage
 
 version:
-  image: node:10.14-alpine
+  image: node:10-alpine
   stage: version
   only:
     refs:
@@ -44,7 +44,7 @@ version:
      - echo "Version updated"
 
 storybook:
-  image: node:10.14-alpine
+  image: node:10-alpine
   stage: doc
   tags:
     - k8s
@@ -66,7 +66,7 @@ storybook:
     - echo "Upload completed"
 
 styleguide:
-  image: node:10.14-alpine
+  image: node:10-alpine
   stage: doc
   tags:
     - k8s

@@ -1,25 +1,10 @@
-import amex from './amex';
-import android from './android';
-import apple from './apple';
-import facebook from './facebook';
-import google from './google';
-import googleColored from './googleColored';
-import lalamove from './lalamove';
-import lalamoveFilled from './lalamoveFilled';
-import master from './master';
-import visa from './visa';
-
-const LogoIcons = {
-  amex,
-  android,
-  apple,
-  facebook,
-  google,
-  googleColored,
-  lalamove,
-  lalamoveFilled,
-  master,
-  visa,
-};
-
-export default LogoIcons;
+export { default as amex } from './amex';
+export { default as android } from './android';
+export { default as apple } from './apple';
+export { default as facebook } from './facebook';
+export { default as google } from './google';
+export { default as googleColored } from './googleColored';
+export { default as lalamove } from './lalamove';
+export { default as lalamoveFilled } from './lalamoveFilled';
+export { default as master } from './master';
+export { default as visa } from './visa';

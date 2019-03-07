@@ -3,7 +3,7 @@ import { render } from 'enzyme';
 import { red, orange } from 'styles/colors';
 
 import Icon from '../index';
-import icons from '../icons';
+import * as icons from '../icons';
 
 const optionalProps = {
   size: [20, 40],

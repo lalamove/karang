@@ -8,26 +8,26 @@ import { fontSize } from 'styles/fonts';
 import Alert from '../Alert';
 
 // Category
-import AlertIcons from './icons/alert';
-import ArrowsIcons from './icons/arrows';
-import CommunicationIcons from './icons/communication';
-import ContentIcons from './icons/content';
-import DateIcons from './icons/date';
-import DevicesIcons from './icons/devices';
-import EmojiIcons from './icons/emoji';
-import FilesIcons from './icons/files';
-import ImagesIcons from './icons/images';
-import LogoIcons from './icons/logo';
-import MapsIcons from './icons/maps';
-import PaymentsIcons from './icons/payments';
-import SecurityIcons from './icons/security';
-import ServicesIcons from './icons/services';
-import SocialIcons from './icons/social';
-import StatusIcons from './icons/status';
-import ToggleIcons from './icons/toggle';
-import UserIcons from './icons/users';
-import VehiclesIcons from './icons/vehicles';
-import OthersIcons from './icons/others'; // TODO: DEPRECATED, for backward compatibility only
+import * as AlertIcons from './icons/alert';
+import * as ArrowsIcons from './icons/arrows';
+import * as CommunicationIcons from './icons/communication';
+import * as ContentIcons from './icons/content';
+import * as DateIcons from './icons/date';
+import * as DevicesIcons from './icons/devices';
+import * as EmojiIcons from './icons/emoji';
+import * as FilesIcons from './icons/files';
+import * as ImagesIcons from './icons/images';
+import * as LogoIcons from './icons/logo';
+import * as MapsIcons from './icons/maps';
+import * as PaymentsIcons from './icons/payments';
+import * as SecurityIcons from './icons/security';
+import * as ServicesIcons from './icons/services';
+import * as SocialIcons from './icons/social';
+import * as StatusIcons from './icons/status';
+import * as ToggleIcons from './icons/toggle';
+import * as UserIcons from './icons/users';
+import * as VehiclesIcons from './icons/vehicles';
+import * as OthersIcons from './icons/others'; // TODO: DEPRECATED, for backward compatibility only
 
 const Container = styled.div`
   display: flex;

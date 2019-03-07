@@ -1,31 +1,13 @@
-import group from './group';
-import groupBanned from './groupBanned';
-import groupFilled from './groupFilled';
-import groupMark from './groupMark';
-import orgChart from './orgChart';
-import passenger from './passenger';
-import userAdd from './userAdd';
-import userAssign from './userAssign';
-import userGroup from './userGroup';
-import userMark from './userMark';
-import userMarkColored from './userMarkColored';
-import userOrder from './userOrder';
-import userTel from './userTel';
-
-const UsersIcons = {
-  group,
-  groupBanned,
-  groupFilled,
-  groupMark,
-  orgChart,
-  passenger,
-  userAdd,
-  userAssign,
-  userGroup,
-  userMark,
-  userMarkColored,
-  userOrder,
-  userTel,
-};
-
-export default UsersIcons;
+export { default as group } from './group';
+export { default as groupBanned } from './groupBanned';
+export { default as groupFilled } from './groupFilled';
+export { default as groupMark } from './groupMark';
+export { default as orgChart } from './orgChart';
+export { default as passenger } from './passenger';
+export { default as userAdd } from './userAdd';
+export { default as userAssign } from './userAssign';
+export { default as userGroup } from './userGroup';
+export { default as userMark } from './userMark';
+export { default as userMarkColored } from './userMarkColored';
+export { default as userOrder } from './userOrder';
+export { default as userTel } from './userTel';
