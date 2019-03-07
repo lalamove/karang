@@ -3,10 +3,10 @@ import { arrayOf, func, oneOf, shape, string, bool } from 'prop-types';
 import Downshift from 'downshift';
 import styled, { css } from 'styled-components';
 
+import noop from 'utils/noop';
 import DropdownButton from './components/DropdownButton';
 import DropdownList from './components/DropdownList';
 import ExpandButton from './components/ExpandButton';
-import noop from 'utils/noop';
 
 const validIndex = /(\d+)_(-?\d+)/;
 let setHighlightedIndex;
@@ -23,9 +23,13 @@ const Container = styled.div`
     `};
 `;
 
+/* eslint-disable react/destructuring-assignment */
 class Dropdown extends Component {
   static propTypes = {
-    /** Fit the width to its parent width when it is `true` */
+    /** Fit the width to its parent width when it is `true`.
+     * For Dropdown with cascading menu, `block` is only applied to the top-level menu.
+     * See **Block with cascading menu** example below.
+     */
     block: bool,
     /** Pop menu items */
     items: arrayOf(shape({})).isRequired,
