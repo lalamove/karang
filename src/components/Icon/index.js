@@ -2,14 +2,12 @@ import React from 'react';
 import warning from 'warning';
 import { string } from 'prop-types';
 
-import icons from './icons';
+import * as icons from './icons';
 
 const { NODE_ENV } = process.env;
 
-console.log(NODE_ENV);
-
 let warnOnce = false;
-const GenericIcon = props => {
+const Icon = props => {
   if (NODE_ENV !== 'production') {
     warning(
       warnOnce,
@@ -23,12 +21,12 @@ const GenericIcon = props => {
     warnOnce = true;
   }
   const { type, ...rest } = props;
-  const Icon = icons[type];
-  return <Icon {...rest} />;
+  const I = icons[type];
+  return <I {...rest} />;
 };
 
-GenericIcon.propTypes = {
+Icon.propTypes = {
   type: string.isRequired,
 };
 
-export default GenericIcon;
+export default Icon;

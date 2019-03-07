@@ -1,11 +1,3 @@
-import calendar from './calendar';
-import recent from './recent';
-import timer from './timer';
-
-const DateIcons = {
-  calendar,
-  recent,
-  timer,
-};
-
-export default DateIcons;
+export { default as calendar } from './calendar';
+export { default as recent } from './recent';
+export { default as timer } from './timer';

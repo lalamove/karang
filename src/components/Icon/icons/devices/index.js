@@ -1,13 +1,4 @@
-import desktop from './desktop';
-import holdingPhone from './holdingPhone';
-import notebook from './notebook';
-import phone from './phone';
-
-const devicesIcons = {
-  desktop,
-  holdingPhone,
-  notebook,
-  phone,
-};
-
-export default devicesIcons;
+export { default as desktop } from './desktop';
+export { default as holdingPhone } from './holdingPhone';
+export { default as notebook } from './notebook';
+export { default as phone } from './phone';

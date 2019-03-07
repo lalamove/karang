@@ -1,25 +1,10 @@
-import favourite from './favourite';
-import share from './share';
-import socialFacebook from './socialFacebook';
-import socialFacebookColored from './socialFacebookColored';
-import socialGooglePlus from './socialGooglePlus';
-import socialGooglePlusColored from './socialGooglePlusColored';
-import socialInstagram from './socialInstagram';
-import socialLinkedin from './socialLinkedin';
-import socialNetwork from './socialNetwork';
-import socialYoutube from './socialYoutube';
-
-const StatusIcons = {
-  favourite,
-  share,
-  socialFacebook,
-  socialFacebookColored,
-  socialGooglePlus,
-  socialGooglePlusColored,
-  socialInstagram,
-  socialLinkedin,
-  socialNetwork,
-  socialYoutube,
-};
-
-export default StatusIcons;
+export { default as favourite } from './favourite';
+export { default as share } from './share';
+export { default as socialFacebook } from './socialFacebook';
+export { default as socialFacebookColored } from './socialFacebookColored';
+export { default as socialGooglePlus } from './socialGooglePlus';
+export { default as socialGooglePlusColored } from './socialGooglePlusColored';
+export { default as socialInstagram } from './socialInstagram';
+export { default as socialLinkedin } from './socialLinkedin';
+export { default as socialNetwork } from './socialNetwork';
+export { default as socialYoutube } from './socialYoutube';

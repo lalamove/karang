@@ -1,45 +1,20 @@
-import AlertIcons from './alert';
-import ArrowsIcons from './arrows';
-import CommunicationIcons from './communication';
-import ContentIcons from './content';
-import DateIcons from './date';
-import DevicesIcons from './devices';
-import EmojiIcons from './emoji';
-import FilesIcons from './files';
-import ImagesIcons from './images';
-import LogoIcons from './logo';
-import MapsIcons from './maps';
-import PaymentsIcons from './payments';
-import SecurityIcons from './security';
-import ServicesIcons from './services';
-import SocialIcons from './social';
-import StatusIcons from './status';
-import ToggleIcons from './toggle';
-import UsersIcons from './users';
-import VehiclesIcons from './vehicles';
-import OthersIcons from './others'; // TODO: DEPRECATED, for backward compatibility only
-
-const icons = Object.freeze({
-  ...OthersIcons, // TODO: DEPRECATED, for backward compatibility only
-  ...AlertIcons,
-  ...ArrowsIcons,
-  ...CommunicationIcons,
-  ...ContentIcons,
-  ...DateIcons,
-  ...DevicesIcons,
-  ...EmojiIcons,
-  ...FilesIcons,
-  ...ImagesIcons,
-  ...LogoIcons,
-  ...MapsIcons,
-  ...PaymentsIcons,
-  ...SecurityIcons,
-  ...ServicesIcons,
-  ...SocialIcons,
-  ...StatusIcons,
-  ...ToggleIcons,
-  ...UsersIcons,
-  ...VehiclesIcons,
-});
-
-export default icons;
+export * from './alert';
+export * from './arrows';
+export * from './communication';
+export * from './content';
+export * from './date';
+export * from './devices';
+export * from './emoji';
+export * from './files';
+export * from './images';
+export * from './logo';
+export * from './maps';
+export * from './others';
+export * from './payments';
+export * from './security';
+export * from './services';
+export * from './social';
+export * from './status';
+export * from './toggle';
+export * from './users';
+export * from './vehicles';
