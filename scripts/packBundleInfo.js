@@ -27,6 +27,25 @@ async function createModulePackages({ from, to }) {
   );
 }
 
+async function copyPackageJson({ from, to }) {
+  const directoryPackages = glob
+    .sync('*/**/package.json', { cwd: from })
+    .map(path.dirname);
+  await Promise.all(
+    directoryPackages.map(async pack => {
+      const outPutPath = [
+        path.join(to, pack, 'package.json'),
+        path.join(to, 'esm', pack, 'package.json'),
+      ];
+      await Promise.all(
+        outPutPath.map(async out =>
+          fs.copyFile(path.join(from, pack, 'package.json'), out)
+        )
+      );
+    })
+  );
+}
+
 async function createPackageFile(from) {
   const packageData = await fs.readFile(
     path.resolve(from, './package.json'),
@@ -62,6 +81,10 @@ async function main() {
   try {
     await createPackageFile(packagePath);
     await createModulePackages({
+      from: srcPath,
+      to: buildPath,
+    });
+    await copyPackageJson({
       from: srcPath,
       to: buildPath,
     });
