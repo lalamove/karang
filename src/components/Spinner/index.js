@@ -39,7 +39,7 @@ Spinner.defaultProps = {
 };
 
 Spinner.propTypes = {
-  /** Size of the spinner, in number or `large` */
+  /** Size of the spinner, in number (in `px`) or `large` */
   size: oneOfType([string, number]),
   /** Color of the spinner */
   color: string,

@@ -14,7 +14,7 @@ import { Spinner } from 'lalamove-ui';
 
 **Changing the size**
 
-You can change the sizing of the component by passing number (in `px`) or `large`.
+You can change the size of the component by passing number (in `px`) or `large`.
 ```js
 <Spinner size={36} />
 ```
@@ -26,5 +26,5 @@ You can change the sizing of the component by passing number (in `px`) or `large
 
 You can customize the component color by passing color code.
 ```js
-<Spinner color="#d8534f" />
+<Spinner color="#2FA0ED" />
 ```
