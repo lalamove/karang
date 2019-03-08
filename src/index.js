@@ -27,6 +27,7 @@ export { default as Pagination } from './components/Pagination';
 export { default as Radio, RadioGroup } from './components/Radio';
 export { default as Rating } from './components/Rating';
 export { default as Select } from './components/Select';
+export { default as Spinner } from './components/Spinner';
 export { default as Tab, TabBar } from './components/Tabs';
 export { default as Table } from './components/Table';
 export { default as TextArea } from './components/TextArea';
