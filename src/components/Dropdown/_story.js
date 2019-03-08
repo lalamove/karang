@@ -94,6 +94,7 @@ class CascadingMenu extends Component {
   state = {
     dropdown1: itemsWithSubmenu[5],
     dropdown2: itemsWithSubmenu[1],
+    dropdown3: itemsWithSubmenu[0],
   };
 
   handleChange = (name, item) => {
@@ -101,7 +102,7 @@ class CascadingMenu extends Component {
   };
 
   render() {
-    const { dropdown1, dropdown2 } = this.state;
+    const { dropdown1, dropdown2, dropdown3 } = this.state;
     return (
       <div>
         <h4>Cascading menu with icon</h4>
@@ -117,6 +118,27 @@ class CascadingMenu extends Component {
             onChange={item => this.handleChange('dropdown2', item)}
             selectedItem={dropdown2}
             direction="left"
+          />
+        </div>
+        <h4 style={{ clear: 'both' }}>
+          Cascading menu with <code>block</code> set to <code>true</code>
+        </h4>
+        <span style={{ color: 'white', background: '#fea000' }}>
+          Container (shown with padding here):
+        </span>
+        <div
+          style={{
+            width: '50%',
+            padding: '1em',
+            border: '1px solid #fea000',
+            background: '#fff8e1',
+          }}
+        >
+          <Dropdown
+            items={itemsWithSubmenu}
+            onChange={item => this.handleChange('dropdown3', item)}
+            selectedItem={dropdown3}
+            block
           />
         </div>
       </div>
