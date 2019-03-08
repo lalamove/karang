@@ -27,9 +27,7 @@ const colorsMap = {
   valencia: valencia.main,
 };
 
-const StyledBadge = styled.span.attrs({
-  title: props => props.children,
-})`
+const StyledBadge = styled.span`
   display: inline-block;
   font-size: ${fontSize.small};
   font-weight: bold;
@@ -68,13 +66,13 @@ const Text = styled.span`
 const Badge = ({ icon, variant, children, ...rest }) => {
   if (icon)
     return (
-      <StyledBadge {...rest} variant={variant}>
+      <StyledBadge {...rest} title={children} variant={variant}>
         {icon}
         <Text>{children}</Text>
       </StyledBadge>
     );
   return (
-    <StyledBadge {...rest} variant={variant}>
+    <StyledBadge {...rest} title={children} variant={variant}>
       {children}
     </StyledBadge>
   );
