@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 
+import UnsaveIcon from 'components/Icon/icons/content/unsave3';
 import Badge from './index';
-import Icon from '../Icon';
 
 const Container = styled.div`
   & > span {
@@ -33,7 +33,7 @@ storiesOf('Badge', module)
       </Badge>
       <h4>Solid in small size</h4>
       <Badge
-        icon={<Icon type="unsave3" size={12} />}
+        icon={<UnsaveIcon size={12} />}
         variant="secondary"
         size="small"
         solid
@@ -52,11 +52,7 @@ storiesOf('Badge', module)
       <Badge variant="valencia">Cancelled</Badge>
       <Badge variant="mountainMeadow">Completed</Badge>
       <h4>Subtle in small size</h4>
-      <Badge
-        icon={<Icon type="unsave3" size={12} />}
-        variant="secondary"
-        size="small"
-      >
+      <Badge icon={<UnsaveIcon size={12} />} variant="secondary" size="small">
         Unsaved Delivery Info
       </Badge>
     </Container>
