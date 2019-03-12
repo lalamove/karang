@@ -8,6 +8,7 @@ const SVGIcon = ({
   style, // TODO: should we keep this, is there really usecase for this?
   viewBox,
   children,
+  title,
   ...remainProps
 }) => {
   const rootStyle = {
@@ -21,6 +22,7 @@ const SVGIcon = ({
   return (
     // focusable IE specific feature
     <svg focusable="false" style={rootStyle} viewBox={viewBox} {...remainProps}>
+      <title>{title}</title>
       {children}
     </svg>
   );
@@ -32,6 +34,7 @@ SVGIcon.defaultProps = {
   style: {},
   verticalAlign: 'middle',
   viewBox: '0 0 217 217',
+  title: '',
 };
 
 SVGIcon.propTypes = {
@@ -45,6 +48,7 @@ SVGIcon.propTypes = {
   verticalAlign: string,
   /** viewBox of svg */
   viewBox: string,
+  title: string,
   children: node.isRequired,
   // TODO: theme: filled, outlined
 };
