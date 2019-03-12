@@ -24,7 +24,7 @@ function radio({ name, variant, selected, onChange, disabled }) {
       variant={variant}
       onChange={onChange}
       checked={props.value === selected} // eslint-disable-line react/prop-types,react/destructuring-assignment
-      disabled={disabled}
+      disabled={disabled || props.disabled} // eslint-disable-line react/prop-types,react/destructuring-assignment
     />
   );
 }
@@ -47,7 +47,11 @@ class RadioGroup extends Component {
     onChange: func,
     /** Name for radio buttons, will apply to html `<input type="radio" name="xxx" ... >` */
     name: string.isRequired,
-    /** @ignore */
+    /** Function as child Component (FaCC)
+     *
+     * @param {component} Radio - Radio component
+     * @param {func} update - Update function, accept `value` to be update as argument
+     */
     children: func,
     /** Variant of children, `default` is the circle buttons, `list` is the circle buttons
      *  with border, `toggle` is the toggle buttons */
@@ -93,6 +97,8 @@ class RadioGroup extends Component {
     onChange(targetVal);
   };
 
+  proxyHandler = value => this.handleChange({ target: { value } }); // fake event object
+
   render() {
     const { name, variant, disabled, onChange, children, ...rest } = this.props;
     const { value } = this.state;
@@ -106,7 +112,7 @@ class RadioGroup extends Component {
             selected: value,
             disabled,
           }),
-          this.handleChange
+          this.proxyHandler
         ) || null}
       </Wrapper>
     );

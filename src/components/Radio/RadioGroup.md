@@ -65,6 +65,7 @@ const list = [
     <div>
       <Radio value="abc">abc</Radio>
       <Radio value="edf">edf</Radio>
+      <Radio value="xyz" disabled>xyz</Radio>
     </div>
   )}
 </RadioGroup>
@@ -146,7 +147,7 @@ const list = [
 
 ### Customization
 
-Function as child Component (FaCC) provides a finer customization capability.
+Function as child Component (FaCC) provides a finer customization capability. Instead of using the provided `Radio` component to render radio UI, use any component as radio. Use the update function provided in second argument to update the value of `RadioGroup`.
 
 ```js
 initialState = { value: 'hate' };
@@ -162,11 +163,11 @@ const list = [
   <Icon type={state.value} color="#FFF" size={64} />
   <hr />
   <RadioGroup
-    name="blah"
+    name="feedback"
     value={state.value}
     onChange={value => setState({ value })}
   >
-    {(Radio, update) =>
+    {(_, update) =>
       list.map(item => (
         <Icon
           style={{ cursor: 'pointer' }}
@@ -174,7 +175,7 @@ const list = [
           key={item.value}
           type={item.value}
           color={item.color}
-          onClick={update.bind(null, { target: { value: item.value } })}
+          onClick={update.bind(null, item.value)}
         />
       ))
     }
