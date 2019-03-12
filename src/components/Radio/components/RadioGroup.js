@@ -50,7 +50,7 @@ class RadioGroup extends Component {
     /** Function as child Component (FaCC)
      *
      * @param {component} Radio - Radio component
-     * @param {func} update - Update function, accept `value` to be update as argument
+     * @param {func} update - Update function, accepts `value` to be update as argument
      */
     children: func,
     /** Variant of children, `default` is the circle buttons, `list` is the circle buttons

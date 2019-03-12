@@ -216,6 +216,379 @@ exports[`Snapshots Radio disabled 1`] = `
 </label>
 `;
 
+exports[`Snapshots Radio group disabled 1`] = `
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  border: 1px solid #B4B4B4;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.c7 {
+  display: inline-block;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+}
+
+.c4 + .c7 {
+  margin-left: 0.5em;
+}
+
+.ldhGzr:hover .c4,
+.ldhGzr > input:focus ~ .c4 {
+  border: 1px solid #B4B4B4;
+}
+
+.ldhGzr:hover > input:not(:checked):not(:disabled) ~ .c4,
+.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c4 {
+  border: 1px solid #303030;
+}
+
+.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c4,
+.ldhGzr > input:focus:not(:checked):not(:disabled) ~ .c4 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.ldhGzr > input:disabled ~ .c4,
+.ldhGzr > input:disabled ~ .c6 {
+  opacity: 0.5;
+}
+
+.ldhGzr > input:checked ~ .c4:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #F16622;
+  border-radius: 50%;
+}
+
+.c3 {
+  display: inline-block;
+  cursor: pointer;
+  cursor: not-allowed;
+}
+
+.c3 input {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c3 span {
+  vertical-align: middle;
+}
+
+.c3:hover .c4,
+.c3 > input:focus ~ .c4 {
+  border: 1px solid #B4B4B4;
+}
+
+.c3:hover > input:not(:checked):not(:disabled) ~ .c4,
+.c3:active > input:not(:checked):not(:disabled) ~ .c4 {
+  border: 1px solid #303030;
+}
+
+.c3:active > input:not(:checked):not(:disabled) ~ .c4,
+.c3 > input:focus:not(:checked):not(:disabled) ~ .c4 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c3 > input:disabled ~ .c4,
+.c3 > input:disabled ~ .c6 {
+  opacity: 0.5;
+}
+
+.c3 > input:checked ~ .c4:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #F16622;
+  border-radius: 50%;
+}
+
+.c3:hover .c4 {
+  box-shadow: none;
+}
+
+.c1 {
+  margin-right: -0.5em;
+  margin-left: -0.5em;
+}
+
+.c0 .c2 {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+<div
+  aria-labelledby="demo"
+  class="c0 c1"
+>
+  <label
+    checked=""
+    class="c2 c3"
+    disabled=""
+  >
+    <input
+      aria-checked="true"
+      checked=""
+      disabled=""
+      name="demo"
+      type="radio"
+      value="1"
+    />
+    <span
+      class="c4 c5"
+    />
+    <span
+      class="c6 c7"
+    />
+  </label>
+  <label
+    class="c2 c3"
+    disabled=""
+  >
+    <input
+      aria-checked="false"
+      disabled=""
+      name="demo"
+      type="radio"
+      value="2"
+    />
+    <span
+      class="c4 c5"
+    />
+    <span
+      class="c6 c7"
+    />
+  </label>
+  <label
+    class="c2 c3"
+    disabled=""
+  >
+    <input
+      aria-checked="false"
+      disabled=""
+      name="demo"
+      type="radio"
+      value="3"
+    />
+    <span
+      class="c4 c5"
+    />
+    <span
+      class="c6 c7"
+    />
+  </label>
+</div>
+`;
+
+exports[`Snapshots Radio group with child disabled 1`] = `
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  border: 1px solid #B4B4B4;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.c7 {
+  display: inline-block;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+}
+
+.c4 + .c7 {
+  margin-left: 0.5em;
+}
+
+.c3 {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c3 input {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c3 span {
+  vertical-align: middle;
+}
+
+.c3:hover .c4,
+.c3 > input:focus ~ .c4 {
+  border: 1px solid #B4B4B4;
+}
+
+.c3:hover > input:not(:checked):not(:disabled) ~ .c4,
+.c3:active > input:not(:checked):not(:disabled) ~ .c4 {
+  border: 1px solid #303030;
+}
+
+.c3:active > input:not(:checked):not(:disabled) ~ .c4,
+.c3 > input:focus:not(:checked):not(:disabled) ~ .c4 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c3 > input:disabled ~ .c4,
+.c3 > input:disabled ~ .c6 {
+  opacity: 0.5;
+}
+
+.c3 > input:checked ~ .c4:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #F16622;
+  border-radius: 50%;
+}
+
+.c8 {
+  display: inline-block;
+  cursor: pointer;
+  cursor: not-allowed;
+}
+
+.c8 input {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c8 span {
+  vertical-align: middle;
+}
+
+.c8:hover .c4,
+.c8 > input:focus ~ .c4 {
+  border: 1px solid #B4B4B4;
+}
+
+.c8:hover > input:not(:checked):not(:disabled) ~ .c4,
+.c8:active > input:not(:checked):not(:disabled) ~ .c4 {
+  border: 1px solid #303030;
+}
+
+.c8:active > input:not(:checked):not(:disabled) ~ .c4,
+.c8 > input:focus:not(:checked):not(:disabled) ~ .c4 {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c8 > input:disabled ~ .c4,
+.c8 > input:disabled ~ .c6 {
+  opacity: 0.5;
+}
+
+.c8 > input:checked ~ .c4:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #F16622;
+  border-radius: 50%;
+}
+
+.c8:hover .c4 {
+  box-shadow: none;
+}
+
+.c1 {
+  margin-right: -0.5em;
+  margin-left: -0.5em;
+}
+
+.c0 .c2 {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+<div
+  aria-labelledby="demo"
+  class="c0 c1"
+>
+  <label
+    class="c2 c3"
+  >
+    <input
+      aria-checked="false"
+      name="demo"
+      type="radio"
+      value="1"
+    />
+    <span
+      class="c4 c5"
+    />
+    <span
+      class="c6 c7"
+    />
+  </label>
+  <label
+    class="c2 c8"
+    disabled=""
+  >
+    <input
+      aria-checked="false"
+      disabled=""
+      name="demo"
+      type="radio"
+      value="2"
+    />
+    <span
+      class="c4 c5"
+    />
+    <span
+      class="c6 c7"
+    />
+  </label>
+  <label
+    checked=""
+    class="c2 c3"
+  >
+    <input
+      aria-checked="true"
+      checked=""
+      name="demo"
+      type="radio"
+      value="3"
+    />
+    <span
+      class="c4 c5"
+    />
+    <span
+      class="c6 c7"
+    />
+  </label>
+</div>
+`;
+
 exports[`Snapshots Radio unchecked 1`] = `
 .c2 {
   display: inline-block;

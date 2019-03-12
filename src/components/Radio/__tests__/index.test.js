@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 import { render, mount, shallow } from 'enzyme';
 import Radio, { RadioGroup } from '../index';
 
-// TODO: add disabled tests
-
 describe('Snapshots', () => {
   it('Radio unchecked', () => {
     const wrapper = render(<Radio name="demo" value="blah" checked={false} />);
@@ -17,6 +15,36 @@ describe('Snapshots', () => {
 
   it('Radio disabled', () => {
     const wrapper = render(<Radio name="demo" value="blah" disabled />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Radio group disabled', () => {
+    const wrapper = render(
+      <RadioGroup name="demo" defaultValue="1" disabled>
+        {RadioB => (
+          <Fragment>
+            <RadioB name="demo" value="1" />
+            <RadioB name="demo" value="2" />
+            <RadioB name="demo" value="3" />
+          </Fragment>
+        )}
+      </RadioGroup>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Radio group with child disabled', () => {
+    const wrapper = render(
+      <RadioGroup name="demo" defaultValue="3">
+        {RadioB => (
+          <Fragment>
+            <RadioB name="demo" value="1" />
+            <RadioB name="demo" value="2" disabled />
+            <RadioB name="demo" value="3" />
+          </Fragment>
+        )}
+      </RadioGroup>
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
