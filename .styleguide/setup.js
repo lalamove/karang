@@ -3,6 +3,7 @@ import { injectGlobal } from 'styled-components';
 import BaseApp from '../src/components/BaseApp';
 import Button from '../src/components/Button';
 import Rating from '../src/components/Rating';
+import Icon from '../src/components/Icon';
 import { fontSize } from 'styles/fonts';
 
 injectGlobal`

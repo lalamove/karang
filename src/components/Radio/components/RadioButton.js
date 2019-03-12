@@ -14,7 +14,6 @@ const Radio = styled.span`
   height: 16px;
   padding: 2px;
   border: 1px solid ${nobel.main};
-  margin-right: 0.2em;
   border-radius: 50%;
   vertical-align: middle;
 `;
@@ -22,6 +21,9 @@ const Radio = styled.span`
 const Text = styled.span`
   display: inline-block;
   font-family: ${primaryFonts};
+  ${/* sc-selector */ Radio} + & {
+    margin-left: 0.5em;
+  }
 `;
 
 const Label = styled.label`
@@ -101,6 +103,7 @@ const Label = styled.label`
     `}
 `;
 
+// Need to extract button style
 const Button = styled.label`
   display: inline-block;
   padding: 1em;
@@ -235,7 +238,8 @@ class RadioButton extends PureComponent {
           value={value}
           disabled={disabled}
         />
-        {variant !== 'toggle' && <Radio />} <Text>{children}</Text>
+        {variant !== 'toggle' && <Radio />}
+        <Text>{children}</Text>
       </Comp>
     );
   }

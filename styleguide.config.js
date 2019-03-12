@@ -9,9 +9,17 @@ module.exports = {
     '**/*.d.ts',
     '**/_story.{js,jsx,ts,tsx}',
   ],
-  exampleMode: 'expand',
+  exampleMode: 'collapse',
   usageMode: 'expand',
   skipComponentsWithoutExample: true,
+  // getComponentPathLine(componentPath) {
+  //   let name = path.basename(componentPath, '.js');
+  //   if (name === 'index') {
+  //     name = path.join(componentPath, '..');
+  //     name = name.split(path.sep).pop();
+  //   }
+  //   return `import ${name} from 'lalamove-ui/dist/${name}';`;
+  // },
   getExampleFilename(componentPath) {
     let ComponentName = componentPath
       .split(path.sep)

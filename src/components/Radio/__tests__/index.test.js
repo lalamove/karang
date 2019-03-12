@@ -42,13 +42,13 @@ describe('Functions', () => {
 describe('RadioGroup', () => {
   it('accept and call children function', () => {
     const f = jest.fn();
-    mount(<RadioGroup>{f}</RadioGroup>);
+    mount(<RadioGroup name="demo">{f}</RadioGroup>);
     expect(f).toHaveBeenCalledTimes(1);
   });
 
   it('render RadioButton class as children', () => {
     const wrapper = mount(
-      <RadioGroup value="vehicle">
+      <RadioGroup name="vehicle" value="van">
         {RadioButton => (
           <Fragment>
             <RadioButton value="van" />
