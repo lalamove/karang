@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { render, mount, shallow } from 'enzyme';
 import Radio, { RadioGroup } from '../index';
 
+// TODO: add disabled tests
+
 describe('Snapshots', () => {
   it('Radio unchecked', () => {
     const wrapper = render(<Radio name="demo" value="blah" checked={false} />);

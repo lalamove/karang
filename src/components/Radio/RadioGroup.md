@@ -1,9 +1,5 @@
 #### Usage:
 
-```js static
-import { RadioGroup } from 'lalamove-ui';
-```
-
 **Basic**
 
 ```jsx static
@@ -12,6 +8,7 @@ import { RadioGroup } from 'lalamove-ui';
     <div>
       <Radio value="wallet">Wallet</Radio>
       <Radio value="cash">Cash</Radio>
+      <Radio disabled value="credit">Credit Card</Radio>
     </div>
   )}
 </RadioGroup>
@@ -28,6 +25,9 @@ const list = [
   {
     label: 'Cash',
     value: 'cash',
+  },{
+    label: 'Credit Card',
+    value: 'credit',
   },
 ];
 
@@ -38,7 +38,7 @@ const list = [
 >
   {Radio =>
     list.map(item => (
-      <Radio key={item.value} value={item.value}>
+      <Radio disabled={item.value === 'credit'} key={item.value} value={item.value}>
         {item.label}
       </Radio>
     ))
@@ -54,6 +54,7 @@ const list = [
     <div>
       <Radio value="abc">abc</Radio>
       <Radio value="edf">edf</Radio>
+      <Radio value="xyz" disabled>xyz</Radio>
     </div>
   )}
 </RadioGroup>
@@ -160,7 +161,8 @@ const list = [
   { value: 'love', color: '#00BC9C' },
 ];
 <div>
-  <Icon type={state.value} color="#FFF" size={64} />
+  <Icon type={state.value} color="#FFF" size={128} />
+  <pre style={{display: 'inline-block'}}><code>{JSON.stringify(state)}</code></pre>
   <hr />
   <RadioGroup
     name="feedback"
@@ -171,7 +173,7 @@ const list = [
       list.map(item => (
         <Icon
           style={{ cursor: 'pointer' }}
-          size={32}
+          size={state.value === item.value ? 48 : 32}
           key={item.value}
           type={item.value}
           color={item.color}
