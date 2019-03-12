@@ -105,7 +105,9 @@ exports[`Dropdown Snapshots render 1`] = `
       class="c5"
     >
       <svg
+        aria-hidden="false"
         focusable="false"
+        role="img"
         style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
         viewBox="0 0 217 217"
       >
@@ -235,7 +237,9 @@ exports[`Dropdown Snapshots render 2`] = `
       class="c5"
     >
       <svg
+        aria-hidden="false"
         focusable="false"
+        role="img"
         style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
         viewBox="0 0 217 217"
       >
