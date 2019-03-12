@@ -23,7 +23,9 @@ module.exports = {
         return compConfig.import;
       }
     } catch (error) {
-      console.warn(error);
+      if (error.code === 'ENOENT') {
+        console.warn('Missing:', error.path);
+      }
     }
     return componentPath;
   },
