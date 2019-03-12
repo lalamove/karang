@@ -124,6 +124,9 @@ exports[`Input Snapshots Password 1`] = `
         style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
         viewBox="0 0 217 217"
       >
+        <title>
+          EyeOff
+        </title>
         <g>
           <rect
             fill="none"
@@ -285,6 +288,9 @@ exports[`Input Snapshots Password with a value 1`] = `
         style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
         viewBox="0 0 217 217"
       >
+        <title>
+          EyeOff
+        </title>
         <g>
           <rect
             fill="none"
@@ -543,6 +549,9 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
         style="vertical-align:middle;fill:rgba(216,83,79,1);width:13px;height:13px"
         viewBox="0 0 217 217"
       >
+        <title>
+          Warning
+        </title>
         <g>
           <rect
             fill="none"

@@ -109,6 +109,9 @@ exports[`Dropdown Snapshots render 1`] = `
         style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
         viewBox="0 0 217 217"
       >
+        <title>
+          DropDown
+        </title>
         <g
           transform="matrix(1,0,0,1,108.55,108.721)"
         >
@@ -236,6 +239,9 @@ exports[`Dropdown Snapshots render 2`] = `
         style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
         viewBox="0 0 217 217"
       >
+        <title>
+          DropDown
+        </title>
         <g
           transform="matrix(1,0,0,1,108.55,108.721)"
         >

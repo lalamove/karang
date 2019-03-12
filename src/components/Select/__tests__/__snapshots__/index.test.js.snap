@@ -117,6 +117,9 @@ exports[`Select Snapshots Select with label and items 1`] = `
             style="vertical-align:middle;fill:currentColor;width:24px;height:24px"
             viewBox="0 0 217 217"
           >
+            <title>
+              DropDown
+            </title>
             <g
               transform="matrix(1,0,0,1,108.55,108.721)"
             >
@@ -300,6 +303,9 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
             style="vertical-align:middle;fill:currentColor;width:24px;height:24px"
             viewBox="0 0 217 217"
           >
+            <title>
+              DropDown
+            </title>
             <g
               transform="matrix(1,0,0,1,108.55,108.721)"
             >
@@ -333,6 +339,9 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
         style="vertical-align:middle;fill:rgba(216,83,79,1);width:13px;height:13px"
         viewBox="0 0 217 217"
       >
+        <title>
+          Warning
+        </title>
         <g>
           <rect
             fill="none"
