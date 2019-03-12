@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 module.exports = {
   require: [path.resolve(__dirname, '.styleguide/setup.js')],
@@ -12,14 +13,20 @@ module.exports = {
   exampleMode: 'collapse',
   usageMode: 'expand',
   skipComponentsWithoutExample: true,
-  // getComponentPathLine(componentPath) {
-  //   let name = path.basename(componentPath, '.js');
-  //   if (name === 'index') {
-  //     name = path.join(componentPath, '..');
-  //     name = name.split(path.sep).pop();
-  //   }
-  //   return `import ${name} from 'lalamove-ui/dist/${name}';`;
-  // },
+  getComponentPathLine(componentPath) {
+    const compDir = /(^src\/components\/[a-zA-Z]+)/.exec(componentPath)[1];
+    const configPath = path.join(__dirname, compDir, 'doc.json');
+    try {
+      const stats = fs.lstatSync(configPath);
+      if (stats.isFile()) {
+        const compConfig = require(configPath); // eslint-disable-line global-require, import/no-dynamic-require
+        return compConfig.import;
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+    return componentPath;
+  },
   getExampleFilename(componentPath) {
     let ComponentName = componentPath
       .split(path.sep)
