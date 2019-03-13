@@ -73,8 +73,8 @@ const Label = styled.label`
     border: 1px solid ${mineShaft['900']};
   }
   
-  &:active > input:not(:checked):not(:disabled) ~ ${/* sc-selector */ Radio}, 
-  & > input:focus:not(:checked):not(:disabled) ~ ${/* sc-selector */ Radio} {
+  &:active > input:not(:disabled) ~ ${/* sc-selector */ Radio}, 
+  & > input:focus:not(:disabled) ~ ${/* sc-selector */ Radio} {
     box-shadow: 0 0 0 4px ${rgba(nobel.main, 0.2)};
   }
 
@@ -223,6 +223,7 @@ class RadioButton extends PureComponent {
     const Comp = variant !== 'toggle' ? Label : Button;
     return (
       <Comp
+        htmlFor={`${name}-${value}`}
         {...rest}
         checked={checked}
         variant={variant}
@@ -230,6 +231,7 @@ class RadioButton extends PureComponent {
         disabled={disabled}
       >
         <input
+          id={`${name}-${value}`}
           type="radio"
           name={name}
           onChange={onChange}
