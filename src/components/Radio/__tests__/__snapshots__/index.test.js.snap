@@ -52,8 +52,8 @@ exports[`Snapshots Radio checked 1`] = `
   border: 1px solid #303030;
 }
 
-.c0:active > input:not(:checked):not(:disabled) ~ .c1,
-.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.c0:active > input:not(:disabled) ~ .c1,
+.c0 > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
@@ -74,15 +74,18 @@ exports[`Snapshots Radio checked 1`] = `
 <label
   checked=""
   class="c0"
+  for="demo-blah"
 >
   <input
     aria-checked="true"
     checked=""
+    id="demo-blah"
     name="demo"
     type="radio"
     value="blah"
   />
   <span
+    aria-hidden="true"
     class="c1 c2"
   />
   <span
@@ -112,27 +115,27 @@ exports[`Snapshots Radio disabled 1`] = `
   margin-left: 0.5em;
 }
 
-.ldhGzr:hover .c1,
-.ldhGzr > input:focus ~ .c1 {
+.lgLcdk:hover .c1,
+.lgLcdk > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.ldhGzr:hover > input:not(:checked):not(:disabled) ~ .c1,
-.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c1 {
+.lgLcdk:hover > input:not(:checked):not(:disabled) ~ .c1,
+.lgLcdk:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c1,
-.ldhGzr > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.lgLcdk:active > input:not(:disabled) ~ .c1,
+.lgLcdk > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.ldhGzr > input:disabled ~ .c1,
-.ldhGzr > input:disabled ~ .c3 {
+.lgLcdk > input:disabled ~ .c1,
+.lgLcdk > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.ldhGzr > input:checked ~ .c1:before {
+.lgLcdk > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -173,8 +176,8 @@ exports[`Snapshots Radio disabled 1`] = `
   border: 1px solid #303030;
 }
 
-.c0:active > input:not(:checked):not(:disabled) ~ .c1,
-.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.c0:active > input:not(:disabled) ~ .c1,
+.c0 > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
@@ -199,15 +202,18 @@ exports[`Snapshots Radio disabled 1`] = `
 <label
   class="c0"
   disabled=""
+  for="demo-blah"
 >
   <input
     aria-checked="false"
     disabled=""
+    id="demo-blah"
     name="demo"
     type="radio"
     value="blah"
   />
   <span
+    aria-hidden="true"
     class="c1 c2"
   />
   <span
@@ -237,27 +243,27 @@ exports[`Snapshots Radio group disabled 1`] = `
   margin-left: 0.5em;
 }
 
-.ldhGzr:hover .c4,
-.ldhGzr > input:focus ~ .c4 {
+.lgLcdk:hover .c4,
+.lgLcdk > input:focus ~ .c4 {
   border: 1px solid #B4B4B4;
 }
 
-.ldhGzr:hover > input:not(:checked):not(:disabled) ~ .c4,
-.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c4 {
+.lgLcdk:hover > input:not(:checked):not(:disabled) ~ .c4,
+.lgLcdk:active > input:not(:checked):not(:disabled) ~ .c4 {
   border: 1px solid #303030;
 }
 
-.ldhGzr:active > input:not(:checked):not(:disabled) ~ .c4,
-.ldhGzr > input:focus:not(:checked):not(:disabled) ~ .c4 {
+.lgLcdk:active > input:not(:disabled) ~ .c4,
+.lgLcdk > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.ldhGzr > input:disabled ~ .c4,
-.ldhGzr > input:disabled ~ .c6 {
+.lgLcdk > input:disabled ~ .c4,
+.lgLcdk > input:disabled ~ .c6 {
   opacity: 0.5;
 }
 
-.ldhGzr > input:checked ~ .c4:before {
+.lgLcdk > input:checked ~ .c4:before {
   content: '';
   display: block;
   width: 100%;
@@ -298,8 +304,8 @@ exports[`Snapshots Radio group disabled 1`] = `
   border: 1px solid #303030;
 }
 
-.c3:active > input:not(:checked):not(:disabled) ~ .c4,
-.c3 > input:focus:not(:checked):not(:disabled) ~ .c4 {
+.c3:active > input:not(:disabled) ~ .c4,
+.c3 > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
@@ -339,16 +345,19 @@ exports[`Snapshots Radio group disabled 1`] = `
     checked=""
     class="c2 c3"
     disabled=""
+    for="demo-1"
   >
     <input
       aria-checked="true"
       checked=""
       disabled=""
+      id="demo-1"
       name="demo"
       type="radio"
       value="1"
     />
     <span
+      aria-hidden="true"
       class="c4 c5"
     />
     <span
@@ -358,15 +367,18 @@ exports[`Snapshots Radio group disabled 1`] = `
   <label
     class="c2 c3"
     disabled=""
+    for="demo-2"
   >
     <input
       aria-checked="false"
       disabled=""
+      id="demo-2"
       name="demo"
       type="radio"
       value="2"
     />
     <span
+      aria-hidden="true"
       class="c4 c5"
     />
     <span
@@ -376,15 +388,18 @@ exports[`Snapshots Radio group disabled 1`] = `
   <label
     class="c2 c3"
     disabled=""
+    for="demo-3"
   >
     <input
       aria-checked="false"
       disabled=""
+      id="demo-3"
       name="demo"
       type="radio"
       value="3"
     />
     <span
+      aria-hidden="true"
       class="c4 c5"
     />
     <span
@@ -446,8 +461,8 @@ exports[`Snapshots Radio group with child disabled 1`] = `
   border: 1px solid #303030;
 }
 
-.c3:active > input:not(:checked):not(:disabled) ~ .c4,
-.c3 > input:focus:not(:checked):not(:disabled) ~ .c4 {
+.c3:active > input:not(:disabled) ~ .c4,
+.c3 > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
@@ -497,8 +512,8 @@ exports[`Snapshots Radio group with child disabled 1`] = `
   border: 1px solid #303030;
 }
 
-.c8:active > input:not(:checked):not(:disabled) ~ .c4,
-.c8 > input:focus:not(:checked):not(:disabled) ~ .c4 {
+.c8:active > input:not(:disabled) ~ .c4,
+.c8 > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
@@ -536,14 +551,17 @@ exports[`Snapshots Radio group with child disabled 1`] = `
 >
   <label
     class="c2 c3"
+    for="demo-1"
   >
     <input
       aria-checked="false"
+      id="demo-1"
       name="demo"
       type="radio"
       value="1"
     />
     <span
+      aria-hidden="true"
       class="c4 c5"
     />
     <span
@@ -553,15 +571,18 @@ exports[`Snapshots Radio group with child disabled 1`] = `
   <label
     class="c2 c8"
     disabled=""
+    for="demo-2"
   >
     <input
       aria-checked="false"
       disabled=""
+      id="demo-2"
       name="demo"
       type="radio"
       value="2"
     />
     <span
+      aria-hidden="true"
       class="c4 c5"
     />
     <span
@@ -571,15 +592,18 @@ exports[`Snapshots Radio group with child disabled 1`] = `
   <label
     checked=""
     class="c2 c3"
+    for="demo-3"
   >
     <input
       aria-checked="true"
       checked=""
+      id="demo-3"
       name="demo"
       type="radio"
       value="3"
     />
     <span
+      aria-hidden="true"
       class="c4 c5"
     />
     <span
@@ -641,8 +665,8 @@ exports[`Snapshots Radio unchecked 1`] = `
   border: 1px solid #303030;
 }
 
-.c0:active > input:not(:checked):not(:disabled) ~ .c1,
-.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.c0:active > input:not(:disabled) ~ .c1,
+.c0 > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
@@ -662,14 +686,17 @@ exports[`Snapshots Radio unchecked 1`] = `
 
 <label
   class="c0"
+  for="demo-blah"
 >
   <input
     aria-checked="false"
+    id="demo-blah"
     name="demo"
     type="radio"
     value="blah"
   />
   <span
+    aria-hidden="true"
     class="c1 c2"
   />
   <span
@@ -730,8 +757,8 @@ exports[`Snapshots Render children 1`] = `
   border: 1px solid #303030;
 }
 
-.c0:active > input:not(:checked):not(:disabled) ~ .c1,
-.c0 > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.c0:active > input:not(:disabled) ~ .c1,
+.c0 > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
@@ -749,27 +776,27 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.gFEYXP:hover .c1,
-.gFEYXP > input:focus ~ .c1 {
+.BNIBN:hover .c1,
+.BNIBN > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.gFEYXP:hover > input:not(:checked):not(:disabled) ~ .c1,
-.gFEYXP:active > input:not(:checked):not(:disabled) ~ .c1 {
+.BNIBN:hover > input:not(:checked):not(:disabled) ~ .c1,
+.BNIBN:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.gFEYXP:active > input:not(:checked):not(:disabled) ~ .c1,
-.gFEYXP > input:focus:not(:checked):not(:disabled) ~ .c1 {
+.BNIBN:active > input:not(:disabled) ~ .c1,
+.BNIBN > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.gFEYXP > input:disabled ~ .c1,
-.gFEYXP > input:disabled ~ .c3 {
+.BNIBN > input:disabled ~ .c1,
+.BNIBN > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.gFEYXP > input:checked ~ .c1:before {
+.BNIBN > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -778,20 +805,23 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.gFEYXP:hover .c1 {
+.BNIBN:hover .c1 {
   box-shadow: none;
 }
 
 <label
   class="c0"
+  for="demo-blah"
 >
   <input
     aria-checked="false"
+    id="demo-blah"
     name="demo"
     type="radio"
     value="blah"
   />
   <span
+    aria-hidden="true"
     class="c1 c2"
   />
   <span
