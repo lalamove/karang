@@ -1,21 +1,12 @@
 import React from 'react';
 import { bool, oneOf, node } from 'prop-types';
 import styled, { css } from 'styled-components';
-import { transparentize, darken } from 'polished';
+import { rgba, transparentize, darken } from 'polished';
 
-import Base from './style';
 import omit from 'utils/omit';
-import colors from 'styles/colors';
+import { primary, secondary, nobel, mineShaft, white } from 'styles/colors';
 import loaderGif from 'assets/loader.gif';
-
-/* eslint-disable import/no-named-as-default-member */
-const {
-  orange: primaryColor,
-  gold: secondaryColor,
-  offWhite: lightGray,
-  gray: darkGray,
-} = colors;
-/* eslint-enable import/no-named-as-default-member */
+import Base from './style';
 
 const Button = styled(Base)`
   /* layout */
@@ -47,44 +38,77 @@ const Button = styled(Base)`
     switch (variant) {
       case 'primary':
         return css`
-          background-color: ${primaryColor};
-          border-color: ${primaryColor};
-          color: white;
+          background-color: ${primary.main};
+          border-color: ${primary.main};
+          color: ${white};
+
+          &:hover:enabled,
+          &:active:enabled {
+            background-color: ${primary['800']};
+            border-color: ${primary['800']};
+          }
+
+          &:active:enabled,
+          &:focus:enabled {
+            box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
+          }
         `;
       case 'secondary':
         return css`
-          background-color: ${secondaryColor};
-          border-color: ${secondaryColor};
-          color: white;
+          background-color: ${secondary.main};
+          border-color: ${secondary.main};
+          color: ${white};
         `;
       case 'outline':
         return css`
-          color: ${primaryColor};
-          border-color: ${primaryColor};
+          color: ${primary.main};
+          border-color: ${primary.main};
+
+          &:hover:enabled,
+          &:active:enabled {
+            background-color: ${primary.main};
+            border-color: ${primary.main};
+            color: ${white};
+          }
+
+          &:active:enabled,
+          &:focus:enabled {
+            box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
+          }
         `;
       case 'link':
         return css`
           border: none;
           padding: 0;
-          color: ${primaryColor};
+          color: ${primary.main};
 
           &:active {
             box-shadow: none;
-            color: ${darken(0.2, primaryColor)};
+            color: ${darken(0.2, primary.main)};
             text-decoration: none !important;
           }
 
           &:hover:enabled,
           &:focus:enabled {
             box-shadow: none;
-            color: ${transparentize(0.3, primaryColor)};
+            color: ${transparentize(0.3, primary.main)};
             text-decoration: underline;
           }
         `;
       default:
         return css`
-          border-color: ${lightGray};
-          color: ${darkGray};
+          border-color: ${nobel.main};
+          color: ${mineShaft['800']};
+
+          &:hover:enabled,
+          &:active:enabled {
+            background-color: ${nobel['100']};
+          }
+
+          &:active:enabled,
+          &:focus:enabled {
+            box-shadow: 0 0 0 4px ${rgba(nobel.main, 0.2)};
+          }
         `;
     }
   }}
