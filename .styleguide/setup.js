@@ -3,6 +3,8 @@ import { injectGlobal } from 'styled-components';
 import BaseApp from '../src/components/BaseApp';
 import Button from '../src/components/Button';
 import Rating from '../src/components/Rating';
+import Icon from '../src/components/Icon';
+import List from '../src/components/List';
 import { fontSize } from 'styles/fonts';
 
 injectGlobal`
@@ -14,4 +16,6 @@ injectGlobal`
 `;
 global.Button = Button;
 global.Rating = Rating;
+global.Icon = Icon;
+global.List = List;
 global.dateFns = dateFns;

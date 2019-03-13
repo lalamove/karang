@@ -3,7 +3,7 @@ import SVGIcon from './SVGIcon';
 
 function createSVGIcon(path, displayName, viewBox = '0 0 217 217') {
   const Icon = props => (
-    <SVGIcon viewBox={viewBox} {...props}>
+    <SVGIcon viewBox={viewBox} title={displayName} {...props}>
       {path}
     </SVGIcon>
   );

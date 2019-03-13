@@ -72,11 +72,15 @@ exports[`Snapshots Pagination with 0 items 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
-      title="Prev"
       viewBox="0 0 217 217"
     >
+      <title>
+        Prev
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >
@@ -97,11 +101,15 @@ exports[`Snapshots Pagination with 0 items 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
-      title="Next"
       viewBox="0 0 217 217"
     >
+      <title>
+        Next
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >
@@ -191,11 +199,15 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
-      title="Prev"
       viewBox="0 0 217 217"
     >
+      <title>
+        Prev
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >
@@ -215,11 +227,15 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
-      title="Next"
       viewBox="0 0 217 217"
     >
+      <title>
+        Next
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >
@@ -309,11 +325,15 @@ exports[`Snapshots Pagination with custom description 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
-      title="Prev"
       viewBox="0 0 217 217"
     >
+      <title>
+        Prev
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >
@@ -333,11 +353,15 @@ exports[`Snapshots Pagination with custom description 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
-      title="Next"
       viewBox="0 0 217 217"
     >
+      <title>
+        Next
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >
@@ -505,11 +529,15 @@ exports[`Snapshots Pagination with default value 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(90deg)"
-      title="Prev"
       viewBox="0 0 217 217"
     >
+      <title>
+        Prev
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >
@@ -529,11 +557,15 @@ exports[`Snapshots Pagination with default value 1`] = `
     type="button"
   >
     <svg
+      aria-hidden="false"
       focusable="false"
+      role="img"
       style="vertical-align:middle;fill:currentColor;width:20px;height:20px;transform:rotate(-90deg)"
-      title="Next"
       viewBox="0 0 217 217"
     >
+      <title>
+        Next
+      </title>
       <g
         transform="matrix(1,0,0,1,108.55,108.721)"
       >

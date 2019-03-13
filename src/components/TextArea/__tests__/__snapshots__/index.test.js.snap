@@ -117,10 +117,15 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
       class="c6"
     >
       <svg
+        aria-hidden="false"
         focusable="false"
+        role="img"
         style="vertical-align:middle;fill:rgba(216,83,79,1);width:13px;height:13px"
         viewBox="0 0 217 217"
       >
+        <title>
+          Warning
+        </title>
         <g>
           <rect
             fill="none"

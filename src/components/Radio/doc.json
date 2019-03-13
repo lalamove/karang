@@ -1,0 +1,4 @@
+{
+  "name": "RadioGroup",
+  "import": "import { RadioGroup } from 'lalamove-ui'"
+}
