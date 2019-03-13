@@ -7,7 +7,9 @@ import noop from 'utils/noop';
 import { nobel, primary, mineShaft } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
 
-const Radio = styled.span`
+const Radio = styled.span.attrs({
+  'aria-hidden': 'true',
+})`
   display: inline-block;
   box-sizing: border-box;
   width: 16px;
