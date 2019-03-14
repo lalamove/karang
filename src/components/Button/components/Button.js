@@ -259,7 +259,7 @@ Button.defaultProps = {
   type: 'button',
 };
 
-Button.propTypes = {
+const propTypes = {
   /** Loading status for AJAX calls, show spinner when it is `true`. This also disables the
    *  button. */
   isLoading: bool,
@@ -285,9 +285,11 @@ Button.propTypes = {
   type: oneOf(['button', 'submit', 'reset']),
 };
 
+Button.propTypes = propTypes;
+
 export function withComponent(Comp) {
   return StyledButton.withComponent(props => {
-    const propsToFilter = Object.keys(Button.propTypes);
+    const propsToFilter = Object.keys(propTypes);
     const filteredProps = omit(props, propsToFilter);
     return <Comp {...filteredProps}>{props.children}</Comp>;
   });

@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 
+import AlertIcon from 'components/Icon/icons/alert/alert';
+import CloseIcon from 'components/Icon/icons/content/close';
 import StarIcon from 'components/Icon/icons/toggle/star';
 import StarFilledIcon from 'components/Icon/icons/toggle/starFilled';
 
-import Button, { ButtonWithComponent, CloseButton } from './index';
+import Button, { ButtonWithComponent, IconButton, CloseButton } from './index';
 
 const Container = styled.div`
   display: flex;
@@ -17,9 +18,8 @@ const Container = styled.div`
 
 const CustomComponent = ButtonWithComponent('a');
 
-storiesOf('Button', module).add(
-  'Basic',
-  withInfo({})(() => (
+storiesOf('Button', module)
+  .add('Button', () => (
     <div>
       <h4>Small</h4>
       <Container>
@@ -195,4 +195,39 @@ storiesOf('Button', module).add(
       </Container>
     </div>
   ))
-);
+  .add('IconButton', () => (
+    <div>
+      <h4>Round</h4>
+      <Container>
+        <IconButton>
+          <AlertIcon size={24} />
+        </IconButton>
+        <IconButton variant="primary">
+          <AlertIcon size={24} />
+        </IconButton>
+        <IconButton variant="secondary">
+          <AlertIcon size={24} />
+        </IconButton>
+        <IconButton variant="danger">
+          <AlertIcon size={24} />
+        </IconButton>
+      </Container>
+      <h4>Classic</h4>
+      <Container>
+        <IconButton shape="classic">
+          <CloseIcon size={24} />
+        </IconButton>
+        <IconButton shape="classic" variant="primary">
+          <CloseIcon size={24} />
+        </IconButton>
+        <IconButton shape="classic" variant="secondary">
+          <CloseIcon size={24} />
+        </IconButton>
+        <IconButton shape="classic" variant="danger">
+          <CloseIcon size={24} />
+        </IconButton>
+      </Container>
+      <h4>Deprecated: CloseButton</h4>
+      <CloseButton />
+    </div>
+  ));

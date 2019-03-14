@@ -1,27 +1,89 @@
 import React from 'react';
-import { node } from 'prop-types';
-import styled from 'styled-components';
-import { orange, offWhite } from 'styles/colors';
+import { oneOf, node } from 'prop-types';
+import styled, { css } from 'styled-components';
+import { primary, secondary, valencia, nobel } from 'styles/colors';
 
 const Button = styled.button`
   appearance: none;
   padding: 5px;
   border: none;
-  color: ${orange};
   cursor: pointer;
-  border-radius: 2px;
   outline: 0;
+  border-radius: ${({ shape }) => (shape === 'default' ? '100%' : '2px')};
 
-  &:hover,
-  &:focus {
-    background: ${offWhite};
+  /* type */
+  ${({ variant }) => {
+    switch (variant) {
+      case 'primary':
+        return css`
+          color: ${primary.main};
+          &:hover:enabled {
+            background: ${primary['050']};
+          }
+
+          &:focus:enabled {
+            background: ${primary['100']};
+          }
+        `;
+      case 'secondary':
+        return css`
+          color: ${secondary.main};
+          &:hover:enabled {
+            background: ${secondary['050']};
+          }
+
+          &:focus:enabled {
+            background: ${secondary['100']};
+          }
+        `;
+      case 'danger':
+        return css`
+          color: ${valencia.main};
+          &:hover:enabled {
+            background: ${valencia['050']};
+          }
+
+          &:focus:enabled {
+            background: ${valencia['100']};
+          }
+        `;
+      default:
+        return css`
+          color: ${nobel['700']};
+          &:hover:enabled {
+            background: ${nobel['100']};
+          }
+
+          &:focus:enabled {
+            background: ${nobel['200']};
+          }
+        `;
+    }
+  }} &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `;
 
-const IconButton = props => <Button {...props}>{props.children}</Button>;
+/**
+ * IconButton component is the button component for the single icon use case.
+ */
+const IconButton = ({ variant, ...props }) => (
+  <Button variant={variant} {...props} />
+);
 
 IconButton.propTypes = {
-  children: node.isRequired, // eslint-disable-line react/no-typos
+  /** Variant of IconButton component */
+  variant: oneOf(['default', 'primary', 'secondary', 'danger']),
+  /** Shape of IconButton component */
+  shape: oneOf(['default', 'classic']),
+  /** @ignore */
+  children: node.isRequired,
+};
+
+IconButton.defaultProps = {
+  variant: 'default',
+  shape: 'default',
 };
 
 export default IconButton;

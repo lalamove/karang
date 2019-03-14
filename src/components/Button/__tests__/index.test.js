@@ -15,12 +15,11 @@ const types = {
     'dangerOutline',
     'default',
   ],
-  disabled: true,
 };
 
-for (const type in types) {
+Object.keys(types).forEach(type => {
   if (type === 'variant' || type === 'size') {
-    types[type].map(value => {
+    types[type].forEach(value => {
       it(`Button-${type}-${value}`, () => {
         const prop = { [type]: value };
         const wrapper = render(<Button {...prop}>hello</Button>);
@@ -34,4 +33,4 @@ for (const type in types) {
       expect(wrapper).toMatchSnapshot();
     });
   }
-}
+});

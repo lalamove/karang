@@ -65,71 +65,6 @@ exports[`Button-block 1`] = `
 </button>
 `;
 
-exports[`Button-disabled 1`] = `
-.c1 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  padding: 0.5em 1em;
-  border: 1px currentColor solid;
-  background-color: transparent;
-  border-radius: 2px;
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
-  position: relative;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-color: #B4B4B4;
-  color: #535353;
-}
-
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
-  color: #535353;
-}
-
-.c0:hover:enabled,
-.c0:active:enabled {
-  background-color: #F1F1F1;
-}
-
-.c0:active:enabled,
-.c0:focus:enabled {
-  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
-}
-
-<button
-  class="c0 c1"
-  disabled=""
-  type="button"
->
-  hello
-</button>
-`;
-
 exports[`Button-isLoading 1`] = `
 .c1 {
   -webkit-appearance: none;
@@ -162,15 +97,19 @@ exports[`Button-isLoading 1`] = `
   transform: translateX(-50%);
 }
 
-.gxDYDr .c2 {
+.hrUvAP .c2 {
   color: #535353;
 }
 
-.ibkNlm .c2 {
+.dkODus .c2 {
   color: #535353;
 }
 
-.jRZGVz .c2 {
+.fRtyqW .c2 {
+  color: #535353;
+}
+
+.jvYInV .c2 {
   color: #535353;
 }
 
@@ -209,6 +148,7 @@ exports[`Button-isLoading 1`] = `
 
 <button
   class="c0 c1"
+  disabled=""
   type="button"
 >
   <div
@@ -281,6 +221,71 @@ exports[`Button-size-large 1`] = `
   padding: 0.75em 1em;
   font-size: 16px;
   font-weight: 700;
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  hello
+</button>
+`;
+
+exports[`Button-size-small 1`] = `
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25em 1em;
   border-color: #B4B4B4;
   color: #535353;
 }
@@ -440,6 +445,77 @@ exports[`Button-variant-danger 1`] = `
 </button>
 `;
 
+exports[`Button-variant-dangerOutline 1`] = `
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #D8534F;
+  border-color: #D8534F;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #D8534F;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #D8534F;
+  border-color: #D8534F;
+  color: rgba(255,255,255,1);
+}
+
+.c0:hover:enabled .Button__SpinnerWrapper-sc-1aalsx4-2,
+.c0:active:enabled .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: rgba(255,255,255,1);
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(216,83,79,0.2);
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  hello
+</button>
+`;
+
 exports[`Button-variant-default 1`] = `
 .c1 {
   -webkit-appearance: none;
@@ -542,8 +618,7 @@ exports[`Button-variant-link 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border: none;
-  padding: 0;
+  border-color: transparent;
   color: #F16622;
 }
 
@@ -553,7 +628,12 @@ exports[`Button-variant-link 1`] = `
 
 .c0:hover:enabled,
 .c0:active:enabled {
-  color: #CB5217;
+  background-color: #F9EAE7;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(249,234,231,0.2);
 }
 
 <button

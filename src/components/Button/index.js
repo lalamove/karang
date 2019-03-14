@@ -1,14 +1,15 @@
+import React from 'react';
+import CloseIcon from 'components/Icon/icons/content/close';
 import Button, {
   withComponent as ButtonWithComponent,
 } from './components/Button';
-import CloseButton from './components/CloseButton';
 import IconButton from './components/IconButton';
-import LinkButton from './components/LinkButton';
 
-export {
-  Button as default,
-  ButtonWithComponent,
-  CloseButton,
-  IconButton,
-  LinkButton,
-};
+// TODO: Remove in next release as the usage could be replaced by IconButton
+const CloseButton = props => (
+  <IconButton {...props} shape="classic" variant="primary">
+    <CloseIcon />
+  </IconButton>
+);
+
+export { Button as default, ButtonWithComponent, CloseButton, IconButton };

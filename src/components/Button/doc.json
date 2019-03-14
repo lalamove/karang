@@ -1,4 +1,0 @@
-{
-  "name": "Button",
-  "import": "import { Button } from 'lalamove-ui';"
-}

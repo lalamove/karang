@@ -6,7 +6,6 @@ export {
   default as Button,
   CloseButton,
   IconButton,
-  LinkButton,
   ButtonWithComponent,
 } from './components/Button';
 export { default as Card } from './components/Card';
