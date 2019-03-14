@@ -69,39 +69,36 @@ exports[`Tab Snapshots Deselected 1`] = `
 }
 
 .c3:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c3:hover:enabled,
-.c3:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c3:active:enabled {
-  box-shadow: none;
-}
-
 .c2 {
-  display: inline-block;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none;
   padding: 0;
-  color: rgba(242,103,34,1);
+  color: #F16622;
 }
 
-.c2:active {
-  box-shadow: none;
-  color: #a43d0a;
-  -webkit-text-decoration: none !important;
-  text-decoration: none !important;
+.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #F16622;
 }
 
 .c2:hover:enabled,
-.c2:focus:enabled {
-  box-shadow: none;
-  color: rgba(242,103,34,0.7);
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c2:active:enabled {
+  color: #CB5217;
 }
 
 .c0 {
@@ -232,39 +229,36 @@ exports[`Tab Snapshots Selected 1`] = `
 }
 
 .c3:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c3:hover:enabled,
-.c3:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c3:active:enabled {
-  box-shadow: none;
-}
-
 .c2 {
-  display: inline-block;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none;
   padding: 0;
-  color: rgba(242,103,34,1);
+  color: #F16622;
 }
 
-.c2:active {
-  box-shadow: none;
-  color: #a43d0a;
-  -webkit-text-decoration: none !important;
-  text-decoration: none !important;
+.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #F16622;
 }
 
 .c2:hover:enabled,
-.c2:focus:enabled {
-  box-shadow: none;
-  color: rgba(242,103,34,0.7);
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c2:active:enabled {
+  color: #CB5217;
 }
 
 .c0 {
@@ -458,39 +452,36 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
 }
 
 .c4:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c4:hover:enabled,
-.c4:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c4:active:enabled {
-  box-shadow: none;
-}
-
 .c3 {
-  display: inline-block;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none;
   padding: 0;
-  color: rgba(242,103,34,1);
+  color: #F16622;
 }
 
-.c3:active {
-  box-shadow: none;
-  color: #a43d0a;
-  -webkit-text-decoration: none !important;
-  text-decoration: none !important;
+.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #F16622;
 }
 
 .c3:hover:enabled,
-.c3:focus:enabled {
-  box-shadow: none;
-  color: rgba(242,103,34,0.7);
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c3:active:enabled {
+  color: #CB5217;
 }
 
 .c0 {
@@ -610,39 +601,36 @@ exports[`TabBar Snapshots Some tabs 1`] = `
 }
 
 .c4:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c4:hover:enabled,
-.c4:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c4:active:enabled {
-  box-shadow: none;
-}
-
 .c3 {
-  display: inline-block;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none;
   padding: 0;
-  color: rgba(242,103,34,1);
+  color: #F16622;
 }
 
-.c3:active {
-  box-shadow: none;
-  color: #a43d0a;
-  -webkit-text-decoration: none !important;
-  text-decoration: none !important;
+.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #F16622;
 }
 
 .c3:hover:enabled,
-.c3:focus:enabled {
-  box-shadow: none;
-  color: rgba(242,103,34,0.7);
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c3:active:enabled {
+  color: #CB5217;
 }
 
 .c0 {

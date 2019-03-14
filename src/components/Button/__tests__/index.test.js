@@ -6,7 +6,7 @@ const types = {
   size: ['large', 'xlarge'],
   block: true,
   isLoading: true,
-  variant: ['link', 'primary', 'secondary', 'outline', 'default'],
+  variant: ['link', 'primary', 'secondary', 'outline', 'danger', 'default'],
   disabled: true,
 };
 

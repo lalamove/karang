@@ -5,7 +5,6 @@ import { withInfo } from '@storybook/addon-info';
 
 import StarIcon from 'components/Icon/icons/toggle/star';
 import StarFilledIcon from 'components/Icon/icons/toggle/starFilled';
-import { white, primary } from 'styles/colors';
 
 import Button, { ButtonWithComponent, CloseButton } from './index';
 
@@ -28,6 +27,7 @@ storiesOf('Button', module).add(
         <Button>Default</Button>
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
+        <Button variant="danger">Danger</Button>
         <Button variant="outline">Outline</Button>
       </Container>
       <h4>Large</h4>
@@ -41,6 +41,9 @@ storiesOf('Button', module).add(
         </Button>
         <Button variant="secondary" size="large">
           Secondary
+        </Button>
+        <Button variant="danger" size="large">
+          Danger
         </Button>
         <Button variant="outline" size="large">
           Outline
@@ -58,40 +61,87 @@ storiesOf('Button', module).add(
         <Button variant="secondary" size="xlarge">
           Secondary
         </Button>
+        <Button variant="danger" size="xlarge">
+          Danger
+        </Button>
         <Button variant="outline" size="xlarge">
           Outline
         </Button>
       </Container>
       <h4>Block</h4>
+      <Button block>Default</Button>
+      <br />
       <Button block variant="primary">
-        block primary
+        Primary
       </Button>
       <br />
-      <Button block>block</Button>
+      <Button block variant="secondary">
+        Secondary
+      </Button>
+      <br />
+      <Button block variant="danger">
+        Danger
+      </Button>
+      <br />
+      <Button block variant="outline">
+        Outline
+      </Button>
+      <br />
       <h4>Loading</h4>
       <Container>
-        <Button isLoading>Demo</Button>
+        <Button variant="link" isLoading>
+          Link
+        </Button>
+        <Button isLoading>Default</Button>
         <Button variant="primary" isLoading>
-          Demo
+          Primary
         </Button>
         <Button variant="secondary" isLoading>
-          Demo
+          Secondary
+        </Button>
+        <Button variant="danger" isLoading>
+          Danger
         </Button>
         <Button variant="outline" isLoading>
-          Demo
+          Outline
         </Button>
       </Container>
       <h4>Disabled</h4>
       <Container>
-        <Button disabled>Disabled</Button>
-        <Button disabled variant="outline">
-          Disabled
-        </Button>
         <Button disabled variant="link">
-          Disabled
+          Link
         </Button>
-        <Button disabled variant="primary" size="large" isLoading block>
-          Disabled
+        <Button disabled>Default</Button>
+        <Button disabled variant="primary">
+          Primary
+        </Button>
+        <Button disabled variant="secondary">
+          Secondary
+        </Button>
+        <Button disabled variant="danger">
+          Danger
+        </Button>
+        <Button disabled variant="outline">
+          Outline
+        </Button>
+      </Container>
+      <h4>With Icon</h4>
+      <Container>
+        <Button icon={<StarIcon />} variant="link">
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />}>With Icon</Button>
+        <Button icon={<StarFilledIcon />} variant="primary">
+          With Icon
+        </Button>
+        <Button icon={<StarFilledIcon />} variant="secondary">
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="danger">
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="outline">
+          With Icon
         </Button>
       </Container>
       <h4>WithComponent</h4>
@@ -100,19 +150,6 @@ storiesOf('Button', module).add(
           {'Button with <a href="#somewhere" /> tag'}
         </CustomComponent>
         <CloseButton />
-      </Container>
-      <h4>With Icon</h4>
-      <Container>
-        <Button icon={<StarIcon />}>With Icon</Button>
-        <Button icon={<StarFilledIcon color={white} />} variant="primary">
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon color={white} />} variant="secondary">
-          With Icon
-        </Button>
-        <Button icon={<StarIcon color={primary.main} />} variant="outline">
-          With Icon
-        </Button>
       </Container>
     </div>
   ))

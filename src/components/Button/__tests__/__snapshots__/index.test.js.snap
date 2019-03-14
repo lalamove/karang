@@ -20,24 +20,41 @@ exports[`Button-block 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: block;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
 <button
@@ -68,23 +85,40 @@ exports[`Button-disabled 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
 <button
@@ -116,34 +150,92 @@ exports[`Button-isLoading 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
+.c3 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
-.c1:active:enabled {
-  box-shadow: none;
+.gxDYDr .c2 {
+  color: #535353;
+}
+
+.ibkNlm .c2 {
+  color: #535353;
+}
+
+.jRZGVz .c2 {
+  color: #535353;
 }
 
 .c0 {
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
-  background-image: url(data:image/gif;base64,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);
-  background-position: center;
-  background-size: 16px;
-  background-repeat: no-repeat;
-  color: rgba(0,0,0,0);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #B4B4B4;
+  color: #535353;
+  color: rgba(0,0,0,0) !important;
+}
+
+.c0 .c2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
 <button
   class="c0 c1"
   type="button"
 >
+  <div
+    class="c2 c3"
+  >
+    <svg
+      height="16"
+      space="preserve"
+      viewBox="0 0 50 50"
+      width="16"
+    >
+      <path
+        d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z"
+        fill="currentColor"
+      >
+        <animateTransform
+          attributeName="transform"
+          attributeType="xml"
+          dur="0.6s"
+          from="0 25 25"
+          repeatCount="indefinite"
+          to="360 25 25"
+          type="rotate"
+        />
+      </path>
+    </svg>
+  </div>
   hello
 </button>
 `;
@@ -168,26 +260,43 @@ exports[`Button-size-large 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0.75em 1em;
   font-size: 16px;
   font-weight: 700;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
 <button
@@ -218,26 +327,109 @@ exports[`Button-size-xlarge 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0.9em 1em;
   font-size: 18px;
   font-weight: 700;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+<button
+  class="c0 c1"
+  type="button"
+>
+  hello
+</button>
+`;
+
+exports[`Button-variant-danger 1`] = `
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #D8534F;
+  border-color: #D8534F;
+  color: rgba(255,255,255,1);
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: rgba(255,255,255,1);
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #AD2E2A;
+  border-color: #AD2E2A;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(216,83,79,0.2);
 }
 
 <button
@@ -268,23 +460,40 @@ exports[`Button-variant-default 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
 <button
@@ -315,39 +524,36 @@ exports[`Button-variant-link 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none;
   padding: 0;
-  color: rgba(242,103,34,1);
+  color: #F16622;
 }
 
-.c0:active {
-  box-shadow: none;
-  color: #a43d0a;
-  -webkit-text-decoration: none !important;
-  text-decoration: none !important;
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #F16622;
 }
 
 .c0:hover:enabled,
-.c0:focus:enabled {
-  box-shadow: none;
-  color: rgba(242,103,34,0.7);
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+.c0:active:enabled {
+  color: #CB5217;
 }
 
 <button
@@ -378,23 +584,47 @@ exports[`Button-variant-outline 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
-  color: rgba(242,103,34,1);
-  border-color: rgba(242,103,34,1);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #F16622;
+  border-color: #F16622;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #F16622;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F16622;
+  border-color: #F16622;
+  color: rgba(255,255,255,1);
+}
+
+.c0:hover:enabled .Button__SpinnerWrapper-sc-1aalsx4-2,
+.c0:active:enabled .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: rgba(255,255,255,1);
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(241,102,34,0.2);
 }
 
 <button
@@ -425,24 +655,42 @@ exports[`Button-variant-primary 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
-  background-color: rgba(242,103,34,1);
-  border-color: rgba(242,103,34,1);
-  color: white;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #F16622;
+  border-color: #F16622;
+  color: rgba(255,255,255,1);
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: rgba(255,255,255,1);
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #CB5217;
+  border-color: #CB5217;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(241,102,34,0.2);
 }
 
 <button
@@ -473,24 +721,42 @@ exports[`Button-variant-secondary 1`] = `
 }
 
 .c1:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c1:hover:enabled,
-.c1:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c1:active:enabled {
-  box-shadow: none;
-}
-
 .c0 {
-  display: inline-block;
-  background-color: rgba(250,162,27,1);
-  border-color: rgba(250,162,27,1);
-  color: white;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #FEA000;
+  border-color: #FEA000;
+  color: rgba(255,255,255,1);
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: rgba(255,255,255,1);
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #FE8F00;
+  border-color: #FE8F00;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(254,160,0,0.2);
 }
 
 <button

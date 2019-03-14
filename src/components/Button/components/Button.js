@@ -1,16 +1,39 @@
 import React from 'react';
 import { bool, oneOf, node } from 'prop-types';
 import styled, { css } from 'styled-components';
-import { rgba, transparentize, darken } from 'polished';
+import { rgba } from 'polished';
 
+import Spinner from 'components/Spinner';
 import omit from 'utils/omit';
-import { primary, secondary, nobel, mineShaft, white } from 'styles/colors';
-import loaderGif from 'assets/loader.gif';
+import {
+  primary,
+  secondary,
+  valencia,
+  nobel,
+  mineShaft,
+  white,
+} from 'styles/colors';
 import Base from './style';
 
+const Text = styled.span`
+  margin-right: 10px;
+`;
+
+const IconWrapper = styled.div`
+  margin: -0.5em 0;
+`;
+
+const SpinnerWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
 const Button = styled(Base)`
-  /* layout */
-  display: ${({ block }) => (block ? 'block' : 'inline-block')};
+  position: relative;
+  display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
+  align-items: center;
+  justify-content: center;
   ${({ block }) => block && 'width: 100%;'};
 
   /* size */
@@ -42,6 +65,10 @@ const Button = styled(Base)`
           border-color: ${primary.main};
           color: ${white};
 
+          & ${/* sc-selector */ SpinnerWrapper} {
+            color: ${white};
+          }
+
           &:hover:enabled,
           &:active:enabled {
             background-color: ${primary['800']};
@@ -58,22 +85,66 @@ const Button = styled(Base)`
           background-color: ${secondary.main};
           border-color: ${secondary.main};
           color: ${white};
+
+          & ${/* sc-selector */ SpinnerWrapper} {
+            color: ${white};
+          }
+
+          &:hover:enabled,
+          &:active:enabled {
+            background-color: ${secondary['800']};
+            border-color: ${secondary['800']};
+          }
+
+          &:active:enabled,
+          &:focus:enabled {
+            box-shadow: 0 0 0 4px ${rgba(secondary.main, 0.2)};
+          }
         `;
       case 'outline':
         return css`
           color: ${primary.main};
           border-color: ${primary.main};
 
+          & ${/* sc-selector */ SpinnerWrapper} {
+            color: ${primary.main};
+          }
+
           &:hover:enabled,
           &:active:enabled {
             background-color: ${primary.main};
             border-color: ${primary.main};
             color: ${white};
+
+            & ${/* sc-selector */ SpinnerWrapper} {
+              color: ${white};
+            }
           }
 
           &:active:enabled,
           &:focus:enabled {
             box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
+          }
+        `;
+      case 'danger':
+        return css`
+          background-color: ${valencia.main};
+          border-color: ${valencia.main};
+          color: ${white};
+
+          & ${/* sc-selector */ SpinnerWrapper} {
+            color: ${white};
+          }
+
+          &:hover:enabled,
+          &:active:enabled {
+            background-color: ${valencia['800']};
+            border-color: ${valencia['800']};
+          }
+
+          &:active:enabled,
+          &:focus:enabled {
+            box-shadow: 0 0 0 4px ${rgba(valencia.main, 0.2)};
           }
         `;
       case 'link':
@@ -82,23 +153,23 @@ const Button = styled(Base)`
           padding: 0;
           color: ${primary.main};
 
-          &:active {
-            box-shadow: none;
-            color: ${darken(0.2, primary.main)};
-            text-decoration: none !important;
+          & ${/* sc-selector */ SpinnerWrapper} {
+            color: ${primary.main};
           }
 
           &:hover:enabled,
-          &:focus:enabled {
-            box-shadow: none;
-            color: ${transparentize(0.3, primary.main)};
-            text-decoration: underline;
+          &:active:enabled {
+            color: ${primary['800']};
           }
         `;
       default:
         return css`
           border-color: ${nobel.main};
           color: ${mineShaft['800']};
+
+          & ${/* sc-selector */ SpinnerWrapper} {
+            color: ${mineShaft['800']};
+          }
 
           &:hover:enabled,
           &:active:enabled {
@@ -117,11 +188,7 @@ const Button = styled(Base)`
   ${({ isLoading }) =>
     isLoading &&
     css`
-      background-image: url(${loaderGif});
-      background-position: center;
-      background-size: 16px;
-      background-repeat: no-repeat;
-      color: rgba(0, 0, 0, 0);
+      color: rgba(0, 0, 0, 0) !important;
     `}
 `;
 
@@ -136,7 +203,14 @@ Button.defaultProps = {
 Button.propTypes = {
   isLoading: bool,
   size: oneOf(['large', 'xlarge']),
-  variant: oneOf(['default', 'primary', 'secondary', 'outline', 'link']),
+  variant: oneOf([
+    'default',
+    'primary',
+    'secondary',
+    'outline',
+    'danger',
+    'link',
+  ]),
   block: bool,
   children: node.isRequired,
   type: oneOf(['button', 'submit', 'reset']),
@@ -150,20 +224,24 @@ export function withComponent(Comp) {
   });
 }
 
-const Text = styled.span`
-  vertical-align: middle;
-  margin-right: 10px;
-`;
-
 // eslint-disable-next-line react/prop-types
-export default ({ icon, children, ...rest }) => {
+export default ({ icon, isLoading, children, ...rest }) => {
   if (icon) {
     return (
-      <Button {...rest}>
+      <Button isLoading={isLoading} {...rest}>
         <Text>{children}</Text>
-        {icon}
+        <IconWrapper>{icon}</IconWrapper>
       </Button>
     );
   }
-  return <Button {...rest}>{children}</Button>;
+  return (
+    <Button isLoading={isLoading} {...rest}>
+      {isLoading && (
+        <SpinnerWrapper>
+          <Spinner color="currentColor" />
+        </SpinnerWrapper>
+      )}
+      {children}
+    </Button>
+  );
 };
