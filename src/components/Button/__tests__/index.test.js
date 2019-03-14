@@ -3,10 +3,18 @@ import { render } from 'enzyme';
 import Button from '../index';
 
 const types = {
-  size: ['large', 'xlarge'],
+  size: ['small', 'large', 'xlarge'],
   block: true,
   isLoading: true,
-  variant: ['link', 'primary', 'secondary', 'outline', 'danger', 'default'],
+  variant: [
+    'link',
+    'primary',
+    'secondary',
+    'outline',
+    'danger',
+    'dangerOutline',
+    'default',
+  ],
   disabled: true,
 };
 

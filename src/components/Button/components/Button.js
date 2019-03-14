@@ -29,7 +29,7 @@ const SpinnerWrapper = styled.div`
   transform: translateX(-50%);
 `;
 
-const Button = styled(Base)`
+const StyledButton = styled(Base)`
   position: relative;
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
   align-items: center;
@@ -39,6 +39,10 @@ const Button = styled(Base)`
   /* size */
   ${({ size }) => {
     switch (size) {
+      case 'small':
+        return css`
+          padding: 0.25em 1em;
+        `;
       case 'large':
         return css`
           padding: 0.75em 1em;
@@ -126,6 +130,31 @@ const Button = styled(Base)`
             box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
           }
         `;
+      case 'dangerOutline':
+        return css`
+          color: ${valencia.main};
+          border-color: ${valencia.main};
+
+          & ${/* sc-selector */ SpinnerWrapper} {
+            color: ${valencia.main};
+          }
+
+          &:hover:enabled,
+          &:active:enabled {
+            background-color: ${valencia.main};
+            border-color: ${valencia.main};
+            color: ${white};
+
+            & ${/* sc-selector */ SpinnerWrapper} {
+              color: ${white};
+            }
+          }
+
+          &:active:enabled,
+          &:focus:enabled {
+            box-shadow: 0 0 0 4px ${rgba(valencia.main, 0.2)};
+          }
+        `;
       case 'danger':
         return css`
           background-color: ${valencia.main};
@@ -149,8 +178,7 @@ const Button = styled(Base)`
         `;
       case 'link':
         return css`
-          border: none;
-          padding: 0;
+          border-color: transparent;
           color: ${primary.main};
 
           & ${/* sc-selector */ SpinnerWrapper} {
@@ -159,7 +187,12 @@ const Button = styled(Base)`
 
           &:hover:enabled,
           &:active:enabled {
-            color: ${primary['800']};
+            background-color: ${primary['050']};
+          }
+
+          &:active:enabled,
+          &:focus:enabled {
+            box-shadow: 0 0 0 4px ${rgba(primary['050'], 0.2)};
           }
         `;
       default:
@@ -192,56 +225,72 @@ const Button = styled(Base)`
     `}
 `;
 
-Button.defaultProps = {
-  isLoading: false,
-  size: null,
-  variant: 'default',
-  block: false,
-  type: 'button',
-};
-
-Button.propTypes = {
-  isLoading: bool,
-  size: oneOf(['large', 'xlarge']),
-  variant: oneOf([
-    'default',
-    'primary',
-    'secondary',
-    'outline',
-    'danger',
-    'link',
-  ]),
-  block: bool,
-  children: node.isRequired,
-  type: oneOf(['button', 'submit', 'reset']),
-};
-
-export function withComponent(Comp) {
-  return Button.withComponent(props => {
-    const propsToFilter = Object.keys(Button.propTypes);
-    const filteredProps = omit(props, propsToFilter);
-    return <Comp {...filteredProps}>{props.children}</Comp>;
-  });
-}
-
-// eslint-disable-next-line react/prop-types
-export default ({ icon, isLoading, children, ...rest }) => {
+/**
+ * Button component is the button component for actions in forms, dialogs, and more with
+ * multiple sizes and states.
+ */
+const Button = ({ icon, isLoading, children, ...rest }) => {
   if (icon) {
     return (
-      <Button isLoading={isLoading} {...rest}>
+      <StyledButton isLoading={isLoading} disabled={isLoading} {...rest}>
         <Text>{children}</Text>
         <IconWrapper>{icon}</IconWrapper>
-      </Button>
+      </StyledButton>
     );
   }
   return (
-    <Button isLoading={isLoading} {...rest}>
+    <StyledButton isLoading={isLoading} disabled={isLoading} {...rest}>
       {isLoading && (
         <SpinnerWrapper>
           <Spinner color="currentColor" />
         </SpinnerWrapper>
       )}
       {children}
-    </Button>
+    </StyledButton>
   );
 };
+
+Button.defaultProps = {
+  isLoading: false,
+  size: null,
+  variant: 'default',
+  block: false,
+  icon: null,
+  type: 'button',
+};
+
+Button.propTypes = {
+  /** Loading status for AJAX calls, show spinner when it is `true`. This also disables the
+   *  button. */
+  isLoading: bool,
+  /** Size of Button component */
+  size: oneOf(['small', 'large', 'xlarge']),
+  /** Variant of Button component */
+  variant: oneOf([
+    'default',
+    'primary',
+    'secondary',
+    'outline',
+    'danger',
+    'dangerOutline',
+    'link',
+  ]),
+  /** Fit the width to its parent width when it is `true` */
+  block: bool,
+  /** Element shown next to the text */
+  icon: node,
+  /** @ignore */
+  children: node.isRequired,
+  /** @ignore */
+  type: oneOf(['button', 'submit', 'reset']),
+};
+
+export function withComponent(Comp) {
+  return StyledButton.withComponent(props => {
+    const propsToFilter = Object.keys(Button.propTypes);
+    const filteredProps = omit(props, propsToFilter);
+    return <Comp {...filteredProps}>{props.children}</Comp>;
+  });
+}
+
+export default Button;

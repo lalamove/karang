@@ -21,7 +21,29 @@ storiesOf('Button', module).add(
   'Basic',
   withInfo({})(() => (
     <div>
-      <h4>Types</h4>
+      <h4>Small</h4>
+      <Container>
+        <Button variant="link" size="small">
+          Link
+        </Button>
+        <Button size="small">Default</Button>
+        <Button variant="primary" size="small">
+          Primary
+        </Button>
+        <Button variant="secondary" size="small">
+          Secondary
+        </Button>
+        <Button variant="danger" size="small">
+          Danger
+        </Button>
+        <Button variant="outline" size="small">
+          Outline
+        </Button>
+        <Button variant="dangerOutline" size="small">
+          Outline
+        </Button>
+      </Container>
+      <h4>Default</h4>
       <Container>
         <Button variant="link">Link</Button>
         <Button>Default</Button>
@@ -29,6 +51,7 @@ storiesOf('Button', module).add(
         <Button variant="secondary">Secondary</Button>
         <Button variant="danger">Danger</Button>
         <Button variant="outline">Outline</Button>
+        <Button variant="dangerOutline">Outline</Button>
       </Container>
       <h4>Large</h4>
       <Container>
@@ -48,6 +71,9 @@ storiesOf('Button', module).add(
         <Button variant="outline" size="large">
           Outline
         </Button>
+        <Button variant="dangerOutline" size="large">
+          Outline
+        </Button>
       </Container>
       <h4>Extra Large</h4>
       <Container>
@@ -65,6 +91,9 @@ storiesOf('Button', module).add(
           Danger
         </Button>
         <Button variant="outline" size="xlarge">
+          Outline
+        </Button>
+        <Button variant="dangerOutline" size="xlarge">
           Outline
         </Button>
       </Container>
@@ -87,6 +116,10 @@ storiesOf('Button', module).add(
         Outline
       </Button>
       <br />
+      <Button block variant="dangerOutline">
+        Outline
+      </Button>
+      <br />
       <h4>Loading</h4>
       <Container>
         <Button variant="link" isLoading>
@@ -103,6 +136,9 @@ storiesOf('Button', module).add(
           Danger
         </Button>
         <Button variant="outline" isLoading>
+          Outline
+        </Button>
+        <Button variant="dangerOutline" isLoading>
           Outline
         </Button>
       </Container>
@@ -124,6 +160,9 @@ storiesOf('Button', module).add(
         <Button disabled variant="outline">
           Outline
         </Button>
+        <Button disabled variant="dangerOutline">
+          Outline
+        </Button>
       </Container>
       <h4>With Icon</h4>
       <Container>
@@ -141,6 +180,9 @@ storiesOf('Button', module).add(
           With Icon
         </Button>
         <Button icon={<StarIcon />} variant="outline">
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="dangerOutline">
           With Icon
         </Button>
       </Container>

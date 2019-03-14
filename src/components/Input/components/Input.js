@@ -96,6 +96,7 @@ const defaultProps = {
 
 class Comp extends Component {
   static propTypes = propTypes;
+
   static defaultProps = defaultProps;
 
   static getDerivedStateFromProps({ value, defaultValue }) {
@@ -190,6 +191,7 @@ class Comp extends Component {
   }
 }
 
+// eslint-disable-next-line react/no-multi-comp
 const InputComp = forwardRef((props, ref) => (
   <Comp forwardedRef={ref} {...props} />
 ));
