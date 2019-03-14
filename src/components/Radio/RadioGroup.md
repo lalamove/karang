@@ -5,13 +5,13 @@
 ```jsx static
 <RadioGroup name="payment" value="cash">
   {Radio => (
-    <div>
+    <>
       <Radio value="wallet">Wallet</Radio>
       <Radio value="cash">Cash</Radio>
       <Radio disabled value="credit">
         Credit Card
       </Radio>
-    </div>
+    </>
   )}
 </RadioGroup>
 ```
@@ -58,13 +58,13 @@ const list = [
 ```jsx static
 <RadioGroup name="uncontrolled" defaultValue="abc">
   {Radio => (
-    <div>
+    <>
       <Radio value="abc">abc</Radio>
       <Radio value="edf">edf</Radio>
       <Radio value="xyz" disabled>
         xyz
       </Radio>
-    </div>
+    </>
   )}
 </RadioGroup>
 ```
@@ -72,13 +72,13 @@ const list = [
 ```js
 <RadioGroup name="uncontrolled" defaultValue="abc">
   {Radio => (
-    <div>
+    <>
       <Radio value="abc">abc</Radio>
       <Radio value="edf">edf</Radio>
       <Radio value="xyz" disabled>
         xyz
       </Radio>
-    </div>
+    </>
   )}
 </RadioGroup>
 ```
@@ -106,14 +106,14 @@ const list = [
 ];
 
 <RadioGroup
-  name="timeslot"
+  name="timeslot-block"
   value={state.value}
   onChange={value => setState({ value })}
   variant="list"
 >
   {Radio =>
     list.map(item => (
-      <Radio key={item.value} value={item.value} block>
+      <Radio key={item.value} value={item.value}>
         {item.label}
       </Radio>
     ))

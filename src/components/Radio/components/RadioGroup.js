@@ -16,19 +16,6 @@ const Radio = styled(RadioButton)`
   }
 `;
 
-function radio({ name, variant, selected, onChange, disabled }) {
-  return ({ ...props }) => (
-    <Radio
-      {...props}
-      name={name}
-      variant={variant}
-      onChange={onChange}
-      checked={props.value === selected} // eslint-disable-line react/prop-types,react/destructuring-assignment
-      disabled={disabled || props.disabled} // eslint-disable-line react/prop-types,react/destructuring-assignment
-    />
-  );
-}
-
 class RadioGroup extends Component {
   static defaultProps = {
     onChange: noop,
@@ -99,21 +86,35 @@ class RadioGroup extends Component {
 
   proxyHandler = value => this.handleChange({ target: { value } }); // fake event object
 
+  radio = props => {
+    const { name, variant, disabled } = this.props;
+    return (
+      <Radio
+        {...props}
+        name={name}
+        variant={variant}
+        onChange={this.handleChange}
+        checked={props.value === this.state.value} // eslint-disable-line react/prop-types,react/destructuring-assignment
+        disabled={disabled || props.disabled} // eslint-disable-line react/prop-types,react/destructuring-assignment
+      />
+    );
+  };
+
   render() {
-    const { name, variant, disabled, onChange, children, ...rest } = this.props;
-    const { value } = this.state;
+    const {
+      defaultValue: ignored,
+      value: _ignored,
+      name,
+      variant,
+      disabled,
+      onChange,
+      children,
+      ...rest
+    } = this.props;
+
     return (
       <Wrapper {...rest} aria-labelledby={name}>
-        {children(
-          radio({
-            name,
-            variant,
-            onChange: this.handleChange,
-            selected: value,
-            disabled,
-          }),
-          this.proxyHandler
-        ) || null}
+        {children(this.radio, this.proxyHandler)}
       </Wrapper>
     );
   }
