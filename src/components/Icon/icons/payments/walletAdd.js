@@ -1,7 +1,8 @@
 import React from 'react';
+import createSVGIcon from '../utils/createSVGIcon';
 
-const walletAdd = (
-  <svg version="1.1" viewBox="0 0 217 217">
+const walletAdd = createSVGIcon(
+  <React.Fragment>
     <defs>
       <mask
         id="a"
@@ -27,7 +28,8 @@ const walletAdd = (
       </g>
     </g>
     <path d="M0,0h217v217h-217Z" fillRule="evenodd" fill="none" stroke="none" />
-  </svg>
+  </React.Fragment>,
+  'WalletAdd'
 );
 
 export default walletAdd;

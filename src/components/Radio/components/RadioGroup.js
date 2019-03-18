@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { bool, func, string, number, oneOf, oneOfType } from 'prop-types';
+import { bool, func, string, oneOf } from 'prop-types';
 import styled from 'styled-components';
 import noop from 'utils/noop';
 import RadioButton from './RadioButton';
@@ -10,30 +10,16 @@ const Wrapper = styled.div`
 `;
 
 const Radio = styled(RadioButton)`
-  ${Wrapper} & {
+  ${/* sc-selector */ Wrapper} & {
     margin-right: 0.5em;
     margin-left: 0.5em;
   }
 `;
 
-function radio({ name, variant, selected, onChange, disabled }) {
-  return ({ ...props }) => (
-    <Radio
-      {...props}
-      name={name}
-      variant={variant}
-      onChange={onChange}
-      checked={props.value === selected} // eslint-disable-line react/prop-types
-      disabled={disabled}
-    />
-  );
-}
-
 class RadioGroup extends Component {
   static defaultProps = {
     onChange: noop,
     children: noop,
-    name: '',
     variant: 'default',
     value: null,
     defaultValue: null,
@@ -41,28 +27,37 @@ class RadioGroup extends Component {
   };
 
   static propTypes = {
-    /** Callback function, to be executed when user selected an option and it has changed */
+    /** Callback function, to be executed when user selected an option and it has changed
+     *
+     * @param {string} value - the selected value
+     */
     onChange: func,
-    /** Name of children */
-    name: string,
-    /** @ignore */
+    /** Name for radio buttons, will apply to html `<input type="radio" name="xxx" ... >` */
+    name: string.isRequired,
+    /** Function as child Component (FaCC)
+     *
+     * @param {component} Radio - Radio component
+     * @param {func} update - Update function, accepts `value` to be update as argument
+     */
     children: func,
     /** Variant of children, `default` is the circle buttons, `list` is the circle buttons
      *  with border, `toggle` is the toggle buttons */
     variant: oneOf(['default', 'list', 'toggle']),
     /** Selected value */
-    value: oneOfType([string, number, bool]),
+    value: string,
     /** Initial selected value, use it if you want to leave the component
      *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
-    defaultValue: oneOfType([string, number, bool]),
+    defaultValue: string,
     /** Disable the radio buttons if it is set to `true` */
     disabled: bool,
   };
 
+  /* eslint-disable react/destructuring-assignment */
   state = {
     value:
       this.props.value !== null ? this.props.value : this.props.defaultValue,
   };
+  /* eslint-enable react/destructuring-assignment */
 
   componentDidUpdate(prevProps) {
     const { value, defaultValue } = this.props;
@@ -74,34 +69,52 @@ class RadioGroup extends Component {
       );
     }
 
-    if (this.props.value !== prevProps.value) {
+    if (value !== prevProps.value) {
       // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ value: this.props.value });
+      this.setState({ value });
     }
   }
 
   handleChange = e => {
-    const { onChange } = this.props;
-    const { value } = e.target;
-    if (this.props.value === null) {
-      this.setState(state => ({ value }));
+    const { onChange, value } = this.props;
+    const targetVal = e.target.value;
+    if (value === null) {
+      this.setState(() => ({ value: targetVal }));
     }
-    onChange(value);
+    onChange(targetVal);
+  };
+
+  proxyHandler = value => this.handleChange({ target: { value } }); // fake event object
+
+  radio = props => {
+    const { name, variant, disabled } = this.props;
+    return (
+      <Radio
+        {...props}
+        name={name}
+        variant={variant}
+        onChange={this.handleChange}
+        checked={props.value === this.state.value} // eslint-disable-line react/prop-types,react/destructuring-assignment
+        disabled={disabled || props.disabled} // eslint-disable-line react/prop-types,react/destructuring-assignment
+      />
+    );
   };
 
   render() {
-    const { name, variant, disabled, onChange, ...rest } = this.props;
+    const {
+      defaultValue: ignored,
+      value: _ignored,
+      name,
+      variant,
+      disabled,
+      onChange,
+      children,
+      ...rest
+    } = this.props;
+
     return (
       <Wrapper {...rest} aria-labelledby={name}>
-        {this.props.children(
-          radio({
-            name,
-            variant,
-            onChange: this.handleChange,
-            selected: this.state.value,
-            disabled,
-          })
-        ) || null}
+        {children(this.radio, this.proxyHandler)}
       </Wrapper>
     );
   }

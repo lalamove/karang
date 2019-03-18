@@ -1,7 +1,8 @@
 import React from 'react';
+import createSVGIcon from '../utils/createSVGIcon';
 
-const userToDropOff = (
-  <svg viewBox="0 0 217 217">
+const userToDropOff = createSVGIcon(
+  <React.Fragment>
     <path
       d="M52.4,71.9L52.4,71.9c14.9,0,27-12.1,27-27s-12.1-27-27-27s-27,12.1-27,27v0C25.4,59.9,37.5,71.9,52.4,71.9
 	C52.4,71.9,52.4,71.9,52.4,71.9z M52.4,27.4L52.4,27.4c9.7,0,17.6,7.9,17.6,17.6c0,9.7-7.9,17.6-17.6,17.6
@@ -25,7 +26,8 @@ const userToDropOff = (
       />
     </g>
     <path d="M159.4,197.5H79c-2.5,0-4.5-2-4.5-4.5s2-4.5,4.5-4.5h80.4c2.5,0,4.5,2,4.5,4.5S161.9,197.5,159.4,197.5z" />
-  </svg>
+  </React.Fragment>,
+  'UserToDropOff'
 );
 
 export default userToDropOff;

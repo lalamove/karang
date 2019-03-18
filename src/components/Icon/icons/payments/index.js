@@ -1,81 +1,33 @@
-import amexCard from './amexCard';
-import bangkokBank from './bangkokBank';
-import bank from './bank';
-import cash from './cash';
-import cashHKD from './cashHKD';
-import cashHKDVertical from './cashHKDVertical';
-import cashPHP from './cashPHP';
-import cashVND from './cashVND';
-import creditCard from './creditCard';
-// import creditCardAdd from './creditCardAdd';
-import creditCardBack from './creditCardBack';
-import creditCardFront from './creditCardFront';
-import dinersClubCard from './dinersClubCard';
-import discount from './discount';
-import discountSign from './discountSign';
-import discountSignFilled from './discountSignFilled';
-import discoverCard from './discoverCard';
-import donation from './donation';
-import jcbCard from './jcbCard';
-import masterCard from './masterCard';
-import momo from './momo';
-import pricing from './pricing';
-import priorityFee from './priorityFee';
-import promoCode from './promoCode';
-import rates from './rates';
-import rewards from './rewards';
-import terms from './terms';
-import unionPayCard from './unionPayCard';
-import visaCard from './visaCard';
-import wallet from './wallet';
-import walletAdd from './walletAdd';
-import walletBig from './walletBig';
-
-const PaymentIcons = {
-  amexCard,
-  bangkokBank,
-  bank,
-  cash,
-  cashHKD,
-  cashHKDVertical,
-  cashPHP,
-  cashVND,
-  creditCard,
-  // creditCardAdd,
-  creditCardBack,
-  creditCardFront,
-  dinersClubCard,
-  discount,
-  discountSign,
-  discountSignFilled,
-  discoverCard,
-  donation,
-  jcbCard,
-  masterCard,
-  momo,
-  pricing,
-  priorityFee,
-  promoCode,
-  rates,
-  rewards,
-  terms,
-  unionPayCard,
-  visaCard,
-  wallet,
-  walletAdd,
-  walletBig,
-
-  // TODO: DEPRECATED
-  aMEXCard: amexCard,
-  cashOutline: cashHKD,
-  cashVertical: cashHKDVertical,
-  jCBCard: jcbCard,
-  walletOutline: wallet,
-  // aMEXLogo,
-  // dollarCircle, // files/notes/link
-  // dollarTorn, // files/receipt
-  // masterCardLogo,
-  // visaLogo,
-};
-
-export default PaymentIcons;
+export { default as amexCard } from './amexCard';
+export { default as bangkokBank } from './bangkokBank';
+export { default as bank } from './bank';
+export { default as cash } from './cash';
+export { default as cashHKD } from './cashHKD';
+export { default as cashHKDVertical } from './cashHKDVertical';
+export { default as cashPHP } from './cashPHP';
+export { default as cashTHB } from './cashTHB';
+export { default as cashVND } from './cashVND';
+export { default as creditCard } from './creditCard';
+export { default as creditCardAdd } from './creditCardAdd';
+export { default as creditCardBack } from './creditCardBack';
+export { default as creditCardFront } from './creditCardFront';
+export { default as dinersClubCard } from './dinersClubCard';
+export { default as discount } from './discount';
+export { default as discountSign } from './discountSign';
+export { default as discountSignFilled } from './discountSignFilled';
+export { default as discoverCard } from './discoverCard';
+export { default as donation } from './donation';
+export { default as jcbCard } from './jcbCard';
+export { default as masterCard } from './masterCard';
+export { default as momo } from './momo';
+export { default as pricing } from './pricing';
+export { default as priorityFee } from './priorityFee';
+export { default as promoCode } from './promoCode';
+export { default as rates } from './rates';
+export { default as rewards } from './rewards';
+export { default as terms } from './terms';
+export { default as unionPayCard } from './unionPayCard';
+export { default as visaCard } from './visaCard';
+export { default as wallet } from './wallet';
+export { default as walletAdd } from './walletAdd';
+export { default as walletBig } from './walletBig';

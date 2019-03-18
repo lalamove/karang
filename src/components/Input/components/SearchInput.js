@@ -4,17 +4,17 @@ import styled from 'styled-components';
 
 import { black, offWhite } from 'styles/colors';
 import { fontSize } from 'styles/fonts';
-import Icon from 'components/Icon';
+import SearchIcon from 'components/Icon/icons/content/search';
 import TextInput from './TextInput';
 
 const Container = styled.div`
   display: inline-flex;
-  align-items: center;
   justify-content: flex-start;
-  border-radius: 24px;
-  border: 1px solid ${offWhite};
+  align-items: center;
   height: 30px;
   padding: 0 1em;
+  border-radius: 24px;
+  border: 1px solid ${offWhite};
   font-size: ${fontSize.regular};
 `;
 
@@ -26,7 +26,7 @@ const SCTextInput = styled(TextInput)`
 
 const CompWithRef = forwardRef((props, ref) => (
   <Container>
-    <Icon type="magnifyingGlass" color={black} size={20} />
+    <SearchIcon color={black} size={20} />
     <SCTextInput innerRef={ref} {...props} />
   </Container>
 ));

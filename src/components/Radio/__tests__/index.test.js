@@ -18,6 +18,36 @@ describe('Snapshots', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('Radio group disabled', () => {
+    const wrapper = render(
+      <RadioGroup name="demo" defaultValue="1" disabled>
+        {RadioB => (
+          <Fragment>
+            <RadioB name="demo" value="1" />
+            <RadioB name="demo" value="2" />
+            <RadioB name="demo" value="3" />
+          </Fragment>
+        )}
+      </RadioGroup>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Radio group with child disabled', () => {
+    const wrapper = render(
+      <RadioGroup name="demo" defaultValue="3">
+        {RadioB => (
+          <Fragment>
+            <RadioB name="demo" value="1" />
+            <RadioB name="demo" value="2" disabled />
+            <RadioB name="demo" value="3" />
+          </Fragment>
+        )}
+      </RadioGroup>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('Render children', () => {
     const wrapper = render(
       <Radio name="demo" value="blah">
@@ -42,13 +72,13 @@ describe('Functions', () => {
 describe('RadioGroup', () => {
   it('accept and call children function', () => {
     const f = jest.fn();
-    mount(<RadioGroup>{f}</RadioGroup>);
+    mount(<RadioGroup name="demo">{f}</RadioGroup>);
     expect(f).toHaveBeenCalledTimes(1);
   });
 
   it('render RadioButton class as children', () => {
     const wrapper = mount(
-      <RadioGroup value="vehicle">
+      <RadioGroup name="vehicle" value="van">
         {RadioButton => (
           <Fragment>
             <RadioButton value="van" />

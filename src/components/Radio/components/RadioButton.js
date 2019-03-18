@@ -7,14 +7,15 @@ import noop from 'utils/noop';
 import { nobel, primary, mineShaft } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
 
-const Radio = styled.span`
+const Radio = styled.span.attrs({
+  'aria-hidden': 'true',
+})`
   display: inline-block;
   box-sizing: border-box;
   width: 16px;
   height: 16px;
   padding: 2px;
   border: 1px solid ${nobel.main};
-  margin-right: 0.2em;
   border-radius: 50%;
   vertical-align: middle;
 `;
@@ -22,6 +23,9 @@ const Radio = styled.span`
 const Text = styled.span`
   display: inline-block;
   font-family: ${primaryFonts};
+  ${/* sc-selector */ Radio} + & {
+    margin-left: 0.5em;
+  }
 `;
 
 const Label = styled.label`
@@ -71,8 +75,8 @@ const Label = styled.label`
     border: 1px solid ${mineShaft['900']};
   }
   
-  &:active > input:not(:checked):not(:disabled) ~ ${/* sc-selector */ Radio}, 
-  & > input:focus:not(:checked):not(:disabled) ~ ${/* sc-selector */ Radio} {
+  &:active > input:not(:disabled) ~ ${/* sc-selector */ Radio}, 
+  & > input:focus:not(:disabled) ~ ${/* sc-selector */ Radio} {
     box-shadow: 0 0 0 4px ${rgba(nobel.main, 0.2)};
   }
 
@@ -101,6 +105,7 @@ const Label = styled.label`
     `}
 `;
 
+// Need to extract button style
 const Button = styled.label`
   display: inline-block;
   padding: 1em;
@@ -220,6 +225,7 @@ class RadioButton extends PureComponent {
     const Comp = variant !== 'toggle' ? Label : Button;
     return (
       <Comp
+        htmlFor={`${name}-${value}`}
         {...rest}
         checked={checked}
         variant={variant}
@@ -227,6 +233,7 @@ class RadioButton extends PureComponent {
         disabled={disabled}
       >
         <input
+          id={`${name}-${value}`}
           type="radio"
           name={name}
           onChange={onChange}
@@ -235,7 +242,8 @@ class RadioButton extends PureComponent {
           value={value}
           disabled={disabled}
         />
-        {variant !== 'toggle' && <Radio />} <Text>{children}</Text>
+        {variant !== 'toggle' && <Radio />}
+        <Text>{children}</Text>
       </Comp>
     );
   }

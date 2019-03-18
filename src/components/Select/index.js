@@ -14,7 +14,7 @@ import styled from 'styled-components';
 
 import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
-import Icon from 'components/Icon';
+import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
 import List from 'components/List';
 
 import noop from 'utils/noop';
@@ -38,9 +38,9 @@ const Button = styled.button`
   align-items: flex-end;
   width: 100%;
   padding: 10px;
-  color: ${mineShaft['900']};
   border: none;
   background: transparent;
+  color: ${mineShaft['900']};
   outline: none;
 
   ${({ disabled }) => disabled && `cursor: not-allowed;`};
@@ -67,9 +67,9 @@ const Caret = styled.span`
 
 const StyledList = styled(List)`
   position: absolute;
+  z-index: ${DROPDOWN};
   top: calc(100% + 1px);
   left: 0;
-  z-index: ${DROPDOWN};
   width: 100%;
 
   li[disabled] {
@@ -188,13 +188,15 @@ class Select extends Component {
   }
 
   onFocus = e => {
+    const { onFocus } = this.props;
     this.setState({ focused: true });
-    this.props.onFocus(e);
+    onFocus(e);
   };
 
   onBlur = e => {
+    const { onBlur } = this.props;
     this.setState({ focused: false });
-    this.props.onBlur(e);
+    onBlur(e);
   };
 
   render() {
@@ -251,7 +253,7 @@ class Select extends Component {
                     {selectedItem && (selectedItem.label || selectedItem.value)}
                   </Content>
                   <Caret>
-                    <Icon type="dropdown" size={24} />
+                    <DropDownIcon size={24} />
                   </Caret>
                 </Button>
                 {isOpen && (

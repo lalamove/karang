@@ -1,27 +1,11 @@
-import addressBook from './addressBook';
-import contactBook from './contactBook';
-import conversation from './conversation';
-import email from './email';
-import message from './message';
-import notification from './notification';
-import phoneVibrate from './phoneVibrate';
-import remark from './remark';
-import send from './send';
-import tel from './tel';
-import voice from './voice';
-
-const CommunicationIcons = {
-  addressBook,
-  contactBook,
-  conversation,
-  email,
-  message,
-  notification,
-  phoneVibrate,
-  remark,
-  send,
-  tel,
-  voice,
-};
-
-export default CommunicationIcons;
+export { default as addressBook } from './addressBook';
+export { default as contactBook } from './contactBook';
+export { default as conversation } from './conversation';
+export { default as email } from './email';
+export { default as message } from './message';
+export { default as notification } from './notification';
+export { default as phoneVibrate } from './phoneVibrate';
+export { default as remark } from './remark';
+export { default as send } from './send';
+export { default as tel } from './tel';
+export { default as voice } from './voice';

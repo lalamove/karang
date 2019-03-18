@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge With colors 1`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #535353;
+  padding: 0.4em 0.8em;
+  color: #535353;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 2`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #F3F3F3;
+  padding: 0.4em 0.8em;
+  color: #F3F3F3;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 3`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #19BC9B;
+  padding: 0.4em 0.8em;
+  color: #19BC9B;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 4`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #B4B4B4;
+  padding: 0.4em 0.8em;
+  color: #B4B4B4;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 5`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #2FA0ED;
+  padding: 0.4em 0.8em;
+  color: #2FA0ED;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 6`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #0061B9;
+  padding: 0.4em 0.8em;
+  color: #0061B9;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 7`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #F16622;
+  padding: 0.4em 0.8em;
+  color: #F16622;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 8`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #FEA000;
+  padding: 0.4em 0.8em;
+  color: #FEA000;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 9`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #F7981C;
+  padding: 0.4em 0.8em;
+  color: #F7981C;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With colors 10`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #D8534F;
+  padding: 0.4em 0.8em;
+  color: #D8534F;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With icon 1`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #535353;
+  padding: 0.4em 0.8em;
+  color: #535353;
+}
+
+.c1 {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  testing
+  <span
+    class="c1"
+  >
+    Testing
+  </span>
+</span>
+`;
+
+exports[`Badge With smaller size 1`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #535353;
+  padding: 0.2em 0.8em;
+  color: #535353;
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 1`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #535353;
+  padding: 0.4em 0.8em;
+  background-color: #535353;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 2`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #F3F3F3;
+  padding: 0.4em 0.8em;
+  background-color: #F3F3F3;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 3`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #19BC9B;
+  padding: 0.4em 0.8em;
+  background-color: #19BC9B;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 4`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #B4B4B4;
+  padding: 0.4em 0.8em;
+  background-color: #B4B4B4;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 5`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #2FA0ED;
+  padding: 0.4em 0.8em;
+  background-color: #2FA0ED;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 6`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #0061B9;
+  padding: 0.4em 0.8em;
+  background-color: #0061B9;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 7`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #F16622;
+  padding: 0.4em 0.8em;
+  background-color: #F16622;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 8`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #FEA000;
+  padding: 0.4em 0.8em;
+  background-color: #FEA000;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 9`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #F7981C;
+  padding: 0.4em 0.8em;
+  background-color: #F7981C;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;
+
+exports[`Badge With solid colors 10`] = `
+.c0 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  border: 1px solid;
+  border-color: #D8534F;
+  padding: 0.4em 0.8em;
+  background-color: #D8534F;
+  color: rgba(255,255,255,1);
+}
+
+<span
+  class="c0"
+  title="Testing"
+>
+  Testing
+</span>
+`;

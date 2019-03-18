@@ -1,33 +1,14 @@
-import assigning from './assigning';
-import ban from './ban';
-import cancelled from './cancelled';
-import completed from './completed';
-import defaultStatus from './defaultStatus';
-import eyeOff from './eyeOff';
-import eyeOn from './eyeOn';
-import login from './login';
-import logout from './logout';
-import matched from './matched';
-import onOff from './onOff';
-import pod from './pod';
-import soundOff from './soundOff';
-import soundOn from './soundOn';
-
-const StatusIcons = {
-  assigning,
-  ban,
-  cancelled,
-  completed,
-  defaultStatus,
-  eyeOff,
-  eyeOn,
-  login,
-  logout,
-  matched,
-  onOff,
-  pod,
-  soundOff,
-  soundOn,
-};
-
-export default StatusIcons;
+export { default as assigning } from './assigning';
+export { default as ban } from './ban';
+export { default as cancelled } from './cancelled';
+export { default as completed } from './completed';
+export { default as defaultStatus } from './defaultStatus';
+export { default as eyeOff } from './eyeOff';
+export { default as eyeOn } from './eyeOn';
+export { default as login } from './login';
+export { default as logout } from './logout';
+export { default as matched } from './matched';
+export { default as onOff } from './onOff';
+export { default as pod } from './pod';
+export { default as soundOff } from './soundOff';
+export { default as soundOn } from './soundOn';

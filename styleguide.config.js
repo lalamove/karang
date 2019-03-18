@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 module.exports = {
   require: [path.resolve(__dirname, '.styleguide/setup.js')],
@@ -9,9 +10,25 @@ module.exports = {
     '**/*.d.ts',
     '**/_story.{js,jsx,ts,tsx}',
   ],
-  exampleMode: 'expand',
+  exampleMode: 'collapse',
   usageMode: 'expand',
   skipComponentsWithoutExample: true,
+  getComponentPathLine(componentPath) {
+    const compDir = /(^src\/components\/[a-zA-Z]+)/.exec(componentPath)[1];
+    const configPath = path.join(__dirname, compDir, 'doc.json');
+    try {
+      const stats = fs.lstatSync(configPath);
+      if (stats.isFile()) {
+        const compConfig = require(configPath); // eslint-disable-line global-require, import/no-dynamic-require
+        return compConfig.import;
+      }
+    } catch (error) {
+      if (error.code === 'ENOENT') {
+        console.warn('Missing:', error.path);
+      }
+    }
+    return componentPath;
+  },
   getExampleFilename(componentPath) {
     let ComponentName = componentPath
       .split(path.sep)

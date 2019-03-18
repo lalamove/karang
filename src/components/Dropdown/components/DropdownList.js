@@ -38,8 +38,9 @@ const StyledList = styled(List)`
     }
   }};
 
-  ${({ block }) =>
+  ${({ block, nested }) =>
     block &&
+    !nested &&
     css`
       width: 100%;
     `};

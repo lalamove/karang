@@ -1,45 +1,39 @@
 import React, { Fragment } from 'react';
-import { bool, shape } from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
+import { shape } from 'prop-types';
 
 import { fontSize } from 'styles/fonts';
 
 import Alert from '../Alert';
-import Icon from './index';
 
 // Category
-import AlertIcons from './icons/alert';
-import ArrowsIcons from './icons/arrows';
-import CommunicationIcons from './icons/communication';
-import ContentIcons from './icons/content';
-import DateIcons from './icons/date';
-import DevicesIcons from './icons/devices';
-import EmojiIcons from './icons/emoji';
-import FilesIcons from './icons/files';
-import ImagesIcons from './icons/images';
-import LogoIcons from './icons/logo';
-import MapsIcons from './icons/maps';
-import PaymentsIcons from './icons/payments';
-import SecurityIcons from './icons/security';
-import ServicesIcons from './icons/services';
-import SocialIcons from './icons/social';
-import StatusIcons from './icons/status';
-import ToggleIcons from './icons/toggle';
-import UserIcons from './icons/users';
-import VehiclesIcons from './icons/vehicles';
-import OthersIcons from './icons/others'; // TODO: DEPRECATED, for backward compatibility only
+import * as AlertIcons from './icons/alert';
+import * as ArrowsIcons from './icons/arrows';
+import * as CommunicationIcons from './icons/communication';
+import * as ContentIcons from './icons/content';
+import * as DateIcons from './icons/date';
+import * as DevicesIcons from './icons/devices';
+import * as EmojiIcons from './icons/emoji';
+import * as FilesIcons from './icons/files';
+import * as ImagesIcons from './icons/images';
+import * as LogoIcons from './icons/logo';
+import * as MapsIcons from './icons/maps';
+import * as PaymentsIcons from './icons/payments';
+import * as SecurityIcons from './icons/security';
+import * as ServicesIcons from './icons/services';
+import * as SocialIcons from './icons/social';
+import * as StatusIcons from './icons/status';
+import * as ToggleIcons from './icons/toggle';
+import * as UserIcons from './icons/users';
+import * as VehiclesIcons from './icons/vehicles';
+import * as OthersIcons from './icons/others'; // TODO: DEPRECATED, for backward compatibility only
 
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-`;
-
-const SCIcon = styled(Icon)`
-  display: block;
-  margin: 0.8em auto 0.8em auto;
 `;
 
 const Wrapper = styled.div`
@@ -57,35 +51,25 @@ const colorMap = {
   hate: '#e15453',
 };
 
-const Icons = ({ category, colored }) => (
+const IconGallery = ({ category }) => (
   <Container>
-    {Object.keys(category).map(type => (
-      <Wrapper key={`icon-${type}`}>
-        <SCIcon
-          type={type}
-          size={40}
-          {...colored && { color: colorMap[type] }}
-        />
-        {type}
+    {Object.entries(category).map(([key, I]) => (
+      <Wrapper key={`icon-${key}`}>
+        <I size={40} color={colorMap[key] || 'inherit'} />
+        <div>{key}</div>
       </Wrapper>
     ))}
   </Container>
 );
-
-Icons.defaultProps = {
-  colored: false,
-};
-
-Icons.propTypes = {
+IconGallery.propTypes = {
   category: shape({}).isRequired,
-  colored: bool,
 };
 
 storiesOf('Icon', module)
-  .add('Alert', () => <Icons category={AlertIcons} />)
-  .add('Arrows', () => <Icons category={ArrowsIcons} />)
-  .add('Communication', () => <Icons category={CommunicationIcons} />)
-  .add('Content', () => <Icons category={ContentIcons} />)
+  .add('Alert', () => <IconGallery category={AlertIcons} />)
+  .add('Arrows', () => <IconGallery category={ArrowsIcons} />)
+  .add('Communication', () => <IconGallery category={CommunicationIcons} />)
+  .add('Content', () => <IconGallery category={ContentIcons} />)
   .add('Emoji', () => (
     <Fragment>
       <Alert
@@ -93,23 +77,23 @@ storiesOf('Icon', module)
         message="Color code required"
         description="The icons below are suggested to be used with color. Please check the documentation for examples."
       />
-      <Icons category={EmojiIcons} colored />
+      <IconGallery category={EmojiIcons} colored />
     </Fragment>
   ))
-  .add('Date', () => <Icons category={DateIcons} />)
-  .add('Devices', () => <Icons category={DevicesIcons} />)
-  .add('Files', () => <Icons category={FilesIcons} />)
-  .add('Images', () => <Icons category={ImagesIcons} />)
-  .add('Logo', () => <Icons category={LogoIcons} />)
-  .add('Maps', () => <Icons category={MapsIcons} />)
-  .add('Payments', () => <Icons category={PaymentsIcons} />)
-  .add('Security', () => <Icons category={SecurityIcons} />)
-  .add('Services', () => <Icons category={ServicesIcons} />)
-  .add('Social', () => <Icons category={SocialIcons} />)
-  .add('Status', () => <Icons category={StatusIcons} />)
-  .add('Toggle', () => <Icons category={ToggleIcons} />)
-  .add('Users', () => <Icons category={UserIcons} />)
-  .add('Vehicles', () => <Icons category={VehiclesIcons} />)
+  .add('Date', () => <IconGallery category={DateIcons} />)
+  .add('Devices', () => <IconGallery category={DevicesIcons} />)
+  .add('Files', () => <IconGallery category={FilesIcons} />)
+  .add('Images', () => <IconGallery category={ImagesIcons} />)
+  .add('Logo', () => <IconGallery category={LogoIcons} />)
+  .add('Maps', () => <IconGallery category={MapsIcons} />)
+  .add('Payments', () => <IconGallery category={PaymentsIcons} />)
+  .add('Security', () => <IconGallery category={SecurityIcons} />)
+  .add('Services', () => <IconGallery category={ServicesIcons} />)
+  .add('Social', () => <IconGallery category={SocialIcons} />)
+  .add('Status', () => <IconGallery category={StatusIcons} />)
+  .add('Toggle', () => <IconGallery category={ToggleIcons} />)
+  .add('Users', () => <IconGallery category={UserIcons} />)
+  .add('Vehicles', () => <IconGallery category={VehiclesIcons} />)
   .add('Others (Deprecated)', () => (
     <Fragment>
       <Alert
@@ -117,6 +101,6 @@ storiesOf('Icon', module)
         message="Deprecated"
         description="The icons below has been deprecated, and they will be removed in future version. Please replace with the name advised in documentation."
       />
-      <Icons category={OthersIcons} />
+      <IconGallery category={OthersIcons} />
     </Fragment>
   ));

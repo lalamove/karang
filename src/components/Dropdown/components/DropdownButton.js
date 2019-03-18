@@ -3,7 +3,7 @@ import { node, string } from 'prop-types';
 import styled from 'styled-components';
 
 import Button from 'components/Button';
-import Icon from 'components/Icon';
+import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
 import { white, lightGray } from 'styles/colors';
 
 const StyledButton = styled(Button)`
@@ -42,7 +42,7 @@ const DropdownButton = ({ icon, label, ...remainProps }) => (
     {icon && <CustomIcon>{icon}</CustomIcon>}
     <Content>{label}</Content>
     <Caret>
-      <Icon type="dropdown" color={lightGray} size={24} />
+      <DropDownIcon color={lightGray} size={24} />
     </Caret>
   </StyledButton>
 );

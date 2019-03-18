@@ -1,15 +1,5 @@
-import dislike from './dislike';
-import hate from './hate';
-import like from './like';
-import love from './love';
-import neutral from './neutral';
-
-const EmojiIcons = {
-  dislike,
-  hate,
-  like,
-  love,
-  neutral,
-};
-
-export default EmojiIcons;
+export { default as dislike } from './dislike';
+export { default as hate } from './hate';
+export { default as like } from './like';
+export { default as love } from './love';
+export { default as neutral } from './neutral';

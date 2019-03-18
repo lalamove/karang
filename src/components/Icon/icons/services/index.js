@@ -1,9 +1,2 @@
-import requests from './requests';
-import tunnel from './tunnel';
-
-const servicesIcons = {
-  requests,
-  tunnel,
-};
-
-export default servicesIcons;
+export { default as requests } from './requests';
+export { default as tunnel } from './tunnel';

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import Icon from 'components/Icon';
+import VmenuIcon from 'components/Icon/icons/content/vmenu';
 import { nobel } from 'styles/colors';
 
 const Button = styled.button`
@@ -36,7 +36,7 @@ const Button = styled.button`
 
 const ExpandButton = props => (
   <Button {...props}>
-    <Icon type="vmenu" size={36} />
+    <VmenuIcon size={36} />
   </Button>
 );
 

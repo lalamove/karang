@@ -27,7 +27,7 @@ const items = [
 Example for using `<Dropdown />` with custom `onChange()` function
 
 ```js
-const Icon = require('components/Icon').default;
+const Icon = require('components/Icon/icons/content/vmenu').default;
 const items = [
   {
     icon: <Icon type="pinFill" />,
@@ -51,7 +51,7 @@ initialState = { selected: items[0] };
 **Cascading menu with icon**
 
 ```js
-const Icon = require('../../components/Icon').default;
+const Icon = require('../../components/Icon/icons/content/vmenu').default;
 const items = [
   {
     icon: <Icon type="pinFill" />,
@@ -72,4 +72,53 @@ const items = [
   },
 ];
 <Dropdown items={items} />
+```
+
+**Block**
+
+```js
+const items = [
+  {
+    value: 'TW_TPE',
+    label: 'Taipei',
+  },
+  {
+    value: 'TW_TXG',
+    label: 'Taichung',
+  },
+];
+<Dropdown items={items} defaultLabel="Select city" block />
+```
+
+**Block with cascading menu**
+
+```js
+const items = [
+  {
+    value: 'TW_TPE',
+    label: 'Taipei',
+    options: [{
+        value: '106',
+        label: 'Daan',
+      }, {
+        value: '114',
+        label: 'Neihu',
+      }, {
+        value: '115',
+        label: 'Nangang',
+    }]
+  },
+  {
+    value: 'TW_TXG',
+    label: 'Taichung',
+    options: [{
+        value: '406',
+        label: 'Beitun',
+      }, {
+        value: '408',
+        label: 'Nantun',
+    }]
+  },
+];
+<Dropdown items={items} defaultLabel="Select district" block direction="left" />
 ```

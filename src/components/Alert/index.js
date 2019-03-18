@@ -3,7 +3,10 @@ import { string, func, oneOf } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import Icon from 'components/Icon';
+import InfoIcon from 'components/Icon/icons/alert/info';
+import SuccessIcon from 'components/Icon/icons/alert/success';
+import WarningIcon from 'components/Icon/icons/alert/warning';
+import CloseIcon from 'components/Icon/icons/content/close';
 
 import noop from 'utils/noop';
 import {
@@ -14,7 +17,7 @@ import {
   mountainMeadow,
 } from 'styles/colors';
 
-const StyledIcon = styled(Icon)`
+const IconContainer = styled.div`
   margin: 0 0.5em 0 0;
 `;
 
@@ -23,8 +26,8 @@ const Content = styled.div`
   line-height: 1.2em;
 
   & span {
-    margin: 2px;
     display: inline-block;
+    margin: 2px;
   }
 
   & span:first-child {
@@ -34,9 +37,9 @@ const Content = styled.div`
 
 const CloseButton = styled.button`
   appearance: none;
-  margin: 0 0 0 1em;
   padding: 0;
   border: none;
+  margin: 0 0 0 1em;
   background-color: transparent;
   cursor: pointer;
   outline: 0;
@@ -78,12 +81,15 @@ const Container = styled.div`
 `;
 
 const icon = {
-  warning: 'warning',
-  error: 'warning',
-  success: 'success',
-  info: 'info',
+  warning: WarningIcon,
+  error: WarningIcon,
+  success: SuccessIcon,
+  info: InfoIcon,
 };
 
+/**
+ * Alert component is used to give feedback to the user action or state changes.
+ */
 const Alert = ({
   type,
   variant,
@@ -91,26 +97,37 @@ const Alert = ({
   description,
   onDismiss,
   ...props
-}) => (
-  <Container type={type} variant={variant} {...props}>
-    <StyledIcon type={icon[type]} color={white} size={24} />
-    <Content>
-      <span>{message}</span>
-      {description && <span>{description}</span>}
-    </Content>
-    {onDismiss !== noop && (
-      <CloseButton onClick={onDismiss}>
-        <Icon type="cross" color={white} size={24} />
-      </CloseButton>
-    )}
-  </Container>
-);
+}) => {
+  const Icon = icon[type];
+  return (
+    <Container type={type} variant={variant} {...props}>
+      <IconContainer>
+        <Icon color={white} size={24} />
+      </IconContainer>
+      <Content>
+        <span>{message}</span>
+        {description && <span>{description}</span>}
+      </Content>
+      {onDismiss !== noop && (
+        <CloseButton onClick={onDismiss}>
+          <CloseIcon color={white} size={24} />
+        </CloseButton>
+      )}
+    </Container>
+  );
+};
 
 Alert.propTypes = {
+  /** Type of Alert component */
   type: oneOf(['warning', 'error', 'success', 'info']),
+  /** Variant of Alert component, controlling the size of the Alert */
   variant: oneOf(['default', 'toast']),
+  /** Title of the Alert message */
   message: string.isRequired, // eslint-disable-line react/no-typos
+  /** Description of the Alert message */
   description: string,
+  /** Callback function, to be executed when clicked close button. No close button if no
+   *  function passed */
   onDismiss: func,
 };
 

@@ -1,27 +1,11 @@
-import downloadPdf from './downloadPdf';
-import downloadXls from './downloadXls';
-import fileCsv from './fileCsv';
-import filesList from './filesList';
-import fileZip from './fileZip';
-import invoice from './invoice';
-import note from './note';
-import noteAdd from './noteAdd';
-import noteEdit from './noteEdit';
-import noteLink from './noteLink';
-import receipt from './receipt';
-
-const filesIcons = {
-  downloadPdf,
-  downloadXls,
-  fileCsv,
-  filesList,
-  fileZip,
-  invoice,
-  note,
-  noteAdd,
-  noteEdit,
-  noteLink,
-  receipt,
-};
-
-export default filesIcons;
+export { default as downloadPdf } from './downloadPdf';
+export { default as downloadXls } from './downloadXls';
+export { default as fileCsv } from './fileCsv';
+export { default as filesList } from './filesList';
+export { default as fileZip } from './fileZip';
+export { default as invoice } from './invoice';
+export { default as note } from './note';
+export { default as noteAdd } from './noteAdd';
+export { default as noteEdit } from './noteEdit';
+export { default as noteLink } from './noteLink';
+export { default as receipt } from './receipt';

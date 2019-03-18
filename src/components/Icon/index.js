@@ -1,43 +1,32 @@
 import React from 'react';
-import { oneOf, string, number, shape } from 'prop-types';
+import warning from 'warning';
+import { string } from 'prop-types';
 
-import icons from './icons';
+import * as icons from './icons';
 
-const Icon = ({ type, color, size, verticalAlign, style, ...remainProps }) => {
-  const rootStyle = {
-    verticalAlign,
-    fill: color,
-    width: `${size}px`,
-    height: `${size}px`,
-    ...style,
-  };
+const { NODE_ENV } = process.env;
 
-  return (
-    <svg style={rootStyle} viewBox="0 0 1024 1024" {...remainProps}>
-      {icons[type]}
-    </svg>
-  );
-};
-
-Icon.defaultProps = {
-  color: 'currentColor',
-  size: 20,
-  style: {},
-  verticalAlign: 'middle',
+let warnOnce = false;
+const Icon = props => {
+  if (NODE_ENV !== 'production') {
+    warning(
+      warnOnce,
+      [
+        'Generic Icon would be deprecated in v1.',
+        'Please switch to exact name import before migrating to v1',
+        `e.g. import { up } from 'lalamove-ui/dist/components/Icon/icons';`,
+        `/ import Up from 'lalamove-ui/dist/components/Icon/icons/arrows/arrow/up';`,
+      ].join('\n')
+    );
+    warnOnce = true;
+  }
+  const { type, ...rest } = props;
+  const I = icons[type];
+  return <I {...rest} />;
 };
 
 Icon.propTypes = {
-  /** Type of icon, view storybook for the string */
-  type: oneOf(Object.keys(icons)).isRequired,
-  /** Color code of icon */
-  color: string,
-  /** Size of icon, in `px` */
-  size: number, // TODO: to define small and large icon size
-  /** Additional style apply to icon */
-  style: shape({}),
-  /** Vertical align of icon, default is `middle` */
-  verticalAlign: string,
-  // TODO: theme: filled, outlined
+  type: string.isRequired,
 };
 
 export default Icon;

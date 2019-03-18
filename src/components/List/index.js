@@ -148,6 +148,7 @@ Item.propTypes = {
   options: node,
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class List extends Component {
   static propTypes = {
     /** array of objects */
