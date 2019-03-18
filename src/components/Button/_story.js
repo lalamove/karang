@@ -19,7 +19,180 @@ const Container = styled.div`
 const CustomComponent = ButtonWithComponent('a');
 
 storiesOf('Button', module)
-  .add('Button', () => (
+  .add('Solid', () => (
+    <div>
+      <h4>Small</h4>
+      <Container>
+        <Button variant="link" size="small" solid>
+          Link
+        </Button>
+        <Button size="small" solid>
+          Default
+        </Button>
+        <Button variant="primary" size="small" solid>
+          Primary
+        </Button>
+        <Button variant="secondary" size="small" solid>
+          Secondary
+        </Button>
+        <Button variant="danger" size="small" solid>
+          Danger
+        </Button>
+      </Container>
+      <h4>Default</h4>
+      <Container>
+        <Button variant="link" solid>
+          Link
+        </Button>
+        <Button solid>Default</Button>
+        <Button variant="primary" solid>
+          Primary
+        </Button>
+        <Button variant="secondary" solid>
+          Secondary
+        </Button>
+        <Button variant="danger" solid>
+          Danger
+        </Button>
+      </Container>
+      <h4>Large</h4>
+      <Container>
+        <Button variant="link" size="large" solid>
+          Link
+        </Button>
+        <Button size="large" solid>
+          Default
+        </Button>
+        <Button variant="primary" size="large" solid>
+          Primary
+        </Button>
+        <Button variant="secondary" size="large" solid>
+          Secondary
+        </Button>
+        <Button variant="danger" size="large" solid>
+          Danger
+        </Button>
+      </Container>
+      <h4>Extra Large</h4>
+      <Container>
+        <Button variant="link" size="xlarge" solid>
+          Link
+        </Button>
+        <Button size="xlarge" solid>
+          Default
+        </Button>
+        <Button variant="primary" size="xlarge" solid>
+          Primary
+        </Button>
+        <Button variant="secondary" size="xlarge" solid>
+          Secondary
+        </Button>
+        <Button variant="danger" size="xlarge" solid>
+          Danger
+        </Button>
+      </Container>
+      <h4>Block</h4>
+      <Button block variant="link" solid>
+        Link
+      </Button>
+      <br />
+      <Button block solid>
+        Default
+      </Button>
+      <br />
+      <Button block variant="primary" solid>
+        Primary
+      </Button>
+      <br />
+      <Button block variant="secondary" solid>
+        Secondary
+      </Button>
+      <br />
+      <Button block variant="danger" solid>
+        Danger
+      </Button>
+      <br />
+      <h4>Loading</h4>
+      <Container>
+        <Button variant="link" isLoading solid>
+          Link
+        </Button>
+        <Button isLoading solid>
+          Default
+        </Button>
+        <Button variant="primary" isLoading solid>
+          Primary
+        </Button>
+        <Button variant="secondary" isLoading solid>
+          Secondary
+        </Button>
+        <Button variant="danger" isLoading solid>
+          Danger
+        </Button>
+      </Container>
+      <h4>Disabled</h4>
+      <Container>
+        <Button disabled variant="link" solid>
+          Link
+        </Button>
+        <Button disabled solid>
+          Default
+        </Button>
+        <Button disabled variant="primary" solid>
+          Primary
+        </Button>
+        <Button disabled variant="secondary" solid>
+          Secondary
+        </Button>
+        <Button disabled variant="danger" solid>
+          Danger
+        </Button>
+      </Container>
+      <h4>With Icon</h4>
+      <Container>
+        <Button icon={<StarIcon />} variant="link" solid>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} solid>
+          With Icon
+        </Button>
+        <Button icon={<StarFilledIcon />} variant="primary" solid>
+          With Icon
+        </Button>
+        <Button icon={<StarFilledIcon />} variant="secondary" solid>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="danger" solid>
+          With Icon
+        </Button>
+      </Container>
+      <h4>With Icon and loading</h4>
+      <Container>
+        <Button icon={<StarIcon />} variant="link" isLoading solid>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} isLoading solid>
+          With Icon
+        </Button>
+        <Button icon={<StarFilledIcon />} variant="primary" isLoading solid>
+          With Icon
+        </Button>
+        <Button icon={<StarFilledIcon />} variant="secondary" isLoading solid>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="danger" isLoading solid>
+          With Icon
+        </Button>
+      </Container>
+      <h4>WithComponent</h4>
+      <Container>
+        <CustomComponent href="#somewhere" variant="primary" solid>
+          {'Button with <a href="#somewhere" /> tag'}
+        </CustomComponent>
+      </Container>
+    </div>
+  ))
+  .add('Subtle', () => (
     <div>
       <h4>Small</h4>
       <Container>
@@ -36,12 +209,6 @@ storiesOf('Button', module)
         <Button variant="danger" size="small">
           Danger
         </Button>
-        <Button variant="outline" size="small">
-          Outline
-        </Button>
-        <Button variant="dangerOutline" size="small">
-          Outline
-        </Button>
       </Container>
       <h4>Default</h4>
       <Container>
@@ -50,8 +217,6 @@ storiesOf('Button', module)
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="danger">Danger</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="dangerOutline">Outline</Button>
       </Container>
       <h4>Large</h4>
       <Container>
@@ -67,12 +232,6 @@ storiesOf('Button', module)
         </Button>
         <Button variant="danger" size="large">
           Danger
-        </Button>
-        <Button variant="outline" size="large">
-          Outline
-        </Button>
-        <Button variant="dangerOutline" size="large">
-          Outline
         </Button>
       </Container>
       <h4>Extra Large</h4>
@@ -90,14 +249,12 @@ storiesOf('Button', module)
         <Button variant="danger" size="xlarge">
           Danger
         </Button>
-        <Button variant="outline" size="xlarge">
-          Outline
-        </Button>
-        <Button variant="dangerOutline" size="xlarge">
-          Outline
-        </Button>
       </Container>
       <h4>Block</h4>
+      <Button block variant="link">
+        Link
+      </Button>
+      <br />
       <Button block>Default</Button>
       <br />
       <Button block variant="primary">
@@ -110,14 +267,6 @@ storiesOf('Button', module)
       <br />
       <Button block variant="danger">
         Danger
-      </Button>
-      <br />
-      <Button block variant="outline">
-        Outline
-      </Button>
-      <br />
-      <Button block variant="dangerOutline">
-        Outline
       </Button>
       <br />
       <h4>Loading</h4>
@@ -135,12 +284,6 @@ storiesOf('Button', module)
         <Button variant="danger" isLoading>
           Danger
         </Button>
-        <Button variant="outline" isLoading>
-          Outline
-        </Button>
-        <Button variant="dangerOutline" isLoading>
-          Outline
-        </Button>
       </Container>
       <h4>Disabled</h4>
       <Container>
@@ -157,12 +300,6 @@ storiesOf('Button', module)
         <Button disabled variant="danger">
           Danger
         </Button>
-        <Button disabled variant="outline">
-          Outline
-        </Button>
-        <Button disabled variant="dangerOutline">
-          Outline
-        </Button>
       </Container>
       <h4>With Icon</h4>
       <Container>
@@ -177,12 +314,6 @@ storiesOf('Button', module)
           With Icon
         </Button>
         <Button icon={<StarIcon />} variant="danger">
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} variant="outline">
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} variant="dangerOutline">
           With Icon
         </Button>
       </Container>
@@ -203,19 +334,12 @@ storiesOf('Button', module)
         <Button icon={<StarIcon />} variant="danger" isLoading>
           With Icon
         </Button>
-        <Button icon={<StarIcon />} variant="outline" isLoading>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} variant="dangerOutline" isLoading>
-          With Icon
-        </Button>
       </Container>
       <h4>WithComponent</h4>
       <Container>
         <CustomComponent href="#somewhere" variant="primary">
           {'Button with <a href="#somewhere" /> tag'}
         </CustomComponent>
-        <CloseButton />
       </Container>
     </div>
   ))

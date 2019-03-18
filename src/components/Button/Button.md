@@ -10,8 +10,6 @@ import { Button } from 'lalamove-ui';
 * `primary`
 * `secondary`
 * `danger`
-* `outline`
-* `dangerOutline`
 
 ```jsx static
 <Button variant="primary">Text</Button>
@@ -24,8 +22,24 @@ import { Button } from 'lalamove-ui';
     <Button variant="primary">Primary</Button>
     <Button variant="secondary">Secondary</Button>
     <Button variant="danger">Danger</Button>
-    <Button variant="outline">Outline</Button>
-    <Button variant="dangerOutline">Outline</Button>
+</div>
+```
+
+**Solid Variant**
+
+Set `solid` as `true` for showing as solid background color. Only apply if variant is `primary`, `secondary` or `danger`.
+
+```jsx static
+<Button variant="primary" solid>Text</Button>
+```
+
+```
+<div style={{ display: 'flex', justifyContent: 'space-around' }}>
+    <Button variant="link" solid>Link</Button>
+    <Button solid>Default</Button>
+    <Button variant="primary" solid>Primary</Button>
+    <Button variant="secondary" solid>Secondary</Button>
+    <Button variant="danger" solid>Danger</Button>
 </div>
 ```
 
@@ -41,10 +55,10 @@ import { Button } from 'lalamove-ui';
 
 ```
 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-    <Button variant="primary" size="small">Small</Button>
-    <Button variant="primary">Default</Button>
-    <Button variant="primary" size="large">Large</Button>
-    <Button variant="primary" size="xlarge">Extra Large</Button>
+    <Button variant="primary" size="small" solid>Small</Button>
+    <Button variant="primary" solid>Default</Button>
+    <Button variant="primary" size="large" solid>Large</Button>
+    <Button variant="primary" size="xlarge" solid>Extra Large</Button>
 </div>
 ```
 
@@ -57,13 +71,13 @@ Passing `block` as true to make the button fit the width to its parent width.
 ```
 
 ```
-<Button variant="primary" size="small" block>Small</Button>
+<Button variant="primary" size="small" block solid>Small</Button>
 <br />
-<Button variant="primary" block>Default</Button>
+<Button variant="primary" block solid>Default</Button>
 <br />
-<Button variant="primary" size="large" block>Large</Button>
+<Button variant="primary" size="large" block solid>Large</Button>
 <br />
-<Button variant="primary" size="xlarge" block>Extra Large</Button>
+<Button variant="primary" size="xlarge" block solid>Extra Large</Button>
 ```
 
 **Button with icon**
@@ -75,7 +89,7 @@ It supports to pass other components after the text, and it is usually used with
 ```
 
 ```
-<Button variant="dangerOutline" icon={<Icon type="onOff" />}>Logout</Button>
+<Button variant="danger" icon={<Icon type="onOff" />}>Logout</Button>
 ```
 
 **Loading**
@@ -88,12 +102,10 @@ Show spinner when it is `true`. This also disables the button.
 
 ```
 <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-    <Button variant="link" isLoading>Link</Button>
-    <Button isLoading>Default</Button>
-    <Button variant="primary" isLoading>Primary</Button>
-    <Button variant="secondary" isLoading>Secondary</Button>
-    <Button variant="danger" isLoading>Danger</Button>
-    <Button variant="outline" isLoading>Outline</Button>
-    <Button variant="dangerOutline" isLoading>Outline</Button>
+    <Button variant="link" isLoading solid>Link</Button>
+    <Button isLoading solid>Default</Button>
+    <Button variant="primary" isLoading solid>Primary</Button>
+    <Button variant="secondary" isLoading solid>Secondary</Button>
+    <Button variant="danger" isLoading solid>Danger</Button>
 </div>
 ```

@@ -65,18 +65,26 @@ const StyledButton = styled(Base)`
     switch (variant) {
       case 'primary':
         return css`
-          background-color: ${primary.main};
+          background-color: ${({ solid }) =>
+            solid ? primary.main : 'initial'};
           border-color: ${primary.main};
-          color: ${white};
+          color: ${({ solid }) => (solid ? white : primary.main)};
 
           & ${/* sc-selector */ SpinnerWrapper} {
-            color: ${white};
+            color: ${({ solid }) => (solid ? white : primary.main)};
           }
 
           &:hover:enabled,
           &:active:enabled {
-            background-color: ${primary['800']};
-            border-color: ${primary['800']};
+            background-color: ${({ solid }) =>
+              solid ? primary['800'] : primary.main};
+            border-color: ${({ solid }) =>
+              solid ? primary['800'] : primary.main};
+            color: ${white};
+
+            & ${/* sc-selector */ SpinnerWrapper} {
+              color: ${white};
+            }
           }
 
           &:active:enabled,
@@ -86,18 +94,26 @@ const StyledButton = styled(Base)`
         `;
       case 'secondary':
         return css`
-          background-color: ${secondary.main};
+          background-color: ${({ solid }) =>
+            solid ? secondary.main : 'initial'};
           border-color: ${secondary.main};
-          color: ${white};
+          color: ${({ solid }) => (solid ? white : secondary.main)};
 
           & ${/* sc-selector */ SpinnerWrapper} {
-            color: ${white};
+            color: ${({ solid }) => (solid ? white : secondary.main)};
           }
 
           &:hover:enabled,
           &:active:enabled {
-            background-color: ${secondary['800']};
-            border-color: ${secondary['800']};
+            background-color: ${({ solid }) =>
+              solid ? secondary['800'] : secondary.main};
+            border-color: ${({ solid }) =>
+              solid ? secondary['800'] : secondary.main};
+            color: ${white};
+
+            & ${/* sc-selector */ SpinnerWrapper} {
+              color: ${white};
+            }
           }
 
           &:active:enabled,
@@ -105,70 +121,28 @@ const StyledButton = styled(Base)`
             box-shadow: 0 0 0 4px ${rgba(secondary.main, 0.2)};
           }
         `;
-      case 'outline':
-        return css`
-          color: ${primary.main};
-          border-color: ${primary.main};
-
-          & ${/* sc-selector */ SpinnerWrapper} {
-            color: ${primary.main};
-          }
-
-          &:hover:enabled,
-          &:active:enabled {
-            background-color: ${primary.main};
-            border-color: ${primary.main};
-            color: ${white};
-
-            & ${/* sc-selector */ SpinnerWrapper} {
-              color: ${white};
-            }
-          }
-
-          &:active:enabled,
-          &:focus:enabled {
-            box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
-          }
-        `;
-      case 'dangerOutline':
-        return css`
-          color: ${valencia.main};
-          border-color: ${valencia.main};
-
-          & ${/* sc-selector */ SpinnerWrapper} {
-            color: ${valencia.main};
-          }
-
-          &:hover:enabled,
-          &:active:enabled {
-            background-color: ${valencia.main};
-            border-color: ${valencia.main};
-            color: ${white};
-
-            & ${/* sc-selector */ SpinnerWrapper} {
-              color: ${white};
-            }
-          }
-
-          &:active:enabled,
-          &:focus:enabled {
-            box-shadow: 0 0 0 4px ${rgba(valencia.main, 0.2)};
-          }
-        `;
       case 'danger':
         return css`
-          background-color: ${valencia.main};
+          background-color: ${({ solid }) =>
+            solid ? valencia.main : 'initial'};
           border-color: ${valencia.main};
-          color: ${white};
+          color: ${({ solid }) => (solid ? white : valencia.main)};
 
           & ${/* sc-selector */ SpinnerWrapper} {
-            color: ${white};
+            color: ${({ solid }) => (solid ? white : valencia.main)};
           }
 
           &:hover:enabled,
           &:active:enabled {
-            background-color: ${valencia['800']};
-            border-color: ${valencia['800']};
+            background-color: ${({ solid }) =>
+              solid ? valencia['800'] : valencia.main};
+            border-color: ${({ solid }) =>
+              solid ? valencia['800'] : valencia.main};
+            color: ${white};
+
+            & ${/* sc-selector */ SpinnerWrapper} {
+              color: ${white};
+            }
           }
 
           &:active:enabled,
@@ -258,6 +232,7 @@ Button.defaultProps = {
   isLoading: false,
   size: null,
   variant: 'default',
+  solid: false,
   block: false,
   icon: null,
   type: 'button',
@@ -269,15 +244,10 @@ const propTypes = {
   /** Size of Button component */
   size: oneOf(['small', 'large', 'xlarge']),
   /** Variant of Button component */
-  variant: oneOf([
-    'default',
-    'primary',
-    'secondary',
-    'outline',
-    'danger',
-    'dangerOutline',
-    'link',
-  ]),
+  variant: oneOf(['default', 'primary', 'secondary', 'danger', 'link']),
+  /** `true` for showing as solid background color. Only apply if variant is `primary`,
+   *  `secondary` or `danger`. */
+  solid: bool,
   /** Fit the width to its parent width when it is `true` */
   block: bool,
   /** Element shown next to the text */

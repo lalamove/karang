@@ -6,15 +6,8 @@ const types = {
   size: ['small', 'large', 'xlarge'],
   block: true,
   isLoading: true,
-  variant: [
-    'link',
-    'primary',
-    'secondary',
-    'outline',
-    'danger',
-    'dangerOutline',
-    'default',
-  ],
+  solid: true,
+  variant: ['link', 'primary', 'secondary', 'danger', 'default'],
 };
 
 Object.keys(types).forEach(type => {
