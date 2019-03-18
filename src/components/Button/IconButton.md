@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { IconButon } from 'lalamove-ui';
+import { IconButton } from 'lalamove-ui';
 ```
 
 **Variant**
@@ -35,10 +35,10 @@ import { IconButon } from 'lalamove-ui';
 
 **Shape**
 * `default` — this is the default.
-* `classic`
+* `square`
 
 ```jsx static
-<IconButton shape="classic">
+<IconButton shape="square">
     <Icon ... />
 </IconButton>
 ```
@@ -48,7 +48,7 @@ import { IconButon } from 'lalamove-ui';
     <IconButton>
       <Icon type="close" size={24} />
     </IconButton>
-    <IconButton shape="classic">
+    <IconButton shape="square">
       <Icon type="close" size={24} />
     </IconButton>
 </div>

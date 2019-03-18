@@ -3,7 +3,7 @@ import { render } from 'enzyme';
 import { IconButton } from '../index';
 
 const types = {
-  shape: ['default', 'classic'],
+  shape: ['default', 'square'],
   variant: ['primary', 'secondary', 'danger', 'default'],
 };
 

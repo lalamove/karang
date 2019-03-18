@@ -76,7 +76,7 @@ IconButton.propTypes = {
   /** Variant of IconButton component */
   variant: oneOf(['default', 'primary', 'secondary', 'danger']),
   /** Shape of IconButton component */
-  shape: oneOf(['default', 'classic']),
+  shape: oneOf(['default', 'square']),
   /** @ignore */
   children: node.isRequired,
 };

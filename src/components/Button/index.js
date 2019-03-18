@@ -7,7 +7,7 @@ import IconButton from './components/IconButton';
 
 // TODO: Remove in next release as the usage could be replaced by IconButton
 const CloseButton = props => (
-  <IconButton {...props} shape="classic" variant="primary">
+  <IconButton {...props} shape="square" variant="primary">
     <CloseIcon />
   </IconButton>
 );

@@ -186,6 +186,30 @@ storiesOf('Button', module)
           With Icon
         </Button>
       </Container>
+      <h4>With Icon and loading</h4>
+      <Container>
+        <Button icon={<StarIcon />} variant="link" isLoading>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} isLoading>
+          With Icon
+        </Button>
+        <Button icon={<StarFilledIcon />} variant="primary" isLoading>
+          With Icon
+        </Button>
+        <Button icon={<StarFilledIcon />} variant="secondary" isLoading>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="danger" isLoading>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="outline" isLoading>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} variant="dangerOutline" isLoading>
+          With Icon
+        </Button>
+      </Container>
       <h4>WithComponent</h4>
       <Container>
         <CustomComponent href="#somewhere" variant="primary">
@@ -197,7 +221,7 @@ storiesOf('Button', module)
   ))
   .add('IconButton', () => (
     <div>
-      <h4>Round</h4>
+      <h4>Round (Default)</h4>
       <Container>
         <IconButton>
           <AlertIcon size={24} />
@@ -212,18 +236,18 @@ storiesOf('Button', module)
           <AlertIcon size={24} />
         </IconButton>
       </Container>
-      <h4>Classic</h4>
+      <h4>Square</h4>
       <Container>
-        <IconButton shape="classic">
+        <IconButton shape="square">
           <CloseIcon size={24} />
         </IconButton>
-        <IconButton shape="classic" variant="primary">
+        <IconButton shape="square" variant="primary">
           <CloseIcon size={24} />
         </IconButton>
-        <IconButton shape="classic" variant="secondary">
+        <IconButton shape="square" variant="secondary">
           <CloseIcon size={24} />
         </IconButton>
-        <IconButton shape="classic" variant="danger">
+        <IconButton shape="square" variant="danger">
           <CloseIcon size={24} />
         </IconButton>
       </Container>
