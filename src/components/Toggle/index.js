@@ -119,18 +119,17 @@ class Toggle extends Component {
     title: null,
   };
 
+  static getDerivedStateFromProps(props, state) {
+    if (props.checked !== null && props.checked !== state.checked) {
+      return { checked: props.checked };
+    }
+    return null;
+  }
+
   state = (() => {
     const { checked, defaultChecked } = this.props;
     return { checked: checked === null ? defaultChecked : checked };
   })();
-
-  componentDidUpdate(prevProps) {
-    const { checked } = this.props;
-    if (checked !== prevProps.checked) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ checked });
-    }
-  }
 
   handleChange = e => {
     const { checked, onChange } = this.props;
