@@ -92,6 +92,16 @@ It supports to pass other components after the text, and it is usually used with
 <Button variant="danger" icon={<Icon type="onOff" />}>Logout</Button>
 ```
 
+You can put it before the label as well, simply pass `before` to `iconPosition` prop.
+
+```jsx static
+<Button icon={<Icon type="add" />} iconPosition="before">Add destination</Button>
+```
+
+```
+<Button variant="link" icon={<Icon type="add" />} iconPosition="before">Add destination</Button>
+```
+
 **Loading**
 
 Show spinner when it is `true`. This also disables the button.

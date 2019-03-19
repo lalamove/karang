@@ -15,12 +15,13 @@ import {
 } from 'styles/colors';
 import Base from './style';
 
-const Text = styled.span`
-  margin-right: 10px;
-`;
-
 const IconWrapper = styled.div`
   margin: -0.5em 0;
+`;
+
+const Text = styled.span`
+  margin: ${({ iconPosition }) =>
+    iconPosition === 'before' ? '0 0 0 10px' : '0 10px 0 0'};
 `;
 
 const SpinnerWrapper = styled.div`
@@ -202,7 +203,7 @@ const StyledButton = styled(Base)`
 /**
  * Button component is used for actions in forms, dialogs, and more with multiple sizes and states.
  */
-const Button = ({ icon, isLoading, children, ...rest }) => {
+const Button = ({ icon, iconPosition, isLoading, children, ...rest }) => {
   if (icon) {
     return (
       <StyledButton isLoading={isLoading} {...rest}>
@@ -211,8 +212,9 @@ const Button = ({ icon, isLoading, children, ...rest }) => {
             <Spinner color="currentColor" />
           </SpinnerWrapper>
         )}
-        <Text>{children}</Text>
-        <IconWrapper>{icon}</IconWrapper>
+        {iconPosition === 'before' && <IconWrapper>{icon}</IconWrapper>}
+        <Text iconPosition={iconPosition}>{children}</Text>
+        {iconPosition === 'after' && <IconWrapper>{icon}</IconWrapper>}
       </StyledButton>
     );
   }
@@ -235,6 +237,7 @@ Button.defaultProps = {
   solid: false,
   block: false,
   icon: null,
+  iconPosition: 'after',
   type: 'button',
 };
 
@@ -250,8 +253,10 @@ const propTypes = {
   solid: bool,
   /** Fit the width to its parent width when it is `true` */
   block: bool,
-  /** Element shown next to the text */
+  /** Custom element shown next to the label */
   icon: node,
+  /** Custom element position, before or after the label */
+  iconPosition: oneOf(['before', 'after']),
   /** @ignore */
   children: node.isRequired,
   /** @ignore */

@@ -7,6 +7,7 @@ const Button = styled.button`
   appearance: none;
   padding: 5px;
   border: none;
+  background-color: transparent;
   cursor: pointer;
   outline: 0;
   border-radius: ${({ shape }) => (shape === 'default' ? '100%' : '2px')};

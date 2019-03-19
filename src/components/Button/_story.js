@@ -166,6 +166,39 @@ storiesOf('Button', module)
           With Icon
         </Button>
       </Container>
+      <h4>With Icon before the label</h4>
+      <Container>
+        <Button icon={<StarIcon />} iconPosition="before" variant="link" solid>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} iconPosition="before" solid>
+          With Icon
+        </Button>
+        <Button
+          icon={<StarFilledIcon />}
+          iconPosition="before"
+          variant="primary"
+          solid
+        >
+          With Icon
+        </Button>
+        <Button
+          icon={<StarFilledIcon />}
+          iconPosition="before"
+          variant="secondary"
+          solid
+        >
+          With Icon
+        </Button>
+        <Button
+          icon={<StarIcon />}
+          iconPosition="before"
+          variant="danger"
+          solid
+        >
+          With Icon
+        </Button>
+      </Container>
       <h4>With Icon and loading</h4>
       <Container>
         <Button icon={<StarIcon />} variant="link" isLoading solid>
@@ -332,6 +365,39 @@ storiesOf('Button', module)
           With Icon
         </Button>
         <Button icon={<StarIcon />} variant="danger" isLoading>
+          With Icon
+        </Button>
+      </Container>
+      <h4>With Icon before the label</h4>
+      <Container>
+        <Button icon={<StarIcon />} iconPosition="before" variant="link" solid>
+          With Icon
+        </Button>
+        <Button icon={<StarIcon />} iconPosition="before" solid>
+          With Icon
+        </Button>
+        <Button
+          icon={<StarFilledIcon />}
+          iconPosition="before"
+          variant="primary"
+          solid
+        >
+          With Icon
+        </Button>
+        <Button
+          icon={<StarFilledIcon />}
+          iconPosition="before"
+          variant="secondary"
+          solid
+        >
+          With Icon
+        </Button>
+        <Button
+          icon={<StarIcon />}
+          iconPosition="before"
+          variant="danger"
+          solid
+        >
           With Icon
         </Button>
       </Container>
