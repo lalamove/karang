@@ -11,11 +11,11 @@ import {
 import styled, { css } from 'styled-components';
 
 import noop from 'utils/noop';
-import { silver } from 'styles/colors';
+import { nobel } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
-import TextAreaComp from './components/TextAreaComp';
 import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
+import TextAreaComp from './components/TextAreaComp';
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -36,7 +36,7 @@ const SCAnimatedBorder = styled(AnimatedBorder)`
 
 const CountMessage = styled.div`
   padding-top: 0.5em;
-  color: ${silver};
+  color: ${nobel.main};
   font-family: ${primaryFonts};
   font-size: ${fontSize.small};
 `;
@@ -133,6 +133,7 @@ const defaultProps = {
 
 class Comp extends Component {
   static propTypes = propTypes;
+
   static defaultProps = defaultProps;
 
   static getDerivedStateFromProps({ onChange, value }) {
@@ -144,6 +145,7 @@ class Comp extends Component {
 
   state = {
     focused: false,
+    // eslint-disable-next-line react/destructuring-assignment
     value: this.props.value || this.props.defaultValue || '',
   };
 
@@ -278,6 +280,7 @@ class Comp extends Component {
   }
 }
 
+// eslint-disable-next-line react/no-multi-comp,react/prop-types
 const CompWithRef = forwardRef(({ innerRef, ...remainProps }, ref) => (
   <Comp forwardedRef={ref} {...remainProps} />
 ));

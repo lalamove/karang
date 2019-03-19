@@ -106,7 +106,7 @@ class Comp extends Component {
   state = {
     focused: false,
     dirty: false,
-    masked: this.props.masked,
+    masked: this.props.masked, // eslint-disable-line react/destructuring-assignment
   };
 
   componentDidMount() {
@@ -129,16 +129,18 @@ class Comp extends Component {
   }
 
   onFocus = e => {
+    const { onFocus } = this.props;
     this.setState({ focused: true });
-    this.props.onFocus(e);
+    onFocus(e);
   };
 
   onBlur = e => {
+    const { onBlur } = this.props;
     this.setState({ focused: false });
-    this.props.onBlur(e);
+    onBlur(e);
   };
 
-  changeMaskedState = () => {
+  toggleMasked = () => {
     this.setState(prevState => ({
       masked: !prevState.masked,
     }));
@@ -182,7 +184,7 @@ class Comp extends Component {
             innerRef={forwardedRef}
           />
           {type === 'password' && (
-            <PeekButton active={!masked} onClick={this.changeMaskedState} />
+            <PeekButton active={!masked} onClick={this.toggleMasked} />
           )}
         </AnimatedBorder>
         <ErrorMessage error={error} />
@@ -193,16 +195,16 @@ class Comp extends Component {
 
 // eslint-disable-next-line react/no-multi-comp
 const InputComp = forwardRef((props, ref) => (
-  <Comp forwardedRef={ref} {...props} />
+  <Comp {...props} forwardedRef={ref} />
 ));
 
-const Input = compose(
+const CompWithRef = compose(
   withSelectAll,
   withCursorEnd
 )(InputComp);
 
 // Ugly fix for React Styleguidist as it cannot recognize forwardRef
-// const Input = ({ forwardedRef, ...props }) => <InputComp {...props} />;
+const Input = props => <CompWithRef {...props} />;
 Input.displayName = 'Input';
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;

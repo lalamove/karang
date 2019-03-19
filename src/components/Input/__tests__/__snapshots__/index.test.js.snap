@@ -13,7 +13,7 @@ exports[`Input Snapshots Password 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -25,26 +25,31 @@ exports[`Input Snapshots Password 1`] = `
   border: none;
   color: rgba(51,49,50,1);
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
+  caret-color: #F16622;
   font-size: 14px;
+  background-color: transparent;
   resize: none;
   outline: none;
 }
 
 .c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c6 {
@@ -195,7 +200,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -207,26 +212,31 @@ exports[`Input Snapshots Password with a value 1`] = `
   border: none;
   color: rgba(51,49,50,1);
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
+  caret-color: #F16622;
   font-size: 14px;
+  background-color: transparent;
   resize: none;
   outline: none;
 }
 
 .c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c6 {
@@ -378,7 +388,7 @@ exports[`Input Snapshots Regular Input 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -390,26 +400,31 @@ exports[`Input Snapshots Regular Input 1`] = `
   border: none;
   color: rgba(51,49,50,1);
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
+  caret-color: #F16622;
   font-size: 14px;
+  background-color: transparent;
   resize: none;
   outline: none;
 }
 
 .c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c2::-ms-reveal {

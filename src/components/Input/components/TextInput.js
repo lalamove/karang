@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
-import { string } from 'prop-types';
+import { string, object, func, oneOf } from 'prop-types';
 import styled, { css } from 'styled-components';
+import { rgba } from 'polished';
 
-import { orange, black, silver } from 'styles/colors';
+import { primary, nobel, black } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const InputField = styled.input`
@@ -11,13 +12,18 @@ const InputField = styled.input`
   border: none;
   color: ${black};
   font-family: ${primaryFonts};
-  caret-color: ${orange};
+  caret-color: ${primary.main};
   font-size: ${fontSize.regular};
+  background-color: transparent;
   resize: none;
   outline: none;
 
   &::placeholder {
-    color: ${silver};
+    color: ${nobel.main};
+  }
+
+  &::selection {
+    background: ${rgba(primary.main, 0.1)};
   }
 
   ${({ label }) =>
@@ -42,12 +48,14 @@ const TextInput = forwardRef(
 );
 
 TextInput.propTypes = {
+  innerRef: oneOf([object, func, string]),
   type: string,
   label: string,
   name: string,
 };
 
 TextInput.defaultProps = {
+  innerRef: null,
   type: 'text',
   label: null,
   name: null,

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import 'react-dates/initialize';
-import './styles';
 import { DateRangePicker as RDDateRangePicker } from 'react-dates';
 import { string, bool, func, oneOf, instanceOf, number } from 'prop-types';
 import moment from 'moment';
+import './styles';
 
 const START_DATE = 'startDate';
 const END_DATE = 'endDate';
