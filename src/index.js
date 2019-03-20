@@ -33,3 +33,4 @@ export { default as Spinner } from './components/Spinner';
 export { default as Tab, TabBar } from './components/Tabs';
 export { default as Table } from './components/Table';
 export { default as TextArea } from './components/TextArea';
+export { default as Toggle } from './components/Toggle';
