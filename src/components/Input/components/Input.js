@@ -198,13 +198,13 @@ const InputComp = forwardRef((props, ref) => (
   <Comp {...props} forwardedRef={ref} />
 ));
 
-const CompWithRef = compose(
+const Input = compose(
   withSelectAll,
   withCursorEnd
 )(InputComp);
 
 // Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const Input = props => <CompWithRef {...props} />;
+// const Input = ({ forwardedRef, ...props }) => <InputComp {...props} />;
 Input.displayName = 'Input';
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;

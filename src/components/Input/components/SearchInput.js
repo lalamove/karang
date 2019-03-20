@@ -102,12 +102,12 @@ class Comp extends Component {
 }
 
 // eslint-disable-next-line react/no-multi-comp
-const CompWithRef = forwardRef((props, ref) => (
+const SearchInput = forwardRef((props, ref) => (
   <Comp {...props} forwardedRef={ref} />
 ));
 
 // Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const SearchInput = props => <CompWithRef {...props} />;
+// const SearchInput = props => <CompWithRef {...props} />;
 SearchInput.displayName = 'SearchInput';
 SearchInput.propTypes = propTypes;
 SearchInput.defaultProps = defaultProps;
