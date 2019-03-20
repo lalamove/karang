@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bool, func, string } from 'prop-types';
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { nobel, primary } from 'styles/colors';
+import { nobel, primary, white } from 'styles/colors';
 import noop from 'utils/noop';
 
 const Container = styled.label`
@@ -26,7 +26,7 @@ const Knob = styled.span`
   left: 0;
   border: 1px solid ${nobel['400']};
   border-radius: 24px;
-  background-color: white;
+  background-color: ${white};
   transition: 0.3s;
   cursor: pointer;
 
@@ -67,7 +67,7 @@ const Knob = styled.span`
     background-color: ${primary.main};
   }
   ${Input}:checked ~ &:before {
-    background-color: white;
+    background-color: ${white};
     transform: translateX(22px);
   }
   ${Input}:checked ~ &:after {
