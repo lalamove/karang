@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toggle Should match snapshot - checked 1`] = `
+exports[`Toggle Should match snapshot - \`checked\` 1`] = `
 .c1 {
   position: relative;
   display: inline-block;
