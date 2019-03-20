@@ -128,10 +128,14 @@ class Toggle extends Component {
     return null;
   }
 
-  state = (() => {
-    const { checked, defaultChecked } = this.props;
-    return { checked: checked === null ? defaultChecked : checked };
-  })();
+  /* eslint-disable react/destructuring-assignment */
+  state = {
+    checked:
+      this.props.checked === null
+        ? this.props.defaultChecked
+        : this.props.checked,
+  };
+  /* eslint-enable react/destructuring-assignment */
 
   handleChange = e => {
     const { checked, onChange } = this.props;

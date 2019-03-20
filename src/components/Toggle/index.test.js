@@ -11,6 +11,10 @@ describe('Toggle', () => {
     expect(render(<Toggle />)).toMatchSnapshot();
   });
 
+  it('Should match snapshot - `checked`', () => {
+    expect(render(<Toggle checked />)).toMatchSnapshot();
+  });
+
   it('Should update state when `checked` change', () => {
     const wrapper = mount(<Toggle />);
     expect(wrapper.state('checked')).toBe(false);
