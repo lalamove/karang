@@ -85,13 +85,13 @@ exports[`Toggle Should match snapshot 1`] = `
   transform: translateX(22px) rotate(45deg);
 }
 
-.c4 .c2:active,
-.c2:focus ~ .c4 {
+.c2:active:not(:disabled) ~ .c4,
+.c2:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c4 .c2:active:checked,
-.c2:focus:checked ~ .c4 {
+.c2:active:checked:not(:disabled) ~ .c4,
+.c2:focus:checked:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(241,102,34,0.2);
 }
 

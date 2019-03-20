@@ -75,17 +75,19 @@ const Knob = styled.span`
     transform: translateX(22px) rotate(45deg);
   }
 
-  ${Input}:active, ${/* sc-selector */ Input}:focus ~ & {
+  ${Input}:active:not(:disabled) ~ &,
+  ${Input}:focus:not(:disabled) ~ & {
     box-shadow: 0 0 0 4px ${rgba(nobel['400'], 0.2)};
   }
-  ${Input}:active:checked, ${/* sc-selector */ Input}:focus:checked ~ & {
+  ${Input}:active:checked:not(:disabled) ~ &,
+  ${Input}:focus:checked:not(:disabled) ~ & {
     box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
   }
 
-  ${Container}:hover ${/* sc-selector */ Input}:not(:disabled) ~ & {
+  ${Container}:hover ${Input}:not(:disabled) ~ & {
     background-color: ${nobel['100']};
   }
-  ${Container}:hover ${/* sc-selector */ Input}:not(:disabled):checked ~ & {
+  ${Container}:hover ${Input}:not(:disabled):checked ~ & {
     background-color: ${primary['800']};
   }
 `;
