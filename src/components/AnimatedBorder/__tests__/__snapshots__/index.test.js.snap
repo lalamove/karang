@@ -13,7 +13,7 @@ exports[`Snapshots AnimatedBorder 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -31,7 +31,7 @@ exports[`Snapshots AnimatedBorder with label 1`] = `
   position: absolute;
   top: 50%;
   left: 1em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -59,7 +59,7 @@ exports[`Snapshots AnimatedBorder with label 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -83,7 +83,7 @@ exports[`Snapshots AnimatedBorder with label and dirty 1`] = `
   position: absolute;
   top: 50%;
   left: 1em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -118,7 +118,7 @@ exports[`Snapshots AnimatedBorder with label and dirty 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -141,7 +141,7 @@ exports[`Snapshots AnimatedBorder with label and error 1`] = `
   position: absolute;
   top: 50%;
   left: 1em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -155,7 +155,7 @@ exports[`Snapshots AnimatedBorder with label and error 1`] = `
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  color: rgba(216,83,79,1);
+  color: #D8534F;
   top: 0;
   left: 0.5em;
   padding: 0 4px;
@@ -177,11 +177,12 @@ exports[`Snapshots AnimatedBorder with label and error 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
-  border: 1px solid rgba(216,83,79,1);
+  border: 1px solid #D8534F;
+  background-color: rgba(216,83,79,0.1);
 }
 
 <div
@@ -201,7 +202,7 @@ exports[`Snapshots AnimatedBorder with label and focused 1`] = `
   position: absolute;
   top: 50%;
   left: 1em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -215,7 +216,7 @@ exports[`Snapshots AnimatedBorder with label and focused 1`] = `
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  color: rgba(242,103,34,1);
+  color: #F16622;
   top: 0;
   left: 0.5em;
   padding: 0 4px;
@@ -237,11 +238,12 @@ exports[`Snapshots AnimatedBorder with label and focused 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
-  border: 1px solid rgba(242,103,34,1);
+  border: 1px solid #F16622;
+  box-shadow: 0 0 0 4px rgba(241,102,34,0.2);
 }
 
 <div

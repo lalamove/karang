@@ -13,7 +13,7 @@ exports[`Input Snapshots Password 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -25,26 +25,31 @@ exports[`Input Snapshots Password 1`] = `
   border: none;
   color: rgba(51,49,50,1);
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
+  caret-color: #F16622;
   font-size: 14px;
+  background-color: transparent;
   resize: none;
   outline: none;
 }
 
 .c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c6 {
@@ -66,23 +71,40 @@ exports[`Input Snapshots Password 1`] = `
 }
 
 .c6:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c6:hover:enabled,
-.c6:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c6:active:enabled {
-  box-shadow: none;
-}
-
 .c5 {
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c5 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c5:hover:enabled,
+.c5:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c5:active:enabled,
+.c5:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
 .c4 {
@@ -178,7 +200,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -190,26 +212,31 @@ exports[`Input Snapshots Password with a value 1`] = `
   border: none;
   color: rgba(51,49,50,1);
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
+  caret-color: #F16622;
   font-size: 14px;
+  background-color: transparent;
   resize: none;
   outline: none;
 }
 
 .c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c6 {
@@ -231,23 +258,40 @@ exports[`Input Snapshots Password with a value 1`] = `
 }
 
 .c6:disabled {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c6:hover:enabled,
-.c6:focus:enabled {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.22);
-}
-
-.c6:active:enabled {
-  box-shadow: none;
-}
-
 .c5 {
-  display: inline-block;
-  border-color: rgba(229,229,229,1);
-  color: rgba(88,89,91,1);
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c5 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c5:hover:enabled,
+.c5:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c5:active:enabled,
+.c5:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
 .c4 {
@@ -344,7 +388,7 @@ exports[`Input Snapshots Regular Input 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -356,26 +400,31 @@ exports[`Input Snapshots Regular Input 1`] = `
   border: none;
   color: rgba(51,49,50,1);
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
+  caret-color: #F16622;
   font-size: 14px;
+  background-color: transparent;
   resize: none;
   outline: none;
 }
 
 .c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
 }
 
 .c3::placeholder {
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c2::-ms-reveal {

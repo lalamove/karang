@@ -24,7 +24,7 @@ module.exports = {
       }
     } catch (error) {
       if (error.code === 'ENOENT') {
-        console.warn('Missing:', error.path);
+        console.warn('Missing:', error.path); // eslint-disable-line no-console
       }
     }
     return componentPath;
@@ -55,11 +55,16 @@ module.exports = {
     },
     {
       name: 'UI Components',
-      components: 'src/components/!(Input|TextArea)/**/{index,[A-Z]*}.js',
+      components:
+        'src/components/!(Input|TextArea|Button)/**/{index,[A-Z]*}.js',
       sections: [
         {
+          name: 'Button',
+          components: 'src/components/Button/**/[A-Z]*.js',
+        },
+        {
           name: 'Input',
-          components: 'src/components/@(Input|TextArea)/**/{index,[A-Z]*}.js',
+          components: 'src/components/@(Input|TextArea)/**/[A-Z]*.js',
         },
       ],
       sectionDepth: 1,

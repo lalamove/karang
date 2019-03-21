@@ -5,7 +5,7 @@ exports[`Select Snapshots Select with label and items 1`] = `
   position: absolute;
   top: 50%;
   left: 1em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -33,7 +33,7 @@ exports[`Select Snapshots Select with label and items 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
@@ -147,7 +147,7 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
   position: absolute;
   top: 50%;
   left: 1em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -161,7 +161,7 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  color: rgba(216,83,79,1);
+  color: #D8534F;
   top: 0;
   left: 0.5em;
   padding: 0 4px;
@@ -183,11 +183,12 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
-  border: 1px solid rgba(216,83,79,1);
+  border: 1px solid #D8534F;
+  background-color: rgba(216,83,79,0.1);
 }
 
 .c8 {

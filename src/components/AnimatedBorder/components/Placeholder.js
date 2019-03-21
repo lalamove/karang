@@ -2,14 +2,14 @@ import React from 'react';
 import { bool, string } from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import { red, orange, silver, white } from 'styles/colors';
+import { primary, valencia, nobel, white } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const Label = styled.label`
   position: absolute;
   top: 50%;
   left: 1em;
-  color: ${silver};
+  color: ${nobel.main};
   font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
   line-height: 1;
@@ -22,13 +22,13 @@ const Label = styled.label`
   ${({ focused }) =>
     focused &&
     css`
-      color: ${orange};
+      color: ${primary.main};
     `};
 
   ${({ error }) =>
     error &&
     css`
-      color: ${red};
+      color: ${valencia.main};
     `};
 
   ${({ focused, dirty, error }) =>

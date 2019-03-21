@@ -1,4 +1,4 @@
-import InputComp from './components/InputComp';
+import InputComp from './components/Input';
 import PinInput from './components/PinInput';
 import SearchInput from './components/SearchInput';
 import EditableInput from './components/EditableInput';

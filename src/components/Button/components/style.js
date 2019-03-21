@@ -20,17 +20,8 @@ const Base = styled.button`
   outline: 0;
 
   &:disabled {
-    opacity: 0.3;
+    opacity: 0.5;
     cursor: not-allowed;
-  }
-
-  &:hover:enabled,
-  &:focus:enabled {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-  }
-
-  &:active:enabled {
-    box-shadow: none;
   }
 `;
 
