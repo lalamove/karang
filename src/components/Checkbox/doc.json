@@ -1,0 +1,4 @@
+{
+  "name": "Checkbox",
+  "import": "import { Checkbox } from 'lalamove-ui'"
+}
