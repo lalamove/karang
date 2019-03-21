@@ -65,6 +65,71 @@ exports[`Button-block 1`] = `
 </button>
 `;
 
+exports[`Button-disabled 1`] = `
+.c1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.c1:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+  color: #535353;
+}
+
+.c0:hover:enabled,
+.c0:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c0:active:enabled,
+.c0:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+<button
+  class="c0 c1"
+  disabled=""
+  type="button"
+>
+  hello
+</button>
+`;
+
 exports[`Button-isLoading 1`] = `
 .c1 {
   -webkit-appearance: none;
@@ -148,7 +213,6 @@ exports[`Button-isLoading 1`] = `
 
 <button
   class="c0 c1"
-  disabled=""
   type="button"
 >
   <div
