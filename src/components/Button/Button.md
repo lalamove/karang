@@ -104,7 +104,7 @@ You can put it before the label as well, simply pass `before` to `iconPosition` 
 
 **Loading**
 
-Show spinner when it is `true`. This also disables the button.
+Show spinner when it is `true`.
 
 ```jsx static
 <Button variant="primary" isLoading>Text</Button>
@@ -117,5 +117,23 @@ Show spinner when it is `true`. This also disables the button.
     <Button variant="primary" isLoading solid>Primary</Button>
     <Button variant="secondary" isLoading solid>Secondary</Button>
     <Button variant="danger" isLoading solid>Danger</Button>
+</div>
+```
+
+**Disable**
+
+Disable the button when it is `true`.
+
+```jsx static
+<Button variant="primary" disabled>Text</Button>
+```
+
+```
+<div style={{ display: 'flex', justifyContent: 'space-around' }}>
+    <Button variant="link" disabled solid>Link</Button>
+    <Button disabled solid>Default</Button>
+    <Button variant="primary" disabled solid>Primary</Button>
+    <Button variant="secondary" disabled solid>Secondary</Button>
+    <Button variant="danger" disabled solid>Danger</Button>
 </div>
 ```

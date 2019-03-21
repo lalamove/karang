@@ -203,10 +203,17 @@ const StyledButton = styled(Base)`
 /**
  * Button component is used for actions in forms, dialogs, and more with multiple sizes and states.
  */
-const Button = ({ icon, iconPosition, isLoading, children, ...rest }) => {
+const Button = ({
+  icon,
+  iconPosition,
+  isLoading,
+  disabled,
+  children,
+  ...rest
+}) => {
   if (icon) {
     return (
-      <StyledButton isLoading={isLoading} {...rest}>
+      <StyledButton isLoading={isLoading} disabled={disabled} {...rest}>
         {isLoading && (
           <SpinnerWrapper>
             <Spinner color="currentColor" />
@@ -219,7 +226,7 @@ const Button = ({ icon, iconPosition, isLoading, children, ...rest }) => {
     );
   }
   return (
-    <StyledButton isLoading={isLoading} disabled={isLoading} {...rest}>
+    <StyledButton isLoading={isLoading} disabled={disabled} {...rest}>
       {isLoading && (
         <SpinnerWrapper>
           <Spinner color="currentColor" />
@@ -232,6 +239,7 @@ const Button = ({ icon, iconPosition, isLoading, children, ...rest }) => {
 
 Button.defaultProps = {
   isLoading: false,
+  disabled: false,
   size: null,
   variant: 'default',
   solid: false,
@@ -244,6 +252,8 @@ Button.defaultProps = {
 const propTypes = {
   /** Loading status for AJAX calls, show spinner when it is `true` */
   isLoading: bool,
+  /** Disable the button if it is `true` */
+  disabled: bool,
   /** Size of Button component */
   size: oneOf(['small', 'large', 'xlarge']),
   /** Variant of Button component */
