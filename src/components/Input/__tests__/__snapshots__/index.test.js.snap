@@ -23,7 +23,7 @@ exports[`Input Snapshots Password 1`] = `
   width: 100%;
   padding: 1em;
   border: none;
-  color: #1A1A1A;
+  color: #303030;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: #F16622;
   font-size: 14px;
@@ -210,7 +210,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   width: 100%;
   padding: 1em;
   border: none;
-  color: #1A1A1A;
+  color: #303030;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: #F16622;
   font-size: 14px;
@@ -398,7 +398,7 @@ exports[`Input Snapshots Regular Input 1`] = `
   width: 100%;
   padding: 1em;
   border: none;
-  color: #1A1A1A;
+  color: #303030;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: #F16622;
   font-size: 14px;
