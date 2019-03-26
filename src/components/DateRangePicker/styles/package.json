@@ -1,0 +1,6 @@
+{
+  "module": "./index.js",
+  "sideEffects": [
+    "./index.js"
+  ]
+}
