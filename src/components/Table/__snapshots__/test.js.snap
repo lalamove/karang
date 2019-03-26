@@ -3,7 +3,7 @@
 exports[`snapshots align 1`] = `
 .c1 {
   padding: 0.5em 1em;
-  color: rgba(180,180,180,1);
+  color: #B4B4B4;
   font-size: 12px;
   font-weight: 700;
   text-align: inherit;
@@ -20,8 +20,8 @@ exports[`snapshots align 1`] = `
 }
 
 .c0 th {
-  border-top: 1px rgba(229,229,229,1) solid;
-  border-bottom: 1px rgba(229,229,229,1) solid;
+  border-top: 1px #E8E8E8 solid;
+  border-bottom: 1px #E8E8E8 solid;
 }
 
 .c0 tbody td {
@@ -34,7 +34,7 @@ exports[`snapshots align 1`] = `
 }
 
 .c2:nth-child(even) {
-  background: #f9f9f9;
+  background: #fcfcfc;
 }
 
 <Table
@@ -322,7 +322,7 @@ exports[`snapshots align 1`] = `
 exports[`snapshots basic 1`] = `
 .c1 {
   padding: 0.5em 1em;
-  color: rgba(180,180,180,1);
+  color: #B4B4B4;
   font-size: 12px;
   font-weight: 700;
   text-align: inherit;
@@ -339,8 +339,8 @@ exports[`snapshots basic 1`] = `
 }
 
 .c0 th {
-  border-top: 1px rgba(229,229,229,1) solid;
-  border-bottom: 1px rgba(229,229,229,1) solid;
+  border-top: 1px #E8E8E8 solid;
+  border-bottom: 1px #E8E8E8 solid;
 }
 
 .c0 tbody td {
@@ -353,7 +353,7 @@ exports[`snapshots basic 1`] = `
 }
 
 .c2:nth-child(even) {
-  background: #f9f9f9;
+  background: #fcfcfc;
 }
 
 <Table

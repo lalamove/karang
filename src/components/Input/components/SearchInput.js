@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { rgba } from 'polished';
 
 import noop from 'utils/noop';
-import { primary, black, nobel } from 'styles/colors';
+import { primary, nobel } from 'styles/colors';
 import { fontSize } from 'styles/fonts';
 import SearchIcon from 'components/Icon/icons/content/search';
 import TextInput from './TextInput';
@@ -89,7 +89,7 @@ class Comp extends Component {
     const { forwardedRef, onFocus, onBlur, ...props } = this.props;
     return (
       <Container focused={focused}>
-        <SearchIcon color={black} size={20} />
+        <SearchIcon color={nobel['900']} size={20} />
         <SCTextInput
           onFocus={this.onFocus}
           onBlur={this.onBlur}

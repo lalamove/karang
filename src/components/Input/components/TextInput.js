@@ -3,14 +3,14 @@ import { string, object, func, oneOf } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { primary, nobel, black } from 'styles/colors';
+import { nobel, primary } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const InputField = styled.input`
   width: 100%;
   padding: 1em;
   border: none;
-  color: ${black};
+  color: ${nobel['900']};
   font-family: ${primaryFonts};
   caret-color: ${primary.main};
   font-size: ${fontSize.regular};

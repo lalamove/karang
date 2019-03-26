@@ -19,7 +19,7 @@ exports[`List component size-small-default 1`] = `
   display: inline-block;
   box-sizing: border-box;
   background-color: rgba(255,255,255,1);
-  color: rgba(51,49,50,1);
+  color: #303030;
   min-width: 12.5rem;
 }
 
@@ -120,7 +120,7 @@ exports[`List component size-small-with icon 1`] = `
   display: inline-block;
   box-sizing: border-box;
   background-color: rgba(255,255,255,1);
-  color: rgba(51,49,50,1);
+  color: #303030;
   min-width: 12.5rem;
 }
 
@@ -240,7 +240,7 @@ exports[`List component size-undefined-default 1`] = `
   display: inline-block;
   box-sizing: border-box;
   background-color: rgba(255,255,255,1);
-  color: rgba(51,49,50,1);
+  color: #303030;
   min-width: 16rem;
 }
 
@@ -248,7 +248,7 @@ exports[`List component size-undefined-default 1`] = `
   border-bottom: 0;
 }
 
-.ilGAzr:not(:last-child) .c3 {
+.gpEaLv:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
@@ -260,7 +260,7 @@ exports[`List component size-undefined-default 1`] = `
 }
 
 .c2:not(:last-child) .c3 {
-  border-bottom: 1px solid rgba(229,229,229,1);
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .c1 {
@@ -339,7 +339,7 @@ exports[`List component size-undefined-with icon 1`] = `
   display: inline-block;
   box-sizing: border-box;
   background-color: rgba(255,255,255,1);
-  color: rgba(51,49,50,1);
+  color: #303030;
   min-width: 16rem;
 }
 
@@ -347,7 +347,7 @@ exports[`List component size-undefined-with icon 1`] = `
   border-bottom: 0;
 }
 
-.ilGAzr:not(:last-child) .c4 {
+.gpEaLv:not(:last-child) .c4 {
   border-bottom: 0;
 }
 
@@ -359,7 +359,7 @@ exports[`List component size-undefined-with icon 1`] = `
 }
 
 .c2:not(:last-child) .c4 {
-  border-bottom: 1px solid rgba(229,229,229,1);
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .c1 {

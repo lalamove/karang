@@ -3,7 +3,7 @@ import { string, oneOf, object, func } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { primary, black, nobel } from 'styles/colors';
+import { mineShaft, nobel, primary } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const SCTextArea = styled.textarea`
@@ -11,7 +11,7 @@ const SCTextArea = styled.textarea`
   height: 100%;
   padding: 0;
   border: none;
-  color: ${black};
+  color: ${mineShaft['900']};
   font-family: ${primaryFonts};
   caret-color: ${primary.main};
   font-size: ${fontSize.regular};

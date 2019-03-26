@@ -4,27 +4,27 @@ import styled, { css } from 'styled-components';
 import { darken, rgba } from 'polished';
 
 import Button from 'components/Button';
-import { nobel, orange as primaryColor, lightGray } from 'styles/colors';
+import { nobel, primary } from 'styles/colors';
 import noop from 'utils/noop';
 
 import { TabContainer, RoundedTabContainer } from '../style';
 
 const TabButton = styled(Button).attrs({ variant: 'link' })`
   padding: 1.25em;
-  color: ${({ selected }) => (selected ? primaryColor : lightGray)};
+  color: ${({ selected }) => (selected ? primary.main : nobel.main)};
 
   text-shadow: ${({ selected }) =>
     selected
-      ? `-0.75px 0px 0px ${primaryColor}, -0.75px 0px 0px ${primaryColor}`
+      ? `-0.75px 0px 0px ${primary.main}, -0.75px 0px 0px ${primary.main}`
       : 'none'};
 
   &:hover:enabled {
-    color: ${primaryColor};
+    color: ${primary.main};
     text-decoration: none;
   }
 
   &:active:enabled {
-    color: ${darken(0.2, primaryColor)};
+    color: ${darken(0.2, primary.main)};
     text-decoration: none;
   }
 
@@ -57,19 +57,19 @@ const RoundedTabButton = styled.label`
   ${({ selected }) =>
     selected &&
     css`
-      border: 1px solid ${primaryColor};
+      border: 1px solid ${primary.main};
       color: white;
       font-weight: bold;
-      background-color: ${primaryColor};
+      background-color: ${primary.main};
 
       &:hover,
       &:active {
-        background-color: ${primaryColor};
+        background-color: ${primary.main};
       }
 
       &:active,
       &:focus {
-        box-shadow: 0 0 0 4px ${rgba(primaryColor, 0.2)};
+        box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
       }
     `};
 `;

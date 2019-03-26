@@ -1,14 +1,15 @@
 import React from 'react';
-import List from '../index';
 import { lighten } from 'polished';
 import { render, mount } from 'enzyme';
-import { orange, offWhite } from 'styles/colors';
+import { nobel, primary } from 'styles/colors';
+import List from '../index';
 
 const types = {
   size: ['small', undefined],
 };
 
 describe('List component', () => {
+  /* eslint-disable no-restricted-syntax */
   for (const type in types) {
     if (Object.prototype.hasOwnProperty.call(types, type)) {
       // eslint-disable-next-line array-callback-return
@@ -62,13 +63,13 @@ describe('List component', () => {
 
           const listItem = comp.find('li').at(2); // randomly pick one
 
-          expect(listItem).toHaveStyleRule('border-left-color', orange, {
+          expect(listItem).toHaveStyleRule('border-left-color', primary.main, {
             modifier: ':hover',
           });
 
           expect(listItem).toHaveStyleRule(
             'background-color',
-            lighten(0.05, offWhite),
+            lighten(0.05, nobel['200']),
             {
               modifier: ':hover',
             }

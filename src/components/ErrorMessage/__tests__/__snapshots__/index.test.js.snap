@@ -21,7 +21,7 @@ exports[`Snapshots ErrorMessage 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   width: 0;
-  color: rgba(216,83,79,1);
+  color: #D8534F;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 12px;
 }
@@ -45,7 +45,7 @@ exports[`Snapshots ErrorMessage 1`] = `
       aria-hidden="false"
       focusable="false"
       role="img"
-      style="vertical-align:middle;fill:rgba(216,83,79,1);width:13px;height:13px"
+      style="vertical-align:middle;fill:#D8534F;width:13px;height:13px"
       viewBox="0 0 217 217"
     >
       <title>

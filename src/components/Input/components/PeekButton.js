@@ -2,7 +2,7 @@ import React from 'react';
 import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
-import { black, offWhite } from 'styles/colors';
+import { mineShaft, nobel } from 'styles/colors';
 import noop from 'utils/noop';
 import Button from 'components/Button';
 import EyeOnIcon from 'components/Icon/icons/status/eyeOn';
@@ -13,14 +13,14 @@ const SCButton = styled(Button)`
 
   &:hover,
   &:focus {
-    background: ${offWhite};
+    background: ${nobel['200']};
   }
 `;
 
 const PeekButton = ({ active, onClick }) => (
   <SCButton onClick={onClick}>
-    {!active && <EyeOffIcon color={black} size={20} />}
-    {active && <EyeOnIcon color={black} size={20} />}
+    {!active && <EyeOffIcon color={mineShaft['900']} size={20} />}
+    {active && <EyeOnIcon color={mineShaft['900']} size={20} />}
   </SCButton>
 );
 

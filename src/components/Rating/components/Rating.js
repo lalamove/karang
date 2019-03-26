@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { func, oneOf } from 'prop-types';
 import styled from 'styled-components';
 
-import { gold, offWhite } from 'styles/colors';
+import { nobel, secondary } from 'styles/colors';
 import noop from 'utils/noop';
 
 import { small, large } from '../ratingSizes';
@@ -61,9 +61,9 @@ class Rating extends PureComponent {
   colorFill = i => {
     const { hoverValue, value } = this.state;
     if (hoverValue) {
-      return i < hoverValue ? gold : offWhite;
+      return i < hoverValue ? secondary.main : nobel['200'];
     }
-    return i < value ? gold : offWhite;
+    return i < value ? secondary.main : nobel['200'];
   };
 
   render() {

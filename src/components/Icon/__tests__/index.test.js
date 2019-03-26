@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from 'enzyme';
-import { red, orange } from 'styles/colors';
+import { primary, valencia } from 'styles/colors';
 
 import Icon from '../index';
 import * as icons from '../icons';
 
 const optionalProps = {
   size: [20, 40],
-  color: [red, orange],
+  color: [valencia.main, primary.main],
 };
 
 // TODO: deprecate

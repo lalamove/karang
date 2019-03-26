@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { orange as primaryColor } from 'styles/colors';
+import { primary } from 'styles/colors';
 
 export const TabBarContainer = styled.ul`
   display: block;
@@ -11,7 +11,7 @@ export const TabContainer = styled.li`
   display: inline-block;
   padding: 0;
   border-bottom: ${({ selected }) =>
-    selected ? `2px solid ${primaryColor}` : 'none'};
+    selected ? `2px solid ${primary.main}` : 'none'};
 `;
 
 export const RoundedTabContainer = styled.li`
