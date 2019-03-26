@@ -1,0 +1,4 @@
+{
+  "name": "Card",
+  "import": "import { Card } from 'lalamove-ui';"
+}
