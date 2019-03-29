@@ -92,8 +92,9 @@ const LI = styled.li`
     }};
   }
 
-  ${({ hoverable }) =>
+  ${({ hoverable, disabled }) =>
     hoverable &&
+    !disabled &&
     css`
       cursor: pointer;
       &:hover,
@@ -102,6 +103,13 @@ const LI = styled.li`
       }
     `};
   ${({ active }) => active && activeStyle};
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.5;
+      cursor: not-allowed;
+    `};
 `;
 
 const Wrapper = styled(LI)`
@@ -126,8 +134,8 @@ const Icon = styled.div`
   }};
 `;
 
-const Item = ({ icon, size, children, options, ...rest }) => (
-  <Wrapper size={size} {...rest}>
+const Item = ({ icon, size, children, options, disabled, ...rest }) => (
+  <Wrapper size={size} disabled={disabled} {...rest}>
     {icon && <Icon size={size}>{icon}</Icon>}
     <Content size={size}>{children}</Content>
     {options}
@@ -139,6 +147,7 @@ Item.defaultProps = {
   size: null,
   children: null,
   options: null,
+  disabled: false,
 };
 
 Item.propTypes = {
@@ -146,6 +155,7 @@ Item.propTypes = {
   size: string,
   children: node,
   options: node,
+  disabled: bool,
 };
 
 // eslint-disable-next-line react/prefer-stateless-function

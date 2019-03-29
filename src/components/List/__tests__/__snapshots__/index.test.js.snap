@@ -244,11 +244,11 @@ exports[`List component size-undefined-default 1`] = `
   min-width: 16rem;
 }
 
-.dMclmc:not(:last-child) .c3 {
+.kCwzmY:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
-.gpEaLv:not(:last-child) .c3 {
+.kIVfpE:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
@@ -343,11 +343,11 @@ exports[`List component size-undefined-with icon 1`] = `
   min-width: 16rem;
 }
 
-.dMclmc:not(:last-child) .c4 {
+.kCwzmY:not(:last-child) .c4 {
   border-bottom: 0;
 }
 
-.gpEaLv:not(:last-child) .c4 {
+.kIVfpE:not(:last-child) .c4 {
   border-bottom: 0;
 }
 
