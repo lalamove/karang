@@ -184,7 +184,17 @@ class Dropdown extends Component {
         if (!isOpen) {
           toggleMenu();
         } else {
-          this.selectHighlightedItem();
+          // do not select if item is disabled:
+          const { depthLevel, highlightedIndexes } = this.state;
+          const getItemIndex = depth => highlightedIndexes[depth].split('_')[1];
+          let depth = 0;
+          let item = this.props.items[getItemIndex(depth)];
+          while (depth < depthLevel) {
+            depth += 1;
+            item = item.options[getItemIndex(depth)];
+          }
+          if (!item.disabled) this.selectHighlightedItem();
+          // TODO: maybe skip disabled items when navigating with arrow keys
         }
         break;
       default:

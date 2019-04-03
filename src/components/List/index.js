@@ -102,7 +102,7 @@ const LI = styled.li`
         ${activeStyle};
       }
     `};
-  ${({ active }) => active && activeStyle};
+  ${({ active, disabled }) => active && !disabled && activeStyle};
 
   ${({ disabled }) =>
     disabled &&
