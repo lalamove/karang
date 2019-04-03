@@ -1,8 +1,10 @@
-import React, { forwardRef } from 'react';
-import { string } from 'prop-types';
+import React, { Component, forwardRef } from 'react';
+import { string, func } from 'prop-types';
 import styled from 'styled-components';
+import { rgba } from 'polished';
 
-import { black, offWhite } from 'styles/colors';
+import noop from 'utils/noop';
+import { primary, black, nobel } from 'styles/colors';
 import { fontSize } from 'styles/fonts';
 import SearchIcon from 'components/Icon/icons/content/search';
 import TextInput from './TextInput';
@@ -14,8 +16,14 @@ const Container = styled.div`
   height: 30px;
   padding: 0 1em;
   border-radius: 24px;
-  border: 1px solid ${offWhite};
+  border: 1px solid ${nobel.main};
   font-size: ${fontSize.regular};
+
+  ${({ focused }) =>
+    focused &&
+    `border: 1px solid ${primary.main};
+    box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
+    `};
 `;
 
 const SCTextInput = styled(TextInput)`
@@ -24,18 +32,7 @@ const SCTextInput = styled(TextInput)`
   margin-left: 10px;
 `;
 
-const CompWithRef = forwardRef((props, ref) => (
-  <Container>
-    <SearchIcon color={black} size={20} />
-    <SCTextInput innerRef={ref} {...props} />
-  </Container>
-));
-
-// Ugly fix for React Styleguidist as it cannot recognize forwardRef
-// eslint-disable-next-line react/prop-types
-const SearchInput = ({ innerRef, ...props }) => <CompWithRef {...props} />;
-
-SearchInput.propTypes = {
+const propTypes = {
   /** Type of input field to render, check
    *  [this](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) for more types */
   type: string,
@@ -43,12 +40,76 @@ SearchInput.propTypes = {
   placeholder: string,
   /** Name of input field, which is submitted with the value as part of form data */
   name: string,
+  /**
+   * Callback function, to be executed when user focus on the component
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onFocus: func,
+  /**
+   * Callback function, to be executed when user blur on the component
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onBlur: func,
 };
 
-SearchInput.defaultProps = {
+const defaultProps = {
   type: 'text',
   placeholder: null,
   name: null,
+  onFocus: noop,
+  onBlur: noop,
 };
+
+class Comp extends Component {
+  static propTypes = propTypes;
+
+  static defaultProps = defaultProps;
+
+  state = {
+    focused: false,
+  };
+
+  onFocus = e => {
+    const { onFocus } = this.props;
+    this.setState({ focused: true });
+    onFocus(e);
+  };
+
+  onBlur = e => {
+    const { onBlur } = this.props;
+    this.setState({ focused: false });
+    onBlur(e);
+  };
+
+  render() {
+    const { focused } = this.state;
+    // eslint-disable-next-line react/prop-types
+    const { forwardedRef, onFocus, onBlur, ...props } = this.props;
+    return (
+      <Container focused={focused}>
+        <SearchIcon color={black} size={20} />
+        <SCTextInput
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          innerRef={forwardedRef}
+          {...props}
+        />
+      </Container>
+    );
+  }
+}
+
+// eslint-disable-next-line react/no-multi-comp
+const SearchInput = forwardRef((props, ref) => (
+  <Comp {...props} forwardedRef={ref} />
+));
+
+// Ugly fix for React Styleguidist as it cannot recognize forwardRef
+// const SearchInput = props => <CompWithRef {...props} />;
+SearchInput.displayName = 'SearchInput';
+SearchInput.propTypes = propTypes;
+SearchInput.defaultProps = defaultProps;
 
 export default SearchInput;

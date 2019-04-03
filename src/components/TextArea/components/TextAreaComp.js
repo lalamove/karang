@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
-import { string } from 'prop-types';
+import { string, oneOf, object, func } from 'prop-types';
 import styled, { css } from 'styled-components';
+import { rgba } from 'polished';
 
-import { orange, black, silver } from 'styles/colors';
+import { primary, black, nobel } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
 const SCTextArea = styled.textarea`
@@ -12,13 +13,18 @@ const SCTextArea = styled.textarea`
   border: none;
   color: ${black};
   font-family: ${primaryFonts};
-  caret-color: ${orange};
+  caret-color: ${primary.main};
   font-size: ${fontSize.regular};
+  background-color: transparent;
   resize: none;
   outline: none;
 
   &::placeholder {
-    color: ${silver};
+    color: ${nobel.main};
+  }
+
+  &::selection {
+    background: ${rgba(primary.main, 0.1)};
   }
 
   ${({ label }) =>
@@ -37,11 +43,13 @@ const TextAreaComp = forwardRef(
 );
 
 TextAreaComp.propTypes = {
+  innerRef: oneOf([object, func, string]),
   label: string,
   name: string,
 };
 
 TextAreaComp.defaultProps = {
+  innerRef: null,
   label: null,
   name: null,
 };

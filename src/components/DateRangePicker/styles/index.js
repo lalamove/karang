@@ -1,10 +1,13 @@
 import { injectGlobal } from 'styled-components';
-// do similar stuff for other icons
+import { rgba } from 'polished';
+import { primary } from 'styles/colors';
+
 import calendarIcon from 'assets/calendar.svg';
 import leftArrow from 'assets/leftArrow.svg';
 import rightArrow from 'assets/rightArrow.svg';
 import { primaryFonts, fontWeight } from 'styles/fonts';
 
+// eslint-disable-next-line no-unused-expressions
 injectGlobal`
 .llm-date-range-picker {
   .PresetDateRangePicker_panel {
@@ -40,7 +43,7 @@ injectGlobal`
   }
   .SingleDatePickerInput__withBorder {
     border-radius: 2px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid #B4B4B4;
   }
   .SingleDatePickerInput__rtl {
     direction: rtl;
@@ -73,7 +76,7 @@ injectGlobal`
   }
   .SingleDatePickerInput_clearDate__default:focus,
   .SingleDatePickerInput_clearDate__default:hover {
-    background: #dbdbdb;
+    background: #B4B4B4;
     border-radius: 50%;
   }
   .SingleDatePickerInput_clearDate__small {
@@ -233,7 +236,7 @@ injectGlobal`
   .DayPickerKeyboardShortcuts_panel {
     overflow: auto;
     background: #fff;
-    border: 1px solid #dbdbdb;
+    border: 1px solid #B4B4B4;
     border-radius: 2px;
     position: absolute;
     top: 0;
@@ -619,7 +622,7 @@ injectGlobal`
   .DayPicker_weekHeader__verticalScrollable {
     top: 0;
     display: table-row;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid #B4B4B4;
     background: #fff;
     margin-left: 0;
     left: 0;
@@ -699,6 +702,10 @@ injectGlobal`
     border-left: 0;
     border-radius: 0;
     box-sizing: border-box;
+    
+    &::selection {
+      background: ${rgba(primary.main, 0.1)};
+    }
   }
   .DateInput_input__small {
     font-size: 15px;
@@ -721,7 +728,7 @@ injectGlobal`
     border: 0;
     border-top: 0;
     border-right: 0;
-    border-bottom: 2px solid rgba(241, 102, 34, 1);
+    border-bottom: 2px solid ${primary.main};
     border-left: 0;
   }
   .DateInput_input__disabled {
@@ -749,7 +756,7 @@ injectGlobal`
     fill: #fff;
   }
   .DateInput_fangStroke {
-    stroke: #dbdbdb;
+    stroke: #B4B4B4;
     fill: transparent;
   }
   .DateRangePickerInput {
@@ -764,7 +771,7 @@ injectGlobal`
   .DateRangePickerInput__withBorder {
     border-radius: 2px;
     padding-left: 8px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid #B4B4B4;
   }
   .DateRangePickerInput__rtl {
     direction: rtl;
@@ -810,7 +817,7 @@ injectGlobal`
   }
   .DateRangePickerInput_clearDates_default:focus,
   .DateRangePickerInput_clearDates_default:hover {
-    background: #dbdbdb;
+    background: #B4B4B4;
     border-radius: 50%;
   }
   .DateRangePickerInput_clearDates__hide {

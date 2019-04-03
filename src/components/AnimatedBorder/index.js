@@ -1,8 +1,9 @@
 import React from 'react';
 import { bool, node, string } from 'prop-types';
 import styled from 'styled-components';
+import { rgba } from 'polished';
 
-import { red, orange, offWhite } from 'styles/colors';
+import { primary, valencia, nobel } from 'styles/colors';
 import { primaryFonts } from 'styles/fonts';
 import Placeholder from './components/Placeholder';
 
@@ -11,7 +12,7 @@ const Container = styled.div`
   display: inline-flex;
   flex: 1;
   flex-flow: row nowrap;
-  border: 1px solid ${offWhite};
+  border: 1px solid ${nobel.main};
   font-family: ${primaryFonts};
   text-align: left;
   width: 100%;
@@ -23,16 +24,20 @@ const Container = styled.div`
     cursor: not-allowed;
     `};
 
-  ${({ focused }) =>
+  ${({ focused, error }) =>
     focused &&
     `
-    border: 1px solid ${orange};
+    border: 1px solid ${primary.main};
+    box-shadow: 0 0 0 4px ${
+      error ? rgba(valencia.main, 0.2) : rgba(primary.main, 0.2)
+    };
     `};
 
   ${({ error }) =>
     error &&
     `
-    border: 1px solid ${red};
+    border: 1px solid ${valencia.main};
+    background-color: ${rgba(valencia.main, 0.1)};
     `};
 `;
 

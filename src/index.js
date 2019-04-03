@@ -6,7 +6,6 @@ export {
   default as Button,
   CloseButton,
   IconButton,
-  LinkButton,
   ButtonWithComponent,
 } from './components/Button';
 export { default as Card } from './components/Card';
@@ -33,3 +32,4 @@ export { default as Spinner } from './components/Spinner';
 export { default as Tab, TabBar } from './components/Tabs';
 export { default as Table } from './components/Table';
 export { default as TextArea } from './components/TextArea';
+export { default as Toggle } from './components/Toggle';

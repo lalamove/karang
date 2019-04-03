@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { white } from 'styles/colors';
 
+// TODO: add customizability
 const Card = styled.div`
   background-color: ${white};
   box-sizing: border-box;

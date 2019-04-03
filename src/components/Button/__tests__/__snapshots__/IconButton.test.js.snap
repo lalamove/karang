@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton-shape-default 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 100%;
+  color: #585858;
+}
+
+.c0:hover:enabled {
+  background: #F1F1F1;
+}
+
+.c0:focus:enabled {
+  background: #E8E8E8;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+<button
+  class="c0"
+  shape="default"
+>
+  hello
+</button>
+`;
+
+exports[`IconButton-shape-square 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 2px;
+  color: #585858;
+}
+
+.c0:hover:enabled {
+  background: #F1F1F1;
+}
+
+.c0:focus:enabled {
+  background: #E8E8E8;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+<button
+  class="c0"
+  shape="square"
+>
+  hello
+</button>
+`;
+
+exports[`IconButton-variant-danger 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 100%;
+  color: #D8534F;
+}
+
+.c0:hover:enabled {
+  background: #FBEAED;
+}
+
+.c0:focus:enabled {
+  background: #F6CBCF;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+<button
+  class="c0"
+  shape="default"
+>
+  hello
+</button>
+`;
+
+exports[`IconButton-variant-default 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 100%;
+  color: #585858;
+}
+
+.c0:hover:enabled {
+  background: #F1F1F1;
+}
+
+.c0:focus:enabled {
+  background: #E8E8E8;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+<button
+  class="c0"
+  shape="default"
+>
+  hello
+</button>
+`;
+
+exports[`IconButton-variant-primary 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 100%;
+  color: #F16622;
+}
+
+.c0:hover:enabled {
+  background: #F9EAE7;
+}
+
+.c0:focus:enabled {
+  background: #FACEBC;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+<button
+  class="c0"
+  shape="default"
+>
+  hello
+</button>
+`;
+
+exports[`IconButton-variant-secondary 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 100%;
+  color: #FEA000;
+}
+
+.c0:hover:enabled {
+  background: #FFF8E1;
+}
+
+.c0:focus:enabled {
+  background: #FFECB3;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+<button
+  class="c0"
+  shape="default"
+>
+  hello
+</button>
+`;

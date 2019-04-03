@@ -1,35 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextArea Snapshots TextArea with error 1`] = `
-.c3 {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: none;
-  color: rgba(51,49,50,1);
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
-  font-size: 14px;
-  resize: none;
-  outline: none;
-}
-
-.c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3::placeholder {
-  color: rgba(128,130,133,1);
-}
-
 .c2 {
   position: relative;
   display: -webkit-inline-box;
@@ -42,11 +13,12 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
-  border: 1px solid rgba(216,83,79,1);
+  border: 1px solid #D8534F;
+  background-color: rgba(216,83,79,0.1);
 }
 
 .c4 {
@@ -76,6 +48,40 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
 
 .c6 {
   margin-left: 1em;
+}
+
+.c3 {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  color: rgba(51,49,50,1);
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c3::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c3:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c3::placeholder {
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c0 {
@@ -151,35 +157,6 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
 `;
 
 exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
-.c3 {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: none;
-  color: rgba(51,49,50,1);
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
-  font-size: 14px;
-  resize: none;
-  outline: none;
-}
-
-.c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3::placeholder {
-  color: rgba(128,130,133,1);
-}
-
 .c2 {
   position: relative;
   display: -webkit-inline-box;
@@ -192,10 +169,44 @@ exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
+}
+
+.c3 {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  color: rgba(51,49,50,1);
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c3::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c3:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c3::placeholder {
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c0 {
@@ -228,56 +239,11 @@ exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
 `;
 
 exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
-.c4 {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: none;
-  color: rgba(51,49,50,1);
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
-  font-size: 14px;
-  resize: none;
-  outline: none;
-}
-
-.c4::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c4::-moz-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c4:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c4::placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c4::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.c4::-moz-placeholder {
-  color: transparent;
-}
-
-.c4:-ms-input-placeholder {
-  color: transparent;
-}
-
-.c4::placeholder {
-  color: transparent;
-}
-
 .c3 {
   position: absolute;
   top: 50%;
   left: 1em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 14px;
   line-height: 1;
@@ -305,10 +271,60 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
+}
+
+.c4 {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  color: rgba(51,49,50,1);
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c4::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c4:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c4::placeholder {
+  color: #B4B4B4;
+}
+
+.c4::selection {
+  background: rgba(241,102,34,0.1);
+}
+
+.c4::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.c4::-moz-placeholder {
+  color: transparent;
+}
+
+.c4:-ms-input-placeholder {
+  color: transparent;
+}
+
+.c4::placeholder {
+  color: transparent;
 }
 
 .c0 {
@@ -329,7 +345,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
 
 .c5 {
   padding-top: 0.5em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 12px;
 }
@@ -360,35 +376,6 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
 `;
 
 exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
-.c3 {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: none;
-  color: rgba(51,49,50,1);
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: rgba(242,103,34,1);
-  font-size: 14px;
-  resize: none;
-  outline: none;
-}
-
-.c3::-webkit-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3::-moz-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3:-ms-input-placeholder {
-  color: rgba(128,130,133,1);
-}
-
-.c3::placeholder {
-  color: rgba(128,130,133,1);
-}
-
 .c2 {
   position: relative;
   display: -webkit-inline-box;
@@ -401,10 +388,44 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  border: 1px solid rgba(229,229,229,1);
+  border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   text-align: left;
   width: 100%;
+}
+
+.c3 {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  color: rgba(51,49,50,1);
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c3::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c3::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c3:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c3::placeholder {
+  color: #B4B4B4;
+}
+
+.c3::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c0 {
@@ -425,7 +446,7 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
 
 .c4 {
   padding-top: 0.5em;
-  color: rgba(128,130,133,1);
+  color: #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 12px;
 }
