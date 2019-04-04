@@ -10,6 +10,7 @@ const items = [
   {
     value: 'value_2',
     label: 'Label 2',
+    disabled: true,
   },
 ];
 
@@ -35,6 +36,7 @@ const itemsWithSubmenu = [
       {
         value: 'PH_MNL',
         label: 'Manila',
+        disabled: true,
       },
       {
         value: 'PH_CEB',
@@ -89,6 +91,17 @@ describe('Dropdown', () => {
       expect(button.instance().value).toBe(items[0].value);
     });
 
+    it('does not select disabled second option with keyboard', () => {
+      const onChange = jest.fn();
+      const wrapper = mount(<Dropdown items={items} onChange={onChange} />);
+      const button = wrapper.find('button');
+      button.simulate('keydown', { key: ' ' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: ' ' });
+      expect(onChange).toHaveBeenCalledTimes(0);
+    });
+
     it('select first option in sub menu of second option with keyboard', () => {
       const onChange = jest.fn();
       const wrapper = mount(
@@ -106,6 +119,20 @@ describe('Dropdown', () => {
       expect(button.instance().value).toBe(
         itemsWithSubmenu[1].options[1].value
       );
+    });
+
+    it('does not select disabled first option in sub menu of second option with keyboard', () => {
+      const onChange = jest.fn();
+      const wrapper = mount(
+        <Dropdown items={itemsWithSubmenu} onChange={onChange} />
+      );
+      const button = wrapper.find('button');
+      button.simulate('keydown', { key: ' ' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: 'ArrowRight' });
+      button.simulate('keydown', { key: ' ' });
+      expect(onChange).toHaveBeenCalledTimes(0);
     });
   });
 });

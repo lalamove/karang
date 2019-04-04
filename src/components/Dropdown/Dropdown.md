@@ -22,6 +22,29 @@ const items = [
 <Dropdown items={items} defaultLabel="Options available" />
 ```
 
+**Basic with disabled item**
+
+```js
+const items = [
+  {
+    value: 'hello',
+    label: 'Hello world!',
+    disabled: false,
+  },
+  {
+    value: 'morning',
+    label: 'Good morning, Dave.',
+    disabled: true,
+  },
+  {
+    value: 'bye',
+    label: 'Bye!',
+    // `disabled` omitted
+  },
+];
+<Dropdown items={items} defaultLabel="Options available" />
+```
+
 **Basic with icon and onChange()**
 
 Example for using `<Dropdown />` with custom `onChange()` function
