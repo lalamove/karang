@@ -2,7 +2,7 @@ import React from 'react';
 import { string, node, oneOf } from 'prop-types';
 import styled, { css } from 'styled-components';
 
-import { silver, black } from 'styles/colors';
+import { mineShaft } from 'styles/colors';
 import { fontWeight, fontSize } from 'styles/fonts';
 
 export const HeadingGroup = styled.div`
@@ -16,7 +16,7 @@ const Heading = styled.span`
     flex: 1 0 auto;
   }
   margin: 0.5em 0;
-  color: ${silver};
+  color: ${mineShaft['500']};
   font-weight: ${fontWeight.bold};
   line-height: 1.286;
   ${({ size }) => {
@@ -24,7 +24,7 @@ const Heading = styled.span`
       case 'large':
         return css`
           font-size: ${fontSize.large};
-          color: ${black};
+          color: ${mineShaft['900']};
         `;
       case 'default':
       default:

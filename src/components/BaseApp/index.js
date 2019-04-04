@@ -3,9 +3,10 @@ import { node } from 'prop-types';
 import { injectGlobal } from 'styled-components';
 import { normalize } from 'polished';
 
-import { orange } from 'styles/colors';
+import { primary } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
+/* eslint-disable no-unused-expressions */
 injectGlobal`
   ${normalize()}
 
@@ -17,7 +18,7 @@ injectGlobal`
   }
 
   a {
-    color: ${orange};
+    color: ${primary.main};
     text-decoration: none;
 
     &:active {
@@ -33,6 +34,7 @@ export default class BaseApp extends Component {
   };
 
   render() {
+    // eslint-disable-next-line react/destructuring-assignment
     return this.props.children;
   }
 }

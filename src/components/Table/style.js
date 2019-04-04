@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 import { fontSize, fontWeight } from 'styles/fonts';
-import { offWhite, orange, lightGray, gray } from 'styles/colors';
+import { nobel, primary } from 'styles/colors';
 
 const arrowMap = {
   default: '2195',
@@ -11,7 +11,7 @@ const arrowMap = {
 
 export const ColTitle = styled.div`
   padding: 0.5em 1em;
-  color: ${lightGray};
+  color: ${nobel.main};
   font-size: ${fontSize.small};
   font-weight: ${fontWeight.bold};
   text-align: inherit;
@@ -23,7 +23,7 @@ export const ColTitle = styled.div`
       cursor: pointer;
 
       &:hover {
-        background: ${lighten(0.05, offWhite)};
+        background: ${lighten(0.05, nobel['200'])};
       }
 
       ${sorted &&
@@ -32,7 +32,7 @@ export const ColTitle = styled.div`
         margin-left: 0.5em;
         ${sorted !== 'default' &&
           css`
-            color: ${gray};
+            color: ${nobel['700']};
           `}
       }`};
     `};
@@ -44,8 +44,8 @@ export const SCTable = styled.table`
   line-height: 1.4;
 
   th {
-    border-top: 1px ${offWhite} solid;
-    border-bottom: 1px ${offWhite} solid;
+    border-top: 1px ${nobel['200']} solid;
+    border-bottom: 1px ${nobel['200']} solid;
   }
 
   tbody td {
@@ -63,16 +63,17 @@ export const Row = styled.tr`
     alternate &&
     css`
       &:nth-child(even) {
-        background: ${lighten(0.08, offWhite)};
+        background: ${lighten(0.08, nobel['200'])};
       }
-    `} ${({ hoverable }) =>
+    `};
+  ${({ hoverable }) =>
     hoverable &&
     css`
       &:hover {
-        background: ${lighten(0.05, offWhite)};
+        background: ${lighten(0.05, nobel['200'])};
 
         > td:first-of-type {
-          border-left-color: ${orange};
+          border-left-color: ${primary.main};
         }
       }
     `};

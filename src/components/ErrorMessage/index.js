@@ -2,7 +2,7 @@ import React from 'react';
 import { node } from 'prop-types';
 import styled from 'styled-components';
 
-import { red } from 'styles/colors';
+import { valencia } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 import WarningIcon from 'components/Icon/icons/alert/warning';
 
@@ -17,7 +17,7 @@ const Container = styled.div`
 const Text = styled.span`
   flex-grow: 1;
   width: 0;
-  color: ${red};
+  color: ${valencia.main};
   font-family: ${primaryFonts};
   font-size: ${fontSize.small};
 `;
@@ -32,7 +32,7 @@ const ErrorMessage = ({ error, ...rest }) =>
     <Container {...rest}>
       <Text>{error}</Text>
       <IconWrapper>
-        <WarningIcon color={red} size={13} />
+        <WarningIcon color={valencia.main} size={13} />
       </IconWrapper>
     </Container>
   );

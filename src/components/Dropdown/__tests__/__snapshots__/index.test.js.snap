@@ -125,7 +125,7 @@ exports[`Dropdown Snapshots render 1`] = `
         aria-hidden="false"
         focusable="false"
         role="img"
-        style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
+        style="vertical-align:middle;fill:#B4B4B4;width:24px;height:24px"
         viewBox="0 0 217 217"
       >
         <title>
@@ -274,7 +274,7 @@ exports[`Dropdown Snapshots render 2`] = `
         aria-hidden="false"
         focusable="false"
         role="img"
-        style="vertical-align:middle;fill:rgba(180,180,180,1);width:24px;height:24px"
+        style="vertical-align:middle;fill:#B4B4B4;width:24px;height:24px"
         viewBox="0 0 217 217"
       >
         <title>
