@@ -124,6 +124,7 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
         style="vertical-align:middle;fill:#D8534F;width:13px;height:13px"

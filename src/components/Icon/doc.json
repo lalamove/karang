@@ -1,0 +1,4 @@
+{
+  "name": "Icon",
+  "import": "import { Icon } from 'lalamove-ui';"
+}
