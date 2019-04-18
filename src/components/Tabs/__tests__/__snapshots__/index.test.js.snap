@@ -91,7 +91,7 @@ exports[`Tab Snapshots Deselected 1`] = `
   color: #F16622;
 }
 
-.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c2 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #F16622;
 }
 
@@ -255,7 +255,7 @@ exports[`Tab Snapshots Selected 1`] = `
   color: #F16622;
 }
 
-.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c2 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #F16622;
 }
 
@@ -482,7 +482,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   color: #F16622;
 }
 
-.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c3 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #F16622;
 }
 
@@ -635,7 +635,7 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   color: #F16622;
 }
 
-.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c3 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #F16622;
 }
 

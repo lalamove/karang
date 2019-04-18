@@ -43,7 +43,7 @@ exports[`Button-block 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -107,7 +107,7 @@ exports[`Button-disabled 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -162,19 +162,19 @@ exports[`Button-isLoading 1`] = `
   transform: translateX(-50%);
 }
 
-.hrUvAP .c2 {
+.iKiROw .c2 {
   color: #535353;
 }
 
-.dkODus .c2 {
+.fiugyG .c2 {
   color: #535353;
 }
 
-.fRtyqW .c2 {
+.diwyFe .c2 {
   color: #535353;
 }
 
-.jvYInV .c2 {
+.kNiYZQ .c2 {
   color: #535353;
 }
 
@@ -289,7 +289,7 @@ exports[`Button-size-large 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -354,7 +354,7 @@ exports[`Button-size-small 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -421,7 +421,7 @@ exports[`Button-size-xlarge 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -485,7 +485,7 @@ exports[`Button-solid 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -550,7 +550,7 @@ exports[`Button-variant-danger 1`] = `
   color: #D8534F;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #D8534F;
 }
 
@@ -561,8 +561,8 @@ exports[`Button-variant-danger 1`] = `
   color: rgba(255,255,255,1);
 }
 
-.c0:hover:enabled .Button__SpinnerWrapper-sc-1aalsx4-2,
-.c0:active:enabled .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0:hover:enabled .Button__SpinnerWrapper-sc-1mj1nol-2,
+.c0:active:enabled .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: rgba(255,255,255,1);
 }
 
@@ -621,7 +621,7 @@ exports[`Button-variant-default 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -685,7 +685,7 @@ exports[`Button-variant-link 1`] = `
   color: #F16622;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #F16622;
 }
 
@@ -750,7 +750,7 @@ exports[`Button-variant-primary 1`] = `
   color: #F16622;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #F16622;
 }
 
@@ -761,8 +761,8 @@ exports[`Button-variant-primary 1`] = `
   color: rgba(255,255,255,1);
 }
 
-.c0:hover:enabled .Button__SpinnerWrapper-sc-1aalsx4-2,
-.c0:active:enabled .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0:hover:enabled .Button__SpinnerWrapper-sc-1mj1nol-2,
+.c0:active:enabled .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: rgba(255,255,255,1);
 }
 
@@ -822,7 +822,7 @@ exports[`Button-variant-secondary 1`] = `
   color: #FEA000;
 }
 
-.c0 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #FEA000;
 }
 
@@ -833,8 +833,8 @@ exports[`Button-variant-secondary 1`] = `
   color: rgba(255,255,255,1);
 }
 
-.c0:hover:enabled .Button__SpinnerWrapper-sc-1aalsx4-2,
-.c0:active:enabled .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c0:hover:enabled .Button__SpinnerWrapper-sc-1mj1nol-2,
+.c0:active:enabled .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: rgba(255,255,255,1);
 }
 

@@ -42,7 +42,7 @@ exports[`Snapshots Pagination with 0 items 1`] = `
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c3 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -188,7 +188,7 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c3 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -333,7 +333,7 @@ exports[`Snapshots Pagination with custom description 1`] = `
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c3 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -478,7 +478,7 @@ exports[`Snapshots Pagination with custom text buttons 1`] = `
   color: #535353;
 }
 
-.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c2 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -573,7 +573,7 @@ exports[`Snapshots Pagination with default value 1`] = `
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c3 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
@@ -718,7 +718,7 @@ exports[`Snapshots Pagination with text buttons 1`] = `
   color: #535353;
 }
 
-.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c2 .Button__SpinnerWrapper-sc-1mj1nol-2 {
   color: #535353;
 }
 
