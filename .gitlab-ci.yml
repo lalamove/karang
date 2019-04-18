@@ -24,7 +24,7 @@ version:
   stage: version
   only:
     refs:
-      - master@lalamove/lalamove-ui
+      - master@lalamove/karang
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
@@ -50,7 +50,7 @@ storybook:
     - k8s
   only:
     refs:
-      - master@lalamove/lalamove-ui
+      - master@lalamove/karang
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
   environment:
@@ -72,7 +72,7 @@ styleguide:
     - k8s
   only:
     refs:
-      - master@lalamove/lalamove-ui
+      - master@lalamove/karang
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
   environment:
