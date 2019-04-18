@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { PinInput } from 'lalamove-ui';
+import { PinInput } from 'karang';
 ```
 
 **Basic**

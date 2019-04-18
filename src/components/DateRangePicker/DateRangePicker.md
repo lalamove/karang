@@ -1,5 +1,5 @@
 ```js static
-import { DateRangePicker } from 'lalamove-ui'
+import { DateRangePicker } from 'karang'
 ```
 
 ```jsx

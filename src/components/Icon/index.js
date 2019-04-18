@@ -15,8 +15,8 @@ const Icon = props => {
       [
         'Generic Icon would be deprecated in v1.',
         'Please switch to exact name import before migrating to v1',
-        `e.g. import { up } from 'lalamove-ui/dist/components/Icon/icons';`,
-        `/ import Up from 'lalamove-ui/dist/components/Icon/icons/arrows/arrow/up';`,
+        `e.g. import { up } from 'karang/dist/components/Icon/icons';`,
+        `/ import Up from 'karang/dist/components/Icon/icons/arrows/arrow/up';`,
       ].join('\n')
     );
     warnOnce = true;

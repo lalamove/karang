@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { IconButton } from 'lalamove-ui';
+import { IconButton } from 'karang';
 ```
 
 **Variant**

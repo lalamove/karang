@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { EditableInput } from 'lalamove-ui';
+import { EditableInput } from 'karang';
 ```
 
 ```js

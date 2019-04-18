@@ -4,7 +4,7 @@
 #### Usage:
 
 ```js static
-import { Badge } from 'lalamove-ui';
+import { Badge } from 'karang';
 ```
 
 **Solid Badge**

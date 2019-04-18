@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Tab, TabBar } from 'lalamove-ui';
+import { Tab, TabBar } from 'karang';
 ```
 
 ```js static

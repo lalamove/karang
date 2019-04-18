@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Checkbox } from 'lalamove-ui';
+import { Checkbox } from 'karang';
 ```
 
 **Basic**

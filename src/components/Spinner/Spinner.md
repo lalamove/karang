@@ -4,7 +4,7 @@
 #### Usage:
 
 ```js static
-import { Spinner } from 'lalamove-ui';
+import { Spinner } from 'karang';
 ```
 
 **Basic**
