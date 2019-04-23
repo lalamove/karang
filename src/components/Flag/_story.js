@@ -8,7 +8,7 @@ const icon = <GalleryIcon size="32" />;
 
 storiesOf('Flag', module)
   .add('Default - center', () => (
-    <Flag img={icon}>
+    <Flag image={icon}>
       {line}
       <h4>Heading</h4>
       <p>This is the content.</p>
@@ -16,7 +16,7 @@ storiesOf('Flag', module)
     </Flag>
   ))
   .add('Top', () => (
-    <Flag variant="top" img={icon}>
+    <Flag variant="top" image={icon}>
       {line}
       <h4>Heading</h4>
       <p>This is the content.</p>
@@ -24,7 +24,7 @@ storiesOf('Flag', module)
     </Flag>
   ))
   .add('Bottom', () => (
-    <Flag variant="bottom" img={icon}>
+    <Flag variant="bottom" image={icon}>
       {line}
       <h4>Heading</h4>
       <p>This is the content.</p>
@@ -32,12 +32,12 @@ storiesOf('Flag', module)
     </Flag>
   ))
   .add('Nested example', () => (
-    <Flag variant="top" img={icon}>
+    <Flag variant="top" image={icon}>
       {line}
       <h4>Heading</h4>
       <p>This is the content.</p>
 
-      <Flag variant="top" img={icon}>
+      <Flag variant="top" image={icon}>
         {line}
         <h4>Heading</h4>
         <p>This is the content.</p>

@@ -17,7 +17,7 @@ const FlagContainer = styled.div`
   }};
 `;
 
-const FlagImg = styled.figure`
+const FlagImage = styled.figure`
   margin: 0; /* reset */
   margin-right: 1em;
 `;
@@ -33,7 +33,7 @@ const FlagBody = styled.div`
 /* eslint-disable react/destructuring-assignment */
 const Flag = props => (
   <FlagContainer {...props}>
-    <FlagImg>{props.img}</FlagImg>
+    <FlagImage>{props.image}</FlagImage>
     <FlagBody>{props.children}</FlagBody>
   </FlagContainer>
 );
@@ -41,7 +41,7 @@ const Flag = props => (
 
 Flag.propTypes = {
   /** The image to the left */
-  img: node,
+  image: node,
   /** Image placement variation */
   variant: oneOf(['top', 'center', 'bottom']),
   /** The descriptive content to the right */
@@ -49,7 +49,7 @@ Flag.propTypes = {
 };
 
 Flag.defaultProps = {
-  img: null,
+  image: null,
   variant: 'center',
   children: null,
 };
