@@ -33,19 +33,17 @@ class TabBar extends Component {
 
   render() {
     const { activeTab, children, onTabChange, variant, ...rest } = this.props;
-
-    return React.Children.count(children) ? (
+    const filteredChildren = React.Children.toArray(children).filter(c => c);
+    return React.Children.count(filteredChildren) ? (
       <TabBarContainer role="tablist" {...rest}>
-        {React.Children.map(
-          children,
-          child =>
-            child.type === Tab || child.type === tabType // https://github.com/gaearon/react-hot-loader#checking-element-types
-              ? React.cloneElement(child, {
-                  onTabChange,
-                  selected: activeTab === child.props.name,
-                  variant,
-                })
-              : child
+        {React.Children.map(filteredChildren, child =>
+          child.type === Tab || child.type === tabType // https://github.com/gaearon/react-hot-loader#checking-element-types
+            ? React.cloneElement(child, {
+                onTabChange,
+                selected: activeTab === child.props.name,
+                variant,
+              })
+            : child
         )}
       </TabBarContainer>
     ) : null;

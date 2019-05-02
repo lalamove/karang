@@ -1,0 +1,4 @@
+{
+  "name": "Flag",
+  "import": "import { Flag } from 'lalamove-ui';"
+}

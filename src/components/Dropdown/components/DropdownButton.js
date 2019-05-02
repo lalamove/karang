@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Button from 'components/Button';
 import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
-import { white, lightGray } from 'styles/colors';
+import { nobel, white } from 'styles/colors';
 
 const StyledButton = styled(Button)`
   display: flex;
@@ -42,7 +42,7 @@ const DropdownButton = ({ icon, label, ...remainProps }) => (
     {icon && <CustomIcon>{icon}</CustomIcon>}
     <Content>{label}</Content>
     <Caret>
-      <DropDownIcon color={lightGray} size={24} />
+      <DropDownIcon color={nobel.main} size={24} />
     </Caret>
   </StyledButton>
 );

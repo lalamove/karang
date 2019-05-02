@@ -23,7 +23,7 @@ exports[`Input Snapshots Password 1`] = `
   width: 100%;
   padding: 1em;
   border: none;
-  color: rgba(51,49,50,1);
+  color: #303030;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: #F16622;
   font-size: 14px;
@@ -113,7 +113,7 @@ exports[`Input Snapshots Password 1`] = `
 
 .c4:hover,
 .c4:focus {
-  background: rgba(229,229,229,1);
+  background: #E8E8E8;
 }
 
 .c2::-ms-reveal {
@@ -143,9 +143,10 @@ exports[`Input Snapshots Password 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
-        style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
+        style="vertical-align:middle;fill:#303030;width:20px;height:20px"
         viewBox="0 0 217 217"
       >
         <title>
@@ -210,7 +211,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   width: 100%;
   padding: 1em;
   border: none;
-  color: rgba(51,49,50,1);
+  color: #303030;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: #F16622;
   font-size: 14px;
@@ -300,7 +301,7 @@ exports[`Input Snapshots Password with a value 1`] = `
 
 .c4:hover,
 .c4:focus {
-  background: rgba(229,229,229,1);
+  background: #E8E8E8;
 }
 
 .c2::-ms-reveal {
@@ -331,9 +332,10 @@ exports[`Input Snapshots Password with a value 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
-        style="vertical-align:middle;fill:rgba(51,49,50,1);width:20px;height:20px"
+        style="vertical-align:middle;fill:#303030;width:20px;height:20px"
         viewBox="0 0 217 217"
       >
         <title>
@@ -398,7 +400,7 @@ exports[`Input Snapshots Regular Input 1`] = `
   width: 100%;
   padding: 1em;
   border: none;
-  color: rgba(51,49,50,1);
+  color: #303030;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   caret-color: #F16622;
   font-size: 14px;
@@ -473,7 +475,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   width: 0;
-  color: rgba(216,83,79,1);
+  color: #D8534F;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
   font-size: 12px;
 }
@@ -599,9 +601,10 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
-        style="vertical-align:middle;fill:rgba(216,83,79,1);width:13px;height:13px"
+        style="vertical-align:middle;fill:#D8534F;width:13px;height:13px"
         viewBox="0 0 217 217"
       >
         <title>

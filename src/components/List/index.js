@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
-import { black, orange, offWhite, white } from 'styles/colors';
+import { mineShaft, nobel, primary, white } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 import { arrayOf, bool, func, oneOf, node, string, shape } from 'prop-types';
 
@@ -38,7 +38,7 @@ const UL = styled.ul`
   display: inline-block;
   box-sizing: border-box;
   background-color: ${white};
-  color: ${black};
+  color: ${mineShaft['900']};
   ${({ size }) => {
     switch (size) {
       case 'small':
@@ -54,8 +54,8 @@ const UL = styled.ul`
 `;
 
 const activeStyle = css`
-  background-color: ${lighten(0.05, offWhite)};
-  border-left-color: ${orange};
+  background-color: ${lighten(0.05, nobel['200'])};
+  border-left-color: ${primary.main};
 `;
 
 const LI = styled.li`
@@ -86,14 +86,15 @@ const LI = styled.li`
           `;
         default:
           return css`
-            border-bottom: 1px solid ${offWhite};
+            border-bottom: 1px solid ${nobel['200']};
           `;
       }
     }};
   }
 
-  ${({ hoverable }) =>
+  ${({ hoverable, disabled }) =>
     hoverable &&
+    !disabled &&
     css`
       cursor: pointer;
       &:hover,
@@ -101,7 +102,14 @@ const LI = styled.li`
         ${activeStyle};
       }
     `};
-  ${({ active }) => active && activeStyle};
+  ${({ active, disabled }) => active && !disabled && activeStyle};
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.5;
+      cursor: not-allowed;
+    `};
 `;
 
 const Wrapper = styled(LI)`
@@ -126,8 +134,8 @@ const Icon = styled.div`
   }};
 `;
 
-const Item = ({ icon, size, children, options, ...rest }) => (
-  <Wrapper size={size} {...rest}>
+const Item = ({ icon, size, children, options, disabled, ...rest }) => (
+  <Wrapper size={size} disabled={disabled} {...rest}>
     {icon && <Icon size={size}>{icon}</Icon>}
     <Content size={size}>{children}</Content>
     {options}
@@ -139,6 +147,7 @@ Item.defaultProps = {
   size: null,
   children: null,
   options: null,
+  disabled: false,
 };
 
 Item.propTypes = {
@@ -146,6 +155,7 @@ Item.propTypes = {
   size: string,
   children: node,
   options: node,
+  disabled: bool,
 };
 
 // eslint-disable-next-line react/prefer-stateless-function

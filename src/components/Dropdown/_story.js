@@ -16,6 +16,23 @@ const items = [
   },
 ];
 
+const itemsWithDisabled = [
+  {
+    value: 'hello',
+    label: 'Hello world!',
+    disabled: false,
+  },
+  {
+    value: 'morning',
+    label: 'Good morning, Dave.',
+    disabled: true,
+  },
+  {
+    value: 'bye',
+    label: 'Bye!',
+  },
+];
+
 const itemsWithSubmenu = [
   {
     value: 'TH',
@@ -77,6 +94,8 @@ const Basic = () => (
   <div>
     <h4>Basic</h4>
     <Dropdown items={items} />
+    <h4>Basic with disabled item</h4>
+    <Dropdown items={itemsWithDisabled} />
     <h4>Basic with icon</h4>
     <Dropdown
       items={items.map(item =>

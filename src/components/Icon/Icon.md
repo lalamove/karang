@@ -2,6 +2,9 @@
 
 ```js static
 import { Icon } from 'lalamove-ui';
+import { up as UpIcon } from 'lalamove-ui/dist/components/Icon/icons';
+// <Icon type="up" color="orange" />
+// <UpIcon color="orange"> // same as above
 ```
 
 **Available icons**
