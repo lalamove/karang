@@ -110,7 +110,7 @@ const Alert = ({
       </Content>
       {onDismiss !== noop && (
         <CloseButton onClick={onDismiss}>
-          <CloseIcon color={white} size={24} />
+          <CloseIcon color={white} size={20} />
         </CloseButton>
       )}
     </Container>
