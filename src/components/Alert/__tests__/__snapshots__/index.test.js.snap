@@ -44,6 +44,7 @@ exports[`Alert Snapshots Alert-type-error 1`] = `
   >
     <svg
       aria-hidden="false"
+      aria-labelledby="title"
       focusable="false"
       role="img"
       style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
@@ -129,6 +130,7 @@ exports[`Alert Snapshots Alert-type-info 1`] = `
   >
     <svg
       aria-hidden="false"
+      aria-labelledby="title"
       focusable="false"
       role="img"
       style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
@@ -200,6 +202,7 @@ exports[`Alert Snapshots Alert-type-success 1`] = `
   >
     <svg
       aria-hidden="false"
+      aria-labelledby="title"
       focusable="false"
       role="img"
       style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
@@ -280,6 +283,7 @@ exports[`Alert Snapshots Alert-type-warning 1`] = `
   >
     <svg
       aria-hidden="false"
+      aria-labelledby="title"
       focusable="false"
       role="img"
       style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
@@ -365,6 +369,7 @@ exports[`Alert Snapshots Alert-variant-default 1`] = `
   >
     <svg
       aria-hidden="false"
+      aria-labelledby="title"
       focusable="false"
       role="img"
       style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"
@@ -437,6 +442,7 @@ exports[`Alert Snapshots Alert-variant-toast 1`] = `
   >
     <svg
       aria-hidden="false"
+      aria-labelledby="title"
       focusable="false"
       role="img"
       style="vertical-align:middle;fill:rgba(255,255,255,1);width:24px;height:24px"

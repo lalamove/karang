@@ -123,6 +123,7 @@ exports[`Dropdown Snapshots render 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
         style="vertical-align:middle;fill:#B4B4B4;width:24px;height:24px"
@@ -272,6 +273,7 @@ exports[`Dropdown Snapshots render 2`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
         style="vertical-align:middle;fill:#B4B4B4;width:24px;height:24px"

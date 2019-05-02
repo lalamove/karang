@@ -22,8 +22,9 @@ const SVGIcon = ({
   return (
     // focusable IE specific feature
     <svg
-      aria-hidden={title ? 'false' : 'true'}
-      role={title ? 'img' : 'presentation'}
+      aria-hidden="false"
+      role="img"
+      aria-labelledby="title"
       focusable="false"
       style={rootStyle}
       viewBox={viewBox}

@@ -143,6 +143,7 @@ exports[`Input Snapshots Password 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
         style="vertical-align:middle;fill:#303030;width:20px;height:20px"
@@ -331,6 +332,7 @@ exports[`Input Snapshots Password with a value 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
         style="vertical-align:middle;fill:#303030;width:20px;height:20px"
@@ -599,6 +601,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
         style="vertical-align:middle;fill:#D8534F;width:13px;height:13px"

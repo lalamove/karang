@@ -1,6 +1,7 @@
 import React from 'react';
 import warning from 'warning';
-import { string } from 'prop-types';
+import { string, number, shape } from 'prop-types';
+import SVGIcon from './icons/utils/SVGIcon';
 
 import * as icons from './icons';
 
@@ -25,8 +26,31 @@ const Icon = props => {
   return <I {...rest} />;
 };
 
+Icon.defaultProps = {
+  color: 'currentColor',
+  size: 20,
+  style: {},
+  verticalAlign: 'middle',
+  viewBox: '0 0 217 217',
+  title: '',
+};
+
 Icon.propTypes = {
+  ...SVGIcon.propTypes,
+  /** Icon name */
   type: string.isRequired,
+  /** Color code of icon */
+  color: string,
+  /** Size of icon, in `px` */
+  size: number, // TODO: to define small and large icon size
+  /** Additional style apply to icon */
+  style: shape({}),
+  /** Vertical align of icon, default is `middle` */
+  verticalAlign: string,
+  /** viewBox of svg */
+  viewBox: string,
+  /** Aria title for Icon */
+  title: string,
 };
 
 export default Icon;

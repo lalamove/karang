@@ -114,6 +114,7 @@ exports[`Select Snapshots Select with label and items 1`] = `
         >
           <svg
             aria-hidden="false"
+            aria-labelledby="title"
             focusable="false"
             role="img"
             style="vertical-align:middle;fill:currentColor;width:24px;height:24px"
@@ -303,6 +304,7 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
         >
           <svg
             aria-hidden="false"
+            aria-labelledby="title"
             focusable="false"
             role="img"
             style="vertical-align:middle;fill:currentColor;width:24px;height:24px"
@@ -341,6 +343,7 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
     >
       <svg
         aria-hidden="false"
+        aria-labelledby="title"
         focusable="false"
         role="img"
         style="vertical-align:middle;fill:#D8534F;width:13px;height:13px"
