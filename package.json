@@ -20,6 +20,7 @@
     "lint": "yarn lint:css",
     "lint:js": "eslint \"src/**/*.js\"",
     "lint:css": "stylelint \"src/**/*.{css|js}\"",
+    "lint:js:fix": "eslint --fix",
     "storybook": "start-storybook -p 9002 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "doc": "npx styleguidist server",
