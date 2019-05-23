@@ -10,6 +10,7 @@ import Alert from '../Alert';
 // Category
 import * as AlertIcons from './icons/alert';
 import * as ArrowsIcons from './icons/arrows';
+import * as BrowserIcons from './icons/browser';
 import * as CommunicationIcons from './icons/communication';
 import * as ContentIcons from './icons/content';
 import * as DateIcons from './icons/date';
@@ -68,6 +69,7 @@ IconGallery.propTypes = {
 storiesOf('Icon', module)
   .add('Alert', () => <IconGallery category={AlertIcons} />)
   .add('Arrows', () => <IconGallery category={ArrowsIcons} />)
+  .add('Browser', () => <IconGallery category={BrowserIcons} />)
   .add('Communication', () => <IconGallery category={CommunicationIcons} />)
   .add('Content', () => <IconGallery category={ContentIcons} />)
   .add('Emoji', () => (

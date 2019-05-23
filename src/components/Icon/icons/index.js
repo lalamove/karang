@@ -1,5 +1,6 @@
 export * from './alert';
 export * from './arrows';
+export * from './browser';
 export * from './communication';
 export * from './content';
 export * from './date';
