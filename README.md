@@ -27,7 +27,7 @@ Please make sure you have the following dependencies installed:
 
 And run the following:
 
-```
+```bash
 yarn add @lalamove/karang
 ```
 
@@ -74,7 +74,7 @@ const MyComponent = () => (
 export default MyComponent;
 ```
 
-We do support partial import for smaller built too:
+We also support partial import for smaller built:
 ```bash
 import Radio from '@lalamove/karang/dist/components/Radio';
 ```
