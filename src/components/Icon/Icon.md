@@ -1,8 +1,8 @@
 #### Usage:
 
 ```js static
-import { Icon } from 'lalamove-ui';
-import { up as UpIcon } from 'lalamove-ui/dist/components/Icon/icons';
+import { Icon } from '@lalamove/karang';
+import { up as UpIcon } from '@lalamove/karang/dist/components/Icon/icons';
 // <Icon type="up" color="orange" />
 // <UpIcon color="orange"> // same as above
 ```
@@ -44,7 +44,7 @@ Please refer to [Storybook](https://ui.lalamove.com/storybook/?selectedKind=Icon
 The following icons name has been deprecated, and they will be removed in future version. Please **replace** with the following name:
 
 | Old name (deprecated) | New name |
-| -------- | -------- | 
+| -------- | -------- |
 | **clock** | recent |
 | **cross** | close |
 | **logo** | lalamoveFilled |

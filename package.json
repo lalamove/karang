@@ -1,8 +1,7 @@
 {
-  "name": "lalamove-ui",
+  "name": "@lalamove/karang",
   "version": "0.12.0",
-  "description": "React components that implement Lalamove Design.",
-  "private": true,
+  "description": "React components library that implement Lalamove Design.",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "jsnext:main": "dist/esm/index.js",

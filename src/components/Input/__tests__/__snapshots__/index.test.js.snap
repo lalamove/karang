@@ -93,7 +93,7 @@ exports[`Input Snapshots Password 1`] = `
   color: #535353;
 }
 
-.c5 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c5 .Button__SpinnerWrapper-sc-7kpwz0-2 {
   color: #535353;
 }
 
@@ -281,7 +281,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   color: #535353;
 }
 
-.c5 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c5 .Button__SpinnerWrapper-sc-7kpwz0-2 {
   color: #535353;
 }
 

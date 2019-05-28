@@ -42,7 +42,7 @@ exports[`Dropdown Snapshots render 1`] = `
   color: #535353;
 }
 
-.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c2 .Button__SpinnerWrapper-sc-7kpwz0-2 {
   color: #535353;
 }
 
@@ -192,7 +192,7 @@ exports[`Dropdown Snapshots render 2`] = `
   color: #535353;
 }
 
-.c2 .Button__SpinnerWrapper-sc-1aalsx4-2 {
+.c2 .Button__SpinnerWrapper-sc-7kpwz0-2 {
   color: #535353;
 }
 
