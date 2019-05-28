@@ -1,4 +1,4 @@
 {
   "name": "CountdownBar",
-  "import": "import { CountdownBar } from 'karang';"
+  "import": "import { CountdownBar } from '@lalamove/karang';"
 }

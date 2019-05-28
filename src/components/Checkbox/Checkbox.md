@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Checkbox } from 'karang';
+import { Checkbox } from '@lalamove/karang';
 ```
 
 **Basic**

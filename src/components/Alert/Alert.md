@@ -4,7 +4,7 @@
 ### Usage:
 
 ```js static
-import { Alert } from 'karang';
+import { Alert } from '@lalamove/karang';
 ```
 **Basic**
 

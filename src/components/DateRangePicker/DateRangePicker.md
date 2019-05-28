@@ -1,5 +1,5 @@
 ```js static
-import { DateRangePicker } from 'karang'
+import { DateRangePicker } from '@lalamove/karang'
 ```
 
 ```jsx

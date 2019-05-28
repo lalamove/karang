@@ -1,8 +1,8 @@
 #### Usage:
 
 ```js static
-import { Icon } from 'karang';
-import { up as UpIcon } from 'karang/dist/components/Icon/icons';
+import { Icon } from '@lalamove/karang';
+import { up as UpIcon } from '@lalamove/karang/dist/components/Icon/icons';
 // <Icon type="up" color="orange" />
 // <UpIcon color="orange"> // same as above
 ```

@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { CountdownBar } from 'karang';
+import { CountdownBar } from '@lalamove/karang';
 ```
 
 ```js

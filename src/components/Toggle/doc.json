@@ -1,4 +1,4 @@
 {
   "name": "Toggle",
-  "import": "import { Toggle } from 'karang';"
+  "import": "import { Toggle } from '@lalamove/karang';"
 }

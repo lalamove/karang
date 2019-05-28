@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Select } from 'karang';
+import { Select } from '@lalamove/karang';
 ```
 
 **Basic**

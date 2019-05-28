@@ -1,4 +1,4 @@
 {
   "name": "RadioGroup",
-  "import": "import { RadioGroup } from 'karang';"
+  "import": "import { RadioGroup } from '@lalamove/karang';"
 }

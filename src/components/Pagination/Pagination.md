@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Pagination } from 'karang';
+import { Pagination } from '@lalamove/karang';
 ```
 
 ```js

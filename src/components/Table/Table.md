@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Table } from 'karang';
+import { Table } from '@lalamove/karang';
 
 // <Table columns={[object]} data={[object]}>
 ```

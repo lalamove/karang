@@ -4,7 +4,7 @@
 #### Usage:
 
 ```js static
-import { Spinner } from 'karang';
+import { Spinner } from '@lalamove/karang';
 ```
 
 **Basic**

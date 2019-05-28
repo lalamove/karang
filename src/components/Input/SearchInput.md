@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { SearchInput } from 'karang';
+import { SearchInput } from '@lalamove/karang';
 ```
 
 ```js

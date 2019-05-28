@@ -1,7 +1,7 @@
 {
-  "name": "karang",
+  "name": "@lalamove/karang",
   "version": "0.12.0",
-  "description": "React components library that implement Lalamove Design, for building products on the web.",
+  "description": "React components library that implement Lalamove Design.",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "jsnext:main": "dist/esm/index.js",

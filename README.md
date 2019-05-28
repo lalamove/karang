@@ -28,7 +28,7 @@ Please make sure you have the following dependencies installed:
 And run the following:
 
 ```
-yarn add karang
+yarn add @lalamove/karang
 ```
 
 ## 🔮 Usage
@@ -46,7 +46,7 @@ At the top level of your application, instantiate an `BaseApp` component and pas
 
 ```bash
 import React from 'react';
-import { BaseApp } from 'karang';
+import { BaseApp } from '@lalamove/karang';
 
 const App = () => (
   <BaseApp>
@@ -61,7 +61,7 @@ export default App;
 Quick example to **get you started** in your own components:
 ```bash
 import React, { Fragment } from 'react';
-import { Radio } from 'karang';
+import { Radio } from '@lalamove/karang';
 
 const MyComponent = () => (
   <Fragment>
@@ -76,7 +76,7 @@ export default MyComponent;
 
 We do support partial import for smaller built too:
 ```bash
-import Radio from 'karang/dist/components/Radio';
+import Radio from '@lalamove/karang/dist/components/Radio';
 ```
 ## 🎉 Contributing to karang
 
