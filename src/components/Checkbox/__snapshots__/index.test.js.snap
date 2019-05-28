@@ -157,12 +157,12 @@ exports[`Checkbox Should match snapshot - highlight label 1`] = `
   clip: rect(0,0,0,0);
 }
 
-.c3:disabled ~ .eVEAm {
+.c3:disabled ~ .bibpxF {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c3:checked ~ .eVEAm {
+.c3:checked ~ .bibpxF {
   color: #303030;
 }
 

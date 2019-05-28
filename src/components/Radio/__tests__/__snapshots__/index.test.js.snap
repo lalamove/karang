@@ -115,27 +115,27 @@ exports[`Snapshots Radio disabled 1`] = `
   margin-left: 0.5em;
 }
 
-.eewwaF:hover .c1,
-.eewwaF > input:focus ~ .c1 {
+.buFukg:hover .c1,
+.buFukg > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.eewwaF:hover > input:not(:checked):not(:disabled) ~ .c1,
-.eewwaF:active > input:not(:checked):not(:disabled) ~ .c1 {
+.buFukg:hover > input:not(:checked):not(:disabled) ~ .c1,
+.buFukg:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.eewwaF:active > input:not(:disabled) ~ .c1,
-.eewwaF > input:focus:not(:disabled) ~ .c1 {
+.buFukg:active > input:not(:disabled) ~ .c1,
+.buFukg > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.eewwaF > input:disabled ~ .c1,
-.eewwaF > input:disabled ~ .c3 {
+.buFukg > input:disabled ~ .c1,
+.buFukg > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.eewwaF > input:checked ~ .c1:before {
+.buFukg > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -243,27 +243,27 @@ exports[`Snapshots Radio group disabled 1`] = `
   margin-left: 0.5em;
 }
 
-.eewwaF:hover .c4,
-.eewwaF > input:focus ~ .c4 {
+.buFukg:hover .c4,
+.buFukg > input:focus ~ .c4 {
   border: 1px solid #B4B4B4;
 }
 
-.eewwaF:hover > input:not(:checked):not(:disabled) ~ .c4,
-.eewwaF:active > input:not(:checked):not(:disabled) ~ .c4 {
+.buFukg:hover > input:not(:checked):not(:disabled) ~ .c4,
+.buFukg:active > input:not(:checked):not(:disabled) ~ .c4 {
   border: 1px solid #303030;
 }
 
-.eewwaF:active > input:not(:disabled) ~ .c4,
-.eewwaF > input:focus:not(:disabled) ~ .c4 {
+.buFukg:active > input:not(:disabled) ~ .c4,
+.buFukg > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.eewwaF > input:disabled ~ .c4,
-.eewwaF > input:disabled ~ .c6 {
+.buFukg > input:disabled ~ .c4,
+.buFukg > input:disabled ~ .c6 {
   opacity: 0.5;
 }
 
-.eewwaF > input:checked ~ .c4:before {
+.buFukg > input:checked ~ .c4:before {
   content: '';
   display: block;
   width: 100%;
@@ -776,27 +776,27 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.hSJCcg:hover .c1,
-.hSJCcg > input:focus ~ .c1 {
+.iKSjWD:hover .c1,
+.iKSjWD > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.hSJCcg:hover > input:not(:checked):not(:disabled) ~ .c1,
-.hSJCcg:active > input:not(:checked):not(:disabled) ~ .c1 {
+.iKSjWD:hover > input:not(:checked):not(:disabled) ~ .c1,
+.iKSjWD:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.hSJCcg:active > input:not(:disabled) ~ .c1,
-.hSJCcg > input:focus:not(:disabled) ~ .c1 {
+.iKSjWD:active > input:not(:disabled) ~ .c1,
+.iKSjWD > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.hSJCcg > input:disabled ~ .c1,
-.hSJCcg > input:disabled ~ .c3 {
+.iKSjWD > input:disabled ~ .c1,
+.iKSjWD > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.hSJCcg > input:checked ~ .c1:before {
+.iKSjWD > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -805,7 +805,7 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.hSJCcg:hover .c1 {
+.iKSjWD:hover .c1 {
   box-shadow: none;
 }
 
