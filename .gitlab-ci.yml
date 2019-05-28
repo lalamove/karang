@@ -54,7 +54,7 @@ publish:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
   script:
     - yarn install --pure-lockfile --network-concurrency 1
-    - npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+    - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
     - npm publish --access public
     - echo "Publish completed"
 
