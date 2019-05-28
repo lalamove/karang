@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { TextArea } from 'lalamove-ui';
+import { TextArea } from '@lalamove/karang';
 ```
 
 ```js

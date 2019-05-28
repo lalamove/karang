@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Dropdown } from 'lalamove-ui';
+import { Dropdown } from '@lalamove/karang';
 
 // <Dropdown items={[object]} />
 ```

@@ -1,7 +1,7 @@
 #### Usage:
 
 ```js static
-import { Toggle } from 'lalamove-ui';
+import { Toggle } from '@lalamove/karang';
 ```
 
 ```js

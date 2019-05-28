@@ -1,6 +1,4 @@
-# lalamove-ui Contributing Guidelines
-`lalamove-ui` is a React components library that implements [Lalamove Design](https://lalamove.com), for all web projects. The repository is currently maintained by Fox-web team.
-
+# Contributing Guidelines
 Please feel free to propose changes to this document by opening issue if there is any missing or unclear guideline. Also, please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
 
 ## Code guidelines
@@ -85,7 +83,7 @@ componentDidMount() {
 
 ## Issues
 
-We are using [Issues](https://git.easygroup.co/lalamove/lalamove-ui/issues) for our bugs/features requests/issues.
+We are using [Issues](https://git.easygroup.co/lalamove/karang/issues) for our bugs/features requests/issues.
 
 ### Labels
 
@@ -105,8 +103,8 @@ There are several labels to help us organize and identify issues.
 A bug is a demonstrable problem that is caused by the code in the repository. Bug reports are helpful for developers and users. Before reporting the bugs, you may:
 
 - Validate and lint your code
-- Search in [issue tracker](https://git.easygroup.co/lalamove/lalamove-ui/issues)
-- Check if the issues have been fixed in [new release](https://git.easygroup.co/lalamove/lalamove-ui/tags)
+- Search in [issue tracker](https://git.easygroup.co/lalamove/karang/issues)
+- Check if the issues have been fixed in [new release](https://git.easygroup.co/lalamove/karang/tags)
 
 Please create an issue in the repository and **use `Bug` template**. 
 
@@ -123,46 +121,15 @@ Good pull requests are a big help to our repository. Before you submit a pull re
 
 The following process is the suggested way for you to work on this project:
 
-(1) Fork this repo, clone it and config the remotes:
-```bash
-# Clone your forked repo
-git clone ssh://git@git.easygroup.co:12888/<your-username>/lalamove-ui.git
-# Navigate to the newly cloned directory
-cd lalamove-ui
-# Assign the original repo to a remote called "upstream"
-git remote add upstream ssh://git@git.easygroup.co:12888/lalamove/lalamove-ui.git
-```
-(2) Get the latest changes from `upstream:dev`
-```bash
-git checkout dev
-git pull upstream dev
-```
-(3) Create a new feature branch (based on `upstream:dev` branch) to contain your feature, change or fixes
-```bash
-git checkout dev
-git checkout -b feature/your-feature-with-meaningful-name
-```
-(4) Commit your changes
-(5) If you've fixed a bug or added code that should be tested, add tests!
-(6) Ensure your changes is able to build and pass tests
-```bash
-# Install correct dependencies and build
-yarn
-yarn build
-# Ensure test suite passes
-yarn test
-# Ensure your code lints
-yarn lint
-```
-(7) Push your changes to **your forked project**
-```bash
-git push origin feature/your-feature-with-meaningful-name
-```
-(8) Rebase the `upstream:dev` branch to your feature branch to keep it up-to-date
-```bash
-git pull --rebase upstream dev
-```
-(9) [Open a pull request](https://git.easygroup.co/lalamove/lalamove-ui/merge_requests/new) with title and description, target to `upstream:dev` branch
+1. Fork this repo
+2. Get the latest changes from `upstream:dev`
+3. Create a new feature branch (based on `upstream:dev` branch) to contain your feature, change or fixes
+4. Commit your changes
+5. If you've fixed a bug or added code that should be tested, add tests
+6. Ensure your changes is able to build and pass tests
+7. Push your changes to your forked project
+8. Rebase the `upstream:dev` branch to your feature branch to keep it up-to-date
+9. Open a pull request with title and description, target to `upstream:dev` branch
 
 ## Versioning
 
@@ -189,18 +156,9 @@ We follow [the GitHub flow](https://guides.github.com/introduction/flow/).
 
 ## Release cycle
 
-Right now, we release a new version to `master` in **every 2 weeks/sprint, before the cut-off day of the sprint (Wednesday).** It allows web teams to use the stable version of lalamove-ui for their application.
-
-Maintainers in this repository are responsible for the release. We follow the procedure below:
+Right now, we release a new version to `master` in every 2 weeks. Maintainers in this repository are responsible for the release. We follow the procedure below:
 
 1. Related changes passed code review
 2. Merge related changes from `dev` to `master` by maintainers
     - Make sure **change the merge commit message to correct format as below** when merging, to allow CI to trigger version bump correctly and automatically
     - Merge commit message should start from `MAJOR:` , `MINOR:` or `PATCH:`.
-3. Smoke test on [production](https://ui.lalamove.com/storybook)
-
-If there are any issues after release, please sync with the code owner to see which actions should be taken.
-
-## Get in touch
-
-- Slack channel `#lalamove-ui`

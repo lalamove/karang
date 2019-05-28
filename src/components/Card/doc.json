@@ -1,4 +1,4 @@
 {
   "name": "Card",
-  "import": "import { Card } from 'lalamove-ui';"
+  "import": "import { Card } from '@lalamove/karang';"
 }

@@ -3,7 +3,7 @@ Cards are surfaces that display content and actions on a single topic.
 #### Usage:
 
 ```js static
-import { Card } from 'lalamove-ui';
+import { Card } from '@lalamove/karang';
 ```
 
 ```js

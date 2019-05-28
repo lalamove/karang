@@ -121,7 +121,7 @@ const EditableInputWrapper = () => (
     <EditableInput
       block
       name="Billing Email"
-      value="alex.fok@lalamove.com"
+      value="no-reply@lalamove.com"
       saveBtnText="Save Value"
       editBtnText="Edit Value"
       cancelBtnText="Cancel Value"

@@ -2,7 +2,7 @@
 
 Please put the short and descriptive title above.
 
-Thank you for your interest in contributing to the lalamove-ui documentation!
+Thank you for your interest in contributing to the karang documentation!
 Please check the documentation for the contributing guideline.
 
 -->

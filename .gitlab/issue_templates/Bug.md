@@ -30,7 +30,7 @@ Please put the short and descriptive title above.
 ### Environments
 
 * React version:
-* lalamove-ui version:
+* karang version:
 * node version: (run `node -v` in your terminal)
 * npm version: (run `npm -v` in your terminal)
 
