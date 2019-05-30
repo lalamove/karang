@@ -112,5 +112,5 @@ Remember to export your components in `src/index.js`.
 
 **This project is maintained by Lalamove. Please read through our [contributing guidelines](./CONTRIBUTING.md) for the contribution.**
 
-## ⚙️ License
+## 📄 License
 [Copyright (c) 2019 Lalamove. Code released under the MIT License.](./LICENSE.md)
