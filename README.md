@@ -11,7 +11,7 @@
 </p>
 
 ## ⛓ Install
-Please make sure you have the following dependencies installed:
+Please make sure you install following dependencies:
 ```json
 {
     "downshift": "^2.0.14",
@@ -27,7 +27,7 @@ Please make sure you have the following dependencies installed:
 
 And run the following:
 
-```bash
+```console
 yarn add @lalamove/karang
 ```
 
@@ -42,9 +42,9 @@ First, please embed the required fonts into your application, for example, you c
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" />
 ```
 
-At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
+At the top level of your application, instantiate a `BaseApp` component and pass the rest of your application as its children.
 
-```bash
+```js
 import React from 'react';
 import { BaseApp } from '@lalamove/karang';
 
@@ -59,7 +59,7 @@ export default App;
 
 #### Using exported UI components
 Quick example to **get you started** in your own components:
-```bash
+```js
 import React, { Fragment } from 'react';
 import { Radio } from '@lalamove/karang';
 
@@ -75,7 +75,7 @@ export default MyComponent;
 ```
 
 We also support partial import for smaller built:
-```bash
+```js
 import Radio from '@lalamove/karang/dist/components/Radio';
 ```
 ## 🎉 Contributing to karang
@@ -100,7 +100,7 @@ Install `Styled Components` plugin in IDE `Preferences | Plugins`.
 
 #### Develop with storybook
 Run the following commands for development:
-```bash
+```console
 yarn storybook ## Start development with Storybook
 yarn doc ## Styleguide and usage
 yarn test ## Run test
