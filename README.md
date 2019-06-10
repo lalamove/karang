@@ -27,7 +27,7 @@ Please make sure you install following dependencies:
 
 And run the following:
 
-```console
+```bash
 yarn add @lalamove/karang
 ```
 
@@ -44,7 +44,7 @@ First, please embed the required fonts into your application, for example, you c
 
 At the top level of your application, instantiate a `BaseApp` component and pass the rest of your application as its children.
 
-```js
+```bash
 import React from 'react';
 import { BaseApp } from '@lalamove/karang';
 
@@ -59,7 +59,7 @@ export default App;
 
 #### Using exported UI components
 Quick example to **get you started** in your own components:
-```js
+```bash
 import React, { Fragment } from 'react';
 import { Radio } from '@lalamove/karang';
 
@@ -75,7 +75,7 @@ export default MyComponent;
 ```
 
 We also support partial import for smaller built:
-```js
+```bash
 import Radio from '@lalamove/karang/dist/components/Radio';
 ```
 ## 🎉 Contributing to karang
@@ -100,7 +100,7 @@ Install `Styled Components` plugin in IDE `Preferences | Plugins`.
 
 #### Develop with storybook
 Run the following commands for development:
-```console
+```bash
 yarn storybook ## Start development with Storybook
 yarn doc ## Styleguide and usage
 yarn test ## Run test
