@@ -11,7 +11,7 @@
 </p>
 
 ## ⛓ Install
-Please make sure you install following dependencies:
+Please make sure you install the following dependencies:
 ```json
 {
     "downshift": "^2.0.14",
