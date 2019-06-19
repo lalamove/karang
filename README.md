@@ -11,7 +11,7 @@
 </p>
 
 ## ⛓ Install
-Please make sure you have the following dependencies installed:
+Please make sure you install the following dependencies:
 ```json
 {
     "downshift": "^2.0.14",
@@ -42,7 +42,7 @@ First, please embed the required fonts into your application, for example, you c
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" />
 ```
 
-At the top level of your application, instantiate an `BaseApp` component and pass the rest of your application as its children.
+At the top level of your application, instantiate a `BaseApp` component and pass the rest of your application as its children.
 
 ```bash
 import React from 'react';
