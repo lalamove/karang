@@ -1,4 +1,5 @@
 import React from 'react';
+import { bool, node } from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import VmenuIcon from 'components/Icon/icons/content/vmenu';
@@ -26,6 +27,7 @@ const Button = styled.button`
     disabled &&
     css`
       opacity: 0.5;
+      cursor: not-allowed;
 
       &:hover,
       &:focus {
@@ -34,10 +36,20 @@ const Button = styled.button`
     `};
 `;
 
-const ExpandButton = props => (
-  <Button {...props}>
-    <VmenuIcon size={36} />
+const ExpandButton = ({ icon, disabled, ...remainProps }) => (
+  <Button disabled={disabled} {...remainProps}>
+    {icon || <VmenuIcon size={36} />}
   </Button>
 );
+
+ExpandButton.propTypes = {
+  icon: node,
+  disabled: bool,
+};
+
+ExpandButton.defaultProps = {
+  icon: null,
+  disabled: false,
+};
 
 export default ExpandButton;
