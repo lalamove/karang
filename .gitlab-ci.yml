@@ -23,7 +23,7 @@ version:
   stage: version
   only:
     refs:
-      - master@lalamove/lalamove-ui
+      - master@lalamove/karang
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
