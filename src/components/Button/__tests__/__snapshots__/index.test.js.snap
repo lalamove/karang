@@ -61,7 +61,9 @@ exports[`Button-block 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -126,7 +128,9 @@ exports[`Button-disabled 1`] = `
   disabled=""
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -240,7 +244,9 @@ exports[`Button-isLoading 1`] = `
       </path>
     </svg>
   </div>
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -307,7 +313,9 @@ exports[`Button-size-large 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -372,7 +380,9 @@ exports[`Button-size-small 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -439,7 +449,9 @@ exports[`Button-size-xlarge 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -503,7 +515,9 @@ exports[`Button-solid 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -575,7 +589,9 @@ exports[`Button-variant-danger 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -639,7 +655,9 @@ exports[`Button-variant-default 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -703,7 +721,9 @@ exports[`Button-variant-link 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -775,7 +795,9 @@ exports[`Button-variant-primary 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;
 
@@ -847,6 +869,8 @@ exports[`Button-variant-secondary 1`] = `
   class="c0 c1"
   type="button"
 >
-  hello
+  <span>
+    hello
+  </span>
 </button>
 `;

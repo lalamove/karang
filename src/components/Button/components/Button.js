@@ -232,7 +232,7 @@ const Button = ({
           <Spinner color="currentColor" />
         </SpinnerWrapper>
       )}
-      {children}
+      <span>{children}</span>
     </StyledButton>
   );
 };

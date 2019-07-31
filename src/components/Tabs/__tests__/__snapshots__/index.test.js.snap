@@ -143,7 +143,9 @@ exports[`Tab Snapshots Deselected 1`] = `
     role="tab"
     type="button"
   >
-    Foo
+    <span>
+      Foo
+    </span>
   </button>
 </li>
 `;
@@ -309,7 +311,9 @@ exports[`Tab Snapshots Selected 1`] = `
     selected=""
     type="button"
   >
-    Foo
+    <span>
+      Foo
+    </span>
   </button>
 </li>
 `;
@@ -575,7 +579,9 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
       selected=""
       type="button"
     >
-      Foo
+      <span>
+        Foo
+      </span>
     </button>
   </li>
   <li
@@ -587,7 +593,9 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
       role="tab"
       type="button"
     >
-      Bar
+      <span>
+        Bar
+      </span>
     </button>
   </li>
 </ul>
@@ -697,7 +705,9 @@ exports[`TabBar Snapshots Some tabs 1`] = `
       role="tab"
       type="button"
     >
-      Foo
+      <span>
+        Foo
+      </span>
     </button>
   </li>
   <li
@@ -709,7 +719,9 @@ exports[`TabBar Snapshots Some tabs 1`] = `
       role="tab"
       type="button"
     >
-      Bar
+      <span>
+        Bar
+      </span>
     </button>
   </li>
 </ul>
