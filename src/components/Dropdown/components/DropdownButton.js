@@ -16,6 +16,11 @@ const StyledButton = styled(Button)`
   &:focus:enabled {
     box-shadow: none;
   }
+
+  & > span {
+    display: flex;
+    width: 100%;
+  }
 `;
 
 const ItemIcon = styled.span`
