@@ -38,7 +38,7 @@ const Button = styled.button`
 
 const ExpandButton = ({ icon, disabled, ...remainProps }) => (
   <Button disabled={disabled} {...remainProps}>
-    {icon || <VmenuIcon size={36} />}
+    {icon}
   </Button>
 );
 
@@ -48,7 +48,7 @@ ExpandButton.propTypes = {
 };
 
 ExpandButton.defaultProps = {
-  icon: null,
+  icon: <VmenuIcon size={36} />,
   disabled: false,
 };
 

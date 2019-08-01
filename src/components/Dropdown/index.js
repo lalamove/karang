@@ -64,7 +64,7 @@ class Dropdown extends Component {
     defaultLabel: 'Options',
     direction: 'right',
     variant: 'default',
-    icon: null,
+    icon: undefined,
     disabled: false,
   };
 

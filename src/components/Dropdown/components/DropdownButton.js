@@ -47,7 +47,7 @@ const DropdownButton = ({
   <StyledButton disabled={disabled} {...remainProps}>
     {itemIcon && <ItemIcon>{itemIcon}</ItemIcon>}
     <Content>{label}</Content>
-    <Caret>{icon || <DropDownIcon color={nobel.main} size={24} />}</Caret>
+    <Caret>{icon}</Caret>
   </StyledButton>
 );
 
@@ -61,7 +61,7 @@ DropdownButton.propTypes = {
 DropdownButton.defaultProps = {
   itemIcon: null,
   label: 'Options',
-  icon: null,
+  icon: <DropDownIcon color={nobel.main} size={24} />,
   disabled: false,
 };
 
