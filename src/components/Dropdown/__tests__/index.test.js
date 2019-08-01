@@ -1,5 +1,7 @@
 import React from 'react';
 import { render, mount } from 'enzyme';
+import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
+import VMenuIcon from 'components/Icon/icons/content/vmenu';
 import Dropdown from '../index';
 
 const items = [
@@ -63,6 +65,38 @@ describe('Dropdown', () => {
   describe('Render', () => {
     it('not to throw', () => {
       expect(() => mount(<Dropdown items={items} />)).not.toThrow();
+    });
+
+    it('enabled', () => {
+      const wrapper = mount(<Dropdown items={items} />);
+      expect(wrapper.find('button').props().disabled).toBe(false);
+    });
+
+    it('disabled', () => {
+      const wrapper = mount(<Dropdown items={items} disabled />);
+      expect(wrapper.find('button').props().disabled).toBe(true);
+    });
+
+    it('default variant - default icon', () => {
+      const wrapper = mount(<Dropdown items={items} />);
+      expect(wrapper.find('DropDownIcon')).toHaveLength(1);
+    });
+
+    it('compact variant - default icon', () => {
+      const wrapper = mount(<Dropdown items={items} variant="compact" />);
+      expect(wrapper.find('VMenuIcon')).toHaveLength(1);
+    });
+
+    it('default variant - custom icon', () => {
+      const wrapper = mount(<Dropdown items={items} icon={<VMenuIcon />} />);
+      expect(wrapper.find('VMenuIcon')).toHaveLength(1);
+    });
+
+    it('compact variant - custom icon', () => {
+      const wrapper = mount(
+        <Dropdown items={items} variant="compact" icon={<DropDownIcon />} />
+      );
+      expect(wrapper.find('DropDownIcon')).toHaveLength(1);
     });
   });
 

@@ -72,6 +72,14 @@ exports[`Dropdown Snapshots render 1`] = `
   box-shadow: none;
 }
 
+.c1 > span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
 .c4 {
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
@@ -222,6 +230,14 @@ exports[`Dropdown Snapshots render 2`] = `
 
 .c1:focus:enabled {
   box-shadow: none;
+}
+
+.c1 > span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 .c4 {
