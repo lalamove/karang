@@ -45,20 +45,39 @@ const items = [
 <Dropdown items={items} defaultLabel="Options available" />
 ```
 
-**Basic with icon and onChange()**
+**Basic with custom button icon**
 
-Example for using `<Dropdown />` with custom `onChange()` function
+The `v` icon on dropdown button can be overriden by supplying the `icon` property.
 
 ```js
 const Icon = require('components/Icon/icons/content/vmenu').default;
 const items = [
   {
-    icon: <Icon type="pinFill" />,
+    value: 'TPE',
+    label: 'Taipei Taoyuan',
+  },
+  {
+    value: 'TSA',
+    label: 'Taipei Songshan',
+  },
+];
+<Dropdown items={items} icon={<Icon size={24} />} />
+```
+
+**Basic with item icon and onChange()**
+
+Example for using `<Dropdown />` with custom `onChange()` function
+
+```js
+const Icon = require('components/Icon/icons/maps/pinFilled').default;
+const items = [
+  {
+    icon: <Icon />,
     value: 'TH_BKK',
     label: 'Bangkok',
   },
   {
-    icon: <Icon type="pinFill" />,
+    icon: <Icon />,
     value: 'TH_CNX',
     label: 'Chiang Mai',
   },
@@ -71,13 +90,13 @@ initialState = { selected: items[0] };
 />
 ```
 
-**Cascading menu with icon**
+**Cascading menu with item icon**
 
 ```js
-const Icon = require('../../components/Icon/icons/content/vmenu').default;
+const Icon = require('../../components/Icon/icons/maps/pinFilled').default;
 const items = [
   {
-    icon: <Icon type="pinFill" />,
+    icon: <Icon />,
     value: 'TH_BKK',
     label: 'Bangkok',
     options: [{
@@ -89,7 +108,7 @@ const items = [
     }]
   },
   {
-    icon: <Icon type="pinFill" />,
+    icon: <Icon />,
     value: 'TH_CNX',
     label: 'Chiang Mai',
   },
@@ -144,4 +163,39 @@ const items = [
   },
 ];
 <Dropdown items={items} defaultLabel="Select district" block direction="left" />
+```
+
+**Compact**
+
+```js
+const items = [
+  {
+    value: 'NRT',
+    label: 'Tokyo Narita',
+  },
+  {
+    value: 'HND',
+    label: 'Tokyo Haneda',
+  },
+];
+<Dropdown items={items} variant="compact" />
+```
+
+**Compact with custom button icon**
+
+The **⋮** icon on compact dropdown button can be overriden by supplying the `icon` property.
+
+```js
+const Icon = require('components/Icon/icons/arrows/dropdown').default;
+const items = [
+  {
+    value: 'KIX',
+    label: 'Osaka Kansai',
+  },
+  {
+    value: 'ITM',
+    label: 'Osaka Itami',
+  },
+];
+<Dropdown items={items} variant="compact" icon={<Icon size={36} />} />
 ```

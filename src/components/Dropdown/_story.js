@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
+import DropIcon from 'components/Icon/icons/arrows/dropdown';
+import MenuIcon from 'components/Icon/icons/content/vmenu';
 import PinFilledIcon from 'components/Icon/icons/maps/pinFilled';
 import Dropdown from './index';
 
@@ -94,9 +96,13 @@ const Basic = () => (
   <div>
     <h4>Basic</h4>
     <Dropdown items={items} />
+    <h4>Basic disabled</h4>
+    <Dropdown items={items} disabled />
     <h4>Basic with disabled item</h4>
     <Dropdown items={itemsWithDisabled} />
-    <h4>Basic with icon</h4>
+    <h4>Basic with custom button icon</h4>
+    <Dropdown items={items} icon={<MenuIcon size={24} />} />
+    <h4>Basic with item icon</h4>
     <Dropdown
       items={items.map(item =>
         Object.assign({}, item, { icon: <PinFilledIcon /> })
@@ -106,6 +112,10 @@ const Basic = () => (
     <Dropdown items={items} block />
     <h4>Compact</h4>
     <Dropdown variant="compact" items={items} />
+    <h4>Compact disabled</h4>
+    <Dropdown variant="compact" items={items} disabled />
+    <h4>Compact with custom button icon</h4>
+    <Dropdown variant="compact" items={items} icon={<DropIcon size={36} />} />
   </div>
 );
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { arrayOf, func, oneOf, shape, string, bool } from 'prop-types';
+import { arrayOf, func, node, oneOf, shape, string, bool } from 'prop-types';
 import Downshift from 'downshift';
 import styled, { css } from 'styled-components';
 
@@ -45,9 +45,14 @@ class Dropdown extends Component {
     defaultLabel: string,
     /** Open direction of pop menu */
     direction: oneOf(['left', 'right']),
-    /** Variant of component, `default` is the component with select button, `compact` is the
-     *  component with expand icon button */
+    /** Variant of component, `default` is the component with standard select button,
+     * `compact` is the component with icon-only button */
     variant: oneOf(['default', 'compact']),
+    /** Custom icon for the Dropdown button, if not supplied default icon will be used:
+     * (`v`) icon on `default` variant and (**⋮**) icon on `compact` variant */
+    icon: node,
+    /** A boolean which, if true, disables the Dropdown */
+    disabled: bool,
   };
 
   static defaultProps = {
@@ -59,6 +64,8 @@ class Dropdown extends Component {
     defaultLabel: 'Options',
     direction: 'right',
     variant: 'default',
+    icon: undefined,
+    disabled: false,
   };
 
   state = {
@@ -229,6 +236,8 @@ class Dropdown extends Component {
       onOuterClick,
       direction,
       variant,
+      icon,
+      disabled,
       ...remainProps
     } = this.props;
     const { highlightedIndexes } = this.state;
@@ -262,6 +271,8 @@ class Dropdown extends Component {
             >
               {variant === 'compact' && (
                 <ExpandButton
+                  icon={icon}
+                  disabled={disabled}
                   {...getToggleButtonProps()}
                   {...getInputProps({
                     onKeyDown: e => this.handleKeyDown(e),
@@ -270,7 +281,7 @@ class Dropdown extends Component {
               )}
               {variant !== 'compact' && (
                 <DropdownButton
-                  icon={
+                  itemIcon={
                     (selectedItem && selectedItem.icon) ||
                     (dsSelectedItem && dsSelectedItem.icon)
                   }
@@ -279,6 +290,8 @@ class Dropdown extends Component {
                     (dsSelectedItem && dsSelectedItem.label) ||
                     defaultLabel
                   }
+                  icon={icon}
+                  disabled={disabled}
                   {...getToggleButtonProps()}
                   {...getInputProps({
                     onKeyDown: e => this.handleKeyDown(e, isOpen),

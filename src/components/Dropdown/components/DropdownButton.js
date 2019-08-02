@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, string } from 'prop-types';
+import { bool, node, string } from 'prop-types';
 import styled from 'styled-components';
 
 import Button from 'components/Button';
@@ -16,9 +16,14 @@ const StyledButton = styled(Button)`
   &:focus:enabled {
     box-shadow: none;
   }
+
+  & > span {
+    display: flex;
+    width: 100%;
+  }
 `;
 
-const CustomIcon = styled.span`
+const ItemIcon = styled.span`
   flex: 0 0 auto;
   align-self: center;
   margin-right: 0.5em;
@@ -37,24 +42,32 @@ const Caret = styled.span`
   margin-right: -5px;
 `;
 
-const DropdownButton = ({ icon, label, ...remainProps }) => (
-  <StyledButton {...remainProps}>
-    {icon && <CustomIcon>{icon}</CustomIcon>}
+const DropdownButton = ({
+  itemIcon,
+  label,
+  icon,
+  disabled,
+  ...remainProps
+}) => (
+  <StyledButton disabled={disabled} {...remainProps}>
+    {itemIcon && <ItemIcon>{itemIcon}</ItemIcon>}
     <Content>{label}</Content>
-    <Caret>
-      <DropDownIcon color={nobel.main} size={24} />
-    </Caret>
+    <Caret>{icon}</Caret>
   </StyledButton>
 );
 
 DropdownButton.propTypes = {
-  icon: node,
+  itemIcon: node,
   label: string,
+  icon: node,
+  disabled: bool,
 };
 
 DropdownButton.defaultProps = {
-  icon: null,
+  itemIcon: null,
   label: 'Options',
+  icon: <DropDownIcon color={nobel.main} size={24} />,
+  disabled: false,
 };
 
 export default DropdownButton;
