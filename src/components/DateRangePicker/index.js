@@ -1,87 +1,79 @@
 import React, { Component } from 'react';
+import { string, func, instanceOf } from 'prop-types';
+import moment from 'moment';
 import 'react-dates/initialize';
 import { DateRangePicker as RDDateRangePicker } from 'react-dates';
-import { string, bool, func, oneOf, instanceOf, number } from 'prop-types';
-import moment from 'moment';
-import './styles';
+import noop from 'utils/noop';
 
-const START_DATE = 'startDate';
-const END_DATE = 'endDate';
+import CalendarIcon from 'components/Icon/icons/date/calendar';
+import TowardsIcon from 'components/Icon/icons/arrows/towards';
+import StyledWrapper from './styles';
 
 class DateRangePicker extends Component {
-  constructor(props) {
-    super();
+  /* eslint-disable react/destructuring-assignment */
+  state = {
+    startDate: this.props.startDate,
+    endDate: this.props.endDate,
+    focusedInput: null,
+  };
+  /* eslint-enable react/destructuring-assignment */
 
-    let focusedInput = null;
-    if (props.autoFocus) {
-      focusedInput = START_DATE;
-    } else if (props.autoFocusEndDate) {
-      focusedInput = END_DATE;
+  static getDerivedStateFromProps(props, state) {
+    if (props.onDatesChange !== noop) {
+      if (
+        (props.startDate instanceof moment &&
+          !props.startDate.isSame(state.startDate)) ||
+        props.startDate !== state.startDate
+      ) {
+        return {
+          startDate: props.startDate,
+        };
+      }
+      if (
+        (props.endDate instanceof moment &&
+          !props.endDate.isSame(state.endDate)) ||
+        props.endDate !== state.endDate
+      ) {
+        return {
+          endDate: props.endDate,
+        };
+      }
     }
-
-    this.state = {
-      focusedInput,
-      startDate: props.startDate,
-      endDate: props.endDate,
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { startDate, endDate } = nextProps;
-    if (startDate && startDate !== this.props.startDate) {
-      this.setState({
-        startDate,
-      });
-    }
-    if (endDate && endDate !== this.props.endDate) {
-      this.setState({
-        endDate,
-      });
-    }
+    return null;
   }
 
   onDatesChange = ({ startDate, endDate }) => {
-    this.setState({
-      startDate,
-      endDate,
-    });
-    this.props.onDatesChange({ startDate, endDate });
+    const { onDatesChange } = this.props;
+    this.setState({ startDate, endDate });
+    onDatesChange({ startDate, endDate });
   };
 
   onFocusChange = focusedInput => {
+    const { onFocusChange } = this.props;
     this.setState({ focusedInput });
-    this.props.onFocusChange(focusedInput);
+    onFocusChange(focusedInput);
   };
 
   render() {
-    /*
-      autoFocus, autoFocusEndDate, onDatesChange, onFocusChange,
-      are helper props but are not props on the DateRangePicker itself and
-      thus, have to be omitted.
-    */
-
-    const {
-      autoFocus,
-      autoFocusEndDate,
-      startDate,
-      endDate,
-      onDatesChange,
-      onFocusChange,
-      ...remainProps
-    } = this.props;
+    const { focusedInput, startDate, endDate } = this.state;
+    const { onDatesChange, onFocusChange, ...remainProps } = this.props;
 
     return (
-      <div className="llm-date-range-picker">
+      <StyledWrapper>
         <RDDateRangePicker
           {...remainProps}
+          startDate={startDate}
+          endDate={endDate}
           onDatesChange={this.onDatesChange}
           onFocusChange={this.onFocusChange}
-          focusedInput={this.state.focusedInput}
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
+          focusedInput={focusedInput}
           showDefaultInputIcon
+          customInputIcon={<CalendarIcon />}
+          customArrowIcon={<TowardsIcon />}
+          navPrev={<TowardsIcon className="prev" size={24} />}
+          navNext={<TowardsIcon className="next" size={24} />}
         />
-      </div>
+      </StyledWrapper>
     );
   }
 }
@@ -98,38 +90,24 @@ DateRangePicker.propTypes = {
 
    */
   onDatesChange: func,
-  /**
-   * @param {string} focusedInput The focused input string
-   */
+  /** @ignore */
   onFocusChange: func,
-  /** string value of the input */
-  focusedInput: oneOf([START_DATE, END_DATE]),
   /** @ignore */
   startDateId: string,
   /** @ignore */
   endDateId: string,
   /** @ignore */
-  autoFocus: bool,
-  /** If `false`, will automatically open DateRangePicker on the endDate input */
-  autoFocusEndDate: bool,
-  /** Function that returns the display format for the dates. `e.g: moment.localeData().longDateFormat('L')`, */
-  displayFormat: func,
-  /** Allows users to specify minimum numnber of days (nights) that must be selected */
-  minimumNights: number, // react-dates prop
+  focusedInput: string,
 };
 
 DateRangePicker.defaultProps = {
   startDate: null,
   endDate: null,
-  onDatesChange: ({ startDate, endDate }) => true,
-  onFocusChange: focusedInput => true,
+  onDatesChange: noop,
+  onFocusChange: noop,
+  startDateId: 'LLM_DateRangePicker_StartDate',
+  endDateId: 'LLM_DateRangePicker_EndDate',
   focusedInput: null,
-  autoFocus: false,
-  autoFocusEndDate: false,
-  startDateId: START_DATE,
-  endDateId: END_DATE,
-  displayFormat: () => 'DD-MM-YYYY',
-  minimumNights: 0,
 };
 
 export default DateRangePicker;
