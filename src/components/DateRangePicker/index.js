@@ -70,8 +70,8 @@ class DateRangePicker extends Component {
           showDefaultInputIcon
           customInputIcon={<CalendarIcon />}
           customArrowIcon={<TowardsIcon />}
-          navPrev={<TowardsIcon className="prev" size={24} />}
-          navNext={<TowardsIcon className="next" size={24} />}
+          navPrev={<TowardsIcon size={24} />}
+          navNext={<TowardsIcon size={24} />}
         />
       </StyledWrapper>
     );

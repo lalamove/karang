@@ -9,7 +9,6 @@ const StyledWrapper = styled.div`
     display: none;
   }
   .CalendarDay {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     cursor: pointer;
     font-size: 12px;
@@ -356,8 +355,6 @@ const StyledWrapper = styled.div`
     height: 298px;
   }
   .DayPicker_transitionContainer__horizontal {
-    -webkit-transition: height 0.2s ease-in-out;
-    -moz-transition: height 0.2s ease-in-out;
     transition: height 0.2s ease-in-out;
   }
   .DayPicker_transitionContainer__vertical {

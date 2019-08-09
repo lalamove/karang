@@ -6,7 +6,6 @@ exports[`DatePicker SnapShots DatePicker 1`] = `
 }
 
 .c0 .CalendarDay {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
   font-size: 12px;
@@ -439,8 +438,6 @@ exports[`DatePicker SnapShots DatePicker 1`] = `
 }
 
 .c0 .DayPicker_transitionContainer__horizontal {
-  -webkit-transition: height 0.2s ease-in-out;
-  -moz-transition: height 0.2s ease-in-out;
   -webkit-transition: height 0.2s ease-in-out;
   transition: height 0.2s ease-in-out;
 }
