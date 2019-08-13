@@ -2,16 +2,14 @@
 import { DateRangePicker } from '@lalamove/karang'
 ```
 
-```jsx
-<DateRangePicker
-   isOutsideRange={() => false}
-   onDatesChange={newDates =>
-     console.log(newDates.startDate, newDates.endDate)
-   }
-   onFocusChange={focusedInput => console.log(focusedInput)}
-   onPrevMonthClick={() => console.log('clicked prev month button')}
-   onNextMonthClick={() => console.log('clicked next month button')}
-/>
+```js
+initialState = { startDate: null, endDate: null };
+const onChange = ({ startDate, endDate }) => { setState({ startDate, endDate }); };
+<DateRangePicker startDate={state.startDate} endDate={state.endDate} onDatesChange={onChange} />
 ```
 
-Other properties of the DateRangePicker component can be accessed in the react-dates docs.
+We styled the `DateRangePicker` from `react-dates`, with setting `showDefaultInputIcon` as `true` by default. 
+
+There are no other changes overriding the original behaviours.
+
+**Please check [the documentation from `react-dates`](https://github.com/airbnb/react-dates#daterangepicker) for the minimum props required**.
