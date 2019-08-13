@@ -77,8 +77,8 @@ const Checkmark = styled.span`
     cursor: not-allowed;
   }
 
-  ${Input}:active:not(:disabled):not(:checked) ~ &,
-  ${Input}:focus:not(:disabled):not(:checked) ~ & {
+  ${Input}:active:not(:disabled) ~ &,
+  ${Input}:focus:not(:disabled) ~ & {
     box-shadow: 0 0 0 4px ${rgba(nobel.main, 0.2)};
   }
 
