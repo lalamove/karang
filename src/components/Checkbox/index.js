@@ -7,6 +7,8 @@ import { mineShaft, nobel, primary } from 'styles/colors';
 import { fontSize, primaryFonts } from 'styles/fonts';
 import noop from 'utils/noop';
 
+const HEIGHT = 20;
+
 const Wrapper = styled.span`
   display: flex;
 `;
@@ -19,21 +21,16 @@ const Container = styled.label`
   font-family: ${primaryFonts};
   font-size: ${fontSize.regular};
   user-select: none;
-  line-height: 20px;
+  line-height: ${HEIGHT}px;
 `;
 
 const Input = styled.input`
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  margin: -1px;
-  clip: rect(0, 0, 0, 0);
+  width: 0;
+  opacity: 0;
 `;
 
 const Text = styled.span`
+  min-height: ${HEIGHT}px;
   padding-left: 28px;
   cursor: pointer;
 
