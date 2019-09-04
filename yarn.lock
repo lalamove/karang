@@ -9693,9 +9693,9 @@ react-color@^2.14.0:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-dates@^18.0.2:
-  version "18.0.4"
-  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-18.0.4.tgz#4ecad90b7916dd25147bb288e056da17b904a2ec"
+react-dates@^18.5.0:
+  version "18.5.0"
+  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-18.5.0.tgz#31cc8ab01b2cc546b938e198fd8d4316878f5717"
   dependencies:
     airbnb-prop-types "^2.10.0"
     consolidated-events "^1.1.1 || ^2.0.0"
