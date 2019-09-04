@@ -15,5 +15,6 @@ import { Checkbox } from '@lalamove/karang';
 You can pass another component to be rendered next to the label, commonly for `Icon` / `IconButton`.
 
 ```js
-<Checkbox name="chkbox2" label="Checkbox" title="A simple checkbox with icon" icon={<Icon type="question" />} />
+const Icon = require('../../components/Icon/icons/alert/question').default;
+<Checkbox name="chkbox2" label="Checkbox" title="A simple checkbox with icon" icon={<Icon />} />
 ```
