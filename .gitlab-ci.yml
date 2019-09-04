@@ -3,7 +3,7 @@
 #   key: ${CI_COMMIT_REF_SLUG}
 #   paths:
 #   - node_modules/
-image: node:10.15-alpine
+image: node:10.16-alpine
 
 stages:
   - install
