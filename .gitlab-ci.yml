@@ -3,23 +3,38 @@
 #   key: ${CI_COMMIT_REF_SLUG}
 #   paths:
 #   - node_modules/
+image: node:10.15-alpine
+
 stages:
+  - install
   - test
   - version
   - publish
+  - update
+
+install:
+  stage: install
+  tags:
+    - k8s
+  script:
+    - yarn install --network-concurrency 1
+  artifacts:
+    # It is better to use cache instead of artifacts. However, our CI does not support distributed caching on multiple runners.
+    # https://docs.gitlab.com/ee/ci/caching/#cache-vs-artifacts
+    paths:
+      - node_modules/
+    expire_in: 10 minutes
 
 test:
-  image: node:10-alpine
   stage: test
   tags:
     - k8s
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
   script:
-    - yarn install --pure-lockfile --network-concurrency 1
+    - yarn install --network-concurrency 1
     - yarn test-coverage
 
 version:
-  image: node:10-alpine
   stage: version
   only:
     refs:
@@ -27,6 +42,8 @@ version:
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
+    refs:
+      - schedules
   script:
      - apk update
      - apk -v --update add git openssh
@@ -43,7 +60,6 @@ version:
      - echo "Version updated"
 
 publish:
-  image: node:10-alpine
   stage: publish
   tags:
     - k8s
@@ -52,14 +68,16 @@ publish:
       - master@lalamove/karang
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
+  except:
+    refs:
+      - schedules
   script:
-    - yarn install --pure-lockfile --network-concurrency 1
+    - yarn install --network-concurrency 1
     - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
     - npm publish --access public
     - echo "Publish completed"
 
 storybook:
-  image: node:10-alpine
   stage: publish
   tags:
     - k8s
@@ -68,20 +86,22 @@ storybook:
       - master@lalamove/karang
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
+  except:
+    refs:
+      - schedules
   environment:
     name: storybook
     url: https://ui.lalamove.com/storybook
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
-    - yarn install --pure-lockfile --network-concurrency 1
+    - yarn install --network-concurrency 1
     - yarn storybook:build
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 cp .out $S3_URL/storybook --recursive
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL/storybook --recursive
     - echo "Upload completed"
 
 styleguide:
-  image: node:10-alpine
   stage: publish
   tags:
     - k8s
@@ -90,14 +110,34 @@ styleguide:
       - master@lalamove/karang
     variables:
       - $CI_COMMIT_MESSAGE =~ /DOC:/
+  except:
+    refs:
+      - schedules
   environment:
     name: doc
     url: https://ui.lalamove.com
   script:
     - apk -v --update add python py-pip
     - pip install awscli --upgrade
-    - yarn install --pure-lockfile --network-concurrency 1
+    - yarn install --network-concurrency 1
     - yarn doc:build
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 cp styleguide $S3_URL --recursive
     - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY aws s3 ls $S3_URL --recursive
     - echo "Upload completed"
+
+renovate:
+  image: docker:dind
+  stage: update
+  tags:
+    - k8s
+  services:
+    - docker:dind
+  only:
+    refs:
+      - schedules
+  variables:
+    privileged: "true"
+    DOCKER_HOST: tcp://localhost:2375
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - docker run renovate/renovate:slim --platform gitlab --token $GITLAB_API_TOKEN --endpoint https://git.easygroup.co/api/v4 $CI_PROJECT_PATH
