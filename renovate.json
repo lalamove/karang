@@ -1,0 +1,10 @@
+{
+  "prCreation": "not-pending",
+  "packageRules": [
+    {
+      "depTypeList": ["devDependencies"],
+      "prPriority": -1
+    }
+  ],
+  "rangeStrategy": "bump"
+}
