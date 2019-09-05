@@ -27,7 +27,7 @@
     "precommit": "yarn lint-staged"
   },
   "peerDependencies": {
-    "downshift": "^2.0.14",
+    "downshift": "^2.2.3",
     "moment": "^2.22.2",
     "polished": "^3.4.1",
     "prop-types": "^15.6.2",
@@ -54,7 +54,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "cross-env": "^5.1.4",
     "date-fns": "^1.29.0",
-    "downshift": "^2.0.14",
+    "downshift": "^2.2.3",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "enzyme-to-json": "^3.3.4",
