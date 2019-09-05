@@ -50,7 +50,7 @@
     "babel-eslint": "^8.2.6",
     "babel-plugin-inline-import-data-uri": "^1.0.1",
     "babel-plugin-module-resolver": "^3.2.0",
-    "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "cross-env": "^5.1.4",
     "date-fns": "^1.29.0",
