@@ -1001,22 +1001,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@storybook/addon-actions@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.10.tgz#b90ca8ccbad925dcbb4af02d2d24cc2c60bcec3f"
-  dependencies:
-    "@storybook/components" "3.4.10"
-    babel-runtime "^6.26.0"
-    deep-equal "^1.0.1"
-    glamor "^2.20.40"
-    glamorous "^4.12.1"
-    global "^4.3.2"
-    make-error "^1.3.4"
-    prop-types "^15.6.1"
-    react-inspector "^2.2.2"
-    uuid "^3.2.1"
-
-"@storybook/addon-actions@^3.4.12":
+"@storybook/addon-actions@3.4.12", "@storybook/addon-actions@^3.4.12":
   version "3.4.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.12.tgz#ff6cbaf563c3cb5d648d6a35f66cfa50ced49bf4"
   dependencies:
@@ -1064,46 +1049,34 @@
     react-textarea-autosize "^5.2.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.10.tgz#db53d0a0b354e7f5e55195315f48f7045307a429"
+"@storybook/addon-links@3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.12.tgz#aabedd5e3bc81930ae37badbf8b5f90d67ef8a05"
   dependencies:
-    "@storybook/components" "3.4.10"
+    "@storybook/components" "3.4.12"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addons@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.10.tgz#13298cdcb7ccc396321b1336b9785b69273a022d"
+"@storybook/addons@3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.12.tgz#b973479b9910d60dd5ab087f875e10085ab3a0f9"
 
-"@storybook/channel-postmessage@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.10.tgz#fa88bdf8530d4499481c9e30c9364545f043b908"
+"@storybook/channel-postmessage@3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.12.tgz#e905440c838a01141bd8826bb9f90f202c8773fd"
   dependencies:
-    "@storybook/channels" "3.4.10"
+    "@storybook/channels" "3.4.12"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.10.tgz#ab023a0d8cbd34a4eb4b8ae5c6f02654fed9190b"
-
-"@storybook/client-logger@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.10.tgz#510854ee326808a65a20b79e3405763280bc7027"
+"@storybook/channels@3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.12.tgz#11bd6cfaf88682db08d2b9b3f78941a07445a3e2"
 
 "@storybook/client-logger@3.4.12":
   version "3.4.12"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.12.tgz#060a335cb560e4f0a0b61b358bac95a7529ef3d3"
-
-"@storybook/components@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.10.tgz#9af0bba14234d10f14a37656ac5982ec640cfcc8"
-  dependencies:
-    glamor "^2.20.40"
-    glamorous "^4.12.1"
-    prop-types "^15.6.1"
 
 "@storybook/components@3.4.12":
   version "3.4.12"
@@ -1113,15 +1086,15 @@
     glamorous "^4.12.1"
     prop-types "^15.6.1"
 
-"@storybook/core@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.10.tgz#32bdd071be15ad611e87f55d96e1d80bcc23e636"
+"@storybook/core@3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.12.tgz#ef4ab39974ed53dc2b6d0875e5f2fa2ba38b3834"
   dependencies:
-    "@storybook/addons" "3.4.10"
-    "@storybook/channel-postmessage" "3.4.10"
-    "@storybook/client-logger" "3.4.10"
-    "@storybook/node-logger" "3.4.10"
-    "@storybook/ui" "3.4.10"
+    "@storybook/addons" "3.4.12"
+    "@storybook/channel-postmessage" "3.4.12"
+    "@storybook/client-logger" "3.4.12"
+    "@storybook/node-logger" "3.4.12"
+    "@storybook/ui" "3.4.12"
     autoprefixer "^7.2.6"
     babel-runtime "^6.26.0"
     chalk "^2.3.2"
@@ -1153,9 +1126,9 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.10.tgz#b89b7008a7d98b28530920a178ec77bde2ab97cc"
+"@storybook/node-logger@3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.12.tgz#1b88d637e9c3d8b1e285aca4c8058212a7dbaf4b"
   dependencies:
     npmlog "^4.1.2"
 
@@ -1191,19 +1164,19 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@^3.4.4":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.10.tgz#3bab6cd5c23c90b3de7b9e5aa58042a28cb0d181"
+"@storybook/react@^3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.12.tgz#432072204365cbf5962846333732b2fa9a218d91"
   dependencies:
-    "@storybook/addon-actions" "3.4.10"
-    "@storybook/addon-links" "3.4.10"
-    "@storybook/addons" "3.4.10"
-    "@storybook/channel-postmessage" "3.4.10"
-    "@storybook/client-logger" "3.4.10"
-    "@storybook/core" "3.4.10"
-    "@storybook/node-logger" "3.4.10"
-    "@storybook/ui" "3.4.10"
-    airbnb-js-shims "^1.4.1"
+    "@storybook/addon-actions" "3.4.12"
+    "@storybook/addon-links" "3.4.12"
+    "@storybook/addons" "3.4.12"
+    "@storybook/channel-postmessage" "3.4.12"
+    "@storybook/client-logger" "3.4.12"
+    "@storybook/core" "3.4.12"
+    "@storybook/node-logger" "3.4.12"
+    "@storybook/ui" "3.4.12"
+    airbnb-js-shims "^1 || ^2"
     babel-loader "^7.1.4"
     babel-plugin-macros "^2.2.0"
     babel-plugin-react-docgen "^1.9.0"
@@ -1235,11 +1208,11 @@
     webpack "^3.11.0"
     webpack-hot-middleware "^2.22.1"
 
-"@storybook/ui@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.10.tgz#aeb36f60f4297a7065aa64ba770df681d6aac793"
+"@storybook/ui@3.4.12":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.12.tgz#c5d29c66479904a6af95b5d0026b5bc44301d11a"
   dependencies:
-    "@storybook/components" "3.4.10"
+    "@storybook/components" "3.4.12"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.3"
@@ -1409,23 +1382,24 @@ agentkeepalive@^3.3.0:
   dependencies:
     humanize-ms "^1.2.1"
 
-airbnb-js-shims@^1.4.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/airbnb-js-shims/-/airbnb-js-shims-1.7.1.tgz#a6a60e267e479eea3d456e7b5b803c38cdf23d43"
+"airbnb-js-shims@^1 || ^2":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/airbnb-js-shims/-/airbnb-js-shims-2.2.0.tgz#46e1d9d9516f704ef736de76a3b6d484df9a96d8"
   dependencies:
     array-includes "^3.0.3"
     array.prototype.flat "^1.2.1"
     array.prototype.flatmap "^1.2.1"
-    array.prototype.flatten "^1.2.1"
-    es5-shim "^4.5.10"
-    es6-shim "^0.35.3"
+    es5-shim "^4.5.13"
+    es6-shim "^0.35.5"
     function.prototype.name "^1.1.0"
-    object.entries "^1.0.4"
-    object.fromentries "^1.0.0"
+    globalthis "^1.0.0"
+    object.entries "^1.1.0"
+    object.fromentries "^2.0.0 || ^1.0.0"
     object.getownpropertydescriptors "^2.0.3"
-    object.values "^1.0.4"
+    object.values "^1.1.0"
+    promise.allsettled "^1.0.0"
     promise.prototype.finally "^3.1.0"
-    string.prototype.matchall "^3.0.0"
+    string.prototype.matchall "^3.0.1"
     string.prototype.padend "^3.0.0"
     string.prototype.padstart "^3.0.0"
     symbol.prototype.description "^1.0.0"
@@ -1696,14 +1670,6 @@ array.prototype.flat@^1.2.1:
 array.prototype.flatmap@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/array.prototype.flatmap/-/array.prototype.flatmap-1.2.1.tgz#3103cd4826ef90019c9b0a4839b2535fa6faf4e9"
-  dependencies:
-    define-properties "^1.1.2"
-    es-abstract "^1.10.0"
-    function-bind "^1.1.1"
-
-array.prototype.flatten@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/array.prototype.flatten/-/array.prototype.flatten-1.2.1.tgz#a77ae1b64524ce373b137fade324d12040d3c680"
   dependencies:
     define-properties "^1.1.2"
     es-abstract "^1.10.0"
@@ -4664,6 +4630,21 @@ es-abstract@^1.10.0, es-abstract@^1.11.0, es-abstract@^1.12.0, es-abstract@^1.4.
     is-callable "^1.1.3"
     is-regex "^1.0.4"
 
+es-abstract@^1.13.0:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.14.1.tgz#6e8d84b445ec9c610781e74a6d52cc31aac5b4ca"
+  dependencies:
+    es-to-primitive "^1.2.0"
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.0"
+    is-callable "^1.1.4"
+    is-regex "^1.0.4"
+    object-inspect "^1.6.0"
+    object-keys "^1.1.1"
+    string.prototype.trimleft "^2.0.0"
+    string.prototype.trimright "^2.0.0"
+
 es-to-primitive@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/es-to-primitive/-/es-to-primitive-1.1.1.tgz#45355248a88979034b6792e19bb81f2b7975dd0d"
@@ -4671,6 +4652,14 @@ es-to-primitive@^1.1.1:
     is-callable "^1.1.1"
     is-date-object "^1.0.1"
     is-symbol "^1.0.1"
+
+es-to-primitive@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/es-to-primitive/-/es-to-primitive-1.2.0.tgz#edf72478033456e8dda8ef09e00ad9650707f377"
+  dependencies:
+    is-callable "^1.1.4"
+    is-date-object "^1.0.1"
+    is-symbol "^1.0.2"
 
 es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
   version "0.10.46"
@@ -4680,9 +4669,9 @@ es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
     es6-symbol "~3.1.1"
     next-tick "1"
 
-es5-shim@^4.5.10:
-  version "4.5.11"
-  resolved "https://registry.yarnpkg.com/es5-shim/-/es5-shim-4.5.11.tgz#f7406770b0eee9ecb717e306b018728114e4e47d"
+es5-shim@^4.5.13:
+  version "4.5.13"
+  resolved "https://registry.yarnpkg.com/es5-shim/-/es5-shim-4.5.13.tgz#5d88062de049f8969f83783f4a4884395f21d28b"
 
 es6-iterator@^2.0.1, es6-iterator@~2.0.1, es6-iterator@~2.0.3:
   version "2.0.3"
@@ -4727,9 +4716,9 @@ es6-set@~0.1.5:
     es6-symbol "3.1.1"
     event-emitter "~0.3.5"
 
-es6-shim@^0.35.3:
-  version "0.35.3"
-  resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.3.tgz#9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26"
+es6-shim@^0.35.5:
+  version "0.35.5"
+  resolved "https://registry.yarnpkg.com/es6-shim/-/es6-shim-0.35.5.tgz#46f59dc0a84a1c5029e8ff1166ca0a902077a9ab"
 
 es6-symbol@3.1.1, es6-symbol@^3.1.1, es6-symbol@~3.1.1:
   version "3.1.1"
@@ -5793,6 +5782,14 @@ globals@^9.18.0:
   version "9.18.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
 
+globalthis@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/globalthis/-/globalthis-1.0.0.tgz#c5fb98213a9b4595f59cf3e7074f141b4169daae"
+  dependencies:
+    define-properties "^1.1.2"
+    function-bind "^1.1.1"
+    object-keys "^1.0.12"
+
 globby@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/globby/-/globby-5.0.0.tgz#ebd84667ca0dbb330b99bcfc68eac2bc54370e0d"
@@ -6807,6 +6804,12 @@ is-svg@^2.0.0:
 is-symbol@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-symbol/-/is-symbol-1.0.1.tgz#3cc59f00025194b6ab2e38dbae6689256b660572"
+
+is-symbol@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/is-symbol/-/is-symbol-1.0.2.tgz#a055f6ae57192caee329e7a860118b497a950f38"
+  dependencies:
+    has-symbols "^1.0.0"
 
 is-touch-device@^1.0.1:
   version "1.0.1"
@@ -9206,6 +9209,10 @@ object-keys@^1.0.11, object-keys@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.12.tgz#09c53855377575310cca62f55bb334abff7b3ed2"
 
+object-keys@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
+
 object-visit@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/object-visit/-/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
@@ -9239,16 +9246,7 @@ object.entries@^1.1.0:
     function-bind "^1.1.1"
     has "^1.0.3"
 
-object.fromentries@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/object.fromentries/-/object.fromentries-1.0.0.tgz#e90ec27445ec6e37f48be9af9077d9aa8bef0d40"
-  dependencies:
-    define-properties "^1.1.2"
-    es-abstract "^1.11.0"
-    function-bind "^1.1.1"
-    has "^1.0.1"
-
-object.fromentries@^2.0.0:
+object.fromentries@^2.0.0, "object.fromentries@^2.0.0 || ^1.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/object.fromentries/-/object.fromentries-2.0.0.tgz#49a543d92151f8277b3ac9600f1e930b189d30ab"
   dependencies:
@@ -10206,6 +10204,14 @@ promise-retry@^1.1.1:
   dependencies:
     err-code "^1.0.0"
     retry "^0.10.0"
+
+promise.allsettled@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/promise.allsettled/-/promise.allsettled-1.0.1.tgz#afe4bfcc13b26e2263a97a7fbbb19b8ca6eb619c"
+  dependencies:
+    define-properties "^1.1.3"
+    es-abstract "^1.13.0"
+    function-bind "^1.1.1"
 
 promise.prototype.finally@^3.1.0:
   version "3.1.0"
@@ -12141,11 +12147,11 @@ string-width@^3.1.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^5.1.0"
 
-string.prototype.matchall@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/string.prototype.matchall/-/string.prototype.matchall-3.0.0.tgz#66f4d8dd5c6c6cea4dffb55ec5f3184a8dd0dd59"
+string.prototype.matchall@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/string.prototype.matchall/-/string.prototype.matchall-3.0.1.tgz#5a9e0b64bcbeb336aa4814820237c2006985646d"
   dependencies:
-    define-properties "^1.1.2"
+    define-properties "^1.1.3"
     es-abstract "^1.12.0"
     function-bind "^1.1.1"
     has-symbols "^1.0.0"
@@ -12173,6 +12179,20 @@ string.prototype.trim@^1.1.2:
   dependencies:
     define-properties "^1.1.2"
     es-abstract "^1.5.0"
+    function-bind "^1.0.2"
+
+string.prototype.trimleft@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/string.prototype.trimleft/-/string.prototype.trimleft-2.0.0.tgz#68b6aa8e162c6a80e76e3a8a0c2e747186e271ff"
+  dependencies:
+    define-properties "^1.1.2"
+    function-bind "^1.0.2"
+
+string.prototype.trimright@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/string.prototype.trimright/-/string.prototype.trimright-2.0.0.tgz#ab4a56d802a01fbe7293e11e84f24dc8164661dd"
+  dependencies:
+    define-properties "^1.1.2"
     function-bind "^1.0.2"
 
 string_decoder@^1.0.0, string_decoder@~1.1.1:
