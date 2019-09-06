@@ -75,7 +75,7 @@
     "lint-staged": "^7.3.0",
     "npx": "^10.2.0",
     "polished": "^3.4.1",
-    "prettier": "^1.15.0",
+    "prettier": "^1.18.2",
     "react": "^16.8.3",
     "react-dates": "^18.5.0",
     "react-dom": "^16.8.3",
