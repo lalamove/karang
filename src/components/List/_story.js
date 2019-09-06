@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, select } from '@storybook/addon-knobs/react';
+import { boolean, select } from '@storybook/addon-knobs';
 
 import InfoIcon from 'components/Icon/icons/alert/info';
 import { primary } from 'styles/colors';

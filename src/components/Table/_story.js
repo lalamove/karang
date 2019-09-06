@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean } from '@storybook/addon-knobs';
 
-import Table from './index';
 import Rating from 'components/Rating';
+import Table from './index';
 
 const basicColumns = [
   {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs/react';
-import Heading, { HeadingGroup } from './index';
+import { text, select } from '@storybook/addon-knobs';
+import Heading from './index';
 
 storiesOf('Heading', module).add('Default', () => (
   <Heading
