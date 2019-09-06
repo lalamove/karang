@@ -57,7 +57,7 @@
     "downshift": "^2.2.3",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.10.0",
-    "enzyme-to-json": "^3.3.4",
+    "enzyme-to-json": "^3.4.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^2.10.0",
