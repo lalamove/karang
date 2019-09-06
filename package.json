@@ -70,7 +70,7 @@
     "husky": "^0.14.3",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
-    "jest-enzyme": "^6.0.0",
+    "jest-enzyme": "^6.1.2",
     "jest-styled-components": "^5.0.1",
     "lint-staged": "^7.3.0",
     "npx": "^10.2.0",
