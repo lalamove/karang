@@ -12267,7 +12267,7 @@ styled-components@^3.4.10:
     stylis-rule-sheet "^0.0.10"
     supports-color "^3.2.3"
 
-stylelint-config-idiomatic-css@^1.0.5:
+stylelint-config-idiomatic-css@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/stylelint-config-idiomatic-css/-/stylelint-config-idiomatic-css-1.0.6.tgz#91f08e935c3a40c8a35599297471892911f0c489"
   dependencies:
