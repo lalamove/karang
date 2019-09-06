@@ -22,7 +22,7 @@ describe('Checkbox', () => {
 
   it('Should render icon when provided', () => {
     const wrapper = mount(<Checkbox icon={<QuestionIcon />} />);
-    expect(wrapper.find('QuestionIcon')).toHaveLength(1);
+    expect(wrapper.find('Memo(QuestionIcon)')).toHaveLength(1);
   });
 
   it('Should update state when `checked` change', () => {
