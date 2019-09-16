@@ -159,6 +159,7 @@ class Comp extends Component {
       exceedLimitMsgGenerator,
     } = this.props;
     if ((value || value === '') && onChange === noop && !readOnly) {
+      // eslint-disable-next-line no-console
       console.error(
         '[TextArea] You provided a `value` prop to a form field without an `onChange` handler.' +
           '\nThis will render a read-only field. If the field should be mutable use' +
@@ -280,13 +281,10 @@ class Comp extends Component {
   }
 }
 
-// eslint-disable-next-line react/no-multi-comp,react/prop-types
-const CompWithRef = forwardRef(({ innerRef, ...remainProps }, ref) => (
-  <Comp forwardedRef={ref} {...remainProps} />
+const TextArea = forwardRef((props, ref) => (
+  <Comp {...props} forwardedRef={ref} />
 ));
 
-// Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const TextArea = ({ forwardedRef, ...props }) => <CompWithRef {...props} />;
 TextArea.propTypes = propTypes;
 TextArea.defaultProps = defaultProps;
 

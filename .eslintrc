@@ -13,6 +13,11 @@
   "plugins": ["prettier"],
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js"] }],
+    "react/jsx-fragments": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/destructuring-assignment": 0,
+    "react/static-property-placement": 0,
+    "react/state-in-constructor": 0,
     "prettier/prettier": "error",
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],

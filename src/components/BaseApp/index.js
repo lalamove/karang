@@ -1,13 +1,13 @@
-import { Component } from 'react';
-import { node } from 'prop-types';
-import { injectGlobal } from 'styled-components';
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 
 import { primary } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
+import { node } from 'prop-types';
 
-/* eslint-disable no-unused-expressions */
-injectGlobal`
+// TODO: Should allow configuration parameters passed as props
+const GlobalStyle = createGlobalStyle`
   ${normalize()}
 
   html, body {
@@ -27,14 +27,16 @@ injectGlobal`
   }
 `;
 
-// TODO: Should allow configuration parameters passed as props
-export default class BaseApp extends Component {
-  static propTypes = {
-    children: node.isRequired,
-  };
+const BaseApp = ({ children }) => (
+  <>
+    <GlobalStyle />
+    {children}
+  </>
+);
 
-  render() {
-    // eslint-disable-next-line react/destructuring-assignment
-    return this.props.children;
-  }
-}
+BaseApp.propTypes = {
+  /** @ignore */
+  children: node.isRequired,
+};
+
+export default BaseApp;

@@ -2,17 +2,12 @@ import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import App from 'components/BaseApp';
-import { fontSize } from 'styles/fonts';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
-  html, body {
-    font-family: "Noto Sans", sans-serif;
-    font-size: ${fontSize.regular};
-  }
 `;
 
 const Container = styled.div`
@@ -21,6 +16,7 @@ const Container = styled.div`
 
 const Decorator = storyFn => (
   <App>
+    <GlobalStyle />
     <Container>{storyFn()}</Container>
   </App>
 );
@@ -33,11 +29,16 @@ function loadStories() {
   requireAll(require.context('../src/', true, /_story\.jsx?$/));
 }
 
-addDecorator((story, context) =>
-  withInfo({
-    header: false,
-  })(story)(context)
-);
+// addDecorator((story, context) =>
+//   withInfo({
+//     header: false,
+//   })(story)(context)
+// );
+// addDecorator(
+//   withInfo({
+//     header: false,
+//   })
+// );
 addDecorator(withKnobs);
 addDecorator(Decorator);
 
