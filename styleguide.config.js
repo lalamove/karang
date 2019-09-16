@@ -2,7 +2,10 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-  require: [path.resolve(__dirname, '.styleguide/setup.js')],
+  require: [
+    path.resolve(__dirname, '.styleguide/setup.js'),
+    path.resolve(__dirname, '.styleguide/styles.css'),
+  ],
   ignore: [
     '**/__tests__/**',
     '**/*.test.{js,jsx,ts,tsx}',
@@ -132,6 +135,10 @@ module.exports = {
           test: /\.(jsx?|svg|gif)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
         },
       ],
     },
