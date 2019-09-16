@@ -235,6 +235,8 @@ class Select extends Component {
           >
             {({ isOpen, getToggleButtonProps, getItemProps, getRootProps }) => (
               <Container
+                // TODO: Update refKey to `ref` after updated to Downshift v3
+                // https://github.com/downshift-js/downshift/pull/756
                 {...getRootProps({ name, ...props, refKey: 'innerRef' })}
               >
                 <Button
@@ -245,10 +247,9 @@ class Select extends Component {
                     disabled,
                   })}
                 >
-                  {selectedItem &&
-                    selectedItem.icon && (
-                      <CustomIcon>{selectedItem.icon}</CustomIcon>
-                    )}
+                  {selectedItem && selectedItem.icon && (
+                    <CustomIcon>{selectedItem.icon}</CustomIcon>
+                  )}
                   <Content>
                     {selectedItem && (selectedItem.label || selectedItem.value)}
                   </Content>
