@@ -50,7 +50,7 @@ exports[`Tab Snapshots Deselected (rounded variant) 1`] = `
 `;
 
 exports[`Tab Snapshots Deselected 1`] = `
-.c3 {
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -66,14 +66,6 @@ exports[`Tab Snapshots Deselected 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c3:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c2 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -91,7 +83,12 @@ exports[`Tab Snapshots Deselected 1`] = `
   color: #F16622;
 }
 
-.c2 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c2:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c2 .c3 {
   color: #F16622;
 }
 
@@ -139,7 +136,7 @@ exports[`Tab Snapshots Deselected 1`] = `
 >
   <button
     aria-selected="false"
-    class="c1 c2 c3"
+    class="c1 c2"
     role="tab"
     type="button"
   >
@@ -216,7 +213,7 @@ exports[`Tab Snapshots Selected (rounded variant) 1`] = `
 `;
 
 exports[`Tab Snapshots Selected 1`] = `
-.c3 {
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -232,14 +229,6 @@ exports[`Tab Snapshots Selected 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c3:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c2 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -257,7 +246,12 @@ exports[`Tab Snapshots Selected 1`] = `
   color: #F16622;
 }
 
-.c2 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c2:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c2 .c3 {
   color: #F16622;
 }
 
@@ -306,7 +300,7 @@ exports[`Tab Snapshots Selected 1`] = `
 >
   <button
     aria-selected="true"
-    class="c1 c2 c3"
+    class="c1 c2"
     role="tab"
     selected=""
     type="button"
@@ -445,7 +439,7 @@ exports[`TabBar Snapshots Rounded variant 1`] = `
 `;
 
 exports[`TabBar Snapshots Selected tabs 1`] = `
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -461,14 +455,6 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c4:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c3 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -486,7 +472,12 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   color: #F16622;
 }
 
-.c3 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c3:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c3 .c6 {
   color: #F16622;
 }
 
@@ -506,7 +497,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   padding: 0;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   padding: 0;
   border-bottom: none;
@@ -518,25 +509,25 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   border-bottom: 2px solid #F16622;
 }
 
-.c6 {
+.c5 {
   padding: 1.25em;
   color: #B4B4B4;
   text-shadow: none;
 }
 
-.c6:hover:enabled {
+.c5:hover:enabled {
   color: #F16622;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c6:active:enabled {
+.c5:active:enabled {
   color: #a33c0a;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c6:focus:enabled {
+.c5:focus:enabled {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -574,7 +565,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   >
     <button
       aria-selected="true"
-      class="c2 c3 c4"
+      class="c2 c3"
       role="tab"
       selected=""
       type="button"
@@ -585,11 +576,11 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
     </button>
   </li>
   <li
-    class="c5"
+    class="c4"
   >
     <button
       aria-selected="false"
-      class="c6 c3 c4"
+      class="c5 c3"
       role="tab"
       type="button"
     >
@@ -602,7 +593,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
 `;
 
 exports[`TabBar Snapshots Some tabs 1`] = `
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -618,14 +609,6 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c4:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c3 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -643,7 +626,12 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   color: #F16622;
 }
 
-.c3 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c3:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c3 .c4 {
   color: #F16622;
 }
 
@@ -701,7 +689,7 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   >
     <button
       aria-selected="false"
-      class="c2 c3 c4"
+      class="c2 c3"
       role="tab"
       type="button"
     >
@@ -715,7 +703,7 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   >
     <button
       aria-selected="false"
-      class="c2 c3 c4"
+      class="c2 c3"
       role="tab"
       type="button"
     >

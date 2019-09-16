@@ -19,40 +19,7 @@ exports[`Input Snapshots Password 1`] = `
   width: 100%;
 }
 
-.c3 {
-  width: 100%;
-  padding: 1em;
-  border: none;
-  color: #303030;
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: #F16622;
-  font-size: 14px;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-
-.c3::-webkit-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c3::-moz-placeholder {
-  color: #B4B4B4;
-}
-
-.c3:-ms-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c3::placeholder {
-  color: #B4B4B4;
-}
-
-.c3::selection {
-  background: rgba(241,102,34,0.1);
-}
-
-.c6 {
+.c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -68,14 +35,6 @@ exports[`Input Snapshots Password 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c6:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c5 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -93,27 +52,65 @@ exports[`Input Snapshots Password 1`] = `
   color: #535353;
 }
 
-.c5 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c4:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c4 .c5 {
   color: #535353;
 }
 
-.c5:hover:enabled,
-.c5:active:enabled {
+.c4:hover:enabled,
+.c4:active:enabled {
   background-color: #F1F1F1;
 }
 
-.c5:active:enabled,
-.c5:focus:enabled {
+.c4:active:enabled,
+.c4:focus:enabled {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c4 {
+.c3 {
   border: none;
 }
 
-.c4:hover,
-.c4:focus {
+.c3:hover,
+.c3:focus {
   background: #E8E8E8;
+}
+
+.c2 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: #303030;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c2:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::placeholder {
+  color: #B4B4B4;
+}
+
+.c2::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c2::-ms-reveal {
@@ -133,12 +130,12 @@ exports[`Input Snapshots Password 1`] = `
   >
     <input
       autocomplete="new-password"
-      class="c2 c3"
+      class="c2"
       name="input"
       type="password"
     />
     <button
-      class="c4 c5 c6"
+      class="c3 c4"
       type="button"
     >
       <span>
@@ -209,40 +206,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   width: 100%;
 }
 
-.c3 {
-  width: 100%;
-  padding: 1em;
-  border: none;
-  color: #303030;
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: #F16622;
-  font-size: 14px;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-
-.c3::-webkit-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c3::-moz-placeholder {
-  color: #B4B4B4;
-}
-
-.c3:-ms-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c3::placeholder {
-  color: #B4B4B4;
-}
-
-.c3::selection {
-  background: rgba(241,102,34,0.1);
-}
-
-.c6 {
+.c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -258,14 +222,6 @@ exports[`Input Snapshots Password with a value 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c6:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c5 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -283,27 +239,65 @@ exports[`Input Snapshots Password with a value 1`] = `
   color: #535353;
 }
 
-.c5 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c4:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c4 .c5 {
   color: #535353;
 }
 
-.c5:hover:enabled,
-.c5:active:enabled {
+.c4:hover:enabled,
+.c4:active:enabled {
   background-color: #F1F1F1;
 }
 
-.c5:active:enabled,
-.c5:focus:enabled {
+.c4:active:enabled,
+.c4:focus:enabled {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c4 {
+.c3 {
   border: none;
 }
 
-.c4:hover,
-.c4:focus {
+.c3:hover,
+.c3:focus {
   background: #E8E8E8;
+}
+
+.c2 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: #303030;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c2:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::placeholder {
+  color: #B4B4B4;
+}
+
+.c2::selection {
+  background: rgba(241,102,34,0.1);
 }
 
 .c2::-ms-reveal {
@@ -323,13 +317,13 @@ exports[`Input Snapshots Password with a value 1`] = `
   >
     <input
       autocomplete="new-password"
-      class="c2 c3"
+      class="c2"
       name="input"
       type="password"
       value="dummy"
     />
     <button
-      class="c4 c5 c6"
+      class="c3 c4"
       type="button"
     >
       <span>
@@ -400,7 +394,7 @@ exports[`Input Snapshots Regular Input 1`] = `
   width: 100%;
 }
 
-.c3 {
+.c2 {
   width: 100%;
   padding: 1em;
   border: none;
@@ -413,23 +407,23 @@ exports[`Input Snapshots Regular Input 1`] = `
   outline: none;
 }
 
-.c3::-webkit-input-placeholder {
+.c2::-webkit-input-placeholder {
   color: #B4B4B4;
 }
 
-.c3::-moz-placeholder {
+.c2::-moz-placeholder {
   color: #B4B4B4;
 }
 
-.c3:-ms-input-placeholder {
+.c2:-ms-input-placeholder {
   color: #B4B4B4;
 }
 
-.c3::placeholder {
+.c2::placeholder {
   color: #B4B4B4;
 }
 
-.c3::selection {
+.c2::selection {
   background: rgba(241,102,34,0.1);
 }
 
@@ -450,7 +444,7 @@ exports[`Input Snapshots Regular Input 1`] = `
   >
     <input
       autocomplete="new-password"
-      class="c2 c3"
+      class="c2"
       name="input"
       type="text"
     />

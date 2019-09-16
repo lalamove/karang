@@ -93,7 +93,7 @@ class Comp extends Component {
         <SCTextInput
           onFocus={this.onFocus}
           onBlur={this.onBlur}
-          innerRef={forwardedRef}
+          ref={forwardedRef}
           {...props}
         />
       </Container>

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button-block 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -17,14 +17,6 @@ exports[`Button-block 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -43,7 +35,12 @@ exports[`Button-block 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -58,7 +55,7 @@ exports[`Button-block 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -68,7 +65,7 @@ exports[`Button-block 1`] = `
 `;
 
 exports[`Button-disabled 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -84,14 +81,6 @@ exports[`Button-disabled 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -109,7 +98,12 @@ exports[`Button-disabled 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -124,7 +118,7 @@ exports[`Button-disabled 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   disabled=""
   type="button"
 >
@@ -135,7 +129,31 @@ exports[`Button-disabled 1`] = `
 `;
 
 exports[`Button-isLoading 1`] = `
-.c1 {
+.c2 {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c3 .c1 {
+  color: #535353;
+}
+
+.c4 .c1 {
+  color: #535353;
+}
+
+.c5 .c1 {
+  color: #535353;
+}
+
+.c6 .c1 {
+  color: #535353;
+}
+
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -151,38 +169,6 @@ exports[`Button-isLoading 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c3 {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.hkjHFO .c2 {
-  color: #535353;
-}
-
-.fsXKqW .c2 {
-  color: #535353;
-}
-
-.dDJraA .c2 {
-  color: #535353;
-}
-
-.cQyVkO .c2 {
-  color: #535353;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -201,7 +187,12 @@ exports[`Button-isLoading 1`] = `
   color: rgba(0,0,0,0) !important;
 }
 
-.c0 .c2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -216,11 +207,11 @@ exports[`Button-isLoading 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <div
-    class="c2 c3"
+    class="c1 c2"
   >
     <svg
       height="16"
@@ -251,7 +242,7 @@ exports[`Button-isLoading 1`] = `
 `;
 
 exports[`Button-size-large 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -267,14 +258,6 @@ exports[`Button-size-large 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -295,7 +278,12 @@ exports[`Button-size-large 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -310,7 +298,7 @@ exports[`Button-size-large 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -320,7 +308,7 @@ exports[`Button-size-large 1`] = `
 `;
 
 exports[`Button-size-small 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -336,14 +324,6 @@ exports[`Button-size-small 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -362,7 +342,12 @@ exports[`Button-size-small 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -377,7 +362,7 @@ exports[`Button-size-small 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -387,7 +372,7 @@ exports[`Button-size-small 1`] = `
 `;
 
 exports[`Button-size-xlarge 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -403,14 +388,6 @@ exports[`Button-size-xlarge 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -431,7 +408,12 @@ exports[`Button-size-xlarge 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -446,7 +428,7 @@ exports[`Button-size-xlarge 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -456,7 +438,7 @@ exports[`Button-size-xlarge 1`] = `
 `;
 
 exports[`Button-solid 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -472,14 +454,6 @@ exports[`Button-solid 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -497,7 +471,12 @@ exports[`Button-solid 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -512,7 +491,7 @@ exports[`Button-solid 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -522,7 +501,7 @@ exports[`Button-solid 1`] = `
 `;
 
 exports[`Button-variant-danger 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -538,14 +517,6 @@ exports[`Button-variant-danger 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -564,7 +535,12 @@ exports[`Button-variant-danger 1`] = `
   color: #D8534F;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #D8534F;
 }
 
@@ -575,8 +551,8 @@ exports[`Button-variant-danger 1`] = `
   color: rgba(255,255,255,1);
 }
 
-.c0:hover:enabled .Button__SpinnerWrapper-sc-7kpwz0-2,
-.c0:active:enabled .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:hover:enabled .c1,
+.c0:active:enabled .c1 {
   color: rgba(255,255,255,1);
 }
 
@@ -586,7 +562,7 @@ exports[`Button-variant-danger 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -596,7 +572,7 @@ exports[`Button-variant-danger 1`] = `
 `;
 
 exports[`Button-variant-default 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -612,14 +588,6 @@ exports[`Button-variant-default 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -637,7 +605,12 @@ exports[`Button-variant-default 1`] = `
   color: #535353;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #535353;
 }
 
@@ -652,7 +625,7 @@ exports[`Button-variant-default 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -662,7 +635,7 @@ exports[`Button-variant-default 1`] = `
 `;
 
 exports[`Button-variant-link 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -678,14 +651,6 @@ exports[`Button-variant-link 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -703,7 +668,12 @@ exports[`Button-variant-link 1`] = `
   color: #F16622;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #F16622;
 }
 
@@ -718,7 +688,7 @@ exports[`Button-variant-link 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -728,7 +698,7 @@ exports[`Button-variant-link 1`] = `
 `;
 
 exports[`Button-variant-primary 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -744,14 +714,6 @@ exports[`Button-variant-primary 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -770,7 +732,12 @@ exports[`Button-variant-primary 1`] = `
   color: #F16622;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #F16622;
 }
 
@@ -781,8 +748,8 @@ exports[`Button-variant-primary 1`] = `
   color: rgba(255,255,255,1);
 }
 
-.c0:hover:enabled .Button__SpinnerWrapper-sc-7kpwz0-2,
-.c0:active:enabled .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:hover:enabled .c1,
+.c0:active:enabled .c1 {
   color: rgba(255,255,255,1);
 }
 
@@ -792,7 +759,7 @@ exports[`Button-variant-primary 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>
@@ -802,7 +769,7 @@ exports[`Button-variant-primary 1`] = `
 `;
 
 exports[`Button-variant-secondary 1`] = `
-.c1 {
+.c0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -818,14 +785,6 @@ exports[`Button-variant-secondary 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c0 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -844,7 +803,12 @@ exports[`Button-variant-secondary 1`] = `
   color: #FEA000;
 }
 
-.c0 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c0 .c1 {
   color: #FEA000;
 }
 
@@ -855,8 +819,8 @@ exports[`Button-variant-secondary 1`] = `
   color: rgba(255,255,255,1);
 }
 
-.c0:hover:enabled .Button__SpinnerWrapper-sc-7kpwz0-2,
-.c0:active:enabled .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c0:hover:enabled .c1,
+.c0:active:enabled .c1 {
   color: rgba(255,255,255,1);
 }
 
@@ -866,7 +830,7 @@ exports[`Button-variant-secondary 1`] = `
 }
 
 <button
-  class="c0 c1"
+  class="c0"
   type="button"
 >
   <span>

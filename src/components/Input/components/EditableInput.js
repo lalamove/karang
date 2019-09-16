@@ -253,6 +253,7 @@ class Comp extends Component {
       onCancel,
       onFocus,
       onSave,
+      onEdit,
       saveLabel,
       cancelLabel,
       editLabel,
@@ -289,7 +290,7 @@ class Comp extends Component {
                 <SCButton onClick={this.onCancelBtnClick} variant="link">
                   {cancelBtnText || cancelLabel}
                 </SCButton>
-                <SCButton onClick={this.onSaveBtnClick} variant="outline">
+                <SCButton onClick={this.onSaveBtnClick} variant="primary" solid>
                   {saveBtnText || saveLabel}
                 </SCButton>
               </Fragment>
