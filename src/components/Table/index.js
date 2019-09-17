@@ -143,6 +143,7 @@ class Table extends Component {
       columns,
       hoverable,
       alternate,
+      onRowClick,
       ...remainProps
     } = this.props;
 

@@ -267,6 +267,8 @@ class Dropdown extends Component {
           toggleMenu = dsToggleMenu;
           return (
             <Container
+              // TODO: Update refKey to `ref` after updated to Downshift v3
+              // https://github.com/downshift-js/downshift/pull/756
               {...getRootProps({ ...remainProps, block, refKey: 'innerRef' })}
             >
               {variant === 'compact' && (

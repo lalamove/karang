@@ -37,7 +37,7 @@
     "react": "^16.9.0",
     "react-dates": "^18.5.0",
     "react-dom": "^16.9.0",
-    "styled-components": "^3.4.10"
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -57,6 +57,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "cross-env": "^5.2.1",
+    "css-loader": "^3.2.0",
     "date-fns": "^2.2.1",
     "downshift": "^2.2.3",
     "enzyme": "^3.10.0",
@@ -75,7 +76,7 @@
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
     "jest-enzyme": "^7.1.1",
-    "jest-styled-components": "^5.0.1",
+    "jest-styled-components": "^6.3.3",
     "lint-staged": "^9.2.5",
     "npx": "^10.2.0",
     "polished": "^3.4.1",
@@ -84,7 +85,8 @@
     "react-dates": "^18.5.0",
     "react-dom": "^16.9.0",
     "react-styleguidist": "^9.1.16",
-    "styled-components": "^3.4.10",
+    "style-loader": "^1.0.0",
+    "styled-components": "^4.3.2",
     "stylelint": "^11.0.0",
     "stylelint-config-idiomatic-css": "^1.0.6",
     "stylelint-config-recommended": "^3.0.0",

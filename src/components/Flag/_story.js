@@ -4,7 +4,7 @@ import GalleryIcon from 'components/Icon/icons/images/gallery';
 import Flag from './index';
 
 const line = <hr style={{ margin: 0 }} />;
-const icon = <GalleryIcon size="32" />;
+const icon = <GalleryIcon size={32} />;
 
 storiesOf('Flag', module)
   .add('Default - center', () => (

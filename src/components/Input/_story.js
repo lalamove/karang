@@ -122,9 +122,9 @@ const EditableInputWrapper = () => (
       block
       name="Billing Email"
       value="no-reply@lalamove.com"
-      saveBtnText="Save Value"
-      editBtnText="Edit Value"
-      cancelBtnText="Cancel Value"
+      saveLabel="Save Value"
+      editLabel="Edit Value"
+      cancelLabel="Cancel Value"
       label="Billing Email"
     />
   </div>

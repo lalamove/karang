@@ -195,7 +195,7 @@ class PinInput extends Component {
         autoComplete="new-password"
         size={variant || size} // TODO: `variant` is deprecated
         pattern="\d*"
-        innerRef={input => {
+        ref={input => {
           this.lastInput = input;
         }}
         type={type}

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshots Pagination with 0 items 1`] = `
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -17,14 +17,6 @@ exports[`Snapshots Pagination with 0 items 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c4:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c3 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -42,7 +34,12 @@ exports[`Snapshots Pagination with 0 items 1`] = `
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c3:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c3 .c4 {
   color: #535353;
 }
 
@@ -84,7 +81,7 @@ exports[`Snapshots Pagination with 0 items 1`] = `
     Viewing 0-0 of 0
   </span>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     disabled=""
     type="button"
   >
@@ -116,7 +113,7 @@ exports[`Snapshots Pagination with 0 items 1`] = `
     </span>
   </button>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     disabled=""
     type="button"
   >
@@ -151,7 +148,7 @@ exports[`Snapshots Pagination with 0 items 1`] = `
 `;
 
 exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = `
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -167,14 +164,6 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c4:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c3 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -192,7 +181,12 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c3:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c3 .c4 {
   color: #535353;
 }
 
@@ -234,7 +228,7 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
     Viewing 1-10 of 300
   </span>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     disabled=""
     type="button"
   >
@@ -266,7 +260,7 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
     </span>
   </button>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     type="button"
   >
     <span>
@@ -300,7 +294,7 @@ exports[`Snapshots Pagination with 300 items, at first page with 10 items 1`] = 
 `;
 
 exports[`Snapshots Pagination with custom description 1`] = `
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -316,14 +310,6 @@ exports[`Snapshots Pagination with custom description 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c4:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c3 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -341,7 +327,12 @@ exports[`Snapshots Pagination with custom description 1`] = `
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c3:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c3 .c4 {
   color: #535353;
 }
 
@@ -383,7 +374,7 @@ exports[`Snapshots Pagination with custom description 1`] = `
     blah 1-20 of 40
   </span>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     disabled=""
     type="button"
   >
@@ -415,7 +406,7 @@ exports[`Snapshots Pagination with custom description 1`] = `
     </span>
   </button>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     type="button"
   >
     <span>
@@ -449,7 +440,7 @@ exports[`Snapshots Pagination with custom description 1`] = `
 `;
 
 exports[`Snapshots Pagination with custom text buttons 1`] = `
-.c3 {
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -465,14 +456,6 @@ exports[`Snapshots Pagination with custom text buttons 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c3:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c2 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -490,7 +473,12 @@ exports[`Snapshots Pagination with custom text buttons 1`] = `
   color: #535353;
 }
 
-.c2 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c2:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c2 .c3 {
   color: #535353;
 }
 
@@ -528,7 +516,7 @@ exports[`Snapshots Pagination with custom text buttons 1`] = `
     Viewing 1-20 of 40
   </span>
   <button
-    class="c2 c3"
+    class="c2"
     disabled=""
     type="button"
   >
@@ -537,7 +525,7 @@ exports[`Snapshots Pagination with custom text buttons 1`] = `
     </span>
   </button>
   <button
-    class="c2 c3"
+    class="c2"
     type="button"
   >
     <span>
@@ -548,7 +536,7 @@ exports[`Snapshots Pagination with custom text buttons 1`] = `
 `;
 
 exports[`Snapshots Pagination with default value 1`] = `
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -564,14 +552,6 @@ exports[`Snapshots Pagination with default value 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c4:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c3 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -589,7 +569,12 @@ exports[`Snapshots Pagination with default value 1`] = `
   color: #535353;
 }
 
-.c3 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c3:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c3 .c4 {
   color: #535353;
 }
 
@@ -631,7 +616,7 @@ exports[`Snapshots Pagination with default value 1`] = `
     Viewing 1-20 of 40
   </span>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     disabled=""
     type="button"
   >
@@ -663,7 +648,7 @@ exports[`Snapshots Pagination with default value 1`] = `
     </span>
   </button>
   <button
-    class="c2 c3 c4"
+    class="c2 c3"
     type="button"
   >
     <span>
@@ -697,7 +682,7 @@ exports[`Snapshots Pagination with default value 1`] = `
 `;
 
 exports[`Snapshots Pagination with text buttons 1`] = `
-.c3 {
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -713,14 +698,6 @@ exports[`Snapshots Pagination with text buttons 1`] = `
   text-align: center;
   cursor: pointer;
   outline: 0;
-}
-
-.c3:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.c2 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -738,7 +715,12 @@ exports[`Snapshots Pagination with text buttons 1`] = `
   color: #535353;
 }
 
-.c2 .Button__SpinnerWrapper-sc-7kpwz0-2 {
+.c2:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c2 .c3 {
   color: #535353;
 }
 
@@ -776,7 +758,7 @@ exports[`Snapshots Pagination with text buttons 1`] = `
     Viewing 1-20 of 40
   </span>
   <button
-    class="c2 c3"
+    class="c2"
     disabled=""
     type="button"
   >
@@ -785,7 +767,7 @@ exports[`Snapshots Pagination with text buttons 1`] = `
     </span>
   </button>
   <button
-    class="c2 c3"
+    class="c2"
     type="button"
   >
     <span>

@@ -144,12 +144,12 @@ exports[`Checkbox Should match snapshot - highlight label 1`] = `
   opacity: 0;
 }
 
-.c3:disabled ~ .bfApcu {
+.c3:disabled ~ .c7 {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c3:checked ~ .bfApcu {
+.c3:checked ~ .c7 {
   color: #303030;
 }
 

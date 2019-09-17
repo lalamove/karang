@@ -9,7 +9,7 @@ import noop from 'utils/noop';
 
 import { TabContainer, RoundedTabContainer } from '../style';
 
-const TabButton = styled(Button).attrs({ variant: 'link' })`
+const TabButton = styled(Button).attrs(() => ({ variant: 'link' }))`
   padding: 1.25em;
   color: ${({ selected }) => (selected ? primary.main : nobel.main)};
 

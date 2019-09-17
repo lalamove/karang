@@ -115,27 +115,27 @@ exports[`Snapshots Radio disabled 1`] = `
   margin-left: 0.5em;
 }
 
-.buFukg:hover .c1,
-.buFukg > input:focus ~ .c1 {
+.c5:hover .c1,
+.c5 > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.buFukg:hover > input:not(:checked):not(:disabled) ~ .c1,
-.buFukg:active > input:not(:checked):not(:disabled) ~ .c1 {
+.c5:hover > input:not(:checked):not(:disabled) ~ .c1,
+.c5:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.buFukg:active > input:not(:disabled) ~ .c1,
-.buFukg > input:focus:not(:disabled) ~ .c1 {
+.c5:active > input:not(:disabled) ~ .c1,
+.c5 > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.buFukg > input:disabled ~ .c1,
-.buFukg > input:disabled ~ .c3 {
+.c5 > input:disabled ~ .c1,
+.c5 > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.buFukg > input:checked ~ .c1:before {
+.c5 > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -243,27 +243,27 @@ exports[`Snapshots Radio group disabled 1`] = `
   margin-left: 0.5em;
 }
 
-.buFukg:hover .c4,
-.buFukg > input:focus ~ .c4 {
+.c8:hover .c4,
+.c8 > input:focus ~ .c4 {
   border: 1px solid #B4B4B4;
 }
 
-.buFukg:hover > input:not(:checked):not(:disabled) ~ .c4,
-.buFukg:active > input:not(:checked):not(:disabled) ~ .c4 {
+.c8:hover > input:not(:checked):not(:disabled) ~ .c4,
+.c8:active > input:not(:checked):not(:disabled) ~ .c4 {
   border: 1px solid #303030;
 }
 
-.buFukg:active > input:not(:disabled) ~ .c4,
-.buFukg > input:focus:not(:disabled) ~ .c4 {
+.c8:active > input:not(:disabled) ~ .c4,
+.c8 > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.buFukg > input:disabled ~ .c4,
-.buFukg > input:disabled ~ .c6 {
+.c8 > input:disabled ~ .c4,
+.c8 > input:disabled ~ .c6 {
   opacity: 0.5;
 }
 
-.buFukg > input:checked ~ .c4:before {
+.c8 > input:checked ~ .c4:before {
   content: '';
   display: block;
   width: 100%;
@@ -776,27 +776,27 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.iKSjWD:hover .c1,
-.iKSjWD > input:focus ~ .c1 {
+.c5:hover .c1,
+.c5 > input:focus ~ .c1 {
   border: 1px solid #B4B4B4;
 }
 
-.iKSjWD:hover > input:not(:checked):not(:disabled) ~ .c1,
-.iKSjWD:active > input:not(:checked):not(:disabled) ~ .c1 {
+.c5:hover > input:not(:checked):not(:disabled) ~ .c1,
+.c5:active > input:not(:checked):not(:disabled) ~ .c1 {
   border: 1px solid #303030;
 }
 
-.iKSjWD:active > input:not(:disabled) ~ .c1,
-.iKSjWD > input:focus:not(:disabled) ~ .c1 {
+.c5:active > input:not(:disabled) ~ .c1,
+.c5 > input:focus:not(:disabled) ~ .c1 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.iKSjWD > input:disabled ~ .c1,
-.iKSjWD > input:disabled ~ .c3 {
+.c5 > input:disabled ~ .c1,
+.c5 > input:disabled ~ .c3 {
   opacity: 0.5;
 }
 
-.iKSjWD > input:checked ~ .c1:before {
+.c5 > input:checked ~ .c1:before {
   content: '';
   display: block;
   width: 100%;
@@ -805,7 +805,7 @@ exports[`Snapshots Render children 1`] = `
   border-radius: 50%;
 }
 
-.iKSjWD:hover .c1 {
+.c5:hover .c1 {
   box-shadow: none;
 }
 

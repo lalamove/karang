@@ -24,14 +24,6 @@ const SCAnimatedBorder = styled(AnimatedBorder)`
   padding-right: 1em;
 `;
 
-const TextDisplay = styled.div`
-  flex: 1 1 60%;
-  overflow: hidden;
-  padding: 1em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
 const BtnContainer = styled.div`
   display: flex;
   flex-shrink: 0;
@@ -142,6 +134,7 @@ const defaultProps = {
 
 class Comp extends Component {
   static propTypes = propTypes;
+
   static defaultProps = defaultProps;
 
   state = {
@@ -260,6 +253,7 @@ class Comp extends Component {
       onCancel,
       onFocus,
       onSave,
+      onEdit,
       saveLabel,
       cancelLabel,
       editLabel,
@@ -288,7 +282,7 @@ class Comp extends Component {
             onChange={this.onChange}
             onFocus={this.onFocus}
             {...remainProps}
-            innerRef={this.getReference}
+            ref={this.getReference}
           />
           <BtnContainer>
             {editing ? (
@@ -296,7 +290,7 @@ class Comp extends Component {
                 <SCButton onClick={this.onCancelBtnClick} variant="link">
                   {cancelBtnText || cancelLabel}
                 </SCButton>
-                <SCButton onClick={this.onSaveBtnClick} variant="outline">
+                <SCButton onClick={this.onSaveBtnClick} variant="primary" solid>
                   {saveBtnText || saveLabel}
                 </SCButton>
               </Fragment>
@@ -313,14 +307,10 @@ class Comp extends Component {
   }
 }
 
-const CompWithRef = forwardRef((props, ref) => (
+const EditableInput = forwardRef((props, ref) => (
   <Comp forwardedRef={ref} {...props} />
 ));
 
-// Ugly fix for React Styleguidist as it cannot recognize forwardRef
-const EditableInput = ({ forwardedRef, ...props }) => (
-  <CompWithRef {...props} />
-);
 EditableInput.propTypes = propTypes;
 EditableInput.defaultProps = defaultProps;
 
