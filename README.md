@@ -1,27 +1,23 @@
-<h3 align="center">karang</h3>
+# karang
+React components library that implement Lalamove Design, for building products on the web.
 
-<p align="center">
-    React components library that implement Lalamove Design, for building products on the web.
-</p>
-
-<p align="center">
-  <a href="https://ui.lalamove.com">Documentation</a>
-  ·
-  <a href="https://ui.lalamove.com/storybook">Storybook</a>
-</p>
+* [Documentation](https://ui.lalamove.com)
+* [Storybook](https://ui.lalamove.com/storybook)
 
 ## ⛓ Install
+
 Please make sure you install the following dependencies:
+
 ```json
 {
-    "downshift": "^2.0.14",
-    "moment": "^2.22.2",
-    "polished": "^3.0.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dates": "^18.0.2",
-    "react-dom": "^16.6.0",
-    "styled-components": "^3.4.10"
+    "downshift": "^3.3.1",
+    "moment": "^2.24.0",
+    "polished": "^3.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dates": "^21.0.1",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2"
 }
 ```
 
@@ -31,8 +27,12 @@ And run the following:
 yarn add @lalamove/karang
 ```
 
+You may check on our [Github Releases](https://github.com/lalamove/karang/releases) page for the version releases.
+
 ## 🔮 Usage
+
 #### Initialize the library at the top level
+
 You must first initialize the library in order to set configuration globals.
 
 First, please embed the required fonts into your application, for example, you can copy the following code into the 
@@ -44,7 +44,7 @@ First, please embed the required fonts into your application, for example, you c
 
 At the top level of your application, instantiate a `BaseApp` component and pass the rest of your application as its children.
 
-```bash
+```jsx static
 import React from 'react';
 import { BaseApp } from '@lalamove/karang';
 
@@ -58,8 +58,10 @@ export default App;
 ```
 
 #### Using exported UI components
+
 Quick example to **get you started** in your own components:
-```bash
+
+```jsx static
 import React, { Fragment } from 'react';
 import { Radio } from '@lalamove/karang';
 
@@ -75,31 +77,39 @@ export default MyComponent;
 ```
 
 We also support partial import for smaller built:
-```bash
+
+```jsx static
 import Radio from '@lalamove/karang/dist/components/Radio';
 ```
+
 ## 🎉 Contributing to karang
 
 #### Configure your editor
+
 To enable stylelint for `styled-components`, configure your editor to have stylelint watch `.js` files.
 
 ##### Sublime Text
+
 ```json
 "stylelint": {
   "selector": "source.js"
 }
 ```
 ##### VS Code
+
 ```json
 "stylelint.additionalDocumentSelectors": [
   "javascript"
 ]
 ```
 ##### WebStorm or other JetBrains IDEs
+
 Install `Styled Components` plugin in IDE `Preferences | Plugins`.
 
 #### Develop with storybook
+
 Run the following commands for development:
+
 ```bash
 yarn storybook ## Start development with Storybook
 yarn doc ## Styleguide and usage
@@ -108,9 +118,11 @@ yarn lint:js ## Lint the JavaScript files
 yarn lint:css ## Lint the CSS files including styled-components
 yarn build ## Build all of the JavaScript files using Babel
 ```
+
 Remember to export your components in `src/index.js`.
 
 **This project is maintained by Lalamove. Please read through our [contributing guidelines](./CONTRIBUTING.md) for the contribution.**
 
 ## ⚙️ License
+
 [Copyright (c) 2019 Lalamove. Code released under the MIT License.](./LICENSE.md)

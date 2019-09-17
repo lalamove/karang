@@ -1,4 +1,5 @@
 # Contributing Guidelines
+
 Please feel free to propose changes to this document by opening issue if there is any missing or unclear guideline. Also, please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
 
 ## Code guidelines
@@ -7,16 +8,88 @@ Please feel free to propose changes to this document by opening issue if there i
 
 We follow [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript).
 
-### CSS
-```bash
-// TODO
+#### Be specific, avoid general `eslint-disable-line`
+
+Please **only** turn off `eslint` specific rule for a single line when you know what you're working on. The linter will raise a warning to you if your code does not meet our internal standards or contains possible sources of problems.
+
+If there is a special case, please **specify which rule** to disable.
+
+```jsx static
+// DO:
+// eslint-disable-line no-shadow
+
+// DON'T:
+// eslint-disable-line
 ```
+
+### CSS in styled-components
+
+We follow [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css), with the following rules over-ridded:
+
+- Use soft tabs with **two-spaces**
+- Prefer single quote, for example: `content: '';`
+
+#### Prefixes
+
+Never use prefixes. We enabled autoprefixer to handle that.
+
+#### Declaration order
+
+We follow the properties ordering as below:
+
+1. Positioning
+2. Display & Box model
+3. Typography
+4. Visual
+5. Misc
+
+For example,
+
+```css static
+.selector {
+  /* Positioning */
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Display & Box Model */
+  display: inline-block;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid #333;
+  margin: 10px;
+
+  /* Typography */
+  font: normal 13px 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  /* Misc */
+  opacity: 1;
+}
+```
+
+#### Rule `!important`
+
+Please **avoid using `!important`**. Styled-components generates unique class names for the styles (scope), you never have to worry about overlap or duplication.
 
 ### Handle broken changes with previous version
 
 Please make sure to your changes are backward compatible with the previous version, and handle it by using `console.warn` and `/** @deprecated */`. For example:
 
-```bash
+```jsx static
 static propTypes = {
   /** @deprecated Please use `size` */
   variant: string, // TODO: `variant` is deprecated
@@ -44,7 +117,7 @@ render() {
 
 Please handle possible incorrect usages from developers by using `console.warn` and related propTypes. For example:
 
-```bash
+```jsx static
 componentDidMount() {
   if (this.props.current && this.props.onChange === noop) {
     // eslint-disable-next-line no-console
@@ -59,31 +132,110 @@ componentDidMount() {
 
 ### Folder structure
 
-```bash
-// TODO
+```markdown static
+├── scripts // util scripts for building
+├── src
+│   ├── components
+│   │   ├── Component // single component
+│   │   │   └── __tests__ // tests folder if there are more than one test files
+│   ├── hoc // high order components
+│   ├── styles // basic styles, eg. colors, fonts
+│   │   └── colors
+│   └── utils // util functions for main code
+│       └── __tests__
+└── test // tests setup files
+    └── utils
 ```
 
 ### Import ordering
 
-```bash
-// TODO
+```markdown static
+1. node_modules
+    a. react
+    b. react specific packages
+    c. prop-types
+    d. all other node_modules, lodash, etc
+2. internal react components
+3. internal utilities, image assets
 ```
+
+## Constructor and Life-Cycle methods
+
+Don't use `constructor`, see how to handle different scenarios that traditionally handled in `constructor`.
+
+[The constructor is dead, long live the constructor!](https://hackernoon.com/the-constructor-is-dead-long-live-the-constructor-c10871bea599)
 
 ### Prop-types and default props
 
-```bash
-// TODO
+Put `propTypes` and `defaultProps` at the beginning of the react component class, unless it is a stateless function component. It is easier to see how many props a component is handling at a glance.
+
+**DO**
+
+```jsx static
+class MYComp extends React.Component {
+  static propTypes = {
+    name: string,
+    phone: number,
+    isSubscribed: bool, 
+  }
+  static defaultProps = {
+    name: 'Jack',
+    phone: 94847474,
+    isSubscribed: false,
+  }
+  ...
+}
 ```
 
+**DON'T**
+
+```jsx static
+class MYComp extends React.Component {
+  ...
+}
+
+MYComp.propTypes = {
+  name: string,
+  phone: number,
+  isSubscribed: bool, 
+}
+MYComp.defaultProps = {
+  name: 'Jack',
+  phone: 94847474,
+  isSubscribed: false,
+}
+```
 ### Handler binding
 
-```bash
-// TODO
+Use arrow function to allow `this` context to be used inside handler functions.
+
+**DO**
+
+```jsx static
+class Blah extends React.Component {
+  handleClick = () => {
+    // ...do your thing
+  }
+}
+```
+
+**DON'T**
+
+```jsx static
+class Blah extends React.Component {
+  constructor(props) {
+    super(props); 
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    // ...do your thing
+  }
+}
 ```
 
 ## Issues
 
-We are using [Issues](https://git.easygroup.co/lalamove/karang/issues) for our bugs/features requests/issues.
+We are using [Issues](https://github.com/lalamove/karang/issues) for our bugs/features requests/issues.
 
 ### Labels
 
