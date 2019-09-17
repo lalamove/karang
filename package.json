@@ -30,7 +30,7 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "downshift": "^2.2.3",
+    "downshift": "^3.3.1",
     "moment": "^2.24.0",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
@@ -59,7 +59,7 @@
     "cross-env": "^5.2.1",
     "css-loader": "^3.2.0",
     "date-fns": "^2.2.1",
-    "downshift": "^2.2.3",
+    "downshift": "^3.3.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",

@@ -266,11 +266,7 @@ class Dropdown extends Component {
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
           return (
-            <Container
-              // TODO: Update refKey to `ref` after updated to Downshift v3
-              // https://github.com/downshift-js/downshift/pull/756
-              {...getRootProps({ ...remainProps, block, refKey: 'innerRef' })}
-            >
+            <Container {...getRootProps({ ...remainProps, block })}>
               {variant === 'compact' && (
                 <ExpandButton
                   icon={icon}
