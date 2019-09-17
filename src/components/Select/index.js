@@ -234,11 +234,7 @@ class Select extends Component {
             itemToString={item => (item ? item.value : '')}
           >
             {({ isOpen, getToggleButtonProps, getItemProps, getRootProps }) => (
-              <Container
-                // TODO: Update refKey to `ref` after updated to Downshift v3
-                // https://github.com/downshift-js/downshift/pull/756
-                {...getRootProps({ name, ...props, refKey: 'innerRef' })}
-              >
+              <Container {...getRootProps({ name, ...props })}>
                 <Button
                   {...getToggleButtonProps({
                     'data-required': required, // For backward compatible
