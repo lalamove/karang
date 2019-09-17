@@ -234,9 +234,7 @@ class Select extends Component {
             itemToString={item => (item ? item.value : '')}
           >
             {({ isOpen, getToggleButtonProps, getItemProps, getRootProps }) => (
-              <Container
-                {...getRootProps({ name, ...props, refKey: 'innerRef' })}
-              >
+              <Container {...getRootProps({ name, ...props })}>
                 <Button
                   {...getToggleButtonProps({
                     'data-required': required, // For backward compatible
@@ -245,10 +243,9 @@ class Select extends Component {
                     disabled,
                   })}
                 >
-                  {selectedItem &&
-                    selectedItem.icon && (
-                      <CustomIcon>{selectedItem.icon}</CustomIcon>
-                    )}
+                  {selectedItem && selectedItem.icon && (
+                    <CustomIcon>{selectedItem.icon}</CustomIcon>
+                  )}
                   <Content>
                     {selectedItem && (selectedItem.label || selectedItem.value)}
                   </Content>

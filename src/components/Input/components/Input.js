@@ -181,7 +181,7 @@ class Comp extends Component {
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             {...remainProps}
-            innerRef={forwardedRef}
+            ref={forwardedRef}
           />
           {type === 'password' && (
             <PeekButton active={!masked} onClick={this.toggleMasked} />
@@ -203,8 +203,6 @@ const Input = compose(
   withCursorEnd
 )(InputComp);
 
-// Ugly fix for React Styleguidist as it cannot recognize forwardRef
-// const Input = ({ forwardedRef, ...props }) => <InputComp {...props} />;
 Input.displayName = 'Input';
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;

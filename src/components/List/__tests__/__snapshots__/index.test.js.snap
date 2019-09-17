@@ -1,6 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`List component size-small-default 1`] = `
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 6px 6px 0;
+}
+
+.c0 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,1);
+  color: #303030;
+  min-width: 12.5rem;
+}
+
+.c1 {
+  position: relative;
+  padding-left: 8px;
+  border-left: 2px solid transparent;
+  outline: 0;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: top;
+  -webkit-box-align: top;
+  -ms-flex-align: top;
+  align-items: top;
+}
+
+.c1:not(:first-child) {
+  margin-top: 4px;
+}
+
+.c1:last-child {
+  margin-bottom: 8px;
+}
+
+.c1:not(:last-child) .c2 {
+  border-bottom: 0;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`List component size-small-with icon 1`] = `
 .c4 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -23,28 +121,13 @@ exports[`List component size-small-default 1`] = `
   min-width: 12.5rem;
 }
 
-.c2 {
+.c1 {
   position: relative;
   padding-left: 8px;
   border-left: 2px solid transparent;
   outline: 0;
   margin-top: 8px;
   margin-bottom: 4px;
-}
-
-.c2:not(:first-child) {
-  margin-top: 4px;
-}
-
-.c2:last-child {
-  margin-bottom: 8px;
-}
-
-.c2:not(:last-child) .c3 {
-  border-bottom: 0;
-}
-
-.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -55,108 +138,19 @@ exports[`List component size-small-default 1`] = `
   align-items: top;
 }
 
-<ul
-  class="c0"
->
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-</ul>
-`;
-
-exports[`List component size-small-with icon 1`] = `
-.c5 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  padding: 6px 6px 6px 0;
-}
-
-.c0 {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
-  display: inline-block;
-  box-sizing: border-box;
-  background-color: rgba(255,255,255,1);
-  color: #303030;
-  min-width: 12.5rem;
-}
-
-.c2 {
-  position: relative;
-  padding-left: 8px;
-  border-left: 2px solid transparent;
-  outline: 0;
-  margin-top: 8px;
-  margin-bottom: 4px;
-}
-
-.c2:not(:first-child) {
+.c1:not(:first-child) {
   margin-top: 4px;
 }
 
-.c2:last-child {
+.c1:last-child {
   margin-bottom: 8px;
 }
 
-.c2:not(:last-child) .c4 {
+.c1:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: top;
-  -webkit-box-align: top;
-  -ms-flex-align: top;
-  align-items: top;
-}
-
-.c3 {
+.c2 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -167,61 +161,157 @@ exports[`List component size-small-with icon 1`] = `
   class="c0"
 >
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
 </ul>
 `;
 
 exports[`List component size-undefined-default 1`] = `
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 20px 12px 0;
+}
+
+.c0 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,1);
+  color: #303030;
+  min-width: 16rem;
+}
+
+.c4:not(:last-child) .c2 {
+  border-bottom: 0;
+}
+
+.c5:not(:last-child) .c2 {
+  border-bottom: 0;
+}
+
+.c1 {
+  position: relative;
+  padding-left: 8px;
+  border-left: 2px solid transparent;
+  outline: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: top;
+  -webkit-box-align: top;
+  -ms-flex-align: top;
+  align-items: top;
+}
+
+.c1:not(:last-child) .c2 {
+  border-bottom: 1px solid #E8E8E8;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+  <li
+    class="c1"
+    tabindex="0"
+  >
+    <div
+      class="c2 c3"
+    >
+      hello
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`List component size-undefined-with icon 1`] = `
 .c4 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -244,26 +334,19 @@ exports[`List component size-undefined-default 1`] = `
   min-width: 16rem;
 }
 
-.cjXrOH:not(:last-child) .c3 {
+.c5:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
-.kkujht:not(:last-child) .c3 {
+.c6:not(:last-child) .c3 {
   border-bottom: 0;
 }
 
-.c2 {
+.c1 {
   position: relative;
   padding-left: 8px;
   border-left: 2px solid transparent;
   outline: 0;
-}
-
-.c2:not(:last-child) .c3 {
-  border-bottom: 1px solid #E8E8E8;
-}
-
-.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -274,106 +357,11 @@ exports[`List component size-undefined-default 1`] = `
   align-items: top;
 }
 
-<ul
-  class="c0"
->
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-  <li
-    class="c1 c2"
-    tabindex="0"
-  >
-    <div
-      class="c3 c4"
-    >
-      hello
-    </div>
-  </li>
-</ul>
-`;
-
-exports[`List component size-undefined-with icon 1`] = `
-.c5 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  padding: 12px 20px 12px 0;
-}
-
-.c0 {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.22);
-  display: inline-block;
-  box-sizing: border-box;
-  background-color: rgba(255,255,255,1);
-  color: #303030;
-  min-width: 16rem;
-}
-
-.cjXrOH:not(:last-child) .c4 {
-  border-bottom: 0;
-}
-
-.kkujht:not(:last-child) .c4 {
-  border-bottom: 0;
-}
-
-.c2 {
-  position: relative;
-  padding-left: 8px;
-  border-left: 2px solid transparent;
-  outline: 0;
-}
-
-.c2:not(:last-child) .c4 {
+.c1:not(:last-child) .c3 {
   border-bottom: 1px solid #E8E8E8;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: top;
-  -webkit-box-align: top;
-  -ms-flex-align: top;
-  align-items: top;
-}
-
-.c3 {
+.c2 {
   margin-top: 12px;
   margin-right: 10px;
 }
@@ -382,55 +370,55 @@ exports[`List component size-undefined-with icon 1`] = `
   class="c0"
 >
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
   <li
-    class="c1 c2"
+    class="c1"
     tabindex="0"
   >
     <div
-      class="c3"
+      class="c2"
     >
       blah
     </div>
     <div
-      class="c4 c5"
+      class="c3 c4"
     />
   </li>
 </ul>

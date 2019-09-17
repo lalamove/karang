@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean } from '@storybook/addon-knobs/react';
+import { boolean } from '@storybook/addon-knobs';
 import Toggle from './index';
 
 storiesOf('Toggle', module).add('Basic', () => (

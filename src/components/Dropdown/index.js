@@ -266,9 +266,7 @@ class Dropdown extends Component {
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
           return (
-            <Container
-              {...getRootProps({ ...remainProps, block, refKey: 'innerRef' })}
-            >
+            <Container {...getRootProps({ ...remainProps, block })}>
               {variant === 'compact' && (
                 <ExpandButton
                   icon={icon}

@@ -27,9 +27,9 @@ const colorsMap = {
   valencia: valencia.main,
 };
 
-const StyledPill = styled.span.attrs({
-  title: props => props.children,
-})`
+const StyledPill = styled.span.attrs(({ children }) => ({
+  title: children,
+}))`
   padding: 0.4em 0.4em;
   display: inline-block;
   font-size: ${({ size }) =>

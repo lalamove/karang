@@ -79,24 +79,24 @@ describe('Dropdown', () => {
 
     it('default variant - default icon', () => {
       const wrapper = mount(<Dropdown items={items} />);
-      expect(wrapper.find('DropDownIcon')).toHaveLength(1);
+      expect(wrapper.find('Memo(DropDownIcon)')).toHaveLength(1);
     });
 
     it('compact variant - default icon', () => {
       const wrapper = mount(<Dropdown items={items} variant="compact" />);
-      expect(wrapper.find('VMenuIcon')).toHaveLength(1);
+      expect(wrapper.find('Memo(VMenuIcon)')).toHaveLength(1);
     });
 
     it('default variant - custom icon', () => {
       const wrapper = mount(<Dropdown items={items} icon={<VMenuIcon />} />);
-      expect(wrapper.find('VMenuIcon')).toHaveLength(1);
+      expect(wrapper.find('Memo(VMenuIcon)')).toHaveLength(1);
     });
 
     it('compact variant - custom icon', () => {
       const wrapper = mount(
         <Dropdown items={items} variant="compact" icon={<DropDownIcon />} />
       );
-      expect(wrapper.find('DropDownIcon')).toHaveLength(1);
+      expect(wrapper.find('Memo(DropDownIcon)')).toHaveLength(1);
     });
   });
 

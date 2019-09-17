@@ -1,12 +1,11 @@
-import React, { forwardRef } from 'react';
-import { string, oneOf, object, func } from 'prop-types';
+import { string } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 import { mineShaft, nobel, primary } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
 
-const SCTextArea = styled.textarea`
+const TextAreaComp = styled.textarea`
   width: 100%;
   height: 100%;
   padding: 0;
@@ -36,20 +35,12 @@ const SCTextArea = styled.textarea`
     `};
 `;
 
-const TextAreaComp = forwardRef(
-  ({ innerRef, name, label, ...remainProps }, ref) => (
-    <SCTextArea innerRef={ref} name={name} label={label} {...remainProps} />
-  )
-);
-
 TextAreaComp.propTypes = {
-  innerRef: oneOf([object, func, string]),
   label: string,
   name: string,
 };
 
 TextAreaComp.defaultProps = {
-  innerRef: null,
   label: null,
   name: null,
 };
