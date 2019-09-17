@@ -159,6 +159,18 @@ componentDidMount() {
 3. internal utilities, image assets
 ```
 
+### Components naming
+
+Keep the components naming simple and understandable in a glance. 
+
+[React components naming convention](https://medium.com/@wittydeveloper/react-components-naming-convention-%EF%B8%8F-b50303551505)
+
+### Icons naming
+
+Group the icons according to the usages.
+
+For the filled icons, we name them as `iconFilled`, and for the color icons, we name them as `iconColored`.
+
 ## Constructor and Life-Cycle methods
 
 Don't use `constructor`, see how to handle different scenarios that traditionally handled in `constructor`.
