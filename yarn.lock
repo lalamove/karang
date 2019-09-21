@@ -10748,10 +10748,10 @@ react-color@^2.17.0:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-dates@^21.0.1:
-  version "21.0.1"
-  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-21.0.1.tgz#8e237a8aadacf6ec613e50ef2bc72b1d783c7d3d"
-  integrity sha512-6mMp7HM1F3iQr2V9YLVsAZPqtx+dZn5zSm5qWFvGM8rZzAnyLJ90YxyNOCHrSwHlKHiVIkXyln4iUCfoI6b0Jg==
+react-dates@^21.1.0:
+  version "21.1.0"
+  resolved "https://registry.yarnpkg.com/react-dates/-/react-dates-21.1.0.tgz#02d12bec00202ad25089814b85ed86127abd9332"
+  integrity sha512-KXfviLll1ZR94CjSx+zp49o0isyl/8wwJ+JLrxxPZP4GFl+7ftn9VLVwVId/a8OdudJgVm3GHuth/1ZQ1E4mfw==
   dependencies:
     airbnb-prop-types "^2.15.0"
     consolidated-events "^1.1.1 || ^2.0.0"
