@@ -85,6 +85,8 @@ const StyledErrorMessage = styled(ErrorMessage)`
   left: 0;
 `;
 
+let closeMenu;
+
 class Select extends Component {
   static propTypes = {
     /** Id of the component */
@@ -199,6 +201,13 @@ class Select extends Component {
     onBlur(e);
   };
 
+  onKeyDown = e => {
+    if (e.key === 'Escape') {
+      e.nativeEvent.preventDownshiftDefault = true;
+      closeMenu();
+    }
+  };
+
   render() {
     const { focused } = this.state;
     const {
@@ -233,47 +242,61 @@ class Select extends Component {
             onChange={onChange}
             itemToString={item => (item ? item.value : '')}
           >
-            {({ isOpen, getToggleButtonProps, getItemProps, getRootProps }) => (
-              <Container {...getRootProps({ name, ...props })}>
-                <Button
-                  {...getToggleButtonProps({
-                    'data-required': required, // For backward compatible
-                    onBlur: this.onBlur,
-                    onFocus: this.onFocus,
-                    disabled,
-                  })}
-                >
-                  {selectedItem && selectedItem.icon && (
-                    <CustomIcon>{selectedItem.icon}</CustomIcon>
-                  )}
-                  <Content>
-                    {selectedItem && (selectedItem.label || selectedItem.value)}
-                  </Content>
-                  <Caret>
-                    <DropDownIcon size={24} />
-                  </Caret>
-                </Button>
-                {isOpen && (
-                  <StyledList
-                    hoverable
-                    size="small"
-                    items={items.length ? items : itemList}
-                    render={({ data, Item, getProps }) => (
-                      <Item
-                        {...getProps()}
-                        {...getItemProps({
-                          key: data.value,
-                          item: data,
-                          disabled: data.disabled,
-                        })}
-                      >
-                        {data.icon} {data.label || data.value}
-                      </Item>
+            {({
+              isOpen,
+              getInputProps,
+              getToggleButtonProps,
+              getItemProps,
+              getRootProps,
+              closeMenu: dsCloseMenu,
+            }) => {
+              closeMenu = dsCloseMenu;
+              return (
+                <Container {...getRootProps({ name, ...props })}>
+                  <Button
+                    {...getToggleButtonProps({
+                      'data-required': required, // For backward compatible
+                      onBlur: this.onBlur,
+                      onFocus: this.onFocus,
+                      disabled,
+                    })}
+                    {...getInputProps({
+                      onKeyDown: this.onKeyDown,
+                    })}
+                  >
+                    {selectedItem && selectedItem.icon && (
+                      <CustomIcon>{selectedItem.icon}</CustomIcon>
                     )}
-                  />
-                )}
-              </Container>
-            )}
+                    <Content>
+                      {selectedItem &&
+                        (selectedItem.label || selectedItem.value)}
+                    </Content>
+                    <Caret>
+                      <DropDownIcon size={24} />
+                    </Caret>
+                  </Button>
+                  {isOpen && (
+                    <StyledList
+                      hoverable
+                      size="small"
+                      items={items.length ? items : itemList}
+                      render={({ data, Item, getProps }) => (
+                        <Item
+                          {...getProps()}
+                          {...getItemProps({
+                            key: data.value,
+                            item: data,
+                            disabled: data.disabled,
+                          })}
+                        >
+                          {data.icon} {data.label || data.value}
+                        </Item>
+                      )}
+                    />
+                  )}
+                </Container>
+              );
+            }}
           </Downshift>
         </AnimatedBorder>
         <StyledErrorMessage error={error} />
