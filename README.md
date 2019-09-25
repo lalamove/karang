@@ -15,7 +15,7 @@ Please make sure you install the following dependencies:
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
-    "react-dates": "^21.0.1",
+    "react-dates": "^21.1.0",
     "react-dom": "^16.9.0",
     "styled-components": "^4.3.2"
 }

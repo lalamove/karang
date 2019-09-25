@@ -98,13 +98,18 @@ exports[`Select Snapshots Select with label and items 1`] = `
       role="combobox"
     >
       <button
+        aria-autocomplete="list"
         aria-haspopup="true"
         aria-label="open menu"
+        aria-labelledby="downshift-0-label"
+        autocomplete="off"
         class="c4"
         data-required="false"
         data-toggle="true"
+        id="downshift-0-input"
         role="button"
         type="button"
+        value=""
       >
         <span
           class="c5"
@@ -288,13 +293,18 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
       role="combobox"
     >
       <button
+        aria-autocomplete="list"
         aria-haspopup="true"
         aria-label="open menu"
+        aria-labelledby="downshift-1-label"
+        autocomplete="off"
         class="c4"
         data-required="false"
         data-toggle="true"
+        id="downshift-1-input"
         role="button"
         type="button"
+        value=""
       >
         <span
           class="c5"
