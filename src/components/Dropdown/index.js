@@ -11,6 +11,7 @@ import ExpandButton from './components/ExpandButton';
 const validIndex = /(\d+)_(-?\d+)/;
 let setHighlightedIndex;
 let toggleMenu;
+let closeMenu;
 let selectHighlightedItem;
 
 const Container = styled.div`
@@ -187,6 +188,10 @@ class Dropdown extends Component {
       case 'ArrowLeft':
         this.triggerSubOptions(!arrowRightToOpenSubOptions);
         break;
+      case 'Escape':
+        e.nativeEvent.preventDownshiftDefault = true;
+        closeMenu();
+        break;
       case ' ':
         if (!isOpen) {
           toggleMenu();
@@ -220,7 +225,7 @@ class Dropdown extends Component {
   };
 
   handleSelect = selectedItem => {
-    if (selectedItem.onSelect) {
+    if (selectedItem && selectedItem.onSelect) {
       selectedItem.onSelect(selectedItem);
     }
     this.props.onSelect(selectedItem);
@@ -261,10 +266,12 @@ class Dropdown extends Component {
           selectedItem: dsSelectedItem,
           setHighlightedIndex: dsSetHighlightedIndex,
           toggleMenu: dsToggleMenu,
+          closeMenu: dsCloseMenu,
         }) => {
           selectHighlightedItem = dsSelectHighlightedItem;
           setHighlightedIndex = dsSetHighlightedIndex;
           toggleMenu = dsToggleMenu;
+          closeMenu = dsCloseMenu;
           return (
             <Container {...getRootProps({ ...remainProps, block })}>
               {variant === 'compact' && (
