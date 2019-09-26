@@ -297,6 +297,7 @@ class Dropdown extends Component {
                   }
                   icon={icon}
                   disabled={disabled}
+                  isMenuOpen={isOpen}
                   {...getToggleButtonProps()}
                   {...getInputProps({
                     onKeyDown: e => this.handleKeyDown(e, isOpen),
