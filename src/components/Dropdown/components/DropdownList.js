@@ -23,6 +23,8 @@ const StyledList = styled(List)`
   position: absolute;
   z-index: ${DROPDOWN};
   top: ${({ nested }) => (nested ? '-8px' : '100%')};
+  width: auto;
+  white-space: nowrap;
 
   ${({ nested, direction }) => {
     switch (direction) {

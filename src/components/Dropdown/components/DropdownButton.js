@@ -13,9 +13,8 @@ const StyledButton = styled(Button)`
   padding: 0.5em 1em;
   background-color: ${white};
   white-space: nowrap;
-  &:focus:enabled {
-    box-shadow: none;
-  }
+
+  ${({ isMenuOpen }) => isMenuOpen && `background-color: ${nobel['100']}`};
 
   & > span {
     display: flex;
@@ -47,9 +46,10 @@ const DropdownButton = ({
   label,
   icon,
   disabled,
+  isMenuOpen,
   ...remainProps
 }) => (
-  <StyledButton disabled={disabled} {...remainProps}>
+  <StyledButton disabled={disabled} isMenuOpen={isMenuOpen} {...remainProps}>
     {itemIcon && <ItemIcon>{itemIcon}</ItemIcon>}
     <Content>{label}</Content>
     <Caret>{icon}</Caret>
@@ -61,6 +61,7 @@ DropdownButton.propTypes = {
   label: string,
   icon: node,
   disabled: bool,
+  isMenuOpen: bool.isRequired,
 };
 
 DropdownButton.defaultProps = {

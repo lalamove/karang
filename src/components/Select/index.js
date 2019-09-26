@@ -256,12 +256,12 @@ class Select extends Component {
                   <Button
                     {...getToggleButtonProps({
                       'data-required': required, // For backward compatible
-                      onBlur: this.onBlur,
                       onFocus: this.onFocus,
                       disabled,
                     })}
                     {...getInputProps({
                       onKeyDown: this.onKeyDown,
+                      onBlur: this.onBlur,
                     })}
                   >
                     {selectedItem && selectedItem.icon && (
