@@ -62,7 +62,7 @@ const defaultProps = {
   onBlur: noop,
 };
 
-class Comp extends Component {
+class SearchInput extends Component {
   static propTypes = propTypes;
 
   static defaultProps = defaultProps;
@@ -102,14 +102,12 @@ class Comp extends Component {
 }
 
 // eslint-disable-next-line react/no-multi-comp
-const SearchInput = forwardRef((props, ref) => (
-  <Comp {...props} forwardedRef={ref} />
+const SearchInputWithRef = forwardRef((props, ref) => (
+  <SearchInput {...props} forwardedRef={ref} />
 ));
 
-// Ugly fix for React Styleguidist as it cannot recognize forwardRef
-// const SearchInput = props => <CompWithRef {...props} />;
-SearchInput.displayName = 'SearchInput';
-SearchInput.propTypes = propTypes;
-SearchInput.defaultProps = defaultProps;
+SearchInputWithRef.displayName = 'SearchInput';
+SearchInputWithRef.propTypes = propTypes;
+SearchInputWithRef.defaultProps = defaultProps;
 
-export default SearchInput;
+export default SearchInputWithRef;

@@ -14,12 +14,6 @@ import { GROUND } from 'styles/zIndex';
 import TextInput from './TextInput';
 import PeekButton from './PeekButton';
 
-const SCTextInput = styled(TextInput)`
-  &::-ms-reveal {
-    display: none;
-  }
-`;
-
 const Wrapper = styled.div`
   position: relative;
   display: inline-block;
@@ -94,11 +88,12 @@ const defaultProps = {
   onBlur: noop,
 };
 
-class Comp extends Component {
+class Input extends Component {
   static propTypes = propTypes;
 
   static defaultProps = defaultProps;
 
+  // eslint-disable-next-line react/prop-types
   static getDerivedStateFromProps({ value, defaultValue }) {
     return { dirty: !!(value || defaultValue) };
   }
@@ -173,7 +168,7 @@ class Comp extends Component {
           error={error !== null && error.length > 0}
           focused={focused}
         >
-          <SCTextInput
+          <TextInput
             type={type === 'password' && !masked ? 'text' : type}
             name={name}
             label={label}
@@ -193,18 +188,18 @@ class Comp extends Component {
   }
 }
 
-// eslint-disable-next-line react/no-multi-comp
-const InputComp = forwardRef((props, ref) => (
-  <Comp {...props} forwardedRef={ref} />
-));
-
-const Input = compose(
+const InputWithHOC = compose(
   withSelectAll,
   withCursorEnd
-)(InputComp);
+)(Input);
 
-Input.displayName = 'Input';
-Input.propTypes = propTypes;
-Input.defaultProps = defaultProps;
+// eslint-disable-next-line react/no-multi-comp
+const InputWithRef = forwardRef((props, ref) => (
+  <InputWithHOC {...props} forwardedRef={ref} />
+));
 
-export default Input;
+InputWithRef.displayName = 'Input';
+InputWithRef.propTypes = propTypes;
+InputWithRef.defaultProps = defaultProps;
+
+export default InputWithRef;

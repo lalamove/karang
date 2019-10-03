@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react'; // forwardRef
-import { bool, func, string } from 'prop-types';
-import styled from 'styled-components';
+import React, { Component, Fragment, forwardRef } from 'react';
+import { bool, func, string, oneOfType, object, shape } from 'prop-types';
+import styled, { css } from 'styled-components';
 
 import AnimatedBorder from 'components/AnimatedBorder';
 import Button from 'components/Button';
@@ -14,6 +14,12 @@ import TextInput from './TextInput';
 const Wrapper = styled.div`
   display: inline-block;
   width: 100%;
+
+  ${({ error }) =>
+    error &&
+    css`
+      padding-bottom: 2em;
+    `};
 `;
 
 const ButtonGroup = styled.div`
@@ -26,72 +32,82 @@ const ButtonGroup = styled.div`
   }
 `;
 
-class EditableInput extends Component {
-  static propTypes = {
-    /** Label of the component */
-    label: string,
-    /** Error message of the component */
-    error: string,
-    /** Loading state of the component, show spinner if `true` */
-    isLoading: bool,
-    /** Success state of the component, show successful icon if `true` */
-    isSuccess: bool,
-    /** Text of save button */
-    saveLabel: string,
-    /** Text of cancel button */
-    cancelLabel: string,
-    /** Initial input content value, use it if you want to leave the component
-     *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
-    defaultValue: string,
-    /** Input content value */
-    value: string,
-    /**
-     * Callback function, to be executed when user clicked Save button
-     *
-     * @param {string} value saved value
-     */
-    onSave: func,
-    /**
-     * Callback function, to be executed when user clicked Cancel button
-     *
-     * @param {string} value last saved value
-     */
-    onCancel: func,
-    /**
-     * Callback function, to be executed when user type in input field
-     *
-     * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
-     */
-    onChange: func,
-    /**
-     * Callback function, to be executed when user focus on input field
-     *
-     * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
-     */
-    onFocus: func,
-    /**
-     * Callback function, to be executed when user blur on input field
-     *
-     * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
-     */
-    onBlur: func,
-  };
+const propTypes = {
+  /** @ignore */
+  forwardedRef: oneOfType([func, object]),
+  /** @ignore */
+  style: shape(),
+  /** Label of the component */
+  label: string,
+  /** Error message of the component */
+  error: string,
+  /** Loading state of the component, show spinner if `true` */
+  isLoading: bool,
+  /** Success state of the component, show successful icon if `true` */
+  isSuccess: bool,
+  /** Text of save button */
+  saveLabel: string,
+  /** Text of cancel button */
+  cancelLabel: string,
+  /** Initial input content value, use it if you want to leave the component
+   *  [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) */
+  defaultValue: string,
+  /** Input content value */
+  value: string,
+  /**
+   * Callback function, to be executed when user clicked Save button
+   *
+   * @param {string} value saved value
+   */
+  onSave: func,
+  /**
+   * Callback function, to be executed when user clicked Cancel button
+   *
+   * @param {string} value last saved value
+   */
+  onCancel: func,
+  /**
+   * Callback function, to be executed when user type in input field
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onChange: func,
+  /**
+   * Callback function, to be executed when user focus on input field
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onFocus: func,
+  /**
+   * Callback function, to be executed when user blur on input field
+   *
+   * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
+   */
+  onBlur: func,
+};
 
-  static defaultProps = {
-    label: null,
-    error: null,
-    isLoading: false,
-    isSuccess: false,
-    saveLabel: 'Save',
-    cancelLabel: 'Cancel',
-    defaultValue: null,
-    value: null,
-    onSave: noop,
-    onCancel: noop,
-    onChange: noop,
-    onFocus: noop,
-    onBlur: noop,
-  };
+const defaultProps = {
+  forwardedRef: null,
+  style: null,
+  label: null,
+  error: null,
+  isLoading: false,
+  isSuccess: false,
+  saveLabel: 'Save',
+  cancelLabel: 'Cancel',
+  defaultValue: null,
+  value: null,
+  onSave: noop,
+  onCancel: noop,
+  onChange: noop,
+  onFocus: noop,
+  onBlur: noop,
+};
+
+export class EditableInput extends Component {
+  static propTypes = propTypes;
+
+  static defaultProps = defaultProps;
 
   state = {
     oldValue: this.props.defaultValue || this.props.value,
@@ -100,17 +116,17 @@ class EditableInput extends Component {
     isFocused: false,
   };
 
-  handleSave = e => {
+  handleSave = () => {
     const { currentValue } = this.state;
     this.setState({ isDirty: false, oldValue: currentValue }, () =>
-      this.props.onSave(e)
+      this.props.onSave(currentValue)
     );
   };
 
-  handleCancel = e => {
+  handleCancel = () => {
     const { oldValue } = this.state;
     this.setState({ isDirty: false, currentValue: oldValue }, () =>
-      this.props.onCancel(e)
+      this.props.onCancel(oldValue)
     );
   };
 
@@ -137,6 +153,8 @@ class EditableInput extends Component {
   render() {
     const { isDirty, isFocused, currentValue } = this.state;
     const {
+      forwardedRef,
+      style,
       label,
       error,
       saveLabel,
@@ -153,7 +171,7 @@ class EditableInput extends Component {
       ...remainProps
     } = this.props;
     return (
-      <Wrapper>
+      <Wrapper style={style}>
         <AnimatedBorder
           label={label}
           dirty={!!currentValue}
@@ -168,6 +186,7 @@ class EditableInput extends Component {
             onBlur={this.handleBlur}
             disabled={isLoading}
             {...remainProps}
+            ref={forwardedRef}
           />
           <ButtonGroup>
             {isDirty && !isLoading && (
@@ -190,4 +209,13 @@ class EditableInput extends Component {
   }
 }
 
-export default EditableInput;
+// eslint-disable-next-line react/no-multi-comp
+const EditableInputWithRef = forwardRef((props, ref) => (
+  <EditableInput {...props} forwardedRef={ref} />
+));
+
+EditableInputWithRef.displayName = 'EditableInput';
+EditableInputWithRef.propTypes = propTypes;
+EditableInputWithRef.defaultProps = defaultProps;
+
+export default EditableInputWithRef;

@@ -9,6 +9,6 @@ initialState = { email: 'no-reply@lalamove.com' };
 <EditableInput
     label="Billing Email"
     value={state.email}
-    onChange={e => this.setState({ email: e.target.value })}
+    onChange={e => setState({ email: e.target.value })}
 />
 ```

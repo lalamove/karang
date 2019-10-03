@@ -1,6 +1,6 @@
 /* globals render, mount */
 import React from 'react';
-import EditableInput from '../components/EditableInput';
+import { EditableInput } from '../components/EditableInput';
 
 describe('EditableInput', () => {
   describe('Snapshots', () => {

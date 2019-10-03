@@ -83,6 +83,10 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   background: rgba(241,102,34,0.1);
 }
 
+.c2::-ms-reveal {
+  display: none;
+}
+
 .c0 {
   display: inline-block;
   width: 100%;
@@ -219,6 +223,10 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
   background: rgba(241,102,34,0.1);
 }
 
+.c2::-ms-reveal {
+  display: none;
+}
+
 .c0 {
   display: inline-block;
   width: 100%;
@@ -335,6 +343,10 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
   background: rgba(241,102,34,0.1);
 }
 
+.c2::-ms-reveal {
+  display: none;
+}
+
 .c0 {
   display: inline-block;
   width: 100%;
@@ -426,6 +438,10 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
 
 .c2::selection {
   background: rgba(241,102,34,0.1);
+}
+
+.c2::-ms-reveal {
+  display: none;
 }
 
 .c0 {
