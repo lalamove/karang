@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import Input, { PinInput, SearchInput, EditableInput } from './index';
@@ -11,11 +12,11 @@ class InputWrapper extends Component {
     industry: '',
   };
 
+  input = React.createRef();
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
-  input = React.createRef();
 
   render() {
     return (
@@ -87,7 +88,6 @@ class InputWrapper extends Component {
   }
 }
 
-// eslint-disable-next-line react/no-multi-comp
 class PinInputWrapper extends Component {
   state = {
     register: ['', '', '', ''],
@@ -115,20 +115,46 @@ const SearchInputWrapper = () => (
   />
 );
 
-// TODO: Code cleanup
-const EditableInputWrapper = () => (
-  <div style={{ maxWidth: '20em' }}>
-    <EditableInput
-      block
-      name="Billing Email"
-      value="no-reply@lalamove.com"
-      saveLabel="Save Value"
-      editLabel="Edit Value"
-      cancelLabel="Cancel Value"
-      label="Billing Email"
-    />
-  </div>
-);
+class EditableInputWrapper extends Component {
+  state = {
+    isLoading: false,
+    isSuccess: false,
+  };
+
+  componentDidUpdate(_, prevState) {
+    if (!prevState.isLoading && this.state.isLoading) {
+      this.timeout = setTimeout(
+        () => this.setState({ isLoading: false, isSuccess: true }),
+        1000
+      );
+    }
+
+    if (!prevState.isSuccess && this.state.isSuccess) {
+      this.timeout = setTimeout(
+        () => this.setState({ isSuccess: false }),
+        3000
+      );
+    }
+  }
+
+  handleSave = () => {
+    this.setState({ isLoading: true });
+  };
+
+  render() {
+    const { isLoading, isSuccess } = this.state;
+    return (
+      <EditableInput
+        name="Billing Email"
+        placeholder="Billing Email"
+        defaultValue="no-reply@lalamove.com"
+        onSave={this.handleSave}
+        isLoading={isLoading}
+        isSuccess={isSuccess}
+      />
+    );
+  }
+}
 
 storiesOf('Input', module)
   .add('Input', () => <InputWrapper />)
