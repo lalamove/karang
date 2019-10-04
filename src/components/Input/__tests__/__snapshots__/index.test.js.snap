@@ -19,6 +19,43 @@ exports[`Input Snapshots Password 1`] = `
   width: 100%;
 }
 
+.c2 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: #303030;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c2:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::placeholder {
+  color: #B4B4B4;
+}
+
+.c2::selection {
+  background: rgba(241,102,34,0.1);
+}
+
+.c2::-ms-reveal {
+  display: none;
+}
+
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -78,43 +115,6 @@ exports[`Input Snapshots Password 1`] = `
 .c3:hover,
 .c3:focus {
   background: #E8E8E8;
-}
-
-.c2 {
-  width: 100%;
-  padding: 1em;
-  border: none;
-  color: #303030;
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: #F16622;
-  font-size: 14px;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c2::-moz-placeholder {
-  color: #B4B4B4;
-}
-
-.c2:-ms-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c2::placeholder {
-  color: #B4B4B4;
-}
-
-.c2::selection {
-  background: rgba(241,102,34,0.1);
-}
-
-.c2::-ms-reveal {
-  display: none;
 }
 
 .c0 {
@@ -206,6 +206,43 @@ exports[`Input Snapshots Password with a value 1`] = `
   width: 100%;
 }
 
+.c2 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: #303030;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c2:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::placeholder {
+  color: #B4B4B4;
+}
+
+.c2::selection {
+  background: rgba(241,102,34,0.1);
+}
+
+.c2::-ms-reveal {
+  display: none;
+}
+
 .c4 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -265,43 +302,6 @@ exports[`Input Snapshots Password with a value 1`] = `
 .c3:hover,
 .c3:focus {
   background: #E8E8E8;
-}
-
-.c2 {
-  width: 100%;
-  padding: 1em;
-  border: none;
-  color: #303030;
-  font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  caret-color: #F16622;
-  font-size: 14px;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c2::-moz-placeholder {
-  color: #B4B4B4;
-}
-
-.c2:-ms-input-placeholder {
-  color: #B4B4B4;
-}
-
-.c2::placeholder {
-  color: #B4B4B4;
-}
-
-.c2::selection {
-  background: rgba(241,102,34,0.1);
-}
-
-.c2::-ms-reveal {
-  display: none;
 }
 
 .c0 {
