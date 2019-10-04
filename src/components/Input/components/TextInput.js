@@ -25,6 +25,10 @@ const TextInput = styled.input`
     background: ${rgba(primary.main, 0.1)};
   }
 
+  &::-ms-reveal {
+    display: none;
+  }
+
   ${({ label }) =>
     label &&
     css`
