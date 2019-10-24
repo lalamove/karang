@@ -55,6 +55,19 @@ const propTypes = {
   /** Input content value */
   value: string,
   /**
+   * Validation function, to be executed when user clicked Save button
+   *
+   *  @param {string} value current value
+   *  @returns {bool} the validation result
+   */
+  validate: func,
+  /**
+   * Callback function, to be executed if `validate` is provided and `value` is invalid when user clicked Save button
+   *
+   * @param {string} value current value
+   */
+  onError: func,
+  /**
    * Callback function, to be executed when user clicked Save button
    *
    * @param {string} value saved value
@@ -97,6 +110,8 @@ const defaultProps = {
   cancelLabel: 'Cancel',
   defaultValue: null,
   value: null,
+  validate: () => true,
+  onError: noop,
   onSave: noop,
   onCancel: noop,
   onChange: noop,
@@ -118,9 +133,14 @@ export class EditableInput extends Component {
 
   handleSave = () => {
     const { currentValue } = this.state;
-    this.setState({ isDirty: false, oldValue: currentValue }, () =>
-      this.props.onSave(currentValue)
-    );
+    const { onError, onSave, validate } = this.props;
+    if (validate(currentValue)) {
+      this.setState({ isDirty: false, oldValue: currentValue }, () =>
+        onSave(currentValue)
+      );
+    } else {
+      onError(currentValue);
+    }
   };
 
   handleCancel = () => {
