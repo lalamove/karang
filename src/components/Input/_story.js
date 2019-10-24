@@ -119,6 +119,7 @@ class EditableInputWrapper extends Component {
   state = {
     isLoading: false,
     isSuccess: false,
+    error: null,
   };
 
   componentDidUpdate(_, prevState) {
@@ -141,17 +142,51 @@ class EditableInputWrapper extends Component {
     this.setState({ isLoading: true });
   };
 
+  handleCancel = () => {
+    this.setState({ error: null });
+  };
+
+  handleChange = () => {
+    this.setState({ error: null });
+  };
+
+  handleError = () => {
+    this.setState({ error: 'Email is invalid' });
+  };
+
   render() {
-    const { isLoading, isSuccess } = this.state;
+    const { isLoading, isSuccess, error } = this.state;
+    const validate = value => {
+      // e.g. validating email
+      const regexp = new RegExp(/^[\w-+]+(\.[\w-+]+)*@[\w-]+(\.[\w-]+)+$/i); // email pattern
+      return regexp.test(value);
+    };
     return (
-      <EditableInput
-        name="Billing Email"
-        placeholder="Billing Email"
-        defaultValue="no-reply@lalamove.com"
-        onSave={this.handleSave}
-        isLoading={isLoading}
-        isSuccess={isSuccess}
-      />
+      <Fragment>
+        <h4>Basic</h4>
+        <EditableInput
+          name="Billing Email"
+          placeholder="Billing Email"
+          defaultValue="no-reply@lalamove.com"
+          onSave={this.handleSave}
+          isLoading={isLoading}
+          isSuccess={isSuccess}
+        />
+        <h4>With validate function</h4>
+        <EditableInput
+          name="Billing Email"
+          placeholder="Billing Email"
+          defaultValue="no-reply@lalamove.com"
+          onSave={this.handleSave}
+          onError={this.handleError}
+          onChange={this.handleChange}
+          onCancel={this.handleCancel}
+          validate={validate}
+          error={error}
+          isLoading={isLoading}
+          isSuccess={isSuccess}
+        />
+      </Fragment>
     );
   }
 }

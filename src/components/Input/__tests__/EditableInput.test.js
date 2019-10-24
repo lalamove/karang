@@ -98,5 +98,19 @@ describe('EditableInput', () => {
         .simulate('click');
       expect(handler).toHaveBeenCalledTimes(1);
     });
+
+    it('trigger onError if validate func is provided and value is invalid', () => {
+      const handler = jest.fn();
+      const validate = value => value === 'jon';
+      const wrapper = mount(
+        <EditableInput onError={handler} validate={validate} />
+      );
+      wrapper.find('input').simulate('change', { target: { value: 'bran' } });
+      wrapper
+        .find('button')
+        .last()
+        .simulate('click');
+      expect(handler).toHaveBeenCalledTimes(1);
+    });
   });
 });
