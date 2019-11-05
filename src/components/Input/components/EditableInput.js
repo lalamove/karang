@@ -14,6 +14,10 @@ import TextInput from './TextInput';
 const Wrapper = styled.div`
   display: inline-block;
   width: 100%;
+  ${({ direction }) =>
+    css`
+      direction: ${direction};
+    `};
 
   ${({ error }) =>
     error &&
@@ -25,11 +29,13 @@ const Wrapper = styled.div`
 const ButtonGroup = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em 0em 1em;
 
-  & > button:first-of-type {
+  &>button: first - of - type {
     margin-right: 0.5em;
   }
+  /* reversing direction so save button comes before cancel button */
+  direction: ${({ direction }) => (direction === 'rtl' ? 'ltr' : 'rtl')};
 `;
 
 const propTypes = {
@@ -97,6 +103,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
+  /** direction prop added to support rtl  */
+  direction: string,
 };
 
 const defaultProps = {
@@ -117,6 +125,7 @@ const defaultProps = {
   onChange: noop,
   onFocus: noop,
   onBlur: noop,
+  direction: 'ltr',
 };
 
 export class EditableInput extends Component {
@@ -188,10 +197,11 @@ export class EditableInput extends Component {
       onCancel,
       value,
       defaultValue,
+      direction,
       ...remainProps
     } = this.props;
     return (
-      <Wrapper style={style}>
+      <Wrapper style={style} direction={direction}>
         <AnimatedBorder
           label={label}
           dirty={!!currentValue}
@@ -205,10 +215,11 @@ export class EditableInput extends Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             disabled={isLoading}
+            dir={direction}
             {...remainProps}
             ref={forwardedRef}
           />
-          <ButtonGroup>
+          <ButtonGroup direction={direction}>
             {isDirty && !isLoading && (
               <Fragment>
                 <Button onClick={this.handleCancel} variant="link">

@@ -17,12 +17,29 @@ import PeekButton from './PeekButton';
 const Wrapper = styled.div`
   position: relative;
   display: inline-block;
-
+ 
   ${({ error }) =>
     error &&
     css`
       padding-bottom: 2em;
     `};
+
+    ${({ dirty, direction, focused }) =>
+      (dirty || focused) &&
+      direction === 'rtl' &&
+      css`
+        > div > label {
+          left: auto;
+          right: -14px;
+        }
+      `};
+      ${({ type, direction }) =>
+        type === 'password' &&
+        css`
+          direction: ${direction};
+        `};
+    }
+  }}
 `;
 
 const ErrorMessage = styled(RawErrorMsg)`
@@ -30,6 +47,11 @@ const ErrorMessage = styled(RawErrorMsg)`
   z-index: ${GROUND + 1};
   right: 0;
   left: 0;
+  ${({ error, direction }) =>
+    error &&
+    css`
+      direction: ${direction};
+    `};
 `;
 
 const propTypes = {
@@ -68,6 +90,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
+  /** direction prop added to support rtl  */
+  direction: string,
 };
 
 const defaultProps = {
@@ -86,6 +110,7 @@ const defaultProps = {
   masked: true,
   onFocus: noop,
   onBlur: noop,
+  direction: 'ltr',
 };
 
 class Input extends Component {
@@ -156,11 +181,20 @@ class Input extends Component {
       onBlur,
       selectAll,
       cursorEnd,
+      direction,
       ...remainProps
     } = this.props;
 
     return (
-      <Wrapper style={style} className={className} error={error}>
+      <Wrapper
+        style={style}
+        className={className}
+        error={error}
+        dirty={dirty}
+        focused={focused}
+        direction={direction}
+        type={type}
+      >
         <AnimatedBorder
           name={name}
           label={label}
@@ -175,6 +209,7 @@ class Input extends Component {
             autoComplete={autoComplete}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
+            dir={direction}
             {...remainProps}
             ref={forwardedRef}
           />
@@ -182,7 +217,7 @@ class Input extends Component {
             <PeekButton active={!masked} onClick={this.toggleMasked} />
           )}
         </AnimatedBorder>
-        <ErrorMessage error={error} />
+        <ErrorMessage error={error} direction={direction} />
       </Wrapper>
     );
   }

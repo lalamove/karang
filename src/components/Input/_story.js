@@ -10,6 +10,7 @@ class InputWrapper extends Component {
     address: 'Sample Address',
     companyName: '',
     industry: '',
+    direction: 'rtl',
   };
 
   input = React.createRef();
@@ -30,6 +31,18 @@ class InputWrapper extends Component {
           value={this.state.username}
           onChange={this.handleChange}
           autoFocus
+        />
+        <h4>Basic (right to left text)</h4>
+        <Input
+          ref={this.input}
+          type="text"
+          label="Username"
+          name="username"
+          value={this.state.username}
+          onChange={this.handleChange}
+          autoFocus
+          placeholder="gaurav"
+          direction={this.state.direction}
         />
         <h4>Password</h4>
         <Input
@@ -57,6 +70,16 @@ class InputWrapper extends Component {
           value={this.state.address}
           onChange={this.handleChange}
           error="Error Message"
+        />
+        <h4>With error message (right to left text) </h4>
+        <Input
+          type="text"
+          label="Address"
+          name="address"
+          value={this.state.address}
+          onChange={this.handleChange}
+          error="Error Message"
+          direction={this.state.direction}
         />
         <h4>Select all when clicked</h4>
         <Input
@@ -109,10 +132,19 @@ class PinInputWrapper extends Component {
 }
 
 const SearchInputWrapper = () => (
-  <SearchInput
-    name="searchValue"
-    placeholder="Search for Order ID, Driver's Mobile"
-  />
+  <>
+    <h4>Basic</h4>
+    <SearchInput
+      name="searchValue"
+      placeholder="Search for Order ID, Driver's Mobile"
+    />
+    <h4>Basic (right to left text)</h4>
+    <SearchInput
+      name="searchValue"
+      placeholder="Search for Order ID, Driver's Mobile"
+      direction="rtl"
+    />
+  </>
 );
 
 class EditableInputWrapper extends Component {
@@ -172,6 +204,17 @@ class EditableInputWrapper extends Component {
           isLoading={isLoading}
           isSuccess={isSuccess}
         />
+        <h4>Basic (right to left text)</h4>
+        <EditableInput
+          name="Billing Email"
+          placeholder="Billing Email"
+          defaultValue="no-reply@lalamove.com"
+          onSave={this.handleSave}
+          isLoading={isLoading}
+          isSuccess={isSuccess}
+          direction="rtl"
+        />
+
         <h4>With validate function</h4>
         <EditableInput
           name="Billing Email"

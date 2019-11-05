@@ -52,6 +52,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
+  /** direction prop added to support rtl  */
+  direction: string,
 };
 
 const defaultProps = {
@@ -60,6 +62,7 @@ const defaultProps = {
   name: null,
   onFocus: noop,
   onBlur: noop,
+  direction: 'ltr',
 };
 
 class SearchInput extends Component {
@@ -86,13 +89,14 @@ class SearchInput extends Component {
   render() {
     const { focused } = this.state;
     // eslint-disable-next-line react/prop-types
-    const { forwardedRef, onFocus, onBlur, ...props } = this.props;
+    const { forwardedRef, onFocus, onBlur, direction, ...props } = this.props;
     return (
       <Container focused={focused}>
         <SearchIcon color={mineShaft['900']} size={20} />
         <SCTextInput
           onFocus={this.onFocus}
           onBlur={this.onBlur}
+          dir={direction}
           ref={forwardedRef}
           {...props}
         />
