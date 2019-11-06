@@ -113,7 +113,6 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
 >
   <div
     class="c1"
@@ -128,12 +127,10 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
     />
     <div
       class="c3"
-      direction="ltr"
     />
   </div>
   <div
     class="c4"
-    direction="ltr"
   >
     <span
       class="c5"
@@ -142,7 +139,6 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
     </span>
     <span
       class="c6"
-      direction="ltr"
     >
       <svg
         aria-hidden="false"
@@ -260,7 +256,6 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
 >
   <div
     class="c1"
@@ -276,7 +271,6 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
     />
     <div
       class="c3"
-      direction="ltr"
     >
       <svg
         height="16"
@@ -385,7 +379,6 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
 >
   <div
     class="c1"
@@ -400,7 +393,6 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
     />
     <div
       class="c3"
-      direction="ltr"
     />
   </div>
 </div>
@@ -487,7 +479,6 @@ exports[`EditableInput Snapshots Input field with right to left state 1`] = `
 
 <div
   class="c0"
-  direction="rtl"
 >
   <div
     class="c1"
@@ -502,7 +493,6 @@ exports[`EditableInput Snapshots Input field with right to left state 1`] = `
     />
     <div
       class="c3"
-      direction="rtl"
     />
   </div>
 </div>
@@ -589,7 +579,6 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
 >
   <div
     class="c1"
@@ -604,7 +593,6 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
     />
     <div
       class="c3"
-      direction="ltr"
     >
       <svg
         aria-hidden="false"

@@ -21,7 +21,7 @@ describe('EditableInput', () => {
           name="Billing Email"
           placeholder="Billing Email"
           defaultValue="no-reply@lalamove.com"
-          direction="rtl"
+          langDirection="rtl"
         />
       );
       expect(wrapper).toMatchSnapshot();

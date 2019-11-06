@@ -14,11 +14,7 @@ import TextInput from './TextInput';
 const Wrapper = styled.div`
   display: inline-block;
   width: 100%;
-  ${({ direction }) =>
-    css`
-      direction: ${direction};
-    `};
-
+  direction: ${({ langDirection }) => langDirection};
   ${({ error }) =>
     error &&
     css`
@@ -35,8 +31,8 @@ const ButtonGroup = styled.div`
     margin-right: 0.5em;
   }
 
-  direction: ${/* reversing direction so save button comes before cancel button */
-  ({ direction }) => (direction === 'rtl' ? 'ltr' : 'rtl')};
+  direction: ${/* reversing langDirection so save button comes before cancel button */
+  ({ langDirection }) => (langDirection === 'rtl' ? 'ltr' : 'rtl')};
 `;
 
 const propTypes = {
@@ -104,8 +100,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** direction prop added to support rtl  */
-  direction: string,
+  /** langDirection prop added to support rtl  */
+  langDirection: string,
 };
 
 const defaultProps = {
@@ -126,7 +122,7 @@ const defaultProps = {
   onChange: noop,
   onFocus: noop,
   onBlur: noop,
-  direction: 'ltr',
+  langDirection: 'ltr',
 };
 
 export class EditableInput extends Component {
@@ -198,11 +194,11 @@ export class EditableInput extends Component {
       onCancel,
       value,
       defaultValue,
-      direction,
+      langDirection,
       ...remainProps
     } = this.props;
     return (
-      <Wrapper style={style} direction={direction}>
+      <Wrapper style={style} langDirection={langDirection}>
         <AnimatedBorder
           label={label}
           dirty={!!currentValue}
@@ -216,11 +212,11 @@ export class EditableInput extends Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             disabled={isLoading}
-            dir={direction}
+            dir={langDirection}
             {...remainProps}
             ref={forwardedRef}
           />
-          <ButtonGroup direction={direction}>
+          <ButtonGroup langDirection={langDirection}>
             {isDirty && !isLoading && (
               <Fragment>
                 <Button onClick={this.handleCancel} variant="link">

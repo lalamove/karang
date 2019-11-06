@@ -33,7 +33,6 @@ exports[`Snapshots ErrorMessage 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
 >
   <span
     class="c1"
@@ -42,7 +41,6 @@ exports[`Snapshots ErrorMessage 1`] = `
   </span>
   <span
     class="c2"
-    direction="ltr"
   >
     <svg
       aria-hidden="false"
@@ -107,7 +105,6 @@ exports[`Snapshots ErrorMessage with rtl  1`] = `
 
 <div
   class="c0"
-  direction="rtl"
 >
   <span
     class="c1"
@@ -116,7 +113,6 @@ exports[`Snapshots ErrorMessage with rtl  1`] = `
   </span>
   <span
     class=""
-    direction="rtl"
   >
     <svg
       aria-hidden="false"

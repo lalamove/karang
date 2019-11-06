@@ -12,10 +12,7 @@ const Container = styled.div`
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
-  ${({ direction }) =>
-    css`
-      direction: ${direction};
-    `}
+  direction: ${({ langDirection }) => langDirection};
 `;
 
 const Text = styled.span`
@@ -27,19 +24,19 @@ const Text = styled.span`
 `;
 
 const IconWrapper = styled.span`
-  ${({ direction }) =>
-    direction !== 'rtl' &&
+  ${({ langDirection }) =>
+    langDirection !== 'rtl' &&
     css`
       margin-left: 1em;
     `}
 `;
 
-const ErrorMessage = ({ error, direction, ...rest }) =>
+const ErrorMessage = ({ error, langDirection, ...rest }) =>
   error &&
   error.length > 0 && (
-    <Container direction={direction} {...rest}>
+    <Container langDirection={langDirection} {...rest}>
       <Text>{error}</Text>
-      <IconWrapper direction={direction}>
+      <IconWrapper langDirection={langDirection}>
         <WarningIcon color={valencia.main} size={13} />
       </IconWrapper>
     </Container>
@@ -47,12 +44,12 @@ const ErrorMessage = ({ error, direction, ...rest }) =>
 
 ErrorMessage.propTypes = {
   error: node,
-  direction: string,
+  langDirection: string,
 };
 
 ErrorMessage.defaultProps = {
   error: null,
-  direction: 'ltr',
+  langDirection: 'ltr',
 };
 
 export default ErrorMessage;

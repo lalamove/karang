@@ -128,7 +128,6 @@ exports[`Input Snapshots Password 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
   type="password"
 >
   <div
@@ -322,7 +321,6 @@ exports[`Input Snapshots Password with a value 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
   type="password"
 >
   <div
@@ -525,7 +523,6 @@ exports[`Input Snapshots Password with a value right to left 1`] = `
 
 <div
   class="c0"
-  direction="rtl"
   type="password"
 >
   <div
@@ -659,7 +656,6 @@ exports[`Input Snapshots Regular Input 1`] = `
 
 <div
   class="c0"
-  direction="ltr"
   type="text"
 >
   <div
@@ -743,7 +739,6 @@ exports[`Input Snapshots Regular Input with rtl 1`] = `
 
 <div
   class="c0"
-  direction="rtl"
   type="text"
 >
   <div
@@ -897,7 +892,6 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   </div>
   <div
     class="c4"
-    direction="ltr"
   >
     <span
       class="c5"
@@ -906,7 +900,6 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
     </span>
     <span
       class="c6"
-      direction="ltr"
     >
       <svg
         aria-hidden="false"

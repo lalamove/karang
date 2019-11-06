@@ -17,9 +17,9 @@ import PeekButton from './PeekButton';
 const Wrapper = styled.div`
   position: relative;
 
-  ${/* handle rtl css */ ({ dirty, direction, focused, error }) =>
+  ${/* handle rtl css */ ({ dirty, langDirection, focused, error }) =>
     (dirty || focused || error) &&
-    direction === 'rtl' &&
+    langDirection === 'rtl' &&
     css`
       > div > label {
         transform-origin: right center;
@@ -29,12 +29,9 @@ const Wrapper = styled.div`
     `};
 
   display: inline-block;
-  ${({ direction }) =>
-    css`
-      > div {
-        direction: ${direction};
-      }
-    `}
+  > div {
+    direction: ${({ langDirection }) => langDirection};
+  }
 
   ${({ error }) =>
     error &&
@@ -42,9 +39,9 @@ const Wrapper = styled.div`
       padding-bottom: 2em;
     `};
 
-  ${/* password label css */ ({ dirty, direction, focused, type }) =>
+  ${/* password label css */ ({ dirty, langDirection, focused, type }) =>
     !(dirty || focused) &&
-    direction === 'rtl' &&
+    langDirection === 'rtl' &&
     type === 'password' &&
     css`
       > div > label {
@@ -96,8 +93,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** direction prop added to support rtl  */
-  direction: string,
+  /** langDirection prop added to support rtl  */
+  langDirection: string,
 };
 
 const defaultProps = {
@@ -116,7 +113,7 @@ const defaultProps = {
   masked: true,
   onFocus: noop,
   onBlur: noop,
-  direction: 'ltr',
+  langDirection: 'ltr',
 };
 
 class Input extends Component {
@@ -187,7 +184,7 @@ class Input extends Component {
       onBlur,
       selectAll,
       cursorEnd,
-      direction,
+      langDirection,
       ...remainProps
     } = this.props;
 
@@ -198,7 +195,7 @@ class Input extends Component {
         error={error}
         dirty={dirty}
         focused={focused}
-        direction={direction}
+        langDirection={langDirection}
         type={type}
       >
         <AnimatedBorder
@@ -215,7 +212,7 @@ class Input extends Component {
             autoComplete={autoComplete}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            dir={direction}
+            dir={langDirection}
             {...remainProps}
             ref={forwardedRef}
           />
@@ -223,7 +220,7 @@ class Input extends Component {
             <PeekButton active={!masked} onClick={this.toggleMasked} />
           )}
         </AnimatedBorder>
-        <ErrorMessage error={error} direction={direction} />
+        <ErrorMessage error={error} langDirection={langDirection} />
       </Wrapper>
     );
   }

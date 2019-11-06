@@ -111,8 +111,8 @@ class PinInput extends Component {
     /** @deprecated Please use `size` */
     variant: string, // TODO: `variant` is deprecated
     type: string,
-    /** direction prop added to support rtl  */
-    direction: string,
+    /** langDirection prop added to support rtl  */
+    langDirection: string,
   };
 
   static defaultProps = {
@@ -124,7 +124,7 @@ class PinInput extends Component {
     size: 'large',
     variant: null,
     type: 'text',
-    direction: 'ltr',
+    langDirection: 'ltr',
   };
 
   state = {
@@ -190,7 +190,7 @@ class PinInput extends Component {
       variant,
       onPaste,
       type,
-      direction,
+      langDirection,
     } = this.props;
     const pinBoxes = [...Array(4)].map((e, i) => (
       <Input
@@ -217,7 +217,7 @@ class PinInput extends Component {
     return (
       <Container>
         <Wrapper>{pinBoxes}</Wrapper>
-        <ErrorMessage error={error} direction={direction} />
+        <ErrorMessage error={error} langDirection={langDirection} />
       </Container>
     );
   }
