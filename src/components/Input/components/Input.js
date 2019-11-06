@@ -16,30 +16,41 @@ import PeekButton from './PeekButton';
 
 const Wrapper = styled.div`
   position: relative;
+
+  ${/* handle rtl css */ ({ dirty, direction, focused, error }) =>
+    (dirty || focused || error) &&
+    direction === 'rtl' &&
+    css`
+      > div > label {
+        transform-origin: right center;
+        right: 0.5em;
+        left: auto;
+      }
+    `};
+
   display: inline-block;
- 
+  ${({ direction }) =>
+    css`
+      > div {
+        direction: ${direction};
+      }
+    `}
+
   ${({ error }) =>
     error &&
     css`
       padding-bottom: 2em;
     `};
 
-    ${({ dirty, direction, focused }) =>
-      (dirty || focused) &&
-      direction === 'rtl' &&
-      css`
-        > div > label {
-          left: auto;
-          right: -14px;
-        }
-      `};
-      ${({ type, direction }) =>
-        type === 'password' &&
-        css`
-          direction: ${direction};
-        `};
-    }
-  }}
+  ${/* password label css */ ({ dirty, direction, focused, type }) =>
+    !(dirty || focused) &&
+    direction === 'rtl' &&
+    type === 'password' &&
+    css`
+      > div > label {
+        margin-left: 2em;
+      }
+    `}
 `;
 
 const ErrorMessage = styled(RawErrorMsg)`
@@ -47,11 +58,6 @@ const ErrorMessage = styled(RawErrorMsg)`
   z-index: ${GROUND + 1};
   right: 0;
   left: 0;
-  ${({ error, direction }) =>
-    error &&
-    css`
-      direction: ${direction};
-    `};
 `;
 
 const propTypes = {

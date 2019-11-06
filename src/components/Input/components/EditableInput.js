@@ -34,8 +34,9 @@ const ButtonGroup = styled.div`
   &>button: first - of - type {
     margin-right: 0.5em;
   }
-  /* reversing direction so save button comes before cancel button */
-  direction: ${({ direction }) => (direction === 'rtl' ? 'ltr' : 'rtl')};
+
+  direction: ${/* reversing direction so save button comes before cancel button */
+  ({ direction }) => (direction === 'rtl' ? 'ltr' : 'rtl')};
 `;
 
 const propTypes = {

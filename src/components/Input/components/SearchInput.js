@@ -1,6 +1,6 @@
 import React, { Component, forwardRef } from 'react';
 import { string, func } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 import noop from 'utils/noop';
@@ -18,7 +18,14 @@ const Container = styled.div`
   border-radius: 24px;
   border: 1px solid ${nobel.main};
   font-size: ${fontSize.regular};
-
+  ${({ direction }) =>
+    direction === 'rtl' &&
+    css`
+      direction: ${direction};
+      > input {
+        margin: 0px 10px 0px 0px;
+      }
+    `}
   ${({ focused }) =>
     focused &&
     `border: 1px solid ${primary.main};
@@ -91,7 +98,7 @@ class SearchInput extends Component {
     // eslint-disable-next-line react/prop-types
     const { forwardedRef, onFocus, onBlur, direction, ...props } = this.props;
     return (
-      <Container focused={focused}>
+      <Container direction={direction} focused={focused}>
         <SearchIcon color={mineShaft['900']} size={20} />
         <SCTextInput
           onFocus={this.onFocus}

@@ -15,9 +15,23 @@ describe('Input', () => {
       );
       expect(wrapper).toMatchSnapshot();
     });
-
+    it('Password with a value right to left', () => {
+      const wrapper = render(
+        <Input
+          name="input"
+          type="password"
+          defaultValue="dummy"
+          direction="rtl"
+        />
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
     it('Regular Input', () => {
       const wrapper = render(<Input name="input" />);
+      expect(wrapper).toMatchSnapshot();
+    });
+    it('Regular Input with rtl', () => {
+      const wrapper = render(<Input name="input" direction="rtl" />);
       expect(wrapper).toMatchSnapshot();
     });
   });

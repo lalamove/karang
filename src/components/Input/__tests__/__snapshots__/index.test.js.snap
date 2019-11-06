@@ -122,8 +122,14 @@ exports[`Input Snapshots Password 1`] = `
   display: inline-block;
 }
 
+.c0 > div {
+  direction: ltr;
+}
+
 <div
   class="c0"
+  direction="ltr"
+  type="password"
 >
   <div
     class="c1"
@@ -131,6 +137,7 @@ exports[`Input Snapshots Password 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
+      dir="ltr"
       name="input"
       type="password"
     />
@@ -309,8 +316,14 @@ exports[`Input Snapshots Password with a value 1`] = `
   display: inline-block;
 }
 
+.c0 > div {
+  direction: ltr;
+}
+
 <div
   class="c0"
+  direction="ltr"
+  type="password"
 >
   <div
     class="c1"
@@ -318,6 +331,210 @@ exports[`Input Snapshots Password with a value 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
+      dir="ltr"
+      name="input"
+      type="password"
+      value="dummy"
+    />
+    <button
+      class="c3 c4"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="false"
+          aria-labelledby="title"
+          focusable="false"
+          role="img"
+          style="vertical-align:middle;fill:#303030;width:20px;height:20px"
+          viewBox="0 0 217 217"
+        >
+          <title>
+            EyeOff
+          </title>
+          <g>
+            <rect
+              fill="none"
+              height="217"
+              width="217"
+            />
+            <path
+              d="M173,37a5.93,5.93,0,0,0-4.24,1.76l-130,130a6,6,0,1,0,8.48,8.48l130-130A6,6,0,0,0,173,37Z"
+            />
+            <path
+              d="M67.35,76.18A108.13,108.13,0,0,0,30.12,108a108.94,108.94,0,0,0,30.2,27.88l2.62-2.62a51.25,51.25,0,0,1,4.41-57.08Z"
+              fill="none"
+            />
+            <path
+              d="M159.72,108a51.24,51.24,0,0,1-11.07,31.82A107.92,107.92,0,0,0,185.85,108a110.65,110.65,0,0,0-30.19-27.89l-2.6,2.6A51.21,51.21,0,0,1,159.72,108Z"
+              fill="none"
+            />
+            <path
+              d="M108,131.73A23.59,23.59,0,0,0,131.73,108a24.4,24.4,0,0,0-.28-3.65l-27.1,27.1A24.4,24.4,0,0,0,108,131.73Z"
+            />
+            <path
+              d="M108,84.27A23.59,23.59,0,0,0,84.27,108a24.4,24.4,0,0,0,.28,3.65l27.1-27.1A24.4,24.4,0,0,0,108,84.27Z"
+            />
+            <path
+              d="M197.4,107c-8-13.33-20.09-25.45-34.25-34.36l-7.49,7.5A110.65,110.65,0,0,1,185.85,108a107.92,107.92,0,0,1-37.2,31.79,51.25,51.25,0,0,0,4.41-57.08L145.6,90.2a41.59,41.59,0,0,1-55.4,55.39L80.12,155.68a99.9,99.9,0,0,0,27.88,4,103.65,103.65,0,0,0,52.76-14.9C176,135.8,189,123.08,197.4,109l.6-1Z"
+            />
+            <path
+              d="M30.12,108A108.13,108.13,0,0,1,67.35,76.18a51.25,51.25,0,0,0-4.41,57.08l7.47-7.46A41.6,41.6,0,0,1,125.8,70.4l10.08-10.08a99.9,99.9,0,0,0-27.88-4,103.67,103.67,0,0,0-52.85,15C40,80.25,27,93,18.6,107l-.6,1,.6,1c8,13.33,20.11,25.45,34.25,34.35l7.47-7.47A108.94,108.94,0,0,1,30.12,108Z"
+            />
+          </g>
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Input Snapshots Password with a value right to left 1`] = `
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  border: 1px solid #B4B4B4;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+.c2 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: #303030;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c2:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::placeholder {
+  color: #B4B4B4;
+}
+
+.c2::selection {
+  background: rgba(241,102,34,0.1);
+}
+
+.c2::-ms-reveal {
+  display: none;
+}
+
+.c4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  padding: 0.5em 1em;
+  border: 1px currentColor solid;
+  background-color: transparent;
+  border-radius: 2px;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-color: #B4B4B4;
+  color: #535353;
+}
+
+.c4:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c4 .c5 {
+  color: #535353;
+}
+
+.c4:hover:enabled,
+.c4:active:enabled {
+  background-color: #F1F1F1;
+}
+
+.c4:active:enabled,
+.c4:focus:enabled {
+  box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
+}
+
+.c3 {
+  border: none;
+}
+
+.c3:hover,
+.c3:focus {
+  background: #E8E8E8;
+}
+
+.c0 {
+  position: relative;
+  display: inline-block;
+}
+
+.c0 > div > label {
+  -webkit-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+  right: 0.5em;
+  left: auto;
+}
+
+.c0 > div {
+  direction: rtl;
+}
+
+<div
+  class="c0"
+  direction="rtl"
+  type="password"
+>
+  <div
+    class="c1"
+  >
+    <input
+      autocomplete="new-password"
+      class="c2"
+      dir="rtl"
       name="input"
       type="password"
       value="dummy"
@@ -436,8 +653,14 @@ exports[`Input Snapshots Regular Input 1`] = `
   display: inline-block;
 }
 
+.c0 > div {
+  direction: ltr;
+}
+
 <div
   class="c0"
+  direction="ltr"
+  type="text"
 >
   <div
     class="c1"
@@ -445,6 +668,91 @@ exports[`Input Snapshots Regular Input 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
+      dir="ltr"
+      name="input"
+      type="text"
+    />
+  </div>
+</div>
+`;
+
+exports[`Input Snapshots Regular Input with rtl 1`] = `
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  border: 1px solid #B4B4B4;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+.c2 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: #303030;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c2:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::placeholder {
+  color: #B4B4B4;
+}
+
+.c2::selection {
+  background: rgba(241,102,34,0.1);
+}
+
+.c2::-ms-reveal {
+  display: none;
+}
+
+.c0 {
+  position: relative;
+  display: inline-block;
+}
+
+.c0 > div {
+  direction: rtl;
+}
+
+<div
+  class="c0"
+  direction="rtl"
+  type="text"
+>
+  <div
+    class="c1"
+  >
+    <input
+      autocomplete="new-password"
+      class="c2"
+      dir="rtl"
       name="input"
       type="text"
     />
@@ -465,6 +773,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
+  direction: ltr;
 }
 
 .c5 {
@@ -588,6 +897,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   </div>
   <div
     class="c4"
+    direction="ltr"
   >
     <span
       class="c5"
@@ -596,6 +906,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
     </span>
     <span
       class="c6"
+      direction="ltr"
     >
       <svg
         aria-hidden="false"

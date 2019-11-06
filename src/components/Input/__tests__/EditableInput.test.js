@@ -15,6 +15,17 @@ describe('EditableInput', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('Input field with right to left state', () => {
+      const wrapper = render(
+        <EditableInput
+          name="Billing Email"
+          placeholder="Billing Email"
+          defaultValue="no-reply@lalamove.com"
+          direction="rtl"
+        />
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
     it('Input field with loading', () => {
       const wrapper = render(
         <EditableInput

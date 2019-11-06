@@ -33,6 +33,7 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
+  direction: ltr;
 }
 
 .c5 {
@@ -90,6 +91,7 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
+  direction: ltr;
 }
 
 .c3 {
@@ -101,21 +103,24 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em 0em 1em;
+  direction: rtl;
 }
 
-.c3 > button:first-of-type {
+.c3>button:first - of - type {
   margin-right: 0.5em;
 }
 
 <div
   class="c0"
+  direction="ltr"
 >
   <div
     class="c1"
   >
     <input
       class="c2"
+      dir="ltr"
       name="Billing Email"
       placeholder="Billing Email"
       type="text"
@@ -123,10 +128,12 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
     />
     <div
       class="c3"
+      direction="ltr"
     />
   </div>
   <div
     class="c4"
+    direction="ltr"
   >
     <span
       class="c5"
@@ -135,6 +142,7 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
     </span>
     <span
       class="c6"
+      direction="ltr"
     >
       <svg
         aria-hidden="false"
@@ -230,6 +238,7 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
+  direction: ltr;
 }
 
 .c3 {
@@ -241,21 +250,24 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em 0em 1em;
+  direction: rtl;
 }
 
-.c3 > button:first-of-type {
+.c3>button:first - of - type {
   margin-right: 0.5em;
 }
 
 <div
   class="c0"
+  direction="ltr"
 >
   <div
     class="c1"
   >
     <input
       class="c2"
+      dir="ltr"
       disabled=""
       name="Billing Email"
       placeholder="Billing Email"
@@ -264,6 +276,7 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
     />
     <div
       class="c3"
+      direction="ltr"
     >
       <svg
         height="16"
@@ -350,6 +363,7 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
+  direction: ltr;
 }
 
 .c3 {
@@ -361,21 +375,24 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em 0em 1em;
+  direction: rtl;
 }
 
-.c3 > button:first-of-type {
+.c3>button:first - of - type {
   margin-right: 0.5em;
 }
 
 <div
   class="c0"
+  direction="ltr"
 >
   <div
     class="c1"
   >
     <input
       class="c2"
+      dir="ltr"
       name="Billing Email"
       placeholder="Billing Email"
       type="text"
@@ -383,6 +400,109 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
     />
     <div
       class="c3"
+      direction="ltr"
+    />
+  </div>
+</div>
+`;
+
+exports[`EditableInput Snapshots Input field with right to left state 1`] = `
+.c1 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  border: 1px solid #B4B4B4;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  text-align: left;
+  width: 100%;
+}
+
+.c2 {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  color: #303030;
+  font-family: Noto Sans,"Noto Sans TC",sans-serif;
+  caret-color: #F16622;
+  font-size: 14px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::-moz-placeholder {
+  color: #B4B4B4;
+}
+
+.c2:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.c2::placeholder {
+  color: #B4B4B4;
+}
+
+.c2::selection {
+  background: rgba(241,102,34,0.1);
+}
+
+.c2::-ms-reveal {
+  display: none;
+}
+
+.c0 {
+  display: inline-block;
+  width: 100%;
+  direction: rtl;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0em 1em 0em 1em;
+  direction: ltr;
+}
+
+.c3>button:first - of - type {
+  margin-right: 0.5em;
+}
+
+<div
+  class="c0"
+  direction="rtl"
+>
+  <div
+    class="c1"
+  >
+    <input
+      class="c2"
+      dir="rtl"
+      name="Billing Email"
+      placeholder="Billing Email"
+      type="text"
+      value="no-reply@lalamove.com"
+    />
+    <div
+      class="c3"
+      direction="rtl"
     />
   </div>
 </div>
@@ -447,6 +567,7 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
+  direction: ltr;
 }
 
 .c3 {
@@ -458,21 +579,24 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em 0em 1em;
+  direction: rtl;
 }
 
-.c3 > button:first-of-type {
+.c3>button:first - of - type {
   margin-right: 0.5em;
 }
 
 <div
   class="c0"
+  direction="ltr"
 >
   <div
     class="c1"
   >
     <input
       class="c2"
+      dir="ltr"
       name="Billing Email"
       placeholder="Billing Email"
       type="text"
@@ -480,6 +604,7 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
     />
     <div
       class="c3"
+      direction="ltr"
     >
       <svg
         aria-hidden="false"

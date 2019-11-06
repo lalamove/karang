@@ -8,4 +8,12 @@ describe('Snapshots', () => {
     const wrapper = render(<ErrorMessage error="message">blah</ErrorMessage>);
     expect(wrapper).toMatchSnapshot();
   });
+  it('ErrorMessage with rtl ', () => {
+    const wrapper = render(
+      <ErrorMessage error="message" direction="rtl">
+        blah
+      </ErrorMessage>
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });

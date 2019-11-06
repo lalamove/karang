@@ -6,8 +6,11 @@ import Input, { PinInput, SearchInput, EditableInput } from './index';
 class InputWrapper extends Component {
   state = {
     username: '',
+    usernameRtl: '',
     password: '',
+    passwordRtl: '',
     address: 'Sample Address',
+    addressRtl: 'Sample Address (right to left)',
     companyName: '',
     industry: '',
     direction: 'rtl',
@@ -32,13 +35,13 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           autoFocus
         />
-        <h4>Basic (right to left text)</h4>
+        <h4>Basic (right to left)</h4>
         <Input
           ref={this.input}
           type="text"
           label="Username"
-          name="username"
-          value={this.state.username}
+          name="usernameRtl"
+          value={this.state.usernameRtl}
           onChange={this.handleChange}
           autoFocus
           placeholder="gaurav"
@@ -53,6 +56,18 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           masked
         />
+
+        <h4>Password (right to left) </h4>
+        <Input
+          type="password"
+          label="Password"
+          name="passwordRtl"
+          value={this.state.passwordRtl}
+          onChange={this.handleChange}
+          masked
+          direction="rtl"
+        />
+
         <h4>Non-masked password</h4>
         <Input
           type="password"
@@ -71,12 +86,12 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           error="Error Message"
         />
-        <h4>With error message (right to left text) </h4>
+        <h4>With error message (right to left) </h4>
         <Input
           type="text"
           label="Address"
-          name="address"
-          value={this.state.address}
+          name="addressRtl"
+          value={this.state.addressRtl}
           onChange={this.handleChange}
           error="Error Message"
           direction={this.state.direction}
@@ -124,6 +139,12 @@ class PinInputWrapper extends Component {
         <PinInput pins={this.state.register} />
         <h4>With error message</h4>
         <PinInput pins={this.state.resetPassword} error="Error Message" />
+        <h4>With error message (right to left) </h4>
+        <PinInput
+          pins={this.state.resetPassword}
+          error="Error Message (right to left)"
+          direction="rtl"
+        />
         <h4>Small size</h4>
         <PinInput pins={this.state.resetPassword} size="small" />
       </Fragment>
@@ -138,7 +159,7 @@ const SearchInputWrapper = () => (
       name="searchValue"
       placeholder="Search for Order ID, Driver's Mobile"
     />
-    <h4>Basic (right to left text)</h4>
+    <h4>Basic (right to left)</h4>
     <SearchInput
       name="searchValue"
       placeholder="Search for Order ID, Driver's Mobile"
@@ -204,11 +225,11 @@ class EditableInputWrapper extends Component {
           isLoading={isLoading}
           isSuccess={isSuccess}
         />
-        <h4>Basic (right to left text)</h4>
+        <h4>Basic (right to left)</h4>
         <EditableInput
-          name="Billing Email"
-          placeholder="Billing Email"
-          defaultValue="no-reply@lalamove.com"
+          name="Billing Email (right to left)"
+          placeholder="Billing Email (right to left)"
+          defaultValue="no-reply-rtl@lalamove.com"
           onSave={this.handleSave}
           isLoading={isLoading}
           isSuccess={isSuccess}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { node } from 'prop-types';
-import styled from 'styled-components';
+import { node, string } from 'prop-types';
+import styled, { css } from 'styled-components';
 
 import { valencia } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
@@ -12,6 +12,10 @@ const Container = styled.div`
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
+  ${({ direction }) =>
+    css`
+      direction: ${direction};
+    `}
 `;
 
 const Text = styled.span`
@@ -23,15 +27,19 @@ const Text = styled.span`
 `;
 
 const IconWrapper = styled.span`
-  margin-left: 1em;
+  ${({ direction }) =>
+    direction !== 'rtl' &&
+    css`
+      margin-left: 1em;
+    `}
 `;
 
-const ErrorMessage = ({ error, ...rest }) =>
+const ErrorMessage = ({ error, direction, ...rest }) =>
   error &&
   error.length > 0 && (
-    <Container {...rest}>
+    <Container direction={direction} {...rest}>
       <Text>{error}</Text>
-      <IconWrapper>
+      <IconWrapper direction={direction}>
         <WarningIcon color={valencia.main} size={13} />
       </IconWrapper>
     </Container>
@@ -39,10 +47,12 @@ const ErrorMessage = ({ error, ...rest }) =>
 
 ErrorMessage.propTypes = {
   error: node,
+  direction: string,
 };
 
 ErrorMessage.defaultProps = {
   error: null,
+  direction: 'ltr',
 };
 
 export default ErrorMessage;
