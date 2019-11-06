@@ -209,6 +209,7 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
+  direction: ltr;
 }
 
 .c9 {
