@@ -16,6 +16,14 @@ storiesOf('Alert', module)
         description="Here is a clear explanation. It drops to next line if the content is too long."
         onDismiss={onDismiss}
       />
+      <br />
+      <Alert
+        type="info"
+        message="Informational notification"
+        description="Here is a clear explanation. It drops to next line if the content is too long."
+        onDismiss={onDismiss}
+        rtl
+      />
       <h4>Success</h4>
       <Alert
         type="success"
@@ -48,6 +56,16 @@ storiesOf('Alert', module)
         message="Informational notification"
         description="Here is a clear explanation. It drops to next line if the content is too long."
         onDismiss={onDismiss}
+      />
+      <br />
+      <h4>Right to Left</h4>
+      <Alert
+        type="info"
+        variant="toast"
+        message="Informational notification"
+        description="Here is a clear explanation. It drops to next line if the content is too long."
+        onDismiss={onDismiss}
+        rtl
       />
       <h4>Success</h4>
       <Alert

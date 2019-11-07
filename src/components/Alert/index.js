@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, func, oneOf } from 'prop-types';
+import { string, func, oneOf, bool } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
@@ -18,7 +18,14 @@ import {
 } from 'styles/colors';
 
 const IconContainer = styled.div`
-  margin: 0 0.5em 0 0;
+  ${({ rtl }) =>
+    rtl
+      ? css`
+          margin: 0 0 0 0.5em;
+        `
+      : css`
+          margin: 0 0.5em 0 0;
+        `}
 `;
 
 const Content = styled.div`
@@ -39,7 +46,15 @@ const CloseButton = styled.button`
   appearance: none;
   padding: 0;
   border: none;
-  margin: 0 0 0 1em;
+  ${({ rtl }) =>
+    rtl
+      ? css`
+          margin: 0 1em 0 0;
+        `
+      : css`
+          margin: 0 0 0 1em;
+        `}
+
   background-color: transparent;
   cursor: pointer;
   outline: 0;
@@ -78,6 +93,12 @@ const Container = styled.div`
     css`
       width: 21em;
     `};
+
+  ${({ rtl }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `};
 `;
 
 const icon = {
@@ -96,12 +117,13 @@ const Alert = ({
   message,
   description,
   onDismiss,
+  rtl,
   ...props
 }) => {
   const Icon = icon[type];
   return (
-    <Container type={type} variant={variant} {...props}>
-      <IconContainer>
+    <Container rtl={rtl} type={type} variant={variant} {...props}>
+      <IconContainer rtl={rtl}>
         <Icon color={white} size={24} />
       </IconContainer>
       <Content>
@@ -109,7 +131,7 @@ const Alert = ({
         {description && <span>{description}</span>}
       </Content>
       {onDismiss !== noop && (
-        <CloseButton onClick={onDismiss}>
+        <CloseButton rtl={rtl} onClick={onDismiss}>
           <CloseIcon color={white} size={20} />
         </CloseButton>
       )}
@@ -129,6 +151,8 @@ Alert.propTypes = {
   /** Callback function, to be executed when clicked close button. No close button if no
    *  function passed */
   onDismiss: func,
+  /** rtl prop added to support right-to-left  */
+  rtl: bool,
 };
 
 Alert.defaultProps = {
@@ -136,6 +160,7 @@ Alert.defaultProps = {
   variant: 'default',
   description: null,
   onDismiss: noop,
+  rtl: false,
 };
 
 export default Alert;

@@ -25,6 +25,15 @@ describe('Alert', () => {
     }
   });
 
+  describe('rtl test', () => {
+    it('should render component rtl', () => {
+      const wrapper = render(
+        <Alert type="info" message="Foo" description="Bar" rtl />
+      );
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
   describe('Functions', () => {
     it('calls onDismiss when CloseButton is clicked', () => {
       const clickHandler = jest.fn();
