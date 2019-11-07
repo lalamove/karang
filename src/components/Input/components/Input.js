@@ -17,9 +17,9 @@ import PeekButton from './PeekButton';
 const Wrapper = styled.div`
   position: relative;
 
-  ${/* handle rtl css */ ({ dirty, langDirection, focused, error }) =>
+  ${/* handle rtl css */ ({ dirty, rtl, focused, error }) =>
     (dirty || focused || error) &&
-    langDirection === 'rtl' &&
+    rtl &&
     css`
       > div > label {
         transform-origin: right center;
@@ -30,7 +30,11 @@ const Wrapper = styled.div`
 
   display: inline-block;
   > div {
-    direction: ${({ langDirection }) => langDirection};
+    ${({ rtl }) =>
+      rtl &&
+      css`
+        direction: rtl;
+      `};
   }
 
   ${({ error }) =>
@@ -39,13 +43,13 @@ const Wrapper = styled.div`
       padding-bottom: 2em;
     `};
 
-  ${/* password label css */ ({ dirty, langDirection, focused, type }) =>
+  ${({ dirty, rtl, focused }) =>
     !(dirty || focused) &&
-    langDirection === 'rtl' &&
-    type === 'password' &&
+    rtl &&
     css`
       > div > label {
-        margin-left: 2em;
+        left: auto;
+        right: 1em;
       }
     `}
 `;
@@ -93,8 +97,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** langDirection prop added to support rtl  */
-  langDirection: string,
+  /** rtl prop added to support right-to-left  */
+  rtl: bool,
 };
 
 const defaultProps = {
@@ -113,7 +117,7 @@ const defaultProps = {
   masked: true,
   onFocus: noop,
   onBlur: noop,
-  langDirection: 'ltr',
+  rtl: false,
 };
 
 class Input extends Component {
@@ -184,7 +188,7 @@ class Input extends Component {
       onBlur,
       selectAll,
       cursorEnd,
-      langDirection,
+      rtl,
       ...remainProps
     } = this.props;
 
@@ -195,8 +199,7 @@ class Input extends Component {
         error={error}
         dirty={dirty}
         focused={focused}
-        langDirection={langDirection}
-        type={type}
+        rtl={rtl}
       >
         <AnimatedBorder
           name={name}
@@ -212,7 +215,7 @@ class Input extends Component {
             autoComplete={autoComplete}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            dir={langDirection}
+            dir={rtl ? 'rtl' : 'ltr'}
             {...remainProps}
             ref={forwardedRef}
           />
@@ -220,7 +223,7 @@ class Input extends Component {
             <PeekButton active={!masked} onClick={this.toggleMasked} />
           )}
         </AnimatedBorder>
-        <ErrorMessage error={error} langDirection={langDirection} />
+        <ErrorMessage error={error} rtl={rtl} />
       </Wrapper>
     );
   }

@@ -33,7 +33,6 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
-  direction: ltr;
 }
 
 .c5 {
@@ -91,7 +90,6 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
-  direction: ltr;
 }
 
 .c3 {
@@ -234,7 +232,6 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
-  direction: ltr;
 }
 
 .c3 {
@@ -357,7 +354,6 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
-  direction: ltr;
 }
 
 .c3 {
@@ -557,7 +553,6 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
-  direction: ltr;
 }
 
 .c3 {

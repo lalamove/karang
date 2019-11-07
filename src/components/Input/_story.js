@@ -10,10 +10,9 @@ class InputWrapper extends Component {
     password: '',
     passwordRtl: '',
     address: 'Sample Address',
-    addressRtl: 'Sample Address (right to left)',
+    addressRtl: 'Sample Address',
     companyName: '',
     industry: '',
-    langDirection: 'rtl',
   };
 
   input = React.createRef();
@@ -45,7 +44,7 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           autoFocus
           placeholder="gaurav"
-          langDirection={this.state.langDirection}
+          rtl
         />
         <h4>Password</h4>
         <Input
@@ -65,7 +64,7 @@ class InputWrapper extends Component {
           value={this.state.passwordRtl}
           onChange={this.handleChange}
           masked
-          langDirection="rtl"
+          rtl
         />
 
         <h4>Non-masked password</h4>
@@ -94,7 +93,7 @@ class InputWrapper extends Component {
           value={this.state.addressRtl}
           onChange={this.handleChange}
           error="Error Message"
-          langDirection={this.state.langDirection}
+          rtl
         />
         <h4>Select all when clicked</h4>
         <Input
@@ -143,7 +142,7 @@ class PinInputWrapper extends Component {
         <PinInput
           pins={this.state.resetPassword}
           error="Error Message (right to left)"
-          langDirection="rtl"
+          rtl
         />
         <h4>Small size</h4>
         <PinInput pins={this.state.resetPassword} size="small" />
@@ -163,7 +162,7 @@ const SearchInputWrapper = () => (
     <SearchInput
       name="searchValue"
       placeholder="Search for Order ID, Driver's Mobile"
-      langDirection="rtl"
+      rtl
     />
   </>
 );
@@ -233,7 +232,7 @@ class EditableInputWrapper extends Component {
           onSave={this.handleSave}
           isLoading={isLoading}
           isSuccess={isSuccess}
-          langDirection="rtl"
+          rtl
         />
 
         <h4>With validate function</h4>

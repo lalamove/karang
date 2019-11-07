@@ -10,7 +10,7 @@ describe('Snapshots', () => {
   });
   it('ErrorMessage with rtl ', () => {
     const wrapper = render(
-      <ErrorMessage error="message" langDirection="rtl">
+      <ErrorMessage error="message" rtl>
         blah
       </ErrorMessage>
     );

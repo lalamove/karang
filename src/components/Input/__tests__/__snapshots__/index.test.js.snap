@@ -122,13 +122,8 @@ exports[`Input Snapshots Password 1`] = `
   display: inline-block;
 }
 
-.c0 > div {
-  direction: ltr;
-}
-
 <div
   class="c0"
-  type="password"
 >
   <div
     class="c1"
@@ -315,13 +310,8 @@ exports[`Input Snapshots Password with a value 1`] = `
   display: inline-block;
 }
 
-.c0 > div {
-  direction: ltr;
-}
-
 <div
   class="c0"
-  type="password"
 >
   <div
     class="c1"
@@ -523,7 +513,6 @@ exports[`Input Snapshots Password with a value right to left 1`] = `
 
 <div
   class="c0"
-  type="password"
 >
   <div
     class="c1"
@@ -650,13 +639,8 @@ exports[`Input Snapshots Regular Input 1`] = `
   display: inline-block;
 }
 
-.c0 > div {
-  direction: ltr;
-}
-
 <div
   class="c0"
-  type="text"
 >
   <div
     class="c1"
@@ -737,9 +721,13 @@ exports[`Input Snapshots Regular Input with rtl 1`] = `
   direction: rtl;
 }
 
+.c0 > div > label {
+  left: auto;
+  right: 1em;
+}
+
 <div
   class="c0"
-  type="text"
 >
   <div
     class="c1"
@@ -768,7 +756,6 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
-  direction: ltr;
 }
 
 .c5 {

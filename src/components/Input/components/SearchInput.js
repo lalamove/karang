@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import { string, func } from 'prop-types';
+import { string, func, bool } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
@@ -18,10 +18,10 @@ const Container = styled.div`
   border-radius: 24px;
   border: 1px solid ${nobel.main};
   font-size: ${fontSize.regular};
-  ${({ langDirection }) =>
-    langDirection === 'rtl' &&
+  ${({ rtl }) =>
+    rtl &&
     css`
-      direction: ${langDirection};
+      direction: rtl;
       > input {
         margin: 0px 10px 0px 0px;
       }
@@ -59,8 +59,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** langDirection prop added to support rtl  */
-  langDirection: string,
+  /** rtl prop added to support right-to-left  */
+  rtl: bool,
 };
 
 const defaultProps = {
@@ -69,7 +69,7 @@ const defaultProps = {
   name: null,
   onFocus: noop,
   onBlur: noop,
-  langDirection: 'ltr',
+  rtl: false,
 };
 
 class SearchInput extends Component {
@@ -96,20 +96,14 @@ class SearchInput extends Component {
   render() {
     const { focused } = this.state;
     // eslint-disable-next-line react/prop-types
-    const {
-      forwardedRef,
-      onFocus,
-      onBlur,
-      langDirection,
-      ...props
-    } = this.props;
+    const { forwardedRef, onFocus, onBlur, rtl, ...props } = this.props;
     return (
-      <Container langDirection={langDirection} focused={focused}>
+      <Container rtl={rtl} focused={focused}>
         <SearchIcon color={mineShaft['900']} size={20} />
         <SCTextInput
           onFocus={this.onFocus}
           onBlur={this.onBlur}
-          dir={langDirection}
+          dir={rtl ? 'rtl' : 'ltr'}
           ref={forwardedRef}
           {...props}
         />

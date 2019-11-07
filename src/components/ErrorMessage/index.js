@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, string } from 'prop-types';
+import { node, bool } from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import { valencia } from 'styles/colors';
@@ -12,7 +12,11 @@ const Container = styled.div`
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
-  direction: ${({ langDirection }) => langDirection};
+  ${({ rtl }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `};
 `;
 
 const Text = styled.span`
@@ -24,19 +28,19 @@ const Text = styled.span`
 `;
 
 const IconWrapper = styled.span`
-  ${({ langDirection }) =>
-    langDirection !== 'rtl' &&
+  ${({ rtl }) =>
+    !rtl &&
     css`
       margin-left: 1em;
     `}
 `;
 
-const ErrorMessage = ({ error, langDirection, ...rest }) =>
+const ErrorMessage = ({ error, rtl, ...rest }) =>
   error &&
   error.length > 0 && (
-    <Container langDirection={langDirection} {...rest}>
+    <Container rtl={rtl} {...rest}>
       <Text>{error}</Text>
-      <IconWrapper langDirection={langDirection}>
+      <IconWrapper rtl={rtl}>
         <WarningIcon color={valencia.main} size={13} />
       </IconWrapper>
     </Container>
@@ -44,12 +48,12 @@ const ErrorMessage = ({ error, langDirection, ...rest }) =>
 
 ErrorMessage.propTypes = {
   error: node,
-  langDirection: string,
+  rtl: bool,
 };
 
 ErrorMessage.defaultProps = {
   error: null,
-  langDirection: 'ltr',
+  rtl: false,
 };
 
 export default ErrorMessage;

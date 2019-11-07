@@ -14,7 +14,11 @@ import TextInput from './TextInput';
 const Wrapper = styled.div`
   display: inline-block;
   width: 100%;
-  direction: ${({ langDirection }) => langDirection};
+  ${({ rtl }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `};
   ${({ error }) =>
     error &&
     css`
@@ -31,8 +35,8 @@ const ButtonGroup = styled.div`
     margin-right: 0.5em;
   }
 
-  direction: ${/* reversing langDirection so save button comes before cancel button */
-  ({ langDirection }) => (langDirection === 'rtl' ? 'ltr' : 'rtl')};
+  direction: ${/* reversingrtl so save button comes before cancel button */
+  ({ rtl }) => (rtl ? 'ltr' : 'rtl')};
 `;
 
 const propTypes = {
@@ -100,8 +104,8 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** langDirection prop added to support rtl  */
-  langDirection: string,
+  /** rtl prop added to support right-to-left  */
+  rtl: bool,
 };
 
 const defaultProps = {
@@ -122,7 +126,7 @@ const defaultProps = {
   onChange: noop,
   onFocus: noop,
   onBlur: noop,
-  langDirection: 'ltr',
+  rtl: false,
 };
 
 export class EditableInput extends Component {
@@ -194,11 +198,11 @@ export class EditableInput extends Component {
       onCancel,
       value,
       defaultValue,
-      langDirection,
+      rtl,
       ...remainProps
     } = this.props;
     return (
-      <Wrapper style={style} langDirection={langDirection}>
+      <Wrapper style={style} rtl={rtl}>
         <AnimatedBorder
           label={label}
           dirty={!!currentValue}
@@ -212,11 +216,11 @@ export class EditableInput extends Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             disabled={isLoading}
-            dir={langDirection}
+            dir={rtl ? 'rtl' : 'ltr'}
             {...remainProps}
             ref={forwardedRef}
           />
-          <ButtonGroup langDirection={langDirection}>
+          <ButtonGroup rtl={rtl}>
             {isDirty && !isLoading && (
               <Fragment>
                 <Button onClick={this.handleCancel} variant="link">
