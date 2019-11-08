@@ -17,6 +17,11 @@ let selectHighlightedItem;
 const Container = styled.div`
   position: relative;
   display: inline-block;
+  ${({ rtl }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
   ${({ block }) =>
     block &&
     css`
@@ -54,6 +59,7 @@ class Dropdown extends Component {
     icon: node,
     /** A boolean which, if true, disables the Dropdown */
     disabled: bool,
+    rtl: bool,
   };
 
   static defaultProps = {
@@ -67,6 +73,7 @@ class Dropdown extends Component {
     variant: 'default',
     icon: undefined,
     disabled: false,
+    rtl: false,
   };
 
   state = {
@@ -243,6 +250,7 @@ class Dropdown extends Component {
       variant,
       icon,
       disabled,
+      rtl,
       ...remainProps
     } = this.props;
     const { highlightedIndexes } = this.state;
@@ -273,7 +281,7 @@ class Dropdown extends Component {
           toggleMenu = dsToggleMenu;
           closeMenu = dsCloseMenu;
           return (
-            <Container {...getRootProps({ ...remainProps, block })}>
+            <Container rtl={rtl} {...getRootProps({ ...remainProps, block })}>
               {variant === 'compact' && (
                 <ExpandButton
                   icon={icon}
@@ -315,6 +323,7 @@ class Dropdown extends Component {
                   handleDepthLevel={this.handleDepthLevel}
                   handleHighlightedIndexes={this.handleHighlightedIndexes}
                   handleListCounts={this.handleListCounts}
+                  rtl={rtl}
                 />
               )}
             </Container>

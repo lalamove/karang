@@ -56,6 +56,7 @@ const UL = styled.ul`
 const activeStyle = css`
   background-color: ${lighten(0.05, nobel['200'])};
   border-left-color: ${primary.main};
+  border-right-color: ;
 `;
 
 const LI = styled.li`

@@ -39,7 +39,13 @@ const StyledList = styled(List)`
         `;
     }
   }};
-
+  ${({ rtl }) =>
+    rtl &&
+    css`
+      left: auto;
+      right: 0;
+      min-width: 9.5em;
+    `}
   ${({ block, nested }) =>
     block &&
     !nested &&
@@ -47,7 +53,6 @@ const StyledList = styled(List)`
       width: 100%;
     `};
 `;
-
 const haveSubOptionStyle = {
   cursor: 'default',
 };
@@ -63,6 +68,7 @@ class DropdownList extends Component {
     handleDepthLevel: func,
     handleHighlightedIndexes: func,
     handleListCounts: func,
+    rtl: bool,
   };
 
   static defaultProps = {
@@ -73,6 +79,7 @@ class DropdownList extends Component {
     handleDepthLevel: noop,
     handleHighlightedIndexes: noop,
     handleListCounts: noop,
+    rtl: false,
   };
 
   renderList(items, depthLevel = 0) {
@@ -85,6 +92,7 @@ class DropdownList extends Component {
       handleDepthLevel,
       handleHighlightedIndexes,
       handleListCounts,
+      rtl,
     } = this.props;
 
     return (
@@ -95,6 +103,7 @@ class DropdownList extends Component {
         size="small"
         direction={direction}
         nested={depthLevel > 0}
+        rtl={rtl}
       >
         {({ data: option, Item, index: subIndex, getProps }) => {
           const index = `${depthLevel}_${subIndex}`;
@@ -121,6 +130,7 @@ class DropdownList extends Component {
                 options: subOptions,
                 style: subOptions && haveSubOptionStyle,
                 disabled: option.disabled,
+                rtl,
                 onMouseEnter: () => handleHighlightedIndexes(index, depthLevel),
                 onMouseOver: () =>
                   !option.options && handleDepthLevel(depthLevel),

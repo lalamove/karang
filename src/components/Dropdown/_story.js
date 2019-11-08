@@ -96,6 +96,8 @@ const Basic = () => (
   <div>
     <h4>Basic</h4>
     <Dropdown items={items} />
+    <h4>Basic rtl</h4>
+    <Dropdown items={items} rtl />
     <h4>Basic disabled</h4>
     <Dropdown items={items} disabled />
     <h4>Basic with disabled item</h4>
@@ -104,9 +106,12 @@ const Basic = () => (
     <Dropdown items={items} icon={<MenuIcon size={24} />} />
     <h4>Basic with item icon</h4>
     <Dropdown
-      items={items.map(item =>
-        Object.assign({}, item, { icon: <PinFilledIcon /> })
-      )}
+      items={items.map(item => ({ ...item, icon: <PinFilledIcon /> }))}
+    />
+    <h4>Basic with item icon rtl</h4>
+    <Dropdown
+      items={items.map(item => ({ ...item, icon: <PinFilledIcon /> }))}
+      rtl
     />
     <h4>Block</h4>
     <Dropdown items={items} block />
@@ -116,6 +121,13 @@ const Basic = () => (
     <Dropdown variant="compact" items={items} disabled />
     <h4>Compact with custom button icon</h4>
     <Dropdown variant="compact" items={items} icon={<DropIcon size={36} />} />
+    <h4>Compact with custom button icon rtl</h4>
+    <Dropdown
+      variant="compact"
+      items={items}
+      rtl
+      icon={<DropIcon size={36} />}
+    />
   </div>
 );
 
