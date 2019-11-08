@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, bool } from 'prop-types';
+import { node } from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import { valencia } from 'styles/colors';
@@ -12,7 +12,7 @@ const Container = styled.div`
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
-  ${({ rtl }) =>
+  ${({ theme: { rtl } }) =>
     rtl &&
     css`
       direction: rtl;
@@ -28,7 +28,7 @@ const Text = styled.span`
 `;
 
 const IconWrapper = styled.span`
-  ${({ rtl }) =>
+  ${({ theme: { rtl } }) =>
     !rtl &&
     css`
       margin-left: 1em;
@@ -38,9 +38,9 @@ const IconWrapper = styled.span`
 const ErrorMessage = ({ error, rtl, ...rest }) =>
   error &&
   error.length > 0 && (
-    <Container rtl={rtl} {...rest}>
+    <Container {...rest}>
       <Text>{error}</Text>
-      <IconWrapper rtl={rtl}>
+      <IconWrapper>
         <WarningIcon color={valencia.main} size={13} />
       </IconWrapper>
     </Container>
@@ -48,12 +48,10 @@ const ErrorMessage = ({ error, rtl, ...rest }) =>
 
 ErrorMessage.propTypes = {
   error: node,
-  rtl: bool,
 };
 
 ErrorMessage.defaultProps = {
   error: null,
-  rtl: false,
 };
 
 export default ErrorMessage;

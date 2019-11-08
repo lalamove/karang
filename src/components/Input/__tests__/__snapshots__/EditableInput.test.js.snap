@@ -117,7 +117,6 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   >
     <input
       class="c2"
-      dir="ltr"
       name="Billing Email"
       placeholder="Billing Email"
       type="text"
@@ -259,7 +258,6 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
   >
     <input
       class="c2"
-      dir="ltr"
       disabled=""
       name="Billing Email"
       placeholder="Billing Email"
@@ -381,7 +379,6 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
   >
     <input
       class="c2"
-      dir="ltr"
       name="Billing Email"
       placeholder="Billing Email"
       type="text"
@@ -453,7 +450,6 @@ exports[`EditableInput Snapshots Input field with right to left state 1`] = `
 .c0 {
   display: inline-block;
   width: 100%;
-  direction: rtl;
 }
 
 .c3 {
@@ -481,7 +477,6 @@ exports[`EditableInput Snapshots Input field with right to left state 1`] = `
   >
     <input
       class="c2"
-      dir="rtl"
       name="Billing Email"
       placeholder="Billing Email"
       type="text"
@@ -580,7 +575,6 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
   >
     <input
       class="c2"
-      dir="ltr"
       name="Billing Email"
       placeholder="Billing Email"
       type="text"

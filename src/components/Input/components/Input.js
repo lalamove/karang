@@ -17,7 +17,7 @@ import PeekButton from './PeekButton';
 const Wrapper = styled.div`
   position: relative;
 
-  ${/* handle rtl css */ ({ dirty, rtl, focused, error }) =>
+  ${/* handle rtl css */ ({ dirty, theme: { rtl }, focused, error }) =>
     (dirty || focused || error) &&
     rtl &&
     css`
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 
   display: inline-block;
   > div {
-    ${({ rtl }) =>
+    ${({ theme: { rtl } }) =>
       rtl &&
       css`
         direction: rtl;
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
       padding-bottom: 2em;
     `};
 
-  ${({ dirty, rtl, focused }) =>
+  ${({ dirty, theme: { rtl }, focused }) =>
     !(dirty || focused) &&
     rtl &&
     css`
@@ -97,8 +97,6 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** rtl prop added to support right-to-left  */
-  rtl: bool,
 };
 
 const defaultProps = {
@@ -117,7 +115,6 @@ const defaultProps = {
   masked: true,
   onFocus: noop,
   onBlur: noop,
-  rtl: false,
 };
 
 class Input extends Component {
@@ -188,7 +185,6 @@ class Input extends Component {
       onBlur,
       selectAll,
       cursorEnd,
-      rtl,
       ...remainProps
     } = this.props;
 
@@ -199,7 +195,6 @@ class Input extends Component {
         error={error}
         dirty={dirty}
         focused={focused}
-        rtl={rtl}
       >
         <AnimatedBorder
           name={name}
@@ -215,7 +210,6 @@ class Input extends Component {
             autoComplete={autoComplete}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            dir={rtl ? 'rtl' : 'ltr'}
             {...remainProps}
             ref={forwardedRef}
           />
@@ -223,7 +217,7 @@ class Input extends Component {
             <PeekButton active={!masked} onClick={this.toggleMasked} />
           )}
         </AnimatedBorder>
-        <ErrorMessage error={error} rtl={rtl} />
+        <ErrorMessage error={error} />
       </Wrapper>
     );
   }

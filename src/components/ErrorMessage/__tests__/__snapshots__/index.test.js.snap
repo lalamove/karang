@@ -88,7 +88,6 @@ exports[`Snapshots ErrorMessage with rtl  1`] = `
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
-  direction: rtl;
 }
 
 .c1 {
@@ -102,6 +101,10 @@ exports[`Snapshots ErrorMessage with rtl  1`] = `
   font-size: 12px;
 }
 
+.c2 {
+  margin-left: 1em;
+}
+
 <div
   class="c0"
 >
@@ -111,7 +114,7 @@ exports[`Snapshots ErrorMessage with rtl  1`] = `
     message
   </span>
   <span
-    class=""
+    class="c2"
   >
     <svg
       aria-hidden="false"

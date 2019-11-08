@@ -131,7 +131,6 @@ exports[`Input Snapshots Password 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
-      dir="ltr"
       name="input"
       type="password"
     />
@@ -319,7 +318,6 @@ exports[`Input Snapshots Password with a value 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
-      dir="ltr"
       name="input"
       type="password"
       value="dummy"
@@ -499,18 +497,6 @@ exports[`Input Snapshots Password with a value right to left 1`] = `
   display: inline-block;
 }
 
-.c0 > div > label {
-  -webkit-transform-origin: right center;
-  -ms-transform-origin: right center;
-  transform-origin: right center;
-  right: 0.5em;
-  left: auto;
-}
-
-.c0 > div {
-  direction: rtl;
-}
-
 <div
   class="c0"
 >
@@ -520,7 +506,6 @@ exports[`Input Snapshots Password with a value right to left 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
-      dir="rtl"
       name="input"
       type="password"
       value="dummy"
@@ -648,7 +633,6 @@ exports[`Input Snapshots Regular Input 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
-      dir="ltr"
       name="input"
       type="text"
     />
@@ -717,15 +701,6 @@ exports[`Input Snapshots Regular Input with rtl 1`] = `
   display: inline-block;
 }
 
-.c0 > div {
-  direction: rtl;
-}
-
-.c0 > div > label {
-  left: auto;
-  right: 1em;
-}
-
 <div
   class="c0"
 >
@@ -735,7 +710,6 @@ exports[`Input Snapshots Regular Input with rtl 1`] = `
     <input
       autocomplete="new-password"
       class="c2"
-      dir="rtl"
       name="input"
       type="text"
     />

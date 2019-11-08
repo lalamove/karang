@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import Input, { PinInput, SearchInput, EditableInput } from './index';
+import BaseApp from '../BaseApp';
 
 class InputWrapper extends Component {
   state = {
@@ -35,17 +36,18 @@ class InputWrapper extends Component {
           autoFocus
         />
         <h4>Basic (right to left)</h4>
-        <Input
-          ref={this.input}
-          type="text"
-          label="Username"
-          name="usernameRtl"
-          value={this.state.usernameRtl}
-          onChange={this.handleChange}
-          autoFocus
-          placeholder="gaurav"
-          rtl
-        />
+        <BaseApp rtl>
+          <Input
+            ref={this.input}
+            type="text"
+            label="Username"
+            name="usernameRtl"
+            value={this.state.usernameRtl}
+            onChange={this.handleChange}
+            autoFocus
+            placeholder="gaurav"
+          />
+        </BaseApp>
         <h4>Password</h4>
         <Input
           type="password"
@@ -55,18 +57,18 @@ class InputWrapper extends Component {
           onChange={this.handleChange}
           masked
         />
-
-        <h4>Password (right to left) </h4>
-        <Input
-          type="password"
-          label="Password"
-          name="passwordRtl"
-          value={this.state.passwordRtl}
-          onChange={this.handleChange}
-          masked
-          rtl
-        />
-
+        <BaseApp rtl>
+          <h4>Password (right to left) </h4>
+          <Input
+            type="password"
+            label="Password"
+            name="passwordRtl"
+            value={this.state.passwordRtl}
+            onChange={this.handleChange}
+            masked
+            rtl
+          />
+        </BaseApp>
         <h4>Non-masked password</h4>
         <Input
           type="password"
@@ -86,15 +88,17 @@ class InputWrapper extends Component {
           error="Error Message"
         />
         <h4>With error message (right to left) </h4>
-        <Input
-          type="text"
-          label="Address"
-          name="addressRtl"
-          value={this.state.addressRtl}
-          onChange={this.handleChange}
-          error="Error Message"
-          rtl
-        />
+        <BaseApp rtl>
+          <Input
+            type="text"
+            label="Address"
+            name="addressRtl"
+            value={this.state.addressRtl}
+            onChange={this.handleChange}
+            error="Error Message"
+            rtl
+          />
+        </BaseApp>
         <h4>Select all when clicked</h4>
         <Input
           type="text"
@@ -139,11 +143,13 @@ class PinInputWrapper extends Component {
         <h4>With error message</h4>
         <PinInput pins={this.state.resetPassword} error="Error Message" />
         <h4>With error message (right to left) </h4>
-        <PinInput
-          pins={this.state.resetPassword}
-          error="Error Message (right to left)"
-          rtl
-        />
+        <BaseApp rtl>
+          <PinInput
+            pins={this.state.resetPassword}
+            error="Error Message (right to left)"
+            rtl
+          />
+        </BaseApp>
         <h4>Small size</h4>
         <PinInput pins={this.state.resetPassword} size="small" />
       </Fragment>
@@ -159,11 +165,13 @@ const SearchInputWrapper = () => (
       placeholder="Search for Order ID, Driver's Mobile"
     />
     <h4>Basic (right to left)</h4>
-    <SearchInput
-      name="searchValue"
-      placeholder="Search for Order ID, Driver's Mobile"
-      rtl
-    />
+    <BaseApp rtl>
+      <SearchInput
+        name="searchValue"
+        placeholder="Search for Order ID, Driver's Mobile"
+        rtl
+      />
+    </BaseApp>
   </>
 );
 
@@ -225,15 +233,17 @@ class EditableInputWrapper extends Component {
           isSuccess={isSuccess}
         />
         <h4>Basic (right to left)</h4>
-        <EditableInput
-          name="Billing Email (right to left)"
-          placeholder="Billing Email (right to left)"
-          defaultValue="no-reply-rtl@lalamove.com"
-          onSave={this.handleSave}
-          isLoading={isLoading}
-          isSuccess={isSuccess}
-          rtl
-        />
+        <BaseApp rtl>
+          <EditableInput
+            name="Billing Email (right to left)"
+            placeholder="Billing Email (right to left)"
+            defaultValue="no-reply-rtl@lalamove.com"
+            onSave={this.handleSave}
+            isLoading={isLoading}
+            isSuccess={isSuccess}
+            rtl
+          />
+        </BaseApp>
 
         <h4>With validate function</h4>
         <EditableInput

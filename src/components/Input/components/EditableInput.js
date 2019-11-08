@@ -14,7 +14,7 @@ import TextInput from './TextInput';
 const Wrapper = styled.div`
   display: inline-block;
   width: 100%;
-  ${({ rtl }) =>
+  ${({ theme: { rtl } }) =>
     rtl &&
     css`
       direction: rtl;
@@ -101,8 +101,6 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** rtl prop added to support right-to-left  */
-  rtl: bool,
 };
 
 const defaultProps = {
@@ -123,7 +121,6 @@ const defaultProps = {
   onChange: noop,
   onFocus: noop,
   onBlur: noop,
-  rtl: false,
 };
 
 export class EditableInput extends Component {
@@ -195,11 +192,10 @@ export class EditableInput extends Component {
       onCancel,
       value,
       defaultValue,
-      rtl,
       ...remainProps
     } = this.props;
     return (
-      <Wrapper style={style} rtl={rtl}>
+      <Wrapper style={style}>
         <AnimatedBorder
           label={label}
           dirty={!!currentValue}
@@ -213,11 +209,10 @@ export class EditableInput extends Component {
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             disabled={isLoading}
-            dir={rtl ? 'rtl' : 'ltr'}
             {...remainProps}
             ref={forwardedRef}
           />
-          <ButtonGroup rtl={rtl}>
+          <ButtonGroup>
             {isDirty && !isLoading && (
               <Fragment>
                 <Button onClick={this.handleCancel} variant="link">
