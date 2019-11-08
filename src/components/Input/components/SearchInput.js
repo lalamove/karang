@@ -1,5 +1,5 @@
 import React, { Component, forwardRef } from 'react';
-import { string, func, bool } from 'prop-types';
+import { string, func } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
@@ -18,7 +18,7 @@ const Container = styled.div`
   border-radius: 24px;
   border: 1px solid ${nobel.main};
   font-size: ${fontSize.regular};
-  ${({ rtl }) =>
+  ${({ theme: { rtl } }) =>
     rtl &&
     css`
       direction: rtl;
@@ -59,8 +59,6 @@ const propTypes = {
    * @param {SyntheticEvent} event https://reactjs.org/docs/events.html
    */
   onBlur: func,
-  /** rtl prop added to support right-to-left  */
-  rtl: bool,
 };
 
 const defaultProps = {
@@ -69,7 +67,6 @@ const defaultProps = {
   name: null,
   onFocus: noop,
   onBlur: noop,
-  rtl: false,
 };
 
 class SearchInput extends Component {
@@ -98,12 +95,11 @@ class SearchInput extends Component {
     // eslint-disable-next-line react/prop-types
     const { forwardedRef, onFocus, onBlur, rtl, ...props } = this.props;
     return (
-      <Container rtl={rtl} focused={focused}>
+      <Container focused={focused}>
         <SearchIcon color={mineShaft['900']} size={20} />
         <SCTextInput
           onFocus={this.onFocus}
           onBlur={this.onBlur}
-          dir={rtl ? 'rtl' : 'ltr'}
           ref={forwardedRef}
           {...props}
         />
