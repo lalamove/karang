@@ -29,14 +29,11 @@ const Wrapper = styled.div`
 const ButtonGroup = styled.div`
   display: flex;
   align-items: center;
-  padding: 0em 1em 0em 1em;
-
-  &>button: first - of - type {
+  padding: 0em 1em;
+  direction: ltr;
+  &>button: first-of-type {
     margin-right: 0.5em;
   }
-
-  direction: ${/* reversingrtl so save button comes before cancel button */
-  ({ rtl }) => (rtl ? 'ltr' : 'rtl')};
 `;
 
 const propTypes = {
