@@ -159,13 +159,7 @@ class Input extends Component {
     } = this.props;
 
     return (
-      <Wrapper
-        style={style}
-        className={className}
-        error={error}
-        dirty={dirty}
-        focused={focused}
-      >
+      <Wrapper style={style} className={className} error={error}>
         <AnimatedBorder
           name={name}
           label={label}

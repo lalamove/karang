@@ -93,7 +93,7 @@ class SearchInput extends Component {
   render() {
     const { focused } = this.state;
     // eslint-disable-next-line react/prop-types
-    const { forwardedRef, onFocus, onBlur, rtl, ...props } = this.props;
+    const { forwardedRef, onFocus, onBlur, ...props } = this.props;
     return (
       <Container focused={focused}>
         <SearchIcon color={mineShaft['900']} size={20} />

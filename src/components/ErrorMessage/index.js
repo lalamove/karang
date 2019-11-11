@@ -35,7 +35,7 @@ const IconWrapper = styled.span`
     `}
 `;
 
-const ErrorMessage = ({ error, rtl, ...rest }) =>
+const ErrorMessage = ({ error, ...rest }) =>
   error &&
   error.length > 0 && (
     <Container {...rest}>
