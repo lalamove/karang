@@ -1,9 +1,9 @@
 /* eslint-disable max-classes-per-file */
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
+import { boolean } from '@storybook/addon-knobs';
 import Input, { PinInput, SearchInput, EditableInput } from './index';
 import BaseApp from '../BaseApp';
-import Toggle from '../Toggle';
 
 class InputWrapper extends Component {
   state = {
@@ -12,7 +12,6 @@ class InputWrapper extends Component {
     address: 'Sample Address',
     companyName: '',
     industry: '',
-    rtl: false,
   };
 
   input = React.createRef();
@@ -21,19 +20,10 @@ class InputWrapper extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  toggleDirection = () => {
-    const { rtl } = this.state;
-    this.setState({
-      rtl: !rtl,
-    });
-  };
-
   render() {
     return (
       <Fragment>
-        <h4>Toggle Language Direction</h4>
-        <Toggle onChange={this.toggleDirection} />
-        <BaseApp rtl={this.state.rtl}>
+        <BaseApp rtl={boolean('Right-To-Left', false)}>
           <h4>Basic</h4>
           <Input
             ref={this.input}
@@ -108,22 +98,12 @@ class PinInputWrapper extends Component {
   state = {
     register: ['', '', '', ''],
     resetPassword: ['1', '3', '3', '4'],
-    rtl: false,
-  };
-
-  toggleDirection = () => {
-    const { rtl } = this.state;
-    this.setState({
-      rtl: !rtl,
-    });
   };
 
   render() {
     return (
       <Fragment>
-        <h4>Toggle Language Direction</h4>
-        <Toggle onChange={this.toggleDirection} />
-        <BaseApp rtl={this.state.rtl}>
+        <BaseApp rtl={boolean('Right-To-Left', false)}>
           <h4>Basic</h4>
           <PinInput pins={this.state.register} />
           <h4>With error message</h4>
@@ -138,17 +118,11 @@ class PinInputWrapper extends Component {
 
 const SearchInputWrapper = () => (
   <>
-    <h4>Basic</h4>
-    <SearchInput
-      name="searchValue"
-      placeholder="Search for Order ID, Driver's Mobile"
-    />
-    <h4>Basic (right to left)</h4>
-    <BaseApp rtl>
+    <BaseApp rtl={boolean('Right-To-Left', false)}>
+      <h4>Basic</h4>
       <SearchInput
         name="searchValue"
         placeholder="Search for Order ID, Driver's Mobile"
-        rtl
       />
     </BaseApp>
   </>
@@ -159,7 +133,6 @@ class EditableInputWrapper extends Component {
     isLoading: false,
     isSuccess: false,
     error: null,
-    rtl: false,
   };
 
   componentDidUpdate(_, prevState) {
@@ -194,13 +167,6 @@ class EditableInputWrapper extends Component {
     this.setState({ error: 'Email is invalid' });
   };
 
-  toggleDirection = () => {
-    const { rtl } = this.state;
-    this.setState({
-      rtl: !rtl,
-    });
-  };
-
   render() {
     const { isLoading, isSuccess, error } = this.state;
     const validate = value => {
@@ -210,9 +176,7 @@ class EditableInputWrapper extends Component {
     };
     return (
       <Fragment>
-        <h4>Toggle Language Direction</h4>
-        <Toggle onChange={this.toggleDirection} />
-        <BaseApp rtl={this.state.rtl}>
+        <BaseApp rtl={boolean('Right-To-Left', false)}>
           <h4>Basic</h4>
           <EditableInput
             name="Billing Email"
