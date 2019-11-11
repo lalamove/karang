@@ -3,17 +3,16 @@ import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import Input, { PinInput, SearchInput, EditableInput } from './index';
 import BaseApp from '../BaseApp';
+import Toggle from '../Toggle';
 
 class InputWrapper extends Component {
   state = {
     username: '',
-    usernameRtl: '',
     password: '',
-    passwordRtl: '',
     address: 'Sample Address',
-    addressRtl: 'Sample Address',
     companyName: '',
     industry: '',
+    rtl: false,
   };
 
   input = React.createRef();
@@ -22,108 +21,84 @@ class InputWrapper extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  toggleDirection = () => {
+    const { rtl } = this.state;
+    this.setState({
+      rtl: !rtl,
+    });
+  };
+
   render() {
     return (
       <Fragment>
-        <h4>Basic</h4>
-        <Input
-          ref={this.input}
-          type="text"
-          label="Username"
-          name="username"
-          value={this.state.username}
-          onChange={this.handleChange}
-          autoFocus
-        />
-        <h4>Basic (right to left)</h4>
-        <BaseApp rtl>
+        <h4>Toggle Language Direction</h4>
+        <Toggle onChange={this.toggleDirection} />
+        <BaseApp rtl={this.state.rtl}>
+          <h4>Basic</h4>
           <Input
             ref={this.input}
             type="text"
             label="Username"
-            name="usernameRtl"
-            value={this.state.usernameRtl}
+            name="username"
+            value={this.state.username}
             onChange={this.handleChange}
             autoFocus
-            placeholder="gaurav"
           />
-        </BaseApp>
-        <h4>Password</h4>
-        <Input
-          type="password"
-          label="Password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-          masked
-        />
-        <BaseApp rtl>
-          <h4>Password (right to left) </h4>
+
+          <h4>Password</h4>
           <Input
             type="password"
             label="Password"
-            name="passwordRtl"
-            value={this.state.passwordRtl}
+            name="password"
+            value={this.state.password}
             onChange={this.handleChange}
             masked
-            rtl
           />
-        </BaseApp>
-        <h4>Non-masked password</h4>
-        <Input
-          type="password"
-          label="Non-masked Password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-          masked={false}
-        />
-        <h4>With error message</h4>
-        <Input
-          type="text"
-          label="Address"
-          name="address"
-          value={this.state.address}
-          onChange={this.handleChange}
-          error="Error Message"
-        />
-        <h4>With error message (right to left) </h4>
-        <BaseApp rtl>
+
+          <h4>Non-masked password</h4>
+          <Input
+            type="password"
+            label="Non-masked Password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            masked={false}
+          />
+          <h4>With error message</h4>
           <Input
             type="text"
             label="Address"
-            name="addressRtl"
-            value={this.state.addressRtl}
+            name="address"
+            value={this.state.address}
             onChange={this.handleChange}
             error="Error Message"
-            rtl
+          />
+          <h4>Select all when clicked</h4>
+          <Input
+            type="text"
+            label="Company Name"
+            name="companyName"
+            value={this.state.companyName}
+            onChange={this.handleChange}
+            selectAll
+          />
+          <h4>Move cursor to end of input</h4>
+          <Input
+            type="text"
+            label="Industry"
+            name="industry"
+            value={this.state.industry}
+            onChange={this.handleChange}
+            cursorEnd
+          />
+          <h4>Uncontrolled component</h4>
+          <Input
+            type="text"
+            label="Uncontrolled"
+            name="uncontrolled"
+            defaultValue=""
           />
         </BaseApp>
-        <h4>Select all when clicked</h4>
-        <Input
-          type="text"
-          label="Company Name"
-          name="companyName"
-          value={this.state.companyName}
-          onChange={this.handleChange}
-          selectAll
-        />
-        <h4>Move cursor to end of input</h4>
-        <Input
-          type="text"
-          label="Industry"
-          name="industry"
-          value={this.state.industry}
-          onChange={this.handleChange}
-          cursorEnd
-        />
-        <h4>Uncontrolled component</h4>
-        <Input
-          type="text"
-          label="Uncontrolled"
-          name="uncontrolled"
-          defaultValue=""
-        />
       </Fragment>
     );
   }
@@ -133,25 +108,29 @@ class PinInputWrapper extends Component {
   state = {
     register: ['', '', '', ''],
     resetPassword: ['1', '3', '3', '4'],
+    rtl: false,
+  };
+
+  toggleDirection = () => {
+    const { rtl } = this.state;
+    this.setState({
+      rtl: !rtl,
+    });
   };
 
   render() {
     return (
       <Fragment>
-        <h4>Basic</h4>
-        <PinInput pins={this.state.register} />
-        <h4>With error message</h4>
-        <PinInput pins={this.state.resetPassword} error="Error Message" />
-        <h4>With error message (right to left) </h4>
-        <BaseApp rtl>
-          <PinInput
-            pins={this.state.resetPassword}
-            error="Error Message (right to left)"
-            rtl
-          />
+        <h4>Toggle Language Direction</h4>
+        <Toggle onChange={this.toggleDirection} />
+        <BaseApp rtl={this.state.rtl}>
+          <h4>Basic</h4>
+          <PinInput pins={this.state.register} />
+          <h4>With error message</h4>
+          <PinInput pins={this.state.resetPassword} error="Error Message" />
+          <h4>Small size</h4>
+          <PinInput pins={this.state.resetPassword} size="small" />
         </BaseApp>
-        <h4>Small size</h4>
-        <PinInput pins={this.state.resetPassword} size="small" />
       </Fragment>
     );
   }
@@ -180,6 +159,7 @@ class EditableInputWrapper extends Component {
     isLoading: false,
     isSuccess: false,
     error: null,
+    rtl: false,
   };
 
   componentDidUpdate(_, prevState) {
@@ -214,6 +194,13 @@ class EditableInputWrapper extends Component {
     this.setState({ error: 'Email is invalid' });
   };
 
+  toggleDirection = () => {
+    const { rtl } = this.state;
+    this.setState({
+      rtl: !rtl,
+    });
+  };
+
   render() {
     const { isLoading, isSuccess, error } = this.state;
     const validate = value => {
@@ -223,42 +210,34 @@ class EditableInputWrapper extends Component {
     };
     return (
       <Fragment>
-        <h4>Basic</h4>
-        <EditableInput
-          name="Billing Email"
-          placeholder="Billing Email"
-          defaultValue="no-reply@lalamove.com"
-          onSave={this.handleSave}
-          isLoading={isLoading}
-          isSuccess={isSuccess}
-        />
-        <h4>Basic (right to left)</h4>
-        <BaseApp rtl>
+        <h4>Toggle Language Direction</h4>
+        <Toggle onChange={this.toggleDirection} />
+        <BaseApp rtl={this.state.rtl}>
+          <h4>Basic</h4>
           <EditableInput
-            name="Billing Email (right to left)"
-            placeholder="Billing Email (right to left)"
-            defaultValue="no-reply-rtl@lalamove.com"
+            name="Billing Email"
+            placeholder="Billing Email"
+            defaultValue="no-reply@lalamove.com"
             onSave={this.handleSave}
             isLoading={isLoading}
             isSuccess={isSuccess}
-            rtl
+          />
+
+          <h4>With validate function</h4>
+          <EditableInput
+            name="Billing Email"
+            placeholder="Billing Email"
+            defaultValue="no-reply@lalamove.com"
+            onSave={this.handleSave}
+            onError={this.handleError}
+            onChange={this.handleChange}
+            onCancel={this.handleCancel}
+            validate={validate}
+            error={error}
+            isLoading={isLoading}
+            isSuccess={isSuccess}
           />
         </BaseApp>
-
-        <h4>With validate function</h4>
-        <EditableInput
-          name="Billing Email"
-          placeholder="Billing Email"
-          defaultValue="no-reply@lalamove.com"
-          onSave={this.handleSave}
-          onError={this.handleError}
-          onChange={this.handleChange}
-          onCancel={this.handleCancel}
-          validate={validate}
-          error={error}
-          isLoading={isLoading}
-          isSuccess={isSuccess}
-        />
       </Fragment>
     );
   }

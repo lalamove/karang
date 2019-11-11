@@ -16,42 +16,12 @@ import PeekButton from './PeekButton';
 
 const Wrapper = styled.div`
   position: relative;
-
-  ${/* handle rtl css */ ({ dirty, theme: { rtl }, focused, error }) =>
-    (dirty || focused || error) &&
-    rtl &&
-    css`
-      > div > label {
-        transform-origin: right center;
-        right: 0.5em;
-        left: auto;
-      }
-    `};
-
   display: inline-block;
-  > div {
-    ${({ theme: { rtl } }) =>
-      rtl &&
-      css`
-        direction: rtl;
-      `};
-  }
-
   ${({ error }) =>
     error &&
     css`
       padding-bottom: 2em;
     `};
-
-  ${({ dirty, theme: { rtl }, focused }) =>
-    !(dirty || focused) &&
-    rtl &&
-    css`
-      > div > label {
-        left: auto;
-        right: 1em;
-      }
-    `}
 `;
 
 const ErrorMessage = styled(RawErrorMsg)`
