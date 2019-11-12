@@ -31,7 +31,7 @@ const Label = styled.label`
       color: ${valencia.main};
     `};
 
-  ${({ focused, dirty, error }) =>
+  ${({ focused, dirty, error, theme: { rtl } }) =>
     (focused || dirty || error) &&
     css`
       top: 0;
@@ -39,7 +39,23 @@ const Label = styled.label`
       padding: 0 4px;
       background-color: ${white};
       transform: translateY(-50%) scale(0.7);
+      ${rtl &&
+        css`
+          left: auto;
+          right: 0.5em;
+          transform-origin: right center;
+        `}
     `};
+
+  ${({ dirty, theme: { rtl }, focused }) =>
+    !(dirty || focused) &&
+    rtl &&
+    css`
+       {
+        left: auto;
+        right: 1em;
+      }
+    `}
 `;
 
 const Placeholder = ({ title, focused, dirty, error, htmlFor }) => (

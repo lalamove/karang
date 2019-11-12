@@ -1,10 +1,10 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { normalize } from 'polished';
 
 import { primary } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
-import { node } from 'prop-types';
+import { node, bool } from 'prop-types';
 
 // TODO: Should allow configuration parameters passed as props
 const GlobalStyle = createGlobalStyle`
@@ -27,16 +27,30 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const BaseApp = ({ children }) => (
-  <>
-    <GlobalStyle />
-    {children}
-  </>
-);
+const BaseApp = ({ children, rtl }) => {
+  const theme = {
+    rtl,
+  };
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        {children}
+      </>
+    </ThemeProvider>
+  );
+};
 
 BaseApp.propTypes = {
   /** @ignore */
   children: node.isRequired,
+
+  /** to support rtl theme */
+  rtl: bool,
+};
+
+BaseApp.defaultProps = {
+  rtl: false,
 };
 
 export default BaseApp;
