@@ -56,61 +56,66 @@ const UL = styled.ul`
 const activeStyle = css`
   background-color: ${lighten(0.05, nobel['200'])};
   border-left-color: ${primary.main};
-  border-right-color: ;
+  border-right-color: ${primary.main};
 `;
 
 const LI = styled.li`
   position: relative;
   padding-left: 8px;
-  border-left: 2px solid transparent;
+  ${({ theme: { rtl } }) =>
+    css`
+          border-${rtl ? 'right' : 'left'}: none;
+          border-${rtl ? 'right' : 'left'}: 2px solid transparent;
+        `};
+
   outline: 0;
 
-  ${({ size }) =>
-    size === 'small' &&
-    css`
-      margin-top: 8px;
-      margin-bottom: 4px;
-      &:not(:first-child) {
-        margin-top: 4px;
-      }
-      &:last-child {
-        margin-bottom: 8px;
-      }
-    `};
+${({ size }) =>
+  size === 'small' &&
+  css`
+    margin-top: 8px;
+    margin-bottom: 4px;
+    &:not(:first-child) {
+      margin-top: 4px;
+    }
+    &:last-child {
+      margin-bottom: 8px;
+    }
+  `};
 
-  &:not(:last-child) ${/* sc-selector */ Content} {
-    ${({ size }) => {
-      switch (size) {
-        case 'small':
-          return css`
-            border-bottom: 0;
-          `;
-        default:
-          return css`
-            border-bottom: 1px solid ${nobel['200']};
-          `;
-      }
-    }};
-  }
+  &: not(: last - child) ${/* sc-selector */ Content} {
+  ${({ size }) => {
+    switch (size) {
+      case 'small':
+        return css`
+          border-bottom: 0;
+        `;
+      default:
+        return css`
+          border-bottom: 1px solid ${nobel['200']};
+        `;
+    }
+  }};
+}
 
-  ${({ hoverable, disabled }) =>
-    hoverable &&
-    !disabled &&
-    css`
-      cursor: pointer;
-      &:hover,
-      &:focus {
-        ${activeStyle};
-      }
-    `};
-  ${({ active, disabled }) => active && !disabled && activeStyle};
+${({ hoverable, disabled }) =>
+  hoverable &&
+  !disabled &&
+  css`
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      ${activeStyle};
+    }
+  `};
+${({ active, disabled }) => active && !disabled && activeStyle};
 
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      opacity: 0.5;
-      cursor: not-allowed;
-    `};
+${({ disabled }) =>
+  disabled &&
+  css`
+    opacity: 0.5;
+    cursor: not-allowed;
+  `};
 `;
 
 const Wrapper = styled(LI)`
