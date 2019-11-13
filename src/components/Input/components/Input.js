@@ -17,7 +17,6 @@ import PeekButton from './PeekButton';
 const Wrapper = styled.div`
   position: relative;
   display: inline-block;
-
   ${({ error }) =>
     error &&
     css`

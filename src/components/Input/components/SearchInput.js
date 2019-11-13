@@ -1,6 +1,6 @@
 import React, { Component, forwardRef } from 'react';
 import { string, func } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 import noop from 'utils/noop';
@@ -18,7 +18,14 @@ const Container = styled.div`
   border-radius: 24px;
   border: 1px solid ${nobel.main};
   font-size: ${fontSize.regular};
-
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+      > input {
+        margin: 0px 10px 0px 0px;
+      }
+    `}
   ${({ focused }) =>
     focused &&
     `border: 1px solid ${primary.main};

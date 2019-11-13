@@ -135,4 +135,4 @@ renovate:
     DOCKER_HOST: tcp://localhost:2375
     DOCKER_TLS_CERTDIR: ""
   script:
-    - docker run renovate/renovate:slim --platform gitlab --token $GITLAB_API_TOKEN --endpoint https://git.easygroup.co/api/v4 $CI_PROJECT_PATH
+    - docker run --network=host renovate/renovate:slim --platform gitlab --token $GITLAB_API_TOKEN --endpoint https://git.easygroup.co/api/v4 $CI_PROJECT_PATH
