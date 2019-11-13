@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, func, oneOf, bool } from 'prop-types';
+import { string, func, oneOf } from 'prop-types';
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
