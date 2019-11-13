@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool, node, string } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 import { primary, valencia, nobel } from 'styles/colors';
@@ -16,6 +16,11 @@ const Container = styled.div`
   font-family: ${primaryFonts};
   text-align: left;
   width: 100%;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `};
 
   ${({ disabled }) =>
     disabled &&

@@ -1,6 +1,6 @@
 import React from 'react';
 import { node } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { valencia } from 'styles/colors';
 import { primaryFonts, fontSize } from 'styles/fonts';
@@ -12,6 +12,11 @@ const Container = styled.div`
   margin-top: 0.3em;
   margin-bottom: 0.3em;
   line-height: 1.4;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `};
 `;
 
 const Text = styled.span`
@@ -23,7 +28,11 @@ const Text = styled.span`
 `;
 
 const IconWrapper = styled.span`
-  margin-left: 1em;
+  ${({ theme: { rtl } }) =>
+    !rtl &&
+    css`
+      margin-left: 1em;
+    `}
 `;
 
 const ErrorMessage = ({ error, ...rest }) =>
