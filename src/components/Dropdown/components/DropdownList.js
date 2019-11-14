@@ -37,6 +37,13 @@ const StyledList = styled(List)`
               right: ${nested ? 'calc(100% + 2px)' : '0'};
             `;
       case 'right':
+        return rtl
+          ? css`
+              left: ${nested ? 'calc(100% + 2px)' : '0'};
+            `
+          : css`
+              left: ${nested ? '100%' : '0'};
+            `;
       default:
         return rtl
           ? css`

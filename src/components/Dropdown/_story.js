@@ -153,6 +153,15 @@ class CascadingMenu extends Component {
               direction="left"
             />
           </div>
+          <h4 style={{ textAlign: 'center' }}>Cascading menu on left side</h4>
+          <div style={{ textAlign: 'center' }}>
+            <Dropdown
+              items={itemsWithSubmenu}
+              onChange={item => this.handleChange('dropdown2', item)}
+              selectedItem={dropdown2}
+              direction="right"
+            />
+          </div>
           <h4 style={{ clear: 'both' }}>
             Cascading menu with <code>block</code> set to <code>true</code>
           </h4>

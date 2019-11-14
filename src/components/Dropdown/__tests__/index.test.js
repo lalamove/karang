@@ -139,7 +139,11 @@ describe('Dropdown', () => {
     it('select first option in sub menu of second option with keyboard', () => {
       const onChange = jest.fn();
       const wrapper = mount(
-        <Dropdown items={itemsWithSubmenu} onChange={onChange} />
+        <Dropdown
+          items={itemsWithSubmenu}
+          direction="right"
+          onChange={onChange}
+        />
       );
       const button = wrapper.find('button');
       button.simulate('keydown', { key: ' ' });

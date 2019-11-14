@@ -50,7 +50,7 @@ class Dropdown extends Component {
     /** Label of the component, will be shown before user selected option */
     defaultLabel: string,
     /** Open direction of pop menu */
-    direction: oneOf(['left', 'right']),
+    direction: oneOf(['left', 'right', 'auto']),
     /** Variant of component, `default` is the component with standard select button,
      * `compact` is the component with icon-only button */
     variant: oneOf(['default', 'compact']),
@@ -68,7 +68,7 @@ class Dropdown extends Component {
     onOuterClick: noop,
     onSelect: noop,
     defaultLabel: 'Options',
-    direction: 'right',
+    direction: 'auto',
     variant: 'default',
     icon: undefined,
     disabled: false,
