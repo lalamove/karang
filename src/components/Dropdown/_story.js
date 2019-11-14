@@ -153,7 +153,9 @@ class CascadingMenu extends Component {
               direction="left"
             />
           </div>
-          <h4 style={{ textAlign: 'center' }}>Cascading menu on left side</h4>
+          <h4 style={{ textAlign: 'center' }}>
+            Cascading menu with direction right
+          </h4>
           <div style={{ textAlign: 'center' }}>
             <Dropdown
               items={itemsWithSubmenu}
