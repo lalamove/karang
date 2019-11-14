@@ -28,18 +28,19 @@ const StyledList = styled(List)`
 
   ${({ nested, direction, theme: { rtl } }) => {
     switch (direction) {
-      case 'right':
-        return css`
-        ${rtl ? 'right' : 'left'}  : ${nested ? 'calc(100% + 2px)' : '0'};
-        `;
       case 'left':
         return css`
           right: ${nested ? 'calc(100% + 2px)' : 0};
         `;
+      case 'right':
       default:
-        return css`
-          right: ${nested ? '100%' : 0};
-        `;
+        return rtl
+          ? css`
+              right: ${nested ? 'calc(100% + 2px)' : '0'};
+            `
+          : css`
+              left: ${nested ? '100%' : '0'};
+            `;
     }
   }};
   ${({ nested, theme: { rtl } }) =>
@@ -64,7 +65,7 @@ class DropdownList extends Component {
   static propTypes = {
     block: bool,
     items: arrayOf(shape({})).isRequired, // add shape
-    direction: oneOf(['left', 'right']).isRequired,
+    direction: oneOf(['left', 'right', 'auto']),
     highlightedIndex: oneOfType([string, number]),
     highlightedIndexes: arrayOf(string),
     getItemProps: func,
@@ -81,6 +82,7 @@ class DropdownList extends Component {
     handleDepthLevel: noop,
     handleHighlightedIndexes: noop,
     handleListCounts: noop,
+    direction: 'auto',
   };
 
   renderList(items, depthLevel = 0) {
