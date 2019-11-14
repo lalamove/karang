@@ -1,14 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { boolean } from '@storybook/addon-knobs';
 
 import Alert from './index';
+import BaseApp from '../BaseApp';
 
 const onDismiss = action('onDismiss');
 
 storiesOf('Alert', module)
   .add('Basic', () => (
-    <div>
+    <BaseApp rtl={boolean('Right-To-Left', false)}>
       <h4>Info</h4>
       <Alert
         type="info"
@@ -37,10 +39,10 @@ storiesOf('Alert', module)
         description="Subtitle text goes here."
         onDismiss={onDismiss}
       />
-    </div>
+    </BaseApp>
   ))
   .add('Toast', () => (
-    <div>
+    <BaseApp rtl={boolean('Right-To-Left', false)}>
       <h4>Info</h4>
       <Alert
         type="info"
@@ -73,5 +75,5 @@ storiesOf('Alert', module)
         description="Subtitle text goes here."
         onDismiss={onDismiss}
       />
-    </div>
+    </BaseApp>
   ));
