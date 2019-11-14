@@ -29,14 +29,18 @@ const StyledList = styled(List)`
   ${({ nested, direction, theme: { rtl } }) => {
     switch (direction) {
       case 'left':
-        return css`
-          right: ${nested ? 'calc(100% + 2px)' : 0};
-        `;
+        return rtl
+          ? css`
+              right: ${nested ? '100%' : '0'};
+            `
+          : css`
+              right: ${nested ? 'calc(100% + 2px)' : '0'};
+            `;
       case 'right':
       default:
         return rtl
           ? css`
-              right: ${nested ? 'calc(100% + 2px)' : '0'};
+              right: ${nested ? '100%' : '0'};
             `
           : css`
               left: ${nested ? '100%' : '0'};

@@ -167,7 +167,7 @@ Item.defaultProps = {
   children: null,
   options: null,
   disabled: false,
-  direction: 'right',
+  direction: 'auto',
 };
 
 Item.propTypes = {
