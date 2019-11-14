@@ -27,7 +27,7 @@ const ItemIcon = styled.span`
   align-self: center;
   ${({ theme: { rtl } }) =>
     css`
-          margin-${rtl ? 'right' : 'left'}: 0.5em;
+          margin-${rtl ? 'left' : 'right'}: 0.5em;
         `};
 
   line-height: 1.6;
