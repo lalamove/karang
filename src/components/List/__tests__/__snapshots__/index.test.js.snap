@@ -26,6 +26,7 @@ exports[`List component size-small-default 1`] = `
 .c1 {
   position: relative;
   padding-left: 8px;
+  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   margin-top: 8px;
@@ -48,7 +49,7 @@ exports[`List component size-small-default 1`] = `
   margin-bottom: 8px;
 }
 
-.c1:not(:last-child) .c2 {
+.c1:not(:last - child) .c2 {
   border-bottom: 0;
 }
 
@@ -57,6 +58,7 @@ exports[`List component size-small-default 1`] = `
 >
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -67,6 +69,7 @@ exports[`List component size-small-default 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -77,6 +80,7 @@ exports[`List component size-small-default 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -87,6 +91,7 @@ exports[`List component size-small-default 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -124,6 +129,7 @@ exports[`List component size-small-with icon 1`] = `
 .c1 {
   position: relative;
   padding-left: 8px;
+  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   margin-top: 8px;
@@ -146,7 +152,7 @@ exports[`List component size-small-with icon 1`] = `
   margin-bottom: 8px;
 }
 
-.c1:not(:last-child) .c3 {
+.c1:not(:last - child) .c3 {
   border-bottom: 0;
 }
 
@@ -162,6 +168,7 @@ exports[`List component size-small-with icon 1`] = `
 >
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -175,6 +182,7 @@ exports[`List component size-small-with icon 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -188,6 +196,7 @@ exports[`List component size-small-with icon 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -201,6 +210,7 @@ exports[`List component size-small-with icon 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -238,17 +248,18 @@ exports[`List component size-undefined-default 1`] = `
   min-width: 16rem;
 }
 
-.c4:not(:last-child) .c2 {
+.c4:not(:last - child) .c2 {
   border-bottom: 0;
 }
 
-.c5:not(:last-child) .c2 {
+.c5:not(:last - child) .c2 {
   border-bottom: 0;
 }
 
 .c1 {
   position: relative;
   padding-left: 8px;
+  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   display: -webkit-box;
@@ -261,7 +272,7 @@ exports[`List component size-undefined-default 1`] = `
   align-items: top;
 }
 
-.c1:not(:last-child) .c2 {
+.c1:not(:last - child) .c2 {
   border-bottom: 1px solid #E8E8E8;
 }
 
@@ -270,6 +281,7 @@ exports[`List component size-undefined-default 1`] = `
 >
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -280,6 +292,7 @@ exports[`List component size-undefined-default 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -290,6 +303,7 @@ exports[`List component size-undefined-default 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -300,6 +314,7 @@ exports[`List component size-undefined-default 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -334,17 +349,18 @@ exports[`List component size-undefined-with icon 1`] = `
   min-width: 16rem;
 }
 
-.c5:not(:last-child) .c3 {
+.c5:not(:last - child) .c3 {
   border-bottom: 0;
 }
 
-.c6:not(:last-child) .c3 {
+.c6:not(:last - child) .c3 {
   border-bottom: 0;
 }
 
 .c1 {
   position: relative;
   padding-left: 8px;
+  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   display: -webkit-box;
@@ -357,7 +373,7 @@ exports[`List component size-undefined-with icon 1`] = `
   align-items: top;
 }
 
-.c1:not(:last-child) .c3 {
+.c1:not(:last - child) .c3 {
   border-bottom: 1px solid #E8E8E8;
 }
 
@@ -371,6 +387,7 @@ exports[`List component size-undefined-with icon 1`] = `
 >
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -384,6 +401,7 @@ exports[`List component size-undefined-with icon 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -397,6 +415,7 @@ exports[`List component size-undefined-with icon 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
@@ -410,6 +429,7 @@ exports[`List component size-undefined-with icon 1`] = `
   </li>
   <li
     class="c1"
+    direction="right"
     tabindex="0"
   >
     <div
