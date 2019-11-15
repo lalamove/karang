@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
 import Input, { PinInput, SearchInput, EditableInput } from './index';
@@ -21,9 +21,10 @@ class InputWrapper extends Component {
   };
 
   render() {
+    const rtl = boolean('Right-to-left', false);
     return (
-      <Fragment>
-        <BaseApp rtl={boolean('Right-To-Left', false)}>
+      <div dir={rtl ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={rtl}>
           <h4>Basic</h4>
           <Input
             ref={this.input}
@@ -89,7 +90,7 @@ class InputWrapper extends Component {
             defaultValue=""
           />
         </BaseApp>
-      </Fragment>
+      </div>
     );
   }
 }
@@ -101,9 +102,10 @@ class PinInputWrapper extends Component {
   };
 
   render() {
+    const rtl = boolean('Right-to-left', false);
     return (
-      <Fragment>
-        <BaseApp rtl={boolean('Right-To-Left', false)}>
+      <div dir={rtl ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={rtl}>
           <h4>Basic</h4>
           <PinInput pins={this.state.register} />
           <h4>With error message</h4>
@@ -111,21 +113,21 @@ class PinInputWrapper extends Component {
           <h4>Small size</h4>
           <PinInput pins={this.state.resetPassword} size="small" />
         </BaseApp>
-      </Fragment>
+      </div>
     );
   }
 }
 
 const SearchInputWrapper = () => (
-  <>
-    <BaseApp rtl={boolean('Right-To-Left', false)}>
+  <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+    <BaseApp rtl={boolean('Right-to-left', false)}>
       <h4>Basic</h4>
       <SearchInput
         name="searchValue"
         placeholder="Search for Order ID, Driver's Mobile"
       />
     </BaseApp>
-  </>
+  </div>
 );
 
 class EditableInputWrapper extends Component {
@@ -174,9 +176,10 @@ class EditableInputWrapper extends Component {
       const regexp = new RegExp(/^[\w-+]+(\.[\w-+]+)*@[\w-]+(\.[\w-]+)+$/i); // email pattern
       return regexp.test(value);
     };
+    const rtl = boolean('Right-to-left', false);
     return (
-      <Fragment>
-        <BaseApp rtl={boolean('Right-To-Left', false)}>
+      <div dir={rtl ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={rtl}>
           <h4>Basic</h4>
           <EditableInput
             name="Billing Email"
@@ -202,7 +205,7 @@ class EditableInputWrapper extends Component {
             isSuccess={isSuccess}
           />
         </BaseApp>
-      </Fragment>
+      </div>
     );
   }
 }
