@@ -102,10 +102,9 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0em 1em;
-  direction: ltr;
 }
 
-.c3>button:first-of-type {
+.c3 > button:first-of-type {
   margin-right: 0.5em;
 }
 
@@ -243,10 +242,9 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0em 1em;
-  direction: ltr;
 }
 
-.c3>button:first-of-type {
+.c3 > button:first-of-type {
   margin-right: 0.5em;
 }
 
@@ -364,10 +362,9 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0em 1em;
-  direction: ltr;
 }
 
-.c3>button:first-of-type {
+.c3 > button:first-of-type {
   margin-right: 0.5em;
 }
 
@@ -462,10 +459,9 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0em 1em;
-  direction: ltr;
 }
 
-.c3>button:first-of-type {
+.c3 > button:first-of-type {
   margin-right: 0.5em;
 }
 
