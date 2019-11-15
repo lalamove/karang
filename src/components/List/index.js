@@ -56,12 +56,17 @@ const UL = styled.ul`
 const activeStyle = css`
   background-color: ${lighten(0.05, nobel['200'])};
   border-left-color: ${primary.main};
+  border-right-color: ${primary.main};
 `;
 
 const LI = styled.li`
   position: relative;
   padding-left: 8px;
-  border-left: 2px solid transparent;
+  ${({ theme: { rtl } }) =>
+    css`
+       border-${rtl ? 'right' : 'left'}: 2px solid transparent;
+   `};
+
   outline: 0;
 
   ${({ size }) =>
