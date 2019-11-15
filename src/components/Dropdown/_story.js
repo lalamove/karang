@@ -134,17 +134,19 @@ class CascadingMenu extends Component {
 
   render() {
     const { dropdown1, dropdown2, dropdown3 } = this.state;
-
+    const rtl = boolean('Right-To-Left', false);
     return (
-      <div dir={boolean('Right-To-Left', false) ? 'rtl' : 'ltr'}>
-        <BaseApp rtl={boolean('Right-To-Left', false)}>
-          <h4>Cascading menu with icon</h4>
+      <div dir={rtl ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={rtl}>
+          <h4>Cascading menu with direction=auto</h4>
           <Dropdown
             items={itemsWithSubmenu}
             onChange={item => this.handleChange('dropdown1', item)}
             selectedItem={dropdown1}
           />
-          <h4 style={{ textAlign: 'right' }}>Cascading menu on right side</h4>
+          <h4 style={{ textAlign: 'right' }}>
+            Cascading menu with direction=left.
+          </h4>
           <div style={{ float: 'right' }}>
             <Dropdown
               items={itemsWithSubmenu}
@@ -154,7 +156,7 @@ class CascadingMenu extends Component {
             />
           </div>
           <h4 style={{ textAlign: 'center' }}>
-            Cascading menu with direction right
+            Cascading menu with direction = right
           </h4>
           <div style={{ textAlign: 'center' }}>
             <Dropdown

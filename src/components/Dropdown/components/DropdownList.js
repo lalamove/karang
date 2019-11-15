@@ -54,12 +54,6 @@ const StyledList = styled(List)`
             `;
     }
   }};
-  ${({ nested, theme: { rtl } }) =>
-    rtl &&
-    !nested &&
-    css`
-      right: 0;
-    `}
   ${({ block, nested }) =>
     block &&
     !nested &&

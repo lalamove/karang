@@ -58,7 +58,6 @@ exports[`List component size-small-default 1`] = `
 >
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -69,7 +68,6 @@ exports[`List component size-small-default 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -80,7 +78,6 @@ exports[`List component size-small-default 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -91,7 +88,6 @@ exports[`List component size-small-default 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -168,7 +164,6 @@ exports[`List component size-small-with icon 1`] = `
 >
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -182,7 +177,6 @@ exports[`List component size-small-with icon 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -196,7 +190,6 @@ exports[`List component size-small-with icon 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -210,7 +203,6 @@ exports[`List component size-small-with icon 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -281,7 +273,6 @@ exports[`List component size-undefined-default 1`] = `
 >
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -292,7 +283,6 @@ exports[`List component size-undefined-default 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -303,7 +293,6 @@ exports[`List component size-undefined-default 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -314,7 +303,6 @@ exports[`List component size-undefined-default 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -387,7 +375,6 @@ exports[`List component size-undefined-with icon 1`] = `
 >
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -401,7 +388,6 @@ exports[`List component size-undefined-with icon 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -415,7 +401,6 @@ exports[`List component size-undefined-with icon 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div
@@ -429,7 +414,6 @@ exports[`List component size-undefined-with icon 1`] = `
   </li>
   <li
     class="c1"
-    direction="auto"
     tabindex="0"
   >
     <div

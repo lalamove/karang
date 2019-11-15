@@ -3,6 +3,7 @@ import { render, mount } from 'enzyme';
 import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
 import VMenuIcon from 'components/Icon/icons/content/vmenu';
 import Dropdown from '../index';
+import BaseApp from '../../BaseApp';
 
 const items = [
   {
@@ -150,6 +151,27 @@ describe('Dropdown', () => {
       button.simulate('keydown', { key: 'ArrowDown' });
       button.simulate('keydown', { key: 'ArrowDown' });
       button.simulate('keydown', { key: 'ArrowRight' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: 'Enter' });
+      expect(onChange).toHaveBeenCalledTimes(1);
+      expect(onChange).toHaveBeenCalledWith(itemsWithSubmenu[1].options[1]);
+      expect(button.instance().value).toBe(
+        itemsWithSubmenu[1].options[1].value
+      );
+    });
+
+    it('select first option in sub menu of second option with keyboard with direction auto and rtl', () => {
+      const onChange = jest.fn();
+      const wrapper = mount(
+        <BaseApp rtl>
+          <Dropdown items={itemsWithSubmenu} onChange={onChange} />
+        </BaseApp>
+      );
+      const button = wrapper.find('button');
+      button.simulate('keydown', { key: ' ' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: 'ArrowDown' });
+      button.simulate('keydown', { key: 'ArrowLeft' });
       button.simulate('keydown', { key: 'ArrowDown' });
       button.simulate('keydown', { key: 'Enter' });
       expect(onChange).toHaveBeenCalledTimes(1);

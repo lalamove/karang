@@ -62,8 +62,8 @@ const activeStyle = css`
 const LI = styled.li`
   position: relative;
   padding-left: 8px;
-  ${({ theme: { rtl }, direction }) =>
-    rtl && direction.toLowerCase() !== 'right'
+  ${({ theme: { rtl } }) =>
+    rtl
       ? css`
           border-right: 2px solid transparent;
           border-left: none;
@@ -145,16 +145,8 @@ const Icon = styled.div`
   }};
 `;
 
-const Item = ({
-  icon,
-  size,
-  children,
-  options,
-  disabled,
-  direction,
-  ...rest
-}) => (
-  <Wrapper size={size} disabled={disabled} direction={direction} {...rest}>
+const Item = ({ icon, size, children, options, disabled, ...rest }) => (
+  <Wrapper size={size} disabled={disabled} {...rest}>
     {icon && <Icon size={size}>{icon}</Icon>}
     <Content size={size}>{children}</Content>
     {options}
@@ -167,7 +159,6 @@ Item.defaultProps = {
   children: null,
   options: null,
   disabled: false,
-  direction: 'auto',
 };
 
 Item.propTypes = {
@@ -176,7 +167,6 @@ Item.propTypes = {
   children: node,
   options: node,
   disabled: bool,
-  direction: string,
 };
 
 // eslint-disable-next-line react/prefer-stateless-function

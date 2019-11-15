@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { arrayOf, func, node, oneOf, shape, string, bool } from 'prop-types';
 import Downshift from 'downshift';
-import styled, { css } from 'styled-components';
+import styled, { css, withTheme } from 'styled-components';
 
 import noop from 'utils/noop';
 import DropdownButton from './components/DropdownButton';
@@ -59,6 +59,10 @@ class Dropdown extends Component {
     icon: node,
     /** A boolean which, if true, disables the Dropdown */
     disabled: bool,
+    /** injected by with theme, used to handle key down for auto direction and rtl */
+    theme: shape({
+      rtl: string,
+    }),
   };
 
   static defaultProps = {
@@ -72,6 +76,9 @@ class Dropdown extends Component {
     variant: 'default',
     icon: undefined,
     disabled: false,
+    theme: {
+      rtl: false,
+    },
   };
 
   state = {
@@ -175,7 +182,21 @@ class Dropdown extends Component {
 
   handleKeyDown = (e, isOpen) => {
     const moveAmount = e.shiftKey ? 5 : 1;
-    const arrowRightToOpenSubOptions = this.props.direction === 'right';
+    let arrowRightToOpenSubOptions = true;
+    const {
+      theme: { rtl },
+    } = this.props;
+    switch (this.props.direction) {
+      case 'right':
+        arrowRightToOpenSubOptions = true;
+        break;
+      case 'left':
+        arrowRightToOpenSubOptions = false;
+        break;
+      default:
+        arrowRightToOpenSubOptions = !rtl;
+    }
+
     switch (e.key) {
       case 'ArrowDown':
         // eslint-disable-next-line no-param-reassign
@@ -330,4 +351,4 @@ class Dropdown extends Component {
   }
 }
 
-export default Dropdown;
+export default withTheme(Dropdown);
