@@ -61,7 +61,7 @@ class Dropdown extends Component {
     disabled: bool,
     /** injected by with theme, used to handle key down for auto direction and rtl */
     theme: shape({
-      rtl: string,
+      rtl: bool,
     }),
   };
 

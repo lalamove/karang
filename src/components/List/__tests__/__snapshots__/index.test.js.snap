@@ -26,7 +26,6 @@ exports[`List component size-small-default 1`] = `
 .c1 {
   position: relative;
   padding-left: 8px;
-  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   margin-top: 8px;
@@ -125,7 +124,6 @@ exports[`List component size-small-with icon 1`] = `
 .c1 {
   position: relative;
   padding-left: 8px;
-  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   margin-top: 8px;
@@ -251,7 +249,6 @@ exports[`List component size-undefined-default 1`] = `
 .c1 {
   position: relative;
   padding-left: 8px;
-  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   display: -webkit-box;
@@ -348,7 +345,6 @@ exports[`List component size-undefined-with icon 1`] = `
 .c1 {
   position: relative;
   padding-left: 8px;
-  border-right: none;
   border-left: 2px solid transparent;
   outline: 0;
   display: -webkit-box;
