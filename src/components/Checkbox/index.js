@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bool, func, node, string } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 import { mineShaft, nobel, primary } from 'styles/colors';
@@ -31,7 +31,10 @@ const Input = styled.input`
 
 const Text = styled.span`
   min-height: ${HEIGHT}px;
-  padding-left: 28px;
+  ${({ theme: { rtl } }) =>
+    css`
+      padding-${rtl ? 'right' : 'left'}: 28px;
+  `}
   cursor: pointer;
 
   ${Input}:disabled ~ & {
@@ -85,7 +88,10 @@ const Checkmark = styled.span`
 `;
 
 const IconWrapper = styled.span`
-  margin-left: 4px;
+  ${({ theme: { rtl } }) =>
+    css`
+      margin-${rtl ? 'right' : 'left'}: 4px;
+  `}
 `;
 
 /**
