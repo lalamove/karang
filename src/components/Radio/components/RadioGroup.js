@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { bool, func, string, oneOf } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import noop from 'utils/noop';
 import RadioButton from './RadioButton';
 
 const Wrapper = styled.div`
   margin-right: -0.5em;
   margin-left: -0.5em;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 `;
 
 const Radio = styled(RadioButton)`

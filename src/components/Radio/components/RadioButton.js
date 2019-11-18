@@ -24,13 +24,21 @@ const Text = styled.span`
   display: inline-block;
   font-family: ${primaryFonts};
   ${/* sc-selector */ Radio} + & {
-    margin-left: 0.5em;
+    ${({ theme: { rtl } }) =>
+      css`
+        margin-${rtl ? 'right' : 'left'}: 0.5em;
+    `}
   }
 `;
 
 const Label = styled.label`
   display: inline-block;
   cursor: pointer;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 
   input {
     position: absolute;
