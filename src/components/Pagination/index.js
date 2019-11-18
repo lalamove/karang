@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { bool, func, node, number, string } from 'prop-types';
-import styled, { css } from 'styled-components';
+import { bool, func, node, number, string, shape } from 'prop-types';
+import styled, { css, withTheme } from 'styled-components';
 
 import noop from 'utils/noop';
 import Button from 'components/Button';
@@ -30,14 +30,6 @@ const SCButton = styled(Button)`
 `;
 
 SCButton.displayName = 'SCButton';
-
-const ButtonGroupWrapper = styled.span`
-  ${({ theme: { rtl } }) =>
-    rtl &&
-    css`
-      direction: rtl;
-    `}
-`;
 
 class Pagination extends Component {
   static propTypes = {
@@ -75,6 +67,10 @@ class Pagination extends Component {
     defaultPageSize: number,
     /** Default total number of items */
     defaultTotal: number,
+    /** theme injected by withTheme */
+    theme: shape({
+      rtl: bool,
+    }),
   };
 
   static defaultProps = {
@@ -90,6 +86,9 @@ class Pagination extends Component {
     defaultCurrent: 1,
     defaultPageSize: 20,
     defaultTotal: 40,
+    theme: {
+      rtl: false,
+    },
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -181,6 +180,7 @@ class Pagination extends Component {
       nextLabel,
       showLabel,
       description,
+      theme: { rtl },
     } = this.props;
     return (
       <Container>
@@ -192,41 +192,43 @@ class Pagination extends Component {
             .replace('{{current}}', current)
             .replace('{{totalPages}}', this.totalPages())}
         </Text>
-        <ButtonGroupWrapper>
-          <SCButton
-            onClick={this.prev}
-            disabled={loading || !this.hasPrev()}
-            showLabel={showLabel}
-          >
-            {showLabel ? (
-              prevLabel
-            ) : (
-              <DropDownIcon
-                title={prevLabel}
-                size={20}
-                style={{ transform: 'rotate(90deg)' }}
-              />
-            )}
-          </SCButton>
-          <SCButton
-            onClick={this.next}
-            disabled={loading || !this.hasNext()}
-            showLabel={showLabel}
-          >
-            {showLabel ? (
-              nextLabel
-            ) : (
-              <DropDownIcon
-                title={nextLabel}
-                size={20}
-                style={{ transform: 'rotate(-90deg)' }}
-              />
-            )}
-          </SCButton>
-        </ButtonGroupWrapper>
+        <SCButton
+          onClick={this.prev}
+          disabled={loading || !this.hasPrev()}
+          showLabel={showLabel}
+        >
+          {showLabel ? (
+            prevLabel
+          ) : (
+            <DropDownIcon
+              title={prevLabel}
+              size={20}
+              style={{
+                transform: `${rtl ? 'rotate(-90deg)' : 'rotate(90deg)'}`,
+              }}
+            />
+          )}
+        </SCButton>
+        <SCButton
+          onClick={this.next}
+          disabled={loading || !this.hasNext()}
+          showLabel={showLabel}
+        >
+          {showLabel ? (
+            nextLabel
+          ) : (
+            <DropDownIcon
+              title={nextLabel}
+              size={20}
+              style={{
+                transform: `${rtl ? 'rotate(90deg)' : 'rotate(-90deg)'}`,
+              }}
+            />
+          )}
+        </SCButton>
       </Container>
     );
   }
 }
 
-export default Pagination;
+export default withTheme(Pagination);
