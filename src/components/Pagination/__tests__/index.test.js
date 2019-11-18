@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, shallow } from 'enzyme';
+import { render, mount } from 'enzyme';
 
 import Pagination from '../index';
+import BaseApp from '../../BaseApp';
 
 describe('Snapshots', () => {
   it('Pagination with default value', () => {
@@ -48,13 +49,15 @@ describe('Functions', () => {
     const clickHandler = jest.fn();
     const currentPage = 1;
     const pageSize = 10;
-    const wrapper = shallow(
-      <Pagination
-        current={currentPage}
-        total={300}
-        pageSize={pageSize}
-        onChange={clickHandler}
-      />
+    const wrapper = mount(
+      <BaseApp rtl={false}>
+        <Pagination
+          current={currentPage}
+          total={300}
+          pageSize={pageSize}
+          onChange={clickHandler}
+        />
+      </BaseApp>
     );
     wrapper
       .find('SCButton')
@@ -67,13 +70,15 @@ describe('Functions', () => {
 
   it('will not trigger onChange when clicked prev button when current page is 1', () => {
     const clickHandler = jest.fn();
-    const wrapper = shallow(
-      <Pagination
-        current={1}
-        total={300}
-        pageSize={10}
-        onChange={clickHandler}
-      />
+    const wrapper = mount(
+      <BaseApp rtl>
+        <Pagination
+          current={1}
+          total={300}
+          pageSize={10}
+          onChange={clickHandler}
+        />
+      </BaseApp>
     );
     wrapper
       .find('SCButton')
@@ -86,7 +91,7 @@ describe('Functions', () => {
     const clickHandler = jest.fn();
     const currentPage = 30;
     const pageSize = 10;
-    const wrapper = shallow(
+    const wrapper = mount(
       <Pagination
         current={currentPage}
         total={300}
@@ -105,7 +110,7 @@ describe('Functions', () => {
 
   it('will not trigger onChange when clicked next button when current page is 30', () => {
     const clickHandler = jest.fn();
-    const wrapper = shallow(
+    const wrapper = mount(
       <Pagination
         current={30}
         total={300}
@@ -121,20 +126,18 @@ describe('Functions', () => {
   });
 
   it('trigger onChange and state update when clicked next button', () => {
-    const wrapper = shallow(<Pagination defaultTotal={36} />);
+    const wrapper = mount(<Pagination defaultTotal={36} />);
     expect(
       wrapper
         .find('Text')
         .children()
         .text()
     ).toEqual('Viewing 1-20 of 36');
-    const { current } = wrapper.state();
+
     wrapper
       .find('SCButton')
       .last()
       .simulate('click');
-    const { current: updatedCurrent } = wrapper.state();
-    expect(updatedCurrent).toEqual(current + 1);
     expect(
       wrapper
         .find('Text')
