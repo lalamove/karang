@@ -11,6 +11,11 @@ const HEIGHT = 20;
 
 const Wrapper = styled.span`
   display: flex;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 `;
 
 const Container = styled.label`
