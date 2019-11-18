@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bool, func, node, number, string } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import noop from 'utils/noop';
 import Button from 'components/Button';
@@ -9,10 +9,18 @@ import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
 const Container = styled.div`
   display: inline-flex;
   align-items: center;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 `;
 
 const Text = styled.span`
-  padding-right: 0.6em;
+  ${({ theme: { rtl } }) =>
+    css`
+      padding-${rtl ? 'left' : 'right'}: 0.6em;
+`}
 `;
 
 Text.displayName = 'Text';
@@ -22,6 +30,14 @@ const SCButton = styled(Button)`
 `;
 
 SCButton.displayName = 'SCButton';
+
+const ButtonGroupWrapper = styled.span`
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
+`;
 
 class Pagination extends Component {
   static propTypes = {
@@ -176,36 +192,38 @@ class Pagination extends Component {
             .replace('{{current}}', current)
             .replace('{{totalPages}}', this.totalPages())}
         </Text>
-        <SCButton
-          onClick={this.prev}
-          disabled={loading || !this.hasPrev()}
-          showLabel={showLabel}
-        >
-          {showLabel ? (
-            prevLabel
-          ) : (
-            <DropDownIcon
-              title={prevLabel}
-              size={20}
-              style={{ transform: 'rotate(90deg)' }}
-            />
-          )}
-        </SCButton>
-        <SCButton
-          onClick={this.next}
-          disabled={loading || !this.hasNext()}
-          showLabel={showLabel}
-        >
-          {showLabel ? (
-            nextLabel
-          ) : (
-            <DropDownIcon
-              title={nextLabel}
-              size={20}
-              style={{ transform: 'rotate(-90deg)' }}
-            />
-          )}
-        </SCButton>
+        <ButtonGroupWrapper>
+          <SCButton
+            onClick={this.prev}
+            disabled={loading || !this.hasPrev()}
+            showLabel={showLabel}
+          >
+            {showLabel ? (
+              prevLabel
+            ) : (
+              <DropDownIcon
+                title={prevLabel}
+                size={20}
+                style={{ transform: 'rotate(90deg)' }}
+              />
+            )}
+          </SCButton>
+          <SCButton
+            onClick={this.next}
+            disabled={loading || !this.hasNext()}
+            showLabel={showLabel}
+          >
+            {showLabel ? (
+              nextLabel
+            ) : (
+              <DropDownIcon
+                title={nextLabel}
+                size={20}
+                style={{ transform: 'rotate(-90deg)' }}
+              />
+            )}
+          </SCButton>
+        </ButtonGroupWrapper>
       </Container>
     );
   }
