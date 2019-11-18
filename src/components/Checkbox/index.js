@@ -33,7 +33,8 @@ const Text = styled.span`
   min-height: ${HEIGHT}px;
   ${({ theme: { rtl } }) =>
     css`
-  padding-${rtl ? 'right' : 'left'}: 28px;`}
+      padding-${rtl ? 'right' : 'left'}: 28px;
+  `}
   cursor: pointer;
 
   ${Input}:disabled ~ & {
@@ -87,7 +88,10 @@ const Checkmark = styled.span`
 `;
 
 const IconWrapper = styled.span`
-  ${({ theme: { rtl } }) => css`margin-${rtl ? 'right' : 'left'}: 4px;`}
+  ${({ theme: { rtl } }) =>
+    css`
+      margin-${rtl ? 'right' : 'left'}: 4px;
+  `}
 `;
 
 /**
