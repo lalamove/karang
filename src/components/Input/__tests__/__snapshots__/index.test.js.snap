@@ -547,6 +547,7 @@ exports[`PinInput Snapshots 4 digits filled with error message 1`] = `
 >
   <div
     class="c1"
+    dir="ltr"
   >
     <input
       autocomplete="new-password"
@@ -686,6 +687,7 @@ exports[`PinInput Snapshots Empty 1`] = `
 >
   <div
     class="c1"
+    dir="ltr"
   >
     <input
       autocomplete="new-password"
@@ -782,6 +784,7 @@ exports[`PinInput Snapshots change type 1`] = `
 >
   <div
     class="c1"
+    dir="ltr"
   >
     <input
       autocomplete="new-password"

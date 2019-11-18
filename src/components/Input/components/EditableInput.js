@@ -14,11 +14,7 @@ import TextInput from './TextInput';
 const Wrapper = styled.div`
   display: inline-block;
   width: 100%;
-  ${({ theme: { rtl } }) =>
-    rtl &&
-    css`
-      direction: rtl;
-    `};
+
   ${({ error }) =>
     error &&
     css`
@@ -31,7 +27,7 @@ const ButtonGroup = styled.div`
   align-items: center;
   padding: 0em 1em;
   direction: ltr;
-  &>button: first-of-type {
+  & > button:first-of-type {
     margin-right: 0.5em;
   }
 `;

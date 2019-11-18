@@ -95,8 +95,8 @@ const itemsWithSubmenu = [
 ];
 
 const Basic = () => (
-  <div dir={boolean('Right-To-Left', false) ? 'rtl' : 'ltr'}>
-    <BaseApp rtl={boolean('Right-To-Left', false)}>
+  <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+    <BaseApp rtl={boolean('Right-to-left', false)}>
       <h4>Basic</h4>
       <Dropdown items={items} />
       <h4>Basic disabled</h4>
@@ -134,7 +134,7 @@ class CascadingMenu extends Component {
 
   render() {
     const { dropdown1, dropdown2, dropdown3 } = this.state;
-    const rtl = boolean('Right-To-Left', false);
+    const rtl = boolean('Right-to-left', false);
     return (
       <div dir={rtl ? 'rtl' : 'ltr'}>
         <BaseApp rtl={rtl}>
