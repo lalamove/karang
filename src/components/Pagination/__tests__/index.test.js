@@ -99,6 +99,7 @@ describe('Functions', () => {
         onChange={clickHandler}
       />
     );
+
     wrapper
       .find('SCButton')
       .first()
