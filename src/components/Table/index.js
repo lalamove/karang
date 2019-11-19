@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bool, string, shape, arrayOf, func, object, oneOf } from 'prop-types';
+import { withTheme } from 'styled-components';
 
 import noop from 'utils/noop';
 
@@ -11,6 +12,9 @@ class Table extends Component {
     alternate: true,
     uniqueKey: 'id',
     onRowClick: noop,
+    theme: {
+      rtl: false,
+    },
   };
 
   static propTypes = {
@@ -61,6 +65,10 @@ class Table extends Component {
      * @param {string} key the value of the `uniqueKey` set<br>
      */
     onRowClick: func,
+    /** theme injected by withTheme; to adjust table cell alignment for rtl  */
+    theme: shape({
+      rtl: bool,
+    }),
   };
 
   static sortOrders = ['default', 'desc', 'asc'];
@@ -103,8 +111,11 @@ class Table extends Component {
   };
 
   renderRowCols(cols = {}) {
-    const { columns } = this.props;
-    return columns.map(({ key, render, align = 'left' }) => {
+    const {
+      columns,
+      theme: { rtl },
+    } = this.props;
+    return columns.map(({ key, render, align = rtl ? 'right' : 'left' }) => {
       const hasRenderFunc = typeof render === 'function';
       const colData = cols[key];
 
@@ -144,6 +155,7 @@ class Table extends Component {
       hoverable,
       alternate,
       onRowClick,
+      theme: { rtl },
       ...remainProps
     } = this.props;
 
@@ -151,20 +163,22 @@ class Table extends Component {
       <SCTable {...remainProps}>
         <thead>
           <tr>
-            {columns.map(({ label, key, onSort, align = 'left' }) => (
-              <th key={`llm-table-th-${key}`} align={align}>
-                <ColTitle
-                  sorted={
-                    this.state.sortBy === key
-                      ? Table.sortOrders[this.state.orderBy]
-                      : Table.sortOrders[0]
-                  }
-                  onClick={this.handleSort(key, onSort)}
-                >
-                  {label}
-                </ColTitle>
-              </th>
-            ))}
+            {columns.map(
+              ({ label, key, onSort, align = rtl ? 'right' : 'left' }) => (
+                <th key={`llm-table-th-${key}`} align={align}>
+                  <ColTitle
+                    sorted={
+                      this.state.sortBy === key
+                        ? Table.sortOrders[this.state.orderBy]
+                        : Table.sortOrders[0]
+                    }
+                    onClick={this.handleSort(key, onSort)}
+                  >
+                    {label}
+                  </ColTitle>
+                </th>
+              )
+            )}
           </tr>
         </thead>
         <tbody>{this.renderRows(data)}</tbody>
@@ -173,4 +187,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default withTheme(Table);

@@ -5,6 +5,7 @@ import { boolean } from '@storybook/addon-knobs';
 
 import Rating from 'components/Rating';
 import Table from './index';
+import BaseApp from '../BaseApp';
 
 const basicColumns = [
   {
@@ -132,44 +133,56 @@ const data = [
 
 storiesOf('Table', module)
   .add('Basic', () => (
-    <Table
-      hoverable={boolean('hoverable', false)}
-      alternate={boolean('alternate', false)}
-      columns={basicColumns}
-      data={data}
-    />
+    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-Left', false)}>
+        <Table
+          hoverable={boolean('hoverable', false)}
+          alternate={boolean('alternate', false)}
+          columns={basicColumns}
+          data={data}
+        />
+      </BaseApp>
+    </div>
   ))
   .add('onRowClick', () => (
-    <Table
-      hoverable={boolean('hoverable', true)}
-      alternate={boolean('alternate', false)}
-      columns={[
-        {
-          key: 'id',
-          label: 'ID',
-        },
-        {
-          key: 'name',
-          label: 'Name',
-        },
-        {
-          key: 'age',
-          label: 'Years on Earth',
-        },
-        {
-          key: 'hobbies',
-          label: 'Hobbies',
-        },
-      ]}
-      data={data}
-      onRowClick={action('onRowClick')}
-    />
+    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-Left', false)}>
+        <Table
+          hoverable={boolean('hoverable', true)}
+          alternate={boolean('alternate', false)}
+          columns={[
+            {
+              key: 'id',
+              label: 'ID',
+            },
+            {
+              key: 'name',
+              label: 'Name',
+            },
+            {
+              key: 'age',
+              label: 'Years on Earth',
+            },
+            {
+              key: 'hobbies',
+              label: 'Hobbies',
+            },
+          ]}
+          data={data}
+          onRowClick={action('onRowClick')}
+        />
+      </BaseApp>
+    </div>
   ))
   .add('Sortable', () => (
-    <Table
-      hoverable={boolean('hoverable', false)}
-      alternate={boolean('alternate', false)}
-      columns={sortableColumns}
-      data={data}
-    />
+    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-Left', false)}>
+        <Table
+          hoverable={boolean('hoverable', false)}
+          alternate={boolean('alternate', false)}
+          columns={sortableColumns}
+          data={data}
+        />
+      </BaseApp>
+    </div>
   ));
