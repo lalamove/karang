@@ -17,7 +17,7 @@ export const ColTitle = styled.div`
   text-align: inherit;
   user-select: none;
 
-  ${({ onClick, sorted }) =>
+  ${({ onClick, sorted, theme: { rtl } }) =>
     onClick &&
     css`
       cursor: pointer;
@@ -29,7 +29,7 @@ export const ColTitle = styled.div`
       ${sorted &&
         css`&:after {
         content: '\\${arrowMap[sorted]}';
-        margin-left: 0.5em;
+        margin-${rtl ? 'right' : 'left'}: 0.5em;
         ${sorted !== 'default' &&
           css`
             color: ${nobel['700']};
