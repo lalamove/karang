@@ -2,7 +2,6 @@ import React from 'react';
 import { render, mount } from 'enzyme';
 
 import Pagination from '../index';
-import BaseApp from '../../BaseApp';
 
 describe('Snapshots', () => {
   it('Pagination with default value', () => {
@@ -50,14 +49,12 @@ describe('Functions', () => {
     const currentPage = 1;
     const pageSize = 10;
     const wrapper = mount(
-      <BaseApp rtl={false}>
-        <Pagination
-          current={currentPage}
-          total={300}
-          pageSize={pageSize}
-          onChange={clickHandler}
-        />
-      </BaseApp>
+      <Pagination
+        current={currentPage}
+        total={300}
+        pageSize={pageSize}
+        onChange={clickHandler}
+      />
     );
     wrapper
       .find('SCButton')
@@ -71,14 +68,12 @@ describe('Functions', () => {
   it('will not trigger onChange when clicked prev button when current page is 1', () => {
     const clickHandler = jest.fn();
     const wrapper = mount(
-      <BaseApp rtl>
-        <Pagination
-          current={1}
-          total={300}
-          pageSize={10}
-          onChange={clickHandler}
-        />
-      </BaseApp>
+      <Pagination
+        current={1}
+        total={300}
+        pageSize={10}
+        onChange={clickHandler}
+      />
     );
     wrapper
       .find('SCButton')
