@@ -17,7 +17,7 @@ export const ColTitle = styled.div`
   text-align: inherit;
   user-select: none;
 
-  ${({ onClick, sorted }) =>
+  ${({ onClick, sorted, theme: { rtl } }) =>
     onClick &&
     css`
       cursor: pointer;
@@ -29,7 +29,7 @@ export const ColTitle = styled.div`
       ${sorted &&
         css`&:after {
         content: '\\${arrowMap[sorted]}';
-        margin-left: 0.5em;
+        margin-${rtl ? 'right' : 'left'}: 0.5em;
         ${sorted !== 'default' &&
           css`
             color: ${nobel['700']};
@@ -42,20 +42,24 @@ export const SCTable = styled.table`
   width: 100%;
   border-spacing: 0;
   line-height: 1.4;
+  ${({ theme: { rtl } }) =>
+    css`
+      direction:   ${rtl ? 'rtl' : 'ltr'};
 
-  th {
-    border-top: 1px ${nobel['200']} solid;
-    border-bottom: 1px ${nobel['200']} solid;
-  }
+      th {
+        border-top: 1px ${nobel['200']} solid;
+        border-bottom: 1px ${nobel['200']} solid;
+      }
 
-  tbody td {
-    padding: 1em;
-    vertical-align: top;
+      tbody td {
+        padding: 1em;
+        vertical-align: top;
 
-    &:first-of-type {
-      border-left: 4px solid transparent;
-    }
-  }
+        &:first-of-type {
+          border-${rtl ? 'right' : 'left'}: 4px solid transparent;
+        }
+      }
+    `}
 `;
 
 export const Row = styled.tr`
@@ -66,14 +70,14 @@ export const Row = styled.tr`
         background: ${lighten(0.08, nobel['200'])};
       }
     `};
-  ${({ hoverable }) =>
+  ${({ hoverable, theme: { rtl } }) =>
     hoverable &&
     css`
       &:hover {
         background: ${lighten(0.05, nobel['200'])};
 
         > td:first-of-type {
-          border-left-color: ${primary.main};
+          border-${rtl ? 'right' : 'left'}-color: ${primary.main};
         }
       }
     `};
