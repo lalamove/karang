@@ -134,11 +134,14 @@ describe('Functions', () => {
         .children()
         .text()
     ).toEqual('Viewing 1-20 of 36');
+    const { current } = wrapper.childAt(0).instance().state;
 
     wrapper
       .find('SCButton')
       .last()
       .simulate('click');
+    const { current: updatedCurrent } = wrapper.childAt(0).instance().state;
+    expect(updatedCurrent).toEqual(current + 1);
     expect(
       wrapper
         .find('Text')
