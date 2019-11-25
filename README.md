@@ -17,6 +17,7 @@ Please make sure you install the following dependencies:
     "react": "^16.9.0",
     "react-dates": "^21.1.0",
     "react-dom": "^16.9.0",
+    "react-tooltip": "^3.11.1",
     "styled-components": "^4.3.2"
 }
 ```
