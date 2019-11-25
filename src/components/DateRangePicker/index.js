@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { string, func, instanceOf } from 'prop-types';
+import { string, func, instanceOf, bool } from 'prop-types';
 import moment from 'moment';
 import 'react-dates/initialize';
 import { DateRangePicker as RDDateRangePicker } from 'react-dates';
@@ -56,12 +56,13 @@ class DateRangePicker extends Component {
 
   render() {
     const { focusedInput, startDate, endDate } = this.state;
-    const { onDatesChange, onFocusChange, ...remainProps } = this.props;
+    const { onDatesChange, onFocusChange, isRTL, ...remainProps } = this.props;
 
     return (
       <StyledWrapper>
         <RDDateRangePicker
           {...remainProps}
+          isRTL
           startDate={startDate}
           endDate={endDate}
           onDatesChange={this.onDatesChange}
@@ -98,6 +99,7 @@ DateRangePicker.propTypes = {
   endDateId: string,
   /** @ignore */
   focusedInput: string,
+  isRTL: bool,
 };
 
 DateRangePicker.defaultProps = {
@@ -108,6 +110,7 @@ DateRangePicker.defaultProps = {
   startDateId: 'LLM_DateRangePicker_StartDate',
   endDateId: 'LLM_DateRangePicker_EndDate',
   focusedInput: null,
+  isRTL: false,
 };
 
 export default DateRangePicker;

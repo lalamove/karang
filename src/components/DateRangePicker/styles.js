@@ -465,6 +465,7 @@ const StyledWrapper = styled.div`
   }
   .DateRangePickerInput__rtl {
     direction: rtl;
+    text-align: left;
   }
   .DateRangePickerInput__block {
     display: block;
