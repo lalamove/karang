@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool, node, string } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Button from 'components/Button';
 import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
@@ -25,20 +25,30 @@ const StyledButton = styled(Button)`
 const ItemIcon = styled.span`
   flex: 0 0 auto;
   align-self: center;
-  margin-right: 0.5em;
+  ${({ theme: { rtl } }) =>
+    css`
+          margin-${rtl ? 'left' : 'right'}: 0.5em;
+        `};
+
   line-height: 1.6;
 `;
 
 const Content = styled.span`
   flex: 1 1 auto;
   align-self: center;
-  margin-right: 0.5em;
+  ${({ theme: { rtl } }) =>
+    css`
+        margin-${rtl ? 'left' : 'right'}: 0.5em;
+        text-align: ${rtl ? 'right' : 'left'};
+      `};
   line-height: 1.6;
-  text-align: left;
 `;
 
 const Caret = styled.span`
-  margin-right: -5px;
+  ${({ theme: { rtl } }) =>
+    css`
+        margin-${rtl ? 'left' : 'right'}: -5px;
+      `};
 `;
 
 const DropdownButton = ({

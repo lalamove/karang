@@ -167,6 +167,7 @@ class PinInput extends Component {
     }
 
     const index = parseInt(name, 10);
+    // eslint-disable-next-line react/no-access-state-in-setstate
     const newPins = Array.from(this.state.pins);
     newPins[index] = trimValue;
     this.setState({ pins: newPins });
@@ -205,7 +206,7 @@ class PinInput extends Component {
 
     return (
       <Container>
-        <Wrapper>{pinBoxes}</Wrapper>
+        <Wrapper dir="ltr">{pinBoxes}</Wrapper>
         <ErrorMessage error={error} />
       </Container>
     );

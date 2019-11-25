@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { arrayOf, func, node, oneOf, shape, string, bool } from 'prop-types';
 import Downshift from 'downshift';
-import styled, { css } from 'styled-components';
+import styled, { css, withTheme } from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 
 import noop from 'utils/noop';
 import DropdownButton from './components/DropdownButton';
@@ -17,6 +18,11 @@ let selectHighlightedItem;
 const Container = styled.div`
   position: relative;
   display: inline-block;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
   ${({ block }) =>
     block &&
     css`
@@ -45,7 +51,7 @@ class Dropdown extends Component {
     /** Label of the component, will be shown before user selected option */
     defaultLabel: string,
     /** Open direction of pop menu */
-    direction: oneOf(['left', 'right']),
+    direction: oneOf(['left', 'right', 'auto']),
     /** Variant of component, `default` is the component with standard select button,
      * `compact` is the component with icon-only button */
     variant: oneOf(['default', 'compact']),
@@ -54,6 +60,10 @@ class Dropdown extends Component {
     icon: node,
     /** A boolean which, if true, disables the Dropdown */
     disabled: bool,
+    /** injected by with theme, used to handle key down for auto direction and rtl */
+    theme: shape({
+      rtl: bool,
+    }),
   };
 
   static defaultProps = {
@@ -63,10 +73,13 @@ class Dropdown extends Component {
     onOuterClick: noop,
     onSelect: noop,
     defaultLabel: 'Options',
-    direction: 'right',
+    direction: 'auto',
     variant: 'default',
     icon: undefined,
     disabled: false,
+    theme: {
+      rtl: false,
+    },
   };
 
   state = {
@@ -74,6 +87,10 @@ class Dropdown extends Component {
     highlightedIndexes: [],
     listCounts: [this.props.items.length],
   };
+
+  componentDidUpdate() {
+    ReactTooltip.rebuild();
+  }
 
   // sync highlighted indexes in state and Downshift
   setHighlightedIndexes = (index, depthLevel) => {
@@ -170,7 +187,21 @@ class Dropdown extends Component {
 
   handleKeyDown = (e, isOpen) => {
     const moveAmount = e.shiftKey ? 5 : 1;
-    const arrowRightToOpenSubOptions = this.props.direction === 'right';
+    let arrowRightToOpenSubOptions = true;
+    const {
+      theme: { rtl },
+    } = this.props;
+    switch (this.props.direction) {
+      case 'right':
+        arrowRightToOpenSubOptions = true;
+        break;
+      case 'left':
+        arrowRightToOpenSubOptions = false;
+        break;
+      default:
+        arrowRightToOpenSubOptions = !rtl;
+    }
+
     switch (e.key) {
       case 'ArrowDown':
         // eslint-disable-next-line no-param-reassign
@@ -317,6 +348,7 @@ class Dropdown extends Component {
                   handleListCounts={this.handleListCounts}
                 />
               )}
+              <ReactTooltip />
             </Container>
           );
         }}
@@ -325,4 +357,4 @@ class Dropdown extends Component {
   }
 }
 
-export default Dropdown;
+export default withTheme(Dropdown);

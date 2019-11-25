@@ -18,7 +18,14 @@ import {
 } from 'styles/colors';
 
 const IconContainer = styled.div`
-  margin: 0 0.5em 0 0;
+  ${({ theme: { rtl } }) =>
+    rtl
+      ? css`
+          margin: 0 0 0 0.5em;
+        `
+      : css`
+          margin: 0 0.5em 0 0;
+        `}
 `;
 
 const Content = styled.div`
@@ -39,7 +46,15 @@ const CloseButton = styled.button`
   appearance: none;
   padding: 0;
   border: none;
-  margin: 0 0 0 1em;
+  ${({ theme: { rtl } }) =>
+    rtl
+      ? css`
+          margin: 0 1em 0 0;
+        `
+      : css`
+          margin: 0 0 0 1em;
+        `}
+
   background-color: transparent;
   cursor: pointer;
   outline: 0;
@@ -77,6 +92,12 @@ const Container = styled.div`
     variant === 'toast' &&
     css`
       width: 21em;
+    `};
+
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
     `};
 `;
 

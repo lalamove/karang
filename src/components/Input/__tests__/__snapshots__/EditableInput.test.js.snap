@@ -101,7 +101,8 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em;
+  direction: ltr;
 }
 
 .c3 > button:first-of-type {
@@ -241,7 +242,8 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em;
+  direction: ltr;
 }
 
 .c3 > button:first-of-type {
@@ -361,7 +363,8 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em;
+  direction: ltr;
 }
 
 .c3 > button:first-of-type {
@@ -458,7 +461,8 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 1em;
+  padding: 0em 1em;
+  direction: ltr;
 }
 
 .c3 > button:first-of-type {

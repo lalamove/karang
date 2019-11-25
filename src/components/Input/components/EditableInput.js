@@ -25,8 +25,8 @@ const Wrapper = styled.div`
 const ButtonGroup = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 1em;
-
+  padding: 0em 1em;
+  direction: ltr;
   & > button:first-of-type {
     margin-right: 0.5em;
   }

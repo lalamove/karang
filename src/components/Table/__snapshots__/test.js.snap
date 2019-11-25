@@ -17,6 +17,7 @@ exports[`snapshots align 1`] = `
   width: 100%;
   border-spacing: 0;
   line-height: 1.4;
+  direction: ltr;
 }
 
 .c0 th {
@@ -37,8 +38,7 @@ exports[`snapshots align 1`] = `
   background: #fcfcfc;
 }
 
-<Table
-  alternate={true}
+<WithTheme(Table)
   columns={
     Array [
       Object {
@@ -92,535 +92,594 @@ exports[`snapshots align 1`] = `
       },
     ]
   }
-  hoverable={false}
-  onRowClick={[Function]}
-  uniqueKey="id"
 >
-  <style__SCTable>
-    <StyledComponent
-      forwardedComponent={
+  <Table
+    alternate={true}
+    columns={
+      Array [
         Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "style__SCTable-ixcq-1",
-            "isStatic": true,
-            "lastClassName": "c0",
-            "rules": Array [
-              "width:100%;border-spacing:0;line-height:1.4;th{border-top:1px ",
-              "#E8E8E8",
-              " solid;border-bottom:1px ",
-              "#E8E8E8",
-              " solid;}tbody td{padding:1em;vertical-align:top;&:first-of-type{border-left:4px solid transparent;}}",
-            ],
-          },
-          "displayName": "style__SCTable",
-          "foldedComponentIds": Array [],
-          "render": [Function],
-          "styledComponentId": "style__SCTable-ixcq-1",
-          "target": "table",
-          "toString": [Function],
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-        }
+          "key": "id",
+          "label": "hmnn",
+        },
+        Object {
+          "align": "left",
+          "key": "propL",
+          "label": "hmnn",
+        },
+        Object {
+          "align": "center",
+          "key": "propC",
+          "label": "Blah",
+        },
+        Object {
+          "align": "right",
+          "key": "propR",
+          "label": "hmnn",
+        },
+        Object {
+          "align": "justify",
+          "key": "propJ",
+          "label": "Blah",
+        },
+      ]
+    }
+    data={
+      Array [
+        Object {
+          "id": "123s",
+          "propC": "center",
+          "propJ": "justify",
+          "propL": "left",
+          "propR": "right",
+        },
+        Object {
+          "id": "123e",
+          "propC": "center",
+          "propJ": "justify",
+          "propL": "left",
+          "propR": "right",
+        },
+        Object {
+          "id": "123w",
+          "propC": "center",
+          "propJ": "justify",
+          "propL": "left",
+          "propR": "right",
+        },
+      ]
+    }
+    hoverable={false}
+    onRowClick={[Function]}
+    theme={
+      Object {
+        "rtl": false,
       }
-      forwardedRef={null}
-    >
-      <table
-        className="c0"
+    }
+    uniqueKey="id"
+  >
+    <style__SCTable>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "style__SCTable-ixcq-1",
+              "isStatic": false,
+              "lastClassName": "c0",
+              "rules": Array [
+                "width:100%;border-spacing:0;line-height:1.4;",
+                [Function],
+              ],
+            },
+            "displayName": "style__SCTable",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "style__SCTable-ixcq-1",
+            "target": "table",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <thead>
-          <tr>
-            <th
-              align="left"
-              key="llm-table-th-id"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
+        <table
+          className="c0"
+        >
+          <thead>
+            <tr>
+              <th
+                align="left"
+                key="llm-table-th-id"
               >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
-                    onClick={null}
-                  >
-                    hmnn
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-            <th
-              align="left"
-              key="llm-table-th-propL"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
-              >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
                     }
-                  }
-                  forwardedRef={null}
+                    forwardedRef={null}
+                    onClick={null}
+                    sorted="default"
+                  >
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      hmnn
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+              <th
+                align="left"
+                key="llm-table-th-propL"
+              >
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
-                    onClick={null}
-                  >
-                    hmnn
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-            <th
-              align="center"
-              key="llm-table-th-propC"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
-              >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
                     }
-                  }
-                  forwardedRef={null}
+                    forwardedRef={null}
+                    onClick={null}
+                    sorted="default"
+                  >
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      hmnn
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+              <th
+                align="center"
+                key="llm-table-th-propC"
+              >
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
-                    onClick={null}
-                  >
-                    Blah
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-            <th
-              align="right"
-              key="llm-table-th-propR"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
-              >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
                     }
-                  }
-                  forwardedRef={null}
+                    forwardedRef={null}
+                    onClick={null}
+                    sorted="default"
+                  >
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      Blah
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+              <th
+                align="right"
+                key="llm-table-th-propR"
+              >
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
-                    onClick={null}
-                  >
-                    hmnn
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-            <th
-              align="justify"
-              key="llm-table-th-propJ"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
-              >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
                     }
-                  }
-                  forwardedRef={null}
+                    forwardedRef={null}
+                    onClick={null}
+                    sorted="default"
+                  >
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      hmnn
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+              <th
+                align="justify"
+                key="llm-table-th-propJ"
+              >
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
                     onClick={null}
+                    sorted="default"
                   >
-                    Blah
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="123s"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      Blah
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="123s"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-id"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  123s
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-propL"
-                >
-                  left
-                </td>
-                <td
-                  align="center"
-                  key="llm-table-td-propC"
-                >
-                  center
-                </td>
-                <td
-                  align="right"
-                  key="llm-table-td-propR"
-                >
-                  right
-                </td>
-                <td
-                  align="justify"
-                  key="llm-table-td-propJ"
-                >
-                  justify
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="123e"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                  <td
+                    align="left"
+                    key="llm-table-td-id"
+                  >
+                    123s
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-propL"
+                  >
+                    left
+                  </td>
+                  <td
+                    align="center"
+                    key="llm-table-td-propC"
+                  >
+                    center
+                  </td>
+                  <td
+                    align="right"
+                    key="llm-table-td-propR"
+                  >
+                    right
+                  </td>
+                  <td
+                    align="justify"
+                    key="llm-table-td-propJ"
+                  >
+                    justify
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="123e"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-id"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  123e
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-propL"
-                >
-                  left
-                </td>
-                <td
-                  align="center"
-                  key="llm-table-td-propC"
-                >
-                  center
-                </td>
-                <td
-                  align="right"
-                  key="llm-table-td-propR"
-                >
-                  right
-                </td>
-                <td
-                  align="justify"
-                  key="llm-table-td-propJ"
-                >
-                  justify
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="123w"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                  <td
+                    align="left"
+                    key="llm-table-td-id"
+                  >
+                    123e
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-propL"
+                  >
+                    left
+                  </td>
+                  <td
+                    align="center"
+                    key="llm-table-td-propC"
+                  >
+                    center
+                  </td>
+                  <td
+                    align="right"
+                    key="llm-table-td-propR"
+                  >
+                    right
+                  </td>
+                  <td
+                    align="justify"
+                    key="llm-table-td-propJ"
+                  >
+                    justify
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="123w"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-id"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  123w
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-propL"
-                >
-                  left
-                </td>
-                <td
-                  align="center"
-                  key="llm-table-td-propC"
-                >
-                  center
-                </td>
-                <td
-                  align="right"
-                  key="llm-table-td-propR"
-                >
-                  right
-                </td>
-                <td
-                  align="justify"
-                  key="llm-table-td-propJ"
-                >
-                  justify
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-        </tbody>
-      </table>
-    </StyledComponent>
-  </style__SCTable>
-</Table>
+                  <td
+                    align="left"
+                    key="llm-table-td-id"
+                  >
+                    123w
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-propL"
+                  >
+                    left
+                  </td>
+                  <td
+                    align="center"
+                    key="llm-table-td-propC"
+                  >
+                    center
+                  </td>
+                  <td
+                    align="right"
+                    key="llm-table-td-propR"
+                  >
+                    right
+                  </td>
+                  <td
+                    align="justify"
+                    key="llm-table-td-propJ"
+                  >
+                    justify
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+          </tbody>
+        </table>
+      </StyledComponent>
+    </style__SCTable>
+  </Table>
+</WithTheme(Table)>
 `;
 
 exports[`snapshots basic 1`] = `
@@ -640,6 +699,7 @@ exports[`snapshots basic 1`] = `
   width: 100%;
   border-spacing: 0;
   line-height: 1.4;
+  direction: ltr;
 }
 
 .c0 th {
@@ -660,8 +720,7 @@ exports[`snapshots basic 1`] = `
   background: #fcfcfc;
 }
 
-<Table
-  alternate={true}
+<WithTheme(Table)
   columns={
     Array [
       Object {
@@ -718,579 +777,641 @@ exports[`snapshots basic 1`] = `
       },
     ]
   }
-  hoverable={false}
-  onRowClick={[Function]}
-  uniqueKey="id"
 >
-  <style__SCTable>
-    <StyledComponent
-      forwardedComponent={
+  <Table
+    alternate={true}
+    columns={
+      Array [
         Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": Array [],
-          "componentStyle": ComponentStyle {
-            "componentId": "style__SCTable-ixcq-1",
-            "isStatic": true,
-            "lastClassName": "c0",
-            "rules": Array [
-              "width:100%;border-spacing:0;line-height:1.4;th{border-top:1px ",
-              "#E8E8E8",
-              " solid;border-bottom:1px ",
-              "#E8E8E8",
-              " solid;}tbody td{padding:1em;vertical-align:top;&:first-of-type{border-left:4px solid transparent;}}",
-            ],
-          },
-          "displayName": "style__SCTable",
-          "foldedComponentIds": Array [],
-          "render": [Function],
-          "styledComponentId": "style__SCTable-ixcq-1",
-          "target": "table",
-          "toString": [Function],
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-        }
+          "key": "name",
+          "label": "Name",
+        },
+        Object {
+          "key": "job",
+          "label": "Occupation",
+        },
+        Object {
+          "key": "hobbies",
+          "label": "Fun",
+        },
+      ]
+    }
+    data={
+      Array [
+        Object {
+          "hobbies": "basketball",
+          "id": 123,
+          "job": "CEO",
+          "name": "Chan",
+        },
+        Object {
+          "hobbies": "hockey",
+          "id": 312,
+          "job": "Hobo",
+          "name": "Chow",
+        },
+        Object {
+          "hobbies": "football",
+          "id": 352,
+          "job": "Carpenter",
+          "name": "Mannings",
+        },
+        Object {
+          "hobbies": "buy",
+          "id": 24523,
+          "job": "Business man",
+          "name": "Wong",
+        },
+        Object {
+          "hobbies": "eat",
+          "id": 47657,
+          "job": "Janitor",
+          "name": "Smith",
+        },
+        Object {
+          "hobbies": "sit",
+          "id": 5675,
+          "job": "PUTUS",
+          "name": "Trump",
+        },
+      ]
+    }
+    hoverable={false}
+    onRowClick={[Function]}
+    theme={
+      Object {
+        "rtl": false,
       }
-      forwardedRef={null}
-    >
-      <table
-        className="c0"
+    }
+    uniqueKey="id"
+  >
+    <style__SCTable>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "style__SCTable-ixcq-1",
+              "isStatic": false,
+              "lastClassName": "c0",
+              "rules": Array [
+                "width:100%;border-spacing:0;line-height:1.4;",
+                [Function],
+              ],
+            },
+            "displayName": "style__SCTable",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "style__SCTable-ixcq-1",
+            "target": "table",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
       >
-        <thead>
-          <tr>
-            <th
-              align="left"
-              key="llm-table-th-name"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
+        <table
+          className="c0"
+        >
+          <thead>
+            <tr>
+              <th
+                align="left"
+                key="llm-table-th-name"
               >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
-                    onClick={null}
-                  >
-                    Name
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-            <th
-              align="left"
-              key="llm-table-th-job"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
-              >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
                     }
-                  }
-                  forwardedRef={null}
+                    forwardedRef={null}
+                    onClick={null}
+                    sorted="default"
+                  >
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      Name
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+              <th
+                align="left"
+                key="llm-table-th-job"
+              >
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
-                    onClick={null}
-                  >
-                    Occupation
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-            <th
-              align="left"
-              key="llm-table-th-hobbies"
-            >
-              <style__ColTitle
-                onClick={null}
-                sorted="default"
-              >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "style__ColTitle-ixcq-0",
-                        "isStatic": false,
-                        "lastClassName": "c1",
-                        "rules": Array [
-                          "padding:0.5em 1em;color:",
-                          "#B4B4B4",
-                          ";font-size:",
-                          "12px",
-                          ";font-weight:",
-                          "700",
-                          ";text-align:inherit;user-select:none;",
-                          [Function],
-                          ";",
-                        ],
-                      },
-                      "displayName": "style__ColTitle",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "style__ColTitle-ixcq-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
                     }
-                  }
-                  forwardedRef={null}
+                    forwardedRef={null}
+                    onClick={null}
+                    sorted="default"
+                  >
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      Occupation
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+              <th
+                align="left"
+                key="llm-table-th-hobbies"
+              >
+                <style__ColTitle
                   onClick={null}
                   sorted="default"
                 >
-                  <div
-                    className="c1"
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "style__ColTitle-ixcq-0",
+                          "isStatic": false,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "padding:0.5em 1em;color:",
+                            "#B4B4B4",
+                            ";font-size:",
+                            "12px",
+                            ";font-weight:",
+                            "700",
+                            ";text-align:inherit;user-select:none;",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "style__ColTitle",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "style__ColTitle-ixcq-0",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
                     onClick={null}
+                    sorted="default"
                   >
-                    Fun
-                  </div>
-                </StyledComponent>
-              </style__ColTitle>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="123"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                    <div
+                      className="c1"
+                      onClick={null}
+                    >
+                      Fun
+                    </div>
+                  </StyledComponent>
+                </style__ColTitle>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="123"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-name"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  Chan
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-job"
-                >
-                  CEO
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-hobbies"
-                >
-                  basketball
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="312"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                  <td
+                    align="left"
+                    key="llm-table-td-name"
+                  >
+                    Chan
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-job"
+                  >
+                    CEO
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-hobbies"
+                  >
+                    basketball
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="312"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-name"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  Chow
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-job"
-                >
-                  Hobo
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-hobbies"
-                >
-                  hockey
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="352"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                  <td
+                    align="left"
+                    key="llm-table-td-name"
+                  >
+                    Chow
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-job"
+                  >
+                    Hobo
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-hobbies"
+                  >
+                    hockey
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="352"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-name"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  Mannings
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-job"
-                >
-                  Carpenter
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-hobbies"
-                >
-                  football
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="24523"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                  <td
+                    align="left"
+                    key="llm-table-td-name"
+                  >
+                    Mannings
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-job"
+                  >
+                    Carpenter
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-hobbies"
+                  >
+                    football
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="24523"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-name"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  Wong
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-job"
-                >
-                  Business man
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-hobbies"
-                >
-                  buy
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="47657"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                  <td
+                    align="left"
+                    key="llm-table-td-name"
+                  >
+                    Wong
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-job"
+                  >
+                    Business man
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-hobbies"
+                  >
+                    buy
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="47657"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-name"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  Smith
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-job"
-                >
-                  Janitor
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-hobbies"
-                >
-                  eat
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-          <style__Row
-            alternate={true}
-            hoverable={false}
-            key="5675"
-            onClick={[Function]}
-          >
-            <StyledComponent
+                  <td
+                    align="left"
+                    key="llm-table-td-name"
+                  >
+                    Smith
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-job"
+                  >
+                    Janitor
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-hobbies"
+                  >
+                    eat
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+            <style__Row
               alternate={true}
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "style__Row-ixcq-2",
-                    "isStatic": false,
-                    "lastClassName": "c2",
-                    "rules": Array [
-                      [Function],
-                      ";",
-                      [Function],
-                      ";",
-                    ],
-                  },
-                  "displayName": "style__Row",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "style__Row-ixcq-2",
-                  "target": "tr",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
               hoverable={false}
+              key="5675"
               onClick={[Function]}
             >
-              <tr
-                className="c2"
+              <StyledComponent
+                alternate={true}
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "style__Row-ixcq-2",
+                      "isStatic": false,
+                      "lastClassName": "c2",
+                      "rules": Array [
+                        [Function],
+                        ";",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "style__Row",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "style__Row-ixcq-2",
+                    "target": "tr",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hoverable={false}
                 onClick={[Function]}
               >
-                <td
-                  align="left"
-                  key="llm-table-td-name"
+                <tr
+                  className="c2"
+                  onClick={[Function]}
                 >
-                  Trump
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-job"
-                >
-                  PUTUS
-                </td>
-                <td
-                  align="left"
-                  key="llm-table-td-hobbies"
-                >
-                  sit
-                </td>
-              </tr>
-            </StyledComponent>
-          </style__Row>
-        </tbody>
-      </table>
-    </StyledComponent>
-  </style__SCTable>
-</Table>
+                  <td
+                    align="left"
+                    key="llm-table-td-name"
+                  >
+                    Trump
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-job"
+                  >
+                    PUTUS
+                  </td>
+                  <td
+                    align="left"
+                    key="llm-table-td-hobbies"
+                  >
+                    sit
+                  </td>
+                </tr>
+              </StyledComponent>
+            </style__Row>
+          </tbody>
+        </table>
+      </StyledComponent>
+    </style__SCTable>
+  </Table>
+</WithTheme(Table)>
 `;

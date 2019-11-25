@@ -4,22 +4,31 @@ import { boolean } from '@storybook/addon-knobs';
 import QuestionIcon from 'components/Icon/icons/alert/question';
 import { primary } from 'styles/colors';
 import Checkbox from './index';
+import BaseApp from '../BaseApp';
 
 storiesOf('Checkbox', module)
   .add('Basic', () => (
-    <Checkbox
-      label="Checkbox"
-      disabled={boolean('disabled', false)}
-      highlightLabel={boolean('highlightLabel', false)}
-      title="A simple checkbox"
-    />
+    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-Left', false)}>
+        <Checkbox
+          label="Checkbox"
+          disabled={boolean('disabled', false)}
+          highlightLabel={boolean('highlightLabel', false)}
+          title="A simple checkbox"
+        />
+      </BaseApp>
+    </div>
   ))
   .add('With icon', () => (
-    <Checkbox
-      label="Checkbox"
-      disabled={boolean('disabled', false)}
-      highlightLabel={boolean('highlightLabel', false)}
-      title="A simple checkbox with icon"
-      icon={<QuestionIcon color={primary.main} />}
-    />
+    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-Left', false)}>
+        <Checkbox
+          label="Checkbox"
+          disabled={boolean('disabled', false)}
+          highlightLabel={boolean('highlightLabel', false)}
+          title="A simple checkbox with icon"
+          icon={<QuestionIcon color={primary.main} />}
+        />
+      </BaseApp>
+    </div>
   ));

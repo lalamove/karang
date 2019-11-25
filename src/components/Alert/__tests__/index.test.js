@@ -10,19 +10,17 @@ const types = {
 
 describe('Alert', () => {
   describe('Snapshots', () => {
-    for (const type in types) {
-      if (type === 'type' || type === 'variant') {
-        types[type].map(value => {
-          it(`Alert-${type}-${value}`, () => {
-            const props = { [type]: value };
-            const wrapper = render(
-              <Alert {...props} message="Foo" description="Bar" />
-            );
-            expect(wrapper).toMatchSnapshot();
-          });
+    Object.keys(types).forEach(type => {
+      types[type].forEach(value => {
+        it(`Alert-${type}-${value}`, () => {
+          const props = { [type]: value };
+          const wrapper = render(
+            <Alert {...props} message="Foo" description="Bar" />
+          );
+          expect(wrapper).toMatchSnapshot();
         });
-      }
-    }
+      });
+    });
   });
 
   describe('Functions', () => {

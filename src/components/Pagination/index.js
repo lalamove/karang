@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { bool, func, node, number, string } from 'prop-types';
-import styled from 'styled-components';
+import { bool, func, node, number, string, shape } from 'prop-types';
+import styled, { css, withTheme } from 'styled-components';
 
 import noop from 'utils/noop';
 import Button from 'components/Button';
@@ -9,10 +9,18 @@ import DropDownIcon from 'components/Icon/icons/arrows/dropdown';
 const Container = styled.div`
   display: inline-flex;
   align-items: center;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 `;
 
 const Text = styled.span`
-  padding-right: 0.6em;
+  ${({ theme: { rtl } }) =>
+    css`
+      padding-${rtl ? 'left' : 'right'}: 0.6em;
+`}
 `;
 
 Text.displayName = 'Text';
@@ -59,6 +67,10 @@ class Pagination extends Component {
     defaultPageSize: number,
     /** Default total number of items */
     defaultTotal: number,
+    /** theme injected by withTheme */
+    theme: shape({
+      rtl: bool,
+    }),
   };
 
   static defaultProps = {
@@ -74,6 +86,9 @@ class Pagination extends Component {
     defaultCurrent: 1,
     defaultPageSize: 20,
     defaultTotal: 40,
+    theme: {
+      rtl: false,
+    },
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -165,6 +180,7 @@ class Pagination extends Component {
       nextLabel,
       showLabel,
       description,
+      theme: { rtl },
     } = this.props;
     return (
       <Container>
@@ -187,7 +203,9 @@ class Pagination extends Component {
             <DropDownIcon
               title={prevLabel}
               size={20}
-              style={{ transform: 'rotate(90deg)' }}
+              style={{
+                transform: `${rtl ? 'rotate(-90deg)' : 'rotate(90deg)'}`,
+              }}
             />
           )}
         </SCButton>
@@ -202,7 +220,9 @@ class Pagination extends Component {
             <DropDownIcon
               title={nextLabel}
               size={20}
-              style={{ transform: 'rotate(-90deg)' }}
+              style={{
+                transform: `${rtl ? 'rotate(90deg)' : 'rotate(-90deg)'}`,
+              }}
             />
           )}
         </SCButton>
@@ -211,4 +231,4 @@ class Pagination extends Component {
   }
 }
 
-export default Pagination;
+export default withTheme(Pagination);

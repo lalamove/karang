@@ -26,20 +26,34 @@ const StyledList = styled(List)`
   width: auto;
   white-space: nowrap;
 
-  ${({ nested, direction }) => {
+  ${({ nested, direction, theme: { rtl } }) => {
     switch (direction) {
-      case 'right':
-        return css`
-          left: ${nested ? '100%' : '0'};
-        `;
       case 'left':
+        return rtl
+          ? css`
+              right: ${nested ? '100%' : '0'};
+            `
+          : css`
+              right: ${nested ? 'calc(100% + 2px)' : '0'};
+            `;
+      case 'right':
+        return rtl
+          ? css`
+              left: ${nested ? 'calc(100% + 2px)' : '0'};
+            `
+          : css`
+              left: ${nested ? '100%' : '0'};
+            `;
       default:
-        return css`
-          right: ${nested ? 'calc(100% + 2px)' : '0'};
-        `;
+        return rtl
+          ? css`
+              right: ${nested ? '100%' : '0'};
+            `
+          : css`
+              left: ${nested ? '100%' : '0'};
+            `;
     }
   }};
-
   ${({ block, nested }) =>
     block &&
     !nested &&
@@ -56,7 +70,7 @@ class DropdownList extends Component {
   static propTypes = {
     block: bool,
     items: arrayOf(shape({})).isRequired, // add shape
-    direction: oneOf(['left', 'right']).isRequired,
+    direction: oneOf(['left', 'right', 'auto']),
     highlightedIndex: oneOfType([string, number]),
     highlightedIndexes: arrayOf(string),
     getItemProps: func,
@@ -73,6 +87,7 @@ class DropdownList extends Component {
     handleDepthLevel: noop,
     handleHighlightedIndexes: noop,
     handleListCounts: noop,
+    direction: 'auto',
   };
 
   renderList(items, depthLevel = 0) {
@@ -121,6 +136,9 @@ class DropdownList extends Component {
                 options: subOptions,
                 style: subOptions && haveSubOptionStyle,
                 disabled: option.disabled,
+                'data-tip': option.tooltip,
+                'data-place': 'top',
+                'data-effect': 'solid',
                 onMouseEnter: () => handleHighlightedIndexes(index, depthLevel),
                 onMouseOver: () =>
                   !option.options && handleDepthLevel(depthLevel),

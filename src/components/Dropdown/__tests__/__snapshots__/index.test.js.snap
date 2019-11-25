@@ -81,8 +81,8 @@ exports[`Dropdown Snapshots render 1`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin-right: 0.5em;
-  line-height: 1.6;
   text-align: left;
+  line-height: 1.6;
 }
 
 .c4 {
@@ -150,6 +150,10 @@ exports[`Dropdown Snapshots render 1`] = `
       </span>
     </span>
   </button>
+  <div
+    class="__react_component_tooltip place-top type-dark "
+    data-id="tooltip"
+  />
 </div>
 `;
 
@@ -234,8 +238,8 @@ exports[`Dropdown Snapshots render 2`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin-right: 0.5em;
-  line-height: 1.6;
   text-align: left;
+  line-height: 1.6;
 }
 
 .c4 {
@@ -303,5 +307,9 @@ exports[`Dropdown Snapshots render 2`] = `
       </span>
     </span>
   </button>
+  <div
+    class="__react_component_tooltip place-top type-dark "
+    data-id="tooltip"
+  />
 </div>
 `;
