@@ -19,6 +19,11 @@ import TextAreaComp from './components/TextAreaComp';
 
 const Wrapper = styled.div`
   display: inline-block;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 `;
 
 const SCAnimatedBorder = styled(AnimatedBorder)`
