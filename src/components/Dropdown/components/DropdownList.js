@@ -136,6 +136,9 @@ class DropdownList extends Component {
                 options: subOptions,
                 style: subOptions && haveSubOptionStyle,
                 disabled: option.disabled,
+                'data-tip': option.tooltip,
+                'data-place': 'top',
+                'data-effect': 'solid',
                 onMouseEnter: () => handleHighlightedIndexes(index, depthLevel),
                 onMouseOver: () =>
                   !option.options && handleDepthLevel(depthLevel),
