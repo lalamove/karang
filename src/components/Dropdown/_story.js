@@ -30,6 +30,7 @@ const itemsWithDisabled = [
     value: 'morning',
     label: 'Good morning, Dave.',
     disabled: true,
+    tooltip: 'Dave is still asleep',
   },
   {
     value: 'bye',
@@ -101,7 +102,7 @@ const Basic = () => (
       <Dropdown items={items} />
       <h4>Basic disabled</h4>
       <Dropdown items={items} disabled />
-      <h4>Basic with disabled item</h4>
+      <h4>Basic with disabled item and tooltip</h4>
       <Dropdown items={itemsWithDisabled} />
       <h4>Basic with custom button icon</h4>
       <Dropdown items={items} icon={<MenuIcon size={24} />} />

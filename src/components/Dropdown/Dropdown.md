@@ -22,7 +22,7 @@ const items = [
 <Dropdown items={items} defaultLabel="Options available" />
 ```
 
-**Basic with disabled item**
+**Basic with disabled item and tooltip**
 
 ```js
 const items = [
@@ -35,6 +35,7 @@ const items = [
     value: 'morning',
     label: 'Good morning, Dave.',
     disabled: true,
+    tooltip: 'Dave is still asleep'
   },
   {
     value: 'bye',
