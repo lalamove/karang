@@ -63,8 +63,8 @@ const LI = styled.li`
   position: relative;
   ${({ theme: { rtl } }) =>
     css`
-       border-${rtl ? 'right' : 'left'}: 2px solid transparent;
        padding-${rtl ? 'right' : 'left'}: 8px;
+       border-${rtl ? 'right' : 'left'}: 2px solid transparent; 
    `};
 
   outline: 0;
