@@ -284,10 +284,10 @@ exports[`DatePicker SnapShots DatePicker 1`] = `
 .c0 .DayPickerNavigation > div:first-child {
   position: absolute;
   left: 24px;
-  top: 20px;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+  top: 20px;
 }
 
 .c0 .DayPickerNavigation > div:nth-child(2) {
@@ -573,6 +573,7 @@ exports[`DatePicker SnapShots DatePicker 1`] = `
 
 .c0 .DateRangePickerInput__rtl {
   direction: rtl;
+  text-align: left;
 }
 
 .c0 .DateRangePickerInput__block {
@@ -591,9 +592,8 @@ exports[`DatePicker SnapShots DatePicker 1`] = `
 
 .c0 .DateRangePickerInput_arrow_svg {
   vertical-align: middle;
-  height: 20px;
-  width: 20px;
-  visibility: hidden;
+  height: 16px;
+  width: 16px;
 }
 
 .c0 .DateRangePickerInput_clearDates {

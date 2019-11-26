@@ -272,13 +272,13 @@ exports[`Snapshots Radio group disabled 1`] = `
   border-radius: 50%;
 }
 
-.c3 {
+.c2 {
   display: inline-block;
   cursor: pointer;
   cursor: not-allowed;
 }
 
-.c3 input {
+.c2 input {
   position: absolute;
   overflow: hidden;
   width: 1px;
@@ -290,31 +290,31 @@ exports[`Snapshots Radio group disabled 1`] = `
   clip: rect(0,0,0,0);
 }
 
-.c3 span {
+.c2 span {
   vertical-align: middle;
 }
 
-.c3:hover .c4,
-.c3 > input:focus ~ .c4 {
+.c2:hover .c4,
+.c2 > input:focus ~ .c4 {
   border: 1px solid #B4B4B4;
 }
 
-.c3:hover > input:not(:checked):not(:disabled) ~ .c4,
-.c3:active > input:not(:checked):not(:disabled) ~ .c4 {
+.c2:hover > input:not(:checked):not(:disabled) ~ .c4,
+.c2:active > input:not(:checked):not(:disabled) ~ .c4 {
   border: 1px solid #303030;
 }
 
-.c3:active > input:not(:disabled) ~ .c4,
-.c3 > input:focus:not(:disabled) ~ .c4 {
+.c2:active > input:not(:disabled) ~ .c4,
+.c2 > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c3 > input:disabled ~ .c4,
-.c3 > input:disabled ~ .c6 {
+.c2 > input:disabled ~ .c4,
+.c2 > input:disabled ~ .c6 {
   opacity: 0.5;
 }
 
-.c3 > input:checked ~ .c4:before {
+.c2 > input:checked ~ .c4:before {
   content: '';
   display: block;
   width: 100%;
@@ -323,7 +323,7 @@ exports[`Snapshots Radio group disabled 1`] = `
   border-radius: 50%;
 }
 
-.c3:hover .c4 {
+.c2:hover .c4 {
   box-shadow: none;
 }
 
@@ -332,7 +332,7 @@ exports[`Snapshots Radio group disabled 1`] = `
   margin-left: -0.5em;
 }
 
-.c0 .c2 {
+.c0 .c3 {
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
@@ -430,12 +430,12 @@ exports[`Snapshots Radio group with child disabled 1`] = `
   margin-left: 0.5em;
 }
 
-.c3 {
+.c2 {
   display: inline-block;
   cursor: pointer;
 }
 
-.c3 input {
+.c2 input {
   position: absolute;
   overflow: hidden;
   width: 1px;
@@ -447,31 +447,31 @@ exports[`Snapshots Radio group with child disabled 1`] = `
   clip: rect(0,0,0,0);
 }
 
-.c3 span {
+.c2 span {
   vertical-align: middle;
 }
 
-.c3:hover .c4,
-.c3 > input:focus ~ .c4 {
+.c2:hover .c4,
+.c2 > input:focus ~ .c4 {
   border: 1px solid #B4B4B4;
 }
 
-.c3:hover > input:not(:checked):not(:disabled) ~ .c4,
-.c3:active > input:not(:checked):not(:disabled) ~ .c4 {
+.c2:hover > input:not(:checked):not(:disabled) ~ .c4,
+.c2:active > input:not(:checked):not(:disabled) ~ .c4 {
   border: 1px solid #303030;
 }
 
-.c3:active > input:not(:disabled) ~ .c4,
-.c3 > input:focus:not(:disabled) ~ .c4 {
+.c2:active > input:not(:disabled) ~ .c4,
+.c2 > input:focus:not(:disabled) ~ .c4 {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c3 > input:disabled ~ .c4,
-.c3 > input:disabled ~ .c6 {
+.c2 > input:disabled ~ .c4,
+.c2 > input:disabled ~ .c6 {
   opacity: 0.5;
 }
 
-.c3 > input:checked ~ .c4:before {
+.c2 > input:checked ~ .c4:before {
   content: '';
   display: block;
   width: 100%;
@@ -540,7 +540,7 @@ exports[`Snapshots Radio group with child disabled 1`] = `
   margin-left: -0.5em;
 }
 
-.c0 .c2 {
+.c0 .c3 {
   margin-right: 0.5em;
   margin-left: 0.5em;
 }
@@ -569,7 +569,7 @@ exports[`Snapshots Radio group with child disabled 1`] = `
     />
   </label>
   <label
-    class="c2 c8"
+    class="c8 c3"
     disabled=""
     for="demo-2"
   >
