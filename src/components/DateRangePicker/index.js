@@ -62,7 +62,7 @@ class DateRangePicker extends Component {
       <StyledWrapper>
         <RDDateRangePicker
           {...remainProps}
-          isRTL
+          isRTL={isRTL}
           startDate={startDate}
           endDate={endDate}
           onDatesChange={this.onDatesChange}

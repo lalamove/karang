@@ -6,7 +6,7 @@ import BaseApp from '../BaseApp';
 
 storiesOf('DateRangePicker', module).add('DateRangePicker', () => (
   <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-    <BaseApp dir={boolean('Right-to-Left', false)}>
+    <BaseApp rtl={boolean('Right-to-Left', false)}>
       <DateRangePicker isRTL={boolean('Right-to-Left', false)} />
     </BaseApp>
   </div>
