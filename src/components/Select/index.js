@@ -10,7 +10,7 @@ import {
   shape,
 } from 'prop-types';
 import Downshift from 'downshift';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import AnimatedBorder from 'components/AnimatedBorder';
 import ErrorMessage from 'components/ErrorMessage';
@@ -25,6 +25,11 @@ import { DROPDOWN, GROUND } from 'styles/zIndex';
 const Wrapper = styled.div`
   position: relative;
   display: block;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 
   ${({ error }) => error && `padding-bottom: 2em;`};
 `;
@@ -49,7 +54,9 @@ const Button = styled.button`
 const CustomIcon = styled.span`
   flex: 0 0 auto;
   align-self: center;
-  margin-right: 0.5em;
+  ${({ theme: { rtl } }) => css`
+  margin-${rtl ? 'left' : 'right'}:0.5em;
+`}
   line-height: 1.6;
 `;
 
@@ -57,11 +64,16 @@ const Content = styled.span`
   flex: 1 1 auto;
   font-family: ${primaryFonts};
   line-height: 1.6;
-  text-align: left;
+
+  ${({ theme: { rtl } }) => css`
+    text-align: ${rtl ? 'right' : 'left'};
+  `}
 `;
 
 const Caret = styled.span`
-  margin-right: -5px;
+  ${({ theme: { rtl } }) => css`
+    margin-${rtl ? 'left' : 'right'}:-5px ;
+`}
   color: ${nobel.main};
 `;
 
@@ -70,6 +82,10 @@ const StyledList = styled(List)`
   z-index: ${DROPDOWN};
   top: calc(100% + 1px);
   left: 0;
+  ${({ theme: { rtl } }) =>
+    css`
+      text-align: ${rtl ? 'right' : 'left'};
+    `}
   width: 100%;
 
   li[disabled] {
