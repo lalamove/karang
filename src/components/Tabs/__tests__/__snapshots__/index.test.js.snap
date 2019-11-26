@@ -50,7 +50,7 @@ exports[`Tab Snapshots Deselected (rounded variant) 1`] = `
 `;
 
 exports[`Tab Snapshots Deselected 1`] = `
-.c2 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -83,22 +83,22 @@ exports[`Tab Snapshots Deselected 1`] = `
   color: #F16622;
 }
 
-.c2:disabled {
+.c1:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c2 .c3 {
+.c1 .c3 {
   color: #F16622;
 }
 
-.c2:hover:enabled,
-.c2:active:enabled {
+.c1:hover:enabled,
+.c1:active:enabled {
   background-color: #F9EAE7;
 }
 
-.c2:active:enabled,
-.c2:focus:enabled {
+.c1:active:enabled,
+.c1:focus:enabled {
   box-shadow: 0 0 0 4px rgba(249,234,231,0.2);
 }
 
@@ -108,25 +108,25 @@ exports[`Tab Snapshots Deselected 1`] = `
   border-bottom: none;
 }
 
-.c1 {
+.c2 {
   padding: 1.25em;
   color: #B4B4B4;
   text-shadow: none;
 }
 
-.c1:hover:enabled {
+.c2:hover:enabled {
   color: #F16622;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c1:active:enabled {
+.c2:active:enabled {
   color: #a33c0a;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c1:focus:enabled {
+.c2:focus:enabled {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -213,7 +213,7 @@ exports[`Tab Snapshots Selected (rounded variant) 1`] = `
 `;
 
 exports[`Tab Snapshots Selected 1`] = `
-.c2 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -246,22 +246,22 @@ exports[`Tab Snapshots Selected 1`] = `
   color: #F16622;
 }
 
-.c2:disabled {
+.c1:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c2 .c3 {
+.c1 .c3 {
   color: #F16622;
 }
 
-.c2:hover:enabled,
-.c2:active:enabled {
+.c1:hover:enabled,
+.c1:active:enabled {
   background-color: #F9EAE7;
 }
 
-.c2:active:enabled,
-.c2:focus:enabled {
+.c1:active:enabled,
+.c1:focus:enabled {
   box-shadow: 0 0 0 4px rgba(249,234,231,0.2);
 }
 
@@ -271,25 +271,25 @@ exports[`Tab Snapshots Selected 1`] = `
   border-bottom: 2px solid #F16622;
 }
 
-.c1 {
+.c2 {
   padding: 1.25em;
   color: #F16622;
   text-shadow: -0.75px 0px 0px #F16622,-0.75px 0px 0px #F16622;
 }
 
-.c1:hover:enabled {
+.c2:hover:enabled {
   color: #F16622;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c1:active:enabled {
+.c2:active:enabled {
   color: #a33c0a;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c1:focus:enabled {
+.c2:focus:enabled {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -439,7 +439,7 @@ exports[`TabBar Snapshots Rounded variant 1`] = `
 `;
 
 exports[`TabBar Snapshots Selected tabs 1`] = `
-.c3 {
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -472,22 +472,22 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   color: #F16622;
 }
 
-.c3:disabled {
+.c2:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c3 .c6 {
+.c2 .c6 {
   color: #F16622;
 }
 
-.c3:hover:enabled,
-.c3:active:enabled {
+.c2:hover:enabled,
+.c2:active:enabled {
   background-color: #F9EAE7;
 }
 
-.c3:active:enabled,
-.c3:focus:enabled {
+.c2:active:enabled,
+.c2:focus:enabled {
   box-shadow: 0 0 0 4px rgba(249,234,231,0.2);
 }
 
@@ -532,25 +532,25 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   text-decoration: none;
 }
 
-.c2 {
+.c3 {
   padding: 1.25em;
   color: #F16622;
   text-shadow: -0.75px 0px 0px #F16622,-0.75px 0px 0px #F16622;
 }
 
-.c2:hover:enabled {
+.c3:hover:enabled {
   color: #F16622;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c2:active:enabled {
+.c3:active:enabled {
   color: #a33c0a;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c2:focus:enabled {
+.c3:focus:enabled {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -580,7 +580,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
   >
     <button
       aria-selected="false"
-      class="c5 c3"
+      class="c2 c5"
       role="tab"
       type="button"
     >
@@ -593,7 +593,7 @@ exports[`TabBar Snapshots Selected tabs 1`] = `
 `;
 
 exports[`TabBar Snapshots Some tabs 1`] = `
-.c3 {
+.c2 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -626,22 +626,22 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   color: #F16622;
 }
 
-.c3:disabled {
+.c2:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c3 .c4 {
+.c2 .c4 {
   color: #F16622;
 }
 
-.c3:hover:enabled,
-.c3:active:enabled {
+.c2:hover:enabled,
+.c2:active:enabled {
   background-color: #F9EAE7;
 }
 
-.c3:active:enabled,
-.c3:focus:enabled {
+.c2:active:enabled,
+.c2:focus:enabled {
   box-shadow: 0 0 0 4px rgba(249,234,231,0.2);
 }
 
@@ -657,25 +657,25 @@ exports[`TabBar Snapshots Some tabs 1`] = `
   border-bottom: none;
 }
 
-.c2 {
+.c3 {
   padding: 1.25em;
   color: #B4B4B4;
   text-shadow: none;
 }
 
-.c2:hover:enabled {
+.c3:hover:enabled {
   color: #F16622;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c2:active:enabled {
+.c3:active:enabled {
   color: #a33c0a;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c2:focus:enabled {
+.c3:focus:enabled {
   -webkit-text-decoration: none;
   text-decoration: none;
 }

@@ -197,7 +197,7 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
   background-color: rgba(216,83,79,0.1);
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -267,7 +267,7 @@ exports[`Select Snapshots Select with label, items and error message 1`] = `
   color: #B4B4B4;
 }
 
-.c7 {
+.c8 {
   position: absolute;
   z-index: 1;
   right: 0;

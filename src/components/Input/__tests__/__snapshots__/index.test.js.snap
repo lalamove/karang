@@ -56,7 +56,7 @@ exports[`Input Snapshots Password 1`] = `
   display: none;
 }
 
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -89,31 +89,31 @@ exports[`Input Snapshots Password 1`] = `
   color: #535353;
 }
 
-.c4:disabled {
+.c3:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c4 .c5 {
+.c3 .c5 {
   color: #535353;
 }
 
-.c4:hover:enabled,
-.c4:active:enabled {
+.c3:hover:enabled,
+.c3:active:enabled {
   background-color: #F1F1F1;
 }
 
-.c4:active:enabled,
-.c4:focus:enabled {
+.c3:active:enabled,
+.c3:focus:enabled {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c3 {
+.c4 {
   border: none;
 }
 
-.c3:hover,
-.c3:focus {
+.c4:hover,
+.c4:focus {
   background: #E8E8E8;
 }
 
@@ -243,7 +243,7 @@ exports[`Input Snapshots Password with a value 1`] = `
   display: none;
 }
 
-.c4 {
+.c3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -276,31 +276,31 @@ exports[`Input Snapshots Password with a value 1`] = `
   color: #535353;
 }
 
-.c4:disabled {
+.c3:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c4 .c5 {
+.c3 .c5 {
   color: #535353;
 }
 
-.c4:hover:enabled,
-.c4:active:enabled {
+.c3:hover:enabled,
+.c3:active:enabled {
   background-color: #F1F1F1;
 }
 
-.c4:active:enabled,
-.c4:focus:enabled {
+.c3:active:enabled,
+.c3:focus:enabled {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c3 {
+.c4 {
   border: none;
 }
 
-.c3:hover,
-.c3:focus {
+.c4:hover,
+.c4:focus {
   background: #E8E8E8;
 }
 
