@@ -4,10 +4,13 @@ import { boolean } from '@storybook/addon-knobs';
 import DateRangePicker from './index';
 import BaseApp from '../BaseApp';
 
-storiesOf('DateRangePicker', module).add('DateRangePicker', () => (
-  <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-    <BaseApp rtl={boolean('Right-to-Left', false)}>
-      <DateRangePicker isRTL={boolean('Right-to-Left', false)} />
-    </BaseApp>
-  </div>
-));
+storiesOf('DateRangePicker', module).add('DateRangePicker', () => {
+  const rtl = boolean('Right-to-Left', false);
+  return (
+    <div dir={rtl ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={rtl}>
+        <DateRangePicker isRTL={rtl} />
+      </BaseApp>
+    </div>
+  );
+});
