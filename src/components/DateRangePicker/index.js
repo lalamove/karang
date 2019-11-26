@@ -56,12 +56,21 @@ class DateRangePicker extends Component {
 
   render() {
     const { focusedInput, startDate, endDate } = this.state;
-    const { onDatesChange, onFocusChange, isRTL, ...remainProps } = this.props;
+    const {
+      onDatesChange,
+      onFocusChange,
+      isRTL,
+      startDateId,
+      endDateId,
+      ...remainProps
+    } = this.props;
 
     return (
       <StyledWrapper>
         <RDDateRangePicker
           {...remainProps}
+          startDateId={startDateId}
+          endDateId={endDateId}
           isRTL={isRTL}
           startDate={startDate}
           endDate={endDate}
