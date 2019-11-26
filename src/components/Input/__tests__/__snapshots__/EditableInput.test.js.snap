@@ -15,8 +15,9 @@ exports[`EditableInput Snapshots Input field with error message 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
   border: 1px solid #D8534F;
   background-color: rgba(216,83,79,0.1);
 }
@@ -187,8 +188,9 @@ exports[`EditableInput Snapshots Input field with loading 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c2 {
@@ -308,8 +310,9 @@ exports[`EditableInput Snapshots Input field with normal state 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c2 {
@@ -406,8 +409,9 @@ exports[`EditableInput Snapshots Input field with success state 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c2 {

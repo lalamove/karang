@@ -15,8 +15,9 @@ exports[`Input Snapshots Password 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c2 {
@@ -202,8 +203,9 @@ exports[`Input Snapshots Password with a value 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c2 {
@@ -390,8 +392,9 @@ exports[`Input Snapshots Regular Input 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c2 {
