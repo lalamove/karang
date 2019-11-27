@@ -150,10 +150,6 @@ exports[`Dropdown Snapshots render 1`] = `
       </span>
     </span>
   </button>
-  <div
-    class="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
-  />
 </div>
 `;
 
@@ -307,9 +303,5 @@ exports[`Dropdown Snapshots render 2`] = `
       </span>
     </span>
   </button>
-  <div
-    class="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
-  />
 </div>
 `;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { arrayOf, func, node, oneOf, shape, string, bool } from 'prop-types';
 import Downshift from 'downshift';
 import styled, { css, withTheme } from 'styled-components';
-import ReactTooltip from 'react-tooltip';
 
 import noop from 'utils/noop';
 import DropdownButton from './components/DropdownButton';
@@ -87,10 +86,6 @@ class Dropdown extends Component {
     highlightedIndexes: [],
     listCounts: [this.props.items.length],
   };
-
-  componentDidUpdate() {
-    ReactTooltip.rebuild();
-  }
 
   // sync highlighted indexes in state and Downshift
   setHighlightedIndexes = (index, depthLevel) => {
@@ -348,7 +343,6 @@ class Dropdown extends Component {
                   handleListCounts={this.handleListCounts}
                 />
               )}
-              <ReactTooltip />
             </Container>
           );
         }}
