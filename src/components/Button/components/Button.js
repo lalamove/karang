@@ -20,8 +20,12 @@ const IconWrapper = styled.div`
 `;
 
 const Text = styled.span`
-  margin: ${({ iconPosition }) =>
-    iconPosition === 'before' ? '0 0 0 10px' : '0 10px 0 0'};
+  margin: ${({ iconPosition, theme: { rtl } }) => {
+    if (!rtl) {
+      return iconPosition === 'before' ? '0 0 0 10px' : '0 10px 0 0';
+    }
+    return iconPosition === 'before' ? '0 10px 0 0' : '0 0 0 10px';
+  }};
 `;
 
 const SpinnerWrapper = styled.div`
@@ -33,6 +37,7 @@ const SpinnerWrapper = styled.div`
 const StyledButton = styled(Base)`
   position: relative;
   display: ${({ block }) => (block ? 'flex' : 'inline-flex')};
+  direction: ${({ theme: { rtl } }) => rtl && 'rtl'};
   align-items: center;
   justify-content: center;
   ${({ block }) => block && 'width: 100%;'};

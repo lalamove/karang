@@ -1,9 +1,14 @@
 import React from 'react';
 import { node, oneOf } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const FlagContainer = styled.div`
   display: flex;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `};
   align-items: ${({ variant }) => {
     switch (variant) {
       case 'top':
@@ -19,7 +24,7 @@ const FlagContainer = styled.div`
 
 const FlagImage = styled.figure`
   margin: 0; /* reset */
-  margin-right: 1em;
+  ${({ theme: { rtl } }) => css` margin-${rtl ? 'left' : 'right'}: 1em;`}
 `;
 
 const FlagBody = styled.div`

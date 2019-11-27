@@ -19,7 +19,7 @@ const Content = styled.div`
   font-size: ${fontSize.regular};
   line-height: 20px;
 
-  ${({ size }) => {
+  ${({ size, theme: { rtl } }) => {
     switch (size) {
       case 'small':
         return css`
@@ -27,7 +27,7 @@ const Content = styled.div`
         `;
       default:
         return css`
-          padding: 12px 20px 12px 0;
+          padding: ${rtl ? '12px 0 12px 20px' : '12px 20px 12px 0;'};
         `;
     }
   }};
@@ -120,20 +120,21 @@ const LI = styled.li`
 const Wrapper = styled(LI)`
   display: flex;
   align-items: top;
+  direction: ${({ theme: { rtl } }) => rtl && 'rtl'};
 `;
 
 const Icon = styled.div`
-  ${({ size }) => {
+  ${({ size, theme: { rtl } }) => {
     switch (size) {
       case 'small':
         return css`
           align-self: center;
-          margin: 0 6px 0 0;
+          margin: ${rtl ? '0 0 0 6px' : '0 6px 0 0'};
         `;
       default:
         return css`
-          margin-top: 12px;
-          margin-right: 10px;
+        margin-top: 12px;
+        margin-${rtl ? 'left' : 'right'}: 10px;
         `;
     }
   }};
