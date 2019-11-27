@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { string } from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { lighten } from 'polished';
 
 import { primary, white } from 'styles/colors';
@@ -18,6 +18,11 @@ const fillup = keyframes`
 
 const Container = styled.div`
   position: relative;
+  ${({ theme: { rtl } }) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
   width: 100%;
   height: 2.625em;
   line-height: 2.625em;
