@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
   arrayOf,
   oneOfType,
@@ -10,6 +10,7 @@ import {
   bool,
 } from 'prop-types';
 import styled, { css } from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 
 import List from 'components/List';
 
@@ -90,6 +91,10 @@ class DropdownList extends Component {
     direction: 'auto',
   };
 
+  componentDidUpdate() {
+    ReactTooltip.rebuild();
+  }
+
   renderList(items, depthLevel = 0) {
     const {
       block,
@@ -103,59 +108,63 @@ class DropdownList extends Component {
     } = this.props;
 
     return (
-      <StyledList
-        block={block}
-        hoverable
-        items={items}
-        size="small"
-        direction={direction}
-        nested={depthLevel > 0}
-      >
-        {({ data: option, Item, index: subIndex, getProps }) => {
-          const index = `${depthLevel}_${subIndex}`;
-          let subOptions;
-          let newDepthLevel;
-          const onFocus = highlightedIndexes[depthLevel] === index;
-          const haveSubOptions = Boolean(option.options);
+      <Fragment>
+        <StyledList
+          block={block}
+          hoverable
+          items={items}
+          size="small"
+          direction={direction}
+          nested={depthLevel > 0}
+        >
+          {({ data: option, Item, index: subIndex, getProps }) => {
+            const index = `${depthLevel}_${subIndex}`;
+            let subOptions;
+            let newDepthLevel;
+            const onFocus = highlightedIndexes[depthLevel] === index;
+            const haveSubOptions = Boolean(option.options);
 
-          if (onFocus && haveSubOptions) {
-            newDepthLevel = depthLevel + 1;
-            subOptions = this.renderList(option.options, newDepthLevel);
-          }
+            if (onFocus && haveSubOptions) {
+              newDepthLevel = depthLevel + 1;
+              subOptions = this.renderList(option.options, newDepthLevel);
+            }
 
-          return (
-            <Item
-              {...compose(
-                getItemProps,
-                getProps
-              )({
-                active: highlightedIndex === index,
-                index,
-                item: option,
-                icon: option.icon,
-                options: subOptions,
-                style: subOptions && haveSubOptionStyle,
-                disabled: option.disabled,
-                'data-tip': option.tooltip,
-                'data-place': 'top',
-                'data-effect': 'solid',
-                onMouseEnter: () => handleHighlightedIndexes(index, depthLevel),
-                onMouseOver: () =>
-                  !option.options && handleDepthLevel(depthLevel),
-              })}
-            >
-              <Label
-                onFocus={onFocus}
-                handleListCounts={onFocus ? handleListCounts : undefined}
-                count={haveSubOptions ? option.options.length : items.length}
-                depthLevel={haveSubOptions ? newDepthLevel : depthLevel}
+            return (
+              <Item
+                {...compose(
+                  getItemProps,
+                  getProps
+                )({
+                  active: highlightedIndex === index,
+                  index,
+                  item: option,
+                  icon: option.icon,
+                  options: subOptions,
+                  style: subOptions && haveSubOptionStyle,
+                  disabled: option.disabled,
+                  'data-tip': option.tooltip,
+                  'data-place': 'top',
+                  'data-effect': 'solid',
+                  onMouseEnter: () =>
+                    handleHighlightedIndexes(index, depthLevel),
+                  onMouseOver: () =>
+                    !option.options && handleDepthLevel(depthLevel),
+                })}
               >
-                {option.label}
-              </Label>
-            </Item>
-          );
-        }}
-      </StyledList>
+                <Label
+                  onFocus={onFocus}
+                  handleListCounts={onFocus ? handleListCounts : undefined}
+                  count={haveSubOptions ? option.options.length : items.length}
+                  depthLevel={haveSubOptions ? newDepthLevel : depthLevel}
+                >
+                  {option.label}
+                </Label>
+              </Item>
+            );
+          }}
+        </StyledList>
+        <ReactTooltip />
+      </Fragment>
     );
   }
 

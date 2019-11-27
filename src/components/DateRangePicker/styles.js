@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import { primary, nobel, mineShaft, white } from 'styles/colors';
 
@@ -228,13 +228,20 @@ const StyledWrapper = styled.div`
   }
   .DayPickerNavigation > div:first-child {
     position: absolute;
-    left: 24px;
+    ${({ theme: { rtl } }) =>
+      css`
+        ${rtl ? 'right' : 'left'}: 24px;
+        transform: ${rtl ? 'rotate(0deg)' : 'rotate(180deg)'};
+      `}
     top: 20px;
-    transform: rotate(180deg);
   }
   .DayPickerNavigation > div:nth-child(2) {
     position: absolute;
-    right: 24px;
+    ${({ theme: { rtl } }) =>
+      css`
+        ${rtl ? 'left' : 'right'}: 24px;
+        transform: ${rtl && 'rotate(180deg)'};
+      `}
     top: 20px;
   }
   .DayPickerNavigation_button:hover {
@@ -465,6 +472,7 @@ const StyledWrapper = styled.div`
   }
   .DateRangePickerInput__rtl {
     direction: rtl;
+    text-align: left;
   }
   .DateRangePickerInput__block {
     display: block;
@@ -479,9 +487,8 @@ const StyledWrapper = styled.div`
   }
   .DateRangePickerInput_arrow_svg {
     vertical-align: middle;
-    height: 20px;
-    width: 20px;
-    visibility: hidden;
+    height: 16px;
+    width: 16px;
   }
   .DateRangePickerInput_clearDates {
     background: 0 0;

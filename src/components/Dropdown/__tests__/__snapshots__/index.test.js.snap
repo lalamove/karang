@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown Snapshots render 1`] = `
-.c2 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -34,26 +34,26 @@ exports[`Dropdown Snapshots render 1`] = `
   color: #535353;
 }
 
-.c2:disabled {
+.c1:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c2 .c5 {
+.c1 .c5 {
   color: #535353;
 }
 
-.c2:hover:enabled,
-.c2:active:enabled {
+.c1:hover:enabled,
+.c1:active:enabled {
   background-color: #F1F1F1;
 }
 
-.c2:active:enabled,
-.c2:focus:enabled {
+.c1:active:enabled,
+.c1:focus:enabled {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -65,7 +65,7 @@ exports[`Dropdown Snapshots render 1`] = `
   white-space: nowrap;
 }
 
-.c1 > span {
+.c2 > span {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -150,15 +150,11 @@ exports[`Dropdown Snapshots render 1`] = `
       </span>
     </span>
   </button>
-  <div
-    class="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
-  />
 </div>
 `;
 
 exports[`Dropdown Snapshots render 2`] = `
-.c2 {
+.c1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -191,26 +187,26 @@ exports[`Dropdown Snapshots render 2`] = `
   color: #535353;
 }
 
-.c2:disabled {
+.c1:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c2 .c5 {
+.c1 .c5 {
   color: #535353;
 }
 
-.c2:hover:enabled,
-.c2:active:enabled {
+.c1:hover:enabled,
+.c1:active:enabled {
   background-color: #F1F1F1;
 }
 
-.c2:active:enabled,
-.c2:focus:enabled {
+.c1:active:enabled,
+.c1:focus:enabled {
   box-shadow: 0 0 0 4px rgba(180,180,180,0.2);
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -222,7 +218,7 @@ exports[`Dropdown Snapshots render 2`] = `
   white-space: nowrap;
 }
 
-.c1 > span {
+.c2 > span {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -307,9 +303,5 @@ exports[`Dropdown Snapshots render 2`] = `
       </span>
     </span>
   </button>
-  <div
-    class="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
-  />
 </div>
 `;

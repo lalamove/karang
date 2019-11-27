@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextArea Snapshots TextArea with error 1`] = `
-.c2 {
+.c1 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -15,8 +15,9 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
   border: 1px solid #D8534F;
   background-color: rgba(216,83,79,0.1);
 }
@@ -88,7 +89,7 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
   display: inline-block;
 }
 
-.c1 {
+.c2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -96,7 +97,7 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
   box-sizing: border-box;
 }
 
-.c1 > label {
+.c2 > label {
   top: 1.5em;
   top: 0;
 }
@@ -158,7 +159,7 @@ exports[`TextArea Snapshots TextArea with error 1`] = `
 `;
 
 exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
-.c2 {
+.c1 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -172,8 +173,9 @@ exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c3 {
@@ -214,7 +216,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
   display: inline-block;
 }
 
-.c1 {
+.c2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -222,7 +224,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 1`] = `
   box-sizing: border-box;
 }
 
-.c1 > label {
+.c2 > label {
   top: 1.5em;
 }
 
@@ -260,7 +262,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   transform: translateY(-50%);
 }
 
-.c2 {
+.c1 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -274,8 +276,9 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c4 {
@@ -332,7 +335,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   display: inline-block;
 }
 
-.c1 {
+.c2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -340,7 +343,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
   box-sizing: border-box;
 }
 
-.c1 > label {
+.c2 > label {
   top: 1.5em;
 }
 
@@ -377,7 +380,7 @@ exports[`TextArea Snapshots TextArea with label and maxLength 2`] = `
 `;
 
 exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
-.c2 {
+.c1 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -391,8 +394,9 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
   flex-flow: row nowrap;
   border: 1px solid #B4B4B4;
   font-family: Noto Sans,"Noto Sans TC",sans-serif;
-  text-align: left;
   width: 100%;
+  direction: ltr;
+  text-align: left;
 }
 
 .c3 {
@@ -433,7 +437,7 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
   display: inline-block;
 }
 
-.c1 {
+.c2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -441,7 +445,7 @@ exports[`TextArea Snapshots TextArea with placeholder and maxLength 1`] = `
   box-sizing: border-box;
 }
 
-.c1 > label {
+.c2 > label {
   top: 1.5em;
 }
 

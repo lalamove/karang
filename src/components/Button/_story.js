@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
-
+import { boolean } from '@storybook/addon-knobs';
 import AlertIcon from 'components/Icon/icons/alert/alert';
 import CloseIcon from 'components/Icon/icons/content/close';
 import StarIcon from 'components/Icon/icons/toggle/star';
 import StarFilledIcon from 'components/Icon/icons/toggle/starFilled';
 
 import Button, { ButtonWithComponent, IconButton, CloseButton } from './index';
+import BaseApp from '../BaseApp';
 
 const Container = styled.div`
   display: flex;
@@ -149,73 +150,84 @@ storiesOf('Button', module)
         </Button>
       </Container>
       <h4>With Icon</h4>
-      <Container>
-        <Button icon={<StarIcon />} variant="link" solid>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} solid>
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon />} variant="primary" solid>
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon />} variant="secondary" solid>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} variant="danger" solid>
-          With Icon
-        </Button>
+      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={boolean('Right-to-Left', false)}>
+          <Button icon={<StarIcon />} variant="link" solid>
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} solid>
+            With Icon
+          </Button>
+          <Button icon={<StarFilledIcon />} variant="primary" solid>
+            With Icon
+          </Button>
+          <Button icon={<StarFilledIcon />} variant="secondary" solid>
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} variant="danger" solid>
+            With Icon
+          </Button>
+        </BaseApp>
       </Container>
       <h4>With Icon before the label</h4>
-      <Container>
-        <Button icon={<StarIcon />} iconPosition="before" variant="link" solid>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} iconPosition="before" solid>
-          With Icon
-        </Button>
-        <Button
-          icon={<StarFilledIcon />}
-          iconPosition="before"
-          variant="primary"
-          solid
-        >
-          With Icon
-        </Button>
-        <Button
-          icon={<StarFilledIcon />}
-          iconPosition="before"
-          variant="secondary"
-          solid
-        >
-          With Icon
-        </Button>
-        <Button
-          icon={<StarIcon />}
-          iconPosition="before"
-          variant="danger"
-          solid
-        >
-          With Icon
-        </Button>
+      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={boolean('Right-to-Left', false)}>
+          <Button
+            icon={<StarIcon />}
+            iconPosition="before"
+            variant="link"
+            solid
+          >
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} iconPosition="before" solid>
+            With Icon
+          </Button>
+          <Button
+            icon={<StarFilledIcon />}
+            iconPosition="before"
+            variant="primary"
+            solid
+          >
+            With Icon
+          </Button>
+          <Button
+            icon={<StarFilledIcon />}
+            iconPosition="before"
+            variant="secondary"
+            solid
+          >
+            With Icon
+          </Button>
+          <Button
+            icon={<StarIcon />}
+            iconPosition="before"
+            variant="danger"
+            solid
+          >
+            With Icon
+          </Button>
+        </BaseApp>
       </Container>
       <h4>With Icon and loading</h4>
-      <Container>
-        <Button icon={<StarIcon />} variant="link" isLoading solid>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} isLoading solid>
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon />} variant="primary" isLoading solid>
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon />} variant="secondary" isLoading solid>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} variant="danger" isLoading solid>
-          With Icon
-        </Button>
+      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={boolean('Right-to-Left', false)}>
+          <Button icon={<StarIcon />} variant="link" isLoading solid>
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} isLoading solid>
+            With Icon
+          </Button>
+          <Button icon={<StarFilledIcon />} variant="primary" isLoading solid>
+            With Icon
+          </Button>
+          <Button icon={<StarFilledIcon />} variant="secondary" isLoading solid>
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} variant="danger" isLoading solid>
+            With Icon
+          </Button>
+        </BaseApp>
       </Container>
       <h4>WithComponent</h4>
       <Container>
@@ -335,71 +347,82 @@ storiesOf('Button', module)
         </Button>
       </Container>
       <h4>With Icon</h4>
-      <Container>
-        <Button icon={<StarIcon />} variant="link">
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />}>With Icon</Button>
-        <Button icon={<StarFilledIcon />} variant="primary">
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon />} variant="secondary">
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} variant="danger">
-          With Icon
-        </Button>
+      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={boolean('Right-to-Left', false)}>
+          <Button icon={<StarIcon />} variant="link">
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />}>With Icon</Button>
+          <Button icon={<StarFilledIcon />} variant="primary">
+            With Icon
+          </Button>
+          <Button icon={<StarFilledIcon />} variant="secondary">
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} variant="danger">
+            With Icon
+          </Button>
+        </BaseApp>
       </Container>
       <h4>With Icon and loading</h4>
-      <Container>
-        <Button icon={<StarIcon />} variant="link" isLoading>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} isLoading>
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon />} variant="primary" isLoading>
-          With Icon
-        </Button>
-        <Button icon={<StarFilledIcon />} variant="secondary" isLoading>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} variant="danger" isLoading>
-          With Icon
-        </Button>
+      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={boolean('Right-to-Left', false)}>
+          <Button icon={<StarIcon />} variant="link" isLoading>
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} isLoading>
+            With Icon
+          </Button>
+          <Button icon={<StarFilledIcon />} variant="primary" isLoading>
+            With Icon
+          </Button>
+          <Button icon={<StarFilledIcon />} variant="secondary" isLoading>
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} variant="danger" isLoading>
+            With Icon
+          </Button>
+        </BaseApp>
       </Container>
       <h4>With Icon before the label</h4>
-      <Container>
-        <Button icon={<StarIcon />} iconPosition="before" variant="link" solid>
-          With Icon
-        </Button>
-        <Button icon={<StarIcon />} iconPosition="before" solid>
-          With Icon
-        </Button>
-        <Button
-          icon={<StarFilledIcon />}
-          iconPosition="before"
-          variant="primary"
-          solid
-        >
-          With Icon
-        </Button>
-        <Button
-          icon={<StarFilledIcon />}
-          iconPosition="before"
-          variant="secondary"
-          solid
-        >
-          With Icon
-        </Button>
-        <Button
-          icon={<StarIcon />}
-          iconPosition="before"
-          variant="danger"
-          solid
-        >
-          With Icon
-        </Button>
+      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
+        <BaseApp rtl={boolean('Right-to-Left', false)}>
+          <Button
+            icon={<StarIcon />}
+            iconPosition="before"
+            variant="link"
+            solid
+          >
+            With Icon
+          </Button>
+          <Button icon={<StarIcon />} iconPosition="before" solid>
+            With Icon
+          </Button>
+          <Button
+            icon={<StarFilledIcon />}
+            iconPosition="before"
+            variant="primary"
+            solid
+          >
+            With Icon
+          </Button>
+          <Button
+            icon={<StarFilledIcon />}
+            iconPosition="before"
+            variant="secondary"
+            solid
+          >
+            With Icon
+          </Button>
+          <Button
+            icon={<StarIcon />}
+            iconPosition="before"
+            variant="danger"
+            solid
+          >
+            With Icon
+          </Button>
+        </BaseApp>
       </Container>
       <h4>WithComponent</h4>
       <Container>

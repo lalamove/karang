@@ -29,6 +29,7 @@ const colorsMap = {
 
 const StyledBadge = styled.span`
   display: inline-block;
+  direction: ${({ theme: { rtl } }) => rtl && 'rtl'};
   font-size: ${fontSize.small};
   font-weight: bold;
   line-height: 1;
@@ -57,7 +58,8 @@ const StyledBadge = styled.span`
 
 const Text = styled.span`
   vertical-align: middle;
-  margin-left: 8px;
+  ${({ theme: { rtl } }) => css`
+  margin-${rtl ? 'right' : 'left'}: 8px;`}
 `;
 
 /**

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bool, func, string } from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import { nobel, primary, white } from 'styles/colors';
 import noop from 'utils/noop';
@@ -29,67 +29,70 @@ const Knob = styled.span`
   background-color: ${white};
   transition: 0.3s;
   cursor: pointer;
+  ${({ theme: { rtl } }) =>
+    css`
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        ${rtl ? 'right' : 'left'}: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: ${nobel['400']};
+        transition: 0.3s;
+      }
 
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 3px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: ${nobel['400']};
-    transition: 0.3s;
-  }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        ${rtl ? 'right' : 'left'}: 9px;
+        visibility: hidden;
+        width: 4px;
+        height: 9px;
+        border: solid ${primary.main};
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        transition: 0.3s;
+        transition-property: transform;
+      }
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 9px;
-    visibility: hidden;
-    width: 4px;
-    height: 9px;
-    border: solid ${primary.main};
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-    transition: 0.3s;
-    transition-property: transform;
-  }
+      ${Input}:disabled ~ & {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
 
-  ${Input}:disabled ~ & {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+      ${Input}:checked ~ & {
+        border-color: ${primary.main};
+        background-color: ${primary.main};
+      }
+      ${Input}:checked ~ &:before {
+        background-color: ${white};
+        transform: ${rtl ? 'translateX(-22px)' : 'translateX(22px)'};
+      }
+      ${Input}:checked ~ &:after {
+        visibility: visible;
+        transform: ${rtl ? 'translateX(-22px)' : 'translateX(22px)'}
+          rotate(45deg);
+      }
 
-  ${Input}:checked ~ & {
-    border-color: ${primary.main};
-    background-color: ${primary.main};
-  }
-  ${Input}:checked ~ &:before {
-    background-color: ${white};
-    transform: translateX(22px);
-  }
-  ${Input}:checked ~ &:after {
-    visibility: visible;
-    transform: translateX(22px) rotate(45deg);
-  }
+      ${Input}:active:not(:disabled) ~ &,
+      ${Input}:focus:not(:disabled) ~ & {
+        box-shadow: 0 0 0 4px ${rgba(nobel['400'], 0.2)};
+      }
+      ${Input}:active:checked:not(:disabled) ~ &,
+      ${Input}:focus:checked:not(:disabled) ~ & {
+        box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
+      }
 
-  ${Input}:active:not(:disabled) ~ &,
-  ${Input}:focus:not(:disabled) ~ & {
-    box-shadow: 0 0 0 4px ${rgba(nobel['400'], 0.2)};
-  }
-  ${Input}:active:checked:not(:disabled) ~ &,
-  ${Input}:focus:checked:not(:disabled) ~ & {
-    box-shadow: 0 0 0 4px ${rgba(primary.main, 0.2)};
-  }
-
-  ${Container}:hover ${Input}:not(:disabled) ~ & {
-    background-color: ${nobel['100']};
-  }
-  ${Container}:hover ${Input}:not(:disabled):checked ~ & {
-    background-color: ${primary['800']};
-  }
+      ${Container}:hover ${Input}:not(:disabled) ~ & {
+        background-color: ${nobel['100']};
+      }
+      ${Container}:hover ${Input}:not(:disabled):checked ~ & {
+        background-color: ${primary['800']};
+      }
+    `}
 `;
 
 /**

@@ -14,12 +14,11 @@ const Container = styled.div`
   flex-flow: row nowrap;
   border: 1px solid ${nobel.main};
   font-family: ${primaryFonts};
-  text-align: left;
   width: 100%;
   ${({ theme: { rtl } }) =>
-    rtl &&
     css`
-      direction: rtl;
+      direction: ${rtl ? 'rtl' : 'ltr'};
+      text-align: ${rtl ? 'right' : 'left'};
     `};
 
   ${({ disabled }) =>
