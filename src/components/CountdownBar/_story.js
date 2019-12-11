@@ -5,7 +5,7 @@ import CountdownBar from './index';
 import BaseApp from '../BaseApp';
 
 storiesOf('CountdownBar', module).add('Basic', () => (
-  <BaseApp rtl={boolean('Right-to-Left', false)}>
+  <BaseApp rtl={boolean('Right-to-left', false)}>
     <CountdownBar
       label="Countdown"
       duration="5000ms"

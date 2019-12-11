@@ -33,8 +33,8 @@ const sizeOptions = { small: 'small', default: 'default' };
 
 storiesOf('List', module)
   .add('Basic', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <List
           hoverable={boolean('hoverable', true)}
           size={select('size', sizeOptions, 'default')}
@@ -53,8 +53,8 @@ storiesOf('List', module)
     </div>
   ))
   .add('Small', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <List
           hoverable={boolean('hoverable', true)}
           size={select('size', sizeOptions, 'small')}

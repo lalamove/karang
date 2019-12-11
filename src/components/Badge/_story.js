@@ -15,8 +15,8 @@ const Container = styled.div`
 
 storiesOf('Badge', module)
   .add('Solid', () => (
-    <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <Container dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <h4>Solid</h4>
         <Badge solid>Unknown</Badge>
         <Badge variant="secondary" solid>
@@ -47,8 +47,8 @@ storiesOf('Badge', module)
     </Container>
   ))
   .add('Subtle', () => (
-    <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <Container dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <h4>Subtle</h4>
         <Badge>Unknown</Badge>
         <Badge variant="secondary">Assigning</Badge>

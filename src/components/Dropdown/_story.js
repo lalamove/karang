@@ -139,14 +139,16 @@ class CascadingMenu extends Component {
     return (
       <div dir={rtl ? 'rtl' : 'ltr'}>
         <BaseApp rtl={rtl}>
-          <h4>Cascading menu with direction=auto</h4>
+          <h4>
+            Cascading menu with <code>direction=auto</code>
+          </h4>
           <Dropdown
             items={itemsWithSubmenu}
             onChange={item => this.handleChange('dropdown1', item)}
             selectedItem={dropdown1}
           />
           <h4 style={{ textAlign: 'right' }}>
-            Cascading menu with direction=left.
+            Cascading menu with <code>direction=left</code>
           </h4>
           <div style={{ float: 'right' }}>
             <Dropdown
@@ -157,7 +159,7 @@ class CascadingMenu extends Component {
             />
           </div>
           <h4 style={{ textAlign: 'center' }}>
-            Cascading menu with direction = right
+            Cascading menu with <code>direction=right</code>
           </h4>
           <div style={{ textAlign: 'center' }}>
             <Dropdown
@@ -168,7 +170,7 @@ class CascadingMenu extends Component {
             />
           </div>
           <h4 style={{ clear: 'both' }}>
-            Cascading menu with <code>block</code> set to <code>true</code>
+            Cascading menu with <code>block=true</code>
           </h4>
           <span style={{ color: 'white', background: '#fea000' }}>
             Container (shown with padding here):

@@ -1,8 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { boolean } from '@storybook/addon-knobs';
+import styled from 'styled-components';
 import Rating from './index';
 import { small, large } from './ratingSizes';
-import styled from 'styled-components';
 
 const DivCenter = styled.div`
   display: flex;
@@ -10,12 +12,12 @@ const DivCenter = styled.div`
 `;
 
 storiesOf('Rating', module).add('Basic', () => (
-  <div>
+  <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
     <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
       <Rating
         size={large}
         onClick={rating => {
-          console.log(rating);
+          action('onClick')(rating);
         }}
       />
     </div>

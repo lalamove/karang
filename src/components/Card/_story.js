@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { boolean } from '@storybook/addon-knobs';
 import Button from 'components/Button';
 import Card from './index';
 
 storiesOf('Card', module).add('Basic', () => (
-  <div>
+  <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
     <span style={{ color: 'white', background: '#f26722' }}>
       Sample container for demonstration:
     </span>

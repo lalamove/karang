@@ -5,8 +5,8 @@ import Pagination from './index';
 import BaseApp from '../BaseApp';
 
 const Wrapper = () => (
-  <div dir={boolean('Right-To-Left', false) ? 'rtl' : 'ltr'}>
-    <BaseApp rtl={boolean('Right-To-Left', false)}>
+  <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+    <BaseApp rtl={boolean('Right-to-left', false)}>
       <h4>Basic</h4>
       <Pagination />
       <h4>With custom description</h4>

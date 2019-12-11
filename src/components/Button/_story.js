@@ -21,7 +21,7 @@ const CustomComponent = ButtonWithComponent('a');
 
 storiesOf('Button', module)
   .add('Solid', () => (
-    <div>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
       <h4>Small</h4>
       <Container>
         <Button variant="link" size="small" solid>
@@ -150,8 +150,8 @@ storiesOf('Button', module)
         </Button>
       </Container>
       <h4>With Icon</h4>
-      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-        <BaseApp rtl={boolean('Right-to-Left', false)}>
+      <Container>
+        <BaseApp rtl={boolean('Right-to-left', false)}>
           <Button icon={<StarIcon />} variant="link" solid>
             With Icon
           </Button>
@@ -170,8 +170,8 @@ storiesOf('Button', module)
         </BaseApp>
       </Container>
       <h4>With Icon before the label</h4>
-      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-        <BaseApp rtl={boolean('Right-to-Left', false)}>
+      <Container>
+        <BaseApp rtl={boolean('Right-to-left', false)}>
           <Button
             icon={<StarIcon />}
             iconPosition="before"
@@ -210,8 +210,8 @@ storiesOf('Button', module)
         </BaseApp>
       </Container>
       <h4>With Icon and loading</h4>
-      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-        <BaseApp rtl={boolean('Right-to-Left', false)}>
+      <Container>
+        <BaseApp rtl={boolean('Right-to-left', false)}>
           <Button icon={<StarIcon />} variant="link" isLoading solid>
             With Icon
           </Button>
@@ -238,7 +238,7 @@ storiesOf('Button', module)
     </div>
   ))
   .add('Subtle', () => (
-    <div>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
       <h4>Small</h4>
       <Container>
         <Button variant="link" size="small">
@@ -347,8 +347,8 @@ storiesOf('Button', module)
         </Button>
       </Container>
       <h4>With Icon</h4>
-      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-        <BaseApp rtl={boolean('Right-to-Left', false)}>
+      <Container>
+        <BaseApp rtl={boolean('Right-to-left', false)}>
           <Button icon={<StarIcon />} variant="link">
             With Icon
           </Button>
@@ -365,8 +365,8 @@ storiesOf('Button', module)
         </BaseApp>
       </Container>
       <h4>With Icon and loading</h4>
-      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-        <BaseApp rtl={boolean('Right-to-Left', false)}>
+      <Container>
+        <BaseApp rtl={boolean('Right-to-left', false)}>
           <Button icon={<StarIcon />} variant="link" isLoading>
             With Icon
           </Button>
@@ -385,8 +385,8 @@ storiesOf('Button', module)
         </BaseApp>
       </Container>
       <h4>With Icon before the label</h4>
-      <Container dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-        <BaseApp rtl={boolean('Right-to-Left', false)}>
+      <Container>
+        <BaseApp rtl={boolean('Right-to-left', false)}>
           <Button
             icon={<StarIcon />}
             iconPosition="before"
