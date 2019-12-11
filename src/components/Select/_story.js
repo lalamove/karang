@@ -48,7 +48,7 @@ class Wrapper extends Component {
 
   render() {
     const { select1, select2, select3, select4 } = this.state;
-    const rtl = boolean('Right-to-Left', false);
+    const rtl = boolean('Right-to-left', false);
     return (
       <div dir={rtl ? 'rtl' : 'ltr'}>
         <BaseApp rtl={rtl}>

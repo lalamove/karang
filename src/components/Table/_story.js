@@ -133,8 +133,8 @@ const data = [
 
 storiesOf('Table', module)
   .add('Basic', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Table
           hoverable={boolean('hoverable', false)}
           alternate={boolean('alternate', false)}
@@ -145,8 +145,8 @@ storiesOf('Table', module)
     </div>
   ))
   .add('onRowClick', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Table
           hoverable={boolean('hoverable', true)}
           alternate={boolean('alternate', false)}
@@ -175,8 +175,8 @@ storiesOf('Table', module)
     </div>
   ))
   .add('Sortable', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Table
           hoverable={boolean('hoverable', false)}
           alternate={boolean('alternate', false)}

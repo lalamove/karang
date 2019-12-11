@@ -8,8 +8,8 @@ import BaseApp from '../BaseApp';
 
 storiesOf('Checkbox', module)
   .add('Basic', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Checkbox
           label="Checkbox"
           disabled={boolean('disabled', false)}
@@ -20,8 +20,8 @@ storiesOf('Checkbox', module)
     </div>
   ))
   .add('With icon', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Checkbox
           label="Checkbox"
           disabled={boolean('disabled', false)}

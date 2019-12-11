@@ -329,6 +329,13 @@ class TableExample extends React.Component {
       );
   }
 
+  durationInDays(startDate, endDate) {
+    const date1 = new Date(startDate);
+    const date2 = new Date(endDate);
+    const diffTime = Math.abs(date2 - date1);
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  };
+
   render() {
     return (
       <div>
@@ -361,10 +368,10 @@ class TableExample extends React.Component {
                 return (
                   <ul>
                     <li>
-                      {dateFns.format(record['start_date'], '[Begins:] MMM Do')}
+                      {`Begins: ${record['start_date']}`}
                     </li>
                     <li>
-                      {dateFns.format(record['end_date'], '[Ends:] MMM Do')}
+                      {`Ends: ${record['end_date']}`}
                     </li>
                   </ul>
                 );
@@ -380,8 +387,7 @@ class TableExample extends React.Component {
             {
               key: 'duration',
               label: '⏳',
-              render: (_, { start_date, end_date }) =>
-                dateFns.distanceInWords(end_date, start_date),
+              render: (_, { start_date, end_date }) => `${this.durationInDays(start_date, end_date)} days`
             },
             {
               key: 'remarks',

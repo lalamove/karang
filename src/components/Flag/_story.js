@@ -10,8 +10,8 @@ const icon = <GalleryIcon size={32} />;
 
 storiesOf('Flag', module)
   .add('Default - center', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Flag image={icon}>
           {line}
           <h4>Heading</h4>
@@ -22,8 +22,8 @@ storiesOf('Flag', module)
     </div>
   ))
   .add('Top', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Flag variant="top" image={icon}>
           {line}
           <h4>Heading</h4>
@@ -34,8 +34,8 @@ storiesOf('Flag', module)
     </div>
   ))
   .add('Bottom', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Flag variant="bottom" image={icon}>
           {line}
           <h4>Heading</h4>
@@ -46,8 +46,8 @@ storiesOf('Flag', module)
     </div>
   ))
   .add('Nested example', () => (
-    <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-      <BaseApp rtl={boolean('Right-to-Left', false)}>
+    <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+      <BaseApp rtl={boolean('Right-to-left', false)}>
         <Flag variant="top" image={icon}>
           {line}
           <h4>Heading</h4>

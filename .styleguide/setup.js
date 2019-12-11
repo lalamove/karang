@@ -1,4 +1,3 @@
-import dateFns from 'date-fns';
 import Button from '../src/components/Button';
 import Rating from '../src/components/Rating';
 import Icon from '../src/components/Icon';
@@ -8,4 +7,3 @@ global.Button = Button;
 global.Rating = Rating;
 global.Icon = Icon;
 global.List = List;
-global.dateFns = dateFns;

@@ -5,8 +5,8 @@ import TextArea from './index';
 import BaseApp from '../BaseApp';
 
 const Wrapper = () => (
-  <div dir={boolean('Right-to-Left', false) ? 'rtl' : 'ltr'}>
-    <BaseApp rtl={boolean('Right-to-Left', false)}>
+  <div dir={boolean('Right-to-left', false) ? 'rtl' : 'ltr'}>
+    <BaseApp rtl={boolean('Right-to-left', false)}>
       <TextArea
         placeholder={text('placeholder', 'Placeholder')}
         maxLength={number('maxLength', 140)}
