@@ -13,6 +13,7 @@ export { default as Checkbox } from './components/Checkbox';
 export { default as CountdownBar } from './components/CountdownBar';
 export { default as DateRangePicker } from './components/DateRangePicker';
 export { default as Dropdown } from './components/Dropdown';
+export { default as Flag } from './components/Flag';
 export { default as Form } from './components/Form';
 export { default as Heading, HeadingGroup } from './components/Heading';
 export { default as Icon } from './components/Icon';
