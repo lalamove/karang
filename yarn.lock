@@ -1190,7 +1190,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@storybook/addon-actions@^5.2.1":
+"@storybook/addon-actions@^5.3.0":
   version "5.3.3"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-5.3.3.tgz#f4ca93b842a74a07fbdd9adf209a4f616899286e"
   integrity sha512-IZsM3mNpwUBdOIeSNaak3tVntw9TVHWFo6jC4rQKGSSKoi7hE2bL/tTYogxgtMw+99rNFNBFcmumTtX+jDXPyw==
@@ -2839,9 +2839,9 @@ babel-plugin-named-asset-import@^0.3.1:
   integrity sha512-sGhfINU+AuMw9oFAdIn/nD5sem3pn/WgxAfDZ//Q3CnF+5uaho7C7shh2rKLk6sKE/XkfmyibghocwKdVjLIKg==
 
 babel-plugin-react-docgen@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-4.0.0.tgz#1be997bc135b2a0eec54364202d01ed0f15f0098"
-  integrity sha512-6vdky/CRaq0zE64ZRR1fOjUfFS3kX7USMuC6mAH/ASYt/EGY9Ms1F5uLwHhmBhaOGKiJJHvhKz16wX9IBWBLKg==
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-docgen/-/babel-plugin-react-docgen-4.1.0.tgz#1dfa447dac9ca32d625a123df5733a9e47287c26"
+  integrity sha512-vzpnBlfGv8XOhJM2zbPyyqw2OLEbelgZZsaaRRTpVwNKuYuc+pUg4+dy7i9gCRms0uOQn4osX571HRcCJMJCmA==
   dependencies:
     lodash "^4.17.15"
     react-docgen "^5.0.0"
