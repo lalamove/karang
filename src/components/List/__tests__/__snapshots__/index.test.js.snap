@@ -28,8 +28,8 @@ exports[`List component size-small-default 1`] = `
   padding-left: 8px;
   border-left: 2px solid transparent;
   outline: 0;
-  margin-top: 8px;
-  margin-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 4px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -41,11 +41,11 @@ exports[`List component size-small-default 1`] = `
 }
 
 .c1:not(:first-child) {
-  margin-top: 4px;
+  padding-top: 4px;
 }
 
 .c1:last-child {
-  margin-bottom: 8px;
+  padding-bottom: 8px;
 }
 
 .c1:not(:last-child) .c2 {
@@ -126,8 +126,8 @@ exports[`List component size-small-with icon 1`] = `
   padding-left: 8px;
   border-left: 2px solid transparent;
   outline: 0;
-  margin-top: 8px;
-  margin-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 4px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -139,11 +139,11 @@ exports[`List component size-small-with icon 1`] = `
 }
 
 .c1:not(:first-child) {
-  margin-top: 4px;
+  padding-top: 4px;
 }
 
 .c1:last-child {
-  margin-bottom: 8px;
+  padding-bottom: 8px;
 }
 
 .c1:not(:last-child) .c3 {
