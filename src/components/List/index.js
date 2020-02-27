@@ -72,13 +72,13 @@ const LI = styled.li`
   ${({ size }) =>
     size === 'small' &&
     css`
-      margin-top: 8px;
-      margin-bottom: 4px;
+      padding-top: 8px;
+      padding-bottom: 4px;
       &:not(:first-child) {
-        margin-top: 4px;
+        padding-top: 4px;
       }
       &:last-child {
-        margin-bottom: 8px;
+        padding-bottom: 8px;
       }
     `};
 
