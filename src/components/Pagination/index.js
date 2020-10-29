@@ -98,7 +98,7 @@ class Pagination extends Component {
     if (props.pageSize && props.pageSize !== state.pageSize) {
       return { pageSize: props.pageSize };
     }
-    if (props.total && props.total !== state.total) {
+    if (props.total !== null && props.total !== state.total) {
       return { total: props.total };
     }
     return null;
